@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['handlebpsevent',['HandleBPSEvent',['../d2/d3e/classcocos2d_1_1_c_c_e_g_l_view_1_1_event_handler.html#abb33e98632f1096af191de37048f479a',1,'cocos2d::CCEGLView::EventHandler']]],
+  ['handleevents',['handleEvents',['../d4/db4/classcocos2d_1_1_c_c_e_g_l_view.html#adced5c84fbe501ae1379e54d98857ae8',1,'cocos2d::CCEGLView']]],
+  ['handleinputevent',['HandleInputEvent',['../d9/dd7/class_cocos_pepper_instance.html#ad85767c165424c3d8441149d1793c524',1,'CocosPepperInstance']]],
+  ['handlemachmessage_3a',['handleMachMessage:',['../df/dab/interface_accelerometer_simulation.html#aa45935650bc9427059d3a7cdf5dbe035',1,'AccelerometerSimulation']]],
+  ['handlerwithdelegate',['handlerWithDelegate',['../d8/d0d/classcocos2d_1_1_c_c_keypad_handler.html#a3bdf3f57cd0b62f91ae2bb34b9630cf7',1,'cocos2d::CCKeypadHandler::handlerWithDelegate()'],['../dc/dee/classcocos2d_1_1_c_c_touch_handler.html#a4cb48670c46f4bbb63c33b2dad6f819a',1,'cocos2d::CCTouchHandler::handlerWithDelegate()'],['../d4/d5c/classcocos2d_1_1_c_c_standard_touch_handler.html#aeca7676b18a9621d63520b35e2c81ef5',1,'cocos2d::CCStandardTouchHandler::handlerWithDelegate()'],['../d7/dc6/classcocos2d_1_1_c_c_targeted_touch_handler.html#a34a1f5676d6ad457c5b2e05650afd3ce',1,'cocos2d::CCTargetedTouchHandler::handlerWithDelegate()']]],
+  ['handletouchesbegin',['handleTouchesBegin',['../dd/d76/classcocos2d_1_1_c_c_e_g_l_view_protocol.html#a96f46b6f5ce99928fe2bd4713ab3b430',1,'cocos2d::CCEGLViewProtocol']]],
+  ['handletouchescancel',['handleTouchesCancel',['../dd/d76/classcocos2d_1_1_c_c_e_g_l_view_protocol.html#aa8096a71e6befec4319256b0009b0232',1,'cocos2d::CCEGLViewProtocol']]],
+  ['handletouchesend',['handleTouchesEnd',['../dd/d76/classcocos2d_1_1_c_c_e_g_l_view_protocol.html#ac1afc6e619a83d20058325aa57a7547d',1,'cocos2d::CCEGLViewProtocol']]],
+  ['handletouchesmove',['handleTouchesMove',['../dd/d76/classcocos2d_1_1_c_c_e_g_l_view_protocol.html#a0a4c3ff4bb2dc796a049b80ef249c154',1,'cocos2d::CCEGLViewProtocol']]],
+  ['hasalpha',['hasAlpha',['../d8/d10/classcocos2d_1_1_c_c_image.html#abf59a65ee2a7838e4fd11d2425e81dca',1,'cocos2d::CCImage::hasAlpha()'],['../db/da1/classcocos2d_1_1_c_c_texture_p_v_r.html#abf59a65ee2a7838e4fd11d2425e81dca',1,'cocos2d::CCTexturePVR::hasAlpha()']]],
+  ['hasbom',['HasBOM',['../dc/d59/classtinyxml2_1_1_x_m_l_document.html#a28a3f394d97ae1f0bccaa57bcd0ac088',1,'tinyxml2::XMLDocument']]],
+  ['hasmipmaps',['hasMipmaps',['../d7/dfd/classcocos2d_1_1_c_c_texture2_d.html#a18c1408a4c5256ca4542b44bf7fe8f97',1,'cocos2d::CCTexture2D']]],
+  ['hasmoved',['hasMoved',['../d9/dd1/classcocos2d_1_1extension_1_1_c_c_control_switch.html#a2a93e6c266ae2be963c6d35f065fe433',1,'cocos2d::extension::CCControlSwitch']]],
+  ['haspremultipliedalpha',['hasPremultipliedAlpha',['../d7/dfd/classcocos2d_1_1_c_c_texture2_d.html#a5e9453e6b0ba8ebfc1f7e894ae05e507',1,'cocos2d::CCTexture2D::hasPremultipliedAlpha()'],['../db/da1/classcocos2d_1_1_c_c_texture_p_v_r.html#a5e9453e6b0ba8ebfc1f7e894ae05e507',1,'cocos2d::CCTexturePVR::hasPremultipliedAlpha()']]],
+  ['hasvisibleparents',['hasVisibleParents',['../d4/d38/classcocos2d_1_1extension_1_1_c_c_control.html#ab391162778d0260ae7ea2aec5e09800f',1,'cocos2d::extension::CCControl']]],
+  ['hideoutshowin',['hideOutShowIn',['../d1/dc8/classcocos2d_1_1_c_c_transition_scene.html#a6777eebefb69c380153ea7441f4e895d',1,'cocos2d::CCTransitionScene']]],
+  ['highestatlasindexinchild',['highestAtlasIndexInChild',['../dd/d95/classcocos2d_1_1_c_c_sprite_batch_node.html#aa02649cba6b9d67ecab7aa0cfd098a4f',1,'cocos2d::CCSpriteBatchNode']]],
+  ['hsvfromrgb',['HSVfromRGB',['../d4/d57/classcocos2d_1_1extension_1_1_c_c_control_utils.html#ae95063bfa718070a5fe45c6773ce537b',1,'cocos2d::extension::CCControlUtils']]],
+  ['hueslidervaluechanged',['hueSliderValueChanged',['../d3/def/classcocos2d_1_1extension_1_1_c_c_control_colour_picker.html#a0edadbec3321c2d9ec28f5e558f1b40e',1,'cocos2d::extension::CCControlColourPicker']]]
+];
