@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>ccbResources/ccbDefaultImages.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {66, 98}}</string>
+			<key>offset</key>
+			<string>{-29, 13}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{2, 2}, {66, 98}}</string>
+			<key>sourceSize</key>
+			<string>{128, 128}</string>
+		</dict>
+		<key>ccbResources/ccbParticleFire.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 160}, {29, 29}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1, 1}, {29, 29}}</string>
+			<key>sourceSize</key>
+			<string>{32, 32}</string>
+		</dict>
+		<key>ccbResources/ccbParticleSmoke.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 101}, {57, 57}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{4, 4}, {57, 57}}</string>
+			<key>sourceSize</key>
+			<string>{64, 64}</string>
+		</dict>
+		<key>ccbResources/ccbParticleSnow.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 191}, {29, 29}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1, 1}, {29, 29}}</string>
+			<key>sourceSize</key>
+			<string>{32, 32}</string>
+		</dict>
+		<key>ccbResources/ccbParticleStars.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 222}, {29, 29}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{1, 1}, {29, 29}}</string>
+			<key>sourceSize</key>
+			<string>{32, 32}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{256, 256}</string>
+		<key>textureFileName</key>
+		<string>ccbResources.png</string>
+	</dict>
+</dict>
+</plist>

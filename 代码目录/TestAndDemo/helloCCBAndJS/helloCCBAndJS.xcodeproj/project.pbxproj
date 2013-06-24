@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3383CF91778A03000B6A5EC /* TestCCB.js in Sources */ = {isa = PBXBuildFile; fileRef = F3383CF81778A03000B6A5EC /* TestCCB.js */; };
+		F3383CFA1778A87700B6A5EC /* TestCCB.js in Resources */ = {isa = PBXBuildFile; fileRef = F3383CF81778A03000B6A5EC /* TestCCB.js */; };
+		F38C8B7E1778C1FE00D9C37E /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F38C8B7D1778C1FE00D9C37E /* TestCCB */; };
 		F3B39064177376EF0077D4E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B39063177376EF0077D4E1 /* QuartzCore.framework */; };
 		F3B39066177376EF0077D4E1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B39065177376EF0077D4E1 /* OpenGLES.framework */; };
 		F3B39068177376EF0077D4E1 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B39067177376EF0077D4E1 /* OpenAL.framework */; };
@@ -343,6 +346,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F3383CF81778A03000B6A5EC /* TestCCB.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TestCCB.js; sourceTree = "<group>"; };
+		F38C8B7D1778C1FE00D9C37E /* TestCCB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestCCB; path = Resources/TestCCB; sourceTree = "<group>"; };
 		F3B39060177376EF0077D4E1 /* helloCCBAndJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloCCBAndJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B39063177376EF0077D4E1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F3B39065177376EF0077D4E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1129,6 +1134,7 @@
 		F3B39074177376EF0077D4E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F38C8B7D1778C1FE00D9C37E /* TestCCB */,
 				F3B39075177376EF0077D4E1 /* CloseNormal.png */,
 				F3B39077177376EF0077D4E1 /* CloseSelected.png */,
 				F3B39079177376EF0077D4E1 /* Default.png */,
@@ -1143,6 +1149,7 @@
 				F3B3908B177376EF0077D4E1 /* Info.plist */,
 				F3B394C9177376F80077D4E1 /* hello.js */,
 				F3B39486177376F80077D4E1 /* CCB */,
+				F3383CF81778A03000B6A5EC /* TestCCB.js */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2517,6 +2524,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3383CFA1778A87700B6A5EC /* TestCCB.js in Resources */,
 				F3B39076177376EF0077D4E1 /* CloseNormal.png in Resources */,
 				F3B39078177376EF0077D4E1 /* CloseSelected.png in Resources */,
 				F3B3907A177376EF0077D4E1 /* Default.png in Resources */,
@@ -2585,6 +2593,7 @@
 				F3B394C6177376F80077D4E1 /* stars2.png in Resources */,
 				F3B394C8177376F80077D4E1 /* watermelon.png in Resources */,
 				F3B394CA177376F80077D4E1 /* hello.js in Resources */,
+				F38C8B7E1778C1FE00D9C37E /* TestCCB in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2849,6 +2858,7 @@
 				F3B3947A177376F80077D4E1 /* SlotData.cpp in Sources */,
 				F3B3947D177376F80077D4E1 /* spine-cocos2dx.cpp in Sources */,
 				F3B39485177376F80077D4E1 /* AppDelegate.cpp in Sources */,
+				F3383CF91778A03000B6A5EC /* TestCCB.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2992,6 +3002,7 @@
 				F3B394CF177376F80077D4E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

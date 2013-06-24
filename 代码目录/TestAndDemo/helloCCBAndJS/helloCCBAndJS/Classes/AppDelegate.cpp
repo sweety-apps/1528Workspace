@@ -30,6 +30,84 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
     
+    pDirector->setProjection(kCCDirectorProjection2D);
+    
+    CCSize screenSize = CCEGLView::sharedOpenGLView()->getFrameSize();
+    
+    CCSize designSize = CCSizeMake(320, 480);
+    CCSize resourceSize = CCSizeMake(320, 480);
+    
+    std::vector<std::string> resDirOrders;
+    
+    TargetPlatform platform = CCApplication::sharedApplication()->getTargetPlatform();
+    if (platform == kTargetIphone || platform == kTargetIpad)
+    {
+        std::vector<std::string> searchPaths = CCFileUtils::sharedFileUtils()->getSearchPaths();
+        searchPaths.insert(searchPaths.begin(), "TestCCB");
+        CCFileUtils::sharedFileUtils()->setSearchPaths(searchPaths);
+        if (screenSize.height > 1024)
+        {
+            resourceSize = CCSizeMake(1536, 2048);
+            resDirOrders.push_back("resources-ipadhd");
+            resDirOrders.push_back("resources-ipad");
+            resDirOrders.push_back("resources-iphonehd");
+        }
+        else if (screenSize.height > 960)
+        {
+            resourceSize = CCSizeMake(768, 1024);
+            resDirOrders.push_back("resources-ipad");
+            resDirOrders.push_back("resources-iphonehd");
+        }
+        else if (screenSize.height > 480)
+        {
+            resourceSize = CCSizeMake(640, 960);
+            resDirOrders.push_back("resources-iphonehd");
+            resDirOrders.push_back("resources-iphone");
+        }
+        else
+        {
+            resourceSize = CCSizeMake(320, 480);
+            resDirOrders.push_back("resources-iphone");
+        }
+        
+    }
+    else if (platform == kTargetAndroid || platform == kTargetWindows)
+    {
+        if (screenSize.height > 960)
+        {
+            resourceSize = CCSizeMake(1280, 1920);
+            resDirOrders.push_back("resources-xlarge");
+            resDirOrders.push_back("resources-large");
+            resDirOrders.push_back("resources-medium");
+            resDirOrders.push_back("resources-small");
+        }
+        else if (screenSize.height > 720)
+        {
+            resourceSize = CCSizeMake(640, 960);
+            resDirOrders.push_back("resources-large");
+            resDirOrders.push_back("resources-medium");
+            resDirOrders.push_back("resources-small");
+        }
+        else if (screenSize.height > 480)
+        {
+            resourceSize = CCSizeMake(480, 720);
+            resDirOrders.push_back("resources-medium");
+            resDirOrders.push_back("resources-small");
+        }
+        else
+        {
+            resourceSize = CCSizeMake(320, 480);
+            resDirOrders.push_back("resources-small");
+        }
+    }
+    
+    CCFileUtils::sharedFileUtils()->setSearchResolutionsOrder(resDirOrders);
+    
+    pDirector->setContentScaleFactor(resourceSize.width/designSize.width);
+    
+    CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionNoBorder);
+    
+    
     // turn on display FPS
     pDirector->setDisplayStats(true);
     
@@ -50,7 +128,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     CCScriptEngineProtocol *pEngine = ScriptingCore::getInstance();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-    ScriptingCore::getInstance()->runScript("hello.js");
+    ScriptingCore::getInstance()->runScript("main.js");
     
     return true;
 }
@@ -69,7 +147,7 @@ void handle_signal(int signal) {
             sc->start();
             internal_state = 1;
         } else {
-            sc->runScript("hello.js");
+            sc->runScript("main.js");
             internal_state = 0;
         }
     }
