@@ -7,5 +7,5 @@ var MainScene = function(){};
 MainScene.prototype.onPressButton = function()
 {	
     // Rotate the label when the button is pressed
-    this.helloLabel.runAction(cc.RotateBy.create(1,360));
+    this.particale1.runAction(cc.RotateBy.create(1,360));
 };
