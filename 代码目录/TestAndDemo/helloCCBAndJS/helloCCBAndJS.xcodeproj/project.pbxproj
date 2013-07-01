@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F3383CF91778A03000B6A5EC /* TestCCB.js in Sources */ = {isa = PBXBuildFile; fileRef = F3383CF81778A03000B6A5EC /* TestCCB.js */; };
 		F3383CFA1778A87700B6A5EC /* TestCCB.js in Resources */ = {isa = PBXBuildFile; fileRef = F3383CF81778A03000B6A5EC /* TestCCB.js */; };
-		F38C8B7E1778C1FE00D9C37E /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F38C8B7D1778C1FE00D9C37E /* TestCCB */; };
 		F3B39064177376EF0077D4E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B39063177376EF0077D4E1 /* QuartzCore.framework */; };
 		F3B39066177376EF0077D4E1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B39065177376EF0077D4E1 /* OpenGLES.framework */; };
 		F3B39068177376EF0077D4E1 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B39067177376EF0077D4E1 /* OpenAL.framework */; };
@@ -343,11 +342,11 @@
 		F3B394C6177376F80077D4E1 /* stars2.png in Resources */ = {isa = PBXBuildFile; fileRef = F3B394C5177376F80077D4E1 /* stars2.png */; };
 		F3B394C8177376F80077D4E1 /* watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3B394C7177376F80077D4E1 /* watermelon.png */; };
 		F3B394CA177376F80077D4E1 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = F3B394C9177376F80077D4E1 /* hello.js */; };
+		F3DB62C9177B74B700210150 /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F3DB62C8177B74B700210150 /* TestCCB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F3383CF81778A03000B6A5EC /* TestCCB.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = TestCCB.js; sourceTree = "<group>"; };
-		F38C8B7D1778C1FE00D9C37E /* TestCCB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestCCB; path = Resources/TestCCB; sourceTree = "<group>"; };
 		F3B39060177376EF0077D4E1 /* helloCCBAndJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloCCBAndJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B39063177376EF0077D4E1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F3B39065177376EF0077D4E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1063,6 +1062,7 @@
 		F3B394C5177376F80077D4E1 /* stars2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stars2.png; path = Resources/CCB/stars2.png; sourceTree = "<group>"; };
 		F3B394C7177376F80077D4E1 /* watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = watermelon.png; path = Resources/CCB/watermelon.png; sourceTree = "<group>"; };
 		F3B394C9177376F80077D4E1 /* hello.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = hello.js; path = Resources/hello.js; sourceTree = "<group>"; };
+		F3DB62C8177B74B700210150 /* TestCCB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestCCB; path = Resources/TestCCB; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1134,7 +1134,7 @@
 		F3B39074177376EF0077D4E1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F38C8B7D1778C1FE00D9C37E /* TestCCB */,
+				F3DB62C8177B74B700210150 /* TestCCB */,
 				F3B39075177376EF0077D4E1 /* CloseNormal.png */,
 				F3B39077177376EF0077D4E1 /* CloseSelected.png */,
 				F3B39079177376EF0077D4E1 /* Default.png */,
@@ -2593,7 +2593,7 @@
 				F3B394C6177376F80077D4E1 /* stars2.png in Resources */,
 				F3B394C8177376F80077D4E1 /* watermelon.png in Resources */,
 				F3B394CA177376F80077D4E1 /* hello.js in Resources */,
-				F38C8B7E1778C1FE00D9C37E /* TestCCB in Resources */,
+				F3DB62C9177B74B700210150 /* TestCCB in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
