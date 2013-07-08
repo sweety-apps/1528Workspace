@@ -14,6 +14,11 @@ public class monsterBehaviourScript : MonoBehaviour {
 	public textMeshScoreller scoreMesh = null;
 	public monsterHitEffectControl hurtEffect = null;
 	
+	public AudioClip emptyCutAudio = null;
+	public AudioClip hurtCutAudio = null;
+	
+	protected bool shouldPlayEmptyCutAudio = false;
+	
 	// This is called once the hit animation has compelted playing
     // It returns to playing whatever animation was active before hit
     // was playing.
@@ -36,6 +41,10 @@ public class monsterBehaviourScript : MonoBehaviour {
 		if(hero != null && (transform.position.x > heroLeftSide && transform.position.x < heroRightSide))
 		{
 			shouldHurt = true;
+		}
+		else
+		{
+			shouldPlayEmptyCutAudio = true;
 		}
 	}
 	
@@ -66,7 +75,20 @@ public class monsterBehaviourScript : MonoBehaviour {
 				{
 					hurtEffect.CreateEffect(transform.position);
 				}
+				if(hurtCutAudio != null)
+				{
+					audio.PlayOneShot(hurtCutAudio,1);
+				}
 			}
+		}
+		
+		if(shouldPlayEmptyCutAudio)
+		{
+			if(emptyCutAudio != null)
+			{
+				audio.PlayOneShot(emptyCutAudio,1);
+			}
+			shouldPlayEmptyCutAudio = false;
 		}
 		
 		if(animator != null && !animator.Playing)
