@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\1528Projects\testProject\sprites\heroKakaControl.cs" />
      <Compile Include="Assets\1528Projects\testProject\sprites\monsterBehaviourScript.cs" />
+     <Compile Include="Assets\1528Projects\testProject\sprites\monsterHitEffectControl.cs" />
      <Compile Include="Assets\1528Projects\testProject\sprites\textMeshScoreller.cs" />
      <Compile Include="Assets\IGSoft_Resources\Scripts\NcEffect\Common\EffectScriptSample.cs" />
      <Compile Include="Assets\IGSoft_Resources\Scripts\NcEffect\Common\NcDetachObject.cs" />

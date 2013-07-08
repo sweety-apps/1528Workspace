@@ -12,6 +12,7 @@ public class monsterBehaviourScript : MonoBehaviour {
 	
 	protected bool shouldHurt = false;
 	public textMeshScoreller scoreMesh = null;
+	public monsterHitEffectControl hurtEffect = null;
 	
 	// This is called once the hit animation has compelted playing
     // It returns to playing whatever animation was active before hit
@@ -60,6 +61,10 @@ public class monsterBehaviourScript : MonoBehaviour {
 				if(scoreMesh != null)
 				{
 					scoreMesh.score += 50;
+				}
+				if(hurtEffect != null)
+				{
+					hurtEffect.CreateEffect(transform.position);
 				}
 			}
 		}
