@@ -15,6 +15,7 @@ public class heroKakaControl : MonoBehaviour {
 	public HeroCutDelegate cutDelegate = null;
 	
 	public bool isCutting = false;
+	public heroHitEffectControl cutEffect = null;
 	
 	// This is called once the hit animation has compelted playing
     // It returns to playing whatever animation was active before hit
@@ -53,6 +54,12 @@ public class heroKakaControl : MonoBehaviour {
 				cutDelegate();
 			}
 			
+			if(cutEffect != null)
+			{
+				Vector3 FXPos = transform.position;
+				FXPos.z += 2;
+				cutEffect.CreateEffect(FXPos);
+			}
 		}
 	}
 	

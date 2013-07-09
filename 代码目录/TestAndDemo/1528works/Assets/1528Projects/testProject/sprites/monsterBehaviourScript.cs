@@ -19,6 +19,8 @@ public class monsterBehaviourScript : MonoBehaviour {
 	
 	protected bool shouldPlayEmptyCutAudio = false;
 	
+	public hurtAnimationControl hurtNumber = null;
+	
 	// This is called once the hit animation has compelted playing
     // It returns to playing whatever animation was active before hit
     // was playing.
@@ -77,7 +79,13 @@ public class monsterBehaviourScript : MonoBehaviour {
 				}
 				if(hurtCutAudio != null)
 				{
-					audio.PlayOneShot(hurtCutAudio,1);
+					audio.PlayOneShot(hurtCutAudio,5);
+				}
+				if(hurtNumber != null)
+				{
+					long hurtValue = (long)(Time.deltaTime * 1000000.0);
+					hurtValue %= 100000000000;
+					hurtNumber.ShowHurtNumber(-hurtValue);
 				}
 			}
 		}
@@ -86,7 +94,7 @@ public class monsterBehaviourScript : MonoBehaviour {
 		{
 			if(emptyCutAudio != null)
 			{
-				audio.PlayOneShot(emptyCutAudio,1);
+				audio.PlayOneShot(emptyCutAudio,500);
 			}
 			shouldPlayEmptyCutAudio = false;
 		}

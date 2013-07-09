@@ -34,9 +34,11 @@ public class monsterHitEffectControl : MonoBehaviour {
 		float fRandomRange = 0;
 		if (1 < m_nCreateCount)
 			fRandomRange = m_fRandomRange;
-
+		
+		/*
 		for (int n = 0; n < GetInstanceRoot().transform.GetChildCount(); n++)
 			Destroy(GetInstanceRoot().transform.GetChild(n).gameObject);
+			*/
 		for (int n = 0; n < m_nCreateCount; n++)
 		{
 			GameObject createObj = (GameObject)Instantiate(m_EffectPrefabs[m_nIndex], position, Quaternion.identity);
