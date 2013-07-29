@@ -3,7 +3,7 @@
 require("jsb.js");
 
 require("CCLayerWithSpriteTouchEvent.js");
-require("CCSpriteButton.js");
+require("GuessScene.js");
 require("MainScene.js");
 require("PunchScene.js");
 

@@ -1,3 +1,13 @@
+// static Var
+var kPlayButtonPushed = 1;
+
+var gPushedButton = 0;
+
+var gCurrentCCBView = null;
+
+var gShouldKeepCoin = false;
+
+
 //
 // MainScene class
 //
@@ -5,6 +15,10 @@
 var MainScene = function() {};
 
 MainScene.prototype.onDidLoadFromCCB = function () {
+
+    // 设备上面需要开启触摸
+    if( 'touches' in sys.capabilities )
+        this.rootNode.setTouchEnabled(true);
 
 	// Forward relevant touch events to controller (this)
 	// Touches
@@ -45,27 +59,170 @@ MainScene.prototype.onDidLoadFromCCB = function () {
     this.rootNode.onAccelerometer = function( event) {
         this.controller.onAccelerometer(event);
     };
+    /*
     // Logic Methods
     this.rootNode.controller.onPressButton = function()
 	{	
     	// Rotate the label when the button is pressed
     	//this.helloLabel.runAction(cc.RotateBy.create(1,360));
+    	//window.open("http://www.baidu.com");
+    	//cc.AudioEngine.getInstance().stopMusic();
     	this.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
 	};
+	*/
 
     // Start playing looped background music
-    cc.AudioEngine.getInstance().setEffectsVolume(0.2);
-    //cc.AudioEngine.getInstance().playMusic("sounds/CAT_OP_BG.mp3",true);
+    cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
+    cc.AudioEngine.getInstance().setMusicVolume(0.5);
+
+    if(gShouldKeepCoin)
+    {
+        gShouldKeepCoin = false;
+        this.rootNode.animationManager.runAnimationsForSequenceNamed("UI Begin Timeline Without Coin Animation");
+    }
+    
+    // 设置动画完成时的回调
+    this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
+    
+    // 设置各种按钮的回调
+    gCurrentCCBView = this;
+    
+    // startButton Event
+    setupPressEventToSprite(this.rootLayer,this.startButton,this.startButton);
+    this.startButton.onPressButton = function (){
+        cc.AudioEngine.getInstance().stopMusic();
+        cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+        gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
+        gPushedButton = kPlayButtonPushed;
+    }
+    
+    // aboutButton Event
+    setupPressEventToSprite(this.rootLayer,this.aboutButton,this.aboutButton);
+    this.aboutButton.onPressButton = function (){
+    	window.open("http://223.4.33.112/about.html");
+    }
+    //
+
 };
 
+var pressSprites = new Array();
+var pressSpritesCallbacks = new Array();
+
+function setupPressEventToSprite(layer, sprite, callback)
+{
+	var contentSize  =  sprite.getContentSize();
+	//alert("ContentSize = ("+contentSize.width+","+contentSize.height+")");
+	//如果需要缩小点击区域，请用以下参数
+	var rescaleTouchRectFactorX = 0.5;
+	var rescaleTouchRectFactorY = 0.5;
+	
+	//判断触摸点是否在图片的区域上
+	sprite.containsTouchLocation = function (touch) {
+        //alert("tttest");
+
+        var realScaleFactorX = rescaleTouchRectFactorX * this.getScaleX();
+        var realScaleFactorY = rescaleTouchRectFactorX * this.getScaleY();
+
+        //获取触摸点位置
+        var getPoint = touch.getLocation();
+        //获取图片区域尺寸
+        var contentSize  =  this.getContentSize();
+        //定义拖拽的区域
+        var spritePosition = this.convertToWorldSpace(cc.p(contentSize.width/2,contentSize.height/2));
+        var myRect = cc.rect(spritePosition.x, spritePosition.y, contentSize.width, contentSize.height);
+        //myRect.x += this.getPosition().x-this.getContentSize().width/2;
+        //myRect.y += this.getPosition().y-this.getContentSize().height/2;
+        myRect.x = myRect.x-this.getContentSize().width/2;
+        myRect.y = myRect.y-this.getContentSize().height/2;
+        
+        //重新计算触摸区域
+        //alert("myRect = ("+myRect.x+","+myRect.y+","+myRect.width+","+myRect.height+")");
+        myRect.x = myRect.x + ((myRect.width * (1.0-realScaleFactorX)) * 0.5);
+        myRect.y = myRect.y + ((myRect.height * (1.0-realScaleFactorY)) * 0.5);
+        myRect.width = myRect.width * realScaleFactorX;
+        myRect.height = myRect.height * realScaleFactorY;
+        
+        var ret = false;
+        
+        if(!cc.rectContainsPoint(myRect, getPoint))
+        {
+        	ret = false;
+        }
+        else
+        {
+        	ret = true;
+        }
+        
+        //alert("myRect = ("+myRect.x+","+myRect.y+","+myRect.width+","+myRect.height+")");
+        //alert("Point = ("+ getPoint.x + "," + getPoint.y + ")\nContentSize = ("+contentSize.width+","+contentSize.height+")\nRet = " + ret);
+        
+        //判断点击是否在区域上
+        return ret;
+    };
+    
+    pressSprites.push(sprite);
+	pressSpritesCallbacks.push(callback);
+    
+	var callBackRet = function (touch){
+		//alert("len"+pressSprites.length);
+		var i;
+		for(i = 0; i < pressSprites.length; i++)
+		{
+			if(pressSpritesCallbacks[i] != null && pressSprites[i].containsTouchLocation(touch))
+    		{
+    			//alert("callback");
+    			//MainScene.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
+    			//MainScene.onPressButton();
+    			pressSpritesCallbacks[i].onPressButton();
+        		return true;
+    		}
+		}
+    	return false;
+	}
+	
+	
+	layer.onTouchesEnded = function( touches, event) {
+    	return callBackRet(touches[0]);
+    };
+    /*
+    layer.onMouseUp = function( event) {
+    	return callBackRet();
+    };
+    */
+}
+
+function clearAllPressEventToSprite ()
+{
+    while(pressSprites.length > 0)
+    {
+        pressSprites.pop();
+    }
+    while(pressSpritesCallbacks.length > 0)
+    {
+        pressSpritesCallbacks.pop();
+    }
+}
+
 ///// Logic Methods
-// Create callback for button
-MainScene.prototype.onPressButton = function()
-{	
-    // Rotate the label when the button is pressed
-    //this.helloLabel.runAction(cc.RotateBy.create(1,360));
-    this.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
+
+///// Animation Callback Handlers
+MainScene.prototype.onAnimationComplete = function()
+{
+	if (gPushedButton == kPlayButtonPushed)
+	{
+        gPushedButton = 0;
+        cc.AudioEngine.getInstance().stopMusic();
+        clearAllPressEventToSprite ();
+		var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+		cc.Director.getInstance().replaceScene(scene);
+    }
 };
+
+MainScene.prototype.onStartPlay = function()
+{
+
+};
+
 
 ///// Events Handlers
 // Touches
@@ -118,146 +275,3 @@ MainScene.prototype.onAccelerometer = function( event)
     //TODO:
 };
 
-
-
-
-
-/*
-
-var CD_LEVEL_WIDTH = 320;
-var CD_SCROLL_FILTER_FACTOR = 0.1;
-var CD_DRAGON_TARGET_OFFET = 80;
-
-// Accelerometer
-var CD_ACCEL_FILTER_FACTOR = 0.25;
-
-var Level = function(){
-    this.winSize = cc.Director.getInstance().getWinSize();
-
-    // Used for the low-pass filter on the accelerometer
-    this.prevX = 0;
-};
-
-Level.prototype.onDidLoadFromCCB = function()
-{
-    // Forward relevant touch events to controller (this)
-    this.rootNode.onTouchesBegan = function( touches, event) {
-        this.controller.onTouchesBegan(touches, event);
-        return true;
-    };
-    this.rootNode.onTouchesMoved = function( touches, event) {
-        this.controller.onTouchesMoved(touches, event);
-        return true;
-    };
-    this.rootNode.onMouseDragged = function( event) {
-        this.controller.onMouseDragged(event);
-        return true;
-    };
-
-    this.rootNode.onAccelerometer = function( event) {
-        this.controller.onAccelerometer(event);
-    };
-
-    // Schedule callback
-    this.rootNode.onUpdate = function(dt) {
-        this.controller.onUpdate();
-    };
-    this.rootNode.schedule(this.rootNode.onUpdate);
-};
-
-//
-// Events
-//
-Level.prototype.onTouchesBegan = function(touches, event)
-{
-	if (gSettingControlType != CD_CONTROLTYPE_TOUCH) return;
-	
-    var loc = touches[0].getLocation();
-    this.dragon.controller.xTarget = loc.x - gLevelOffsetX;
-};
-
-Level.prototype.onTouchesMoved = function(touches, event)
-{
-	if (gSettingControlType != CD_CONTROLTYPE_TOUCH) return;
-	
-    var loc = touches[0].getLocation();
-    this.dragon.controller.xTarget = loc.x - gLevelOffsetX;
-};
-
-Level.prototype.onMouseDragged = function(event)
-{
-	if (gSettingControlType != CD_CONTROLTYPE_TOUCH) return;
-	
-    var loc = event.getLocation();
-    this.dragon.controller.xTarget = loc.x;
-};
-
-Level.prototype.onAccelerometer = function(accelEvent)
-{
-	if (gSettingControlType != CD_CONTROLTYPE_TILT) return;
-
-    // low pass filter for accelerometer. This makes the movement softer
-    var accelX = accelEvent.x * CD_ACCEL_FILTER_FACTOR + (1 - CD_ACCEL_FILTER_FACTOR) * this.prevX;
-    this.prevX = accelX;
-
-    var newX = this.winSize.width * accelX + this.winSize.width/2;
-    this.dragon.controller.xTarget = newX;
-    // cc.log('Accel x: '+ accelEvent.x + ' y:' + accelEvent.y + ' z:' + accelEvent.z + ' time:' + accelEvent.timestamp );
-};
-
-
-// Game main loop
-Level.prototype.onUpdate = function(dt)
-{
-    var i=0;
-    var gameObject = null;
-    var gameObjectController = null;
-
-    // Iterate though all objects in the level layer
-    var children = this.rootNode.getChildren();
-    for (i = 0; i < children.length; i++)
-    {
-        // Check if the child has a controller (only the updatable objects will have one)
-        gameObject = children[i];
-        gameObjectController = gameObject.controller;
-        if (gameObjectController)
-        {
-            // Update all game objects
-            gameObjectController.onUpdate();
-            
-            var gameObjectPos = cc.pMult(gameObject.getPosition(), 1.0/gScaleFactor);
-            var dragonPos = cc.pMult(this.dragon.getPosition(), 1.0/gScaleFactor);
-
-            // Check for collisions with dragon
-            if (gameObject !== this.dragon)
-            {
-                if (cc.pDistance(gameObjectPos, dragonPos) < gameObjectController.radius + this.dragon.controller.radius)
-                {
-                    gameObjectController.handleCollisionWith(this.dragon.controller);
-                    this.dragon.controller.handleCollisionWith(gameObjectController);
-                }
-            }
-        }
-    }
-
-    // Check for objects to remove
-    for (i = children.length-1; i >=0; i--)
-    {
-        gameObject = children[i];
-        gameObjectController = gameObject.controller;
-        if (gameObjectController && gameObjectController.isScheduledForRemove)
-        {
-            this.rootNode.removeChild(gameObject);
-        }
-    }
-
-    // Adjust position of the layer so dragon is visible
-    var yTarget = CD_DRAGON_TARGET_OFFET - this.dragon.getPosition().y;
-    var oldLayerPosition = this.rootNode.getPosition();
-
-    var xNew = oldLayerPosition.x;
-    var yNew = yTarget * CD_SCROLL_FILTER_FACTOR + oldLayerPosition.y * (1 - CD_SCROLL_FILTER_FACTOR);
-
-    this.rootNode.setPosition(xNew, yNew);
-};
-*/

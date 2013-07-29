@@ -13,7 +13,7 @@ try {
         
         self.getTestScene = function() {
             //var scene = new cc.Scene();
-            return cc.BuilderReader.loadAsScene("TestCCB/HelloCocosBuilder.ccbi");
+            return cc.BuilderReader.loadAsScene("TestCCB/MainScene.ccbi");
         };
         
         return self;
