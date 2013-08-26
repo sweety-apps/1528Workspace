@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question>
+	
+	<!== 题目id，用来检索题目的唯一ID ==>
+	<id>00001</id>
+	
+	<!== 题目相关信息:题目分类(文字[text]/画像[picture]/音乐[music]/表演[action])、类型、难度级别(1~6)、演员 ==>
+	<info>
+		<type>text</type>
+		<category>智力</category>
+		<level>6</level>
+		<actor>吉他猫</actor>
+	</info>
+	
+	<!== 题目内容==>
+	<content>
+		<inputkeys>你打的没土小水话上下题白兔来草木宫<inputkeys>
+		<inform>提示：一个动物名称</inform>
+		<rightanswer>小白兔</rightanswer>
+		
+		<!== 文字猜时的字段 ==>
+		<text>
+			<title>小白+小白=?</title>
+		</text>
+		
+		<!== 画像猜时的字段 ==>
+		<picture>
+			<title>小白+小白=?</title>
+			<image_url>http://www.memecai.com/jitamao.png</image_url>
+		</picture>
+		
+		<!== 表演猜时的字段，这个可以用表现力丰富的动画来做，只要指定文件名，到时讨论 ==>
+		<action>
+			<animation>gangtiexia.ccbi</animation>
+		</action>
+		
+		<!== 音乐猜时的字段 ==>
+		<music>
+			<music_url>http://www.memecai.com/tante.m4a</music_url>
+			<title>小白+小白=?</title>
+		</music>
+		
+	</content>
+	
+	<!== 答对后的提示跳转，使用id或url（原生还是web需要再讨论） ==>
+	<knowladgetips>
+		<id>18231.xml</id>
+		<url>http://www.memecai.com/knowladgetips?id=18231</url>
+	</knowladgetips>
+	
+</question>
+

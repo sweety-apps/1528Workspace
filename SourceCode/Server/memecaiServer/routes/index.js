@@ -4,6 +4,6 @@
  */
 
 exports.index = function(req, res){
-  res.redirect('./memecai/');
+  res.redirect('./memeda/');
   //res.render('index', { title: 'Express' });
 };

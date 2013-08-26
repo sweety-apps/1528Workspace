@@ -1,0 +1,5 @@
+1.root启动Webstrom:
+$ sudo -b /Applications/WebStorm.app/Contents/MacOS/webide
+
+2.chrome开启访问本地文件:
+$ open /Applications/Google\ Chrome.app --args --allow-file-access-from-files
