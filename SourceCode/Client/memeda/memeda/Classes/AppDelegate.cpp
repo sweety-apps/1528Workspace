@@ -13,6 +13,8 @@
 #include "jsb_opengl_registration.h"
 #include "XMLHTTPRequest.h"
 
+#include "uncompressZipFile.h"
+
 USING_NS_CC;
 using namespace CocosDenshion;
 
@@ -157,8 +159,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
     ScriptingCore::getInstance()->runScript("main.js");
     
+    testUnzipFiles();
+    
     return true;
 }
+
 
 void handle_signal(int signal) {
     static int internal_state = 0;

@@ -13,7 +13,7 @@ var express = require('express')
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 10080);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -31,6 +31,13 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/data', data.data_source_api);
 app.get('/users', user.list);
+
+
+
+var test = require('./tools/excelxmlToTestJson');
+//test.createTestPackageFromExcelXml(null,null,null);
+test.createTestPackageFromExcelXml('./tools/excelxmlToTestJsonFileSpace/Input.xml','./tools/excelxmlToTestJsonFileSpace/Output');
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

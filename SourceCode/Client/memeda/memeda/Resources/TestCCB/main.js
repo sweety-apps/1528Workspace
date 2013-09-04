@@ -7,10 +7,94 @@ require("GameDataAccess.js");
 require("GuessScene.js");
 require("MainScene.js");
 
+/*
+function StringToUTF8 ( str ) {
+	if( typeof( str ) !== "string" ) {
+		throw new TypeError("toUTF8 function only accept a string as its parameter.");
+	}
+	var ret = [];
+	var c1, c2, c3;
+	var cc = 0;
+	for( var i = 0, l = str.length; i < l; i++ ) {
+		cc = str.charCodeAt(i);
+		if( cc > 0xFFFF ) { throw new Error("InvalidCharacterError"); }
+		if( cc > 0x80 ) {
+			if( cc < 0x07FF ) {
+				c1 = String.fromCharCode( ( cc >>>  6 ) | 0xC0 );
+				c2 = String.fromCharCode( ( cc & 0x3F ) | 0x80 );
+				ret.push( c1, c2 );
+			} else {
+				c1 = String.fromCharCode(   ( cc >>> 12 )          | 0xE0 );
+				c2 = String.fromCharCode( ( ( cc >>>  6 ) & 0x3F ) | 0x80 );
+				c3 = String.fromCharCode(   ( cc          & 0x3F ) | 0x80 );
+				ret.push( c1, c2, c3 );
+			}
+		} else {
+			ret.push(str[i]);
+		}
+	}
+	return ret.join('');
+};
+ */
+
+function StringFromUTF8( str ) {
+	if( typeof( str ) !== "string" ) {
+		throw new TypeError("fromUTF8 function only accept a string as its parameter.");
+	}
+	if( /[^\x20-\xEF]/.test(str) ) { throw new Error("InvalidCharacterError"); }
+	var ret = [];
+	var cc = 0;
+	var ct = 0;
+	for( var i = 0, l = str.length; i < l; ) {
+		cc = str.charCodeAt( i++ );
+		if( cc > 0xE0 ) {
+			ct =  ( cc & 0x0F ) << 12;
+			cc = str.charCodeAt( i++ );
+			ct |= ( cc & 0x3F ) <<  6;
+			cc = str.charCodeAt( i++ );
+			ct |=   cc & 0x3F        ;
+			ret.push( String.fromCharCode( ct ) );
+		} else if( cc > 0xC0 ) {
+			ct =  ( cc & 0x1F ) << 6;
+			cc = str.charCodeAt( i++ );
+			ct |= ( cc & 0x3F ) << 6;
+			ret.push( String.fromCharCode( ct ) );
+		} else if( cc > 0x80 ) {
+			//throw new Error("InvalidCharacterError");
+		} else {
+			ret.push( str[i] );
+		}
+	}
+	return ret.join('');
+};
+
+//读文件测试代码
+function testReadFile()
+{
+	if(cc.FileUtils.getInstance().isFileExist("./TestCCB/Output.zip"))
+    {
+        cc.log("<<FILE LOADED>> Load Succeed!<<FILE LOADED>>");
+        var data = cc.FileUtils.getInstance().getStringFromFile("./TestCCB/Output.zip/Output/2");
+        //data = cc.FileUtils.getInstance().getFileData("./TestCCB/Output.zip","r",0);
+        //data = cc.FileUtils.getInstance().getFileDataFromZip("./TestCCB/Output.zip","Output/1",0);
+        result = "一二三" + data;
+        /*
+         for(var i = 0; i < data.length; i++) {
+         result = result + String.fromCharCode(data[i]);
+         }*/
+        //result = new String(result.getBytes("iso-8859-1"),"utf-8");
+        cc.log(result);
+    }
+    else
+    {
+        cc.log("[FILE LOADING]Load Failed![FILE LOADING]");
+    }
+}
 
 function main()
 {
 	cc.FileUtils.getInstance().loadFilenameLookup("fileLookup.plist");
+    
     //cc.Texture2D.setDefaultAlphaPixelFormat(6);
 	var director = cc.Director.getInstance();
     var scene = cc.BuilderReader.loadAsScene("GuessScene");
