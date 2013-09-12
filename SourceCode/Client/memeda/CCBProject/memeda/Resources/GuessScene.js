@@ -24,7 +24,7 @@ var gBoardBG = null;
 var gBoardLabel = null;
 var gBoardPicture = null;
 var gBoardCover = null;
-
+ 
 var gCatHand = null;
 
 var gCurrentChoosedCharButton = null;
