@@ -13,7 +13,14 @@
 	<key>fileVersion</key>
 	<integer>4</integer>
 	<key>guides</key>
-	<array/>
+	<array>
+		<dict>
+			<key>orientation</key>
+			<integer>1</integer>
+			<key>position</key>
+			<real>-333</real>
+		</dict>
+	</array>
 	<key>jsControlled</key>
 	<true/>
 	<key>nodeGraph</key>
@@ -46,7 +53,7 @@
 									<key>value</key>
 									<array>
 										<real>0.0</real>
-										<real>100</real>
+										<real>88</real>
 									</array>
 								</dict>
 								<dict>
@@ -58,13 +65,13 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>0.96666663885116577</real>
+									<real>1</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>-7.5</real>
-										<real>100</real>
+										<real>0.0</real>
+										<real>88</real>
 									</array>
 								</dict>
 							</array>
@@ -78,22 +85,83 @@
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
-				<array/>
+				<array>
+					<dict>
+						<key>baseClass</key>
+						<string>CCSprite</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCSprite</string>
+						<key>memberVarAssignmentName</key>
+						<string>doorPrite</string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.0</real>
+									<real>0.0</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>displayFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>UI/guess/door1.png</string>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
 				<string>CCSprite</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>bgPrite</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
 						<key>baseValue</key>
 						<array>
 							<real>0.0</real>
-							<real>100</real>
+							<real>0.0</real>
 						</array>
 						<key>name</key>
 						<string>position</string>
@@ -102,8 +170,8 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>100</real>
-							<integer>4</integer>
+							<real>88</real>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -114,7 +182,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>1</real>
+							<real>0.0</real>
 						</array>
 					</dict>
 					<dict>
@@ -125,7 +193,7 @@
 						<key>value</key>
 						<array>
 							<real>1</real>
-							<real>300</real>
+							<real>1</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -146,7 +214,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/guess/bg.png</string>
+							<string>UI/guess/bg1.png</string>
 						</array>
 					</dict>
 				</array>
@@ -158,6 +226,8 @@
 		<string></string>
 		<key>displayName</key>
 		<string>CCLayer</string>
+		<key>jsController</key>
+		<string>BGLayer</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>
@@ -172,7 +242,7 @@
 				<key>value</key>
 				<array>
 					<real>320</real>
-					<real>568</real>
+					<real>480</real>
 					<integer>5</integer>
 				</array>
 			</dict>
@@ -184,7 +254,7 @@
 				<key>value</key>
 				<array>
 					<real>0.0</real>
-					<real>0.0</real>
+					<real>1</real>
 				</array>
 			</dict>
 			<dict>
@@ -449,7 +519,7 @@
 	<array>
 		<dict>
 			<key>autoPlay</key>
-			<true/>
+			<false/>
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>
@@ -470,7 +540,7 @@
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
-			<real>128</real>
+			<real>166.81039428710938</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
 			<key>soundChannel</key>

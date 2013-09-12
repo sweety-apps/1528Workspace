@@ -1,3 +1,9 @@
+// const Var
+// states
+var kGuessStateNormal = 0;
+var kGuessStatePullingChar = 2;
+var kGuessStatePuttingResult = 3;
+
 // static Var
 var kReturnButtonPushed = 1;
 
@@ -10,6 +16,22 @@ var gInputCharButtonLabels = new Array();
 
 var gResultCharButtons = new Array();
 var gResultCharButtonLabels = new Array();
+
+var gAwardButton = null;
+var gInfoTipsCoverLabel = null;
+
+var gDrawerCat = null;
+var gBoardBG = null;
+var gBoardLabel = null;
+var gBoardPicture = null;
+var gBoardCover = null;
+
+var gCatHand = null;
+
+var gCurrentChoosedCharButton = null;
+var gCurrentPushedResultButton = null;
+
+var gCurrentGuessState = kGuessStateNormal;
 
 //
 // GuessScene class
@@ -64,7 +86,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     };
 
     // Start playing looped background music
-    cc.AudioEngine.getInstance().playMusic("sounds/CAT_ROCK_VER.mp3",true);
+    cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
     cc.AudioEngine.getInstance().setMusicVolume(0.5);
 
     // 初始化按钮变量
@@ -96,6 +118,16 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 
     // 初始化输入等UI
     this.setupInputCharsAndResultChars();
+
+    // 初始化操作的动画
+    this.setupSubCCBFileAnimationCallBacks();
+
+    // 启动时的动画
+    debugMsgOutput("On Start Drawing Animation!");
+    this.onStartCatDrawingAnimation();
+
+    // State Change
+    gCurrentGuessState = kGuessStateNormal;
 };
 
 var pressSprites = new Array();
@@ -198,7 +230,7 @@ function clearAllPressEventToSprite ()
 
 ///// Logic Methods
 
-///// Animation Callback Handlers
+///// This Scene Animation Callback Handlers
 GuessScene.prototype.onAnimationComplete = function()
 {
     if (gPushedButton == kReturnButtonPushed)
@@ -207,11 +239,24 @@ GuessScene.prototype.onAnimationComplete = function()
         cc.AudioEngine.getInstance().stopMusic();
         gShouldKeepCoin = true;
         clearAllPressEventToSprite ();
-        this.clearInputCharsAndResultChars();
-        this.ClearVars();
+        gCurrentCCBView.clearInputCharsAndResultChars();
+        gCurrentCCBView.ClearVars();
         var scene = cc.BuilderReader.loadAsScene("MainScene.ccbi");
         cc.Director.getInstance().replaceScene(scene);
         //gAudioEngine.stopMusic();
+    }
+
+    debugMsgOutput(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName());
+
+    if(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName() == "Drawing Animation Timeline")
+    {
+        gAwardButton.animationManager.runAnimationsForSequenceNamed("Flipping Timeline");
+        gInfoTipsCoverLabel.animationManager.runAnimationsForSequenceNamed("Shining Timeline");
+    }
+
+    if(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName() == "Win Timeline")
+    {
+        gCurrentCCBView.onStartCatDrawingAnimation();
     }
 };
 
@@ -283,7 +328,68 @@ GuessScene.prototype.InitVars = function()
     gResultCharButtonLabels[2] = this.charLblResult2;
 
     gResultCharButtonLabels[0].setString("大");
+
+    // Drawer Cat
+    gDrawerCat = this.drawerCat;
+
+    // Test Board
+    gBoardBG = this.boardBG;
+    gBoardLabel = this.questionLbl;
+    gBoardPicture = this.contentPicture;
+    gBoardCover = this.boardCover;
+
+    // Other Buttons
+    gAwardButton = this.awardButton;
+
+    // 刮刮提示
+    gInfoTipsCoverLabel = this.guaguaCoverTextLabel;
+
+    // 猫爪
+    gCatHand = this.catHand;
+
+    // Do Scale
+    var screenSize = cc.Director.getInstance().getWinSizeInPixels();
+
+    debugMsgOutput("screen size ("+screenSize.width+","+screenSize.height+")");
+
+    var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
+    var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
+
+    // 针对非iphone5屏幕做缩小适配
+    if(screenHeight / screenWidth < 1136/640)
+    {
+        for(var i = 0; i < gInputCharButtons.length; ++i)
+        {
+            gInputCharButtons[i].setScaleX(0.8);
+            gInputCharButtons[i].setScaleY(0.8);
+        }
+
+        for(var i = 0; i < gResultCharButtons.length; ++i)
+        {
+            gResultCharButtons[i].setScaleX(0.8);
+            gResultCharButtons[i].setScaleY(0.8);
+
+            gResultCharButtonLabels[i].setScaleX(0.8);
+            gResultCharButtonLabels[i].setScaleY(0.8);
+        }
+
+        gDrawerCat.setScaleX(0.8);
+        gDrawerCat.setScaleY(0.8);
+
+        gBoardBG.setScaleX(0.8);
+        gBoardBG.setScaleY(0.8);
+
+        gBoardLabel.setScaleX(0.8);
+        gBoardLabel.setScaleY(0.8);
+
+        gBoardPicture.setScaleX(0.8);
+        gBoardPicture.setScaleY(0.8);
+
+        gBoardCover.setScaleX(0.8);
+        gBoardCover.setScaleY(0.8);
+    }
 };
+
 
 GuessScene.prototype.ClearVars = function()
 {
@@ -306,6 +412,18 @@ GuessScene.prototype.ClearVars = function()
     {
         gResultCharButtonLabels.pop();
     }
+
+    gCurrentCCBView = null;
+    gAwardButton = null;
+    gInfoTipsCoverLabel = null;
+
+    gDrawerCat = null;
+    gBoardBG = null;
+    gBoardLabel = null;
+    gBoardPicture = null;
+    gBoardCover = null;
+
+    gCatHand = null;
 }
 
 ///// Events Handlers
@@ -414,7 +532,6 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         choosedCharStrings.push("");
     }
 
-
     choosedButtonCount = 0;
 
     for(i = 0; i < gInputCharButtons.length; i++)
@@ -432,7 +549,12 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 
         gInputCharButtons[i].onPressButton = function () {
 
-            //debugMsgOutput("Input");
+            debugMsgOutput("Input");
+
+            if(gCurrentGuessState != kGuessStateNormal)
+            {
+                return;
+            }
 
             if(choosedButtonCount < gResultCharButtons.length && this.isVisible())
             {
@@ -450,16 +572,22 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 
                 var sourceIndex = this.buttonIndexNumber;
 
+                gCurrentGuessState = kGuessStatePullingChar;
+                gCurrentChoosedCharButton = this;
+
                 choosedButtons[choosedIndex] = this;
                 choosedCharStrings[choosedIndex] = gInputCharButtonLabels[sourceIndex].getString();
                 choosedButtons[choosedIndex].sourceButtonIndex = sourceIndex;
+                gCurrentPushedResultButton = gResultCharButtons[choosedIndex];
                 choosedButtonCount++;
 
-                cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-                this.setVisible(false);
+                if(false)
+                {
+                    cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+                    this.setVisible(false);
+                }
 
-                gCurrentCCBView.updateInputCharsAndResultChars();
-
+                gCurrentCCBView.updateInputCharsAndResultCharsWithAnimation();
             }
         }
     }
@@ -470,7 +598,12 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         gResultCharButtons[i].buttonIndexNumber = i;
         gResultCharButtons[i].onPressButton = function () {
 
-            //debugMsgOutput("Result");
+            if(gCurrentGuessState != kGuessStateNormal)
+            {
+                return;
+            }
+
+            debugMsgOutput("Result");
 
             var choosedIndex = this.buttonIndexNumber;
 
@@ -481,6 +614,9 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 choosedButtons[choosedIndex] = emptyButton;
                 choosedCharStrings[choosedIndex] = "";
                 choosedButtonCount--;
+
+                gCurrentChoosedCharButton = null;
+                gCurrentPushedResultButton = this;
 
                 cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
                 gInputCharButtons[sourceIndex].setVisible(true);
@@ -517,12 +653,17 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
         gResultCharButtonLabels[i].setString(showString);
     }
 
+    gCurrentGuessState = kGuessStateNormal;
+    gCurrentChoosedCharButton = null;
+    gCurrentPushedResultButton = null;
+
     if(choosedButtonCount >= gResultCharButtons.length)
     {
         if(this.checkAnswer(resultString,gCurrentTestObj.content.rightanswer))
         {
             debugMsgOutput("答对了！");
             this.setupInputCharsAndResultChars();
+            gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("Win Timeline");
         }
         else
         {
@@ -543,3 +684,112 @@ GuessScene.prototype.clearInputCharsAndResultChars = function ()
         choosedCharStrings.pop();
     }
 };
+
+//动画回调
+GuessScene.prototype.setupSubCCBFileAnimationCallBacks = function()
+{
+    for(var i = 0; i < gResultCharButtons.length; ++i)
+    {
+        // 设置动画完成时的回调
+        gResultCharButtons[i].animationManager.setCompletedAnimationCallback(this, this.onSubCCBFileAnimationComplete);
+    }
+
+    gCatHand.animationManager.setCompletedAnimationCallback(this, this.onSubCCBFileAnimationComplete);
+}
+
+GuessScene.prototype.onSubCCBFileAnimationComplete = function()
+{
+    if(gCatHand != null && gCatHand != undefined && gCurrentPushedResultButton != null && gCurrentPushedResultButton!= undefined)
+    {
+        debugMsgOutput("[Hand Finished:] " + gCatHand.animationManager.getLastCompletedSequenceName()
+            + "\n[Result Char Finshed:] " +  gCurrentPushedResultButton.animationManager.getLastCompletedSequenceName()
+            + "\n[Current States:] " + parseInt(gCurrentGuessState)
+        );
+    }
+
+
+    if(gCatHand.animationManager.getLastCompletedSequenceName() == "Push Timeline")
+    {
+        if(gCurrentGuessState == kGuessStatePullingChar)
+        {
+            if(gCurrentChoosedCharButton != null && gCurrentChoosedCharButton != undefined)
+            {
+                gCurrentChoosedCharButton.setVisible(false);
+            }
+            else
+            {
+                debugMsgOutput("[Error] gCurrentChoosedCharButton = null!");
+            }
+            gCurrentChoosedCharButton = null;
+        }
+    }
+
+    if(/*gCatHand.animationManager.getLastCompletedSequenceName() == "Pull Timeline" ||*/ gCatHand.animationManager.getLastCompletedSequenceName() == "Hidden Timeline")
+    {
+        if(gCurrentGuessState == kGuessStatePullingChar)
+        {
+            var choosedResultButtonSize = gCurrentPushedResultButton.getContentSize();
+            var handPos = gCurrentPushedResultButton.convertToWorldSpace(cc.p(choosedResultButtonSize.width/2,choosedResultButtonSize.height/2));
+            gCatHand.setPosition(handPos);
+            gCatHand.animationManager.runAnimationsForSequenceNamed("Push Timeline");
+            gCurrentGuessState = kGuessStatePuttingResult;
+        }
+        else if(gCurrentGuessState == kGuessStatePuttingResult)
+        {
+            gCurrentPushedResultButton.animationManager.runAnimationsForSequenceNamed("Flipping Timeline");
+            //gCurrentPushedResultButton = null;
+        }
+    }
+
+    if(gCurrentPushedResultButton != null &&
+        gCurrentPushedResultButton.animationManager.getLastCompletedSequenceName() == "Flipping Timeline")
+    {
+        gCurrentCCBView.updateInputCharsAndResultChars();
+    }
+};
+
+GuessScene.prototype.updateInputCharsAndResultCharsWithAnimation = function ()
+{
+    var choosedCharButtonSize = gCurrentChoosedCharButton.getContentSize();
+    var handPos = gCurrentChoosedCharButton.convertToWorldSpace(cc.p(choosedCharButtonSize.width/2,choosedCharButtonSize.height/2));
+    gCatHand.setPosition(handPos);
+    gCatHand.animationManager.runAnimationsForSequenceNamed("Push Timeline");
+
+    /*
+    var i = 0;
+    var resultString = "";
+    for(i = 0; i < gResultCharButtons.length; i++)
+    {
+        var showString = "";
+        if(choosedButtons[i] != emptyButton)
+        {
+            showString = choosedCharStrings[i];
+            resultString = resultString + showString;
+        }
+
+        gResultCharButtonLabels[i].setString(showString);
+    }
+
+    gIsPickingCharNow = false;
+
+    if(choosedButtonCount >= gResultCharButtons.length)
+    {
+        if(this.checkAnswer(resultString,gCurrentTestObj.content.rightanswer))
+        {
+            debugMsgOutput("答对了！");
+            this.setupInputCharsAndResultChars();
+        }
+        else
+        {
+            debugMsgOutput("可惜答错了，再接再厉！");
+        }
+    }
+    */
+};
+
+GuessScene.prototype.onStartCatDrawingAnimation = function ()
+{
+    debugMsgOutput("On Start Drawing Animation!");
+    gDrawerCat.animationManager.runAnimationsForSequenceNamed("Draw Animation Timeline");
+};
+

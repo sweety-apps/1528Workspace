@@ -1,4 +1,4 @@
-var kDEBUGEnableAlertBox = false;
+var kDEBUGEnableAlertBox = false;//true;//
 
 function debugMsgOutput(msg)
 {
@@ -6,7 +6,7 @@ function debugMsgOutput(msg)
 
     if(kDEBUGEnableAlertBox)
     {
-        if(alert === undefined)
+        if(alert == undefined || alert == null)
         {
         }
         else

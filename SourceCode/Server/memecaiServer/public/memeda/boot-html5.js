@@ -12,9 +12,15 @@
         SingleEngineFile:'cocos2d-html5.min.js',
         appFiles:[
           'DebugUtils.js',
+    'FloorsScene/ChooseTestScene.js',
+    'FloorsScene/Floor.js',
+    'FloorsScene/WholeFloors.js',
     'GameDataAccess.js',
     'GuessScene.js',
     'MainScene.js',
+    'ChooseTestScene.js',
+    'Floor.js',
+    'WholeFloors.js',
 
             'resources-html5.js',
             'boot2-html5.js'

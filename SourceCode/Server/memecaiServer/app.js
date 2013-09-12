@@ -13,7 +13,7 @@ var express = require('express')
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 10080);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -34,9 +34,9 @@ app.get('/users', user.list);
 
 
 
-var test = require('./tools/excelxmlToTestJson');
+//var test = require('./tools/excelxmlToTestJson');
 //test.createTestPackageFromExcelXml(null,null,null);
-test.createTestPackageFromExcelXml('./tools/excelxmlToTestJsonFileSpace/Input.xml','./tools/excelxmlToTestJsonFileSpace/Output');
+//test.createTestPackageFromExcelXml('./tools/excelxmlToTestJsonFileSpace/Input.xml','./tools/excelxmlToTestJsonFileSpace/Output','audio');
 
 
 http.createServer(app).listen(app.get('port'), function(){
