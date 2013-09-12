@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -327,7 +327,7 @@
 			<dict>
 				<key>baseValue</key>
 				<array>
-					<string>UI/guess/answerButtonNormal3.png</string>
+					<string>UI/guess/answerButtonNormal1.png</string>
 					<string>Use regular file</string>
 				</array>
 				<key>name</key>
@@ -337,7 +337,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>UI/guess/answerButtonNormal3.png</string>
+					<string>UI/guess/answerButtonNormal1.png</string>
 				</array>
 			</dict>
 		</array>

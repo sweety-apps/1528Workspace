@@ -14,6 +14,9 @@ var gCurrentCCBView = null;
 var gInputCharButtons = new Array();
 var gInputCharButtonLabels = new Array();
 
+var gResultCharAllButtons = new Array();
+var gResultCharAllButtonLabels = new Array();
+
 var gResultCharButtons = new Array();
 var gResultCharButtonLabels = new Array();
 
@@ -131,6 +134,9 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 初始化操作的动画
     this.setupSubCCBFileAnimationCallBacks();
 
+    // 设置当前题目层数
+    this.SetTitleNum(98);
+
     // 启动时的动画
     debugMsgOutput("On Start Drawing Animation!");
     this.onStartCatDrawingAnimation();
@@ -239,6 +245,54 @@ function clearAllPressEventToSprite ()
 
 ///// Logic Methods
 
+
+GuessScene.prototype.SetTitleNum = function (num) {
+    if ( num >= 100 ) {
+        this.titleNum0.setVisible(true);
+        this.titleNum1.setVisible(true);
+        this.titleNum2.setVisible(true);
+
+        var num2 = Math.floor(num / 100);
+        var num1 = Math.floor( (num % 100) / 10);
+        var num0 = num % 10;
+
+        var image = "UI/guess/" + num2 + ".png";
+        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
+        this.titleNum2.setDisplayFrame(spriteFrame);
+
+        image = "UI/guess/" + num1 + ".png";
+        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
+        this.titleNum1.setDisplayFrame(spriteFrame);
+
+        image = "UI/guess/" + num0 + ".png";
+        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
+        this.titleNum0.setDisplayFrame(spriteFrame);
+    } else if ( num >= 10 ) {
+        this.titleNum0.setVisible(true);
+        this.titleNum1.setVisible(true);
+        this.titleNum2.setVisible(false);
+
+        var num1 = Math.floor( num / 10);
+        var num0 = num % 10;
+
+        var image = "UI/guess/" + num1 + ".png";
+        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
+        this.titleNum1.setDisplayFrame(spriteFrame);
+
+        image = "UI/guess/" + num0 + ".png";
+        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
+        this.titleNum0.setDisplayFrame(spriteFrame);
+    } else {
+        this.titleNum0.setVisible(false);
+        this.titleNum1.setVisible(true);
+        this.titleNum2.setVisible(false);
+
+        var image = "UI/guess/" + num + ".png";
+        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
+        this.titleNum1.setDisplayFrame(spriteFrame);
+    }
+}
+
 ///// This Scene Animation Callback Handlers
 GuessScene.prototype.onAnimationComplete = function()
 {
@@ -270,8 +324,106 @@ GuessScene.prototype.onAnimationComplete = function()
     }
 };
 
-GuessScene.prototype.InitVars = function()
+GuessScene.prototype.InitInputAndResultChar = function(rightanswer, inputkeys)
 {
+    if ( gResultCharAllButtons.length == 0 )
+    {
+        gResultCharAllButtons[0] = this.charButtonResult0;
+        gResultCharAllButtonLabels[0] = this.charLblResult0;
+
+        gResultCharAllButtons[1] = this.charButtonResult1;
+        gResultCharAllButtonLabels[1] = this.charLblResult1;
+
+        gResultCharAllButtons[2] = this.charButtonResult2;
+        gResultCharAllButtonLabels[2] = this.charLblResult2;
+
+        gResultCharAllButtons[3] = this.charButtonResult3;
+        gResultCharAllButtonLabels[3] = this.charLblResult3;
+
+        gResultCharAllButtons[4] = this.charButtonResult4;
+        gResultCharAllButtonLabels[4] = this.charLblResult4;
+
+        gResultCharAllButtons[5] = this.charButtonResult5;
+        gResultCharAllButtonLabels[5] = this.charLblResult5;
+    }
+
+    // result
+    while(gResultCharButtons.length > 0)
+    {
+        gResultCharButtons.pop();
+    }
+    while(gResultCharButtonLabels.length > 0)
+    {
+        gResultCharButtonLabels.pop();
+    }
+
+    for (var i = 0; i < gResultCharAllButtons.length; i ++)
+    {
+        gResultCharAllButtons[i].setVisible(false);
+        gResultCharAllButtonLabels[i].setVisible(false);
+    }
+
+    var nChars = rightanswer.length;    // 答案的字符数
+    for ( var i = 0; i < nChars && i < 6; i ++ )
+    {
+        gResultCharButtons[i] = gResultCharAllButtons[i];
+        gResultCharButtonLabels[i] = gResultCharAllButtonLabels[i];
+    }
+
+    this.ResetResultButtonsPosition();
+}
+
+GuessScene.prototype.ResetResultButtonsPosition = function()
+{
+    var btnPosArray = new Array(94, 63.5, 38, 14, -3.5, -27.0);
+    var btnSpArray = new Array(0, 64, 58, 54, 49, 49);
+
+    var labelPosArray = new Array(94, 63.5, 38, 14, -3.5, -27.0);
+    var labelSpArray = new Array(0, 64, 58, 54, 49, 49);
+
+    var btnPos = btnPosArray[gResultCharButtons.length - 1];
+    var btnSp = btnSpArray[gResultCharButtons.length - 1];
+
+    var labelPos = labelPosArray[gResultCharButtons.length - 1];
+    var labelSp = labelSpArray[gResultCharButtons.length - 1];
+
+    for (var i = 0; i < gResultCharButtons.length; i ++)
+    {
+        gResultCharButtons[i].setVisible(true);
+        gResultCharButtonLabels[i].setVisible(true);
+
+        var pos = cc.p(btnPos + i * btnSp, gResultCharButtons[i].getPosition().y);
+        gResultCharButtons[i].setPosition(pos);
+
+        pos = cc.p(labelPos + i * labelSp, gResultCharButtonLabels[i].getPosition().y);
+        gResultCharButtonLabels[i].setPosition(pos);
+    }
+}
+
+GuessScene.prototype.InitVars = function()
+{    
+    // Drawer Cat
+    gDrawerCat = this.drawerCat;
+
+    // Test Board
+    gBoardBG = this.boardBG;
+    gBoardLabel = this.questionLbl;
+    gBoardPicture = this.contentPicture;
+    gBoardCover = this.boardCover;
+
+    // Other Buttons
+    gAwardButton = this.awardButton;
+
+    // 猫爪
+    gCatHand = this.catHand;
+
+	// 初始化背景,给背景和文字框选择合适的背景
+    gFlippingIndex = 1;
+    this.bgLayer.controller.setBkg(2, 3);
+    for (var i = 0; i < gResultCharButtons.length; i ++) {
+        gResultCharButtons[i].controller.setImage(gFlippingIndex);
+    }
+    
     // Inputs
     gInputCharButtons[0] = this.charButton0;
     gInputCharButtonLabels[0] = this.charLbl0;
@@ -326,41 +478,10 @@ GuessScene.prototype.InitVars = function()
 
     gInputCharButtons[17] = this.charButton17;
     gInputCharButtonLabels[17] = this.charLbl17;
-
-    // Results
-    gResultCharButtons[0] = this.charButtonResult0;
-    gResultCharButtonLabels[0] = this.charLblResult0;
-
-    gResultCharButtons[1] = this.charButtonResult1;
-    gResultCharButtonLabels[1] = this.charLblResult1;
-
-    gResultCharButtons[2] = this.charButtonResult2;
-    gResultCharButtonLabels[2] = this.charLblResult2;
-
-    gResultCharButtonLabels[0].setString("大");
-
-    // Drawer Cat
-    gDrawerCat = this.drawerCat;
-
-    // Test Board
-    gBoardBG = this.boardBG;
-    gBoardLabel = this.questionLbl;
-    gBoardPicture = this.contentPicture;
-    gBoardCover = this.boardCover;
-
-    // Other Buttons
-    gAwardButton = this.awardButton;
-
-    // 猫爪
-    gCatHand = this.catHand;
-
-	// 初始化背景,给背景和文字框选择合适的背景
-    gFlippingIndex = 3;
-    this.bgLayer.controller.setBkg(3, 4);
-    for (var i = 0; i < gResultCharButtons.length; i ++) {
-        gResultCharButtons[i].controller.setImage(gFlippingIndex);
-    }
-
+    
+    gInputCharButtons[17] = this.charButton17;
+    gInputCharButtonLabels[17] = this.charLbl17;
+   
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
 
@@ -496,7 +617,7 @@ var gCurrentTestObj = {
     content:{
         inputkeys:"你打的没土小水话上下题白兔来草木宫说",
         inform:"打一种动物",
-        rightanswer:"小白兔",
+        rightanswer:"小白兔123",
         title:"小白＋小白＝？",
         imageurl:"",
         musicurl:""
@@ -521,6 +642,69 @@ GuessScene.prototype.checkAnswer = function (inputString, answerString)
     return false;
 };
 
+function InsertCharToArray(arr, inputKey)
+{
+    var find = false;
+    for (var i = 0; i < arr.length; i ++) {
+        if ( arr[i] == inputKey ) {
+            find = true;
+            break;
+        }
+    }
+
+    if ( !find ) {
+        arr.push(inputKey);
+    }
+}
+
+function MakeInputKeys(rightanswer, inputkeys) {
+    var charArray = new Array();
+    var ret = "";
+    for (var i = 0; i < rightanswer.length; i ++) {
+        charArray.push(rightanswer[i]);
+    }
+    for (var i = 0; i < inputkeys.length; i ++) {
+        InsertCharToArray(charArray, inputkeys[i]);
+        if ( charArray.length >= 18 ) {
+            break;
+        }
+    }
+    // 添加无关干扰词
+    var other = new Array('三', '于', '干', '亏', '士', '工', '土',
+        '才','木','五','支','厅','不','太','寸','下','大','丈','与','万','上',
+        '小','口','巾','山','千','丰','王','井','开','夫','天','无','元','专',
+        '云','扎','内','水','见','午','牛','手','气','升');
+    // 随机排序
+    other.sort(function(a,b){
+        if ( Math.random() > 0.5 ) {
+            return 1;
+        }
+        return -1;
+    });
+
+    if ( charArray.length < 18 )
+        for (var i = 0; i < other.length; i ++) {
+        InsertCharToArray(charArray, other[i]);
+        if ( charArray.length >= 18 ) {
+            break;
+        }
+    }
+
+    // 随机排序
+    charArray.sort(function(a,b){
+        if ( Math.random() > 0.5 ) {
+            return 1;
+        }
+        return -1;
+    });
+
+    for (var i = 0; i < charArray.length; i ++) {
+        ret = ret + charArray[i];
+    }
+
+    return ret;
+}
+
 GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 {
     gCurrentTestObj = testObj;
@@ -530,6 +714,10 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     var i = 0;
     var inputKeys = testObj.content.inputkeys;
     gCurrentCCBView.clearInputCharsAndResultChars();
+
+    // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为18
+    inputKeys = MakeInputKeys(gCurrentTestObj.content.rightanswer, inputKeys);
+
     for(i = 0; i < gInputCharButtons.length; i++)
     {
         gInputCharButtonLabels[i].setString(inputKeys.substring(i,i+1));
@@ -601,6 +789,8 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
             }
         }
     }
+
+	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.content.rightanswer, gCurrentTestObj.content.inputkeys);
 
     for(i = 0; i < gResultCharButtons.length; i++)
     {

@@ -70,7 +70,7 @@ var gTests0 = {
     content:{
         inputkeys:"水下题菊来草木宫说花小",
         inform:"一种给力植物",
-        rightanswer:"小菊花",
+        rightanswer:"小菊花123",
         title:"向大菊花小时候是什么？",
         imageurl:"",
         musicurl:""
