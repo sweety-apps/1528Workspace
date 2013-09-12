@@ -2,6 +2,8 @@
 
 require("jsb.js");
 
+require("answerBlank.js");
+require("BGLayer.js");
 require("DebugUtils.js");
 require("GameDataAccess.js");
 require("GuessScene.js");

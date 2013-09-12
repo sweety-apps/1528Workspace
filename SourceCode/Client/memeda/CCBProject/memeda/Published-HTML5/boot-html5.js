@@ -11,7 +11,9 @@
         //engineDir:'../../../../cocos2d/',
         SingleEngineFile:'cocos2d-html5.min.js',
         appFiles:[
-          'DebugUtils.js',
+          'answerBlank.js',
+    'BGLayer.js',
+    'DebugUtils.js',
     'GameDataAccess.js',
     'GuessScene.js',
     'MainScene.js',

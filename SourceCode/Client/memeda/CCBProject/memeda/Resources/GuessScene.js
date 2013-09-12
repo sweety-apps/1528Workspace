@@ -18,7 +18,6 @@ var gResultCharButtons = new Array();
 var gResultCharButtonLabels = new Array();
 
 var gAwardButton = null;
-var gInfoTipsCoverLabel = null;
 
 var gDrawerCat = null;
 var gBoardBG = null;
@@ -32,7 +31,7 @@ var gCurrentChoosedCharButton = null;
 var gCurrentPushedResultButton = null;
 
 var gCurrentGuessState = kGuessStateNormal;
-
+var gFlippingIndex = 1;
 //
 // GuessScene class
 //
@@ -84,7 +83,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     this.rootNode.onAccelerometer = function( event) {
         this.controller.onAccelerometer(event);
     };
-
+    
     // Start playing looped background music
     cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
     cc.AudioEngine.getInstance().setMusicVolume(0.5);
@@ -97,7 +96,15 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 
     // 设置各种按钮的回调
     gCurrentCCBView = this;
-
+    
+    setupPressEventToSprite(this.rootLayer,this.wechatButton, this.wechatButton);
+    this.wechatButton.onPressButton = function () {
+    }
+    
+    setupPressEventToSprite(this.rootLayer,this.awardButton, this.awardButton);
+    this.awardButton.onPressButton = function () {
+    }
+    
     // returnButton Event
     setupPressEventToSprite(this.rootLayer,this.returnButton,this.returnButton);
     this.returnButton.onPressButton = function (){
@@ -106,7 +113,9 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
         gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
         gPushedButton = kReturnButtonPushed;
     }
-
+    
+    
+    
     // aboutButton Event
     /*
     setupPressEventToSprite(this.rootLayer,this.aboutButton,this.aboutButton);
@@ -115,7 +124,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     }
     //
       */
-
+    
     // 初始化输入等UI
     this.setupInputCharsAndResultChars();
 
@@ -243,6 +252,7 @@ GuessScene.prototype.onAnimationComplete = function()
         gCurrentCCBView.ClearVars();
         var scene = cc.BuilderReader.loadAsScene("MainScene.ccbi");
         cc.Director.getInstance().replaceScene(scene);
+      
         //gAudioEngine.stopMusic();
     }
 
@@ -251,7 +261,7 @@ GuessScene.prototype.onAnimationComplete = function()
     if(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName() == "Drawing Animation Timeline")
     {
         gAwardButton.animationManager.runAnimationsForSequenceNamed("Flipping Timeline");
-        gInfoTipsCoverLabel.animationManager.runAnimationsForSequenceNamed("Shining Timeline");
+        //gInfoTipsCoverLabel.animationManager.runAnimationsForSequenceNamed("Shining Timeline");
     }
 
     if(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName() == "Win Timeline")
@@ -341,11 +351,15 @@ GuessScene.prototype.InitVars = function()
     // Other Buttons
     gAwardButton = this.awardButton;
 
-    // 刮刮提示
-    gInfoTipsCoverLabel = this.guaguaCoverTextLabel;
-
     // 猫爪
     gCatHand = this.catHand;
+
+	// 初始化背景,给背景和文字框选择合适的背景
+    gFlippingIndex = 3;
+    this.bgLayer.controller.setBkg(3, 4);
+    for (var i = 0; i < gResultCharButtons.length; i ++) {
+        gResultCharButtons[i].controller.setImage(gFlippingIndex);
+    }
 
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
@@ -415,7 +429,6 @@ GuessScene.prototype.ClearVars = function()
 
     gCurrentCCBView = null;
     gAwardButton = null;
-    gInfoTipsCoverLabel = null;
 
     gDrawerCat = null;
     gBoardBG = null;
@@ -466,9 +479,6 @@ GuessScene.prototype.onMouseMoved = function ( event )
 
 GuessScene.prototype.onMouseUp = function ( event )
 {
-    //this.onPressButton();
-    //this.prototype.onPressButton();
-    //this.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
 };
 
 // Accelerometer
@@ -627,7 +637,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         }
     }
 
-    guessScene.questionLbl.setString(testObj.content.title);
+    //guessScene.questionLbl.setString(testObj.content.title);
 };
 
 GuessScene.prototype.setupInputCharsAndResultChars = function ()
@@ -707,7 +717,6 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
         );
     }
 
-
     if(gCatHand.animationManager.getLastCompletedSequenceName() == "Push Timeline")
     {
         if(gCurrentGuessState == kGuessStatePullingChar)
@@ -736,13 +745,13 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
         }
         else if(gCurrentGuessState == kGuessStatePuttingResult)
         {
-            gCurrentPushedResultButton.animationManager.runAnimationsForSequenceNamed("Flipping Timeline");
+            gCurrentPushedResultButton.animationManager.runAnimationsForSequenceNamed("Flipping" + gFlippingIndex + " Timeline");
             //gCurrentPushedResultButton = null;
         }
     }
 
     if(gCurrentPushedResultButton != null &&
-        gCurrentPushedResultButton.animationManager.getLastCompletedSequenceName() == "Flipping Timeline")
+        gCurrentPushedResultButton.animationManager.getLastCompletedSequenceName() == "Flipping" + gFlippingIndex + " Timeline")
     {
         gCurrentCCBView.updateInputCharsAndResultChars();
     }
@@ -790,6 +799,6 @@ GuessScene.prototype.updateInputCharsAndResultCharsWithAnimation = function ()
 GuessScene.prototype.onStartCatDrawingAnimation = function ()
 {
     debugMsgOutput("On Start Drawing Animation!");
-    gDrawerCat.animationManager.runAnimationsForSequenceNamed("Draw Animation Timeline");
+    //gDrawerCat.animationManager.runAnimationsForSequenceNamed("Draw Animation Timeline");
 };
 
