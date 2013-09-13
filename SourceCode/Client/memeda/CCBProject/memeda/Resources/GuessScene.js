@@ -23,10 +23,10 @@ var gResultCharButtonLabels = new Array();
 var gAwardButton = null;
 
 var gDrawerCat = null;
-var gBoardBG = null;
-var gBoardLabel = null;
-var gBoardPicture = null;
-var gBoardCover = null;
+//var gBoardBG = null;
+//var gBoardLabel = null;
+//var gBoardPicture = null;
+//var gBoardCover = null;
  
 var gCatHand = null;
 
@@ -406,10 +406,10 @@ GuessScene.prototype.InitVars = function()
     gDrawerCat = this.drawerCat;
 
     // Test Board
-    gBoardBG = this.boardBG;
-    gBoardLabel = this.questionLbl;
-    gBoardPicture = this.contentPicture;
-    gBoardCover = this.boardCover;
+    //gBoardBG = this.boardBG;
+    //gBoardLabel = this.questionLbl;
+    //gBoardPicture = this.contentPicture;
+    //gBoardCover = this.boardCover;
 
     // Other Buttons
     gAwardButton = this.awardButton;
@@ -478,9 +478,6 @@ GuessScene.prototype.InitVars = function()
 
     gInputCharButtons[17] = this.charButton17;
     gInputCharButtonLabels[17] = this.charLbl17;
-    
-    gInputCharButtons[17] = this.charButton17;
-    gInputCharButtonLabels[17] = this.charLbl17;
 
     this.coinNum.setString("" + CoinMgr_GetCount());
     CoinMgr_Register(function (coin, add) {
@@ -497,36 +494,27 @@ GuessScene.prototype.InitVars = function()
 
     // 针对非iphone5屏幕做缩小适配
     if(screenHeight / screenWidth < 1136/640)
-    {
+    {   
         for(var i = 0; i < gInputCharButtons.length; ++i)
         {
             gInputCharButtons[i].setScaleX(0.8);
             gInputCharButtons[i].setScaleY(0.8);
         }
 
-        for(var i = 0; i < gResultCharButtons.length; ++i)
-        {
-            gResultCharButtons[i].setScaleX(0.8);
-            gResultCharButtons[i].setScaleY(0.8);
-
-            gResultCharButtonLabels[i].setScaleX(0.8);
-            gResultCharButtonLabels[i].setScaleY(0.8);
-        }
-
         gDrawerCat.setScaleX(0.8);
         gDrawerCat.setScaleY(0.8);
+        
+        //gBoardBG.setScaleX(0.8);
+        //gBoardBG.setScaleY(0.8);
 
-        gBoardBG.setScaleX(0.8);
-        gBoardBG.setScaleY(0.8);
+        //gBoardLabel.setScaleX(0.8);
+        //gBoardLabel.setScaleY(0.8);
 
-        gBoardLabel.setScaleX(0.8);
-        gBoardLabel.setScaleY(0.8);
+        //gBoardPicture.setScaleX(0.8);
+        //gBoardPicture.setScaleY(0.8);
 
-        gBoardPicture.setScaleX(0.8);
-        gBoardPicture.setScaleY(0.8);
-
-        gBoardCover.setScaleX(0.8);
-        gBoardCover.setScaleY(0.8);
+        //gBoardCover.setScaleX(0.8);
+        //gBoardCover.setScaleY(0.8);
     }
 };
 
@@ -557,10 +545,10 @@ GuessScene.prototype.ClearVars = function()
     gAwardButton = null;
 
     gDrawerCat = null;
-    gBoardBG = null;
-    gBoardLabel = null;
-    gBoardPicture = null;
-    gBoardCover = null;
+    //gBoardBG = null;
+    //gBoardLabel = null;
+    //gBoardPicture = null;
+    //gBoardCover = null;
 
     gCatHand = null;
 }

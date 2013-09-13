@@ -13,6 +13,7 @@
         appFiles:[
           'answerBlank.js',
     'BGLayer.js',
+    'CoinMgr.js',
     'DebugUtils.js',
     'GameDataAccess.js',
     'GuessScene.js',

@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -50,8 +50,8 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>0.0</real>
-									<integer>5</integer>
+									<real>480</real>
+									<integer>1</integer>
 								</array>
 							</dict>
 							<dict>
@@ -96,8 +96,8 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0</real>
-							<integer>4</integer>
+							<real>568</real>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -107,9 +107,9 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>100</real>
-							<real>100</real>
-							<integer>1</integer>
+							<real>320</real>
+							<real>568</real>
+							<integer>5</integer>
 						</array>
 					</dict>
 					<dict>
@@ -119,8 +119,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.0</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -133,7 +133,7 @@
 							<real>1</real>
 							<real>1</real>
 							<false/>
-							<integer>0</integer>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -231,6 +231,22 @@
 										<real>77</real>
 									</array>
 								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>time</key>
+									<real>13.366666793823242</real>
+									<key>type</key>
+									<integer>3</integer>
+									<key>value</key>
+									<array>
+										<real>-50.3125</real>
+										<real>76.64788818359375</real>
+									</array>
+								</dict>
 							</array>
 							<key>name</key>
 							<string>position</string>
@@ -265,8 +281,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-50</real>
-							<real>77</real>
+							<real>-50.3125</real>
+							<real>76.64788818359375</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -10619,8 +10635,8 @@
 						<key>value</key>
 						<array>
 							<real>205</real>
-							<real>484</real>
-							<integer>0</integer>
+							<real>84</real>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -10803,7 +10819,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1.0666667222976685</real>
+			<real>13.366666793823242</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -10835,7 +10851,7 @@
 			<key>name</key>
 			<string>Drawing Animation Timeline</string>
 			<key>offset</key>
-			<real>0.625</real>
+			<real>0.0625</real>
 			<key>position</key>
 			<real>2.5</real>
 			<key>resolution</key>

@@ -70,7 +70,7 @@ var gTests0 = {
     content:{
         inputkeys:"水下题菊来草木宫说花小",
         inform:"一种给力植物",
-        rightanswer:"小菊花",
+        rightanswer:"小菊花123",
         title:"向大菊花小时候是什么？",
         imageurl:"",
         musicurl:""
@@ -94,4 +94,27 @@ function requestTestDataObject(succeedCallback,failedCallback,context)
         requestJSONDataObject(url,succeedCallback,failedCallback,context);
     }
     ++gCurrentTestIndex;
+}
+
+//读文件测试代码
+function testReadFile()
+{
+	if(cc.FileUtils.getInstance().isFileExist("./TestCCB/Output/1"))
+    {
+        cc.log("<<FILE LOADED>> Load Succeed!<<FILE LOADED>>");
+        var data = cc.FileUtils.getInstance().getStringFromFile("./TestCCB/Output/2");
+        //data = cc.FileUtils.getInstance().getFileData("./TestCCB/Output.zip","r",0);
+        //data = cc.FileUtils.getInstance().getFileDataFromZip("./TestCCB/Output.zip","Output/1",0);
+        result = "一二三" + data;
+        /*
+        for(var i = 0; i < data.length; i++) {
+            result = result + String.fromCharCode(data[i]);
+        }*/
+        //result = new String(result.getBytes("iso-8859-1"),"utf-8");
+        cc.log(result);
+    }
+    else
+    {
+        cc.log("[FILE LOADING]Load Failed![FILE LOADING]");
+    }
 }
