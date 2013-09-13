@@ -23,7 +23,7 @@
 	<key>javascriptBased</key>
 	<true/>
 	<key>javascriptMainCCB</key>
-	<string>GuessScene</string>
+	<string>ChooseTestsScene</string>
 	<key>needRepublish</key>
 	<false/>
 	<key>onlyPublishCCBs</key>
@@ -35,9 +35,9 @@
 	<key>publishDirectoryHTML5</key>
 	<string>Published-HTML5</string>
 	<key>publishEnabledAndroid</key>
-	<false/>
+	<true/>
 	<key>publishEnabledHTML5</key>
-	<false/>
+	<true/>
 	<key>publishEnablediPhone</key>
 	<true/>
 	<key>publishResolutionHTML5_height</key>
@@ -73,6 +73,10 @@
 		<dict>
 			<key>path</key>
 			<string>Resources</string>
+		</dict>
+		<dict>
+			<key>path</key>
+			<string>Scenes/FloorsScene</string>
 		</dict>
 	</array>
 	<key>versionStr</key>

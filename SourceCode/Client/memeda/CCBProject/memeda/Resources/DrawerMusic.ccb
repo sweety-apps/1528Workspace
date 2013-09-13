@@ -506,8 +506,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 		<key>seqExpanded</key>
 		<true/>
 	</dict>
@@ -583,9 +581,9 @@
 			<key>name</key>
 			<string>Default Timeline copy</string>
 			<key>offset</key>
-			<real>0.6796875</real>
+			<real>0.0</real>
 			<key>position</key>
-			<real>2</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

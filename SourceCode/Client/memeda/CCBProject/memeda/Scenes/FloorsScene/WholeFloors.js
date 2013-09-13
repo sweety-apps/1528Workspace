@@ -2,6 +2,9 @@
 // WholeFloors class
 //
 
+var kFloorStateWaiting = 0;
+var kFloorStateCatMoving = 1;
+
 var gTestFloor = [
     {bg:"floor_blue",bottom:"floorBottom_blue",
         floorNum:"1F",specText:"",offsetY:0,
@@ -170,8 +173,9 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.rootLayer.setContentSize(cc.size(width,this.CalculateHeight()+this.startFloorOffsetY));
 
     //初始化cat的位置
+    this.sceneState = kFloorStateWaiting;
     this.currentCatStayAtDoorNum = 1;
-    this.doLiftAnimationTo(offY,this.currentCatStayAtDoorNum,false);
+    this.doLiftAnimationTo(offY,this.currentCatStayAtDoorNum,false,null,null);
 };
 
 WholeFloors.prototype.UninitWholeFloors = function ()
@@ -259,34 +263,72 @@ WholeFloors.prototype.onClickedDoor = function(floor, doorNum)
 {
     var offsetY = floor.rootNode.getPositionY();
     debugMsgOutput("Clicked Floor Y="+offsetY+" doorNum="+doorNum);
-    this.doLiftAnimationTo(offsetY,doorNum,true);
+    this.doLiftAnimationTo(offsetY,doorNum,true,this.onFinishedDoLiftAnimation,this);
 }
 
-WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimation)
+WholeFloors.prototype.onFinishedDoLiftAnimation = function()
 {
-    this.onCatAndLiftAnimationCompleted = function() {
-        if(this.catAndLift.animationManager.getLastCompletedSequenceName() == "Lift Up Timeline")
+    var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+    cc.Director.getInstance().replaceScene(scene);
+};
+
+WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimation,callBack,target)
+{
+    if(this.sceneState != kFloorStateCatMoving)
+    {
+        this.sceneState = kFloorStateCatMoving;
+        if(callBack != null && callBack != undefined)
         {
-            this.onMovedLiftCallback = function(data)
-            {
-                this.catAndLift.animationManager.runAnimationsForSequenceNamed("Leave Lift Timeline"+this.currentCatStayAtDoorNum);
-            }
-            this.catAndLift.runAction(
-                cc.Sequence.create(new Array(
-                    cc.MoveTo.create(0.2,cc.p(this.catAndLift.getPositionX(),offsetY)),
-                    cc.CallFunc.create(this.onMovedLiftCallback, this,null)
-                ))
-            );
+            this.onCatMovedToDoorCallback = callBack;
+            this.onCatMovedToDoorCallbackTarget = target;
         }
-    };
-    this.catAndLift.animationManager.setCompletedAnimationCallback(this, this.onCatAndLiftAnimationCompleted);
-    if(showAnimation)
-    {
-        this.catAndLift.animationManager.runAnimationsForSequenceNamed("Go Lift Timeline"+this.currentCatStayAtDoorNum);
-    }
-    this.currentCatStayAtDoorNum = doorNum;
-    if(!showAnimation)
-    {
-        this.catAndLift.animationManager.runAnimationsForSequenceNamed("Stay Timeline"+this.currentCatStayAtDoorNum);
+        else
+        {
+            this.onCatMovedToDoorCallback = null;
+            this.onCatMovedToDoorCallbackTarget = null;
+        }
+
+        this.onCatAndLiftAnimationCompleted = function() {
+            if(this.catAndLift.animationManager.getLastCompletedSequenceName() == "Lift Up Timeline")
+            {
+                this.onMovedLiftCallback = function(data)
+                {
+                    this.catAndLift.animationManager.runAnimationsForSequenceNamed("Leave Lift Timeline"+this.currentCatStayAtDoorNum);
+                }
+                this.catAndLift.runAction(
+                    cc.Sequence.create(new Array(
+                        cc.MoveTo.create(0.2,cc.p(this.catAndLift.getPositionX(),offsetY)),
+                        cc.CallFunc.create(this.onMovedLiftCallback, this,null)
+                    ))
+                );
+            }
+            else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Stay Timeline") >= 0)
+            {
+                this.sceneState = kFloorStateWaiting;
+                if(this.onCatMovedToDoorCallback != null && this.onCatMovedToDoorCallback != undefined)
+                {
+                    if(this.onCatMovedToDoorCallbackTarget != null && this.onCatMovedToDoorCallbackTarget != undefined)
+                    {
+                        this.onCatMovedToDoorCallbackTarget.tmpMovedFinishedCallBack = this.onCatMovedToDoorCallback;
+                        this.onCatMovedToDoorCallbackTarget.tmpMovedFinishedCallBack();
+                    }
+                    else
+                    {
+                        this.onCatMovedToDoorCallback();
+                    }
+                }
+            }
+        };
+        this.catAndLift.animationManager.setCompletedAnimationCallback(this, this.onCatAndLiftAnimationCompleted);
+        if(showAnimation)
+        {
+            this.catAndLift.animationManager.runAnimationsForSequenceNamed("Go Lift Timeline"+this.currentCatStayAtDoorNum);
+        }
+        this.currentCatStayAtDoorNum = doorNum;
+        if(!showAnimation)
+        {
+            this.catAndLift.animationManager.runAnimationsForSequenceNamed("Stay Timeline"+this.currentCatStayAtDoorNum);
+            this.sceneState = kFloorStateWaiting;
+        }
     }
 }
