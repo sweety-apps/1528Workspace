@@ -3,7 +3,7 @@ var CCBMainScene = cc.Scene.extend({
         this._super();
 
         cc.BuilderReader.setResolutionScale(1);
-        var node = cc.BuilderReader.load("ChooseTestsScene.ccbi");
+        var node = cc.BuilderReader.load("GuessScene.ccbi");
 
         this.addChild(node);
         this.setPosition(cc.p(0, 0));

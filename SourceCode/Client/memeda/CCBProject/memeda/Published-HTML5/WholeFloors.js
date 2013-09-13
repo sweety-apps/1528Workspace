@@ -273,7 +273,7 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimatio
             }
             this.catAndLift.runAction(
                 cc.Sequence.create(new Array(
-                    cc.MoveTo.create(0.4,cc.p(this.catAndLift.getPositionX(),offsetY)),
+                    cc.MoveTo.create(0.2,cc.p(this.catAndLift.getPositionX(),offsetY)),
                     cc.CallFunc.create(this.onMovedLiftCallback, this,null)
                 ))
             );
