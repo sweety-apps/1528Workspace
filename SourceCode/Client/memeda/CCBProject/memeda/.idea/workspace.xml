@@ -44,7 +44,7 @@
       <file leaf-file-name="GameDataAccess.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources/GameDataAccess.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="51" selection-start="159" selection-end="159" vertical-scroll-proportion="0.21937843">
+            <state line="16" column="17" selection-start="417" selection-end="417" vertical-scroll-proportion="0.43875685">
               <folding />
             </state>
           </provider>
@@ -72,9 +72,7 @@
         <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="111" column="27" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,8 +140,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="150" />
-    <option name="y" value="122" />
+    <option name="x" value="20" />
+    <option name="y" value="28" />
     <option name="width" value="1260" />
     <option name="height" value="718" />
   </component>
@@ -234,8 +232,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Server/memecaiServer" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -275,7 +273,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="150" y="122" width="1260" height="718" extended-state="0" />
+    <frame x="20" y="28" width="1260" height="718" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -359,12 +357,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Resources/DebugUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="23" selection-start="53" selection-end="67" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="748" column="45" selection-start="21779" selection-end="21779" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -385,11 +388,6 @@
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="755" column="20" selection-start="11518" selection-end="11518" vertical-scroll-proportion="0.46341464" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Published-HTML5/cocos2d-html5.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1720" column="477" selection-start="863030" selection-end="863030" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.ccb">
@@ -447,9 +445,7 @@
     <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="111" column="27" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -462,7 +458,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/GameDataAccess.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="51" selection-start="159" selection-end="159" vertical-scroll-proportion="0.21937843">
+        <state line="16" column="17" selection-start="417" selection-end="417" vertical-scroll-proportion="0.43875685">
           <folding />
         </state>
       </provider>
