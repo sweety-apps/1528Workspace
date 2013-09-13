@@ -86,10 +86,6 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     this.rootNode.onAccelerometer = function( event) {
         this.controller.onAccelerometer(event);
     };
-    
-    // Start playing looped background music
-    cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
-    cc.AudioEngine.getInstance().setMusicVolume(0.5);
 
     // 初始化按钮变量
     this.InitVars();
@@ -737,6 +733,10 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         choosedCharStrings.push("");
     }
 
+    // 播放音乐
+    cc.AudioEngine.getInstance().playMusic("problem/" + gCurrentTestObj.content.musicUrl + ".mp3",true);
+    cc.AudioEngine.getInstance().setMusicVolume(0.5);
+    
     choosedButtonCount = 0;
 
     for(i = 0; i < gInputCharButtons.length; i++)
@@ -792,7 +792,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 choosedButtonCount++;
 
                 if(false)
-                {
+                {   // 播放音乐
                     cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
                     this.setVisible(false);
                 }
