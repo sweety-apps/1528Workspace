@@ -159,7 +159,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
     ScriptingCore::getInstance()->runScript("main.js");
     
-    testUnzipFiles();
+    //testUnzipFiles();
     
     return true;
 }

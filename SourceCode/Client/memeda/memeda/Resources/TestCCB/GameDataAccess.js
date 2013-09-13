@@ -2,6 +2,32 @@
  * 获取游戏数据
  */
 
+var gProblemIndex = new Array();
+
+function Problem_Initialize() {
+	// 读取索引文件getWritablePath
+	var data = cc.FileUtils.getInstance().getStringFromFile("./CoinMgr.js");
+	debugMsgOutput("afaklsdfjklsjf:" + cc.FileUtils.getInstance().getWriteablePath());
+}
+
+function Problem_GetCount() {
+	
+}
+
+// 返回题目的基本信息
+// obj.id,obj.type,obj.level,obj.tag
+function Problem_GetBaseInfo(index) {
+	
+}
+
+// 返回题目的详细信息
+function Problem_RequestInfo(index, callback, context){
+
+}
+
+Problem_Initialize();
+
+
 //var kDataServerHost = "www.mytestserver.com";
 var kDataServerHost = "223.4.33.112";
 //var kDataServerHost = "127.0.0.1";

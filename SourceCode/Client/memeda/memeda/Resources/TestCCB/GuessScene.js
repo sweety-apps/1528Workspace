@@ -501,15 +501,6 @@ GuessScene.prototype.InitVars = function()
             gInputCharButtons[i].setScaleY(0.8);
         }
 
-        for(var i = 0; i < gResultCharButtons.length; ++i)
-        {
-            gResultCharButtons[i].setScaleX(0.8);
-            gResultCharButtons[i].setScaleY(0.8);
-
-            gResultCharButtonLabels[i].setScaleX(0.8);
-            gResultCharButtonLabels[i].setScaleY(0.8);
-        }
-         
         gDrawerCat.setScaleX(0.8);
         gDrawerCat.setScaleY(0.8);
         

@@ -29,15 +29,20 @@ function encrypt(str,secret) {
 
 ///////////////////////
 
-// 把 excel 的大 xml 解析成一个2元数组
-function convertXmlObjectToTable(xmlObject)
+/**
+ * 把 excel 的大 xml 解析成一个2元数组,
+ @param {Object} [xmlObject]  //xml对象
+ @param {int} [sheetNum] //转换第几个Sheet
+ @return {Array(Array)} [table]  //2元数组
+ */
+function convertXmlObjectToTable(xmlObject,sheetNum)
 {
     var table = new Array();
     //colCount = xmlObject.Workbook.Worksheet.array[0].;
-    var tableAttr = xmlObject.Workbook.Worksheet.array[0].Table.attributes();////ss:ExpandedColumnCount;
+    var tableAttr = xmlObject.Workbook.Worksheet.array[sheetNum].Table.attributes();////ss:ExpandedColumnCount;
     var colCountString = tableAttr["ss:ExpandedColumnCount"];
     var colCount = parseInt(colCountString);
-    var lineCount = xmlObject.Workbook.Worksheet.array[0].Table.Row.array.length;
+    var lineCount = xmlObject.Workbook.Worksheet.array[sheetNum].Table.Row.array.length;
 
     try
     {
@@ -51,11 +56,11 @@ function convertXmlObjectToTable(xmlObject)
             }
             // 读入行中每个元素
             var c = 0;
-            var rawLine = xmlObject.Workbook.Worksheet.array[0].Table.Row.array[l].Cell.array;
+            var rawLine = xmlObject.Workbook.Worksheet.array[sheetNum].Table.Row.array[l].Cell.array;
             if(rawLine == null || rawLine == undefined)
             {
                 // 行中只有一个元素
-                var tempCell = xmlObject.Workbook.Worksheet.array[0].Table.Row.array[l].Cell;
+                var tempCell = xmlObject.Workbook.Worksheet.array[sheetNum].Table.Row.array[l].Cell;
                 rawLine = new Array();
                 rawLine[0] = tempCell;
             }
@@ -74,7 +79,11 @@ function convertXmlObjectToTable(xmlObject)
                             rowIndex = parseInt(jumpIndexString) - 1;
                         }
                     }
-                    line[rowIndex] = rawCell.Data.text();
+                    if(rawCell["Data"] != null && rawCell["Data"] != undefined
+                        && rawCell.Data.text != null && rawCell.Data.text != undefined)
+                    {
+                        line[rowIndex] = rawCell.Data.text();
+                    }
                 }
                 c++;
                 rowIndex++;
@@ -87,6 +96,29 @@ function convertXmlObjectToTable(xmlObject)
         throw err;
     }
 
+    // 删除空行
+    for(var l = table.length - 1; l >= 0 ; l--)
+    {
+        var line = table[l];
+        var isEmptyLine = true;
+        for(var i = 0; i < line.length; i ++)
+        {
+            var cell = line[i];
+            if(cell != null && cell != undefined)
+            {
+                cell = cell.trim();
+                if(cell.length > 0)
+                {
+                    isEmptyLine = false;
+                }
+            }
+        }
+        if(isEmptyLine)
+        {
+            table.splice(l,1);
+        }
+    }
+
 
     return table;
 }
@@ -94,7 +126,7 @@ function convertXmlObjectToTable(xmlObject)
 // 把 excel 的 xml 解析成题目格式的 json 数组; 默认第一行是标题，第二行开始都是题目内容
 function convertXmlObjectToTestJsonObject(xmlObject)
 {
-    var table = convertXmlObjectToTable(xmlObject);
+    var table = convertXmlObjectToTable(xmlObject,0);
     var jsonObjects = null;
 
     var kNotDefinedIndex = -1;
@@ -316,6 +348,338 @@ function convertXmlObjectToTestJsonObject(xmlObject)
     return jsonObjects;
 }
 
+// 把 excel 的 xml 解析成偷听类题目格式的 json 数组; 默认第一行是标题，第二行开始都是题目内容
+function convertXmlObjectToAudioTestJsonObject(xmlObject)
+{
+    var tableTest = convertXmlObjectToTable(xmlObject,0);
+    var tableTips = convertXmlObjectToTable(xmlObject,1);
+    var jsonObjects = null;
+    var jsonObjectsKnowledgeTips = null;
+
+    var kNotDefinedIndex = -1;
+    var kKeyAt = 0;
+    var kIndexAt = 1;
+    var kValuesAt = 2;
+
+    // 列名配置
+    // 问题
+    var colType = new Array("模式",kNotDefinedIndex,null);    //题目类型:画图｜偷听
+    var colLevel = new Array("难度",kNotDefinedIndex,null);    //难度级别:1-6
+    var colInputKeys = new Array("干扰词",kNotDefinedIndex,null); //输入答案区间及干扰词
+    var colTag = new Array("标签",kNotDefinedIndex,null); //输入答案区间及干扰词
+    var colInform = new Array("暗示",kNotDefinedIndex,null);   //花钱的提示
+    var colRightAnswer = new Array("答案",kNotDefinedIndex,null);  //正确答案
+    var colTitle = new Array("问题",kNotDefinedIndex,null);   //问题文字
+    var colImageUrl = new Array("插画",kNotDefinedIndex,null);   //图片名
+    var colMusicUrl = new Array("素材编号",kNotDefinedIndex,null);   //声音素材文件名（不带后缀）
+    var colTipsMapIndex = new Array("小报",kNotDefinedIndex,null);  //小报对应编号
+
+    // 小报
+    var colKnowledgeIndex = new Array("编号",kNotDefinedIndex,null);   //答对知识编号
+    var colKnowledgeImage = new Array("答对图片",kNotDefinedIndex,null);   //答对知识提示图片
+    var colKnowledgeLinkType = new Array("超链接类型",kNotDefinedIndex,null); //答对知识提示超链接类型:视频|音乐|新闻|百科
+    var colKnowledgeLinkText = new Array("链接文字",kNotDefinedIndex,null); //答对知识提示超链接类型:视频|音乐|新闻|百科
+    var colKnowledgeUrl = new Array("链接地址",kNotDefinedIndex,null);  //答对知识提示超链接
+    var colKnowledgeTalkText = new Array("正文",kNotDefinedIndex,null);  //答对知识提示对话
+    var colKnowledgeTitle = new Array("超链接标题",kNotDefinedIndex,null);   //答对知识提示标题
+
+
+    // 做列脚标映射
+    var indexDictionaryTests = new Array(
+        colType,
+        colLevel,
+        colInputKeys,
+        colTag,
+        colInform,
+        colRightAnswer,
+        colTitle,
+        colImageUrl,
+        colMusicUrl,
+        colTipsMapIndex
+    );
+
+    var indexDictionaryKnowledge = new Array(
+        colKnowledgeIndex,
+        colKnowledgeImage,
+        colKnowledgeLinkType,
+        colKnowledgeLinkText,
+        colKnowledgeUrl,
+        colKnowledgeTalkText,
+        colKnowledgeTitle
+    );
+
+    var indexDictionaryArray = new Array(
+        indexDictionaryTests,
+        indexDictionaryKnowledge
+    );
+
+    //console.log(response.Workbook.Worksheet.array[0].Table.Row.array[0].Cell.array[1].Data.text());
+
+    var tableArray = new Array(
+        tableTest,
+        tableTips
+    );
+
+    //解析列名对应的index
+    for(var idi = 0 ; idi < indexDictionaryArray.length; ++idi)
+    {
+        var indexDictionary = indexDictionaryArray[idi];
+        var table = tableArray[idi];
+        var coloumnCount = table[0].length;
+        for(var i = 0; i < coloumnCount; ++i)
+        {
+            var title = table[0][i];//xmlObject.Workbook.Worksheet.array[0].Table.Row.array[0].Cell.array[i].Data.text();
+            for(var j = 0; j < indexDictionary.length; j++)
+            {
+                var cellObject = indexDictionary[j];
+                var cellObjectKeyString = cellObject[kKeyAt];
+                if(title.indexOf(cellObjectKeyString) >= 0)
+                {
+                    cellObject[kIndexAt] = i;
+                }
+            }
+        }
+    }
+
+
+    // 解析内容
+    try
+    {
+        for(var idi = 0 ; idi < indexDictionaryArray.length; ++idi)
+        {
+            var indexDictionary = indexDictionaryArray[idi];
+            var table = tableArray[idi];
+            var lineCount = table.length;
+            for(var l = 1; l < lineCount; ++l)
+            {
+                for(var j = 0; j < indexDictionary.length; j++)
+                {
+                    var cellObject = indexDictionary[j];
+                    var cellObjectIndex = cellObject[kIndexAt];
+                    if(cellObjectIndex != kNotDefinedIndex)
+                    {
+                        var value = table[l][cellObjectIndex];//xmlObject.Workbook.Worksheet.array[0].Table.Row.array[l].Cell.array[cellObjectIndex].Data.text();
+
+                        //去掉前后空格
+                        if(isString(value))
+                        {
+                            value.trim();
+                        }
+
+                        //纠错
+                        if(value == undefined || value == null)
+                        {
+                            value == "";
+                        }
+
+                        //填值
+                        var cellValues = cellObject[kValuesAt];
+                        if(cellValues == null)
+                        {
+                            cellValues = new Array();
+                            for(var ti = 0; ti < lineCount; ++ti)
+                            {
+                                cellValues[ti] = null;
+                            }
+                            cellObject[kValuesAt] = cellValues;
+                        }
+                        cellValues[l-1] = value;
+                    }
+                }
+            }
+        }
+    }
+    catch(err)
+    {
+        throw err;
+    }
+
+
+    // 转成json对象
+    jsonObjects = new Array();
+    jsonObjectsKnowledgeTips = new Array();
+
+    // 解析小报
+    var lineCount = tableTips.length;
+    try
+    {
+        for(var l = 1; l < lineCount; ++l)
+        {
+            //小报格式例子
+            var singleKnowledgeTips = {
+                id:"0",
+                image:"1.png",
+                linkType:"news",
+                linkText:"这是一个链接",
+                url:"http://www.meme-da.com",
+                title:"小白兔的医药疗效",
+                text:"小白兔是一种可以种植的中草药，对蛋疼有很好的疗效。"
+            };
+
+            for(var j = 0; j < indexDictionaryKnowledge.length; j++)
+            {
+                var cellObject = indexDictionaryKnowledge[j];
+                var cellObjectIndex = cellObject[kIndexAt];
+                if(cellObjectIndex != kNotDefinedIndex)
+                {
+                    var cellValue = cellObject[kValuesAt][l - 1];
+                    var cellObjectKeyString = cellObject[kKeyAt];
+
+                    if(cellObjectKeyString == colKnowledgeIndex[kKeyAt])
+                    {
+                        singleKnowledgeTips.id = cellValue;
+                    }
+                    else if(cellObjectKeyString == colKnowledgeImage[kKeyAt])
+                    {
+                        singleKnowledgeTips.image = cellValue;
+                    }
+                    else if(cellObjectKeyString == colKnowledgeLinkText[kKeyAt])
+                    {
+                        singleKnowledgeTips.linkText = cellValue;
+                    }
+                    else if(cellObjectKeyString == colKnowledgeLinkType[kKeyAt])
+                    {
+                        singleKnowledgeTips.linkType = cellValue;
+                    }
+                    else if(cellObjectKeyString == colKnowledgeTalkText[kKeyAt])
+                    {
+                        singleKnowledgeTips.text = cellValue;
+                    }
+                    else if(cellObjectKeyString == colKnowledgeTitle[kKeyAt])
+                    {
+                        singleKnowledgeTips.title = cellValue;
+                    }
+                    else if(cellObjectKeyString == colKnowledgeUrl[kKeyAt])
+                    {
+                        singleKnowledgeTips.url = cellValue;
+                    }
+                }
+            }
+
+            jsonObjectsKnowledgeTips[l - 1] = singleKnowledgeTips;
+        }
+    }
+    catch(err)
+    {
+        throw err;
+    }
+
+    // 解析题目
+    lineCount = tableTest.length;
+    try
+    {
+        for(var l = 1; l < lineCount; ++l)
+        {
+            //题目格式例子
+            var singleTest = {
+                id:"" + l,
+                type:"audio",
+                level:"1",
+                tag:[
+                    "电影",
+                    "明星"
+                ],
+                content:{
+                    inputkeys:"你打的没土小水话上下题白兔来草木宫说",
+                    inputwords:[
+                        "你好",
+                        "兔子"
+                    ],
+                    inform:"打一种动物",
+                    rightAnswers:[
+                        "小白兔",
+                        "小兔子"
+                    ],
+                    title:"小白＋小白＝？",
+                    imageUrl:"1.png",
+                    musicUrl:"1.mp3",
+                    hasKnowledge:"0",
+                    knowledgeTipsID:""
+                },
+                knowledgeTips:null
+            };
+
+            // TODO: 题目id生成
+
+            for(var j = 0; j < indexDictionaryTests.length; j++)
+            {
+                var cellObject = indexDictionaryTests[j];
+                var cellObjectIndex = cellObject[kIndexAt];
+                if(cellObjectIndex != kNotDefinedIndex)
+                {
+                    var cellValue = cellObject[kValuesAt][l - 1];
+                    var cellObjectKeyString = cellObject[kKeyAt];
+
+                    if(cellObjectKeyString == colType[kKeyAt])
+                    {
+                        singleTest.type = cellValue;
+                    }
+                    else if(cellObjectKeyString == colLevel[kKeyAt])
+                    {
+                        singleTest.level = cellValue;
+                    }
+                    else if(cellObjectKeyString == colTag[kKeyAt])
+                    {
+                        singleTest.tag = cellValue;
+                    }
+                    else if(cellObjectKeyString == colInform[kKeyAt])
+                    {
+                        singleTest.content.inform = cellValue;
+                    }
+                    else if(cellObjectKeyString == colRightAnswer[kKeyAt])
+                    {
+                        singleTest.content.rightAnswers = cellValue.split("$");
+                    }
+                    else if(cellObjectKeyString == colTitle[kKeyAt])
+                    {
+                        singleTest.content.title = cellValue;
+                    }
+                    else if(cellObjectKeyString == colImageUrl[kKeyAt])
+                    {
+                        singleTest.content.imageUrl = cellValue;
+                    }
+                    else if(cellObjectKeyString == colMusicUrl[kKeyAt])
+                    {
+                        singleTest.content.musicUrl = cellValue;
+                    }
+                    else if(cellObjectKeyString == colInputKeys[kKeyAt])
+                    {
+                        singleTest.content.inputwords = cellValue.split("$");
+                    }
+                    else if(cellObjectKeyString == colTipsMapIndex[kKeyAt])
+                    {
+                        for(var ki = 0; ki < jsonObjectsKnowledgeTips.length; ki++)
+                        {
+                            if(cellValue == jsonObjectsKnowledgeTips[ki].id)
+                            {
+                                singleTest.content.hasKnowledge = "1";
+                                singleTest.content.knowledgeTipsID = cellValue;
+                                singleTest.knowledgeTips = jsonObjectsKnowledgeTips[ki];
+                                break;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            jsonObjects[l - 1] = singleTest;
+        }
+    }
+    catch(err)
+    {
+        throw err;
+    }
+
+
+    // 清理现场
+    indexDictionaryTests = null;
+    indexDictionaryKnowledge = null;
+    indexDictionary = null;
+
+    return jsonObjects;
+}
+
 function MakePackageID() {
     var date = new Date();
     var value = "" + Math.floor(date.getTime() / 1000);
@@ -325,10 +689,11 @@ function MakePackageID() {
 /**
  * 转换xml为json对象
  @param {string} [inputFilePath]
+ @param {function} [jsonGenerateFunction] 题目生成函数,返回json
  @param {Function} [finishCallBack]
  @return {string} [json]
  */
-exports.excelxmlToTestJson = function(inputFilePath, finishCallBack)
+exports.excelxmlToTestJson = function(inputFilePath, jsonGenerateFunction, finishCallBack)
 {
     // 转换逻辑
     var xmlreaderObj = require('xmlreader');
@@ -376,7 +741,7 @@ exports.excelxmlToTestJson = function(inputFilePath, finishCallBack)
                 console.log(THIS_LOG_TAG + "==========Parse File Succeed:"+inputFilePath+" {End Of Parsed Data}===============");
             }
 
-            var jsonObj = convertXmlObjectToTestJsonObject(response);
+            var jsonObj = jsonGenerateFunction(response);
 
             if(finishCallBack != null && finishCallBack != undefined)
             {
@@ -445,10 +810,11 @@ exports.makeTestPackage = function(jsonObj, outPutFilePath, packageID, packageVe
  * 将excel的xml题库打包
  @param {string} [inputFilePath]
  @param {string} [outPutFilePath]
+ @param {string} [testType] 题目类型:"audio"表示偷听类题目，“normal”表示原始的题目类型
  @param {Function} [finishCallBack]
  @return {string} [json]
  */
-exports.createTestPackageFromExcelXml = function(inputFilePath, outPutFilePath, finishCallBack)
+exports.createTestPackageFromExcelXml = function(inputFilePath, outPutFilePath, testType, finishCallBack)
 {
     // 默认参数
     var defaultInputFilePath = __dirname + "/excelxmlToTestJsonFileSpace/Input.xml";
@@ -465,8 +831,22 @@ exports.createTestPackageFromExcelXml = function(inputFilePath, outPutFilePath, 
         outPutFilePath = defaultOutputFilePath;
     }
 
+    var jsonGenerateFunction = null;
+    if(testType == "audio")
+    {
+        jsonGenerateFunction = convertXmlObjectToAudioTestJsonObject;
+    }
+    else if(testType == "normal")
+    {
+        jsonGenerateFunction = convertXmlObjectToTestJsonObject;
+    }
+    else
+    {
+        jsonGenerateFunction = convertXmlObjectToTestJsonObject;
+    }
+
     var thisObj = this;
-    thisObj.excelxmlToTestJson(inputFilePath, function (jsonObj){
+    thisObj.excelxmlToTestJson(inputFilePath, jsonGenerateFunction, function (jsonObj){
         thisObj.makeTestPackage(jsonObj,outPutFilePath,pkgid,pkgver,function (){
             if(finishCallBack != null && finishCallBack != undefined)
             {
