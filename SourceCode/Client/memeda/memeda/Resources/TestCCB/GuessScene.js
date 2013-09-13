@@ -130,9 +130,6 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 初始化操作的动画
     this.setupSubCCBFileAnimationCallBacks();
 
-    // 设置当前题目层数
-    this.SetTitleNum(98);
-
     // 启动时的动画
     debugMsgOutput("On Start Drawing Animation!");
     this.onStartCatDrawingAnimation();
@@ -735,8 +732,8 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 
     // 播放音乐
     cc.AudioEngine.getInstance().playMusic("problem/" + gCurrentTestObj.content.musicUrl + ".mp3",true);
-    cc.AudioEngine.getInstance().setMusicVolume(0.5);
-    
+    cc.AudioEngine.getInstance().setMusicVolume(0.9);
+    gCurrentCCBView.SetTitleNum(gProblem + 1);
     choosedButtonCount = 0;
 
     for(i = 0; i < gInputCharButtons.length; i++)
@@ -826,7 +823,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 choosedButtonCount--;
 
                 gCurrentChoosedCharButton = null;
-                gCurrentPushedResultButton = this;
+                gCurrentPushedResultButton = null;
 
                 cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
                 gInputCharButtons[sourceIndex].setVisible(true);
@@ -938,6 +935,7 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
     {
         if(gCurrentGuessState == kGuessStatePullingChar)
         {
+            debugMsgOutput("gCurrentGuessState == kGuessStatePullingChar");
             var choosedResultButtonSize = gCurrentPushedResultButton.getContentSize();
             var handPos = gCurrentPushedResultButton.convertToWorldSpace(cc.p(choosedResultButtonSize.width/2,choosedResultButtonSize.height/2));
             gCatHand.setPosition(handPos);
@@ -946,9 +944,10 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
         }
         else if(gCurrentGuessState == kGuessStatePuttingResult)
         {
+            debugMsgOutput("gCurrentGuessState == kGuessStatePuttingResult");
             gCurrentPushedResultButton.animationManager.runAnimationsForSequenceNamed("Flipping" + gFlippingIndex + " Timeline");
-            //gCurrentPushedResultButton = null;
         }
+        debugMsgOutput("gCurrentGuessState ... kGuessStatePuttingResult");
     }
 
     if(gCurrentPushedResultButton != null &&
