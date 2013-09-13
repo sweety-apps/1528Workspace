@@ -6,23 +6,46 @@ var gProblemIndex = new Array();
 
 function Problem_Initialize() {
 	// 读取索引文件getWritablePath
-	var data = cc.FileUtils.getInstance().getStringFromFile("./CoinMgr.js");
-	debugMsgOutput("afaklsdfjklsjf:" + cc.FileUtils.getInstance().getWriteablePath());
+	var data = cc.FileUtils.getInstance().getStringFromFile("./problem/package.json");
+    //
+    var objJson = JSON.parse(data);
+    var index = objJson.index;
+    for (var i = 0; i < index.length; i ++) {
+        var item = index[i];
+        var obj = new Object;
+        obj.id = item.id;
+        obj.type = item.type;
+        obj.level = item.level;
+        obj.tag = item.tag;
+        
+        gProblemIndex.push(obj);
+    }
 }
 
 function Problem_GetCount() {
-	
+	return gProblemIndex.length;
 }
 
 // 返回题目的基本信息
 // obj.id,obj.type,obj.level,obj.tag
 function Problem_GetBaseInfo(index) {
-	
+	if ( index < 0 || index >= gProblemIndex.length ) {
+        return null;
+    }
+    
+    return gProblemIndex[index];
 }
 
 // 返回题目的详细信息
-function Problem_RequestInfo(index, callback, context){
+function Problem_RequestInfo(index, succeedCallback,failedCallback,context){
+	if ( index < 0 || index >= gProblemIndex.length ) {
+        return failedCallback(context);
+    }
+    
+    var id = gProblemIndex[index].id;
+	var data = cc.FileUtils.getInstance().getStringFromFile("./problem/" + id);
 
+    succeedCallback(JSON.parse(data), context);
 }
 
 Problem_Initialize();
