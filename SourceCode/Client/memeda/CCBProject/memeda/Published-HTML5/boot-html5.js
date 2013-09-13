@@ -17,6 +17,10 @@
     'GameDataAccess.js',
     'GuessScene.js',
     'MainScene.js',
+    'ChooseTestScene.js',
+    'Floor.js',
+    'GiftBuyMessageBox.js',
+    'WholeFloors.js',
 
             'resources-html5.js',
             'boot2-html5.js'

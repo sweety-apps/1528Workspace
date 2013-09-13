@@ -1871,7 +1871,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-50</real>
+							<real>150</real>
 							<real>70</real>
 							<integer>4</integer>
 						</array>
@@ -2186,9 +2186,9 @@
 			<key>name</key>
 			<string>Loop Timeline</string>
 			<key>offset</key>
-			<real>4.7552084922790527</real>
+			<real>0.0</real>
 			<key>position</key>
-			<real>7.3333334922790527</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
