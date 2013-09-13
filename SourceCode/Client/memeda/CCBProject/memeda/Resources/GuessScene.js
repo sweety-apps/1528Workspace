@@ -481,7 +481,12 @@ GuessScene.prototype.InitVars = function()
     
     gInputCharButtons[17] = this.charButton17;
     gInputCharButtonLabels[17] = this.charLbl17;
-   
+
+    this.coinNum.setString("" + CoinMgr_GetCount());
+    CoinMgr_Register(function (coin, add) {
+        gCurrentCCBView.coinNum.setString("" + CoinMgr_GetCount());
+    });
+
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
 
@@ -944,6 +949,8 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
         gCurrentPushedResultButton.animationManager.getLastCompletedSequenceName() == "Flipping" + gFlippingIndex + " Timeline")
     {
         gCurrentCCBView.updateInputCharsAndResultChars();
+
+        CoinMgr_Change(30);
     }
 };
 

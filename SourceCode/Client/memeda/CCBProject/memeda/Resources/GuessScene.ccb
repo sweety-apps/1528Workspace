@@ -9281,9 +9281,9 @@
 								<key>displayName</key>
 								<string>CoinNum</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>coinNum</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
