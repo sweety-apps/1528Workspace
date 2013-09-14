@@ -9,6 +9,10 @@ require("DebugUtils.js");
 require("GameDataAccess.js");
 require("GuessScene.js");
 require("MainScene.js");
+require("ChooseTestScene.js");
+require("Floor.js");
+require("GiftBuyMessageBox.js");
+require("WholeFloors.js");
 
 
 function main()
@@ -16,7 +20,7 @@ function main()
 	cc.FileUtils.getInstance().loadFilenameLookup("fileLookup.plist");
     //cc.Texture2D.setDefaultAlphaPixelFormat(6);
 	var director = cc.Director.getInstance();
-    var scene = cc.BuilderReader.loadAsScene("GuessScene");
+    var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
     var runningScene = director.getRunningScene();
     if (runningScene === null) director.runWithScene(scene);
     else director.replaceScene(scene);

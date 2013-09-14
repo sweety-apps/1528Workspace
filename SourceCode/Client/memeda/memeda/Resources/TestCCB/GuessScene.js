@@ -86,6 +86,10 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     this.rootNode.onAccelerometer = function( event) {
         this.controller.onAccelerometer(event);
     };
+    
+    // Start playing looped background music
+    cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
+    cc.AudioEngine.getInstance().setMusicVolume(0.5);
 
     // 初始化按钮变量
     this.InitVars();
@@ -109,8 +113,10 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     this.returnButton.onPressButton = function (){
         cc.AudioEngine.getInstance().stopMusic();
         cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-        gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
-        gPushedButton = kReturnButtonPushed;
+        var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
+        cc.Director.getInstance().replaceScene(scene);
+        //gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
+        //gPushedButton = kReturnButtonPushed;
     }
     
     
@@ -129,6 +135,9 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 
     // 初始化操作的动画
     this.setupSubCCBFileAnimationCallBacks();
+
+    // 设置当前题目层数
+    this.SetTitleNum(98);
 
     // 启动时的动画
     debugMsgOutput("On Start Drawing Animation!");
@@ -152,7 +161,7 @@ function setupPressEventToSprite(layer, sprite, callback)
     //判断触摸点是否在图片的区域上
     sprite.containsTouchLocation = function (touch) {
         //debugMsgOutput("tttest");
-
+		return ;
         var realScaleFactorX = rescaleTouchRectFactorX * this.getScaleX();
         var realScaleFactorY = rescaleTouchRectFactorX * this.getScaleY();
 
@@ -730,10 +739,6 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         choosedCharStrings.push("");
     }
 
-    // 播放音乐
-    cc.AudioEngine.getInstance().playMusic("problem/" + gCurrentTestObj.content.musicUrl + ".mp3",true);
-    cc.AudioEngine.getInstance().setMusicVolume(0.9);
-    gCurrentCCBView.SetTitleNum(gProblem + 1);
     choosedButtonCount = 0;
 
     for(i = 0; i < gInputCharButtons.length; i++)
@@ -789,7 +794,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 choosedButtonCount++;
 
                 if(false)
-                {   // 播放音乐
+                {
                     cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
                     this.setVisible(false);
                 }
@@ -823,7 +828,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 choosedButtonCount--;
 
                 gCurrentChoosedCharButton = null;
-                gCurrentPushedResultButton = null;
+                gCurrentPushedResultButton = this;
 
                 cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
                 gInputCharButtons[sourceIndex].setVisible(true);
@@ -935,7 +940,6 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
     {
         if(gCurrentGuessState == kGuessStatePullingChar)
         {
-            debugMsgOutput("gCurrentGuessState == kGuessStatePullingChar");
             var choosedResultButtonSize = gCurrentPushedResultButton.getContentSize();
             var handPos = gCurrentPushedResultButton.convertToWorldSpace(cc.p(choosedResultButtonSize.width/2,choosedResultButtonSize.height/2));
             gCatHand.setPosition(handPos);
@@ -944,10 +948,9 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
         }
         else if(gCurrentGuessState == kGuessStatePuttingResult)
         {
-            debugMsgOutput("gCurrentGuessState == kGuessStatePuttingResult");
             gCurrentPushedResultButton.animationManager.runAnimationsForSequenceNamed("Flipping" + gFlippingIndex + " Timeline");
+            //gCurrentPushedResultButton = null;
         }
-        debugMsgOutput("gCurrentGuessState ... kGuessStatePuttingResult");
     }
 
     if(gCurrentPushedResultButton != null &&

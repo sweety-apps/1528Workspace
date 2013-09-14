@@ -2,6 +2,9 @@
 // WholeFloors class
 //
 
+var kFloorStateWaiting = 0;
+var kFloorStateCatMoving = 1;
+
 var gTestFloor = [
     {bg:"floor_blue",bottom:"floorBottom_blue",
         floorNum:"1F",specText:"",offsetY:0,
@@ -104,9 +107,9 @@ WholeFloors.prototype.onDidLoadFromCCB = function () {
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
         
-    var Floor0 = this.rawFloor0;
-    debugMsgOutput(Floor0.toString());
-    Floor0.controller.doorCover1.setVisible(false);
+    //var Floor0 = this.rawFloor0;
+    //debugMsgOutput(Floor0.toString());
+    //Floor0.controller.doorCover1.setVisible(false);
 
     makeTestData();
     this.InitWholeFloors();
@@ -122,9 +125,8 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.startFloorOffsetY = this.rawFloor0.getPositionY();
     this.floorHeight = this.rawFloor1.getPositionY() - this.rawFloor0.getPositionY();
     this.floorQueue = new Array();
+    this.floorFrontQueue = new Array();
     this.preUpdateY = this.floorHeight*2;
-    this.rawFloor0.controller.elevator.setVisible(true);
-    this.rawFloor0.controller.listenCat.setVisible(true);
 
     this.floorQueue[0] = this.rawFloor1;
     this.floorQueue[1] = this.rawFloor2;
@@ -136,11 +138,26 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.floorQueue[7] = this.rawFloor8;
     this.floorQueue[8] = this.rawFloor9;
 
+    this.floorFrontQueue[0] = this.rawFloorFront1;
+    this.floorFrontQueue[1] = this.rawFloorFront2;
+    this.floorFrontQueue[2] = this.rawFloorFront3;
+    this.floorFrontQueue[3] = this.rawFloorFront4;
+    this.floorFrontQueue[4] = this.rawFloorFront5;
+    this.floorFrontQueue[5] = this.rawFloorFront6;
+    this.floorFrontQueue[6] = this.rawFloorFront7;
+    this.floorFrontQueue[7] = this.rawFloorFront8;
+    this.floorFrontQueue[8] = this.rawFloorFront9;
+
     this.allFloors = new Array();
-    this.allFloors[0] = this.rawFloor0;
-    for(var i = 1; i < gTestFloor.length; i++)
+    this.allFloorFronts = new Array();
+    for(var i = 0; i < gTestFloor.length; i++)
     {
-        this.allFloors[i] = this.floorQueue[(i-1)%(this.floorQueue.length)];
+        this.allFloors[i] = this.floorQueue[i%(this.floorQueue.length)];
+        this.allFloorFronts[i] = this.floorFrontQueue[i%(this.floorFrontQueue.length)];
+        this.allFloors[i].controller.onClickedDoorCallbackObject = this;
+        this.allFloors[i].controller.onClickedDoorCallback = function(floor,doorNum) {
+            this.onClickedDoorCallbackObject.onClickedDoor(floor,doorNum);
+        };
     }
     var offY = this.startFloorOffsetY;
     for(var i = 0; i < gTestFloor.length; i++)
@@ -154,6 +171,11 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.floorRect = cc.rect(0,0,320,138);
 
     this.rootLayer.setContentSize(cc.size(width,this.CalculateHeight()+this.startFloorOffsetY));
+
+    //初始化cat的位置
+    this.sceneState = kFloorStateWaiting;
+    this.currentCatStayAtDoorNum = 1;
+    this.doLiftAnimationTo(offY,this.currentCatStayAtDoorNum,false,null,null);
 };
 
 WholeFloors.prototype.UninitWholeFloors = function ()
@@ -188,7 +210,9 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
         if(floorNum < gTestFloor.length)
         {
             var floor = this.allFloors[floorNum];
+            var floorFront = this.allFloorFronts[floorNum];
             floor.setPositionY(gTestFloor[floorNum].offsetY);
+            floorFront.setPositionY(gTestFloor[floorNum].offsetY);
             //floor.controller.door1.setSpriteFrame();
             //debugMsgOutput("[Floor Texture] = "+ floor.controller.doorCover1.getTexture().getName());
             var imageUrl;
@@ -212,7 +236,7 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
 
             imageUrl = "UI/levels/"+gTestFloor[floorNum].bottom + ".png";
             spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
-            floor.controller.bottom.setDisplayFrame(spriteFrame);
+            floorFront.controller.bottom.setDisplayFrame(spriteFrame);
 
 
             floor.controller.doorNum1.setString(gTestFloor[floorNum].doors[0].doorNum);
@@ -221,8 +245,8 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
             floor.controller.doorCover1.setVisible(!gTestFloor[floorNum].doors[0].hasFinished);
             floor.controller.doorCover2.setVisible(!gTestFloor[floorNum].doors[1].hasFinished);
             floor.controller.doorCover3.setVisible(!gTestFloor[floorNum].doors[2].hasFinished);
-            floor.controller.floorNum.setString(gTestFloor[floorNum].floorNum);
-            floor.controller.floorSpecialText.setString(gTestFloor[floorNum].specText);
+            floorFront.controller.floorNum.setString(gTestFloor[floorNum].floorNum);
+            floorFront.controller.floorSpecialText.setString(gTestFloor[floorNum].specText);
 
             //floor.setPositionY();
         }
@@ -233,4 +257,78 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
 WholeFloors.prototype.CalculateHeight = function ()
 {
     return gTestFloor.length * this.floorHeight;
+}
+
+WholeFloors.prototype.onClickedDoor = function(floor, doorNum)
+{
+    var offsetY = floor.rootNode.getPositionY();
+    debugMsgOutput("Clicked Floor Y="+offsetY+" doorNum="+doorNum);
+    this.doLiftAnimationTo(offsetY,doorNum,true,this.onFinishedDoLiftAnimation,this);
+}
+
+WholeFloors.prototype.onFinishedDoLiftAnimation = function()
+{
+    var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+    cc.Director.getInstance().replaceScene(scene);
+};
+
+WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimation,callBack,target)
+{
+    if(this.sceneState != kFloorStateCatMoving)
+    {
+        this.sceneState = kFloorStateCatMoving;
+        if(callBack != null && callBack != undefined)
+        {
+            this.onCatMovedToDoorCallback = callBack;
+            this.onCatMovedToDoorCallbackTarget = target;
+        }
+        else
+        {
+            this.onCatMovedToDoorCallback = null;
+            this.onCatMovedToDoorCallbackTarget = null;
+        }
+
+        this.onCatAndLiftAnimationCompleted = function() {
+            if(this.catAndLift.animationManager.getLastCompletedSequenceName() == "Lift Up Timeline")
+            {
+                this.onMovedLiftCallback = function(data)
+                {
+                    this.catAndLift.animationManager.runAnimationsForSequenceNamed("Leave Lift Timeline"+this.currentCatStayAtDoorNum);
+                }
+                this.catAndLift.runAction(
+                    cc.Sequence.create(new Array(
+                        cc.MoveTo.create(0.2,cc.p(this.catAndLift.getPositionX(),offsetY)),
+                        cc.CallFunc.create(this.onMovedLiftCallback, this,null)
+                    ))
+                );
+            }
+            else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Stay Timeline") >= 0)
+            {
+                this.sceneState = kFloorStateWaiting;
+                if(this.onCatMovedToDoorCallback != null && this.onCatMovedToDoorCallback != undefined)
+                {
+                    if(this.onCatMovedToDoorCallbackTarget != null && this.onCatMovedToDoorCallbackTarget != undefined)
+                    {
+                        this.onCatMovedToDoorCallbackTarget.tmpMovedFinishedCallBack = this.onCatMovedToDoorCallback;
+                        this.onCatMovedToDoorCallbackTarget.tmpMovedFinishedCallBack();
+                    }
+                    else
+                    {
+                        this.onCatMovedToDoorCallback();
+                    }
+                }
+            }
+        };
+        this.catAndLift.animationManager.setCompletedAnimationCallback(this, this.onCatAndLiftAnimationCompleted);
+        if(showAnimation)
+        {
+            this.catAndLift.animationManager.runAnimationsForSequenceNamed("Go Lift Timeline"+this.currentCatStayAtDoorNum);
+        }
+        this.currentCatStayAtDoorNum = doorNum;
+        if(!showAnimation)
+        {
+            this.catAndLift.animationManager.runAnimationsForSequenceNamed("Stay Timeline"+this.currentCatStayAtDoorNum);
+            this.sceneState = kFloorStateWaiting;
+        }
+    }
 }

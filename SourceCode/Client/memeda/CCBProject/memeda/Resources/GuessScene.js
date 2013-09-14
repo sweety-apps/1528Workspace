@@ -1,5 +1,6 @@
 // const Var
 // states
+
 var kGuessStateNormal = 0;
 var kGuessStatePullingChar = 2;
 var kGuessStatePuttingResult = 3;
@@ -107,10 +108,13 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // returnButton Event
     setupPressEventToSprite(this.rootLayer,this.returnButton,this.returnButton);
     this.returnButton.onPressButton = function (){
+        debugMsgOutput("returnButton Pushed!");
         cc.AudioEngine.getInstance().stopMusic();
         cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-        gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
-        gPushedButton = kReturnButtonPushed;
+        var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
+        cc.Director.getInstance().replaceScene(scene);
+        //gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
+        //gPushedButton = kReturnButtonPushed;
     }
     
     
@@ -546,7 +550,7 @@ GuessScene.prototype.ClearVars = function()
     //gBoardCover = null;
 
     gCatHand = null;
-}
+};
 
 ///// Events Handlers
 // Touches
