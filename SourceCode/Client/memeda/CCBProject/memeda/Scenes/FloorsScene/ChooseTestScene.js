@@ -52,3 +52,14 @@ ChooseTestsScene.prototype.scrollViewDidScroll = function (scrollView)
 
     debugMsgOutput("scrolled = " + scrolledPercent + " ,BG Off = " + bgScrolledOffset);
 };
+
+ChooseTestsScene.prototype.onPressedStartPlay = function()
+{
+    var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+    cc.Director.getInstance().replaceScene(scene);
+};
+
+ChooseTestsScene.prototype.onPressedAwardButton = function()
+{
+    this.buyMsgBox.animationManager.runAnimationsForSequenceNamed("Popup Animation Timeline");
+};

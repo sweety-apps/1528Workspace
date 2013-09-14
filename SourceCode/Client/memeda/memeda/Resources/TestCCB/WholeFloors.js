@@ -289,17 +289,17 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimatio
         }
 
         this.onCatAndLiftAnimationCompleted = function() {
-            if(this.catAndLift.animationManager.getLastCompletedSequenceName() == "Lift Up Timeline")
+            if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Go Lift Timeline") >= 0/*this.catAndLift.animationManager.getLastCompletedSequenceName() == "Lift Up Timeline"*/)
             {
                 this.onMovedLiftCallback = function(data)
                 {
                     this.catAndLift.animationManager.runAnimationsForSequenceNamed("Leave Lift Timeline"+this.currentCatStayAtDoorNum);
                 }
                 this.catAndLift.runAction(
-                    cc.Sequence.create(new Array(
+                    cc.Sequence.create(
                         cc.MoveTo.create(0.2,cc.p(this.catAndLift.getPositionX(),offsetY)),
-                        cc.CallFunc.create(this.onMovedLiftCallback, this,null)
-                    ))
+                            cc.CallFunc.create(this.onMovedLiftCallback, this, null)
+                    )
                 );
             }
             else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Stay Timeline") >= 0)

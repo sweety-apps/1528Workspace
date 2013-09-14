@@ -4,20 +4,20 @@
     <list default="true" id="16d934ce-39a1-4a22-9f49-20cc9d5e859c" name="Default" comment="" />
     <ignored path="memeda.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/GuessScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379127280991" ignored="false" />
+    <file path="/GuessScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379139695313" ignored="false" />
     <file path="/DebugUtils.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1376820033246" ignored="false" />
     <file path="/GameDataAccess.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1377331765961" ignored="false" />
     <file path="/excelxmlToTestJson.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1377541580098" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379076105194" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/resources-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379076105194" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/boot2-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378988588822" ignored="false" />
-    <file path="/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379075926208" ignored="false" />
+    <file path="/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379151914796" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/boot-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379052519381" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/FloorsScene/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378711228939" ignored="false" />
-    <file path="/ChooseTestScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378889974278" ignored="false" />
+    <file path="/ChooseTestScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379152114144" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/ChooseTestScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378968421570" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/FloorsScene/ChooseTestScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378670283467" ignored="false" />
-    <file path="/GiftBuyMessageBox.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378988797426" ignored="false" />
+    <file path="/GiftBuyMessageBox.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379152296747" ignored="false" />
     <file path="/Floor.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379002978754" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/MainScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379078396339" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/GuessScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379078396339" ignored="false" />
@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuessScene.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GuessScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="44" selection-start="3268" selection-end="3268" vertical-scroll-proportion="0.5898876">
+            <state line="114" column="9" selection-start="3161" selection-end="3161" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -82,17 +82,21 @@
       <file leaf-file-name="ChooseTestScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="19" selection-start="6" selection-end="22" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="63" column="97" selection-start="2037" selection-end="2095" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WholeFloors.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WholeFloors.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="271" column="50" selection-start="10597" selection-end="10708" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="297" column="135" selection-start="11645" selection-end="11727" vertical-scroll-proportion="-0.3764045">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +104,10 @@
       <file leaf-file-name="GiftBuyMessageBox.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/GiftBuyMessageBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="20" selection-start="6" selection-end="23" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="15" column="95" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,19 +137,19 @@
         <option value="$PROJECT_DIR$/Resources/WholeFloors.js" />
         <option value="$PROJECT_DIR$/Resources/FloorsScene/ChooseTestScene.js" />
         <option value="$PROJECT_DIR$/Resources/FloorsScene/WholeFloors.js" />
-        <option value="$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestScene.js" />
-        <option value="$PROJECT_DIR$/Scenes/FloorsScene/GiftBuyMessageBox.js" />
         <option value="$PROJECT_DIR$/Scenes/FloorsScene/Floor.js" />
         <option value="$PROJECT_DIR$/../../../../Server/memecaiServer/tools/excelxmlToTestJson.js" />
-        <option value="$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js" />
         <option value="$PROJECT_DIR$/Resources/GameDataAccess.js" />
         <option value="$PROJECT_DIR$/Resources/GuessScene.js" />
+        <option value="$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js" />
+        <option value="$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestScene.js" />
+        <option value="$PROJECT_DIR$/Scenes/FloorsScene/GiftBuyMessageBox.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="29" />
-    <option name="y" value="24" />
+    <option name="x" value="72" />
+    <option name="y" value="22" />
     <option name="width" value="1183" />
     <option name="height" value="718" />
   </component>
@@ -173,7 +179,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,6 +231,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -234,8 +240,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Server/memecaiServer" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -275,13 +281,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="29" y="24" width="1183" height="718" extended-state="0" />
-    <editor active="false" />
+    <frame x="72" y="22" width="1183" height="718" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26551723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26551723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -406,20 +412,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/GiftBuyMessageBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="20" selection-start="6" selection-end="23" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/Floor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="49" selection-start="152" selection-end="167" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../Server/memecaiServer/tools/excelxmlToTestJson.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="351" column="46" selection-start="11347" selection-end="11384" vertical-scroll-proportion="-8.679775" />
@@ -432,13 +424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/GameDataAccess.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="6" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/MainScene.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="98" selection-start="2442" selection-end="2535" vertical-scroll-proportion="0.0">
@@ -446,23 +431,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js">
+    <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="271" column="50" selection-start="10597" selection-end="10708" vertical-scroll-proportion="0.0">
+        <state line="114" column="9" selection-start="3161" selection-end="3161" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/GameDataAccess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="6" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/Floor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="49" selection-start="152" selection-end="167" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="19" selection-start="6" selection-end="22" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="63" column="97" selection-start="2037" selection-end="2095" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/GiftBuyMessageBox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="44" selection-start="3268" selection-end="3268" vertical-scroll-proportion="0.5898876">
+        <state line="15" column="95" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="297" column="135" selection-start="11645" selection-end="11727" vertical-scroll-proportion="-0.3764045">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

@@ -187,7 +187,7 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
 {
     //购买消息框
     var height = this.rootLayer.getContentSize().height;
-    this.buyMsgBox.setPositionY(height - 100);
+    //this.buyMsgBox.setPositionY(height - 100);
 
     //楼层复用
     var containerHeight = scrollView.getContentSize().height;
@@ -268,8 +268,10 @@ WholeFloors.prototype.onClickedDoor = function(floor, doorNum)
 
 WholeFloors.prototype.onFinishedDoLiftAnimation = function()
 {
-    var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
-    cc.Director.getInstance().replaceScene(scene);
+    if(this.onPressedDoor != null && this.onPressedDoor != null)
+    {
+        this.onPressedDoor(true,0);
+    }
 };
 
 WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimation,callBack,target)
@@ -289,17 +291,17 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimatio
         }
 
         this.onCatAndLiftAnimationCompleted = function() {
-            if(this.catAndLift.animationManager.getLastCompletedSequenceName() == "Lift Up Timeline")
+            if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Go Lift Timeline") >= 0/*this.catAndLift.animationManager.getLastCompletedSequenceName() == "Lift Up Timeline"*/)
             {
                 this.onMovedLiftCallback = function(data)
                 {
                     this.catAndLift.animationManager.runAnimationsForSequenceNamed("Leave Lift Timeline"+this.currentCatStayAtDoorNum);
                 }
                 this.catAndLift.runAction(
-                    cc.Sequence.create(new Array(
+                    cc.Sequence.create(
                         cc.MoveTo.create(0.2,cc.p(this.catAndLift.getPositionX(),offsetY)),
-                        cc.CallFunc.create(this.onMovedLiftCallback, this,null)
-                    ))
+                        cc.CallFunc.create(this.onMovedLiftCallback, this, null)
+                    )
                 );
             }
             else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Stay Timeline") >= 0)
@@ -331,4 +333,9 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimatio
             this.sceneState = kFloorStateWaiting;
         }
     }
-}
+};
+
+WholeFloors.prototype.onPressedDoor = function(isDoorClosed, testNum)
+{
+    debugMsgOutput("Pressed Door: TestNum = "+testNum+" is Door Closed: "+isDoorClosed);
+};

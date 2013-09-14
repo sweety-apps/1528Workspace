@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>8</integer>
+	<integer>2</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -2255,7 +2255,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>61</real>
+									<real>87</real>
 									<real>41</real>
 									<integer>4</integer>
 								</array>
@@ -2957,7 +2957,7 @@
 				<integer>10</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>4</integer>
+			<integer>-1</integer>
 			<key>length</key>
 			<real>0.3333333432674408</real>
 			<key>name</key>
@@ -3195,7 +3195,7 @@
 				<integer>10</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>4</integer>
+			<integer>-1</integer>
 			<key>length</key>
 			<real>0.3333333432674408</real>
 			<key>name</key>
@@ -3229,7 +3229,7 @@
 				<integer>10</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>4</integer>
+			<integer>-1</integer>
 			<key>length</key>
 			<real>0.3333333432674408</real>
 			<key>name</key>

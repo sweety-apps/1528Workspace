@@ -13,8 +13,10 @@ GiftBuyMessageBox.prototype.onDidLoadFromCCB = function () {
 
 GiftBuyMessageBox.prototype.onClickedBuy = function () {
     debugMsgOutput("Buy Clicked!");
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Animation Timeline");
 };
 
 GiftBuyMessageBox.prototype.onClickedClose = function () {
     debugMsgOutput("Close Clicked!");
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Animation Timeline");
 };

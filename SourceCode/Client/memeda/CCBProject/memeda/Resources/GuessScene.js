@@ -109,7 +109,10 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     setupPressEventToSprite(this.rootLayer,this.returnButton,this.returnButton);
     this.returnButton.onPressButton = function (){
         debugMsgOutput("returnButton Pushed!");
-        cc.AudioEngine.getInstance().stopMusic();
+        if(cc.AudioEngine.getInstance().isMusicPlaying())
+        {
+            cc.AudioEngine.getInstance().stopMusic();
+        }
         cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
         var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
         cc.Director.getInstance().replaceScene(scene);
