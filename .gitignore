@@ -28,3 +28,7 @@ SourceCode/Client/memeda/CCBProject/memeda/Published-HTML5/BGLayer.ccbi
 *.xcbkptlist
 
 *.xcbkptlist
+
+SourceCode/Client/memeda/CCBProject/memeda/Published-*/*
+
+SourceCode/Client/memeda/memeda/Resources/TestCCB/*
