@@ -1054,8 +1054,8 @@ GuessScene.prototype.PlayMusic = function () {
     cc.AudioEngine.getInstance().playMusic(gMusicURL, false);
     cc.AudioEngine.getInstance().setMusicVolume(0.9);	
     
-    var inst = cc.Scheduler.getInstance();
-    debugMsgOutput("" + inst);
+    //var inst = cc.Scheduler.getInstance();
+    //debugMsgOutput("" + inst);
 	var t = setInterval(function () {
 		if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
 			gCurrentCCBView.onMusicStop();
