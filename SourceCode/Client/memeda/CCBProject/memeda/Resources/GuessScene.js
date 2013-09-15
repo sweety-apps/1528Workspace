@@ -1,6 +1,5 @@
 // const Var
 // states
-
 var kGuessStateNormal = 0;
 var kGuessStatePullingChar = 2;
 var kGuessStatePuttingResult = 3;
@@ -9,6 +8,9 @@ var kGuessStatePuttingResult = 3;
 var kReturnButtonPushed = 1;
 
 var gPushedButton = 0;
+
+var pressSprites = new Array();
+var pressSpritesCallbacks = new Array();
 
 var gCurrentCCBView = null;
 
@@ -23,19 +25,68 @@ var gResultCharButtonLabels = new Array();
 
 var gAwardButton = null;
 var gProblem = 0;
-var gDrawerCat = null;
+
+var choosedButtons = new Array();
+var choosedCharStrings = new Array();
+var choosedButtonCount = 0;
+var emptyButton = 0;
+
 //var gBoardBG = null;
 //var gBoardLabel = null;
 //var gBoardPicture = null;
 //var gBoardCover = null;
- 
+
 var gCatHand = null;
+
+var gMusicURL = null;
 
 var gCurrentChoosedCharButton = null;
 var gCurrentPushedResultButton = null;
 
 var gCurrentGuessState = kGuessStateNormal;
 var gFlippingIndex = 1;
+
+function GuessScene_InitGlobel() {
+    kGuessStateNormal = 0;
+    kGuessStatePullingChar = 2;
+    kGuessStatePuttingResult = 3;
+    
+    // static Var
+    kReturnButtonPushed = 1;
+    
+    gPushedButton = 0;
+    
+    gCurrentCCBView = null;
+
+    gInputCharButtons = new Array();
+
+    gInputCharButtonLabels = new Array();
+   
+    gResultCharAllButtons = new Array();
+
+    gResultCharAllButtonLabels = new Array();
+    
+    gResultCharButtons = new Array();
+    gResultCharButtonLabels = new Array();
+    
+    gAwardButton = null;
+    gProblem = 0;
+    
+    gCatHand = null;
+    gMusicURL = null;
+    gCurrentChoosedCharButton = null;
+    gCurrentPushedResultButton = null;
+    gCurrentGuessState = kGuessStateNormal;
+    gFlippingIndex = 1;
+    
+    choosedButtons = new Array();
+    choosedCharStrings = new Array();
+    choosedButtonCount = 0;
+    emptyButton = 0;
+    
+    pressSprites = new Array();
+    pressSpritesCallbacks = new Array();
+}
 //
 // GuessScene class
 //
@@ -43,7 +94,8 @@ var gFlippingIndex = 1;
 var GuessScene = function() {};
 
 GuessScene.prototype.onDidLoadFromCCB = function () {
-
+    GuessScene_InitGlobel();
+    
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -144,9 +196,6 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // State Change
     gCurrentGuessState = kGuessStateNormal;
 };
-
-var pressSprites = new Array();
-var pressSpritesCallbacks = new Array();
 
 function setupPressEventToSprite(layer, sprite, callback)
 {
@@ -403,10 +452,7 @@ GuessScene.prototype.ResetResultButtonsPosition = function()
 }
 
 GuessScene.prototype.InitVars = function()
-{    
-    // Drawer Cat
-    gDrawerCat = this.drawerCat;
-
+{
     // Test Board
     //gBoardBG = this.boardBG;
     //gBoardLabel = this.questionLbl;
@@ -502,9 +548,6 @@ GuessScene.prototype.InitVars = function()
             gInputCharButtons[i].setScaleX(0.8);
             gInputCharButtons[i].setScaleY(0.8);
         }
-
-        gDrawerCat.setScaleX(0.8);
-        gDrawerCat.setScaleY(0.8);
         
         //gBoardBG.setScaleX(0.8);
         //gBoardBG.setScaleY(0.8);
@@ -546,7 +589,6 @@ GuessScene.prototype.ClearVars = function()
     gCurrentCCBView = null;
     gAwardButton = null;
 
-    gDrawerCat = null;
     //gBoardBG = null;
     //gBoardLabel = null;
     //gBoardPicture = null;
@@ -622,11 +664,6 @@ var gCurrentTestObj = {
         text:"小白兔是一种可以种植的中草药，对蛋疼有很好的疗效。"
     }
 };
-
-var choosedButtons = new Array();
-var choosedCharStrings = new Array();
-var choosedButtonCount = 0;
-var emptyButton = 0;
 
 GuessScene.prototype.checkAnswer = function (inputString, answerStrings)
 {
@@ -738,8 +775,9 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
 
     // 播放音乐
-    cc.AudioEngine.getInstance().playMusic("problem/" + gCurrentTestObj.content.musicUrl + ".mp3",true);
-    cc.AudioEngine.getInstance().setMusicVolume(0.9);
+    gMusicURL = "problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
+    gCurrentCCBView.CatEnter();
+    
     gCurrentCCBView.SetTitleNum(gProblem + 1);
     choosedButtonCount = 0;
 
@@ -1008,6 +1046,41 @@ GuessScene.prototype.updateInputCharsAndResultCharsWithAnimation = function ()
 GuessScene.prototype.onStartCatDrawingAnimation = function ()
 {
     debugMsgOutput("On Start Drawing Animation!");
-    //gDrawerCat.animationManager.runAnimationsForSequenceNamed("Draw Animation Timeline");
 };
+
+
+
+GuessScene.prototype.PlayMusic = function () {
+    cc.AudioEngine.getInstance().playMusic(gMusicURL, false);
+    cc.AudioEngine.getInstance().setMusicVolume(0.9);	
+    
+    var inst = cc.Scheduler.getInstance();
+    debugMsgOutput("" + inst);
+	var t = setInterval(function () {
+		if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
+			gCurrentCCBView.onMusicStop();
+			clearInterval(t);
+		}
+	}, 100);
+}
+
+GuessScene.prototype.onMusicStop = function () {
+	this.catAni.controller.Listen(false);
+	this.playMusic.setVisible(true);
+}
+
+GuessScene.prototype.CatEnter = function () {
+	this.PlayMusic();
+	this.catAni.controller.Enter(this.onEnterCompleted, this);
+}
+
+GuessScene.prototype.ListenMusic = function () {
+	this.PlayMusic();
+	this.catAni.controller.Listen(true);
+	this.playMusic.setVisible(false);
+}
+    
+GuessScene.prototype.onEnterCompleted = function(obj) {
+	obj.rootNode.animationManager.runAnimationsForSequenceNamed("Drawing Animation Timeline");	
+}
 

@@ -23,7 +23,7 @@
 	<key>javascriptBased</key>
 	<true/>
 	<key>javascriptMainCCB</key>
-	<string>ChooseTestsScene</string>
+	<string>GuessScene</string>
 	<key>needRepublish</key>
 	<false/>
 	<key>onlyPublishCCBs</key>
@@ -35,7 +35,7 @@
 	<key>publishDirectoryHTML5</key>
 	<string>Published-HTML5</string>
 	<key>publishEnabledAndroid</key>
-	<true/>
+	<false/>
 	<key>publishEnabledHTML5</key>
 	<true/>
 	<key>publishEnablediPhone</key>
