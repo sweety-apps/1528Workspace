@@ -51,7 +51,7 @@
 								<array>
 									<real>0.0</real>
 									<real>0.0</real>
-									<integer>4</integer>
+									<integer>5</integer>
 								</array>
 							</dict>
 							<dict>
@@ -97,7 +97,7 @@
 						<array>
 							<real>0.0</real>
 							<real>0.0</real>
-							<integer>4</integer>
+							<integer>5</integer>
 						</array>
 					</dict>
 					<dict>
@@ -107,9 +107,9 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>320</real>
-							<real>568</real>
-							<integer>5</integer>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -165,8 +165,6 @@
 						<true/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>animatedProperties</key>
@@ -2592,9 +2590,9 @@
 				<key>displayName</key>
 				<string>AnswerBoard</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>answerLayout</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -11962,7 +11960,7 @@
 						<array>
 							<real>0.0</real>
 							<real>0.0</real>
-							<integer>5</integer>
+							<integer>4</integer>
 						</array>
 					</dict>
 					<dict>

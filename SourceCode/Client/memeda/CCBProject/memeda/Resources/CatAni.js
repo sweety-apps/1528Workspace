@@ -12,6 +12,15 @@ CatAni.prototype.onDidLoadFromCCB = function () {
 	this.musicCtrl.setVisible(false);
 	this.rootNode.animationManager.
 		setCompletedAnimationCallback(this, this.onAnimationComplete);
+		
+    var screenSize = cc.Director.getInstance().getWinSizeInPixels();
+    var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
+    var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
+    if(screenHeight / screenWidth < 1136/640)
+    {   
+    	this.bgLayout.setScaleX(0.84);
+    	this.bgLayout.setScaleY(0.84);	
+    }	
 };
 
 CatAni.prototype.Enter = function(fun, obj) {

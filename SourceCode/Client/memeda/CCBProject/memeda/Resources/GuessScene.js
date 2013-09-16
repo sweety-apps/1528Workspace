@@ -545,21 +545,12 @@ GuessScene.prototype.InitVars = function()
     {   
         for(var i = 0; i < gInputCharButtons.length; ++i)
         {
-            gInputCharButtons[i].setScaleX(0.8);
-            gInputCharButtons[i].setScaleY(0.8);
+            gInputCharButtons[i].setScaleX(0.84);
+            gInputCharButtons[i].setScaleY(0.84);
         }
         
-        //gBoardBG.setScaleX(0.8);
-        //gBoardBG.setScaleY(0.8);
-
-        //gBoardLabel.setScaleX(0.8);
-        //gBoardLabel.setScaleY(0.8);
-
-        //gBoardPicture.setScaleX(0.8);
-        //gBoardPicture.setScaleY(0.8);
-
-        //gBoardCover.setScaleX(0.8);
-        //gBoardCover.setScaleY(0.8);
+        this.answerLayout.setScaleX(0.88);
+        this.answerLayout.setScaleY(0.88);
     }
 };
 
