@@ -162,6 +162,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     
     setupPressEventToSprite(this.rootLayer,this.awardButton, this.awardButton);
     this.awardButton.onPressButton = function () {
+    	gCurrentCCBView.ClickBuy();
     }
     
     setupPressEventToSprite(this.rootLayer,this.playMusic, this.playMusic);
@@ -1099,3 +1100,10 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
 	obj.rootNode.animationManager.runAnimationsForSequenceNamed("Drawing Animation Timeline");	
 }
 
+GuessScene.prototype.ClickBuy = function () {
+	this.buyMsg.controller.ShowMsg(1, "第3个字", this.onBuyMsgEnd);	
+}
+
+GuessScene.prototype.onBuyMsgEnd = function (res) {
+	
+}
