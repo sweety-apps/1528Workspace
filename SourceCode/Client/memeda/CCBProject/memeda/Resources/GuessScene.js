@@ -46,6 +46,8 @@ var gCurrentPushedResultButton = null;
 var gCurrentGuessState = kGuessStateNormal;
 var gFlippingIndex = 1;
 
+var gTimeCount = 0;
+
 function GuessScene_InitGlobel() {
     kGuessStateNormal = 0;
     kGuessStatePullingChar = 2;
@@ -84,6 +86,8 @@ function GuessScene_InitGlobel() {
     choosedButtonCount = 0;
     emptyButton = 0;
     
+    gTimeCount = 0;
+    
     pressSprites = new Array();
     pressSpritesCallbacks = new Array();
 }
@@ -92,6 +96,9 @@ function GuessScene_InitGlobel() {
 //
 
 var GuessScene = function() {};
+GuessScene.prototype.onDidUnload = function () {
+    debugMsgOutput("fsdf");
+}
 
 GuessScene.prototype.onDidLoadFromCCB = function () {
     GuessScene_InitGlobel();
@@ -157,10 +164,15 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     this.awardButton.onPressButton = function () {
     }
     
+    setupPressEventToSprite(this.rootLayer,this.playMusic, this.playMusic);
+    this.playMusic.onPressButton = function () {
+        gCurrentCCBView.ListenMusic();
+    }
+    
     // returnButton Event
     setupPressEventToSprite(this.rootLayer,this.returnButton,this.returnButton);
     this.returnButton.onPressButton = function (){
-        debugMsgOutput("returnButton Pushed!");
+        debugMsgOutput("returnButton Pushed! " + cc.AudioEngine.getInstance().isMusicPlaying());
         if(cc.AudioEngine.getInstance().isMusicPlaying())
         {
             cc.AudioEngine.getInstance().stopMusic();
@@ -1039,20 +1051,31 @@ GuessScene.prototype.onStartCatDrawingAnimation = function ()
     debugMsgOutput("On Start Drawing Animation!");
 };
 
+GuessScene.prototype.update = function() {
+    gTimeCount ++;
+    if ( gTimeCount >= 10 ) {
+        debugMsgOutput("music " + cc.AudioEngine.getInstance().isMusicPlaying() );
+        if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
+            gCurrentCCBView.onMusicStop();
+            cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
+        }
+        gTimeCount = 0;
+    }
+}
 
+GuessScene.prototype._isRunning = function () {
+    return true;
+}
 
 GuessScene.prototype.PlayMusic = function () {
-    cc.AudioEngine.getInstance().playMusic(gMusicURL, false);
-    cc.AudioEngine.getInstance().setMusicVolume(0.9);	
+    cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
     
-    //var inst = cc.Scheduler.getInstance();
-    //debugMsgOutput("" + inst);
-	var t = setInterval(function () {
-		if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
-			gCurrentCCBView.onMusicStop();
-			clearInterval(t);
-		}
-	}, 100);
+    cc.AudioEngine.getInstance().stopMusic();
+    cc.AudioEngine.getInstance().playMusic(gMusicURL, false);
+    cc.AudioEngine.getInstance().setMusicVolume(0.9);
+    
+    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
+
 }
 
 GuessScene.prototype.onMusicStop = function () {
@@ -1062,6 +1085,7 @@ GuessScene.prototype.onMusicStop = function () {
 
 GuessScene.prototype.CatEnter = function () {
 	this.PlayMusic();
+    this.playMusic.setVisible(false);
 	this.catAni.controller.Enter(this.onEnterCompleted, this);
 }
 

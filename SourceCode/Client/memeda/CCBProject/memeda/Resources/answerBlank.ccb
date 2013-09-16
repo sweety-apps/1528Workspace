@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>4</integer>
+	<integer>3</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -40,7 +40,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>UI/guess/answerButtonNormal1.png</string>
+								<string>UI/guess/answerButtonTake10.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -58,24 +58,6 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>UI/guess/answerButtonTake10.png</string>
-								<string>Use regular file</string>
-							</array>
-						</dict>
-						<dict>
-							<key>easing</key>
-							<dict>
-								<key>type</key>
-								<integer>0</integer>
-							</dict>
-							<key>name</key>
-							<string>displayFrame</string>
-							<key>time</key>
-							<real>0.20000000298023224</real>
-							<key>type</key>
-							<integer>7</integer>
-							<key>value</key>
-							<array>
 								<string>UI/guess/answerButtonTake11.png</string>
 								<string>Use regular file</string>
 							</array>
@@ -89,7 +71,7 @@
 							<key>name</key>
 							<string>displayFrame</string>
 							<key>time</key>
-							<real>0.30000001192092896</real>
+							<real>0.20000000298023224</real>
 							<key>type</key>
 							<integer>7</integer>
 							<key>value</key>
@@ -125,7 +107,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>UI/guess/answerButtonNormal2.png</string>
+								<string>UI/guess/answerButtonTake20.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -143,24 +125,6 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>UI/guess/answerButtonTake20.png</string>
-								<string>Use regular file</string>
-							</array>
-						</dict>
-						<dict>
-							<key>easing</key>
-							<dict>
-								<key>type</key>
-								<integer>0</integer>
-							</dict>
-							<key>name</key>
-							<string>displayFrame</string>
-							<key>time</key>
-							<real>0.20000000298023224</real>
-							<key>type</key>
-							<integer>7</integer>
-							<key>value</key>
-							<array>
 								<string>UI/guess/answerButtonTake21.png</string>
 								<string>Use regular file</string>
 							</array>
@@ -174,7 +138,7 @@
 							<key>name</key>
 							<string>displayFrame</string>
 							<key>time</key>
-							<real>0.30000001192092896</real>
+							<real>0.20000000298023224</real>
 							<key>type</key>
 							<integer>7</integer>
 							<key>value</key>
@@ -210,7 +174,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>UI/guess/answerButtonNormal3.png</string>
+								<string>UI/guess/answerButtonTake30.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -228,24 +192,6 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>UI/guess/answerButtonTake30.png</string>
-								<string>Use regular file</string>
-							</array>
-						</dict>
-						<dict>
-							<key>easing</key>
-							<dict>
-								<key>type</key>
-								<integer>0</integer>
-							</dict>
-							<key>name</key>
-							<string>displayFrame</string>
-							<key>time</key>
-							<real>0.20000000298023224</real>
-							<key>type</key>
-							<integer>7</integer>
-							<key>value</key>
-							<array>
 								<string>UI/guess/answerButtonTake31.png</string>
 								<string>Use regular file</string>
 							</array>
@@ -259,7 +205,7 @@
 							<key>name</key>
 							<string>displayFrame</string>
 							<key>time</key>
-							<real>0.30000001192092896</real>
+							<real>0.20000000298023224</real>
 							<key>type</key>
 							<integer>7</integer>
 							<key>value</key>
@@ -476,13 +422,13 @@
 			<key>chainedSequenceId</key>
 			<integer>4</integer>
 			<key>length</key>
-			<real>0.30000001192092896</real>
+			<real>0.20000000298023224</real>
 			<key>name</key>
 			<string>Flipping1 Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.30000001192092896</real>
+			<real>0.20000000298023224</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -510,13 +456,13 @@
 			<key>chainedSequenceId</key>
 			<integer>5</integer>
 			<key>length</key>
-			<real>0.30000001192092896</real>
+			<real>0.20000000298023224</real>
 			<key>name</key>
 			<string>Flipping2 Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.30000001192092896</real>
+			<real>0.20000000298023224</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -544,7 +490,7 @@
 			<key>chainedSequenceId</key>
 			<integer>6</integer>
 			<key>length</key>
-			<real>0.30000001192092896</real>
+			<real>0.20000000298023224</real>
 			<key>name</key>
 			<string>Flipping3 Timeline</string>
 			<key>offset</key>
