@@ -926,8 +926,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             debugMsgOutput("答对了！");
             
             gProblem += 1;
-            this.setupInputCharsAndResultChars(gProblem);
-            gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("Win Timeline");
+            this.answerRight.controller.ShowMsg(this.onClickNext);
         }
         else
         {
@@ -1134,4 +1133,9 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 
 		gCurrentCCBView.updateInputCharsAndResultChars();
 	}
+}
+
+GuessScene.prototype.onClickNext = function() {
+	gCurrentCCBView.answerRight.controller.Hide();
+	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
 }
