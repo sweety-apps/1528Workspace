@@ -722,9 +722,9 @@
 								<key>displayName</key>
 								<string>CCLabelTTF</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>msgText</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -839,20 +839,102 @@
 										<string>第10个字</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
+							</dict>
+						</array>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCSprite</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>0</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>0.0</real>
+									<real>0.0</real>
+									<integer>4</integer>
+								</array>
 							</dict>
 							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.0</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
+							<dict>
+								<key>baseValue</key>
+								<array>
+									<string>UI/guess/tip_light2.png</string>
+									<string>Use regular file</string>
+								</array>
+								<key>name</key>
+								<string>displayFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>UI/guess/tip_light2.png</string>
+								</array>
+							</dict>
+						</array>
+						<key>seqExpanded</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>baseClass</key>
+						<string>CCMenu</string>
+						<key>children</key>
+						<array>
+							<dict>
 								<key>baseClass</key>
-								<string>CCSprite</string>
+								<string>CCMenuItemImage</string>
 								<key>children</key>
 								<array/>
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCSprite</string>
+								<string>CCMenuItemImage</string>
 								<key>memberVarAssignmentName</key>
-								<string>closeBtn</string>
+								<string></string>
 								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
+								<integer>0</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -862,9 +944,9 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>90</real>
-											<real>64.788734436035156</real>
-											<integer>4</integer>
+											<real>-26</real>
+											<real>501</real>
+											<integer>0</integer>
 										</array>
 									</dict>
 									<dict>
@@ -874,8 +956,8 @@
 										<string>Point</string>
 										<key>value</key>
 										<array>
-											<real>0.5</real>
-											<real>0.0</real>
+											<real>0.78125</real>
+											<real>4.25</real>
 										</array>
 									</dict>
 									<dict>
@@ -901,7 +983,48 @@
 									</dict>
 									<dict>
 										<key>name</key>
-										<string>displayFrame</string>
+										<string>block</string>
+										<key>type</key>
+										<string>Block</string>
+										<key>value</key>
+										<array>
+											<string>onClickClose</string>
+											<integer>1</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>isEnabled</string>
+										<key>type</key>
+										<string>Check</string>
+										<key>value</key>
+										<true/>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>normalSpriteFrame</string>
+										<key>type</key>
+										<string>SpriteFrame</string>
+										<key>value</key>
+										<array>
+											<string></string>
+											<string>UI/guess/tip_close.png</string>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>selectedSpriteFrame</string>
+										<key>type</key>
+										<string>SpriteFrame</string>
+										<key>value</key>
+										<array>
+											<string></string>
+											<string>UI/guess/tip_close.png</string>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>disabledSpriteFrame</string>
 										<key>type</key>
 										<string>SpriteFrame</string>
 										<key>value</key>
@@ -984,86 +1107,13 @@
 									</dict>
 								</dict>
 								<key>baseClass</key>
-								<string>CCSprite</string>
+								<string>CCMenuItemImage</string>
 								<key>children</key>
-								<array>
-									<dict>
-										<key>baseClass</key>
-										<string>CCSprite</string>
-										<key>children</key>
-										<array/>
-										<key>customClass</key>
-										<string></string>
-										<key>displayName</key>
-										<string>CCSprite</string>
-										<key>memberVarAssignmentName</key>
-										<string></string>
-										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
-										<key>properties</key>
-										<array>
-											<dict>
-												<key>name</key>
-												<string>position</string>
-												<key>type</key>
-												<string>Position</string>
-												<key>value</key>
-												<array>
-													<real>50.226245880126953</real>
-													<real>52.808990478515625</real>
-													<integer>4</integer>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>anchorPoint</string>
-												<key>type</key>
-												<string>Point</string>
-												<key>value</key>
-												<array>
-													<real>0.5</real>
-													<real>0.5</real>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>scale</string>
-												<key>type</key>
-												<string>ScaleLock</string>
-												<key>value</key>
-												<array>
-													<real>1</real>
-													<real>1</real>
-													<false/>
-													<integer>0</integer>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>ignoreAnchorPointForPosition</string>
-												<key>type</key>
-												<string>Check</string>
-												<key>value</key>
-												<false/>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>displayFrame</string>
-												<key>type</key>
-												<string>SpriteFrame</string>
-												<key>value</key>
-												<array>
-													<string></string>
-													<string>UI/guess/tip_buy.png</string>
-												</array>
-											</dict>
-										</array>
-									</dict>
-								</array>
+								<array/>
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCSprite</string>
+								<string>CCMenuItemImage</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -1077,9 +1127,9 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>50.9375</real>
-											<real>31.338027954101562</real>
-											<integer>4</integer>
+											<real>-158</real>
+											<real>179</real>
+											<integer>0</integer>
 										</array>
 									</dict>
 									<dict>
@@ -1105,9 +1155,9 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>1</real>
-											<real>1</real>
-											<true/>
+											<real>1.0499999523162842</real>
+											<real>1.0499999523162842</real>
+											<false/>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1121,7 +1171,48 @@
 									</dict>
 									<dict>
 										<key>name</key>
-										<string>displayFrame</string>
+										<string>block</string>
+										<key>type</key>
+										<string>Block</string>
+										<key>value</key>
+										<array>
+											<string>onClickBuy</string>
+											<integer>1</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>isEnabled</string>
+										<key>type</key>
+										<string>Check</string>
+										<key>value</key>
+										<true/>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>normalSpriteFrame</string>
+										<key>type</key>
+										<string>SpriteFrame</string>
+										<key>value</key>
+										<array>
+											<string></string>
+											<string>UI/guess/tip_btn.png</string>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>selectedSpriteFrame</string>
+										<key>type</key>
+										<string>SpriteFrame</string>
+										<key>value</key>
+										<array>
+											<string></string>
+											<string>UI/guess/tip_btn.png</string>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>disabledSpriteFrame</string>
 										<key>type</key>
 										<string>SpriteFrame</string>
 										<key>value</key>
@@ -1138,7 +1229,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>CCSprite</string>
+						<string>CCMenu</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -1152,8 +1243,101 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
+									<real>50</real>
+									<real>0.0</real>
+									<integer>4</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>contentSize</string>
+								<key>type</key>
+								<string>Size</string>
+								<key>value</key>
+								<array>
 									<real>0.0</real>
 									<real>0.0</real>
+									<integer>1</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<true/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>touchEnabled</string>
+								<key>platform</key>
+								<string>iOS</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<true/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>mouseEnabled</string>
+								<key>platform</key>
+								<string>Mac</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<true/>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>baseClass</key>
+						<string>CCLabelTTF</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCLabelTTF</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>0</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>0.9375</real>
+									<real>31.86619758605957</real>
 									<integer>4</integer>
 								</array>
 							</dict>
@@ -1165,7 +1349,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.0</real>
+									<real>0.5</real>
 								</array>
 							</dict>
 							<dict>
@@ -1190,11 +1374,134 @@
 								<false/>
 							</dict>
 							<dict>
-								<key>baseValue</key>
+								<key>name</key>
+								<string>fontName</string>
+								<key>type</key>
+								<string>FontTTF</string>
+								<key>value</key>
+								<string>Helvetica</string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>fontSize</string>
+								<key>type</key>
+								<string>FloatScale</string>
+								<key>value</key>
 								<array>
-									<string>UI/guess/tip_light2.png</string>
-									<string>Use regular file</string>
+									<real>22</real>
+									<integer>0</integer>
 								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<integer>254</integer>
+									<integer>255</integer>
+									<integer>255</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>dimensions</string>
+								<key>type</key>
+								<string>Size</string>
+								<key>value</key>
+								<array>
+									<real>0.0</real>
+									<real>0.0</real>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>horizontalAlignment</string>
+								<key>type</key>
+								<string>IntegerLabeled</string>
+								<key>value</key>
+								<integer>1</integer>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>verticalAlignment</string>
+								<key>type</key>
+								<string>IntegerLabeled</string>
+								<key>value</key>
+								<integer>0</integer>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>string</string>
+								<key>type</key>
+								<string>Text</string>
+								<key>value</key>
+								<string>购买</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>baseClass</key>
+						<string>CCSprite</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCSprite</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>0</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>-14.6875</real>
+									<real>50.528167724609375</real>
+									<integer>4</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.0</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
+							<dict>
 								<key>name</key>
 								<string>displayFrame</string>
 								<key>type</key>
@@ -1202,14 +1509,154 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/tip_light2.png</string>
+									<string>UI/guess/tip_coin.png</string>
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
-						<key>seqExpanded</key>
-						<true/>
+					</dict>
+					<dict>
+						<key>baseClass</key>
+						<string>CCSprite</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCSprite</string>
+						<key>memberVarAssignmentName</key>
+						<string>num1</string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>1.5625</real>
+									<real>50.528167724609375</real>
+									<integer>4</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>displayFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>UI/guess/tip_1.png</string>
+								</array>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>baseClass</key>
+						<string>CCSprite</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCSprite</string>
+						<key>memberVarAssignmentName</key>
+						<string>num2</string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>8.125</real>
+									<real>50.528167724609375</real>
+									<integer>4</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>displayFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>UI/guess/tip_1.png</string>
+								</array>
+							</dict>
+						</array>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1217,9 +1664,9 @@
 				<key>displayName</key>
 				<string>CCLayer</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>msgLayout</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -1232,6 +1679,18 @@
 							<real>50</real>
 							<real>0.0</real>
 							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>contentSize</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>320</real>
+							<real>568</real>
+							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
@@ -1308,18 +1767,6 @@
 		<integer>1</integer>
 		<key>properties</key>
 		<array>
-			<dict>
-				<key>name</key>
-				<string>contentSize</string>
-				<key>type</key>
-				<string>Size</string>
-				<key>value</key>
-				<array>
-					<real>100</real>
-					<real>100</real>
-					<integer>1</integer>
-				</array>
-			</dict>
 			<dict>
 				<key>name</key>
 				<string>anchorPoint</string>
@@ -1512,7 +1959,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.80000001192092896</real>
+			<real>0.40000000596046448</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

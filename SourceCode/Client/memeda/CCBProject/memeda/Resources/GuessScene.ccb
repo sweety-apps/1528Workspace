@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -281,8 +281,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-50.221355438232422</real>
-							<real>76.750587463378906</real>
+							<real>-50</real>
+							<real>77</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -12273,7 +12273,7 @@
 			<key>offset</key>
 			<real>3.375</real>
 			<key>position</key>
-			<real>11.5</real>
+			<real>16.966667175292969</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

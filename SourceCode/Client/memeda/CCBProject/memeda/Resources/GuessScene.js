@@ -47,6 +47,7 @@ var gCurrentGuessState = kGuessStateNormal;
 var gFlippingIndex = 1;
 
 var gTimeCount = 0;
+var gBuyNum = 0;		// 但前购买过的提示
 
 function GuessScene_InitGlobel() {
     kGuessStateNormal = 0;
@@ -56,6 +57,7 @@ function GuessScene_InitGlobel() {
     // static Var
     kReturnButtonPushed = 1;
     
+    gBuyNum = 0;
     gPushedButton = 0;
     
     gCurrentCCBView = null;
@@ -564,6 +566,9 @@ GuessScene.prototype.InitVars = function()
         
         this.answerLayout.setScaleX(0.88);
         this.answerLayout.setScaleY(0.88);
+        
+        this.buyMsg.setScaleX(0.84);
+        this.buyMsg.setScaleY(0.84);
     }
 };
 
@@ -752,6 +757,8 @@ function MakeInputKeys(rightanswers, inputkeys) {
 
 GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 {
+	gBuyNum = 0;
+
     debugMsgOutput("onReceivedTestData");
     gCurrentTestObj = testObj;
 
@@ -1003,8 +1010,6 @@ GuessScene.prototype.onSubCCBFileAnimationComplete = function()
         gCurrentPushedResultButton.animationManager.getLastCompletedSequenceName() == "Flipping" + gFlippingIndex + " Timeline")
     {
         gCurrentCCBView.updateInputCharsAndResultChars();
-
-        CoinMgr_Change(30);
     }
 };
 
@@ -1014,37 +1019,6 @@ GuessScene.prototype.updateInputCharsAndResultCharsWithAnimation = function ()
     var handPos = gCurrentChoosedCharButton.convertToWorldSpace(cc.p(choosedCharButtonSize.width/2,choosedCharButtonSize.height/2));
     gCatHand.setPosition(handPos);
     gCatHand.animationManager.runAnimationsForSequenceNamed("Push Timeline");
-
-    /*
-    var i = 0;
-    var resultString = "";
-    for(i = 0; i < gResultCharButtons.length; i++)
-    {
-        var showString = "";
-        if(choosedButtons[i] != emptyButton)
-        {
-            showString = choosedCharStrings[i];
-            resultString = resultString + showString;
-        }
-
-        gResultCharButtonLabels[i].setString(showString);
-    }
-
-    gIsPickingCharNow = false;
-
-    if(choosedButtonCount >= gResultCharButtons.length)
-    {
-        if(this.checkAnswer(resultString,gCurrentTestObj.content.rightanswer))
-        {
-            debugMsgOutput("答对了！");
-            this.setupInputCharsAndResultChars();
-        }
-        else
-        {
-            debugMsgOutput("可惜答错了，再接再厉！");
-        }
-    }
-    */
 };
 
 GuessScene.prototype.onStartCatDrawingAnimation = function ()
@@ -1071,9 +1045,14 @@ GuessScene.prototype._isRunning = function () {
 GuessScene.prototype.PlayMusic = function () {
     cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
     
-    cc.AudioEngine.getInstance().stopMusic();
-    cc.AudioEngine.getInstance().playMusic(gMusicURL, false);
-    cc.AudioEngine.getInstance().setMusicVolume(0.9);
+    try {
+    	if ( cc.AudioEngine.getInstance().isMusicPlaying() ) {
+    		cc.AudioEngine.getInstance().stopMusic();
+    	}
+   	 	cc.AudioEngine.getInstance().playMusic(gMusicURL, false);
+    	cc.AudioEngine.getInstance().setMusicVolume(0.9);
+    } catch (e) {
+    }
     
     cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
 
@@ -1101,9 +1080,58 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
 }
 
 GuessScene.prototype.ClickBuy = function () {
-	this.buyMsg.controller.ShowMsg(1, "第3个字", this.onBuyMsgEnd);	
+	var price = new Array(10, 20, 30, 40, 50, 60);
+	this.buyMsg.controller.ShowMsg(price[gBuyNum], "第" + (gBuyNum + 1) + "个字", this.onBuyMsgEnd);	
 }
 
 GuessScene.prototype.onBuyMsgEnd = function (res) {
-	
+	if ( res == 1 ) {
+		gBuyNum ++;
+		// 查找第一个错字的位置
+		var answer = gCurrentTestObj.content.rightAnswers[0];
+		var resultIndex = -1;
+		var resultChar = "";
+		var inputIndex = -1;
+		
+		for (var i = 0; i < gResultCharButtonLabels.length; i ++ ) {
+			if ( gResultCharButtonLabels[i].getString() != answer[i] ) {
+				resultIndex = i;
+				resultChar = answer[i];
+				break;
+			}
+		}
+		
+		for ( var i = 0; i < gInputCharButtonLabels.length; i ++ ) {
+			if ( gInputCharButtons[i].isVisible() &&
+					gInputCharButtonLabels[i].getString() == resultChar ) {
+				inputIndex = i;
+				break;		
+			}
+		}
+		
+		debugMsgOutput("result " + resultIndex + "   " + resultChar + "   " + answer);
+
+		if ( choosedButtons[resultIndex] != emptyButton ) {
+			var sourceIndex = choosedButtons[resultIndex].sourceButtonIndex;
+			choosedButtons[resultIndex] = emptyButton;			choosedCharStrings[resultIndex] = "";
+            choosedButtonCount--;
+
+			gCurrentChoosedCharButton = null;
+			gCurrentPushedResultButton = null;
+
+            gInputCharButtons[sourceIndex].setVisible(true);
+		}
+                      
+        choosedButtons[resultIndex] = gInputCharButtons[inputIndex];
+        
+        choosedCharStrings[resultIndex] = gInputCharButtonLabels[inputIndex].getString();
+        choosedButtons[resultIndex].sourceButtonIndex = inputIndex;
+        gCurrentPushedResultButton = gResultCharButtons[resultIndex];
+        choosedButtonCount++;
+        
+        gInputCharButtons[inputIndex].setVisible(false);
+        
+
+		gCurrentCCBView.updateInputCharsAndResultChars();
+	}
 }
