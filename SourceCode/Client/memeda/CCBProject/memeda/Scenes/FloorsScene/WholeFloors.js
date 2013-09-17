@@ -155,8 +155,9 @@ WholeFloors.prototype.InitWholeFloors = function ()
         this.allFloors[i] = this.floorQueue[i%(this.floorQueue.length)];
         this.allFloorFronts[i] = this.floorFrontQueue[i%(this.floorFrontQueue.length)];
         this.allFloors[i].controller.onClickedDoorCallbackObject = this;
+        this.allFloors[i].controller.floorNumber = i;
         this.allFloors[i].controller.onClickedDoorCallback = function(floor,doorNum) {
-            this.onClickedDoorCallbackObject.onClickedDoor(floor,doorNum);
+            this.onClickedDoorCallbackObject.onClickedDoor(floor,this.floorNumber,doorNum);
         };
     }
     var offY = this.startFloorOffsetY;
@@ -175,7 +176,8 @@ WholeFloors.prototype.InitWholeFloors = function ()
     //初始化cat的位置
     this.sceneState = kFloorStateWaiting;
     this.currentCatStayAtDoorNum = 1;
-    this.doLiftAnimationTo(offY,this.currentCatStayAtDoorNum,false,null,null);
+    this.currentCatStayAtFloorNum = 0;
+    this.doLiftAnimationTo(offY,this.currentCatStayAtDoorNum,this.currentCatStayAtFloorNum,false,null,null);
 };
 
 WholeFloors.prototype.UninitWholeFloors = function ()
@@ -238,7 +240,7 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
             spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
             floorFront.controller.bottom.setDisplayFrame(spriteFrame);
 
-
+            floor.controller.floorNumber = floorNum;
             floor.controller.doorNum1.setString(gTestFloor[floorNum].doors[0].doorNum);
             floor.controller.doorNum2.setString(gTestFloor[floorNum].doors[1].doorNum);
             floor.controller.doorNum3.setString(gTestFloor[floorNum].doors[2].doorNum);
@@ -259,22 +261,34 @@ WholeFloors.prototype.CalculateHeight = function ()
     return gTestFloor.length * this.floorHeight;
 }
 
-WholeFloors.prototype.onClickedDoor = function(floor, doorNum)
+WholeFloors.prototype.onClickedDoor = function(floor, floorNum, doorNum)
 {
     var offsetY = floor.rootNode.getPositionY();
     debugMsgOutput("Clicked Floor Y="+offsetY+" doorNum="+doorNum);
-    this.doLiftAnimationTo(offsetY,doorNum,true,this.onFinishedDoLiftAnimation,this);
+    var floorData = gTestFloor[floorNum];
+    if(!floorData.doors[doorNum - 1].hasFinished)
+    {
+        if(this.onFinishedClickedDoorAnimation != null && this.onFinishedClickedDoorAnimation != undefined)
+        {
+            this.onFinishedClickedDoorAnimation(false,floorNum, doorNum);
+        }
+    }
+    else
+    {
+        this.doLiftAnimationTo(offsetY,doorNum,floorNum,true,this.onFinishedDoLiftAnimation,this);
+    }
 }
 
 WholeFloors.prototype.onFinishedDoLiftAnimation = function()
 {
-    if(this.onPressedDoor != null && this.onPressedDoor != null)
+    if(this.onFinishedClickedDoorAnimation != null && this.onFinishedClickedDoorAnimation != undefined)
     {
-        this.onPressedDoor(true,0);
+        this.onFinishedClickedDoorAnimation(true,this.currentCatStayAtFloorNum, this.currentCatStayAtDoorNum);
     }
 };
 
-WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimation,callBack,target)
+// 猫猫移动动画
+WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,floorNum,showAnimation,callBack,target)
 {
     if(this.sceneState != kFloorStateCatMoving)
     {
@@ -324,9 +338,17 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimatio
         this.catAndLift.animationManager.setCompletedAnimationCallback(this, this.onCatAndLiftAnimationCompleted);
         if(showAnimation)
         {
-            this.catAndLift.animationManager.runAnimationsForSequenceNamed("Go Lift Timeline"+this.currentCatStayAtDoorNum);
+            if(this.currentCatStayAtFloorNum == floorNum)
+            {
+                this.catAndLift.animationManager.runAnimationsForSequenceNamed("Move Timeline"+this.currentCatStayAtDoorNum+""+doorNum);
+            }
+            else
+            {
+                this.catAndLift.animationManager.runAnimationsForSequenceNamed("Go Lift Timeline"+this.currentCatStayAtDoorNum);
+            }
         }
         this.currentCatStayAtDoorNum = doorNum;
+        this.currentCatStayAtFloorNum = floorNum;
         if(!showAnimation)
         {
             this.catAndLift.animationManager.runAnimationsForSequenceNamed("Stay Timeline"+this.currentCatStayAtDoorNum);
@@ -335,7 +357,29 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,showAnimatio
     }
 };
 
-WholeFloors.prototype.onPressedDoor = function(isDoorClosed, testNum)
+WholeFloors.prototype.onPressedDoorCallbackTarget = null;
+WholeFloors.prototype.onPressedDoorCallbackMethod = null;
+
+WholeFloors.prototype.onFinishedClickedDoorAnimation = function (isDoorOpened, floorNum, doorNum)
 {
-    debugMsgOutput("Pressed Door: TestNum = "+testNum+" is Door Closed: "+isDoorClosed);
-};
+    debugMsgOutput("On Clicked floor "+floorNum+" door "+doorNum+" animate finished!");
+    if(this.onPressedDoorCallbackMethod != null && this.onPressedDoorCallbackMethod != undefined)
+    {
+        if(this.onPressedDoorCallbackTarget != null && this.onPressedDoorCallbackTarget != undefined)
+        {
+            this.onPressedDoorCallbackTarget.onPressedDoorCallbackMethodTmp = this.onPressedDoorCallbackMethod;
+            this.onPressedDoorCallbackTarget.onPressedDoorCallbackMethodTmp(isDoorOpened, floorNum, doorNum);
+            this.onPressedDoorCallbackTarget.onPressedDoorCallbackMethodTmp = null;
+        }
+        else
+        {
+            this.onPressedDoorCallbackMethod(isDoorOpened, floorNum, doorNum);
+        }
+    }
+}
+
+WholeFloors.prototype.setDoorPressedCallback = function (target,callfunc)
+{
+    this.onPressedDoorCallbackTarget = target;
+    this.onPressedDoorCallbackMethod = callfunc;
+}
