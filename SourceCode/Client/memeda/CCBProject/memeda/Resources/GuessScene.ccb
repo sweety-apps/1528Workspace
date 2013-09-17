@@ -12088,7 +12088,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>50</real>
+							<real>0.0</real>
 							<real>100</real>
 							<integer>4</integer>
 						</array>
@@ -12115,6 +12115,8 @@
 						<string>BuyMsg.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -12165,8 +12167,6 @@
 						<string>RightMsgBox.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
