@@ -12138,8 +12138,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>50</real>
-							<real>50</real>
+							<real>0.0</real>
+							<real>0.0</real>
 							<integer>4</integer>
 						</array>
 					</dict>
