@@ -41,7 +41,7 @@
 	<key>publishEnablediPhone</key>
 	<true/>
 	<key>publishResolutionHTML5_height</key>
-	<integer>568</integer>
+	<integer>480</integer>
 	<key>publishResolutionHTML5_scale</key>
 	<integer>1</integer>
 	<key>publishResolutionHTML5_width</key>
