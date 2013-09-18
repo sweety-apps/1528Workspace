@@ -48,8 +48,11 @@ var gFlippingIndex = 1;
 
 var gTimeCount = 0;
 var gBuyNum = 0;		// 但前购买过的提示
+var gAllBtnEnable = true;
 
 function GuessScene_InitGlobel() {
+	gAllBtnEnable = true;
+	
     kGuessStateNormal = 0;
     kGuessStatePullingChar = 2;
     kGuessStatePuttingResult = 3;
@@ -796,9 +799,12 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         }
 
         gInputCharButtons[i].onPressButton = function () {
-
             debugMsgOutput("Input");
-
+     		if ( !gAllBtnEnable ) {
+                debugMsgOutput("Input Disable");
+                return;				
+			}
+			
             if(gCurrentGuessState != kGuessStateNormal)
             {
                 debugMsgOutput("Input return");
@@ -850,8 +856,11 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         setupPressEventToSprite(guessScene.rootLayer,gResultCharButtons[i],gResultCharButtons[i]);
         gResultCharButtons[i].buttonIndexNumber = i;
         gResultCharButtons[i].onPressButton = function () {
-
-            if(gCurrentGuessState != kGuessStateNormal)
+     		if ( !gAllBtnEnable ) {
+                return;				
+			}
+			
+			if(gCurrentGuessState != kGuessStateNormal)
             {
                 return;
             }
@@ -918,6 +927,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
 				cc.AudioEngine.getInstance().stopMusic();
 			}
             gProblem += 1;
+            this.EnableAllBtn(false);
             this.answerRight.controller.ShowMsg(this.onClickNext);
         }
         else
@@ -1072,10 +1082,12 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
 
 GuessScene.prototype.ClickBuy = function () {
 	var price = new Array(10, 20, 30, 40, 50, 60);
+	this.EnableAllBtn(false);
 	this.buyMsg.controller.ShowMsg(price[gBuyNum], "第" + (gBuyNum + 1) + "个字", this.onBuyMsgEnd);	
 }
 
 GuessScene.prototype.onBuyMsgEnd = function (res) {
+	gCurrentCCBView.EnableAllBtn(true);
 	if ( res == 1 ) {
 		gBuyNum ++;
 		// 查找第一个错字的位置
@@ -1128,6 +1140,13 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 }
 
 GuessScene.prototype.onClickNext = function() {
+	gCurrentCCBView.EnableAllBtn(true);
 	gCurrentCCBView.answerRight.controller.Hide();
 	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
 }
+
+GuessScene.prototype.EnableAllBtn = function (enable) {
+	gAllBtnEnable = enable;
+	this.coinBtn.setEnabled(enable);
+	this.returnBtn.setEnabled(enable);
+}; 

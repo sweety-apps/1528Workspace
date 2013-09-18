@@ -423,9 +423,9 @@
 								<key>displayName</key>
 								<string>CCMenuItemImage</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>returnBtn</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -1331,9 +1331,9 @@
 								<key>displayName</key>
 								<string>CCMenuItemImage</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>coinBtn</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -3237,7 +3237,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -3680,7 +3680,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -4123,7 +4123,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -4566,7 +4566,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -5009,7 +5009,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -5452,7 +5452,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -5895,7 +5895,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -6338,7 +6338,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -6781,7 +6781,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -7224,7 +7224,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -7667,7 +7667,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -8110,7 +8110,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -8553,7 +8553,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -8996,7 +8996,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -9439,7 +9439,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -9882,7 +9882,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -10325,7 +10325,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -10768,7 +10768,7 @@
 												<key>type</key>
 												<string>Byte</string>
 												<key>value</key>
-												<integer>213</integer>
+												<integer>85</integer>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -12703,7 +12703,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.46666666865348816</real>
+			<real>0.36666667461395264</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
