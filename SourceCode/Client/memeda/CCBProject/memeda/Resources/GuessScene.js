@@ -162,33 +162,11 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     this.wechatButton.onPressButton = function () {
     }
     
-    setupPressEventToSprite(this.rootLayer,this.awardButton, this.awardButton);
-    this.awardButton.onPressButton = function () {
-    	gCurrentCCBView.ClickBuy();
-    }
-    
     setupPressEventToSprite(this.rootLayer,this.playMusic, this.playMusic);
     this.playMusic.onPressButton = function () {
         gCurrentCCBView.ListenMusic();
     }
-    
-    // returnButton Event
-    setupPressEventToSprite(this.rootLayer,this.returnButton,this.returnButton);
-    this.returnButton.onPressButton = function (){
-        debugMsgOutput("returnButton Pushed! " + cc.AudioEngine.getInstance().isMusicPlaying());
-        if(cc.AudioEngine.getInstance().isMusicPlaying())
-        {
-            cc.AudioEngine.getInstance().stopMusic();
-        }
-        cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-        var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
-        cc.Director.getInstance().replaceScene(scene);
-        //gCurrentCCBView.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
-        //gPushedButton = kReturnButtonPushed;
-    }
-    
-    
-    
+   
     // aboutButton Event
     /*
     setupPressEventToSprite(this.rootLayer,this.aboutButton,this.aboutButton);
@@ -308,7 +286,19 @@ function clearAllPressEventToSprite ()
 }
 
 ///// Logic Methods
+GuessScene.prototype.onClickCoin = function () {
+    gCurrentCCBView.ClickBuy();
+}
 
+GuessScene.prototype.onBack = function ( ) {
+	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+		cc.AudioEngine.getInstance().stopMusic();
+	}
+	
+	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+	var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
+	cc.Director.getInstance().replaceScene(scene);
+}
 
 GuessScene.prototype.SetTitleNum = function (num) {
     if ( num >= 100 ) {
