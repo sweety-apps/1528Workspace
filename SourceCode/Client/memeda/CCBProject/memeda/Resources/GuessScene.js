@@ -914,7 +914,9 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
         if(this.checkAnswer(resultString,gCurrentTestObj.content.rightAnswers))
         {
             debugMsgOutput("答对了！");
-            
+            if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+				cc.AudioEngine.getInstance().stopMusic();
+			}
             gProblem += 1;
             this.answerRight.controller.ShowMsg(this.onClickNext);
         }
