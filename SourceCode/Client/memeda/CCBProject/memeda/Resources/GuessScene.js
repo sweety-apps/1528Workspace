@@ -15,7 +15,6 @@ var pressSpritesCallbacks = new Array();
 var gCurrentCCBView = null;
 
 var gInputCharButtons = new Array();
-var gInputCharButtonLabels = new Array();
 
 var gResultCharAllButtons = new Array();
 var gResultCharButtons = new Array();
@@ -63,8 +62,6 @@ function GuessScene_InitGlobel() {
     gCurrentCCBView = null;
 
     gInputCharButtons = new Array();
-
-    gInputCharButtonLabels = new Array();
    
     gResultCharAllButtons = new Array();
     
@@ -451,59 +448,24 @@ GuessScene.prototype.InitVars = function()
     
     // Inputs
     gInputCharButtons[0] = this.charButton0;
-    gInputCharButtonLabels[0] = this.charLbl0;
-
     gInputCharButtons[1] = this.charButton1;
-    gInputCharButtonLabels[1] = this.charLbl1;
-
     gInputCharButtons[2] = this.charButton2;
-    gInputCharButtonLabels[2] = this.charLbl2;
-
     gInputCharButtons[3] = this.charButton3;
-    gInputCharButtonLabels[3] = this.charLbl3;
-
     gInputCharButtons[4] = this.charButton4;
-    gInputCharButtonLabels[4] = this.charLbl4;
-
     gInputCharButtons[5] = this.charButton5;
-    gInputCharButtonLabels[5] = this.charLbl5;
-
     gInputCharButtons[6] = this.charButton6;
-    gInputCharButtonLabels[6] = this.charLbl6;
-
     gInputCharButtons[7] = this.charButton7;
-    gInputCharButtonLabels[7] = this.charLbl7;
-
     gInputCharButtons[8] = this.charButton8;
-    gInputCharButtonLabels[8] = this.charLbl8;
-
     gInputCharButtons[9] = this.charButton9;
-    gInputCharButtonLabels[9] = this.charLbl9;
-
     gInputCharButtons[10] = this.charButton10;
-    gInputCharButtonLabels[10] = this.charLbl10;
-
     gInputCharButtons[11] = this.charButton11;
-    gInputCharButtonLabels[11] = this.charLbl11;
-
     gInputCharButtons[12] = this.charButton12;
-    gInputCharButtonLabels[12] = this.charLbl12;
-
     gInputCharButtons[13] = this.charButton13;
-    gInputCharButtonLabels[13] = this.charLbl13;
-
     gInputCharButtons[14] = this.charButton14;
-    gInputCharButtonLabels[14] = this.charLbl14;
-
     gInputCharButtons[15] = this.charButton15;
-    gInputCharButtonLabels[15] = this.charLbl15;
-
     gInputCharButtons[16] = this.charButton16;
-    gInputCharButtonLabels[16] = this.charLbl16;
-
     gInputCharButtons[17] = this.charButton17;
-    gInputCharButtonLabels[17] = this.charLbl17;
-
+    
     this.coinNum.setString("" + CoinMgr_GetCount());
     CoinMgr_Register(function (coin, add) {
         gCurrentCCBView.coinNum.setString("" + CoinMgr_GetCount());
@@ -540,11 +502,6 @@ GuessScene.prototype.ClearVars = function()
     while(gInputCharButtons.length > 0)
     {
         gInputCharButtons.pop();
-    }
-
-    while(gInputCharButtonLabels.length > 0)
-    {
-        gInputCharButtonLabels.pop();
     }
 
     while(gResultCharButtons.length > 0)
@@ -731,8 +688,8 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     
     for(i = 0; i < gInputCharButtons.length; i++)
     {
-        gInputCharButtonLabels[i].setString(inputKeys.substring(i,i+1));
-        gInputCharButtonLabels[i].setVisible(true);
+        gInputCharButtons[i].controller.setText(inputKeys.substring(i,i+1));
+        gInputCharButtons[i].controller.setStatus(false);	// 按钮不可点击
     }
 
     for(i = 0; i < gResultCharButtons.length; i++)
@@ -752,7 +709,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     for(i = 0; i < gInputCharButtons.length; i++)
     {
         setupPressEventToSprite(guessScene.rootLayer,gInputCharButtons[i],gInputCharButtons[i]);
-        gInputCharButtons[i].buttonIndexNumber = i;
+        gInputCharButtons[i].controller.SetIndexNumber(i);
         if(i < inputKeys.length)
         {
             gInputCharButtons[i].setVisible(true);
@@ -762,8 +719,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
             gInputCharButtons[i].setVisible(false);
         }
 
-        gInputCharButtons[i].onPressButton = function () {
-            debugMsgOutput("Input");
+		gInputCharButtons[i].controller.AttachClickEvent(function (obj) {
      		if ( !gAllBtnEnable ) {
                 debugMsgOutput("Input Disable");
                 return;				
@@ -774,10 +730,14 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 debugMsgOutput("Input return");
                 return;
             }
+            
+      
+            var sourceIndex = obj.GetIndexNumber();
+                
             debugMsgOutput("choosedButtonCount " + choosedButtonCount + "  gResultCharButtons.length  " + gResultCharButtons.length);
             
             debugMsgOutput("choosedButtons.length " + choosedButtons.length);      
-            if(choosedButtonCount < gResultCharButtons.length && this.isVisible())
+            if(choosedButtonCount < gResultCharButtons.length && gInputCharButtons[sourceIndex].isVisible())
             {
                 var choosedIndex = -1;
 
@@ -792,14 +752,12 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 }
                 debugMsgOutput("emptyButton " + emptyButton);               
                 debugMsgOutput("choosedIndex " + choosedIndex);
-
-                var sourceIndex = this.buttonIndexNumber;
-
+                
                 gCurrentGuessState = kGuessStatePullingChar;
-                gCurrentChoosedCharButton = this;
+                gCurrentChoosedCharButton = gInputCharButtons[sourceIndex];
 
-                choosedButtons[choosedIndex] = this;
-                choosedCharStrings[choosedIndex] = gInputCharButtonLabels[sourceIndex].getString();
+                choosedButtons[choosedIndex] = gInputCharButtons[sourceIndex];
+                choosedCharStrings[choosedIndex] = gInputCharButtons[sourceIndex].controller.getText();
                 choosedButtons[choosedIndex].sourceButtonIndex = sourceIndex;
                 gCurrentPushedResultButton = gResultCharButtons[choosedIndex];
                 choosedButtonCount++;
@@ -807,12 +765,12 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 if(false)
                 {   // 播放音乐
                     cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-                    this.setVisible(false);
+                    gInputCharButtons[sourceIndex].setVisible(false);
                 }
 
                 gCurrentCCBView.updateInputCharsAndResultCharsWithAnimation();
             }
-        }
+        });
     }
 
     for(i = 0; i < gResultCharButtons.length; i++)
@@ -1029,6 +987,9 @@ GuessScene.prototype.onClickReplay = function () {
 
 GuessScene.prototype.onEnterCompleted = function(obj) {
 	obj.rootNode.animationManager.runAnimationsForSequenceNamed("Drawing Animation Timeline");	
+	for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
+		gInputCharButtons[i].controller.setStatus(true);	
+	}
 }
 
 GuessScene.prototype.ClickBuy = function () {
@@ -1055,9 +1016,9 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 			}
 		}
 		
-		for ( var i = 0; i < gInputCharButtonLabels.length; i ++ ) {
+		for ( var i = 0; i < gResultCharButtons.length; i ++ ) {
 			if ( gInputCharButtons[i].isVisible() &&
-					gInputCharButtonLabels[i].getString() == resultChar ) {
+					gResultCharButtons[i].getText() == resultChar ) {
 				inputIndex = i;
 				break;		
 			}
@@ -1078,7 +1039,7 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
                       
         choosedButtons[resultIndex] = gInputCharButtons[inputIndex];
         
-        choosedCharStrings[resultIndex] = gInputCharButtonLabels[inputIndex].getString();
+        choosedCharStrings[resultIndex] = gResultCharButtons[inputIndex].controller.getText();
         choosedButtons[resultIndex].sourceButtonIndex = inputIndex;
         gCurrentPushedResultButton = gResultCharButtons[resultIndex];
         choosedButtonCount++;
