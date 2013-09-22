@@ -1114,7 +1114,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>3</real>
+							<real>-20</real>
 							<real>66</real>
 							<integer>4</integer>
 						</array>
@@ -1546,7 +1546,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>99</real>
+							<real>120</real>
 							<real>79</real>
 							<integer>4</integer>
 						</array>
@@ -1711,7 +1711,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>97</real>
+							<real>120</real>
 							<real>66.5</real>
 							<integer>4</integer>
 						</array>
@@ -1814,7 +1814,7 @@
 								<key>type</key>
 								<string>CCBFile</string>
 								<key>value</key>
-								<string>answerBlank.ccb</string>
+								<string>AnswerBlank.ccb</string>
 							</dict>
 						</array>
 					</dict>
@@ -1864,7 +1864,7 @@
 								<key>type</key>
 								<string>CCBFile</string>
 								<key>value</key>
-								<string>answerBlank.ccb</string>
+								<string>AnswerBlank.ccb</string>
 							</dict>
 						</array>
 					</dict>
@@ -1914,7 +1914,7 @@
 								<key>type</key>
 								<string>CCBFile</string>
 								<key>value</key>
-								<string>answerBlank.ccb</string>
+								<string>AnswerBlank.ccb</string>
 							</dict>
 						</array>
 					</dict>
@@ -1964,7 +1964,7 @@
 								<key>type</key>
 								<string>CCBFile</string>
 								<key>value</key>
-								<string>answerBlank.ccb</string>
+								<string>AnswerBlank.ccb</string>
 							</dict>
 						</array>
 					</dict>
@@ -2014,7 +2014,7 @@
 								<key>type</key>
 								<string>CCBFile</string>
 								<key>value</key>
-								<string>answerBlank.ccb</string>
+								<string>AnswerBlank.ccb</string>
 							</dict>
 						</array>
 					</dict>
@@ -2064,7 +2064,7 @@
 								<key>type</key>
 								<string>CCBFile</string>
 								<key>value</key>
-								<string>answerBlank.ccb</string>
+								<string>AnswerBlank.ccb</string>
 							</dict>
 						</array>
 					</dict>
@@ -3155,8 +3155,6 @@
 								<string>InputCharBtn.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -4962,9 +4960,9 @@
 			<key>name</key>
 			<string>UI Effect Timeline</string>
 			<key>offset</key>
-			<real>3.375</real>
+			<real>0.0</real>
 			<key>position</key>
-			<real>16.966667175292969</real>
+			<real>1.5666667222976685</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -4998,7 +4996,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.5</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

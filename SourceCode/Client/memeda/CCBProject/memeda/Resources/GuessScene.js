@@ -1016,9 +1016,9 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 			}
 		}
 		
-		for ( var i = 0; i < gResultCharButtons.length; i ++ ) {
+		for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
 			if ( gInputCharButtons[i].isVisible() &&
-					gResultCharButtons[i].getText() == resultChar ) {
+					gInputCharButtons[i].controller.getText() == resultChar ) {
 				inputIndex = i;
 				break;		
 			}
@@ -1039,7 +1039,7 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
                       
         choosedButtons[resultIndex] = gInputCharButtons[inputIndex];
         
-        choosedCharStrings[resultIndex] = gResultCharButtons[inputIndex].controller.getText();
+        choosedCharStrings[resultIndex] = gInputCharButtons[inputIndex].controller.getText();
         choosedButtons[resultIndex].sourceButtonIndex = inputIndex;
         gCurrentPushedResultButton = gResultCharButtons[resultIndex];
         choosedButtonCount++;
