@@ -292,6 +292,13 @@ GuessScene.prototype.onClickCoin = function () {
 }
 
 GuessScene.prototype.onBack = function ( ) {
+    // 上报数据
+    var param = memeda.Stat.createParam();
+    param.addKeyAndValue("index", ""+gProblem);
+    param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+    memeda.Stat.logEvent("guessback", param);
+    //
+    
 	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 		cc.AudioEngine.getInstance().stopMusic();
 	}
@@ -675,7 +682,14 @@ function MakeInputKeys(rightanswers, inputkeys) {
 }
 
 GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
-{
+{	// 上报数据
+	var param = memeda.Stat.createParam();
+	param.addKeyAndValue("index", ""+gProblem);
+	param.addKeyAndValue("aid", ""+testObj.id);	
+	param.addKeyAndValue("source", ""+gSource);		
+	memeda.Stat.logEvent("guess", param);
+	//
+	
 	gBuyNum = 0;
 
     debugMsgOutput("onReceivedTestData");
@@ -844,6 +858,13 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
     {
         if(this.checkAnswer(resultString,gCurrentTestObj.content.rightAnswers))
         {
+            // 上报数据
+            var param = memeda.Stat.createParam();
+            param.addKeyAndValue("index", ""+gProblem);
+            param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+            memeda.Stat.logEvent("guesssuccess", param);
+            //
+            
             debugMsgOutput("答对了！");
             if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 				cc.AudioEngine.getInstance().stopMusic();
@@ -854,6 +875,13 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
         }
         else
         {
+            // 上报数据
+            var param = memeda.Stat.createParam();
+            param.addKeyAndValue("index", ""+gProblem);
+            param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+            memeda.Stat.logEvent("guesserror", param);
+            //
+            
             debugMsgOutput("可惜答错了，再接再厉！");
         }
     }
@@ -1000,7 +1028,7 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
 GuessScene.prototype.ClickBuy = function () {
 	var price = new Array(10, 20, 30, 40, 50, 60);
 	this.EnableAllBtn(false);
-	this.buyMsg.controller.ShowMsg(price[gBuyNum], "第" + (gBuyNum + 1) + "个字", this.onBuyMsgEnd);	
+	this.buyMsg.controller.ShowMsg(price[gBuyNum], "第" + (gBuyNum + 1) + "个字", this.onBuyMsgEnd, gBuyNum + 1);
 }
 
 GuessScene.prototype.onBuyMsgEnd = function (res) {

@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "memeda/Resources/TestCCB/GuessScene.js"
-         timestampString = "401695789.744147"
+         timestampString = "401703620.363144"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "906"
-         endingLineNumber = "906"
+         startingLineNumber = "927"
+         endingLineNumber = "927"
          landmarkName = "GuessScene.prototype.onSubCCBFileAnimationComplete"
          landmarkType = "7">
       </FileBreakpoint>
