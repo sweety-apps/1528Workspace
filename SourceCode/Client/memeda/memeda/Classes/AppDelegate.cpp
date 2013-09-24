@@ -12,8 +12,8 @@
 #include "js_bindings_system_registration.h"
 #include "jsb_opengl_registration.h"
 #include "XMLHTTPRequest.h"
-
 #include "uncompressZipFile.h"
+#include "Stat.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -32,7 +32,6 @@ bool AppDelegate::applicationDidFinishLaunching()
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
-    
     
     pDirector->setProjection(kCCDirectorProjection2D);
     
@@ -153,13 +152,19 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(JSB_register_opengl);
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
 
+    // 初始化友盟统计
+    CStat* pStat = CStat::GetInstance();
+    pStat->Init();
+    sc->addRegisterCallback(CStatParam::_js_register);
+    sc->addRegisterCallback(CStat::_js_register);
+    
     sc->start();
     
     CCScriptEngineProtocol *pEngine = ScriptingCore::getInstance();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
     ScriptingCore::getInstance()->runScript("main.js");
-    
-    //testUnzipFiles();
+
+    pStat->logTimedEventBegin("runtime");   // 
     
     return true;
 }
@@ -188,6 +193,9 @@ void handle_signal(int signal) {
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground()
 {
+    CStat* pStat = CStat::GetInstance();
+    pStat->logTimedEventEnd("runtime");   //
+    
     CCDirector::sharedDirector()->stopAnimation();
     SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
     SimpleAudioEngine::sharedEngine()->pauseAllEffects();
@@ -196,6 +204,9 @@ void AppDelegate::applicationDidEnterBackground()
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground()
 {
+    CStat* pStat = CStat::GetInstance();
+    pStat->logTimedEventBegin("runtime");   //
+    
     CCDirector::sharedDirector()->startAnimation();
     SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
     SimpleAudioEngine::sharedEngine()->resumeAllEffects();
