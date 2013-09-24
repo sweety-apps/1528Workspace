@@ -10,6 +10,20 @@
 		A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */; };
 		A614B3D117DF14080095CD40 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3D017DF14080095CD40 /* libicucore.dylib */; };
 		A614B3D317DF141E0095CD40 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */; };
+		A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */; };
+		A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */; };
+		A6A701F217F01AEA005FBA13 /* PluginUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */; };
+		A6A701F317F01AEA005FBA13 /* ProtocolAds.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C217F01AEA005FBA13 /* ProtocolAds.mm */; };
+		A6A701F417F01AEA005FBA13 /* ProtocolAnalytics.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C317F01AEA005FBA13 /* ProtocolAnalytics.mm */; };
+		A6A701F517F01AEA005FBA13 /* ProtocolIAP.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C417F01AEA005FBA13 /* ProtocolIAP.mm */; };
+		A6A701F617F01AEA005FBA13 /* ProtocolSocial.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C517F01AEA005FBA13 /* ProtocolSocial.mm */; };
+		A6A701F717F01AEA005FBA13 /* SocialWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C717F01AEA005FBA13 /* SocialWrapper.mm */; };
+		A6A701F817F01AEA005FBA13 /* PluginManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C817F01AEA005FBA13 /* PluginManager.cpp */; };
+		A6A701F917F01AEA005FBA13 /* PluginParam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C917F01AEA005FBA13 /* PluginParam.cpp */; };
+		A6A7021317F01B7E005FBA13 /* AnalyticsUmeng.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A7021017F01B7E005FBA13 /* AnalyticsUmeng.m */; };
+		A6A7021417F01B7E005FBA13 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A7021117F01B7E005FBA13 /* libMobClickLibrary.a */; };
+		A6A7021717F0328A005FBA13 /* Stat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6A7021617F0328A005FBA13 /* Stat.cpp */; };
+		A6B3B1DA17EECE2A00CC7708 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B3B1D917EECE2900CC7708 /* libz.dylib */; };
 		F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4217B2059300821A66 /* QuartzCore.framework */; };
 		F316CE4517B2059300821A66 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4417B2059300821A66 /* OpenGLES.framework */; };
 		F316CE4717B2059300821A66 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4617B2059300821A66 /* OpenAL.framework */; };
@@ -423,6 +437,38 @@
 		A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A614B3D017DF14080095CD40 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		A6A701A117F01AEA005FBA13 /* PluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFactory.h; sourceTree = "<group>"; };
+		A6A701A217F01AEA005FBA13 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
+		A6A701A317F01AEA005FBA13 /* PluginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginParam.h; sourceTree = "<group>"; };
+		A6A701A417F01AEA005FBA13 /* PluginProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginProtocol.h; sourceTree = "<group>"; };
+		A6A701A517F01AEA005FBA13 /* ProtocolAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolAds.h; sourceTree = "<group>"; };
+		A6A701A617F01AEA005FBA13 /* ProtocolAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolAnalytics.h; sourceTree = "<group>"; };
+		A6A701A717F01AEA005FBA13 /* ProtocolIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolIAP.h; sourceTree = "<group>"; };
+		A6A701A817F01AEA005FBA13 /* ProtocolSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSocial.h; sourceTree = "<group>"; };
+		A6A701B917F01AEA005FBA13 /* InterfaceAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceAds.h; sourceTree = "<group>"; };
+		A6A701BA17F01AEA005FBA13 /* InterfaceAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceAnalytics.h; sourceTree = "<group>"; };
+		A6A701BB17F01AEA005FBA13 /* InterfaceIAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceIAP.h; sourceTree = "<group>"; };
+		A6A701BC17F01AEA005FBA13 /* InterfaceSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceSocial.h; sourceTree = "<group>"; };
+		A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginFactory.mm; sourceTree = "<group>"; };
+		A6A701BE17F01AEA005FBA13 /* PluginOCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginOCMacros.h; sourceTree = "<group>"; };
+		A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginProtocol.mm; sourceTree = "<group>"; };
+		A6A701C017F01AEA005FBA13 /* PluginUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginUtilsIOS.h; sourceTree = "<group>"; };
+		A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginUtilsIOS.mm; sourceTree = "<group>"; };
+		A6A701C217F01AEA005FBA13 /* ProtocolAds.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolAds.mm; sourceTree = "<group>"; };
+		A6A701C317F01AEA005FBA13 /* ProtocolAnalytics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolAnalytics.mm; sourceTree = "<group>"; };
+		A6A701C417F01AEA005FBA13 /* ProtocolIAP.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolIAP.mm; sourceTree = "<group>"; };
+		A6A701C517F01AEA005FBA13 /* ProtocolSocial.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolSocial.mm; sourceTree = "<group>"; };
+		A6A701C617F01AEA005FBA13 /* SocialWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialWrapper.h; sourceTree = "<group>"; };
+		A6A701C717F01AEA005FBA13 /* SocialWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SocialWrapper.mm; sourceTree = "<group>"; };
+		A6A701C817F01AEA005FBA13 /* PluginManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PluginManager.cpp; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/protocols/PluginManager.cpp"; sourceTree = "<group>"; };
+		A6A701C917F01AEA005FBA13 /* PluginParam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PluginParam.cpp; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/protocols/PluginParam.cpp"; sourceTree = "<group>"; };
+		A6A7020F17F01B7E005FBA13 /* AnalyticsUmeng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsUmeng.h; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios/AnalyticsUmeng.h"; sourceTree = "<group>"; };
+		A6A7021017F01B7E005FBA13 /* AnalyticsUmeng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsUmeng.m; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios/AnalyticsUmeng.m"; sourceTree = "<group>"; };
+		A6A7021117F01B7E005FBA13 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios/libMobClickLibrary.a"; sourceTree = "<group>"; };
+		A6A7021217F01B7E005FBA13 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios/MobClick.h"; sourceTree = "<group>"; };
+		A6A7021517F03271005FBA13 /* Stat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stat.h; sourceTree = "<group>"; };
+		A6A7021617F0328A005FBA13 /* Stat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stat.cpp; sourceTree = "<group>"; };
+		A6B3B1D917EECE2900CC7708 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F316CE3F17B2059300821A66 /* memeda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memeda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F316CE4217B2059300821A66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F316CE4417B2059300821A66 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1267,6 +1313,7 @@
 				F3D08AC917EED4C30093A0B5 /* TencentOpenAPI.framework in Frameworks */,
 				F3D08A6317EED2CE0093A0B5 /* libjs_static.a in Frameworks */,
 				F3D08AB217EED4C30093A0B5 /* QZoneConnection.framework in Frameworks */,
+				A6B3B1DA17EECE2A00CC7708 /* libz.dylib in Frameworks */,
 				A614B3D317DF141E0095CD40 /* libz.1.2.5.dylib in Frameworks */,
 				F3D08ABC17EED4C30093A0B5 /* YouDaoNoteConnection.framework in Frameworks */,
 				F3D08AC817EED4C30093A0B5 /* libWeChatSDK_armv7_armv7s.a in Frameworks */,
@@ -1306,15 +1353,87 @@
 				F3D08AA817EED4C30093A0B5 /* FacebookConnection.framework in Frameworks */,
 				F3D08AB717EED4C30093A0B5 /* SohuWeiboConnection.framework in Frameworks */,
 				F3D08AA617EED4C30093A0B5 /* DouBanConnection.framework in Frameworks */,
+				A6A7021417F01B7E005FBA13 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6A7019F17F01AD3005FBA13 /* plugin-x */ = {
+			isa = PBXGroup;
+			children = (
+				A6A7020E17F01B62005FBA13 /* umeng */,
+				A6A701A017F01AEA005FBA13 /* include */,
+				A6A701AA17F01AEA005FBA13 /* platform */,
+				A6A701C817F01AEA005FBA13 /* PluginManager.cpp */,
+				A6A701C917F01AEA005FBA13 /* PluginParam.cpp */,
+			);
+			name = "plugin-x";
+			sourceTree = "<group>";
+		};
+		A6A701A017F01AEA005FBA13 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A6A701A117F01AEA005FBA13 /* PluginFactory.h */,
+				A6A701A217F01AEA005FBA13 /* PluginManager.h */,
+				A6A701A317F01AEA005FBA13 /* PluginParam.h */,
+				A6A701A417F01AEA005FBA13 /* PluginProtocol.h */,
+				A6A701A517F01AEA005FBA13 /* ProtocolAds.h */,
+				A6A701A617F01AEA005FBA13 /* ProtocolAnalytics.h */,
+				A6A701A717F01AEA005FBA13 /* ProtocolIAP.h */,
+				A6A701A817F01AEA005FBA13 /* ProtocolSocial.h */,
+			);
+			name = include;
+			path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/protocols/include";
+			sourceTree = "<group>";
+		};
+		A6A701AA17F01AEA005FBA13 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				A6A701B817F01AEA005FBA13 /* ios */,
+			);
+			name = platform;
+			path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/protocols/platform";
+			sourceTree = "<group>";
+		};
+		A6A701B817F01AEA005FBA13 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A6A701B917F01AEA005FBA13 /* InterfaceAds.h */,
+				A6A701BA17F01AEA005FBA13 /* InterfaceAnalytics.h */,
+				A6A701BB17F01AEA005FBA13 /* InterfaceIAP.h */,
+				A6A701BC17F01AEA005FBA13 /* InterfaceSocial.h */,
+				A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */,
+				A6A701BE17F01AEA005FBA13 /* PluginOCMacros.h */,
+				A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */,
+				A6A701C017F01AEA005FBA13 /* PluginUtilsIOS.h */,
+				A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */,
+				A6A701C217F01AEA005FBA13 /* ProtocolAds.mm */,
+				A6A701C317F01AEA005FBA13 /* ProtocolAnalytics.mm */,
+				A6A701C417F01AEA005FBA13 /* ProtocolIAP.mm */,
+				A6A701C517F01AEA005FBA13 /* ProtocolSocial.mm */,
+				A6A701C617F01AEA005FBA13 /* SocialWrapper.h */,
+				A6A701C717F01AEA005FBA13 /* SocialWrapper.mm */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A6A7020E17F01B62005FBA13 /* umeng */ = {
+			isa = PBXGroup;
+			children = (
+				A6A7020F17F01B7E005FBA13 /* AnalyticsUmeng.h */,
+				A6A7021017F01B7E005FBA13 /* AnalyticsUmeng.m */,
+				A6A7021117F01B7E005FBA13 /* libMobClickLibrary.a */,
+				A6A7021217F01B7E005FBA13 /* MobClick.h */,
+			);
+			name = umeng;
+			sourceTree = "<group>";
+		};
 		F316CE3617B2059300821A66 = {
 			isa = PBXGroup;
 			children = (
+				A6B3B1D917EECE2900CC7708 /* libz.dylib */,
 				A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */,
 				A614B3D017DF14080095CD40 /* libicucore.dylib */,
 				A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */,
@@ -2753,6 +2872,9 @@
 				F316D2A117B2059A00821A66 /* AppDelegate.h */,
 				F316D2A217B2059A00821A66 /* AppDelegate.cpp */,
 				F3D08AD917EF5C410093A0B5 /* AppConfigVarDefines.h */,
+				A6A7019F17F01AD3005FBA13 /* plugin-x */,
+				A6A7021517F03271005FBA13 /* Stat.h */,
+				A6A7021617F0328A005FBA13 /* Stat.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3410,6 +3532,19 @@
 				F316D29117B2059A00821A66 /* SlotData.cpp in Sources */,
 				F316D29417B2059A00821A66 /* spine-cocos2dx.cpp in Sources */,
 				F316D2A317B2059A00821A66 /* AppDelegate.cpp in Sources */,
+				F352F26A17D712B400C57520 /* uncompressZipFile.cpp in Sources */,
+				A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */,
+				A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */,
+				A6A701F217F01AEA005FBA13 /* PluginUtilsIOS.mm in Sources */,
+				A6A701F317F01AEA005FBA13 /* ProtocolAds.mm in Sources */,
+				A6A701F417F01AEA005FBA13 /* ProtocolAnalytics.mm in Sources */,
+				A6A701F517F01AEA005FBA13 /* ProtocolIAP.mm in Sources */,
+				A6A701F617F01AEA005FBA13 /* ProtocolSocial.mm in Sources */,
+				A6A701F717F01AEA005FBA13 /* SocialWrapper.mm in Sources */,
+				A6A701F817F01AEA005FBA13 /* PluginManager.cpp in Sources */,
+				A6A701F917F01AEA005FBA13 /* PluginParam.cpp in Sources */,
+				A6A7021317F01B7E005FBA13 /* AnalyticsUmeng.m in Sources */,
+				A6A7021717F0328A005FBA13 /* Stat.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3490,7 +3625,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Connection\\\"",
@@ -3538,6 +3673,8 @@
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
+					"\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\"",
+					"\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -3548,6 +3685,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"memeda/libs/Chipmunk/include/chipmunk\" \"memeda/libs/javascript/spidermonkey-ios/include\"";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3556,7 +3694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Connection\\\"",
@@ -3603,6 +3741,8 @@
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
+					"\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\"",
+					"\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -3613,7 +3753,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"memeda/libs/Chipmunk/include/chipmunk\" \"memeda/libs/javascript/spidermonkey-ios/include\"";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

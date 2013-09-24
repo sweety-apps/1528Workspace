@@ -1,9 +1,36 @@
-var answerBlank = function() {};
+var AnswerBlank = function() {};
 
-answerBlank.prototype.setImage = function(image) {
-    var charBG = this.charBG;
-    var bgImage1 = "UI/guess/answerButtonNormal" + image + ".png";
-
-    var spriteFrame = cc.SpriteFrame.create(bgImage1, cc.rect(0,0,55,55));
-    charBG.setDisplayFrame(spriteFrame);
+AnswerBlank.prototype.setImage = function(image) {
+	this.rootNode.animationManager.runAnimationsForSequenceNamed("Static" + image + " Timeline");	
+	this.imageIndex = image;
 };
+
+AnswerBlank.prototype.setText = function(text) {
+	if ( text != "" && text != this.getText() ) {
+		this.rootNode.animationManager.runAnimationsForSequenceNamed("Show" + this.imageIndex + " Timeline");				
+	}
+	this.labelText.setString(text);
+}
+
+AnswerBlank.prototype.getText = function() {
+	return this.labelText.getString();
+}
+
+AnswerBlank.prototype.AttachClickEvent = function ( fun ) {
+	this.ClickEvent = fun;	
+}
+
+AnswerBlank.prototype.onClick = function () {
+	if ( this.ClickEvent != null ) {
+		this.ClickEvent(this);	
+	}	
+}
+
+
+AnswerBlank.prototype.SetIndexNumber = function (index) {
+	this.numIndex = index;	
+}
+
+AnswerBlank.prototype.GetIndexNumber = function () {
+	return this.numIndex;	
+}

@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>7</integer>
+	<integer>2</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -50,7 +50,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guess/charButton0.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -68,7 +68,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guess/charButton0.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -99,7 +99,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake10.png</string>
+												<string>UI/guess/charButton0.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -117,7 +117,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake11.png</string>
+												<string>UI/guess/charButton1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -135,7 +135,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guess/charButton2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -166,7 +166,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guess/charButton2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -179,195 +179,12 @@
 											<key>name</key>
 											<string>displayFrame</string>
 											<key>time</key>
-											<real>0.20000000298023224</real>
+											<real>0.26666668057441711</real>
 											<key>type</key>
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-									</array>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>type</key>
-									<integer>7</integer>
-								</dict>
-							</dict>
-							<key>5</key>
-							<dict>
-								<key>displayFrame</key>
-								<dict>
-									<key>keyframes</key>
-									<array>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.0</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.20000000298023224</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-									</array>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>type</key>
-									<integer>7</integer>
-								</dict>
-							</dict>
-							<key>6</key>
-							<dict>
-								<key>displayFrame</key>
-								<dict>
-									<key>keyframes</key>
-									<array>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.0</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonTake20.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.10000000149011612</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonTake21.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.20000000298023224</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-									</array>
-									<key>name</key>
-									<string>displayFrame</string>
-									<key>type</key>
-									<integer>7</integer>
-								</dict>
-							</dict>
-							<key>7</key>
-							<dict>
-								<key>displayFrame</key>
-								<dict>
-									<key>keyframes</key>
-									<array>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.0</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonTake30.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.10000000149011612</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonTake31.png</string>
-												<string>Use regular file</string>
-											</array>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>0</integer>
-											</dict>
-											<key>name</key>
-											<string>displayFrame</string>
-											<key>time</key>
-											<real>0.20000000298023224</real>
-											<key>type</key>
-											<integer>7</integer>
-											<key>value</key>
-											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guess/charButton2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -440,7 +257,7 @@
 							<dict>
 								<key>baseValue</key>
 								<array>
-									<string>UI/guess/answerButtonNormal3.png</string>
+									<string>UI/guess/charButton0.png</string>
 									<string>Use regular file</string>
 								</array>
 								<key>name</key>
@@ -450,7 +267,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/answerButtonNormal3.png</string>
+									<string>UI/guess/charButton2.png</string>
 								</array>
 							</dict>
 						</array>
@@ -548,7 +365,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/110none.png</string>
+											<string>UI/guess/94none.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -667,6 +484,49 @@
 					<dict>
 						<key>animatedProperties</key>
 						<dict>
+							<key>2</key>
+							<dict>
+								<key>opacity</key>
+								<dict>
+									<key>keyframes</key>
+									<array>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>opacity</string>
+											<key>time</key>
+											<real>0.0</real>
+											<key>type</key>
+											<integer>5</integer>
+											<key>value</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>opacity</string>
+											<key>time</key>
+											<real>0.20000000298023224</real>
+											<key>type</key>
+											<integer>5</integer>
+											<key>value</key>
+											<integer>0</integer>
+										</dict>
+									</array>
+									<key>name</key>
+									<string>opacity</string>
+									<key>type</key>
+									<integer>5</integer>
+								</dict>
+							</dict>
 							<key>3</key>
 							<dict>
 								<key>opacity</key>
@@ -682,7 +542,22 @@
 											<key>name</key>
 											<string>opacity</string>
 											<key>time</key>
-											<real>0.10000000149011612</real>
+											<real>0.0</real>
+											<key>type</key>
+											<integer>5</integer>
+											<key>value</key>
+											<integer>0</integer>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>opacity</string>
+											<key>time</key>
+											<real>0.13333334028720856</real>
 											<key>type</key>
 											<integer>5</integer>
 											<key>value</key>
@@ -710,7 +585,7 @@
 									<integer>5</integer>
 								</dict>
 							</dict>
-							<key>6</key>
+							<key>4</key>
 							<dict>
 								<key>opacity</key>
 								<dict>
@@ -725,40 +600,12 @@
 											<key>name</key>
 											<string>opacity</string>
 											<key>time</key>
-											<real>0.10000000149011612</real>
-											<key>type</key>
-											<integer>5</integer>
-											<key>value</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>1</integer>
-											</dict>
-											<key>name</key>
-											<string>opacity</string>
-											<key>time</key>
-											<real>0.20000000298023224</real>
+											<real>0.0</real>
 											<key>type</key>
 											<integer>5</integer>
 											<key>value</key>
 											<integer>255</integer>
 										</dict>
-									</array>
-									<key>name</key>
-									<string>opacity</string>
-									<key>type</key>
-									<integer>5</integer>
-								</dict>
-							</dict>
-							<key>7</key>
-							<dict>
-								<key>opacity</key>
-								<dict>
-									<key>keyframes</key>
-									<array>
 										<dict>
 											<key>easing</key>
 											<dict>
@@ -768,22 +615,7 @@
 											<key>name</key>
 											<string>opacity</string>
 											<key>time</key>
-											<real>0.10000000149011612</real>
-											<key>type</key>
-											<integer>5</integer>
-											<key>value</key>
-											<integer>0</integer>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>1</integer>
-											</dict>
-											<key>name</key>
-											<string>opacity</string>
-											<key>time</key>
-											<real>0.20000000298023224</real>
+											<real>0.26666668057441711</real>
 											<key>type</key>
 											<integer>5</integer>
 											<key>value</key>
@@ -921,6 +753,8 @@
 								<string>1</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -1019,7 +853,7 @@
 		<key>displayName</key>
 		<string>CCLayer</string>
 		<key>jsController</key>
-		<string>AnswerBlank</string>
+		<string>InputCharBtn</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>
@@ -1033,8 +867,8 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>55</real>
-					<real>55</real>
+					<real>47</real>
+					<real>46</real>
 					<integer>5</integer>
 				</array>
 			</dict>
@@ -1226,7 +1060,7 @@
 			<key>length</key>
 			<real>0.20000000298023224</real>
 			<key>name</key>
-			<string>Static1 Timeline</string>
+			<string>None Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
@@ -1256,19 +1090,19 @@
 				<integer>10</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>2</integer>
+			<integer>4</integer>
 			<key>length</key>
 			<real>0.20000000298023224</real>
 			<key>name</key>
-			<string>Show1 Timeline</string>
+			<string>Show Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.20000000298023224</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
-			<real>501.19241333007812</real>
+			<real>280.08987426757812</real>
 			<key>sequenceId</key>
 			<integer>3</integer>
 			<key>soundChannel</key>
@@ -1292,121 +1126,19 @@
 			<key>chainedSequenceId</key>
 			<integer>4</integer>
 			<key>length</key>
-			<real>0.20000000298023224</real>
+			<real>0.26666668057441711</real>
 			<key>name</key>
-			<string>Static2 Timeline</string>
+			<string>Normal Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.20000000298023224</real>
+			<real>0.26666668057441711</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
-			<real>128</real>
+			<real>280.08987426757812</real>
 			<key>sequenceId</key>
 			<integer>4</integer>
-			<key>soundChannel</key>
-			<dict>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>9</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>autoPlay</key>
-			<false/>
-			<key>callbackChannel</key>
-			<dict>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>10</integer>
-			</dict>
-			<key>chainedSequenceId</key>
-			<integer>5</integer>
-			<key>length</key>
-			<real>0.20000000298023224</real>
-			<key>name</key>
-			<string>Static3 Timeline</string>
-			<key>offset</key>
-			<real>0.0</real>
-			<key>position</key>
-			<real>0.20000000298023224</real>
-			<key>resolution</key>
-			<real>30</real>
-			<key>scale</key>
-			<real>128</real>
-			<key>sequenceId</key>
-			<integer>5</integer>
-			<key>soundChannel</key>
-			<dict>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>9</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>autoPlay</key>
-			<false/>
-			<key>callbackChannel</key>
-			<dict>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>10</integer>
-			</dict>
-			<key>chainedSequenceId</key>
-			<integer>4</integer>
-			<key>length</key>
-			<real>0.20000000298023224</real>
-			<key>name</key>
-			<string>Show2 Timeline</string>
-			<key>offset</key>
-			<real>0.0</real>
-			<key>position</key>
-			<real>0.20000000298023224</real>
-			<key>resolution</key>
-			<real>30</real>
-			<key>scale</key>
-			<real>501.19241333007812</real>
-			<key>sequenceId</key>
-			<integer>6</integer>
-			<key>soundChannel</key>
-			<dict>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>9</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>autoPlay</key>
-			<false/>
-			<key>callbackChannel</key>
-			<dict>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>10</integer>
-			</dict>
-			<key>chainedSequenceId</key>
-			<integer>5</integer>
-			<key>length</key>
-			<real>0.20000000298023224</real>
-			<key>name</key>
-			<string>Show3 Timeline</string>
-			<key>offset</key>
-			<real>0.0</real>
-			<key>position</key>
-			<real>0.10000000149011612</real>
-			<key>resolution</key>
-			<real>30</real>
-			<key>scale</key>
-			<real>501.19241333007812</real>
-			<key>sequenceId</key>
-			<integer>7</integer>
 			<key>soundChannel</key>
 			<dict>
 				<key>keyframes</key>
