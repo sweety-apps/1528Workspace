@@ -109,6 +109,11 @@ ChooseTestsScene.prototype.scrollViewDidScroll = function (scrollView)
 
 ChooseTestsScene.prototype.onPressedStartPlay = function()
 {
+	var floorNum = this.wholeFloors.controller.getCatStayAtFloorNum();
+	var doorNum = this.wholeFloors.controller.getCatStayAtDoorNum();
+	
+	GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 1);
+	
     var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
     cc.Director.getInstance().replaceScene(scene);
 };
@@ -122,7 +127,10 @@ ChooseTestsScene.prototype.onPressedDoor = function (isDoorOpened, floorNum, doo
 {
     if(isDoorOpened)
     {
-        this.onPressedStartPlay();
+		GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 2);
+	
+    	var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+    	cc.Director.getInstance().replaceScene(scene);
     }
     else
     {

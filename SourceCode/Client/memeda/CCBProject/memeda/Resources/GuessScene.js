@@ -21,6 +21,7 @@ var gResultCharButtons = new Array();
 
 var gAwardButton = null;
 var gProblem = 0;
+var gSource = 1;
 
 var choosedButtons = new Array();
 var choosedCharStrings = new Array();
@@ -46,6 +47,11 @@ var gTimeCount = 0;
 var gBuyNum = 0;		// 但前购买过的提示
 var gAllBtnEnable = true;
 
+function GuessScene_SetFloorInfo(index, source) {
+	gProblem = index;	//
+	gSource = source;
+}
+
 function GuessScene_InitGlobel() {
 	gAllBtnEnable = true;
 	
@@ -68,7 +74,6 @@ function GuessScene_InitGlobel() {
     gResultCharButtons = new Array();
     
     gAwardButton = null;
-    gProblem = 0;
     
     gCatHand = null;
     gMusicURL = null;
@@ -843,7 +848,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 				cc.AudioEngine.getInstance().stopMusic();
 			}
-            gProblem += 1;
+
             this.EnableAllBtn(false);
             this.answerRight.controller.ShowMsg(this.onClickNext);
         }
@@ -1052,6 +1057,8 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 }
 
 GuessScene.prototype.onClickNext = function() {
+	GuessScene_SetFloorInfo(gProblem + 1, 3);
+	            
 	gCurrentCCBView.EnableAllBtn(true);
 	gCurrentCCBView.answerRight.controller.Hide();
 	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);

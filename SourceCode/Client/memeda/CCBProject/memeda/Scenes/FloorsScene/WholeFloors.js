@@ -101,6 +101,14 @@ function makeTestData()
 var WholeFloors = function() {
 };
 
+WholeFloors.prototype.getCatStayAtDoorNum = function () {
+	return this.currentCatStayAtDoorNum;
+}
+
+WholeFloors.prototype.getCatStayAtFloorNum = function () {
+	return this.currentCatStayAtFloorNum;
+}
+    
 WholeFloors.prototype.onDidLoadFromCCB = function () {
 
     // 设备上面需要开启触摸
