@@ -1097,3 +1097,15 @@ GuessScene.prototype.EnableAllBtn = function (enable) {
 	this.coinBtn.setEnabled(enable);
 	this.returnBtn.setEnabled(enable);
 }; 
+
+GuessScene.prototype.onClickedWeChatShare = function () {
+	var shareCallback = new WeChatShareCallBackClass();
+    shareCallback.onWechatShareCallback = function (state, errMsg) {
+        cc.log("share callback!");
+        cc.log("state = " + state + ", errMsg = " + errMsg);
+    };
+    
+    var socialAPI = SocialShareAPI.getInstance();
+    socialAPI.setWeChatShareCallbackTarget(shareCallback);
+    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle","http://www.baidu.com","Description lalala!",true);
+};
