@@ -13,6 +13,8 @@
 
 #import "RootViewController.h"
 
+#import "SocialShareAPI.h"
+
 @implementation AppController
 
 @synthesize window;
@@ -25,7 +27,10 @@
 static AppDelegate s_sharedApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
+    //初始化分享
+    SocialShareAPI::getInstance()->initShareAPI();
+    
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.
@@ -48,6 +53,7 @@ static AppDelegate s_sharedApplication;
     {
         // warning: addSubView doesn't work on iOS6
         [window addSubview: viewController.view];
+        [window setRootViewController:viewController];
     }
     else
     {
@@ -60,6 +66,10 @@ static AppDelegate s_sharedApplication;
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
 
     cocos2d::CCApplication::sharedApplication()->run();
+    
+    //微信分享测试代码
+    //[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(wxShareTest) userInfo:nil repeats:NO];
+    
     return YES;
 }
 
@@ -117,6 +127,21 @@ static AppDelegate s_sharedApplication;
     [super dealloc];
 }
 
+#pragma mark - URL Schame拉起
+
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url
+{
+    return SocialShareAPI::getInstance()->iOS_application_handleOpenURL((void*)application, (void*)url, (void*)self);
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return SocialShareAPI::getInstance()->iOS_application_openURL_sourceApplication_annotation((void*)application, (void*)url, (void*)sourceApplication, (void*)annotation, (void*)self);
+}
 
 @end
 

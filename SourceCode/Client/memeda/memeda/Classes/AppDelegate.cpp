@@ -12,6 +12,7 @@
 #include "js_bindings_system_registration.h"
 #include "jsb_opengl_registration.h"
 #include "XMLHTTPRequest.h"
+#include "jsb_SocialShareAPI.hpp"
 
 #include "uncompressZipFile.h"
 
@@ -152,12 +153,15 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(jsb_register_system);
     sc->addRegisterCallback(JSB_register_opengl);
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
+    sc->addRegisterCallback(js_register_jsb_SocialShareAPI_SocialShareAPI);
+    sc->addRegisterCallback(js_register_jsb_SocialShareAPI_WeChatShareCallBackClass);
 
     sc->start();
     
     CCScriptEngineProtocol *pEngine = ScriptingCore::getInstance();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-    ScriptingCore::getInstance()->runScript("main.js");
+    ScriptingCore::getInstance()->runScript("hello.js");
+    //ScriptingCore::getInstance()->runScript("main.js");
     
     //testUnzipFiles();
     

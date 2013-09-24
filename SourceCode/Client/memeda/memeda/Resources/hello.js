@@ -1,5 +1,19 @@
 require("jsb.js");
 
+function testShareWeChat()
+{
+    var shareCallback = new WeChatShareCallBackClass();
+    shareCallback.onWechatShareCallback = function (state, errMsg) {
+        cc.log("share callback!");
+        cc.log("state = " + state + ", errMsg = " + errMsg);
+    };
+    
+    var socialAPI = SocialShareAPI.getInstance();
+    socialAPI.setWeChatShareCallbackTarget(shareCallback);
+    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle","http://www.baidu.com","Description lalala!",true);
+    //cc.SocialShareAPI.sharedInstance().testShare();
+}
+
 try {
     
     director = cc.Director.getInstance();
@@ -150,6 +164,8 @@ try {
     // LOADING PLAY SCENE UNTILL CCBREADER IS FIXED
     
     director.runWithScene(game.getPlayScene());
+    
+    testShareWeChat();
     
 } catch(e) {log(e);}
 
