@@ -293,10 +293,12 @@ GuessScene.prototype.onClickCoin = function () {
 
 GuessScene.prototype.onBack = function ( ) {
     // 上报数据
-    var param = memeda.Stat.createParam();
-    param.addKeyAndValue("index", ""+gProblem);
-    param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
-    memeda.Stat.logEvent("guessback", param);
+    if ( !Globel_isWeb() ) {
+    	var param = memeda.Stat.createParam();
+    	param.addKeyAndValue("index", ""+gProblem);
+    	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+    	memeda.Stat.logEvent("guessback", param);
+    }
     //
     
 	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
@@ -683,11 +685,13 @@ function MakeInputKeys(rightanswers, inputkeys) {
 
 GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 {	// 上报数据
-	var param = memeda.Stat.createParam();
-	param.addKeyAndValue("index", ""+gProblem);
-	param.addKeyAndValue("aid", ""+testObj.id);	
-	param.addKeyAndValue("source", ""+gSource);		
-	memeda.Stat.logEvent("guess", param);
+    if ( !Globel_isWeb() ) {
+		var param = memeda.Stat.createParam();
+		param.addKeyAndValue("index", ""+gProblem);
+		param.addKeyAndValue("aid", ""+testObj.id);	
+		param.addKeyAndValue("source", ""+gSource);		
+		memeda.Stat.logEvent("guess", param);
+    }
 	//
 	
 	gBuyNum = 0;
@@ -719,7 +723,12 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
 
     // 播放音乐
-    gMusicURL = "problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
+    if ( Globel_isWeb() ) {
+    	gMusicURL = "../problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
+    } else {
+    	gMusicURL = "problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
+    }
+    
     gCurrentCCBView.CatEnter();
     
     gCurrentCCBView.SetTitleNum(gProblem + 1);
@@ -859,10 +868,12 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
         if(this.checkAnswer(resultString,gCurrentTestObj.content.rightAnswers))
         {
             // 上报数据
-            var param = memeda.Stat.createParam();
-            param.addKeyAndValue("index", ""+gProblem);
-            param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
-            memeda.Stat.logEvent("guesssuccess", param);
+            if ( !Globel_isWeb() ) {
+            	var param = memeda.Stat.createParam();
+            	param.addKeyAndValue("index", ""+gProblem);
+            	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+            	memeda.Stat.logEvent("guesssuccess", param);
+            }
             //
             
             debugMsgOutput("答对了！");
@@ -876,10 +887,12 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
         else
         {
             // 上报数据
-            var param = memeda.Stat.createParam();
-            param.addKeyAndValue("index", ""+gProblem);
-            param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
-            memeda.Stat.logEvent("guesserror", param);
+            if ( !Globel_isWeb() ) {
+            	var param = memeda.Stat.createParam();
+            	param.addKeyAndValue("index", ""+gProblem);
+            	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+            	memeda.Stat.logEvent("guesserror", param);
+            }
             //
             
             debugMsgOutput("可惜答错了，再接再厉！");
@@ -1096,6 +1109,7 @@ GuessScene.prototype.EnableAllBtn = function (enable) {
 	gAllBtnEnable = enable;
 	this.coinBtn.setEnabled(enable);
 	this.returnBtn.setEnabled(enable);
+	this.chatShare.setEnabled(enable);
 }; 
 
 GuessScene.prototype.onClickedWeChatShare = function () {

@@ -73,9 +73,11 @@ MainScene.prototype.onDidLoadFromCCB = function () {
 	*/
 
     // Start playing looped background music
-    cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
-    cc.AudioEngine.getInstance().setMusicVolume(0.5);
-
+    if ( !Globel_isWeb() ) {
+    	cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
+    	cc.AudioEngine.getInstance().setMusicVolume(0.5);
+    }
+    
     if(gShouldKeepCoin)
     {
         gShouldKeepCoin = false;

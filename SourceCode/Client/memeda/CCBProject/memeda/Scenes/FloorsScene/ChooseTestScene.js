@@ -23,9 +23,11 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
         this.rootNode.setTouchEnabled(true);
 
     // Start playing looped background music
-    cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
-    cc.AudioEngine.getInstance().setMusicVolume(0.5);
-
+    if ( !Globel_isWeb() ) {
+    	cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
+    	cc.AudioEngine.getInstance().setMusicVolume(0.5);
+    }
+    
     this.floorScrollView.setDelegate(this);
     this.wholeFloors = this.floorScrollView.getContainer();
     //debugMsgOutput(this.wholeFloors.getPositionX() + this.wholeFloors.getPositionY());
