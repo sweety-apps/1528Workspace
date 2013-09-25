@@ -1,6 +1,10 @@
 Globel_isWeb = function() {
-	if ( document == null ) {
-		return false;
-	}
+    try {
+        if ( document == null ) {
+            return false;
+        }
+    }catch (e) {
+        return false;
+    }
 	return true;
 };
