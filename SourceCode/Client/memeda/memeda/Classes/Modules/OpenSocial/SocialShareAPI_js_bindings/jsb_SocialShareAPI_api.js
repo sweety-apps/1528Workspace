@@ -47,6 +47,7 @@ initShareAPI : function () {},
  * @param {std::string}
  * @param {std::string}
  * @param {bool}
+ * @param {bool}
  */
 shareWeChatURL : function () {},
 

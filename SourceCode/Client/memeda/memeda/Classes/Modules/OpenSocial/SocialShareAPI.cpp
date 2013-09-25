@@ -106,7 +106,7 @@ void IOS_WeChatShareCallback(std::string state, std::string errorMsg, void* cont
     }
 }
 
-void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,std::string title, std::string url, std::string description ,bool isTimeline)
+void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,std::string title, std::string url, std::string description ,bool withMenuUI, bool isTimeline)
 {
     if (imageName.length() <= 0)
     {
@@ -115,7 +115,7 @@ void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,s
     
     std::string imgPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathForFilename(imageName.c_str());
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    SocialShareAPIForiOS_shareWeChatURL(content, imgPath, title, url, description, isTimeline, (void*)IOS_WeChatShareCallback, (void*)this);
+    SocialShareAPIForiOS_shareWeChatURL(content, imgPath, title, url, description,  (void*)IOS_WeChatShareCallback, (void*)this,withMenuUI,isTimeline);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #endif /*CC_TARGET_PLATFORM*/
 }

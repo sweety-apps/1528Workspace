@@ -45,7 +45,9 @@ public:
     signed char iOS_application_handleOpenURL(void* application, void* url, void* wxDelegate);
     signed char iOS_application_openURL_sourceApplication_annotation(void* application, void* url, void* sourceApplication, void* annotation, void* wxDelegate);
     
-    void shareWeChatURL(std::string content, std::string imageName,std::string title, std::string url, std::string description ,bool isTimeline);
+    // 如果设置了 withMenuUI 则展示分享栏的UI，isTimeline选项无用
+    // isTimeline true时分享到朋友圈，false时分享到对话
+    void shareWeChatURL(std::string content, std::string imageName,std::string title, std::string url, std::string description ,bool withMenuUI, bool isTimeline);
 };
 
 #endif /* defined(__memeda__SocialShareAPI__) */

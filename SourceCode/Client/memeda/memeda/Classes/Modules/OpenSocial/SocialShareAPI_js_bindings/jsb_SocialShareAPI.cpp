@@ -200,26 +200,28 @@ JSBool js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL(JSContext *cx, uint32
 	js_proxy_t *proxy = jsb_get_js_proxy(obj);
 	SocialShareAPI* cobj = (SocialShareAPI *)(proxy ? proxy->ptr : NULL);
 	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL : Invalid Native Object");
-	if (argc == 6) {
+	if (argc == 7) {
 		std::string arg0;
 		std::string arg1;
 		std::string arg2;
 		std::string arg3;
 		std::string arg4;
 		JSBool arg5;
+		JSBool arg6;
 		ok &= jsval_to_std_string(cx, argv[0], &arg0);
 		ok &= jsval_to_std_string(cx, argv[1], &arg1);
 		ok &= jsval_to_std_string(cx, argv[2], &arg2);
 		ok &= jsval_to_std_string(cx, argv[3], &arg3);
 		ok &= jsval_to_std_string(cx, argv[4], &arg4);
 		ok &= JS_ValueToBoolean(cx, argv[5], &arg5);
+		ok &= JS_ValueToBoolean(cx, argv[6], &arg6);
 		JSB_PRECONDITION2(ok, cx, JS_FALSE, "js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL : Error processing arguments");
-		cobj->shareWeChatURL(arg0, arg1, arg2, arg3, arg4, arg5);
+		cobj->shareWeChatURL(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		JS_SET_RVAL(cx, vp, JSVAL_VOID);
 		return JS_TRUE;
 	}
 
-	JS_ReportError(cx, "js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL : wrong number of arguments: %d, was expecting %d", argc, 6);
+	JS_ReportError(cx, "js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL : wrong number of arguments: %d, was expecting %d", argc, 7);
 	return JS_FALSE;
 }
 JSBool js_jsb_SocialShareAPI_SocialShareAPI_iOS_application_openURL_sourceApplication_annotation(JSContext *cx, uint32_t argc, jsval *vp)
@@ -420,7 +422,7 @@ void js_register_jsb_SocialShareAPI_SocialShareAPI(JSContext *cx, JSObject *glob
 	static JSFunctionSpec funcs[] = {
 		JS_FN("setWeChatShareCallbackTarget", js_jsb_SocialShareAPI_SocialShareAPI_setWeChatShareCallbackTarget, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("initShareAPI", js_jsb_SocialShareAPI_SocialShareAPI_initShareAPI, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FN("shareWeChatURL", js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL, 6, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("shareWeChatURL", js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL, 7, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("iOS_application_openURL_sourceApplication_annotation", js_jsb_SocialShareAPI_SocialShareAPI_iOS_application_openURL_sourceApplication_annotation, 5, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("iOS_application_handleOpenURL", js_jsb_SocialShareAPI_SocialShareAPI_iOS_application_handleOpenURL, 3, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("testShare", js_jsb_SocialShareAPI_SocialShareAPI_testShare, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),

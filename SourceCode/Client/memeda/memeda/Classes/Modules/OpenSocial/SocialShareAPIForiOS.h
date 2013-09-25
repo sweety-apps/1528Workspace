@@ -22,7 +22,9 @@ void SocialShareAPIForiOS_initShareAPI();
 void SocialShareAPIForiOS_uninitShareAPI();
 void SocialShareAPIForiOS_doTestShare();
 // callbackFunction 定义为 void WeChatShareCallback
-void SocialShareAPIForiOS_shareWeChatURL(std::string content, std::string imagePath,std::string title, std::string url, std::string description ,bool isTimeline,void* callbackFunction,void* callbackFunctionContext);
+// 如果设置了 withMenuUI 则展示分享栏的UI，isTimeline选项无用
+// isTimeline true时分享到朋友圈，false时分享到对话
+void SocialShareAPIForiOS_shareWeChatURL(std::string content, std::string imagePath,std::string title, std::string url, std::string description,void* callbackFunction,void* callbackFunctionContext, bool withMenuUI, bool isTimeline);
 
 signed char SocialShareAPIForiOS_application_handleOpenURL(void* application, void* url, void* wxDelegate);
 signed char SocialShareAPIForiOS_application_openURL_sourceApplication_annotation(void* application, void* url, void* sourceApplication, void* annotation, void* wxDelegate);

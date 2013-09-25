@@ -1107,5 +1107,5 @@ GuessScene.prototype.onClickedWeChatShare = function () {
     
     var socialAPI = SocialShareAPI.getInstance();
     socialAPI.setWeChatShareCallbackTarget(shareCallback);
-    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle","http://www.baidu.com","Description lalala!",true);
+    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle","http://www.baidu.com","Description lalala!",true,false);
 };
