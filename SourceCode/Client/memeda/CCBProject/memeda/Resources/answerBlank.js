@@ -1,14 +1,19 @@
 var AnswerBlank = function() {};
+var imageIndex = 1;
 
 AnswerBlank.prototype.setImage = function(image) {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Static" + image + " Timeline");	
-	this.imageIndex = image;
+	imageIndex = image;
 };
 
 AnswerBlank.prototype.setText = function(text) {
-	if ( text != "" && text != this.getText() ) {
-		this.rootNode.animationManager.runAnimationsForSequenceNamed("Show" + this.imageIndex + " Timeline");				
+	try {
+		if ( text != "" && text != this.getText() ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Show" + imageIndex + " Timeline");				
+		}
+	} catch (e) {
 	}
+	
 	this.labelText.setString(text);
 }
 

@@ -184,8 +184,14 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     gCurrentGuessState = kGuessStateNormal;
     
 	// 初始化背景,给背景和文字框选择合适的背景
-    gFlippingIndex = 3;
-    this.bgLayer.controller.setBkg(2, 3);
+	if ( Globel_isWeb() ) {
+    	gFlippingIndex = 1;
+    	this.bgLayer.controller.setBkg(1, 1);		
+	} else {
+    	gFlippingIndex = 3;
+    	this.bgLayer.controller.setBkg(2, 3);
+	}
+	
     for (var i = 0; i < gResultCharAllButtons.length; i ++) {
         gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
     }
@@ -877,9 +883,12 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             //
             
             debugMsgOutput("答对了！");
-            if(cc.AudioEngine.getInstance().isMusicPlaying()) {
-				cc.AudioEngine.getInstance().stopMusic();
-			}
+            try {
+            	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+					cc.AudioEngine.getInstance().stopMusic();
+				}
+            } catch (e) {
+            }
 
             this.EnableAllBtn(false);
             this.answerRight.controller.ShowMsg(this.onClickNext);
