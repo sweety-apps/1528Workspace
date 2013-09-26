@@ -29,6 +29,15 @@ WeChatShareCallBackClass : function () {},
 cc.SocialShareAPI = {
 
 /**
+ * @method setShareButtonRectAtScreenForIPad
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ * @param {int}
+ */
+setShareButtonRectAtScreenForIPad : function () {},
+
+/**
  * @method setWeChatShareCallbackTarget
  * @param {WeChatShareCallBackClass*}
  */

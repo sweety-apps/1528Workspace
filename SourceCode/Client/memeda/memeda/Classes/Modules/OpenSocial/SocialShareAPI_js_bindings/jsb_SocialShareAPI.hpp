@@ -22,6 +22,7 @@ JSBool js_jsb_SocialShareAPI_SocialShareAPI_constructor(JSContext *cx, uint32_t 
 void js_jsb_SocialShareAPI_SocialShareAPI_finalize(JSContext *cx, JSObject *obj);
 void js_register_jsb_SocialShareAPI_SocialShareAPI(JSContext *cx, JSObject *global);
 void register_all_jsb_SocialShareAPI(JSContext* cx, JSObject* obj);
+JSBool js_jsb_SocialShareAPI_SocialShareAPI_setShareButtonRectAtScreenForIPad(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_jsb_SocialShareAPI_SocialShareAPI_setWeChatShareCallbackTarget(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_jsb_SocialShareAPI_SocialShareAPI_initShareAPI(JSContext *cx, uint32_t argc, jsval *vp);
 JSBool js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL(JSContext *cx, uint32_t argc, jsval *vp);

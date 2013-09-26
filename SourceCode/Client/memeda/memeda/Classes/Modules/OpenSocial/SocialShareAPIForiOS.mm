@@ -7,16 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SocialShareAPIForiOS.h"
+#include "cocos2d.h"
 
 // ShareSDK 分享
 #import <ShareSDK/ShareSDK.h>
 #import "WXApi.h"
 #import "AppConfigVarDefines.h"
 
-#import "AppController.h"
+#import "SocialShareAPIForiOS.h"
 
 static int gHasInited = 0;
+
+static int gIpadWechatShareButtonX = 10;
+static int gIpadWechatShareButtonY = 10;
+static int gIpadWechatShareButtonWidth = 100;
+static int gIpadWechatShareButtonHeight = 100;
 
 void SocialShareAPIForiOS_initShareAPI()
 {
@@ -82,6 +87,14 @@ void SocialShareAPIForiOS_doTestShare()
     }
 }
 
+void SocialShareAPIForiOS_setShareButtonRectAtScreenForIPad(int x,int y,int width, int height)
+{
+    gIpadWechatShareButtonX = x;
+    gIpadWechatShareButtonY = y;
+    gIpadWechatShareButtonWidth = width;
+    gIpadWechatShareButtonHeight = height;
+}
+
 
 void SocialShareAPIForiOS_shareWeChatURL(std::string content, std::string imagePath,std::string title, std::string url, std::string description,void* callbackFunction,void* callbackFunctionContext, bool withMenuUI, bool isTimeline)
 {
@@ -145,15 +158,18 @@ void SocialShareAPIForiOS_shareWeChatURL(std::string content, std::string imageP
         
         if (withMenuUI)
         {
-            id<ISSContainer> container = [ShareSDK container];
-            /*
-            UIApplication* app = [UIApplication sharedApplication];
-            AppController* del = (AppController*)[[UIApplication sharedApplication] delegate];
-            UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
-            UIViewController* ctrl = window.rootViewController;
-            UIView* view = [[[UIApplication sharedApplication] delegate] window].rootViewController.view;
-            [container setIPadContainerWithView:view arrowDirect:UIPopoverArrowDirectionDown];
-             */
+            id<ISSContainer> container = nil;
+
+            cocos2d::TargetPlatform platform = cocos2d::CCApplication::sharedApplication()->getTargetPlatform();
+            if (platform == cocos2d::kTargetIpad)
+            {
+                UIView* view = [[[UIApplication sharedApplication] delegate] window].rootViewController.view;
+                container = [ShareSDK container];
+                [container setIPadContainerWithView:view
+                                               rect:CGRectMake(gIpadWechatShareButtonX, gIpadWechatShareButtonY, gIpadWechatShareButtonWidth, gIpadWechatShareButtonHeight)
+                                        arrowDirect:UIPopoverArrowDirectionUp];
+            }
+            
             NSArray* shareList = [ShareSDK getShareListWithType:ShareTypeWeixiTimeline,ShareTypeWeixiSession, nil];
             
             [ShareSDK showShareActionSheet:container

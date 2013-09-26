@@ -150,6 +150,32 @@ void js_register_jsb_SocialShareAPI_WeChatShareCallBackClass(JSContext *cx, JSOb
 JSClass  *jsb_SocialShareAPI_class;
 JSObject *jsb_SocialShareAPI_prototype;
 
+JSBool js_jsb_SocialShareAPI_SocialShareAPI_setShareButtonRectAtScreenForIPad(JSContext *cx, uint32_t argc, jsval *vp)
+{
+	jsval *argv = JS_ARGV(cx, vp);
+	JSBool ok = JS_TRUE;
+	JSObject *obj = JS_THIS_OBJECT(cx, vp);
+	js_proxy_t *proxy = jsb_get_js_proxy(obj);
+	SocialShareAPI* cobj = (SocialShareAPI *)(proxy ? proxy->ptr : NULL);
+	JSB_PRECONDITION2( cobj, cx, JS_FALSE, "js_jsb_SocialShareAPI_SocialShareAPI_setShareButtonRectAtScreenForIPad : Invalid Native Object");
+	if (argc == 4) {
+		int arg0;
+		int arg1;
+		int arg2;
+		int arg3;
+		ok &= jsval_to_int32(cx, argv[0], (int32_t *)&arg0);
+		ok &= jsval_to_int32(cx, argv[1], (int32_t *)&arg1);
+		ok &= jsval_to_int32(cx, argv[2], (int32_t *)&arg2);
+		ok &= jsval_to_int32(cx, argv[3], (int32_t *)&arg3);
+		JSB_PRECONDITION2(ok, cx, JS_FALSE, "js_jsb_SocialShareAPI_SocialShareAPI_setShareButtonRectAtScreenForIPad : Error processing arguments");
+		cobj->setShareButtonRectAtScreenForIPad(arg0, arg1, arg2, arg3);
+		JS_SET_RVAL(cx, vp, JSVAL_VOID);
+		return JS_TRUE;
+	}
+
+	JS_ReportError(cx, "js_jsb_SocialShareAPI_SocialShareAPI_setShareButtonRectAtScreenForIPad : wrong number of arguments: %d, was expecting %d", argc, 4);
+	return JS_FALSE;
+}
 JSBool js_jsb_SocialShareAPI_SocialShareAPI_setWeChatShareCallbackTarget(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
@@ -420,6 +446,7 @@ void js_register_jsb_SocialShareAPI_SocialShareAPI(JSContext *cx, JSObject *glob
 	};
 
 	static JSFunctionSpec funcs[] = {
+		JS_FN("setShareButtonRectAtScreenForIPad", js_jsb_SocialShareAPI_SocialShareAPI_setShareButtonRectAtScreenForIPad, 4, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("setWeChatShareCallbackTarget", js_jsb_SocialShareAPI_SocialShareAPI_setWeChatShareCallbackTarget, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("initShareAPI", js_jsb_SocialShareAPI_SocialShareAPI_initShareAPI, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("shareWeChatURL", js_jsb_SocialShareAPI_SocialShareAPI_shareWeChatURL, 7, JSPROP_PERMANENT | JSPROP_ENUMERATE),

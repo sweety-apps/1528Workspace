@@ -21,6 +21,8 @@ typedef void (*WeChatShareCallback)(std::string state, std::string errorMsg, voi
 void SocialShareAPIForiOS_initShareAPI();
 void SocialShareAPIForiOS_uninitShareAPI();
 void SocialShareAPIForiOS_doTestShare();
+//如果是iPad，使用了默认UI，会在按钮附近产生一个popoverView来分享,位置需要设置。
+void SocialShareAPIForiOS_setShareButtonRectAtScreenForIPad(int x,int y,int width, int height);
 // callbackFunction 定义为 void WeChatShareCallback
 // 如果设置了 withMenuUI 则展示分享栏的UI，isTimeline选项无用
 // isTimeline true时分享到朋友圈，false时分享到对话

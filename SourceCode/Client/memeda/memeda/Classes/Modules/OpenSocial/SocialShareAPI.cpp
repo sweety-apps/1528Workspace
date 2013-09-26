@@ -106,6 +106,14 @@ void IOS_WeChatShareCallback(std::string state, std::string errorMsg, void* cont
     }
 }
 
+void SocialShareAPI::setShareButtonRectAtScreenForIPad(int x,int y,int width, int height)
+{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    SocialShareAPIForiOS_setShareButtonRectAtScreenForIPad(x, y, width, height);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
+}
+
 void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,std::string title, std::string url, std::string description ,bool withMenuUI, bool isTimeline)
 {
     if (imageName.length() <= 0)
