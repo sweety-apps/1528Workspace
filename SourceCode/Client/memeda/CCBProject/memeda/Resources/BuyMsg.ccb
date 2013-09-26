@@ -158,8 +158,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>animatedProperties</key>
@@ -1970,8 +1968,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>0.0</real>
+									<real>1</real>
+									<real>1</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -2005,6 +2003,8 @@
 								<true/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -2051,7 +2051,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.5</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2129,8 +2129,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.5</real>
-					<real>0.5</real>
+					<real>0.0</real>
+					<real>0.0</real>
 				</array>
 			</dict>
 			<dict>
@@ -2254,7 +2254,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.66666668653488159</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

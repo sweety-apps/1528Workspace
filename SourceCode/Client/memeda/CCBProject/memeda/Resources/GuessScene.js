@@ -510,9 +510,6 @@ GuessScene.prototype.InitVars = function()
         
         this.answerLayout.setScaleX(0.88);
         this.answerLayout.setScaleY(0.88);
-        
-        this.buyMsg.setScaleX(0.84);
-        this.buyMsg.setScaleY(0.84);
     }
 };
 

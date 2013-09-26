@@ -15,8 +15,8 @@ BuyMsg.prototype.onDidLoadFromCCB = function () {
     // 针对非iphone5屏幕做缩小适配
     if(screenHeight / screenWidth < 1136/640)
     {   
-    //    var pos = cc.p(screenWidth / 2, -80);
-    //	this.msgLayout.setPosition(pos);
+        this.msgLayout.setScaleX(0.84);
+        this.msgLayout.setScaleY(0.84);
     }
 };
 
