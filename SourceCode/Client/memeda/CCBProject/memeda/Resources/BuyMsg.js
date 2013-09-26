@@ -23,7 +23,7 @@ BuyMsg.prototype.onDidLoadFromCCB = function () {
 BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
 	// 显示购买消息
     // 上报数据
-    if ( !Globel_isWeb() ) {
+    if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("num", ""+index);
     	memeda.Stat.logEvent("promptclick", param);
@@ -61,7 +61,7 @@ BuyMsg.prototype.onClickClose = function() {
 	this.Hide(0);
     
     // 上报数据
-    if ( !Globel_isWeb() ) {
+    if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("num", ""+this.index);
     	memeda.Stat.logEvent("promptclose", param);
@@ -73,7 +73,7 @@ BuyMsg.prototype.onClickBuy = function() {
 	// 扣金币
 	// TODO : 金币不足的判断还没有
     // 上报数据
-    if ( !Globel_isWeb() ) {
+    if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("num", ""+this.index);
     	memeda.Stat.logEvent("promptbuy", param);

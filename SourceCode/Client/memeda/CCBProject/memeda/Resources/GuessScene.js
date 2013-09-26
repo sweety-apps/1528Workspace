@@ -184,7 +184,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     gCurrentGuessState = kGuessStateNormal;
     
 	// 初始化背景,给背景和文字框选择合适的背景
-	if ( Globel_isWeb() ) {
+	if ( Global_isWeb() ) {
     	gFlippingIndex = 1;
     	this.bgLayer.controller.setBkg(1, 1);		
 	} else {
@@ -299,7 +299,7 @@ GuessScene.prototype.onClickCoin = function () {
 
 GuessScene.prototype.onBack = function ( ) {
     // 上报数据
-    if ( !Globel_isWeb() ) {
+    if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("index", ""+gProblem);
     	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
@@ -688,7 +688,7 @@ function MakeInputKeys(rightanswers, inputkeys) {
 
 GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 {	// 上报数据
-    if ( !Globel_isWeb() ) {
+    if ( !Global_isWeb() ) {
 		var param = memeda.Stat.createParam();
 		param.addKeyAndValue("index", ""+gProblem);
 		param.addKeyAndValue("aid", ""+testObj.id);	
@@ -726,7 +726,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
 
     // 播放音乐
-    if ( Globel_isWeb() ) {
+    if ( Global_isWeb() ) {
     	gMusicURL = "../problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
     } else {
     	gMusicURL = "problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
@@ -871,7 +871,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
         if(this.checkAnswer(resultString,gCurrentTestObj.content.rightAnswers))
         {
             // 上报数据
-            if ( !Globel_isWeb() ) {
+            if ( !Global_isWeb() ) {
             	var param = memeda.Stat.createParam();
             	param.addKeyAndValue("index", ""+gProblem);
             	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
@@ -893,7 +893,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
         else
         {
             // 上报数据
-            if ( !Globel_isWeb() ) {
+            if ( !Global_isWeb() ) {
             	var param = memeda.Stat.createParam();
             	param.addKeyAndValue("index", ""+gProblem);
             	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
@@ -1119,13 +1119,8 @@ GuessScene.prototype.EnableAllBtn = function (enable) {
 }; 
 
 GuessScene.prototype.onClickedWeChatShare = function () {
-	var shareCallback = new WeChatShareCallBackClass();
-    shareCallback.onWechatShareCallback = function (state, errMsg) {
-        cc.log("share callback!");
-        cc.log("state = " + state + ", errMsg = " + errMsg);
-    };
-    
-    var socialAPI = SocialShareAPI.getInstance();
-    socialAPI.setWeChatShareCallbackTarget(shareCallback);
-    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle","http://www.baidu.com","Description lalala!",true,false);
+	this.EnableAllBtn(false);
+    this.weChatMsg.controller.ShowMsg(gCurrentTestObj.id, function () {
+		gCurrentCCBView.EnableAllBtn(true);
+    });
 };

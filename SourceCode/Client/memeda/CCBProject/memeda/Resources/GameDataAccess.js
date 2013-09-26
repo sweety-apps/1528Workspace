@@ -76,7 +76,7 @@ function getQueryString(name) {
     
 // 返回题目的详细信息
 function Problem_RequestInfo(index, succeedCallback,failedCallback,context){
-	if ( Globel_isWeb() ) {
+	if ( Global_isWeb() ) {
 		var id = getQueryString("aid");
 		if ( id == null ) {
 			var data = '{"id":"1","type":"audio","level":"1","tag":"人物","content":{"inputkeys":"你打的没土小水话上下题白兔来草木宫说","inputwords":["王尼玛","周杰伦","姜太公","爱新觉罗"],"inform":"打一种动物","rightAnswers":["曾小贤"],"title":"门后的人是？","imageUrl":null,"musicUrl":"zxx","hasKnowledge":"1","knowledgeTipsID":"1"},"knowledgeTips":{"id":"1","image":"1.png","linkType":"news","linkText":"泰坦尼克号沉没背后的的惊天保险诈骗案","url":"http://tv.sohu.com/20101228/n278556355.shtml","title":"小白兔的医药疗效","text":"泰坦尼克号沉没背后的的惊天保险诈骗案你知道么？"}}';	
