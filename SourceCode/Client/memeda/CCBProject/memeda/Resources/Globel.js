@@ -18,14 +18,14 @@ Global_getShareUrl = function (aid) {
 		var param = "uid=" + userId;
 		// 223.4.33.112/memeda
 		//return "http://223.4.33.112/memeda/index.html?" + param;
-		return "http://192.168.198.100:54321/index.html?" + param;
+		return "http://121.197.3.27/memeda/memeda.php?" + param;
 		//return "http://localhost:54321/index.html?" + param;		
 	} else {
 		var userId = Global_getUserID();
 		var param = "aid=" + aid + "&uid=" + userId;
 		// 223.4.33.112/memeda
 		//return "http://223.4.33.112/memeda/index.html??" + param;
-		return "http://192.168.198.100:54321/index.html?" + param;
+		return "http://121.197.3.27/memeda/memeda.php?" + param;
 		//return "http://localhost:54321/index.html?" + param;
 	}
 };
@@ -35,7 +35,7 @@ function S4() {
 }
 
 function CreateGuid() {
-	return (S4() + S4() + "-" + S4() + "-" + S4() + "-" +S4() + "-" + S4() + S4() + S4());	
+	return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());	
 }
 
 Global_getUserID = function () {
