@@ -165,12 +165,31 @@ ChooseTestsScene.prototype.checkWechatShared = function () {
 	//    return ;	
 	//}
 	
+	sys.localStorage.setItem("WechatTime", 0);	// test
+	
 	var time = sys.localStorage.getItem("WechatTime");
 	if ( time == "" || time == null ) { 
 		time = 0;
 	}
-
-	var now = Date.now();
+	
+	var now = Math.floor(Date.now() / 1000 / 3600);	// 小时
+	
 	debugMsgOutput(""+now);
 	debugMsgOutput(""+time);
+	
+	if ( Math.abs(time - now) >= 4 ) {
+		// 查服务器
+		sys.localStorage.setItem("WechatTime", now);
+		var http = new XMLHttpRequest();
+		
+		http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
+		http.onreadystatechange = function(){
+			if( http.readyState == 4 && http.status == 200 ) {
+				debugMsgOutput(http.responseText);
+			}
+		};
+		http.send(null);
+			
+		debugMsgOutput(http);
+	}
 }
