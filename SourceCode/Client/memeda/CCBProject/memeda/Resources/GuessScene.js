@@ -307,9 +307,12 @@ GuessScene.prototype.onBack = function ( ) {
     }
     //
     
-	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
-		cc.AudioEngine.getInstance().stopMusic();
-	}
+    try {
+		if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+			cc.AudioEngine.getInstance().stopMusic();
+		}
+    } catch (e) {
+    }
 	
 	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
 	var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");

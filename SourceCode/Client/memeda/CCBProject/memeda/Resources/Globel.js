@@ -41,7 +41,7 @@ function CreateGuid() {
 Global_getUserID = function () {
 	var userId = sys.localStorage.getItem("userid");
 	debugMsgOutput(userId);
-	if ( userId == "" ) {
+	if ( userId == "" || userId == null ) {
 		userId = CreateGuid();
 		
 		sys.localStorage.setItem("userid", userId);

@@ -17,7 +17,6 @@ var ChooseTestsScene = function() {
 };
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
-
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -38,6 +37,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.buyMsgBox.showState = kBuyMessageBoxStateHidden;
     this.wholeFloors.scrollState = kScrollingStateNormal;
     this.buyMsgBox.animationManager.setCompletedAnimationCallback(this, this.onMsgboxAnimationCompleted);
+    
+    this.checkWechatShared();
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -158,3 +159,18 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
     this.updateBuyMsgBoxState();
 };
 
+ChooseTestsScene.prototype.checkWechatShared = function () {
+	// 查询通过微信分享是否获得金币
+	//if ( Global_isWeb() ) { // 页面版没有这个功能
+	//    return ;	
+	//}
+	
+	var time = sys.localStorage.getItem("WechatTime");
+	if ( time == "" || time == null ) { 
+		time = 0;
+	}
+
+	var now = Date.now();
+	debugMsgOutput(""+now);
+	debugMsgOutput(""+time);
+}
