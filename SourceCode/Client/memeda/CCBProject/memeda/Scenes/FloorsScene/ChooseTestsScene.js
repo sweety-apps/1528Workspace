@@ -12,11 +12,14 @@ var kBuyMessageBoxStateShowing = 2;
 
 var kScrollingStateNormal = 0;
 var kScrollingStateReachedBoxShowOffset = 1;
+var gChooseTestsSceneThis = null;
 
 var ChooseTestsScene = function() {
 };
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
+	gChooseTestsSceneThis = this;
+	
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -39,6 +42,11 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.buyMsgBox.animationManager.setCompletedAnimationCallback(this, this.onMsgboxAnimationCompleted);
     
     this.checkWechatShared();
+    
+    this.coinNumber.setString("" + CoinMgr_GetCount());
+    CoinMgr_Register(function (coin, add) {
+        gChooseTestsSceneThis.coinNumber.setString("" + CoinMgr_GetCount());
+    });
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -165,8 +173,6 @@ ChooseTestsScene.prototype.checkWechatShared = function () {
 	//    return ;	
 	//}
 	
-	sys.localStorage.setItem("WechatTime", 0);	// test
-	
 	var time = sys.localStorage.getItem("WechatTime");
 	if ( time == "" || time == null ) { 
 		time = 0;
@@ -177,10 +183,14 @@ ChooseTestsScene.prototype.checkWechatShared = function () {
 	debugMsgOutput(""+now);
 	debugMsgOutput(""+time);
 	
-	if ( Math.abs(time - now) >= 4 ) {
+	if ( Math.abs(time - now) >= 0 ) {
 		// 查服务器
 		sys.localStorage.setItem("WechatTime", now);
 		var http = new XMLHttpRequest();
+		
+		this.weChatAwardMsg.controller.ShowMsg("您获得了123个金币", 123, function (coin) {
+			CoinMgr_Change(coin);
+		});
 		
 		http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
 		http.onreadystatechange = function(){
