@@ -878,7 +878,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             	memeda.Stat.logEvent("guesssuccess", param);
             } else {
             	// 把结果上报到服务器
-            	WebFun_get("http://121.197.3.27/stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	
+            	WebFun_get("http://memeda.meme-da.com/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	
             }
             //
             
