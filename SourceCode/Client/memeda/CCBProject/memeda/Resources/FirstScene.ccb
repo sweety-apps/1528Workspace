@@ -203,9 +203,9 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
-									<real>100</real>
-									<integer>1</integer>
+									<real>320</real>
+									<real>568</real>
+									<integer>5</integer>
 								</array>
 							</dict>
 							<dict>
@@ -3722,8 +3722,6 @@
 										<string>开始游戏</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -3755,9 +3753,9 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
-									<real>100</real>
-									<integer>1</integer>
+									<real>320</real>
+									<real>568</real>
+									<integer>5</integer>
 								</array>
 							</dict>
 							<dict>
