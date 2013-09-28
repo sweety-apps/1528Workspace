@@ -16,17 +16,17 @@ Global_getShareUrl = function (aid) {
 	if ( aid == null ) {
 		var userId = Global_getUserID();
 		var param = "uid=" + userId;
-		// 223.4.33.112/memeda
-		//return "http://223.4.33.112/memeda/index.html?" + param;
-		return "http://memeda.meme-da.com/memeda.php?" + param;
-		//return "http://localhost:54321/index.html?" + param;		
+		
+		return "http://121.197.3.27/memeda.php?" + param;
+				
+		//return "http://memeda.meme-da.com/memeda.php?" + param;
 	} else {
 		var userId = Global_getUserID();
 		var param = "aid=" + aid + "&uid=" + userId;
-		// 223.4.33.112/memeda
-		//return "http://223.4.33.112/memeda/index.html??" + param;
-		return "http://memeda.meme-da.com/memeda.php?" + param;
-		//return "http://localhost:54321/index.html?" + param;
+
+		return "http://121.197.3.27/memeda.php?" + param;
+		
+		//return "http://memeda.meme-da.com/memeda.php?" + param;
 	}
 };
 
