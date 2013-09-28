@@ -203,7 +203,6 @@ ChooseTestsScene.prototype.checkWechatShared = function () {
 
 ChooseTestsScene.prototype.parseWeChatData = function (text) {
     var obj = JSON.parse(text);
-    debugMsgOutput("count : " + obj.list.length);
     if ( obj == null || obj.list == null || obj.list.length == 0 ) {
         return ;
     }

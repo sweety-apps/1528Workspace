@@ -12,8 +12,8 @@ FirstSceneHome.prototype.onDidLoadFromCCB = function () {
 
     // 针对非iphone5屏幕做缩小适配
     if(screenHeight / screenWidth < 1136/640)
-    {   
-    	var size = new cc.Size(screenWidth, screenHeight);
+    {
+    	var size = cc.size(320, 480);
     	this.cloudLayout.setContentSize(size);
     	
     	this.utfLayout.setContentSize(size);
