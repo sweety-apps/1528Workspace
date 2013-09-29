@@ -69,6 +69,12 @@
 		A69A9A4317F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A9A0D17F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework */; };
 		A69A9A4417F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69A9A0E17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
 		A69A9A4517F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A9A0F17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
+		A69F054217F7EFFC00B6B90A /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69F054017F7EFFC00B6B90A /* DomobOfferWallBundle.bundle */; };
+		A69F054317F7EFFC00B6B90A /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054117F7EFFC00B6B90A /* libDomobOfferWallSDK.a */; };
+		A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054417F7F05300B6B90A /* AdSupport.framework */; };
+		A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054617F7F05A00B6B90A /* StoreKit.framework */; };
+		A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054817F7F07200B6B90A /* CoreLocation.framework */; };
+		A69F054C17F7F1BD00B6B90A /* OnlineWallViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69F054B17F7F1BD00B6B90A /* OnlineWallViewController.cpp */; };
 		A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */; };
 		A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */; };
 		A6A701F217F01AEA005FBA13 /* PluginUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */; };
@@ -505,6 +511,14 @@
 		A69A9A0D17F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneDefaultShareViewUI.framework; sourceTree = "<group>"; };
 		A69A9A0E17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
 		A69A9A0F17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
+		A69F053E17F7EFFC00B6B90A /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
+		A69F054017F7EFFC00B6B90A /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
+		A69F054117F7EFFC00B6B90A /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
+		A69F054417F7F05300B6B90A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		A69F054617F7F05A00B6B90A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A69F054817F7F07200B6B90A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A69F054A17F7F1A900B6B90A /* OnlineWallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineWallViewController.h; sourceTree = "<group>"; };
+		A69F054B17F7F1BD00B6B90A /* OnlineWallViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnlineWallViewController.cpp; sourceTree = "<group>"; };
 		A6A701A117F01AEA005FBA13 /* PluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFactory.h; sourceTree = "<group>"; };
 		A6A701A217F01AEA005FBA13 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		A6A701A317F01AEA005FBA13 /* PluginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginParam.h; sourceTree = "<group>"; };
@@ -1312,6 +1326,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F316CE4D17B2059300821A66 /* UIKit.framework in Frameworks */,
+				F316CE5117B2059300821A66 /* CoreGraphics.framework in Frameworks */,
+				F316CE4F17B2059300821A66 /* Foundation.framework in Frameworks */,
+				A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */,
+				A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */,
+				F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */,
+				A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */,
+				A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */,
 				F30794F717F2FB33006D2102 /* CoreTelephony.framework in Frameworks */,
 				A69A9A3117F57DAF001CF694 /* GooglePlus.framework in Frameworks */,
 				A69A9A1617F57DAF001CF694 /* InstapaperConnection.framework in Frameworks */,
@@ -1323,6 +1345,7 @@
 				A69A9A1F17F57DAF001CF694 /* QZoneConnection.framework in Frameworks */,
 				A69A9A1517F57DAF001CF694 /* GooglePlusConnection.framework in Frameworks */,
 				A69A9A3917F57DAF001CF694 /* TencentOpenAPI.framework in Frameworks */,
+				A69F054317F7EFFC00B6B90A /* libDomobOfferWallSDK.a in Frameworks */,
 				A69A9A4317F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */,
 				A69A9A3717F57DAF001CF694 /* RennSDK.framework in Frameworks */,
 				A679A47717F1AEC1009B5AA4 /* libjs_static.a in Frameworks */,
@@ -1352,8 +1375,6 @@
 				A69A9A2617F57DAF001CF694 /* TencentWeiboConnection.framework in Frameworks */,
 				A69A9A3217F57DAF001CF694 /* libSinaWeiboSDK.a in Frameworks */,
 				A614B3D317DF141E0095CD40 /* libz.1.2.5.dylib in Frameworks */,
-				F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */,
-				A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */,
 				F316CE4517B2059300821A66 /* OpenGLES.framework in Frameworks */,
 				A69A9A3E17F57DAF001CF694 /* ShareSDKiPadDefaultShareViewUI.framework in Frameworks */,
 				A69A9A1217F57DAF001CF694 /* EverNoteConnection.framework in Frameworks */,
@@ -1366,12 +1387,9 @@
 				A69A9A2417F57DAF001CF694 /* SohuWeiboConnection.framework in Frameworks */,
 				A69A9A1317F57DAF001CF694 /* FacebookConnection.framework in Frameworks */,
 				A69A9A3C17F57DAF001CF694 /* ShareSDK.framework in Frameworks */,
-				F316CE4D17B2059300821A66 /* UIKit.framework in Frameworks */,
-				F316CE4F17B2059300821A66 /* Foundation.framework in Frameworks */,
 				A69A9A4017F57DAF001CF694 /* ShareSDKiPadSimpleShareViewUI.framework in Frameworks */,
 				A69A9A2A17F57DAF001CF694 /* YouDaoNoteConnection.framework in Frameworks */,
 				A69A9A2117F57DAF001CF694 /* SinaWeiboConnection.framework in Frameworks */,
-				F316CE5117B2059300821A66 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1532,6 +1550,24 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		A69F053D17F7EFFC00B6B90A /* DMOfferWallSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A69F053E17F7EFFC00B6B90A /* DMOfferWallViewController.h */,
+				A69F053F17F7EFFC00B6B90A /* DomobOfferWallBundle */,
+				A69F054117F7EFFC00B6B90A /* libDomobOfferWallSDK.a */,
+			);
+			path = DMOfferWallSDK;
+			sourceTree = "<group>";
+		};
+		A69F053F17F7EFFC00B6B90A /* DomobOfferWallBundle */ = {
+			isa = PBXGroup;
+			children = (
+				A69F054017F7EFFC00B6B90A /* DomobOfferWallBundle.bundle */,
+			);
+			path = DomobOfferWallBundle;
+			sourceTree = "<group>";
+		};
 		A6A7019F17F01AD3005FBA13 /* plugin-x */ = {
 			isa = PBXGroup;
 			children = (
@@ -1626,6 +1662,9 @@
 		F316CE4117B2059300821A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A69F054817F7F07200B6B90A /* CoreLocation.framework */,
+				A69F054617F7F05A00B6B90A /* StoreKit.framework */,
+				A69F054417F7F05300B6B90A /* AdSupport.framework */,
 				F30794F617F2FB33006D2102 /* CoreTelephony.framework */,
 				F3D08AD617EED6320093A0B5 /* MessageUI.framework */,
 				F316CE4217B2059300821A66 /* QuartzCore.framework */,
@@ -3048,6 +3087,8 @@
 				A6A7019F17F01AD3005FBA13 /* plugin-x */,
 				A6A7021517F03271005FBA13 /* Stat.h */,
 				A6A7021617F0328A005FBA13 /* Stat.cpp */,
+				A69F054A17F7F1A900B6B90A /* OnlineWallViewController.h */,
+				A69F054B17F7F1BD00B6B90A /* OnlineWallViewController.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3095,6 +3136,7 @@
 		F3D0890D17EEC5950093A0B5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A69F053D17F7EFFC00B6B90A /* DMOfferWallSDK */,
 				F3D0890E17EEC5950093A0B5 /* OpenSocial */,
 				F3D0895117EEC5950093A0B5 /* Payment */,
 			);
@@ -3243,6 +3285,7 @@
 				F316D0A717B2059700821A66 /* jsb_opengl.js in Resources */,
 				F316D0A917B2059700821A66 /* jsb_opengl_constants.js in Resources */,
 				F316D0AB17B2059700821A66 /* jsb_sys.js in Resources */,
+				A69F054217F7EFFC00B6B90A /* DomobOfferWallBundle.bundle in Resources */,
 				F316D0AD17B2059700821A66 /* main.debug.js in Resources */,
 				F316D0E217B2059800821A66 /* obfuscate_exclude_chipmunk.js in Resources */,
 				A69A9A1717F57DAF001CF694 /* InstapaperResource.bundle in Resources */,
@@ -3357,6 +3400,7 @@
 				F316CF2C17B2059400821A66 /* CCLabelAtlas.cpp in Sources */,
 				F316CF2F17B2059400821A66 /* CCLabelBMFont.cpp in Sources */,
 				F316CF3217B2059400821A66 /* CCLabelTTF.cpp in Sources */,
+				A69F054C17F7F1BD00B6B90A /* OnlineWallViewController.cpp in Sources */,
 				F316CF3617B2059400821A66 /* CCLayer.cpp in Sources */,
 				F316CF3917B2059400821A66 /* CCScene.cpp in Sources */,
 				F3D08ADF17EFD4230093A0B5 /* SocialShareAPIForiOS.mm in Sources */,
@@ -3733,30 +3777,30 @@
 				INFOPLIST_FILE = memeda/Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/WXApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/WXApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
@@ -3768,6 +3812,7 @@
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/external/libwebsockets/ios/lib",
+					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -3842,30 +3887,30 @@
 				INFOPLIST_FILE = memeda/Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/WXApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/WXApi\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Desktop/未命名文件夹\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ 3/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
@@ -3877,6 +3922,7 @@
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/external/libwebsockets/ios/lib",
+					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",

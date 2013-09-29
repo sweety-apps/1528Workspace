@@ -2,6 +2,9 @@
 var FirstScene = function() {};
 
 FirstScene.prototype.onDidLoadFromCCB = function () {
+    var scene = cc.BuilderReader.loadAsScene("GuessScene");
+    var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
+    
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 };
 
