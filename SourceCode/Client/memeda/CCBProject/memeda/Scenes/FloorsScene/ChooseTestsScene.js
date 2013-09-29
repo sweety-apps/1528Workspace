@@ -47,6 +47,10 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     CoinMgr_Register(function (coin, add) {
         gChooseTestsSceneThis.coinNumber.setString("" + CoinMgr_GetCount());
     });
+    
+    // 初始化多盟
+    debugMsgOutput("" + memeda.OfferWallController);
+    memeda.OfferWallController.init();
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -201,7 +205,13 @@ ChooseTestsScene.prototype.checkWechatShared = function () {
 	}
 }
 
+ChooseTestsScene.prototype.onPressedCollection = function () {
+	// test
+	memeda.OfferWallController.show();
+}
+
 ChooseTestsScene.prototype.parseWeChatData = function (text) {
+    debugMsgOutput("---" + text);
     var obj = JSON.parse(text);
     debugMsgOutput("count : " + obj.list.length);
     if ( obj == null || obj.list == null || obj.list.length == 0 ) {

@@ -69,12 +69,14 @@
 		A69A9A4317F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A9A0D17F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework */; };
 		A69A9A4417F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69A9A0E17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
 		A69A9A4517F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A9A0F17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
-		A69F054217F7EFFC00B6B90A /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69F054017F7EFFC00B6B90A /* DomobOfferWallBundle.bundle */; };
-		A69F054317F7EFFC00B6B90A /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054117F7EFFC00B6B90A /* libDomobOfferWallSDK.a */; };
 		A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054417F7F05300B6B90A /* AdSupport.framework */; };
 		A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054617F7F05A00B6B90A /* StoreKit.framework */; };
 		A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054817F7F07200B6B90A /* CoreLocation.framework */; };
-		A69F054C17F7F1BD00B6B90A /* OnlineWallViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69F054B17F7F1BD00B6B90A /* OnlineWallViewController.cpp */; };
+		A69F060117F807D900B6B90A /* AnalyticsOfferWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F05F917F807D900B6B90A /* AnalyticsOfferWall.m */; };
+		A69F060217F807D900B6B90A /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */; };
+		A69F060317F807DA00B6B90A /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F05FD17F807D900B6B90A /* libDomobOfferWallSDK.a */; };
+		A69F062317F8137400B6B90A /* OnlineWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F062217F8137400B6B90A /* OnlineWallViewController.m */; };
+		A69F062617F8178100B6B90A /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69F062517F8178100B6B90A /* js_OfferWallController.cpp */; };
 		A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */; };
 		A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */; };
 		A6A701F217F01AEA005FBA13 /* PluginUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */; };
@@ -444,6 +446,16 @@
 		F3D08ADF17EFD4230093A0B5 /* SocialShareAPIForiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3D08ADE17EFD4230093A0B5 /* SocialShareAPIForiOS.mm */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A69F060517F807DA00B6B90A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A69F05BF17F7FB2A00B6B90A;
+			remoteInfo = PluginDMOfferWall;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A614B3D017DF14080095CD40 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -511,14 +523,19 @@
 		A69A9A0D17F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneDefaultShareViewUI.framework; sourceTree = "<group>"; };
 		A69A9A0E17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
 		A69A9A0F17F57DAF001CF694 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
-		A69F053E17F7EFFC00B6B90A /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
-		A69F054017F7EFFC00B6B90A /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
-		A69F054117F7EFFC00B6B90A /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
 		A69F054417F7F05300B6B90A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		A69F054617F7F05A00B6B90A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A69F054817F7F07200B6B90A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		A69F054A17F7F1A900B6B90A /* OnlineWallViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlineWallViewController.h; sourceTree = "<group>"; };
-		A69F054B17F7F1BD00B6B90A /* OnlineWallViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnlineWallViewController.cpp; sourceTree = "<group>"; };
+		A69F05F817F807D900B6B90A /* AnalyticsOfferWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsOfferWall.h; sourceTree = "<group>"; };
+		A69F05F917F807D900B6B90A /* AnalyticsOfferWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsOfferWall.m; sourceTree = "<group>"; };
+		A69F05FA17F807D900B6B90A /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
+		A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
+		A69F05FD17F807D900B6B90A /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
+		A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PluginDMOfferWall.xcodeproj; sourceTree = "<group>"; };
+		A69F062117F8137400B6B90A /* OnlineWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineWallViewController.h; sourceTree = "<group>"; };
+		A69F062217F8137400B6B90A /* OnlineWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineWallViewController.m; sourceTree = "<group>"; };
+		A69F062417F8177000B6B90A /* js_OfferWallController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = js_OfferWallController.h; sourceTree = "<group>"; };
+		A69F062517F8178100B6B90A /* js_OfferWallController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = js_OfferWallController.cpp; sourceTree = "<group>"; };
 		A6A701A117F01AEA005FBA13 /* PluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFactory.h; sourceTree = "<group>"; };
 		A6A701A217F01AEA005FBA13 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		A6A701A317F01AEA005FBA13 /* PluginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginParam.h; sourceTree = "<group>"; };
@@ -1345,7 +1362,6 @@
 				A69A9A1F17F57DAF001CF694 /* QZoneConnection.framework in Frameworks */,
 				A69A9A1517F57DAF001CF694 /* GooglePlusConnection.framework in Frameworks */,
 				A69A9A3917F57DAF001CF694 /* TencentOpenAPI.framework in Frameworks */,
-				A69F054317F7EFFC00B6B90A /* libDomobOfferWallSDK.a in Frameworks */,
 				A69A9A4317F57DAF001CF694 /* ShareSDKiPhoneDefaultShareViewUI.framework in Frameworks */,
 				A69A9A3717F57DAF001CF694 /* RennSDK.framework in Frameworks */,
 				A679A47717F1AEC1009B5AA4 /* libjs_static.a in Frameworks */,
@@ -1376,6 +1392,7 @@
 				A69A9A3217F57DAF001CF694 /* libSinaWeiboSDK.a in Frameworks */,
 				A614B3D317DF141E0095CD40 /* libz.1.2.5.dylib in Frameworks */,
 				F316CE4517B2059300821A66 /* OpenGLES.framework in Frameworks */,
+				A69F060317F807DA00B6B90A /* libDomobOfferWallSDK.a in Frameworks */,
 				A69A9A3E17F57DAF001CF694 /* ShareSDKiPadDefaultShareViewUI.framework in Frameworks */,
 				A69A9A1217F57DAF001CF694 /* EverNoteConnection.framework in Frameworks */,
 				A69A9A1A17F57DAF001CF694 /* MailConnection.framework in Frameworks */,
@@ -1550,27 +1567,50 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		A69F053D17F7EFFC00B6B90A /* DMOfferWallSDK */ = {
+		A69F05F617F807D900B6B90A /* DMOfferWallSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A69F053E17F7EFFC00B6B90A /* DMOfferWallViewController.h */,
-				A69F053F17F7EFFC00B6B90A /* DomobOfferWallBundle */,
-				A69F054117F7EFFC00B6B90A /* libDomobOfferWallSDK.a */,
+				A69F05F717F807D900B6B90A /* proj.ios */,
 			);
-			path = DMOfferWallSDK;
+			name = DMOfferWallSDK;
+			path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK";
 			sourceTree = "<group>";
 		};
-		A69F053F17F7EFFC00B6B90A /* DomobOfferWallBundle */ = {
+		A69F05F717F807D900B6B90A /* proj.ios */ = {
 			isa = PBXGroup;
 			children = (
-				A69F054017F7EFFC00B6B90A /* DomobOfferWallBundle.bundle */,
+				A69F062117F8137400B6B90A /* OnlineWallViewController.h */,
+				A69F062217F8137400B6B90A /* OnlineWallViewController.m */,
+				A69F05F817F807D900B6B90A /* AnalyticsOfferWall.h */,
+				A69F05F917F807D900B6B90A /* AnalyticsOfferWall.m */,
+				A69F05FA17F807D900B6B90A /* DMOfferWallViewController.h */,
+				A69F05FB17F807D900B6B90A /* DomobOfferWallBundle */,
+				A69F05FD17F807D900B6B90A /* libDomobOfferWallSDK.a */,
+				A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */,
+			);
+			path = proj.ios;
+			sourceTree = "<group>";
+		};
+		A69F05FB17F807D900B6B90A /* DomobOfferWallBundle */ = {
+			isa = PBXGroup;
+			children = (
+				A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */,
 			);
 			path = DomobOfferWallBundle;
+			sourceTree = "<group>";
+		};
+		A69F05FF17F807D900B6B90A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A69F060617F807DA00B6B90A /* libPluginDMOfferWall.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A6A7019F17F01AD3005FBA13 /* plugin-x */ = {
 			isa = PBXGroup;
 			children = (
+				A69F05F617F807D900B6B90A /* DMOfferWallSDK */,
 				A6A7020E17F01B62005FBA13 /* umeng */,
 				A6A701A017F01AEA005FBA13 /* include */,
 				A6A701AA17F01AEA005FBA13 /* platform */,
@@ -3087,8 +3127,8 @@
 				A6A7019F17F01AD3005FBA13 /* plugin-x */,
 				A6A7021517F03271005FBA13 /* Stat.h */,
 				A6A7021617F0328A005FBA13 /* Stat.cpp */,
-				A69F054A17F7F1A900B6B90A /* OnlineWallViewController.h */,
-				A69F054B17F7F1BD00B6B90A /* OnlineWallViewController.cpp */,
+				A69F062417F8177000B6B90A /* js_OfferWallController.h */,
+				A69F062517F8178100B6B90A /* js_OfferWallController.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3136,7 +3176,6 @@
 		F3D0890D17EEC5950093A0B5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A69F053D17F7EFFC00B6B90A /* DMOfferWallSDK */,
 				F3D0890E17EEC5950093A0B5 /* OpenSocial */,
 				F3D0895117EEC5950093A0B5 /* Payment */,
 			);
@@ -3237,12 +3276,28 @@
 			mainGroup = F316CE3617B2059300821A66;
 			productRefGroup = F316CE4017B2059300821A66 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A69F05FF17F807D900B6B90A /* Products */;
+					ProjectRef = A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F316CE3E17B2059300821A66 /* memeda */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A69F060617F807DA00B6B90A /* libPluginDMOfferWall.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPluginDMOfferWall.a;
+			remoteRef = A69F060517F807DA00B6B90A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F316CE3D17B2059300821A66 /* Resources */ = {
@@ -3285,7 +3340,7 @@
 				F316D0A717B2059700821A66 /* jsb_opengl.js in Resources */,
 				F316D0A917B2059700821A66 /* jsb_opengl_constants.js in Resources */,
 				F316D0AB17B2059700821A66 /* jsb_sys.js in Resources */,
-				A69F054217F7EFFC00B6B90A /* DomobOfferWallBundle.bundle in Resources */,
+				A69F060217F807D900B6B90A /* DomobOfferWallBundle.bundle in Resources */,
 				F316D0AD17B2059700821A66 /* main.debug.js in Resources */,
 				F316D0E217B2059800821A66 /* obfuscate_exclude_chipmunk.js in Resources */,
 				A69A9A1717F57DAF001CF694 /* InstapaperResource.bundle in Resources */,
@@ -3364,6 +3419,7 @@
 				F316CEA617B2059300821A66 /* CCCamera.cpp in Sources */,
 				F316CEA917B2059300821A66 /* CCConfiguration.cpp in Sources */,
 				F316CEAC17B2059300821A66 /* CCDirector.cpp in Sources */,
+				A69F062617F8178100B6B90A /* js_OfferWallController.cpp in Sources */,
 				F316CEAF17B2059300821A66 /* ccFPSImages.c in Sources */,
 				F316CEB217B2059300821A66 /* CCScheduler.cpp in Sources */,
 				F316CEB617B2059300821A66 /* CCAffineTransform.cpp in Sources */,
@@ -3400,7 +3456,6 @@
 				F316CF2C17B2059400821A66 /* CCLabelAtlas.cpp in Sources */,
 				F316CF2F17B2059400821A66 /* CCLabelBMFont.cpp in Sources */,
 				F316CF3217B2059400821A66 /* CCLabelTTF.cpp in Sources */,
-				A69F054C17F7F1BD00B6B90A /* OnlineWallViewController.cpp in Sources */,
 				F316CF3617B2059400821A66 /* CCLayer.cpp in Sources */,
 				F316CF3917B2059400821A66 /* CCScene.cpp in Sources */,
 				F3D08ADF17EFD4230093A0B5 /* SocialShareAPIForiOS.mm in Sources */,
@@ -3464,6 +3519,7 @@
 				F316D02717B2059500821A66 /* ioapi.cpp in Sources */,
 				F316D02A17B2059500821A66 /* unzip.cpp in Sources */,
 				F316D02D17B2059500821A66 /* ZipUtils.cpp in Sources */,
+				A69F060117F807D900B6B90A /* AnalyticsOfferWall.m in Sources */,
 				F316D03217B2059500821A66 /* CCIMEDispatcher.cpp in Sources */,
 				F316D03517B2059500821A66 /* CCTextFieldTTF.cpp in Sources */,
 				F316D03917B2059600821A66 /* CCTexture2D.cpp in Sources */,
@@ -3608,6 +3664,7 @@
 				F316D27917B2059A00821A66 /* extension.cpp in Sources */,
 				F316D27C17B2059A00821A66 /* Json.cpp in Sources */,
 				F316D27F17B2059A00821A66 /* RegionAttachment.cpp in Sources */,
+				A69F062317F8137400B6B90A /* OnlineWallViewController.m in Sources */,
 				F316D28217B2059A00821A66 /* Skeleton.cpp in Sources */,
 				F316D28517B2059A00821A66 /* SkeletonData.cpp in Sources */,
 				F316D28817B2059A00821A66 /* SkeletonJson.cpp in Sources */,
@@ -3813,6 +3870,7 @@
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/external/libwebsockets/ios/lib",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
+					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -3923,6 +3981,7 @@
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/external/libwebsockets/ios/lib",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
+					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",

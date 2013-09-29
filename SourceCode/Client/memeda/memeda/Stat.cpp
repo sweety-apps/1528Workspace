@@ -8,6 +8,7 @@
 
 #include "Stat.h"
 #include "cocos2d_specifics.hpp"
+#include "AppConfigVarDefines.h"
 
 JSClass* CStatParam::jsb_StatParam_Class = 0;
 JSObject* CStatParam::jsb_StatParam_prototype = 0;
@@ -131,7 +132,7 @@ void   CStat::Init()
     m_analytics = dynamic_cast<cocos2d::plugin::ProtocolAnalytics*>(plugin);
     m_analytics->setDebugMode(true);
     m_analytics->setCaptureUncaughtException(true);
-    m_analytics->startSession("523e8a0856240bb65f01a5c7");
+    m_analytics->startSession(kUmengAppId);
 }
 
 bool CStat::init()
@@ -258,6 +259,7 @@ JSBool CStat::js_createParam(JSContext* cx, uint32_t argc, jsval* vp)
     jsval jsret = OBJECT_TO_JSVAL(proxy->obj);
     
     JS_SET_RVAL(cx, vp, jsret);
+    
     return JS_TRUE;
 }
 

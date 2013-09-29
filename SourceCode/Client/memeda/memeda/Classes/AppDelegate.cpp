@@ -12,7 +12,7 @@
 #include "js_bindings_system_registration.h"
 #include "jsb_opengl_registration.h"
 #include "XMLHTTPRequest.h"
-
+#include "js_OfferWallController.h"
 #include "jsb_SocialShareAPI.hpp"
 #include "uncompressZipFile.h"
 #include "Stat.h"
@@ -155,7 +155,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
     sc->addRegisterCallback(js_register_jsb_SocialShareAPI_SocialShareAPI);
     sc->addRegisterCallback(js_register_jsb_SocialShareAPI_WeChatShareCallBackClass);
-
+    sc->addRegisterCallback(js_OfferWallController::_js_register);
+    
     // 初始化友盟统计
     CStat* pStat = CStat::GetInstance();
     pStat->Init();
