@@ -7,128 +7,138 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A69F055A17F7F8A800B6B90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F055917F7F8A800B6B90A /* Foundation.framework */; };
-		A69F055F17F7F8A800B6B90A /* PluginDMOfferWall.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A69F055E17F7F8A800B6B90A /* PluginDMOfferWall.h */; };
-		A69F056117F7F8A800B6B90A /* PluginDMOfferWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F056017F7F8A800B6B90A /* PluginDMOfferWall.m */; };
-		A69F056817F7F8A800B6B90A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F056717F7F8A800B6B90A /* XCTest.framework */; };
-		A69F056917F7F8A800B6B90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F055917F7F8A800B6B90A /* Foundation.framework */; };
-		A69F056B17F7F8A800B6B90A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F056A17F7F8A800B6B90A /* UIKit.framework */; };
-		A69F056E17F7F8A800B6B90A /* libPluginDMOfferWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F055617F7F8A800B6B90A /* libPluginDMOfferWall.a */; };
-		A69F057417F7F8A800B6B90A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A69F057217F7F8A800B6B90A /* InfoPlist.strings */; };
-		A69F057617F7F8A800B6B90A /* PluginDMOfferWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F057517F7F8A800B6B90A /* PluginDMOfferWallTests.m */; };
+		A69F058C17F7F94000B6B90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F058B17F7F94000B6B90A /* Foundation.framework */; };
+		A69F059117F7F94000B6B90A /* PluginDMOfferWall.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A69F059017F7F94000B6B90A /* PluginDMOfferWall.h */; };
+		A69F059317F7F94000B6B90A /* PluginDMOfferWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F059217F7F94000B6B90A /* PluginDMOfferWall.m */; };
+		A69F059A17F7F94000B6B90A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F059917F7F94000B6B90A /* XCTest.framework */; };
+		A69F059B17F7F94000B6B90A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F058B17F7F94000B6B90A /* Foundation.framework */; };
+		A69F059D17F7F94000B6B90A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F059C17F7F94000B6B90A /* UIKit.framework */; };
+		A69F05A017F7F94000B6B90A /* libPluginDMOfferWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F058817F7F94000B6B90A /* libPluginDMOfferWall.a */; };
+		A69F05A617F7F94000B6B90A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A69F05A417F7F94000B6B90A /* InfoPlist.strings */; };
+		A69F05A817F7F94000B6B90A /* PluginDMOfferWallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F05A717F7F94000B6B90A /* PluginDMOfferWallTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A69F056C17F7F8A800B6B90A /* PBXContainerItemProxy */ = {
+		A69F059E17F7F94000B6B90A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A69F054E17F7F8A800B6B90A /* Project object */;
+			containerPortal = A69F058017F7F94000B6B90A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A69F055517F7F8A800B6B90A;
+			remoteGlobalIDString = A69F058717F7F94000B6B90A;
 			remoteInfo = PluginDMOfferWall;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A69F055417F7F8A800B6B90A /* CopyFiles */ = {
+		A69F058617F7F94000B6B90A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				A69F055F17F7F8A800B6B90A /* PluginDMOfferWall.h in CopyFiles */,
+				A69F059117F7F94000B6B90A /* PluginDMOfferWall.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A69F055617F7F8A800B6B90A /* libPluginDMOfferWall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPluginDMOfferWall.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A69F055917F7F8A800B6B90A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A69F055E17F7F8A800B6B90A /* PluginDMOfferWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PluginDMOfferWall.h; sourceTree = "<group>"; };
-		A69F056017F7F8A800B6B90A /* PluginDMOfferWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PluginDMOfferWall.m; sourceTree = "<group>"; };
-		A69F056617F7F8A800B6B90A /* PluginDMOfferWallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PluginDMOfferWallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A69F056717F7F8A800B6B90A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A69F056A17F7F8A800B6B90A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		A69F057117F7F8A800B6B90A /* PluginDMOfferWallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PluginDMOfferWallTests-Info.plist"; sourceTree = "<group>"; };
-		A69F057317F7F8A800B6B90A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A69F057517F7F8A800B6B90A /* PluginDMOfferWallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PluginDMOfferWallTests.m; sourceTree = "<group>"; };
+		A69F058817F7F94000B6B90A /* libPluginDMOfferWall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPluginDMOfferWall.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69F058B17F7F94000B6B90A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A69F058F17F7F94000B6B90A /* PluginDMOfferWall-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PluginDMOfferWall-Prefix.pch"; sourceTree = "<group>"; };
+		A69F059017F7F94000B6B90A /* PluginDMOfferWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PluginDMOfferWall.h; sourceTree = "<group>"; };
+		A69F059217F7F94000B6B90A /* PluginDMOfferWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PluginDMOfferWall.m; sourceTree = "<group>"; };
+		A69F059817F7F94000B6B90A /* PluginDMOfferWallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PluginDMOfferWallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69F059917F7F94000B6B90A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A69F059C17F7F94000B6B90A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A69F05A317F7F94000B6B90A /* PluginDMOfferWallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PluginDMOfferWallTests-Info.plist"; sourceTree = "<group>"; };
+		A69F05A517F7F94000B6B90A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A69F05A717F7F94000B6B90A /* PluginDMOfferWallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PluginDMOfferWallTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A69F055317F7F8A800B6B90A /* Frameworks */ = {
+		A69F058517F7F94000B6B90A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69F055A17F7F8A800B6B90A /* Foundation.framework in Frameworks */,
+				A69F058C17F7F94000B6B90A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A69F056317F7F8A800B6B90A /* Frameworks */ = {
+		A69F059517F7F94000B6B90A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69F056817F7F8A800B6B90A /* XCTest.framework in Frameworks */,
-				A69F056B17F7F8A800B6B90A /* UIKit.framework in Frameworks */,
-				A69F056E17F7F8A800B6B90A /* libPluginDMOfferWall.a in Frameworks */,
-				A69F056917F7F8A800B6B90A /* Foundation.framework in Frameworks */,
+				A69F059A17F7F94000B6B90A /* XCTest.framework in Frameworks */,
+				A69F059D17F7F94000B6B90A /* UIKit.framework in Frameworks */,
+				A69F05A017F7F94000B6B90A /* libPluginDMOfferWall.a in Frameworks */,
+				A69F059B17F7F94000B6B90A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A69F054D17F7F8A800B6B90A = {
+		A69F057F17F7F94000B6B90A = {
 			isa = PBXGroup;
 			children = (
-				A69F055B17F7F8A800B6B90A /* PluginDMOfferWall */,
-				A69F056F17F7F8A800B6B90A /* PluginDMOfferWallTests */,
-				A69F055817F7F8A800B6B90A /* Frameworks */,
-				A69F055717F7F8A800B6B90A /* Products */,
+				A69F058D17F7F94000B6B90A /* PluginDMOfferWall */,
+				A69F05A117F7F94000B6B90A /* PluginDMOfferWallTests */,
+				A69F058A17F7F94000B6B90A /* Frameworks */,
+				A69F058917F7F94000B6B90A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A69F055717F7F8A800B6B90A /* Products */ = {
+		A69F058917F7F94000B6B90A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A69F055617F7F8A800B6B90A /* libPluginDMOfferWall.a */,
-				A69F056617F7F8A800B6B90A /* PluginDMOfferWallTests.xctest */,
+				A69F058817F7F94000B6B90A /* libPluginDMOfferWall.a */,
+				A69F059817F7F94000B6B90A /* PluginDMOfferWallTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A69F055817F7F8A800B6B90A /* Frameworks */ = {
+		A69F058A17F7F94000B6B90A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A69F055917F7F8A800B6B90A /* Foundation.framework */,
-				A69F056717F7F8A800B6B90A /* XCTest.framework */,
-				A69F056A17F7F8A800B6B90A /* UIKit.framework */,
+				A69F058B17F7F94000B6B90A /* Foundation.framework */,
+				A69F059917F7F94000B6B90A /* XCTest.framework */,
+				A69F059C17F7F94000B6B90A /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A69F055B17F7F8A800B6B90A /* PluginDMOfferWall */ = {
+		A69F058D17F7F94000B6B90A /* PluginDMOfferWall */ = {
 			isa = PBXGroup;
 			children = (
-				A69F055E17F7F8A800B6B90A /* PluginDMOfferWall.h */,
-				A69F056017F7F8A800B6B90A /* PluginDMOfferWall.m */,
+				A69F059017F7F94000B6B90A /* PluginDMOfferWall.h */,
+				A69F059217F7F94000B6B90A /* PluginDMOfferWall.m */,
+				A69F058E17F7F94000B6B90A /* Supporting Files */,
 			);
 			path = PluginDMOfferWall;
 			sourceTree = "<group>";
 		};
-		A69F056F17F7F8A800B6B90A /* PluginDMOfferWallTests */ = {
+		A69F058E17F7F94000B6B90A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A69F057517F7F8A800B6B90A /* PluginDMOfferWallTests.m */,
-				A69F057017F7F8A800B6B90A /* Supporting Files */,
+				A69F058F17F7F94000B6B90A /* PluginDMOfferWall-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A69F05A117F7F94000B6B90A /* PluginDMOfferWallTests */ = {
+			isa = PBXGroup;
+			children = (
+				A69F05A717F7F94000B6B90A /* PluginDMOfferWallTests.m */,
+				A69F05A217F7F94000B6B90A /* Supporting Files */,
 			);
 			path = PluginDMOfferWallTests;
 			sourceTree = "<group>";
 		};
-		A69F057017F7F8A800B6B90A /* Supporting Files */ = {
+		A69F05A217F7F94000B6B90A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A69F057117F7F8A800B6B90A /* PluginDMOfferWallTests-Info.plist */,
-				A69F057217F7F8A800B6B90A /* InfoPlist.strings */,
+				A69F05A317F7F94000B6B90A /* PluginDMOfferWallTests-Info.plist */,
+				A69F05A417F7F94000B6B90A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,13 +146,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A69F055517F7F8A800B6B90A /* PluginDMOfferWall */ = {
+		A69F058717F7F94000B6B90A /* PluginDMOfferWall */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A69F057917F7F8A800B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWall" */;
+			buildConfigurationList = A69F05AB17F7F94000B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWall" */;
 			buildPhases = (
-				A69F055217F7F8A800B6B90A /* Sources */,
-				A69F055317F7F8A800B6B90A /* Frameworks */,
-				A69F055417F7F8A800B6B90A /* CopyFiles */,
+				A69F058417F7F94000B6B90A /* Sources */,
+				A69F058517F7F94000B6B90A /* Frameworks */,
+				A69F058617F7F94000B6B90A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -150,97 +160,97 @@
 			);
 			name = PluginDMOfferWall;
 			productName = PluginDMOfferWall;
-			productReference = A69F055617F7F8A800B6B90A /* libPluginDMOfferWall.a */;
+			productReference = A69F058817F7F94000B6B90A /* libPluginDMOfferWall.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A69F056517F7F8A800B6B90A /* PluginDMOfferWallTests */ = {
+		A69F059717F7F94000B6B90A /* PluginDMOfferWallTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A69F057C17F7F8A800B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWallTests" */;
+			buildConfigurationList = A69F05AE17F7F94000B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWallTests" */;
 			buildPhases = (
-				A69F056217F7F8A800B6B90A /* Sources */,
-				A69F056317F7F8A800B6B90A /* Frameworks */,
-				A69F056417F7F8A800B6B90A /* Resources */,
+				A69F059417F7F94000B6B90A /* Sources */,
+				A69F059517F7F94000B6B90A /* Frameworks */,
+				A69F059617F7F94000B6B90A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A69F056D17F7F8A800B6B90A /* PBXTargetDependency */,
+				A69F059F17F7F94000B6B90A /* PBXTargetDependency */,
 			);
 			name = PluginDMOfferWallTests;
 			productName = PluginDMOfferWallTests;
-			productReference = A69F056617F7F8A800B6B90A /* PluginDMOfferWallTests.xctest */;
+			productReference = A69F059817F7F94000B6B90A /* PluginDMOfferWallTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A69F054E17F7F8A800B6B90A /* Project object */ = {
+		A69F058017F7F94000B6B90A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = 1528;
 			};
-			buildConfigurationList = A69F055117F7F8A800B6B90A /* Build configuration list for PBXProject "PluginDMOfferWall" */;
+			buildConfigurationList = A69F058317F7F94000B6B90A /* Build configuration list for PBXProject "PluginDMOfferWall" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = A69F054D17F7F8A800B6B90A;
-			productRefGroup = A69F055717F7F8A800B6B90A /* Products */;
+			mainGroup = A69F057F17F7F94000B6B90A;
+			productRefGroup = A69F058917F7F94000B6B90A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A69F055517F7F8A800B6B90A /* PluginDMOfferWall */,
-				A69F056517F7F8A800B6B90A /* PluginDMOfferWallTests */,
+				A69F058717F7F94000B6B90A /* PluginDMOfferWall */,
+				A69F059717F7F94000B6B90A /* PluginDMOfferWallTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A69F056417F7F8A800B6B90A /* Resources */ = {
+		A69F059617F7F94000B6B90A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69F057417F7F8A800B6B90A /* InfoPlist.strings in Resources */,
+				A69F05A617F7F94000B6B90A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A69F055217F7F8A800B6B90A /* Sources */ = {
+		A69F058417F7F94000B6B90A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69F056117F7F8A800B6B90A /* PluginDMOfferWall.m in Sources */,
+				A69F059317F7F94000B6B90A /* PluginDMOfferWall.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A69F056217F7F8A800B6B90A /* Sources */ = {
+		A69F059417F7F94000B6B90A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69F057617F7F8A800B6B90A /* PluginDMOfferWallTests.m in Sources */,
+				A69F05A817F7F94000B6B90A /* PluginDMOfferWallTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A69F056D17F7F8A800B6B90A /* PBXTargetDependency */ = {
+		A69F059F17F7F94000B6B90A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A69F055517F7F8A800B6B90A /* PluginDMOfferWall */;
-			targetProxy = A69F056C17F7F8A800B6B90A /* PBXContainerItemProxy */;
+			target = A69F058717F7F94000B6B90A /* PluginDMOfferWall */;
+			targetProxy = A69F059E17F7F94000B6B90A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A69F057217F7F8A800B6B90A /* InfoPlist.strings */ = {
+		A69F05A417F7F94000B6B90A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A69F057317F7F8A800B6B90A /* en */,
+				A69F05A517F7F94000B6B90A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -248,7 +258,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A69F057717F7F8A800B6B90A /* Debug */ = {
+		A69F05A917F7F94000B6B90A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,7 +296,7 @@
 			};
 			name = Debug;
 		};
-		A69F057817F7F8A800B6B90A /* Release */ = {
+		A69F05AA17F7F94000B6B90A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -318,7 +328,7 @@
 			};
 			name = Release;
 		};
-		A69F057A17F7F8A800B6B90A /* Debug */ = {
+		A69F05AC17F7F94000B6B90A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/PluginDMOfferWall.dst;
@@ -330,7 +340,7 @@
 			};
 			name = Debug;
 		};
-		A69F057B17F7F8A800B6B90A /* Release */ = {
+		A69F05AD17F7F94000B6B90A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/PluginDMOfferWall.dst;
@@ -342,7 +352,7 @@
 			};
 			name = Release;
 		};
-		A69F057D17F7F8A800B6B90A /* Debug */ = {
+		A69F05AF17F7F94000B6B90A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -363,7 +373,7 @@
 			};
 			name = Debug;
 		};
-		A69F057E17F7F8A800B6B90A /* Release */ = {
+		A69F05B017F7F94000B6B90A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -383,34 +393,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A69F055117F7F8A800B6B90A /* Build configuration list for PBXProject "PluginDMOfferWall" */ = {
+		A69F058317F7F94000B6B90A /* Build configuration list for PBXProject "PluginDMOfferWall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A69F057717F7F8A800B6B90A /* Debug */,
-				A69F057817F7F8A800B6B90A /* Release */,
+				A69F05A917F7F94000B6B90A /* Debug */,
+				A69F05AA17F7F94000B6B90A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A69F057917F7F8A800B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWall" */ = {
+		A69F05AB17F7F94000B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A69F057A17F7F8A800B6B90A /* Debug */,
-				A69F057B17F7F8A800B6B90A /* Release */,
+				A69F05AC17F7F94000B6B90A /* Debug */,
+				A69F05AD17F7F94000B6B90A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		A69F057C17F7F8A800B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWallTests" */ = {
+		A69F05AE17F7F94000B6B90A /* Build configuration list for PBXNativeTarget "PluginDMOfferWallTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A69F057D17F7F8A800B6B90A /* Debug */,
-				A69F057E17F7F8A800B6B90A /* Release */,
+				A69F05AF17F7F94000B6B90A /* Debug */,
+				A69F05B017F7F94000B6B90A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A69F054E17F7F8A800B6B90A /* Project object */;
+	rootObject = A69F058017F7F94000B6B90A /* Project object */;
 }

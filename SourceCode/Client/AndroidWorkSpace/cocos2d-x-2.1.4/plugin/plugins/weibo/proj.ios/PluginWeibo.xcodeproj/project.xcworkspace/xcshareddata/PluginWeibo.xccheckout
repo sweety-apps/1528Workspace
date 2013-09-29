@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C303606A-0746-40AA-A458-4EFC22F54F21</string>
+	<string>19D5FA62-9294-4089-9FB1-9AF8E962B2C0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>PluginDMOfferWall</string>
+	<string>PluginWeibo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>45237669-C3F9-459B-8568-DED1767B58D7</key>
 		<string>https://github.com/sweety-apps/1528Workspace.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/PluginDMOfferWall/PluginDMOfferWall.xcodeproj/project.xcworkspace</string>
+	<string>SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/weibo/proj.ios/PluginWeibo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>45237669-C3F9-459B-8568-DED1767B58D7</key>
