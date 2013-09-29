@@ -610,7 +610,7 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string></string>
+											<string>onPressedCollection</string>
 											<integer>1</integer>
 										</array>
 									</dict>
