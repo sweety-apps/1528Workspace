@@ -2,17 +2,32 @@ require("jsb.js");
 
 function testShareWeChat()
 {
-    var shareCallback = new WeChatShareCallBackClass();
+    var shareCallback = new cc.WeChatShareCallBackClass();
     shareCallback.onWechatShareCallback = function (state, errMsg) {
         cc.log("share callback!");
         cc.log("state = " + state + ", errMsg = " + errMsg);
     };
     
-    var socialAPI = SocialShareAPI.getInstance();
+    var socialAPI = cc.SocialShareAPI.getInstance();
     socialAPI.setWeChatShareCallbackTarget(shareCallback);
     socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle","http://www.baidu.com","Description lalala!",true,false);
     //cc.SocialShareAPI.sharedInstance().testShare();
 }
+
+function testiOSiapPayment()
+{
+    var paymentCallback = new cc.iOSiapWrapperCallBackClass();
+    paymentCallback.onPurchaseCallback = function (state, productID, errMsg) {
+        cc.log("payment callback!");
+        cc.log("state = " + state + ", productID = " + productID +", errMsg = " + errMsg);
+    };
+    
+    var iOSiapAPI = cc.iOSiapWrapper.getInstance();
+    iOSiapAPI.setPurchaseCallbackTarget(paymentCallback);
+    iOSiapAPI.payForProduct("SpecialSpyPackage6");
+    //cc.SocialShareAPI.sharedInstance().testShare();
+}
+
 
 try {
     
@@ -171,6 +186,9 @@ try {
     sys.localStorage.setItem("name", "祖国你好!");
     var tval = sys.localStorage.getItem("name");
     cc.log("on read value = "+tval);
+    
+    //测试支付代码
+    testiOSiapPayment();
     
 } catch(e) {log(e);}
 

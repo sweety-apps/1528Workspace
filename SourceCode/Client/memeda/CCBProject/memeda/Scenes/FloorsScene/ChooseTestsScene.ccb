@@ -610,8 +610,8 @@
 										<string>Block</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<integer>0</integer>
+											<string>onPressedCollection</string>
+											<integer>1</integer>
 										</array>
 									</dict>
 									<dict>
@@ -656,6 +656,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>baseClass</key>
