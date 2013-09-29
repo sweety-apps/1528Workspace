@@ -169,8 +169,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCScriptEngineProtocol *pEngine = ScriptingCore::getInstance();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
     
-    //ScriptingCore::getInstance()->runScript("main.js");
-    ScriptingCore::getInstance()->runScript("hello.js");
+    ScriptingCore::getInstance()->runScript("main.js");
+    //ScriptingCore::getInstance()->runScript("hello.js");
     pStat->logTimedEventBegin("runtime");   //
     
     //testUnzipFiles();
