@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A69BC4F717F9544200F392F1 /* AnalyticsOfferWall.mm in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4F517F9544200F392F1 /* AnalyticsOfferWall.mm */; };
+		A69BC4F817F9544200F392F1 /* OnlineWallViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4F617F9544200F392F1 /* OnlineWallViewController.mm */; };
 		A69F05C817F7FB8900B6B90A /* AnalyticsOfferWall.h in Headers */ = {isa = PBXBuildFile; fileRef = A69F05C617F7FB8900B6B90A /* AnalyticsOfferWall.h */; };
-		A69F05C917F7FB8900B6B90A /* AnalyticsOfferWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F05C717F7FB8900B6B90A /* AnalyticsOfferWall.m */; };
 		A69F05E417F7FC3300B6B90A /* PluginFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = A69F05DC17F7FC3300B6B90A /* PluginFactory.h */; };
 		A69F05E517F7FC3300B6B90A /* PluginManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A69F05DD17F7FC3300B6B90A /* PluginManager.h */; };
 		A69F05E617F7FC3300B6B90A /* PluginParam.h in Headers */ = {isa = PBXBuildFile; fileRef = A69F05DE17F7FC3300B6B90A /* PluginParam.h */; };
@@ -28,13 +29,13 @@
 		A69F061B17F80D5700B6B90A /* DMOfferWallViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A69F061717F80D5700B6B90A /* DMOfferWallViewController.h */; };
 		A69F061C17F80D5700B6B90A /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F061A17F80D5700B6B90A /* libDomobOfferWallSDK.a */; };
 		A69F061F17F80DAA00B6B90A /* OnlineWallViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A69F061D17F80DA900B6B90A /* OnlineWallViewController.h */; };
-		A69F062017F80DAA00B6B90A /* OnlineWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F061E17F80DAA00B6B90A /* OnlineWallViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A69BC4F517F9544200F392F1 /* AnalyticsOfferWall.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalyticsOfferWall.mm; sourceTree = "<group>"; };
+		A69BC4F617F9544200F392F1 /* OnlineWallViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OnlineWallViewController.mm; sourceTree = "<group>"; };
 		A69F05BF17F7FB2A00B6B90A /* libPluginDMOfferWall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPluginDMOfferWall.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69F05C617F7FB8900B6B90A /* AnalyticsOfferWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsOfferWall.h; sourceTree = "<group>"; };
-		A69F05C717F7FB8900B6B90A /* AnalyticsOfferWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsOfferWall.m; sourceTree = "<group>"; };
 		A69F05DC17F7FC3300B6B90A /* PluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFactory.h; sourceTree = "<group>"; };
 		A69F05DD17F7FC3300B6B90A /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		A69F05DE17F7FC3300B6B90A /* PluginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginParam.h; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		A69F061917F80D5700B6B90A /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
 		A69F061A17F80D5700B6B90A /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
 		A69F061D17F80DA900B6B90A /* OnlineWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineWallViewController.h; sourceTree = "<group>"; };
-		A69F061E17F80DAA00B6B90A /* OnlineWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineWallViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +81,8 @@
 		A69F05B617F7FB2A00B6B90A = {
 			isa = PBXGroup;
 			children = (
+				A69BC4F517F9544200F392F1 /* AnalyticsOfferWall.mm */,
+				A69BC4F617F9544200F392F1 /* OnlineWallViewController.mm */,
 				A69F061717F80D5700B6B90A /* DMOfferWallViewController.h */,
 				A69F061817F80D5700B6B90A /* DomobOfferWallBundle */,
 				A69F061A17F80D5700B6B90A /* libDomobOfferWallSDK.a */,
@@ -94,9 +96,7 @@
 				A69F060717F80C9C00B6B90A /* Foundation.framework */,
 				A69F05DB17F7FC3300B6B90A /* include */,
 				A69F05C617F7FB8900B6B90A /* AnalyticsOfferWall.h */,
-				A69F05C717F7FB8900B6B90A /* AnalyticsOfferWall.m */,
 				A69F061D17F80DA900B6B90A /* OnlineWallViewController.h */,
-				A69F061E17F80DAA00B6B90A /* OnlineWallViewController.m */,
 				A69F05C017F7FB2A00B6B90A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -205,8 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69F05C917F7FB8900B6B90A /* AnalyticsOfferWall.m in Sources */,
-				A69F062017F80DAA00B6B90A /* OnlineWallViewController.m in Sources */,
+				A69BC4F717F9544200F392F1 /* AnalyticsOfferWall.mm in Sources */,
+				A69BC4F817F9544200F392F1 /* OnlineWallViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
