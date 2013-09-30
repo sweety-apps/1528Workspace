@@ -54,7 +54,7 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
         debugMsgOutput("windowClosed");
     };
     
-    memeda.OfferWallController.getInstance().init();
+    memeda.OfferWallController.getInstance().init(Global_getUserID());
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
