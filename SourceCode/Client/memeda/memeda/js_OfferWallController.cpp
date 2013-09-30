@@ -79,6 +79,8 @@ void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
         JS_FN("getInstance", js_getInstance, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_init, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_show, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("requestOnlinePointCheck", js_requestOnlinePointCheck, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("requestOnlineConsumeWithPoint", js_requestOnlineConsumeWithPoint, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
     
@@ -111,6 +113,25 @@ JSBool js_OfferWallController::js_show(JSContext* cx, uint32_t argc, jsval* vp)
     return JS_TRUE;
 }
 
+JSBool js_OfferWallController::js_requestOnlinePointCheck(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    g_ps->callFuncWithParam("requestOnlinePointCheck", NULL);
+    return JS_TRUE;
+}
+
+JSBool js_OfferWallController::js_requestOnlineConsumeWithPoint(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    jsval *argv = JS_ARGV(cx, vp);
+    int32_t nValue = JSVAL_TO_INT(argv[0]);
+    
+    cocos2d::plugin::PluginParam value(nValue);
+    
+    g_ps->callFuncWithParam("requestOnlineConsumeWithPoint", &value, NULL);
+
+    return JS_TRUE;
+}
+
+
 JSBool js_OfferWallController::js_init(JSContext* cx, uint32_t argc, jsval* vp)
 {
     if ( !g_bInit ) {
@@ -134,18 +155,45 @@ JSBool js_OfferWallController::js_init(JSContext* cx, uint32_t argc, jsval* vp)
     return JS_TRUE;
 }
 
-void js_OfferWallController::onWindowClosed()
-{
-    js_proxy_t* p = jsb_get_native_proxy(this);
-    
-    ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "windowClosed");
-}
-
-
 void OfferWallResultListener::onShareResult(cocos2d::plugin::ShareResultCode ret, const char* msg)
 {
-    if ( msg == "WindowClosed" )
+    if ( strcmp(msg, "WindowClosed") == 0 )
     {
-        js_OfferWallController::g_Instance->onWindowClosed();
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "windowClosed");
+    }
+    else if ( strstr(msg, "offerWallDidFinishCheck") != NULL )
+    {   // 查询获取到的金币结束
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        jsval retval;
+        JSContext* jc = ScriptingCore::getInstance()->getGlobalContext();
+        
+        jsval v[] = {
+            v[0] = c_string_to_jsval(jc, msg + strlen("offerWallDidFinishCheck "))
+        };
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFinishCheck", 1, v, &retval);
+    }
+    else if ( strstr(msg, "offerWallDidFinishConsume") != NULL)
+    {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        jsval retval;
+        JSContext* jc = ScriptingCore::getInstance()->getGlobalContext();
+        jsval v[] = {
+            v[0] = c_string_to_jsval(jc, msg + strlen("offerWallDidFinishConsume "))
+        };
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFinishConsume", 1, v, &retval);
+    }
+    else if ( strcmp(msg, "offerWallDidFailCheck") == 0 )
+    {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFailCheck");
+    }
+    else if ( strcmp(msg, "offerWallDidFailConsume") == 0 )
+    {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFailConsume");
     }
 }

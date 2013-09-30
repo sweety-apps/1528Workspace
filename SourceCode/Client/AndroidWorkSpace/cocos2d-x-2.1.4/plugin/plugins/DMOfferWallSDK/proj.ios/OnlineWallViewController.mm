@@ -90,16 +90,25 @@
 // 积分查询成功之后，回调该接口，获取总积分和总已消费积分。
 - (void)offerWallDidFinishCheckPointWithTotalPoint:(NSInteger)totalPoint
                              andTotalConsumedPoint:(NSInteger)consumed {
+    // 查询积分失败
     cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
     cocos2d::plugin::ProtocolSocial* ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
-    ps->onShareResult(cocos2d::plugin::kShareSuccess, "WindowClosed");
+    NSString* str = [[NSString alloc] init];
+    str = @"offerWallDidFinishCheck {\"totalPoint\" : ";
+    str = [str stringByAppendingString:[NSString stringWithFormat:@"%d", totalPoint]];
+    str = [str stringByAppendingString:@", \"consumed\":"];
+    str = [str stringByAppendingString:[NSString stringWithFormat:@"%d", consumed]];
+    str = [str stringByAppendingString:@"}"];
+
+    ps->onShareResult(cocos2d::plugin::kShareSuccess, [str cStringUsingEncoding:NSASCIIStringEncoding]);
 }
 
 // 积分查询失败之后，回调该接口，返回查询失败的错误原因。
 - (void)offerWallDidFailCheckPointWithError:(NSError *)error {
+    // 查询积分失败
     cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
     cocos2d::plugin::ProtocolSocial* ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
-    ps->onShareResult(cocos2d::plugin::kShareSuccess, "WindowClosed");
+    ps->onShareResult(cocos2d::plugin::kShareSuccess, "offerWallDidFailCheck");
 }
 
 #pragma mark Consume Callbacks
@@ -107,27 +116,25 @@
 - (void)offerWallDidFinishConsumePointWithStatusCode:(DMOfferWallConsumeStatusCode)statusCode
                                           totalPoint:(NSInteger)totalPoint
                                   totalConsumedPoint:(NSInteger)consumed {
-    NSLog(@"offerWallDidFinishConsumePoint");
-    switch (statusCode) {
-        case DMOfferWallConsumeStatusCodeSuccess:
-            [self.view makeToast:@"消费成功！"];
-            break;
-        case DMOfferWallConsumeStatusCodeInsufficient:
-            [self.view makeToast:@"消费失败，余额不足！"];
-            break;
-        default:
-            break;
-    }
+    cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
+    cocos2d::plugin::ProtocolSocial* ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
+    NSString* str = [[NSString alloc] init];
+    str = @"offerWallDidFinishConsume {\"totalPoint\" : ";
+    str = [str stringByAppendingString:[NSString stringWithFormat:@"%d", totalPoint]];
+    str = [str stringByAppendingString:@", \"consumed\":"];
+    str = [str stringByAppendingString:[NSString stringWithFormat:@"%d", consumed]];
+    str = [str stringByAppendingString:@", \"statusCode\":"];
+    str = [str stringByAppendingString:[NSString stringWithFormat:@"%d", statusCode]];
+    str = [str stringByAppendingString:@"}"];
     
-    _pointLabel.text = [NSString stringWithFormat:@"%d", totalPoint];
-    _consumeLabel.text = [NSString stringWithFormat:@"%d", consumed];
-    _statusLabel.text = @"空闲";
+    ps->onShareResult(cocos2d::plugin::kShareSuccess, [str cStringUsingEncoding:NSASCIIStringEncoding]);
 }
 
 // 消费请求异常应答后，回调该接口，并返回异常的错误原因。
 - (void)offerWallDidFailConsumePointWithError:(NSError *)error {
-    NSLog(@"offerWallDidFailConsumePointWithError:%@", error);
-    _statusLabel.text = @"空闲";
+    cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
+    cocos2d::plugin::ProtocolSocial* ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
+    ps->onShareResult(cocos2d::plugin::kShareSuccess, "offerWallDidFailConsume");
 }
 
 @end

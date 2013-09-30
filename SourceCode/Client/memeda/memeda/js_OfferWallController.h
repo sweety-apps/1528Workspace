@@ -42,8 +42,9 @@ public:
     static JSBool js_getInstance(JSContext* cx, uint32_t argc, jsval* vp);
     static JSBool js_show(JSContext* cx, uint32_t argc, jsval* vp);
     static JSBool js_init(JSContext* cx, uint32_t argc, jsval* vp);
+    static JSBool js_requestOnlinePointCheck(JSContext* cx, uint32_t argc, jsval* vp);
+    static JSBool js_requestOnlineConsumeWithPoint(JSContext* cx, uint32_t argc, jsval* vp);
     
-    virtual void onWindowClosed();
 private:
     static JSClass* jsb_Class;
     static JSObject* jsb_prototype;

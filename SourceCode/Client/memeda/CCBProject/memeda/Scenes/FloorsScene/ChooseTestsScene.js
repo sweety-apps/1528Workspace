@@ -41,20 +41,12 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.wholeFloors.scrollState = kScrollingStateNormal;
     this.buyMsgBox.animationManager.setCompletedAnimationCallback(this, this.onMsgboxAnimationCompleted);
     
-    this.checkWechatShared();
-    
     this.coinNumber.setString("" + CoinMgr_GetCount());
     CoinMgr_Register(function (coin, add) {
         gChooseTestsSceneThis.coinNumber.setString("" + CoinMgr_GetCount());
     });
     
-    // 初始化多盟
-    debugMsgOutput("" + memeda.OfferWallController);
-    memeda.OfferWallController.getInstance().windowClosed = function () {
-        debugMsgOutput("windowClosed");
-    };
-    
-    memeda.OfferWallController.getInstance().init(Global_getUserID());
+    this.QueryExtraCoin();
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -175,46 +167,38 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
     this.updateBuyMsgBoxState();
 };
 
-ChooseTestsScene.prototype.checkWechatShared = function () {
-	// 查询通过微信分享是否获得金币
-	//if ( Global_isWeb() ) { // 页面版没有这个功能
-	//    return ;	
-	//}
-	
-	var time = sys.localStorage.getItem("WechatTime");
-	if ( time == "" || time == null ) { 
-		time = 0;
-	}
-	
-	var now = Math.floor(Date.now() / 1000 / 3600);	// 小时
-	
-	debugMsgOutput(""+now);
-	debugMsgOutput(""+time);
-	
-	if ( Math.abs(time - now) >= 0 ) {
-		// 查服务器
-		sys.localStorage.setItem("WechatTime", now);
-		var http = new XMLHttpRequest();
-		
-		http.open("GET", "http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());		
-		//http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
-		http.onreadystatechange = function(){
-			if( http.readyState == 4 && http.status == 200 ) {
-                gChooseTestsSceneThis.parseWeChatData(http.responseText);
-			}
-		};
-		http.send(null);
-			
-		debugMsgOutput(http);
-	}
-}
-
 ChooseTestsScene.prototype.onPressedCollection = function () {
 	// test
-
+    memeda.OfferWallController.getInstance().windowClosed = function () {
+        debugMsgOutput("windowClosed");
+    };
     
 	memeda.OfferWallController.getInstance().show();
 }
+
+ChooseTestsScene.prototype.QueryExtraCoin = function () {
+    var callBackObj = new Object();
+    callBackObj.wachatDidFinish = function(responseText) {
+        debugMsgOutput("wachatDidFinish " + responseText);
+        this.parseWeChatData(responseText);
+    };
+    callBackObj.offerWallDidFinishCheck = function(responseText) {
+        debugMsgOutput("offerWallDidFinishCheck " + responseText);
+    };
+    callBackObj.offerWallDidFinishConsume = function(responseText) {
+        debugMsgOutput("offerWallDidFinishConsume " + responseText);
+    };
+    callBackObj.offerWallDidFailCheck = function() {
+        debugMsgOutput("offerWallDidFailCheck");
+    };
+    callBackObj.offerWallDidFailConsume = function() {
+        debugMsgOutput("offerWallDidFailConsume");
+    };
+    
+    CoinMgr_checkExtraCoin(callBackObj);  // 检测额外的金币奖励，包括微信和多盟
+    debugMsgOutput("-0-=-=-=-=-=");
+};
+
 
 ChooseTestsScene.prototype.parseWeChatData = function (text) {
     debugMsgOutput("---" + text);
