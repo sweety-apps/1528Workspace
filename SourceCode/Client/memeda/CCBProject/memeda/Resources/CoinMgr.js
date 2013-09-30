@@ -1,4 +1,4 @@
-var gCoin = 1999;
+var gCoin = 0;
 var gEventArr = new Array();
 var CoinMgr_gCallBackObj = null;
 
@@ -22,7 +22,9 @@ function CoinMgr_GetCount() {
 function CoinMgr_Change(add) {
     var oldCoin = gCoin;
     gCoin += add;
-
+    
+	sys.localStorage.setItem("coin", gCoin);
+	
     for ( var i = 0; i < gEventArr.length; i ++) {
         (gEventArr[i])(oldCoin, add);
     }
@@ -30,6 +32,11 @@ function CoinMgr_Change(add) {
 
 function CoinMgr_Init() {
     // 
+    gCoin = sys.localStorage.getItem("coin");
+    if ( gCoin == null ) {
+    	gCoin = 50;
+    }
+    
     memeda.OfferWallController.getInstance().init(Global_getUserID());
     
     memeda.OfferWallController.getInstance().offerWallDidFinishCheck = function (responseText) {
