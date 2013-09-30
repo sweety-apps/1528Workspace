@@ -14,6 +14,7 @@
 #include "XMLHTTPRequest.h"
 #include "js_OfferWallController.h"
 #include "jsb_SocialShareAPI.hpp"
+#include "jsb_iOSiapWrapper.hpp"
 #include "uncompressZipFile.h"
 #include "Stat.h"
 
@@ -153,8 +154,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(jsb_register_system);
     sc->addRegisterCallback(JSB_register_opengl);
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
-    sc->addRegisterCallback(js_register_jsb_SocialShareAPI_SocialShareAPI);
-    sc->addRegisterCallback(js_register_jsb_SocialShareAPI_WeChatShareCallBackClass);
+    sc->addRegisterCallback(register_all_jsb_SocialShareAPI);
+    sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
     sc->addRegisterCallback(js_OfferWallController::_js_register);
     
     // 初始化友盟统计
@@ -169,6 +170,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
     
     ScriptingCore::getInstance()->runScript("main.js");
+    //ScriptingCore::getInstance()->runScript("hello.js");
     pStat->logTimedEventBegin("runtime");   //
     
     //testUnzipFiles();
