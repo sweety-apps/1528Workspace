@@ -77,7 +77,7 @@ void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
     
     static JSFunctionSpec funcs[] = {
         JS_FN("getInstance", js_getInstance, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("init", js_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("init", js_init, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_show, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
@@ -117,7 +117,15 @@ JSBool js_OfferWallController::js_init(JSContext* cx, uint32_t argc, jsval* vp)
         g_bInit = true;
         cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
         g_ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
+        
+        jsval *argv = JS_ARGV(cx, vp);
+        JSString* pObj = JSVAL_TO_STRING(argv[0]);
+        JSStringWrapper jsUserID(pObj);
+        
         cocos2d::plugin::PluginParam id(kOfferWallPubID);
+        cocos2d::plugin::PluginParam userID(jsUserID.get().c_str());
+        
+        g_ps->callFuncWithParam("SetUserID", &userID, NULL);
         g_ps->callFuncWithParam("Init", &id, NULL);
         
         OfferWallResultListener* list = new OfferWallResultListener();
