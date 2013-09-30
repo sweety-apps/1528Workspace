@@ -17,4 +17,5 @@ UIViewController<DMOfferWallDelegate, UITextFieldDelegate>
 
 - (id) init : (NSString *) publishId;
 - (void) showWithModal;
+
 @end

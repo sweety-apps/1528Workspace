@@ -7,6 +7,9 @@
 //
 
 #import "AnalyticsOfferWall.h"
+#import "PluginUtilsIOS.h"
+#import "PluginManager.h"
+#import "ProtocolSocial.h"
 
 @implementation AnalyticsOfferWall
 

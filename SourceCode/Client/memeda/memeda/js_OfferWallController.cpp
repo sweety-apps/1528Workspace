@@ -8,17 +8,37 @@
 
 #include "js_OfferWallController.h"
 #include "AppConfigVarDefines.h"
+#include "cocos2d_specifics.hpp"
+
 
 bool js_OfferWallController::g_bInit = false;
 cocos2d::plugin::ProtocolSocial* js_OfferWallController::g_ps = NULL;
 JSClass* js_OfferWallController::jsb_Class = 0;
 JSObject* js_OfferWallController::jsb_prototype = 0;
+js_OfferWallController* js_OfferWallController::g_Instance = NULL;
+
+bool js_OfferWallController::init()
+{
+    return true;
+}
 
 void js_OfferWallController::Finialize(JSFreeOp* fop, JSObject* obj)
 {
 }
 
-
+JSBool js_OfferWallController::js_getInstance(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    if ( g_Instance == NULL )
+    {
+        g_Instance = new js_OfferWallController();
+    }
+    
+    js_proxy_t* proxy = js_get_or_create_proxy<js_OfferWallController>(cx, g_Instance);
+    jsval jsret = OBJECT_TO_JSVAL(proxy->obj);
+    
+    JS_SET_RVAL(cx, vp, jsret);
+    return JS_TRUE;
+}
 
 void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
 {
@@ -56,14 +76,13 @@ void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
     };
     
     static JSFunctionSpec funcs[] = {
+        JS_FN("getInstance", js_getInstance, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_show, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
     
     static JSFunctionSpec st_funcs[] = {
-        JS_FN("init", js_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("show", js_show, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
     
@@ -100,18 +119,25 @@ JSBool js_OfferWallController::js_init(JSContext* cx, uint32_t argc, jsval* vp)
         g_ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
         cocos2d::plugin::PluginParam id(kOfferWallPubID);
         g_ps->callFuncWithParam("Init", &id, NULL);
+        
+        OfferWallResultListener* list = new OfferWallResultListener();
+        g_ps->setResultListener(list);
     }
     return JS_TRUE;
 }
 
-/*
-// test
-cocos2d::plugin::PluginProtocol* plugin2 = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
+void js_OfferWallController::onWindowClosed()
+{
+    js_proxy_t* p = jsb_get_native_proxy(this);
+    
+    ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "windowClosed");
+}
 
-cocos2d::plugin::ProtocolSocial* ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin2);
-cocos2d::plugin::PluginParam id("96ZJ06UgzeimTwTAs3");
-ps->callFuncWithParam("Init", &id, NULL);
-ps->callFuncWithParam("ShowModal", NULL);
 
-plugin2 = NULL;
-*/
+void OfferWallResultListener::onShareResult(cocos2d::plugin::ShareResultCode ret, const char* msg)
+{
+    if ( msg == "WindowClosed" )
+    {
+        js_OfferWallController::g_Instance->onWindowClosed();
+    }
+}

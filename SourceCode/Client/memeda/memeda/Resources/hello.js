@@ -167,10 +167,5 @@ try {
     
     director.runWithScene(game.getPlayScene());
     
-    // 存储读写代码
-    sys.localStorage.setItem("name", "祖国你好!");
-    var tval = sys.localStorage.getItem("name");
-    cc.log("on read value = "+tval);
-    
 } catch(e) {log(e);}
 

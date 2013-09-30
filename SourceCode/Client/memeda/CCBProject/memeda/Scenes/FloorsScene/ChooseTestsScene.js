@@ -50,7 +50,11 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     
     // 初始化多盟
     debugMsgOutput("" + memeda.OfferWallController);
-    memeda.OfferWallController.init();
+    memeda.OfferWallController.getInstance().windowClosed = function () {
+        debugMsgOutput("windowClosed");
+    };
+    
+    memeda.OfferWallController.getInstance().init();
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -207,7 +211,9 @@ ChooseTestsScene.prototype.checkWechatShared = function () {
 
 ChooseTestsScene.prototype.onPressedCollection = function () {
 	// test
-	memeda.OfferWallController.show();
+
+    
+	memeda.OfferWallController.getInstance().show();
 }
 
 ChooseTestsScene.prototype.parseWeChatData = function (text) {

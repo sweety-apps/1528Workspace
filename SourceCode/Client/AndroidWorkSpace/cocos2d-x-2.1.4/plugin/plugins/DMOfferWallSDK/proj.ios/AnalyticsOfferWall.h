@@ -10,11 +10,12 @@
 #import <InterfaceSocial.h>
 #import "OnlineWallViewController.h"
 
+
 @interface AnalyticsOfferWall : NSObject<InterfaceSocial>
 {
     OnlineWallViewController* _Controller;
 }
 
-- (void) Init : (NSString*) id;
+- (void) Init : (NSString*) publishid;
 - (void) ShowModal ;
 @end

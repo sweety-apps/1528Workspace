@@ -7,8 +7,13 @@
 //
 
 #import "OnlineWallViewController.h"
+#import "PluginUtilsIOS.h"
+#import "PluginManager.h"
+#import "ProtocolSocial.h"
 
 @implementation OnlineWallViewController
+
+
 - (id) init : (NSString *) publishId
 {
     self = [super initWithNibName:NULL bundle:NULL];
@@ -55,5 +60,8 @@
 
 - (void) offerWallDidClosed
 {
+    cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
+    cocos2d::plugin::ProtocolSocial* ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
+    ps->onShareResult(cocos2d::plugin::kShareSuccess, "WindowClosed");
 }
 @end
