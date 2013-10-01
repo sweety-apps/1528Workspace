@@ -489,11 +489,6 @@ GuessScene.prototype.InitVars = function()
     gInputCharButtons[16] = this.charButton16;
     gInputCharButtons[17] = this.charButton17;
     
-    this.coinNum.setString("" + CoinMgr_GetCount());
-    CoinMgr_Register(function (coin, add) {
-        gCurrentCCBView.coinNum.setString("" + CoinMgr_GetCount());
-    });
-
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
 

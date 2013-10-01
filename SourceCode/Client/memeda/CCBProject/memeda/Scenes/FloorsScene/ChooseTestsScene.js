@@ -41,11 +41,7 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.wholeFloors.scrollState = kScrollingStateNormal;
     this.buyMsgBox.animationManager.setCompletedAnimationCallback(this, this.onMsgboxAnimationCompleted);
     
-    this.coinNumber.setString("" + CoinMgr_GetCount());
-    CoinMgr_Register(function (coin, add) {
-        gChooseTestsSceneThis.coinNumber.setString("" + CoinMgr_GetCount());
-    });
-    
+    // 查询通过分享或者是多盟获取的金币
     this.QueryExtraCoin();
 };
 
