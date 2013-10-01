@@ -156,10 +156,6 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 
     // 设置各种按钮的回调
     gCurrentCCBView = this;
-    
-    setupPressEventToSprite(this.rootLayer,this.wechatButton, this.wechatButton);
-    this.wechatButton.onPressButton = function () {
-    }
    
     // aboutButton Event
     /*
