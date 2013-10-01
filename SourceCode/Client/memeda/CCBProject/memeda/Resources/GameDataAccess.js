@@ -84,7 +84,7 @@ function Problem_RequestInfo(index, succeedCallback,failedCallback,context){
     		succeedCallback(JSON.parse(data), context);			
 		} else {
 			var xmlHttp = getHttpRequest();
-			xmlHttp.open("GET", "http://121.197.3.27/queryproblem.php?aid=" + id);
+			xmlHttp.open("GET", "http://www.sweety-apps.com/queryproblem.php?aid=" + id);
 			//xmlHttp.open("GET", "http://memeda.meme-da.com/queryproblem.php?aid=" + id);
 			xmlHttp.onreadystatechange = function(){
 				if( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) {
