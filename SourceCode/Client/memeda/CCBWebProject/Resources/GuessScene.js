@@ -222,53 +222,6 @@ GuessScene.prototype.onBack = function ( ) {
     cc.Director.getInstance().replaceScene(scene);
 }
 
-GuessScene.prototype.SetTitleNum = function (num) {
-    if ( num >= 100 ) {
-        this.titleNum0.setVisible(true);
-        this.titleNum1.setVisible(true);
-        this.titleNum2.setVisible(true);
-
-        var num2 = Math.floor(num / 100);
-        var num1 = Math.floor( (num % 100) / 10);
-        var num0 = num % 10;
-
-        var image = "UI/guess/" + num2 + ".png";
-        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
-        this.titleNum2.setDisplayFrame(spriteFrame);
-
-        image = "UI/guess/" + num1 + ".png";
-        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
-        this.titleNum1.setDisplayFrame(spriteFrame);
-
-        image = "UI/guess/" + num0 + ".png";
-        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
-        this.titleNum0.setDisplayFrame(spriteFrame);
-    } else if ( num >= 10 ) {
-        this.titleNum0.setVisible(true);
-        this.titleNum1.setVisible(true);
-        this.titleNum2.setVisible(false);
-
-        var num1 = Math.floor( num / 10);
-        var num0 = num % 10;
-
-        var image = "UI/guess/" + num1 + ".png";
-        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
-        this.titleNum1.setDisplayFrame(spriteFrame);
-
-        image = "UI/guess/" + num0 + ".png";
-        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
-        this.titleNum0.setDisplayFrame(spriteFrame);
-    } else {
-        this.titleNum0.setVisible(false);
-        this.titleNum1.setVisible(true);
-        this.titleNum2.setVisible(false);
-
-        var image = "UI/guess/" + num + ".png";
-        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
-        this.titleNum1.setDisplayFrame(spriteFrame);
-    }
-}
-
 ///// This Scene Animation Callback Handlers
 GuessScene.prototype.onAnimationComplete = function()
 {
@@ -290,8 +243,6 @@ GuessScene.prototype.onAnimationComplete = function()
 
     if(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName() == "Drawing Animation Timeline")
     {
-        gAwardButton.animationManager.runAnimationsForSequenceNamed("Flipping Timeline");
-        //gInfoTipsCoverLabel.animationManager.runAnimationsForSequenceNamed("Shining Timeline");
     }
 
     if(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName() == "Win Timeline")
@@ -340,11 +291,11 @@ GuessScene.prototype.ResetResultButtonsPosition = function()
     var labelPosArray = new Array(94, 63.5, 38, 14, -3.5, -27.0);
     var labelSpArray = new Array(0, 64, 58, 54, 49, 49);
 
-    var btnPos = btnPosArray[gResultCharButtons.length - 1];
-    var btnSp = btnSpArray[gResultCharButtons.length - 1];
+    var btnPos = btnPosArray[gResultCharButtons.length - 1] * 2;
+    var btnSp = btnSpArray[gResultCharButtons.length - 1] * 2;
 
-    var labelPos = labelPosArray[gResultCharButtons.length - 1];
-    var labelSp = labelSpArray[gResultCharButtons.length - 1];
+    var labelPos = labelPosArray[gResultCharButtons.length - 1] * 2;
+    var labelSp = labelSpArray[gResultCharButtons.length - 1] * 2;
 
     for (var i = 0; i < gResultCharButtons.length; i ++)
     {
@@ -634,7 +585,6 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     
     gCurrentCCBView.CatEnter();
     
-    gCurrentCCBView.SetTitleNum(gProblem + 1);
     choosedButtonCount = 0;
 
     for(i = 0; i < gInputCharButtons.length; i++)
@@ -1012,9 +962,6 @@ GuessScene.prototype.onClickNext = function() {
 
 GuessScene.prototype.EnableAllBtn = function (enable) {
 	gAllBtnEnable = enable;
-	this.coinBtn.setEnabled(enable);
-	this.returnBtn.setEnabled(enable);
-	this.chatShare.setEnabled(enable);
 }; 
 
 GuessScene.prototype.onClickedWeChatShare = function () {
