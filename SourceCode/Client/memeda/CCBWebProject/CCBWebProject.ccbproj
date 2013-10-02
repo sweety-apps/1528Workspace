@@ -41,11 +41,11 @@
 	<key>publishEnablediPhone</key>
 	<false/>
 	<key>publishResolutionHTML5_height</key>
-	<integer>480</integer>
+	<integer>744</integer>
 	<key>publishResolutionHTML5_scale</key>
 	<integer>1</integer>
 	<key>publishResolutionHTML5_width</key>
-	<integer>320</integer>
+	<integer>640</integer>
 	<key>publishResolution_</key>
 	<true/>
 	<key>publishResolution_hd</key>
@@ -67,7 +67,7 @@
 	<key>publishToZipFile</key>
 	<false/>
 	<key>resourceAutoScaleFactor</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>resourcePaths</key>
 	<array>
 		<dict>

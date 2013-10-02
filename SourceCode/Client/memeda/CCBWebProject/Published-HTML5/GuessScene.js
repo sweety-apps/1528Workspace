@@ -335,12 +335,6 @@ GuessScene.prototype.InitVars = function()
     gInputCharButtons[9] = this.charButton9;
     gInputCharButtons[10] = this.charButton10;
     gInputCharButtons[11] = this.charButton11;
-    gInputCharButtons[12] = this.charButton12;
-    gInputCharButtons[13] = this.charButton13;
-    gInputCharButtons[14] = this.charButton14;
-    gInputCharButtons[15] = this.charButton15;
-    gInputCharButtons[16] = this.charButton16;
-    gInputCharButtons[17] = this.charButton17;
     
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
@@ -497,7 +491,7 @@ function MakeInputKeys(rightanswers, inputkeys) {
     
     for (var i = 0; i < inputkeys.length; i ++) {
         InsertCharToArray(charArray, inputkeys[i]);
-        if ( charArray.length >= 18 ) {
+        if ( charArray.length >= 12 ) {
             break;
         }
     }
@@ -514,10 +508,10 @@ function MakeInputKeys(rightanswers, inputkeys) {
                return -1;
                });
     
-    if ( charArray.length < 18 )
+    if ( charArray.length < 12 )
         for (var i = 0; i < other.length; i ++) {
             InsertCharToArray(charArray, other[i]);
-            if ( charArray.length >= 18 ) {
+            if ( charArray.length >= 12 ) {
                 break;
             }
         }
@@ -727,7 +721,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             	memeda.Stat.logEvent("guesssuccess", param);
             } else {
             	// 把结果上报到服务器
-            	WebFun_get("http://www.liux123.com/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	            	
+            	WebFun_get("http://121.197.3.27/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	            	
             	//WebFun_get("http://memeda.meme-da.com/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	
             }
             //
