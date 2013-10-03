@@ -17,14 +17,14 @@ Global_getShareUrl = function (aid) {
 		var userId = Global_getUserID();
 		var param = "uid=" + userId;
 		
-		return "http://www.sweety-apps.com/memeda.php?" + param;
+		return "http://121.197.3.27/memeda.php?" + param;
 				
 		//return "http://memeda.meme-da.com/memeda.php?" + param;
 	} else {
 		var userId = Global_getUserID();
 		var param = "aid=" + aid + "&uid=" + userId;
 
-		return "http://www.sweety-apps.com/memeda.php?" + param;
+		return "http://121.197.3.27/memeda.php?" + param;
 		
 		//return "http://memeda.meme-da.com/memeda.php?" + param;
 	}

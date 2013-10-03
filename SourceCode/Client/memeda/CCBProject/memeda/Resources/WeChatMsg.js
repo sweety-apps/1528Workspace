@@ -40,17 +40,18 @@ WeChatMsg.prototype.onShare = function() {
     debugMsgOutput(url);
     try
     {
-		var shareCallback = new WeChatShareCallBackClass();
+		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
 	        cc.log("share callback!");
 	        cc.log("state = " + state + ", errMsg = " + errMsg);
 	    };
 	    
-	    var socialAPI = SocialShareAPI.getInstance();
+	    var socialAPI = cc.SocialShareAPI.getInstance();
 	    socialAPI.setWeChatShareCallbackTarget(shareCallback);
 	    
 	    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle", url,"Description lalala!",false,false);
     } catch (e) {
+    	debugMsgOutput("" + e);
     }
     
 	this.Hide();	
@@ -63,13 +64,13 @@ WeChatMsg.prototype.onShareFriend = function() {
     
     try 
     {
-		var shareCallback = new WeChatShareCallBackClass();
+		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
 	        cc.log("share callback!");
 	        cc.log("state = " + state + ", errMsg = " + errMsg);
 	    };
 	    
-	    var socialAPI = SocialShareAPI.getInstance();
+	    var socialAPI = cc.SocialShareAPI.getInstance();
 	    socialAPI.setWeChatShareCallbackTarget(shareCallback);
 	    
 	    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle", url,"Description lalala!",false,true);
