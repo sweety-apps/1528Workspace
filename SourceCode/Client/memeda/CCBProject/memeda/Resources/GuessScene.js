@@ -802,7 +802,12 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
             	memeda.Stat.logEvent("guesserror", param);
             }
+            
             //
+		    for(i = 0; i < gResultCharButtons.length; i++)
+		    {
+				gResultCharButtons[i].controller.error();
+		    }
             
             debugMsgOutput("可惜答错了，再接再厉！");
         }

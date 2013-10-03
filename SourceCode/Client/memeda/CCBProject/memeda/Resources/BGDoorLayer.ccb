@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -35,16 +35,215 @@
 				<key>children</key>
 				<array>
 					<dict>
+						<key>animatedProperties</key>
+						<dict>
+							<key>0</key>
+							<dict>
+								<key>displayFrame</key>
+								<dict>
+									<key>keyframes</key>
+									<array>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>0.0</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door1.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>1</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door1.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+									</array>
+									<key>name</key>
+									<string>displayFrame</string>
+									<key>type</key>
+									<integer>7</integer>
+								</dict>
+							</dict>
+							<key>1</key>
+							<dict>
+								<key>displayFrame</key>
+								<dict>
+									<key>keyframes</key>
+									<array>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>0.0</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door2.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>1</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door2.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+									</array>
+									<key>name</key>
+									<string>displayFrame</string>
+									<key>type</key>
+									<integer>7</integer>
+								</dict>
+							</dict>
+							<key>2</key>
+							<dict>
+								<key>displayFrame</key>
+								<dict>
+									<key>keyframes</key>
+									<array>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>0.0</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door3.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>1</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door3.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+									</array>
+									<key>name</key>
+									<string>displayFrame</string>
+									<key>type</key>
+									<integer>7</integer>
+								</dict>
+							</dict>
+							<key>3</key>
+							<dict>
+								<key>displayFrame</key>
+								<dict>
+									<key>keyframes</key>
+									<array>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>0.0</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door4.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>0</integer>
+											</dict>
+											<key>name</key>
+											<string>displayFrame</string>
+											<key>time</key>
+											<real>1</real>
+											<key>type</key>
+											<integer>7</integer>
+											<key>value</key>
+											<array>
+												<string>UI/guess/door4.png</string>
+												<string>Use regular file</string>
+											</array>
+										</dict>
+									</array>
+									<key>name</key>
+									<string>displayFrame</string>
+									<key>type</key>
+									<integer>7</integer>
+								</dict>
+							</dict>
+						</dict>
 						<key>baseClass</key>
-						<string>CCBFile</string>
+						<string>CCSprite</string>
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>CCBFile</string>
+						<string>CCSprite</string>
 						<key>memberVarAssignmentName</key>
-						<string>bgCtrlLayer</string>
+						<string>doorPrite</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -57,8 +256,19 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>0.0</real>
+									<real>100</real>
 									<integer>4</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>1</real>
 								</array>
 							</dict>
 							<dict>
@@ -76,64 +286,32 @@
 							</dict>
 							<dict>
 								<key>name</key>
-								<string>ccbFile</string>
+								<string>ignoreAnchorPointForPosition</string>
 								<key>type</key>
-								<string>CCBFile</string>
+								<string>Check</string>
 								<key>value</key>
-								<string>BGCtrlLayer.ccb</string>
+								<false/>
 							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>baseClass</key>
-						<string>CCBFile</string>
-						<key>children</key>
-						<array/>
-						<key>customClass</key>
-						<string></string>
-						<key>displayName</key>
-						<string>CCBFile</string>
-						<key>memberVarAssignmentName</key>
-						<string>bgDoorLayer</string>
-						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
-						<key>properties</key>
-						<array>
 							<dict>
+								<key>baseValue</key>
+								<array>
+									<string>UI/guess/door1.png</string>
+									<string>Use regular file</string>
+								</array>
 								<key>name</key>
-								<string>position</string>
+								<string>displayFrame</string>
 								<key>type</key>
-								<string>Position</string>
+								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>0.0</real>
-									<integer>4</integer>
+									<string></string>
+									<string>UI/guess/door4.png</string>
 								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>scale</string>
-								<key>type</key>
-								<string>ScaleLock</string>
-								<key>value</key>
-								<array>
-									<real>1</real>
-									<real>1</real>
-									<false/>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>ccbFile</string>
-								<key>type</key>
-								<string>CCBFile</string>
-								<key>value</key>
-								<string>BGDoorLayer.ccb</string>
 							</dict>
 						</array>
 						<key>selected</key>
+						<true/>
+						<key>seqExpanded</key>
 						<true/>
 					</dict>
 				</array>
@@ -154,7 +332,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>50</real>
 							<real>0.0</real>
 							<integer>4</integer>
 						</array>
@@ -231,7 +409,7 @@
 		<key>displayName</key>
 		<string>CCLayer</string>
 		<key>jsController</key>
-		<string>BGLayer</string>
+		<string>BGDoorLayer</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>
@@ -523,7 +701,7 @@
 	<array>
 		<dict>
 			<key>autoPlay</key>
-			<false/>
+			<true/>
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>
@@ -536,7 +714,7 @@
 			<key>length</key>
 			<real>1</real>
 			<key>name</key>
-			<string>Default Timeline</string>
+			<string>DOOR1 Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
@@ -547,6 +725,108 @@
 			<real>166.81039428710938</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>autoPlay</key>
+			<false/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>1</integer>
+			<key>length</key>
+			<real>1</real>
+			<key>name</key>
+			<string>DOOR2 Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>166.81039428710938</real>
+			<key>sequenceId</key>
+			<integer>1</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>autoPlay</key>
+			<false/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>2</integer>
+			<key>length</key>
+			<real>1</real>
+			<key>name</key>
+			<string>DOOR3 Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>166.81039428710938</real>
+			<key>sequenceId</key>
+			<integer>2</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>autoPlay</key>
+			<false/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>3</integer>
+			<key>length</key>
+			<real>1</real>
+			<key>name</key>
+			<string>DOOR4 Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>1</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>166.81039428710938</real>
+			<key>sequenceId</key>
+			<integer>3</integer>
 			<key>soundChannel</key>
 			<dict>
 				<key>keyframes</key>
