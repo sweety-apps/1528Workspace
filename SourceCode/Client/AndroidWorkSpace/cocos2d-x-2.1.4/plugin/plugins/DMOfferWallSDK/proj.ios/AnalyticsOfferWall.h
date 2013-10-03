@@ -10,11 +10,18 @@
 #import "InterfaceSocial.h"
 #import "OnlineWallViewController.h"
 
+
 @interface AnalyticsOfferWall : NSObject<InterfaceSocial>
 {
     OnlineWallViewController* _Controller;
+    NSString* _userId;
 }
 
-- (void) Init : (NSString*) id;
+- (void) Init : (NSString*) publishid;
+- (void) SetUserID : (NSString*) userID;
 - (void) ShowModal ;
+
+// 积分查询
+- (void) requestOnlinePointCheck;
+- (void) requestOnlineConsumeWithPoint : (NSUInteger)pointToConsume;
 @end

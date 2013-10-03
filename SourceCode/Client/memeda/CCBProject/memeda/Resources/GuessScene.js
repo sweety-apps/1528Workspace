@@ -157,28 +157,11 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 设置各种按钮的回调
     gCurrentCCBView = this;
     
-    setupPressEventToSprite(this.rootLayer,this.wechatButton, this.wechatButton);
-    this.wechatButton.onPressButton = function () {
-    }
-   
-    // aboutButton Event
-    /*
-    setupPressEventToSprite(this.rootLayer,this.aboutButton,this.aboutButton);
-    this.aboutButton.onPressButton = function (){
-        window.open("http://223.4.33.112/about.html");
-    }
-    //
-      */
-    
     // 初始化输入等UI
     this.setupInputCharsAndResultChars(gProblem);
 
     // 初始化操作的动画
     this.setupSubCCBFileAnimationCallBacks();
-
-    // 启动时的动画
-    debugMsgOutput("On Start Drawing Animation!");
-    this.onStartCatDrawingAnimation();
 
     // State Change
     gCurrentGuessState = kGuessStateNormal;
@@ -195,90 +178,9 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     for (var i = 0; i < gResultCharAllButtons.length; i ++) {
         gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
     }
+    
+    debugMsgOutput("GuessScene.prototype.onDidLoadFromCCB");
 };
-
-function setupPressEventToSprite(layer, sprite, callback)
-{
-    var contentSize  =  sprite.getContentSize();
-    //debugMsgOutput("ContentSize = ("+contentSize.width+","+contentSize.height+")");
-    //如果需要缩小点击区域，请用以下参数
-    var rescaleTouchRectFactorX = 0.5;
-    var rescaleTouchRectFactorY = 0.5;
-
-    //判断触摸点是否在图片的区域上
-    sprite.containsTouchLocation = function (touch) {
-        //debugMsgOutput("tttest");
-		return ;
-        var realScaleFactorX = rescaleTouchRectFactorX * this.getScaleX();
-        var realScaleFactorY = rescaleTouchRectFactorX * this.getScaleY();
-
-        //获取触摸点位置
-        var getPoint = touch.getLocation();
-        //获取图片区域尺寸
-        var contentSize  =  this.getContentSize();
-        //定义拖拽的区域
-        var spritePosition = this.convertToWorldSpace(cc.p(contentSize.width/2,contentSize.height/2));
-        var myRect = cc.rect(spritePosition.x, spritePosition.y, contentSize.width, contentSize.height);
-        //myRect.x += this.getPosition().x-this.getContentSize().width/2;
-        //myRect.y += this.getPosition().y-this.getContentSize().height/2;
-        myRect.x = myRect.x-this.getContentSize().width/2;
-        myRect.y = myRect.y-this.getContentSize().height/2;
-
-        //重新计算触摸区域
-        //debugMsgOutput("myRect = ("+myRect.x+","+myRect.y+","+myRect.width+","+myRect.height+")");
-        myRect.x = myRect.x + ((myRect.width * (1.0-realScaleFactorX)) * 0.5);
-        myRect.y = myRect.y + ((myRect.height * (1.0-realScaleFactorY)) * 0.5);
-        myRect.width = myRect.width * realScaleFactorX;
-        myRect.height = myRect.height * realScaleFactorY;
-
-        var ret = false;
-
-        if(!cc.rectContainsPoint(myRect, getPoint))
-        {
-            ret = false;
-        }
-        else
-        {
-            ret = true;
-        }
-
-        //debugMsgOutput("myRect = ("+myRect.x+","+myRect.y+","+myRect.width+","+myRect.height+")");
-        //debugMsgOutput("Point = ("+ getPoint.x + "," + getPoint.y + ")\nContentSize = ("+contentSize.width+","+contentSize.height+")\nRet = " + ret);
-
-        //判断点击是否在区域上
-        return ret;
-    };
-
-    pressSprites.push(sprite);
-    pressSpritesCallbacks.push(callback);
-
-    var callBackRet = function (touch){
-        //debugMsgOutput("len"+pressSprites.length);
-        var i;
-        for(i = 0; i < pressSprites.length; i++)
-        {
-            if(pressSpritesCallbacks[i] != null && pressSprites[i].containsTouchLocation(touch))
-            {
-                //debugMsgOutput("callback");
-                //MainScene.rootNode.animationManager.runAnimationsForSequenceNamed("UI End Timeline");
-                //MainScene.onPressButton();
-                pressSpritesCallbacks[i].onPressButton();
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-    layer.onTouchesEnded = function( touches, event) {
-        return callBackRet(touches[0]);
-    };
-    /*
-     layer.onMouseUp = function( event) {
-     return callBackRet();
-     };
-     */
-}
 
 function clearAllPressEventToSprite ()
 {
@@ -315,8 +217,9 @@ GuessScene.prototype.onBack = function ( ) {
     }
 	
 	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-	var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
-	cc.Director.getInstance().replaceScene(scene);
+	
+    var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
+    cc.Director.getInstance().replaceScene(scene);
 }
 
 GuessScene.prototype.SetTitleNum = function (num) {
@@ -393,7 +296,6 @@ GuessScene.prototype.onAnimationComplete = function()
 
     if(gCurrentCCBView.rootNode.animationManager.getLastCompletedSequenceName() == "Win Timeline")
     {
-        gCurrentCCBView.onStartCatDrawingAnimation();
     }
 };
 
@@ -489,11 +391,6 @@ GuessScene.prototype.InitVars = function()
     gInputCharButtons[16] = this.charButton16;
     gInputCharButtons[17] = this.charButton17;
     
-    this.coinNum.setString("" + CoinMgr_GetCount());
-    CoinMgr_Register(function (coin, add) {
-        gCurrentCCBView.coinNum.setString("" + CoinMgr_GetCount());
-    });
-
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
 
@@ -742,7 +639,6 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 
     for(i = 0; i < gInputCharButtons.length; i++)
     {
-        setupPressEventToSprite(guessScene.rootLayer,gInputCharButtons[i],gInputCharButtons[i]);
         gInputCharButtons[i].controller.SetIndexNumber(i);
         if(i < inputKeys.length)
         {
@@ -881,7 +777,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             	memeda.Stat.logEvent("guesssuccess", param);
             } else {
             	// 把结果上报到服务器
-            	WebFun_get("http://121.197.3.27/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	            	
+            	WebFun_get("http://www.liux123.com/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	            	
             	//WebFun_get("http://memeda.meme-da.com/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	
             }
             //
@@ -906,7 +802,12 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
             	memeda.Stat.logEvent("guesserror", param);
             }
+            
             //
+		    for(i = 0; i < gResultCharButtons.length; i++)
+		    {
+				gResultCharButtons[i].controller.error();
+		    }
             
             debugMsgOutput("可惜答错了，再接再厉！");
         }
@@ -985,10 +886,6 @@ GuessScene.prototype.updateInputCharsAndResultCharsWithAnimation = function ()
     gCatHand.animationManager.runAnimationsForSequenceNamed("Push Timeline");
 };
 
-GuessScene.prototype.onStartCatDrawingAnimation = function ()
-{
-    debugMsgOutput("On Start Drawing Animation!");
-};
 
 GuessScene.prototype.update = function() {
     gTimeCount ++;

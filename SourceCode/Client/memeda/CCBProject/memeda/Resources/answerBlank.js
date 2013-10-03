@@ -39,3 +39,7 @@ AnswerBlank.prototype.SetIndexNumber = function (index) {
 AnswerBlank.prototype.GetIndexNumber = function () {
 	return this.numIndex;	
 }
+
+AnswerBlank.prototype.error = function () {
+	this.rootNode.animationManager.runAnimationsForSequenceNamed("Error" + imageIndex + " Timeline");	
+}

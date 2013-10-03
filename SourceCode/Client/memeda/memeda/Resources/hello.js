@@ -182,6 +182,8 @@ try {
     
     director.runWithScene(game.getPlayScene());
     
+<<<<<<< HEAD
+=======
     // 存储读写代码
     sys.localStorage.setItem("name", "祖国你好!");
     var tval = sys.localStorage.getItem("name");
@@ -190,5 +192,6 @@ try {
     //测试支付代码
     testiOSiapPayment();
     
+>>>>>>> 028cda64f4488b841b04ace715d12f18b6333830
 } catch(e) {log(e);}
 

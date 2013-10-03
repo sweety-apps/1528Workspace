@@ -1,10 +1,8 @@
 
 var FirstScene = function() {};
+var gChooseTestsScene = null;
 
-FirstScene.prototype.onDidLoadFromCCB = function () {
-    var scene = cc.BuilderReader.loadAsScene("GuessScene");
-    var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
-    
+FirstScene.prototype.onDidLoadFromCCB = function () {  
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 };
 
@@ -18,10 +16,11 @@ FirstScene.prototype.onAnimationComplete = function()
 {
 	var aniName = this.homePage.animationManager.getLastCompletedSequenceName();
 	if ( aniName == "Ani Timeline" ) {
+		var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
+		
 		var director = cc.Director.getInstance();
-    	var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
     	var runningScene = director.getRunningScene();
-    	if (runningScene === null) director.runWithScene(scene);
-    	else director.replaceScene(scene);
+    	if (runningScene === null) director.runWithScene(chooseTestsScene);
+    	else director.replaceScene(chooseTestsScene);
 	}
 };

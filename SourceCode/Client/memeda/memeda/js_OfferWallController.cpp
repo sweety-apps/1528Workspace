@@ -8,17 +8,37 @@
 
 #include "js_OfferWallController.h"
 #include "AppConfigVarDefines.h"
+#include "cocos2d_specifics.hpp"
+
 
 bool js_OfferWallController::g_bInit = false;
 cocos2d::plugin::ProtocolSocial* js_OfferWallController::g_ps = NULL;
 JSClass* js_OfferWallController::jsb_Class = 0;
 JSObject* js_OfferWallController::jsb_prototype = 0;
+js_OfferWallController* js_OfferWallController::g_Instance = NULL;
+
+bool js_OfferWallController::init()
+{
+    return true;
+}
 
 void js_OfferWallController::Finialize(JSFreeOp* fop, JSObject* obj)
 {
 }
 
-
+JSBool js_OfferWallController::js_getInstance(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    if ( g_Instance == NULL )
+    {
+        g_Instance = new js_OfferWallController();
+    }
+    
+    js_proxy_t* proxy = js_get_or_create_proxy<js_OfferWallController>(cx, g_Instance);
+    jsval jsret = OBJECT_TO_JSVAL(proxy->obj);
+    
+    JS_SET_RVAL(cx, vp, jsret);
+    return JS_TRUE;
+}
 
 void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
 {
@@ -56,14 +76,15 @@ void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
     };
     
     static JSFunctionSpec funcs[] = {
-        JS_FN("init", js_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getInstance", js_getInstance, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("init", js_init, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_show, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("requestOnlinePointCheck", js_requestOnlinePointCheck, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("requestOnlineConsumeWithPoint", js_requestOnlineConsumeWithPoint, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
     
     static JSFunctionSpec st_funcs[] = {
-        JS_FN("init", js_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("show", js_show, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
     
@@ -92,26 +113,87 @@ JSBool js_OfferWallController::js_show(JSContext* cx, uint32_t argc, jsval* vp)
     return JS_TRUE;
 }
 
+JSBool js_OfferWallController::js_requestOnlinePointCheck(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    g_ps->callFuncWithParam("requestOnlinePointCheck", NULL);
+    return JS_TRUE;
+}
+
+JSBool js_OfferWallController::js_requestOnlineConsumeWithPoint(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    jsval *argv = JS_ARGV(cx, vp);
+    int32_t nValue = JSVAL_TO_INT(argv[0]);
+    
+    cocos2d::plugin::PluginParam value(nValue);
+    
+    g_ps->callFuncWithParam("requestOnlineConsumeWithPoint", &value, NULL);
+
+    return JS_TRUE;
+}
+
+
 JSBool js_OfferWallController::js_init(JSContext* cx, uint32_t argc, jsval* vp)
 {
     if ( !g_bInit ) {
         g_bInit = true;
         cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
         g_ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
+        
+        jsval *argv = JS_ARGV(cx, vp);
+        JSString* pObj = JSVAL_TO_STRING(argv[0]);
+        JSStringWrapper jsUserID(pObj);
+        
         cocos2d::plugin::PluginParam id(kOfferWallPubID);
+        cocos2d::plugin::PluginParam userID(jsUserID.get().c_str());
+        
+        g_ps->callFuncWithParam("SetUserID", &userID, NULL);
         g_ps->callFuncWithParam("Init", &id, NULL);
+        
+        OfferWallResultListener* list = new OfferWallResultListener();
+        g_ps->setResultListener(list);
     }
     return JS_TRUE;
 }
 
-/*
-// test
-cocos2d::plugin::PluginProtocol* plugin2 = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
-
-cocos2d::plugin::ProtocolSocial* ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin2);
-cocos2d::plugin::PluginParam id("96ZJ06UgzeimTwTAs3");
-ps->callFuncWithParam("Init", &id, NULL);
-ps->callFuncWithParam("ShowModal", NULL);
-
-plugin2 = NULL;
-*/
+void OfferWallResultListener::onShareResult(cocos2d::plugin::ShareResultCode ret, const char* msg)
+{
+    if ( strcmp(msg, "WindowClosed") == 0 )
+    {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "windowClosed");
+    }
+    else if ( strstr(msg, "offerWallDidFinishCheck") != NULL )
+    {   // 查询获取到的金币结束
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        jsval retval;
+        JSContext* jc = ScriptingCore::getInstance()->getGlobalContext();
+        
+        jsval v[] = {
+            v[0] = c_string_to_jsval(jc, msg + strlen("offerWallDidFinishCheck "))
+        };
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFinishCheck", 1, v, &retval);
+    }
+    else if ( strstr(msg, "offerWallDidFinishConsume") != NULL)
+    {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        jsval retval;
+        JSContext* jc = ScriptingCore::getInstance()->getGlobalContext();
+        jsval v[] = {
+            v[0] = c_string_to_jsval(jc, msg + strlen("offerWallDidFinishConsume "))
+        };
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFinishConsume", 1, v, &retval);
+    }
+    else if ( strcmp(msg, "offerWallDidFailCheck") == 0 )
+    {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFailCheck");
+    }
+    else if ( strcmp(msg, "offerWallDidFailConsume") == 0 )
+    {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFailConsume");
+    }
+}

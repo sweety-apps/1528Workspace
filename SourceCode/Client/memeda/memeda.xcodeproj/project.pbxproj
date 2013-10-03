@@ -20,12 +20,17 @@
 		A69A9A3C17F57DAF001CF694 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A9A0517F57DAF001CF694 /* ShareSDK.framework */; };
 		A69A9A3E17F57DAF001CF694 /* ShareSDKiPadDefaultShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A9A0817F57DAF001CF694 /* ShareSDKiPadDefaultShareViewUI.framework */; };
 		A69A9A4017F57DAF001CF694 /* ShareSDKiPadSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A9A0A17F57DAF001CF694 /* ShareSDKiPadSimpleShareViewUI.framework */; };
+		A69BC4F317F9536E00F392F1 /* AnalyticsOfferWall.mm in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4F117F9536E00F392F1 /* AnalyticsOfferWall.mm */; };
+		A69BC4F417F9536E00F392F1 /* OnlineWallViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4F217F9536E00F392F1 /* OnlineWallViewController.mm */; };
+		A69BC50417F955DD00F392F1 /* EBPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4FB17F955DD00F392F1 /* EBPurchase.m */; };
+		A69BC50517F955DD00F392F1 /* jsb_iOSiapWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4FD17F955DD00F392F1 /* jsb_iOSiapWrapper.cpp */; };
+		A69BC50617F955DD00F392F1 /* jsb_iOSiapWrapper_api.js in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4FF17F955DD00F392F1 /* jsb_iOSiapWrapper_api.js */; };
+		A69BC50717F955DD00F392F1 /* iOSiapImp.mm in Sources */ = {isa = PBXBuildFile; fileRef = A69BC50117F955DD00F392F1 /* iOSiapImp.mm */; };
+		A69BC50817F955DD00F392F1 /* iOSiapWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69BC50217F955DD00F392F1 /* iOSiapWrapper.cpp */; };
 		A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054417F7F05300B6B90A /* AdSupport.framework */; };
 		A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054617F7F05A00B6B90A /* StoreKit.framework */; };
 		A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054817F7F07200B6B90A /* CoreLocation.framework */; };
-		A69F060117F807D900B6B90A /* AnalyticsOfferWall.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F05F917F807D900B6B90A /* AnalyticsOfferWall.m */; };
 		A69F060217F807D900B6B90A /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */; };
-		A69F062317F8137400B6B90A /* OnlineWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69F062217F8137400B6B90A /* OnlineWallViewController.m */; };
 		A69F062617F8178100B6B90A /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69F062517F8178100B6B90A /* js_OfferWallController.cpp */; };
 		A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */; };
 		A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */; };
@@ -387,7 +392,7 @@
 		F316D2E617B2059B00821A66 /* watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E517B2059B00821A66 /* watermelon.png */; };
 		F316D2E817B2059B00821A66 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E717B2059B00821A66 /* hello.js */; };
 		F316D2EF17B20FA700821A66 /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F316D2EE17B20FA700821A66 /* TestCCB */; };
-		F3395C3917F8B09400EEF086 /* libPluginDMOfferWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F060617F807DA00B6B90A /* libPluginDMOfferWall.a */; };
+		F3395C3917F8B09400EEF086 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		F3395C4317F92A6600EEF086 /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */; };
 		F396428317B740610022AA6B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428117B740610022AA6B /* Default-568h@2x.png */; };
 		F396428417B740610022AA6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428217B740610022AA6B /* Default@2x.png */; };
@@ -453,27 +458,22 @@
 		F3ECD8E717F8098200A0CA29 /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F316D29C17B2059A00821A66 /* libwebsockets.a */; };
 		F3ECD8E817F809B400A0CA29 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CFB717B2059500821A66 /* libcurl.a */; };
 		F3ECD8E917F80A0D00A0CA29 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A7021117F01B7E005FBA13 /* libMobClickLibrary.a */; };
-		F3ECD8ED17F80BEC00A0CA29 /* iOSiapWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3ECD8EB17F80BEC00A0CA29 /* iOSiapWrapper.cpp */; };
-		F3ECD8F017F80C2D00A0CA29 /* EBPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = F3ECD8EF17F80C2D00A0CA29 /* EBPurchase.m */; };
-		F3ECD8F317F80DC800A0CA29 /* iOSiapImp.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3ECD8F117F80DC800A0CA29 /* iOSiapImp.mm */; };
-		F3ECD8F817F82E7800A0CA29 /* jsb_iOSiapWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3ECD8F517F82E7800A0CA29 /* jsb_iOSiapWrapper.cpp */; };
-		F3ECD8FA17F82E9300A0CA29 /* jsb_iOSiapWrapper_api.js in Resources */ = {isa = PBXBuildFile; fileRef = F3ECD8F717F82E7800A0CA29 /* jsb_iOSiapWrapper_api.js */; };
-		F3ECD8FC17F8953100A0CA29 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD8FB17F8953100A0CA29 /* StoreKit.framework */; };
+		F3ECD8FC17F8953100A0CA29 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A69F060517F807DA00B6B90A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A69F05BF17F7FB2A00B6B90A;
-			remoteInfo = PluginDMOfferWall;
-		};
 		F3395C4017F92A2F00EEF086 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A69F05BE17F7FB2A00B6B90A;
+			remoteInfo = PluginDMOfferWall;
+		};
+		F366268917FD923B001F7674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A69F05BF17F7FB2A00B6B90A;
 			remoteInfo = PluginDMOfferWall;
 		};
 /* End PBXContainerItemProxy section */
@@ -494,16 +494,26 @@
 		A69A9A0517F57DAF001CF694 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		A69A9A0817F57DAF001CF694 /* ShareSDKiPadDefaultShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPadDefaultShareViewUI.framework; sourceTree = "<group>"; };
 		A69A9A0A17F57DAF001CF694 /* ShareSDKiPadSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPadSimpleShareViewUI.framework; sourceTree = "<group>"; };
+		A69BC4F117F9536E00F392F1 /* AnalyticsOfferWall.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalyticsOfferWall.mm; sourceTree = "<group>"; };
+		A69BC4F217F9536E00F392F1 /* OnlineWallViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OnlineWallViewController.mm; sourceTree = "<group>"; };
+		A69BC4FA17F955DD00F392F1 /* EBPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPurchase.h; sourceTree = "<group>"; };
+		A69BC4FB17F955DD00F392F1 /* EBPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPurchase.m; sourceTree = "<group>"; };
+		A69BC4FD17F955DD00F392F1 /* jsb_iOSiapWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_iOSiapWrapper.cpp; sourceTree = "<group>"; };
+		A69BC4FE17F955DD00F392F1 /* jsb_iOSiapWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_iOSiapWrapper.hpp; sourceTree = "<group>"; };
+		A69BC4FF17F955DD00F392F1 /* jsb_iOSiapWrapper_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsb_iOSiapWrapper_api.js; sourceTree = "<group>"; };
+		A69BC50017F955DD00F392F1 /* iOSiapImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSiapImp.h; sourceTree = "<group>"; };
+		A69BC50117F955DD00F392F1 /* iOSiapImp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSiapImp.mm; sourceTree = "<group>"; };
+		A69BC50217F955DD00F392F1 /* iOSiapWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iOSiapWrapper.cpp; sourceTree = "<group>"; };
+		A69BC50317F955DD00F392F1 /* iOSiapWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSiapWrapper.h; sourceTree = "<group>"; };
 		A69F054417F7F05300B6B90A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		A69F054617F7F05A00B6B90A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A69F054817F7F07200B6B90A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A69F05F817F807D900B6B90A /* AnalyticsOfferWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsOfferWall.h; sourceTree = "<group>"; };
-		A69F05F917F807D900B6B90A /* AnalyticsOfferWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsOfferWall.m; sourceTree = "<group>"; };
 		A69F05FA17F807D900B6B90A /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
 		A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobOfferWallBundle.bundle; sourceTree = "<group>"; };
+		A69F05FD17F807D900B6B90A /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
 		A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PluginDMOfferWall.xcodeproj; sourceTree = "<group>"; };
 		A69F062117F8137400B6B90A /* OnlineWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineWallViewController.h; sourceTree = "<group>"; };
-		A69F062217F8137400B6B90A /* OnlineWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlineWallViewController.m; sourceTree = "<group>"; };
 		A69F062417F8177000B6B90A /* js_OfferWallController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = js_OfferWallController.h; sourceTree = "<group>"; };
 		A69F062517F8178100B6B90A /* js_OfferWallController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = js_OfferWallController.cpp; sourceTree = "<group>"; };
 		A6A701A117F01AEA005FBA13 /* PluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFactory.h; sourceTree = "<group>"; };
@@ -1367,16 +1377,6 @@
 		F3ECD8AD17F8081500A0CA29 /* ShareSDKiPhoneDefaultShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneDefaultShareViewUI.framework; sourceTree = "<group>"; };
 		F3ECD8AE17F8081500A0CA29 /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
 		F3ECD8AF17F8081500A0CA29 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
-		F3ECD8EB17F80BEC00A0CA29 /* iOSiapWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iOSiapWrapper.cpp; sourceTree = "<group>"; };
-		F3ECD8EC17F80BEC00A0CA29 /* iOSiapWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSiapWrapper.h; sourceTree = "<group>"; };
-		F3ECD8EE17F80C2D00A0CA29 /* EBPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPurchase.h; sourceTree = "<group>"; };
-		F3ECD8EF17F80C2D00A0CA29 /* EBPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPurchase.m; sourceTree = "<group>"; };
-		F3ECD8F117F80DC800A0CA29 /* iOSiapImp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSiapImp.mm; sourceTree = "<group>"; };
-		F3ECD8F217F80DC800A0CA29 /* iOSiapImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSiapImp.h; sourceTree = "<group>"; };
-		F3ECD8F517F82E7800A0CA29 /* jsb_iOSiapWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_iOSiapWrapper.cpp; sourceTree = "<group>"; };
-		F3ECD8F617F82E7800A0CA29 /* jsb_iOSiapWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_iOSiapWrapper.hpp; sourceTree = "<group>"; };
-		F3ECD8F717F82E7800A0CA29 /* jsb_iOSiapWrapper_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsb_iOSiapWrapper_api.js; sourceTree = "<group>"; };
-		F3ECD8FB17F8953100A0CA29 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1384,8 +1384,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3395C3917F8B09400EEF086 /* libPluginDMOfferWall.a in Frameworks */,
-				F3ECD8FC17F8953100A0CA29 /* StoreKit.framework in Frameworks */,
+				F3395C3917F8B09400EEF086 /* (null) in Frameworks */,
+				F3ECD8FC17F8953100A0CA29 /* (null) in Frameworks */,
 				F316CE4D17B2059300821A66 /* UIKit.framework in Frameworks */,
 				F316CE5117B2059300821A66 /* CoreGraphics.framework in Frameworks */,
 				F316CE4F17B2059300821A66 /* Foundation.framework in Frameworks */,
@@ -1468,6 +1468,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A69BC4F917F955DD00F392F1 /* iOSIAP */ = {
+			isa = PBXGroup;
+			children = (
+				A69BC4FA17F955DD00F392F1 /* EBPurchase.h */,
+				A69BC4FB17F955DD00F392F1 /* EBPurchase.m */,
+				A69BC4FC17F955DD00F392F1 /* iapAPI_js_bindings */,
+				A69BC50017F955DD00F392F1 /* iOSiapImp.h */,
+				A69BC50117F955DD00F392F1 /* iOSiapImp.mm */,
+				A69BC50217F955DD00F392F1 /* iOSiapWrapper.cpp */,
+				A69BC50317F955DD00F392F1 /* iOSiapWrapper.h */,
+			);
+			path = iOSIAP;
+			sourceTree = "<group>";
+		};
+		A69BC4FC17F955DD00F392F1 /* iapAPI_js_bindings */ = {
+			isa = PBXGroup;
+			children = (
+				A69BC4FD17F955DD00F392F1 /* jsb_iOSiapWrapper.cpp */,
+				A69BC4FE17F955DD00F392F1 /* jsb_iOSiapWrapper.hpp */,
+				A69BC4FF17F955DD00F392F1 /* jsb_iOSiapWrapper_api.js */,
+			);
+			path = iapAPI_js_bindings;
+			sourceTree = "<group>";
+		};
 		A69F05F617F807D900B6B90A /* DMOfferWallSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -1482,12 +1506,13 @@
 			children = (
 				F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */,
 				A69F062117F8137400B6B90A /* OnlineWallViewController.h */,
-				A69F062217F8137400B6B90A /* OnlineWallViewController.m */,
+				A69BC4F217F9536E00F392F1 /* OnlineWallViewController.mm */,
 				A69F05F817F807D900B6B90A /* AnalyticsOfferWall.h */,
-				A69F05F917F807D900B6B90A /* AnalyticsOfferWall.m */,
+				A69BC4F117F9536E00F392F1 /* AnalyticsOfferWall.mm */,
 				A69F05FA17F807D900B6B90A /* DMOfferWallViewController.h */,
 				A69F05FB17F807D900B6B90A /* DomobOfferWallBundle */,
 				A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */,
+				A69F05FD17F807D900B6B90A /* libDomobOfferWallSDK.a */,
 			);
 			path = proj.ios;
 			sourceTree = "<group>";
@@ -1498,14 +1523,6 @@
 				A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */,
 			);
 			path = DomobOfferWallBundle;
-			sourceTree = "<group>";
-		};
-		A69F05FF17F807D900B6B90A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A69F060617F807DA00B6B90A /* libPluginDMOfferWall.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A6A7019F17F01AD3005FBA13 /* plugin-x */ = {
@@ -1603,7 +1620,6 @@
 		F316CE4117B2059300821A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F3ECD8FB17F8953100A0CA29 /* StoreKit.framework */,
 				A69F054817F7F07200B6B90A /* CoreLocation.framework */,
 				A69F054617F7F05A00B6B90A /* StoreKit.framework */,
 				A69F054417F7F05300B6B90A /* AdSupport.framework */,
@@ -3075,6 +3091,14 @@
 			name = CCB;
 			sourceTree = "<group>";
 		};
+		F366268617FD923B001F7674 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F366268A17FD923B001F7674 /* libPluginDMOfferWall.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F3D0890D17EEC5950093A0B5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -3125,7 +3149,7 @@
 		F3D0895117EEC5950093A0B5 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				F3ECD8EA17F80BC200A0CA29 /* iOSIAP */,
+				A69BC4F917F955DD00F392F1 /* iOSIAP */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -3294,30 +3318,6 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		F3ECD8EA17F80BC200A0CA29 /* iOSIAP */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECD8F417F82E7800A0CA29 /* iapAPI_js_bindings */,
-				F3ECD8EE17F80C2D00A0CA29 /* EBPurchase.h */,
-				F3ECD8EF17F80C2D00A0CA29 /* EBPurchase.m */,
-				F3ECD8EB17F80BEC00A0CA29 /* iOSiapWrapper.cpp */,
-				F3ECD8EC17F80BEC00A0CA29 /* iOSiapWrapper.h */,
-				F3ECD8F117F80DC800A0CA29 /* iOSiapImp.mm */,
-				F3ECD8F217F80DC800A0CA29 /* iOSiapImp.h */,
-			);
-			path = iOSIAP;
-			sourceTree = "<group>";
-		};
-		F3ECD8F417F82E7800A0CA29 /* iapAPI_js_bindings */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECD8F517F82E7800A0CA29 /* jsb_iOSiapWrapper.cpp */,
-				F3ECD8F617F82E7800A0CA29 /* jsb_iOSiapWrapper.hpp */,
-				F3ECD8F717F82E7800A0CA29 /* jsb_iOSiapWrapper_api.js */,
-			);
-			path = iapAPI_js_bindings;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3360,7 +3360,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A69F05FF17F807D900B6B90A /* Products */;
+					ProductGroup = F366268617FD923B001F7674 /* Products */;
 					ProjectRef = A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */;
 				},
 			);
@@ -3372,11 +3372,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A69F060617F807DA00B6B90A /* libPluginDMOfferWall.a */ = {
+		F366268A17FD923B001F7674 /* libPluginDMOfferWall.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libPluginDMOfferWall.a;
-			remoteRef = A69F060517F807DA00B6B90A /* PBXContainerItemProxy */;
+			remoteRef = F366268917FD923B001F7674 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3386,7 +3386,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3ECD8FA17F82E9300A0CA29 /* jsb_iOSiapWrapper_api.js in Resources */,
 				F316CE5517B2059300821A66 /* CloseNormal.png in Resources */,
 				F3ECD8D017F8081500A0CA29 /* GooglePlus.bundle in Resources */,
 				F316CE5717B2059300821A66 /* CloseSelected.png in Resources */,
@@ -3522,7 +3521,6 @@
 				F316CEE517B2059400821A66 /* CCGrabber.cpp in Sources */,
 				F316CEE817B2059400821A66 /* CCGrid.cpp in Sources */,
 				F316CF0617B2059400821A66 /* aabb.c in Sources */,
-				F3ECD8F817F82E7800A0CA29 /* jsb_iOSiapWrapper.cpp in Sources */,
 				F316CF0C17B2059400821A66 /* mat4stack.c in Sources */,
 				F316CF0E17B2059400821A66 /* matrix.c in Sources */,
 				F316CF1017B2059400821A66 /* mat3.c in Sources */,
@@ -3565,6 +3563,7 @@
 				F316CF8317B2059400821A66 /* CCApplication.mm in Sources */,
 				F316CF8517B2059400821A66 /* CCCommon.mm in Sources */,
 				F316CF8717B2059400821A66 /* CCDevice.mm in Sources */,
+				A69BC50417F955DD00F392F1 /* EBPurchase.m in Sources */,
 				F316CF8A17B2059400821A66 /* CCDirectorCaller.mm in Sources */,
 				F316CF8D17B2059400821A66 /* CCEGLView.mm in Sources */,
 				F316CF9017B2059500821A66 /* CCES2Renderer.m in Sources */,
@@ -3600,10 +3599,10 @@
 				F316D01C17B2059500821A66 /* tinyxml2.cpp in Sources */,
 				F316D01F17B2059500821A66 /* TransformUtils.cpp in Sources */,
 				F316D02417B2059500821A66 /* CCUserDefault.mm in Sources */,
+				A69BC50717F955DD00F392F1 /* iOSiapImp.mm in Sources */,
 				F316D02717B2059500821A66 /* ioapi.cpp in Sources */,
 				F316D02A17B2059500821A66 /* unzip.cpp in Sources */,
 				F316D02D17B2059500821A66 /* ZipUtils.cpp in Sources */,
-				A69F060117F807D900B6B90A /* AnalyticsOfferWall.m in Sources */,
 				F316D03217B2059500821A66 /* CCIMEDispatcher.cpp in Sources */,
 				F316D03517B2059500821A66 /* CCTextFieldTTF.cpp in Sources */,
 				F316D03917B2059600821A66 /* CCTexture2D.cpp in Sources */,
@@ -3611,7 +3610,6 @@
 				F316D03F17B2059600821A66 /* CCTextureCache.cpp in Sources */,
 				F316D04217B2059600821A66 /* CCTextureETC.cpp in Sources */,
 				F316D04517B2059600821A66 /* CCTexturePVR.cpp in Sources */,
-				F3ECD8F317F80DC800A0CA29 /* iOSiapImp.mm in Sources */,
 				F316D04917B2059600821A66 /* CCParallaxNode.cpp in Sources */,
 				F316D04C17B2059600821A66 /* CCTileMapAtlas.cpp in Sources */,
 				F316D04F17B2059600821A66 /* CCTMXLayer.cpp in Sources */,
@@ -3622,7 +3620,6 @@
 				F316D05C17B2059600821A66 /* CCTouch.cpp in Sources */,
 				F316D06017B2059600821A66 /* CCTouchDispatcher.cpp in Sources */,
 				F316D06317B2059600821A66 /* CCTouchHandler.cpp in Sources */,
-				F3ECD8F017F80C2D00A0CA29 /* EBPurchase.m in Sources */,
 				F316D06C17B2059600821A66 /* CDAudioManager.m in Sources */,
 				F316D07017B2059600821A66 /* CDOpenALSupport.m in Sources */,
 				F316D07317B2059600821A66 /* CocosDenshion.m in Sources */,
@@ -3643,7 +3640,6 @@
 				F316D0CB17B2059800821A66 /* js_bindings_system_registration.cpp in Sources */,
 				F316D0CE17B2059800821A66 /* js_manual_conversions.cpp in Sources */,
 				F316D0D117B2059800821A66 /* jsb_cocos2dx_extension_manual.cpp in Sources */,
-				F3ECD8ED17F80BEC00A0CA29 /* iOSiapWrapper.cpp in Sources */,
 				F316D0D517B2059800821A66 /* jsb_opengl_functions.cpp in Sources */,
 				F316D0D817B2059800821A66 /* jsb_opengl_manual.cpp in Sources */,
 				F316D0DB17B2059800821A66 /* jsb_opengl_registration.cpp in Sources */,
@@ -3676,15 +3672,18 @@
 				F316D18C17B2059900821A66 /* cpSpaceHash.c in Sources */,
 				F316D18E17B2059900821A66 /* cpSpaceQuery.c in Sources */,
 				F316D19017B2059900821A66 /* cpSpaceStep.c in Sources */,
+				A69BC50817F955DD00F392F1 /* iOSiapWrapper.cpp in Sources */,
 				F316D19217B2059900821A66 /* cpSpatialIndex.c in Sources */,
 				F316D19417B2059900821A66 /* cpSweep1D.c in Sources */,
 				F316D19617B2059900821A66 /* cpVect.c in Sources */,
 				F316D19B17B2059900821A66 /* AssetsManager.cpp in Sources */,
 				F316D19F17B2059900821A66 /* CCBAnimationManager.cpp in Sources */,
+				A69BC50617F955DD00F392F1 /* jsb_iOSiapWrapper_api.js in Sources */,
 				F316D1A217B2059900821A66 /* CCBFileLoader.cpp in Sources */,
 				F316D1A517B2059900821A66 /* CCBKeyframe.cpp in Sources */,
 				F316D1A917B2059900821A66 /* CCBReader.cpp in Sources */,
 				F316D1AD17B2059900821A66 /* CCBSequence.cpp in Sources */,
+				A69BC4F317F9536E00F392F1 /* AnalyticsOfferWall.mm in Sources */,
 				F316D1B017B2059900821A66 /* CCBSequenceProperty.cpp in Sources */,
 				F316D1B317B2059900821A66 /* CCBValue.cpp in Sources */,
 				F316D1B617B2059900821A66 /* CCControlButtonLoader.cpp in Sources */,
@@ -3704,6 +3703,7 @@
 				F316D1E217B2059900821A66 /* CCScale9SpriteLoader.cpp in Sources */,
 				F316D1E517B2059900821A66 /* CCScrollViewLoader.cpp in Sources */,
 				F316D1E817B2059900821A66 /* CCSpriteLoader.cpp in Sources */,
+				A69BC4F417F9536E00F392F1 /* OnlineWallViewController.mm in Sources */,
 				F316D1ED17B2059900821A66 /* CCComAttribute.cpp in Sources */,
 				F316D1F017B2059900821A66 /* CCComAudio.cpp in Sources */,
 				F316D1F317B2059900821A66 /* CCComController.cpp in Sources */,
@@ -3717,6 +3717,7 @@
 				F316D20F17B2059900821A66 /* CCControlSlider.cpp in Sources */,
 				F316D21217B2059900821A66 /* CCControlStepper.cpp in Sources */,
 				F316D21517B2059900821A66 /* CCControlSwitch.cpp in Sources */,
+				A69BC50517F955DD00F392F1 /* jsb_iOSiapWrapper.cpp in Sources */,
 				F316D21817B2059A00821A66 /* CCControlUtils.cpp in Sources */,
 				F316D21B17B2059A00821A66 /* CCInvocation.cpp in Sources */,
 				F316D21E17B2059A00821A66 /* CCScale9Sprite.cpp in Sources */,
@@ -3751,7 +3752,6 @@
 				F316D27917B2059A00821A66 /* extension.cpp in Sources */,
 				F316D27C17B2059A00821A66 /* Json.cpp in Sources */,
 				F316D27F17B2059A00821A66 /* RegionAttachment.cpp in Sources */,
-				A69F062317F8137400B6B90A /* OnlineWallViewController.m in Sources */,
 				F316D28217B2059A00821A66 /* Skeleton.cpp in Sources */,
 				F316D28517B2059A00821A66 /* SkeletonData.cpp in Sources */,
 				F316D28817B2059A00821A66 /* SkeletonJson.cpp in Sources */,
@@ -3874,7 +3874,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: BIN Li (TQ7NCVX24R)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3937,6 +3936,14 @@
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
@@ -3948,8 +3955,6 @@
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/external/libwebsockets/ios/lib",
-					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
-					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
@@ -4042,6 +4047,14 @@
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Analytics_iOS_SDK_2.2.1.OpenUDID/UMAnalytics_Sdk_2.2.1.OpenUDID\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/libWeiboSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/SDKExport\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.4.0/Extend/TencentWeiboSSO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/libwebsockets/ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
+					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/javascript/spidermonkey-ios/lib\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
@@ -4053,8 +4066,6 @@
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/external/libwebsockets/ios/lib",
-					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
-					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 					/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/DMOfferWallSDK,
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,

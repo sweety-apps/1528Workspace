@@ -13,8 +13,18 @@
 UIViewController<DMOfferWallDelegate, UITextFieldDelegate>
 {
     DMOfferWallViewController* _offerWallController;
+    NSString* _userID;
+    NSString * _publishId;
 }
 
 - (id) init : (NSString *) publishId;
+
+- (void) initController : (NSString*)userID;
+
 - (void) showWithModal;
+
+- (void) requestOnlinePointCheck;
+// 领取积分
+- (void) requestOnlineConsumeWithPoint : (NSUInteger)pointToConsume;
+
 @end

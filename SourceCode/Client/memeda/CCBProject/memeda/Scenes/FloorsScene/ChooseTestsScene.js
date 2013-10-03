@@ -270,6 +270,30 @@ ChooseTestsScene.prototype.onClickedCoinButton = function () {
     this.buyCoinMsgBox.controller.show();
 };
 
+ChooseTestsScene.prototype.QueryExtraCoin = function () {
+    var callBackObj = new Object();
+    callBackObj.wachatDidFinish = function(responseText) {
+        debugMsgOutput("wachatDidFinish " + responseText);
+        this.parseWeChatData(responseText);
+    };
+    callBackObj.offerWallDidFinishCheck = function(responseText) {
+        debugMsgOutput("offerWallDidFinishCheck " + responseText);
+    };
+    callBackObj.offerWallDidFinishConsume = function(responseText) {
+        debugMsgOutput("offerWallDidFinishConsume " + responseText);
+    };
+    callBackObj.offerWallDidFailCheck = function() {
+        debugMsgOutput("offerWallDidFailCheck");
+    };
+    callBackObj.offerWallDidFailConsume = function() {
+        debugMsgOutput("offerWallDidFailConsume");
+    };
+    
+    CoinMgr_checkExtraCoin(callBackObj);  // 检测额外的金币奖励，包括微信和多盟
+    debugMsgOutput("-0-=-=-=-=-=");
+};
+
+
 ChooseTestsScene.prototype.parseWeChatData = function (text) {
     debugMsgOutput("---" + text);
     var obj = JSON.parse(text);
