@@ -51,3 +51,72 @@ Global_getUserID = function () {
 	
 	return userId;
 };
+
+var gQuestionJumpList = null;
+var gQuestionJumpEvent = null;
+var gQuestionJumpEventID = 0;
+
+Question_init = function () {
+	gQuestionJumpList = new Array();
+	gQuestionJumpEvent = new Array();
+	
+	var list = sys.localStorage.getItem("jump");
+	debugMsgOutput("jumplist " + list);
+	var jumplist = new Array();
+	if ( list != null && list != "" ) {
+		jumplist = list.split(",");	
+	}
+	for ( var i = 0; i < jumplist.length; i ++ ) {
+		gQuestionJumpList["" + jumplist[i] ] = 1;	
+	}
+}
+
+Question_isJump = function (aid) {
+	if ( gQuestionJumpList["" + aid] == null ) {
+		return false;	
+	}
+	return true;
+}
+
+Question_jump = function ( aid ) {
+	debugMsgOutput("aid " + aid);
+	gQuestionJumpList["" + aid] = 1;
+	var strlist = "";
+	var i = 0;
+	for (var key in gQuestionJumpList) {
+		if ( i != 0 ) {
+			strlist = strlist + ",";
+		}
+		i ++;
+		strlist = strlist + key;
+	}
+	
+	debugMsgOutput("jumplist write " + strlist);
+	sys.localStorage.setItem("jump", strlist);
+	
+	for ( var i = 0; i < gQuestionJumpEvent.length; i ++ ) {
+		(gQuestionJumpEvent[i].fun)(aid, gQuestionJumpEvent[i].content);	
+	}
+}
+
+Question_registerJumpEvent = function (content, fun) {
+	var obj = new object();
+	obj.id = gQuestionJumpEventID ++;
+	obj.content = content;
+	obj.fun = fun;
+	gQuestionJumpEvent.push(obj);
+}
+
+Question_unregisterJumpEvent = function (cookie) {
+	var tmpList = new Array();
+	
+	for ( var i = 0; i < gQuestionJumpEvent.length; i ++ ) {
+		if ( gQuestionJumpEvent[i].id != cookie ) {
+			tmpList.push(gQuestionJumpEvent[i]);
+		}	
+	}
+	gQuestionJumpEvent = null;
+	gQuestionJumpEvent = tmpList;
+}
+
+Question_init();

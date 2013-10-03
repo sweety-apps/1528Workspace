@@ -27,8 +27,8 @@
 		A69BC50617F955DD00F392F1 /* jsb_iOSiapWrapper_api.js in Sources */ = {isa = PBXBuildFile; fileRef = A69BC4FF17F955DD00F392F1 /* jsb_iOSiapWrapper_api.js */; };
 		A69BC50717F955DD00F392F1 /* iOSiapImp.mm in Sources */ = {isa = PBXBuildFile; fileRef = A69BC50117F955DD00F392F1 /* iOSiapImp.mm */; };
 		A69BC50817F955DD00F392F1 /* iOSiapWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69BC50217F955DD00F392F1 /* iOSiapWrapper.cpp */; };
-		A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054417F7F05300B6B90A /* AdSupport.framework */; };
-		A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054617F7F05A00B6B90A /* StoreKit.framework */; };
+		A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054417F7F05300B6B90A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054617F7F05A00B6B90A /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054817F7F07200B6B90A /* CoreLocation.framework */; };
 		A69F060217F807D900B6B90A /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */; };
 		A69F062617F8178100B6B90A /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69F062517F8178100B6B90A /* js_OfferWallController.cpp */; };

@@ -31,10 +31,30 @@ CoinCtrl.prototype.update = function() {
 		cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
 	} else {
 		if ( this.curCoin < this.targetCoin ) {
-			this.curCoin ++;
+			var off = this.targetCoin - this.curCoin;
+			if ( off > 500 ) {
+				this.curCoin += 20;	
+			} else if ( off > 200 ) {
+				this.curCoin += 10;	
+			} else if ( off > 50 ) {
+				this.curCoin += 5;	
+			} else {
+				this.curCoin ++;	
+			}
+
 			this.coinNum.setString("" + this.curCoin);
 		} else {
-			this.curCoin --;
+			var off = this.curCoin - this.targetCoin;
+			if ( off > 500 ) {
+				this.curCoin -= 20;	
+			} else if ( off > 200 ) {
+				this.curCoin -= 10;	
+			} else if ( off > 50 ) {
+				this.curCoin -= 5;	
+			} else {
+				this.curCoin --;	
+			}
+
 			this.coinNum.setString("" + this.curCoin);			
 		}
 	}

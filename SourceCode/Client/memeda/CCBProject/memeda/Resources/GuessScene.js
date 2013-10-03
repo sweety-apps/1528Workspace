@@ -1009,7 +1009,7 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 
 GuessScene.prototype.onClickNext = function() {
 	GuessScene_SetFloorInfo(gProblem + 1, 3);
-	            
+	           
 	gCurrentCCBView.EnableAllBtn(true);
 	gCurrentCCBView.answerRight.controller.Hide();
 	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
@@ -1028,3 +1028,21 @@ GuessScene.prototype.onClickedWeChatShare = function () {
 		gCurrentCCBView.EnableAllBtn(true);
     });
 };
+
+GuessScene.prototype.onClickJump = function () {
+	this.EnableAllBtn(false);
+	this.jumpMsg.controller.ShowMsg(500, function (res) {
+		if ( res == 1 ) {
+			// 跳过该题，进入下一题
+			Question_jump(gCurrentTestObj.id);
+			
+			GuessScene_SetFloorInfo(gProblem + 1, 4); // 4--通过跳过进入下一题
+	
+			gCurrentCCBView.EnableAllBtn(true);
+			gCurrentCCBView.answerRight.controller.Hide();
+			gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
+		} else {
+			gCurrentCCBView.EnableAllBtn(true);
+		}
+	});
+}

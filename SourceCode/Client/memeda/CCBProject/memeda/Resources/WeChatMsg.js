@@ -42,8 +42,15 @@ WeChatMsg.prototype.onShare = function() {
     {
 		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
-	        cc.log("share callback!");
-	        cc.log("state = " + state + ", errMsg = " + errMsg);
+	    	if ( state == "Success" ) {
+	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
+	    		var share = sys.localStorage.getItem("firstshare");	
+	    		if ( share == null || share == "" ) {
+	    			// 第一次分享成功
+	    			sys.localStorage.setItem("firstshare", "1");	
+	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
+	    		}
+	    	}
 	    };
 	    
 	    var socialAPI = cc.SocialShareAPI.getInstance();
@@ -66,8 +73,15 @@ WeChatMsg.prototype.onShareFriend = function() {
     {
 		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
-	        cc.log("share callback!");
-	        cc.log("state = " + state + ", errMsg = " + errMsg);
+	    	if ( state == "Success" ) {
+	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
+	    		var share = sys.localStorage.getItem("firstshare");	
+	    		if ( share == null || share == "" ) {
+	    			// 第一次分享成功
+	    			sys.localStorage.setItem("firstshare", "1");	
+	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
+	    		}
+	    	}
 	    };
 	    
 	    var socialAPI = cc.SocialShareAPI.getInstance();
