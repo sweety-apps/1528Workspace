@@ -5,10 +5,14 @@
 var kDisableBounceOffsetY = 40;
 var kBuyMessageBoxShowOffsetToTop = 480;
 
-//状态
+//弹出框状态
 var kBuyMessageBoxStateHidden = 0;
 var kBuyMessageBoxStateClosedInTopRange = 1;
 var kBuyMessageBoxStateShowing = 2;
+
+//场景状态
+var kFloorsSceneStateNormal = 0;
+var kFloorsSceneStateEnteringDoor = 1;
 
 var kScrollingStateNormal = 0;
 var kScrollingStateReachedBoxShowOffset = 1;
@@ -16,6 +20,8 @@ var gChooseTestsSceneThis = null;
 
 var ChooseTestsScene = function() {
 };
+
+ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 	gChooseTestsSceneThis = this;
@@ -35,11 +41,16 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     //debugMsgOutput(this.wholeFloors.getPositionX() + this.wholeFloors.getPositionY());
     this.scrollViewDidScroll(this.floorScrollView);
     this.wholeFloors.controller.setDoorPressedCallback(this,this.onPressedDoor);
+    this.wholeFloors.controller.setScrollingCallback(this,this.onScrollDoorToPresent);
 
     //设置状态
     this.buyMsgBox.showState = kBuyMessageBoxStateHidden;
     this.wholeFloors.scrollState = kScrollingStateNormal;
     this.buyMsgBox.animationManager.setCompletedAnimationCallback(this, this.onMsgboxAnimationCompleted);
+
+    //设置场景状态
+    this.sceneState = kFloorsSceneStateNormal;
+    this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationCompleted);
     
     this.checkWechatShared();
     
@@ -49,8 +60,11 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     });
     
     // 初始化多盟
-    debugMsgOutput("" + memeda.OfferWallController);
-    memeda.OfferWallController.init();
+    if(!Global_isWeb())
+    {
+        debugMsgOutput("" + memeda.OfferWallController);
+        memeda.OfferWallController.init();
+    }
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -138,14 +152,26 @@ ChooseTestsScene.prototype.onPressedAwardButton = function()
     this.showBuyMessageBox();
 };
 
+ChooseTestsScene.prototype.onAnimationCompleted = function()
+{
+    if(this.sceneState == kFloorsSceneStateEnteringDoor && this.rootNode.animationManager.getLastCompletedSequenceName() == "Enter Door Timeline")
+    {
+        this.sceneState = kFloorsSceneStateNormal;
+        var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+        cc.Director.getInstance().replaceScene(scene);
+    }
+};
+
 ChooseTestsScene.prototype.onPressedDoor = function (isDoorOpened, floorNum, doorNum)
 {
     if(isDoorOpened)
     {
-		GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 2);
-	
-    	var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
-    	cc.Director.getInstance().replaceScene(scene);
+        if(this.sceneState == kFloorsSceneStateNormal)
+        {
+            this.sceneState = kFloorsSceneStateEnteringDoor;
+            GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 2);
+            this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Door Timeline");
+        }
     }
     else
     {
@@ -153,10 +179,35 @@ ChooseTestsScene.prototype.onPressedDoor = function (isDoorOpened, floorNum, doo
     }
 };
 
+ChooseTestsScene.prototype.onScrollDoorToPresent = function (isDoorOpened, floorNum, doorNum)
+{
+    if(isDoorOpened)
+    {
+        var scrollFloorHeight = this.rootNode.getContentSize().height;
+        var scrollOffsetX = this.wholeFloors.controller.floorRect.x;
+        //var scrollOffsetY = -(this.wholeFloors.controller.floorHeight * floorNum);
+        var scrollOffsetY = -((this.wholeFloors.controller.startFloorOffsetY*3) + (this.wholeFloors.controller.floorHeight * floorNum));
+        /*
+         if(scrollOffsetY > 0)
+         {
+         scrollOffsetY = 0;
+         }
+         */
+        scrollOffsetY += scrollFloorHeight/2;
+        cc.log("\<\> scrolling to Y = "+scrollOffsetY + ", sceneHeight = "+scrollFloorHeight);
+
+        //this.floorScrollView.setContentOffset(cc.p(0,0),true);
+        this.floorScrollView.setContentOffset(cc.p(scrollOffsetX,scrollOffsetY),true);
+    }
+};
+
+ChooseTestsScene.prototype.testsFinishedPercent = 5;
+
 ChooseTestsScene.prototype.showBuyMessageBox = function()
 {
     if(this.buyMsgBox.showState != kBuyMessageBoxStateShowing)
     {
+        this.buyMsgBox.controller.setFinishedPercents(ChooseTestsScene.prototype.testsFinishedPercent);
         this.buyMsgBox.animationManager.runAnimationsForSequenceNamed("Popup Animation Timeline");
         this.buyMsgBox.showState = kBuyMessageBoxStateShowing;
     }
@@ -203,12 +254,21 @@ ChooseTestsScene.prototype.checkWechatShared = function () {
 			
 		debugMsgOutput(http);
 	}
-}
+};
 
 ChooseTestsScene.prototype.onPressedCollection = function () {
 	// test
-	memeda.OfferWallController.show();
-}
+    if(!Global_isWeb())
+    {
+        memeda.OfferWallController.show();
+    }
+};
+
+ChooseTestsScene.prototype.onClickedCoinButton = function () {
+    // 打开金币购买界面
+    debugMsgOutput("[UI Event] Clicked Coin Button!");
+    this.buyCoinMsgBox.controller.show();
+};
 
 ChooseTestsScene.prototype.parseWeChatData = function (text) {
     debugMsgOutput("---" + text);
@@ -228,4 +288,4 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
                                                 CoinMgr_Change(coin);
                                            });
     }
-}
+};

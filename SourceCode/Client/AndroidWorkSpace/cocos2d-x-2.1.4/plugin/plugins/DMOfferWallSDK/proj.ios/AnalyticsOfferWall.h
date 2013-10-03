@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <InterfaceSocial.h>
+#import "InterfaceSocial.h"
 #import "OnlineWallViewController.h"
 
 @interface AnalyticsOfferWall : NSObject<InterfaceSocial>

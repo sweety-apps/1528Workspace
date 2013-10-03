@@ -10,7 +10,7 @@ var gTestFloor = [
         floorNum:"1F",specText:"",offsetY:0,
     doors:[
         {hasFinished:true,image:"door_black",doorNum:"001"},
-        {hasFinished:false,image:"door_pink",doorNum:"002"},
+        {hasFinished:true,image:"door_pink",doorNum:"002"},
         {hasFinished:true,image:"door_yellow",doorNum:"003"}
     ]},
     {bg:"floor_gray",bottom:"floorBottom_gray",
@@ -326,7 +326,7 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,floorNum,sho
                     )
                 );
             }
-            else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Stay Timeline") >= 0)
+            else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Leave Lift Timeline") >= 0)
             {
                 this.sceneState = kFloorStateWaiting;
                 if(this.onCatMovedToDoorCallback != null && this.onCatMovedToDoorCallback != undefined)
@@ -346,6 +346,7 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,floorNum,sho
         this.catAndLift.animationManager.setCompletedAnimationCallback(this, this.onCatAndLiftAnimationCompleted);
         if(showAnimation)
         {
+            this.onDoScrollFloorsToTarget(true,floorNum, doorNum);
             if(this.currentCatStayAtFloorNum == floorNum)
             {
                 this.catAndLift.animationManager.runAnimationsForSequenceNamed("Move Timeline"+this.currentCatStayAtDoorNum+""+doorNum);
@@ -364,6 +365,8 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,floorNum,sho
         }
     }
 };
+
+/////////////////////
 
 WholeFloors.prototype.onPressedDoorCallbackTarget = null;
 WholeFloors.prototype.onPressedDoorCallbackMethod = null;
@@ -384,10 +387,39 @@ WholeFloors.prototype.onFinishedClickedDoorAnimation = function (isDoorOpened, f
             this.onPressedDoorCallbackMethod(isDoorOpened, floorNum, doorNum);
         }
     }
-}
+};
+
+////////////////////
 
 WholeFloors.prototype.setDoorPressedCallback = function (target,callfunc)
 {
     this.onPressedDoorCallbackTarget = target;
     this.onPressedDoorCallbackMethod = callfunc;
-}
+};
+
+WholeFloors.prototype.onScrollingCallbackTarget = null;
+WholeFloors.prototype.onScrollingCallbackMethod = null;
+
+WholeFloors.prototype.onDoScrollFloorsToTarget = function (isDoorOpened, floorNum, doorNum)
+{
+    debugMsgOutput("--Scroll floor "+floorNum+" door "+doorNum+" animate start!");
+    if(this.onScrollingCallbackMethod != null && this.onScrollingCallbackMethod != undefined)
+    {
+        if(this.onScrollingCallbackTarget != null && this.onScrollingCallbackTarget != undefined)
+        {
+            this.onScrollingCallbackTarget.onScrollingCallbackMethodTmp = this.onScrollingCallbackMethod;
+            this.onScrollingCallbackTarget.onScrollingCallbackMethodTmp(isDoorOpened, floorNum, doorNum);
+            this.onScrollingCallbackTarget.onScrollingCallbackMethodTmp = null;
+        }
+        else
+        {
+            this.onScrollingCallbackMethod(isDoorOpened, floorNum, doorNum);
+        }
+    }
+};
+
+WholeFloors.prototype.setScrollingCallback = function (target,callfunc)
+{
+    this.onScrollingCallbackTarget = target;
+    this.onScrollingCallbackMethod = callfunc;
+};

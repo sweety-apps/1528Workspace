@@ -895,7 +895,7 @@
 										<key>type</key>
 										<string>Degrees</string>
 										<key>value</key>
-										<real>0.0</real>
+										<real>360</real>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1197,13 +1197,21 @@
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>CCSprite</string>
+										<string>100Num</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>percent100Num</string>
 										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
+										<integer>1</integer>
 										<key>properties</key>
 										<array>
+											<dict>
+												<key>name</key>
+												<string>visible</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
 											<dict>
 												<key>name</key>
 												<string>position</string>
@@ -1274,13 +1282,21 @@
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>CCSprite</string>
+										<string>10Num</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>percent10Num</string>
 										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
+										<integer>1</integer>
 										<key>properties</key>
 										<array>
+											<dict>
+												<key>name</key>
+												<string>visible</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
 											<dict>
 												<key>name</key>
 												<string>position</string>
@@ -1351,11 +1367,11 @@
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>CCSprite</string>
+										<string>1Num</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>percent1Num</string>
 										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
+										<integer>1</integer>
 										<key>properties</key>
 										<array>
 											<dict>
@@ -1428,11 +1444,11 @@
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>CCSprite</string>
+										<string>PercentSymbol</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>percentSymbol</string>
 										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
+										<integer>1</integer>
 										<key>properties</key>
 										<array>
 											<dict>
@@ -1498,9 +1514,9 @@
 								<key>displayName</key>
 								<string>PercentLayer</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>percentBackLayer</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -1510,8 +1526,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>37.5</real>
-											<real>72.5</real>
+											<real>50</real>
+											<real>77</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -1525,6 +1541,87 @@
 											<real>80</real>
 											<real>30</real>
 											<integer>5</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>anchorPoint</string>
+										<key>type</key>
+										<string>Point</string>
+										<key>value</key>
+										<array>
+											<real>0.6600000262260437</real>
+											<real>0.5</real>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ignoreAnchorPointForPosition</string>
+										<key>type</key>
+										<string>Check</string>
+										<key>value</key>
+										<false/>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>touchEnabled</string>
+										<key>platform</key>
+										<string>iOS</string>
+										<key>type</key>
+										<string>Check</string>
+										<key>value</key>
+										<true/>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>mouseEnabled</string>
+										<key>platform</key>
+										<string>Mac</string>
+										<key>type</key>
+										<string>Check</string>
+										<key>value</key>
+										<true/>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>baseClass</key>
+								<string>CCSprite</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>BoxText</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>0</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>50</real>
+											<real>50</real>
+											<integer>4</integer>
 										</array>
 									</dict>
 									<dict>
@@ -1557,27 +1654,18 @@
 										<key>type</key>
 										<string>Check</string>
 										<key>value</key>
-										<true/>
+										<false/>
 									</dict>
 									<dict>
 										<key>name</key>
-										<string>touchEnabled</string>
-										<key>platform</key>
-										<string>iOS</string>
+										<string>displayFrame</string>
 										<key>type</key>
-										<string>Check</string>
+										<string>SpriteFrame</string>
 										<key>value</key>
-										<true/>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>mouseEnabled</string>
-										<key>platform</key>
-										<string>Mac</string>
-										<key>type</key>
-										<string>Check</string>
-										<key>value</key>
-										<true/>
+										<array>
+											<string></string>
+											<string>UI/levels/buyMsgBoxCenterBoxText.png</string>
+										</array>
 									</dict>
 								</array>
 							</dict>
@@ -2113,9 +2201,9 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>1.046875</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>4</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -2149,7 +2237,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>1.5</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -2183,7 +2271,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.36666667461395264</real>
+			<real>0.80000001192092896</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
