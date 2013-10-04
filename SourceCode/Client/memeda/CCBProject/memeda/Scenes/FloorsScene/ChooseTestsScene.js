@@ -52,18 +52,16 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.sceneState = kFloorsSceneStateNormal;
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationCompleted);
     
-    this.checkWechatShared();
-    
-    this.coinNumber.setString("" + CoinMgr_GetCount());
-    CoinMgr_Register(function (coin, add) {
-        gChooseTestsSceneThis.coinNumber.setString("" + CoinMgr_GetCount());
-    });
+    // 购买按钮
+    this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
     // 初始化多盟
     if(!Global_isWeb())
     {
         debugMsgOutput("" + memeda.OfferWallController);
         memeda.OfferWallController.init();
+        
+        this.checkWechatShared();
     }
 };
 
@@ -264,10 +262,10 @@ ChooseTestsScene.prototype.onPressedCollection = function () {
     }
 };
 
-ChooseTestsScene.prototype.onClickedCoinButton = function () {
+ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
     // 打开金币购买界面
     debugMsgOutput("[UI Event] Clicked Coin Button!");
-    this.buyCoinMsgBox.controller.show();
+    obj.buyCoinMsgBox.controller.show();
 };
 
 ChooseTestsScene.prototype.QueryExtraCoin = function () {

@@ -166,6 +166,9 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // State Change
     gCurrentGuessState = kGuessStateNormal;
     
+    // 购买按钮
+    this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
+    
 	// 初始化背景,给背景和文字框选择合适的背景
 	if ( Global_isWeb() ) {
     	gFlippingIndex = 1;
@@ -1058,4 +1061,9 @@ GuessScene.prototype.checkExtraCoin = function () {
 			CoinMgr_Change(500);
 		});
 	}
+}
+
+GuessScene.prototype.onClickedCoinButton = function (obj ) {
+    debugMsgOutput("[UI Event] Clicked Coin Button!");
+    obj.buyCoinMsgBox.controller.show();	
 }

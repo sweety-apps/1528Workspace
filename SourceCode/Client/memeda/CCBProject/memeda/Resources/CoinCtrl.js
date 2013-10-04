@@ -10,6 +10,14 @@ CoinCtrl.prototype.onDidUnload = function () {
 	this.registerID = null;
 };
 
+CoinCtrl.prototype.registerBuyEvent = function (content, fun ) {
+	this.onClick = fun;
+	this.content = content;
+};
+
+CoinCtrl.prototype.onClickBuy = function () {
+	this.onClick(this.content);
+};
 
 CoinCtrl.prototype.onDidLoadFromCCB = function () {
 	debugMsgOutput("CoinCtrl.prototype.onDidLoadFromCCB");
