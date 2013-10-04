@@ -278,6 +278,8 @@ ChooseTestsScene.prototype.QueryExtraCoin = function () {
     };
     callBackObj.offerWallDidFinishCheck = function(responseText) {
         debugMsgOutput("offerWallDidFinishCheck " + responseText);
+        // 请求到来自多盟的数据
+        this.parseOfferWallData(responseText);
     };
     callBackObj.offerWallDidFinishConsume = function(responseText) {
         debugMsgOutput("offerWallDidFinishConsume " + responseText);
@@ -308,8 +310,39 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     }
     debugMsgOutput("" + num);
     if ( num != 0 ) {
+    	// 来自微信的奖励
         this.weChatAwardMsg.controller.ShowMsg("您获得了" + num * 10 + "个金币", num * 10, function (coin) {
                                                 CoinMgr_Change(coin);
                                            });
     }
 };
+
+ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
+        var obj = JSON.parse(responseText);
+        var consumed = sys.localStorage.getItem("consumed");
+        // 消费掉的积分，取本地和服务器上纪录的最大值
+        debugMsgOutput("obj.totalPoint " + obj.totalPoint);
+        debugMsgOutput("obj.consumed " + obj.consumed);
+        debugMsgOutput("consumed " + consumed);
+               
+        if ( consumed != null && consumed != "" ) {
+        	consumed = parseInt(consumed);
+        	if ( consumed < obj.consumed ) {
+        		consumed = obj.consumed;	
+        	}
+        } else {
+        	consumed = obj.consumed;
+        }
+        
+        if ( obj.totalPoint > consumed ) {
+        	// 有金币可以消费
+        	this.weChatAwardMsg.controller.ShowMsg("您获得了" + (obj.totalPoint - consumed) + "个金币", obj.totalPoint - consumed, function (coin) {
+        		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
+        		            					// 消费掉多余的金币
+        		            					memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
+        		            					CoinMgr_Change(coin);
+                                           });                  
+        }
+};
+
+        

@@ -179,6 +179,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
         gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
     }
     
+    this.checkExtraCoin();
     debugMsgOutput("GuessScene.prototype.onDidLoadFromCCB");
 };
 
@@ -1045,4 +1046,16 @@ GuessScene.prototype.onClickJump = function () {
 			gCurrentCCBView.EnableAllBtn(true);
 		}
 	});
+}
+
+GuessScene.prototype.checkExtraCoin = function () {
+	var showsharecoin = sys.localStorage.getItem("showsharecoin");
+	if ( showsharecoin == "1" ) {
+		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
+		gCurrentCCBView.EnableAllBtn(false);
+		this.weChatCoinMsgBox.controller.show(function () {
+			gCurrentCCBView.EnableAllBtn(true);
+			CoinMgr_Change(500);
+		});
+	}
 }

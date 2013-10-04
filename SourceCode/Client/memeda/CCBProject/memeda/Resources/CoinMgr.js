@@ -91,15 +91,12 @@ function CoinMgr_checkExtraCoin(callBackObj) {
 		
 		var now = Math.floor(Date.now() / 1000 / 3600);	// 
 		
-		debugMsgOutput(""+now);
-		debugMsgOutput(""+time);
-		
 		if ( Math.abs(time - now) >= 1 ) {
 			// ,1
 			sys.localStorage.setItem("WechatTime", now);
 			var http = new XMLHttpRequest();
 			
-			http.open("GET", "http://www.liux123.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());		
+			http.open("GET", "http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());		
 			//http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
 			http.onreadystatechange = function(){
 				if( http.readyState == 4 && http.status == 200 ) {
