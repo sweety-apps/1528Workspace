@@ -50,11 +50,13 @@ JumpMsgBox.prototype.onClickClose = function() {
 
 JumpMsgBox.prototype.onClickBuy = function() {
 	// 扣金币
-	// TODO : 金币不足的判断还没有
-    // 上报数据
-
-	CoinMgr_Change(-1 * this.price);
-	// 加入到跳过题目的列表
-	
-	this.Hide(1);
+	if ( CoinMgr_GetCount() < this.price ) {
+		// 金币不够
+		this.noEnoughEvent();
+		this.Hide(1);
+	} else {
+		CoinMgr_Change(-1 * this.price);
+		// 加入到跳过题目的列表
+		this.Hide(1);
+	}
 };

@@ -71,15 +71,20 @@ BuyMsg.prototype.onClickClose = function() {
 
 BuyMsg.prototype.onClickBuy = function() {
 	// 扣金币
-	// TODO : 金币不足的判断还没有
-    // 上报数据
-    if ( !Global_isWeb() ) {
-    	var param = memeda.Stat.createParam();
-    	param.addKeyAndValue("num", ""+this.index);
-    	memeda.Stat.logEvent("promptbuy", param);
-    }
-    //
+	if ( CoinMgr_GetCount() < this.price ) {
+		// 金币不够
+		this.noEnoughEvent();
+		this.Hide(1);
+	} else {
+    	// 上报数据
+    	if ( !Global_isWeb() ) {
+    		var param = memeda.Stat.createParam();
+    		param.addKeyAndValue("num", ""+this.index);
+    		memeda.Stat.logEvent("promptbuy", param);
+    	}
+    	//
     
-	CoinMgr_Change(-1 * this.price);
-	this.Hide(1);	
+		CoinMgr_Change(-1 * this.price);
+		this.Hide(1);
+	}	
 };

@@ -169,6 +169,9 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 购买按钮
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
+    this.jumpMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;
+    this.buyMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;
+        
 	// 初始化背景,给背景和文字框选择合适的背景
 	if ( Global_isWeb() ) {
     	gFlippingIndex = 1;
@@ -1069,4 +1072,15 @@ GuessScene.prototype.checkExtraCoin = function () {
 GuessScene.prototype.onClickedCoinButton = function (obj ) {
     debugMsgOutput("[UI Event] Clicked Coin Button!");
     obj.buyCoinMsgBox.controller.show();	
+}
+
+GuessScene.prototype.showNoCoinMsgBox = function () {
+	gCurrentCCBView.EnableAllBtn(false);
+	gCurrentCCBView.noCoinMsgBox.controller.show(function (res) { 
+		gCurrentCCBView.EnableAllBtn(true);
+		if ( res == 1 ) {
+    		debugMsgOutput("[UI Event] Clicked Coin Button!");
+    		gCurrentCCBView.buyCoinMsgBox.controller.show();	
+		}
+	});
 }
