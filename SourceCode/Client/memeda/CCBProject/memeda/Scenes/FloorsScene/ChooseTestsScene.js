@@ -270,10 +270,8 @@ ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
 
 ChooseTestsScene.prototype.QueryExtraCoin = function () {
     var callBackObj = new Object();
-    callBackObj.wachatDidFinish = function(responseText) {
-        debugMsgOutput("wachatDidFinish " + responseText);
-        this.parseWeChatData(responseText);
-    };
+    callBackObj.wachatDidFinish = parseWeChatData;
+
     callBackObj.offerWallDidFinishCheck = function(responseText) {
         debugMsgOutput("offerWallDidFinishCheck " + responseText);
         // 请求到来自多盟的数据
@@ -299,7 +297,7 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     var obj = JSON.parse(text);
     debugMsgOutput("count : " + obj.list.length);
     if ( obj == null || obj.list == null || obj.list.length == 0 ) {
-        return ;
+        return false;
     }
     
     var num = 0;
@@ -312,7 +310,9 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
         this.weChatAwardMsg.controller.ShowMsg("您获得了" + num * 10 + "个金币", num * 10, function (coin) {
                                                 CoinMgr_Change(coin);
                                            });
+        return true;
     }
+    return false;
 };
 
 ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {

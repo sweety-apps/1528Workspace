@@ -1030,6 +1030,9 @@ GuessScene.prototype.onClickedWeChatShare = function () {
 	this.EnableAllBtn(false);
     this.weChatMsg.controller.ShowMsg(gCurrentTestObj.id, function () {
 		gCurrentCCBView.EnableAllBtn(true);
+    }, 
+    function () {
+    	gCurrentCCBView.checkExtraCoin();
     });
 };
 

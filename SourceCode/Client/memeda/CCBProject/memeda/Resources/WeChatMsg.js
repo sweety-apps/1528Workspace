@@ -15,11 +15,12 @@ WeChatMsg.prototype.onDidLoadFromCCB = function () {
     }
 };
 
-WeChatMsg.prototype.ShowMsg = function(id, endFun) {
+WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) {
 	// 显示购买消息    
 	this.aid = id;
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
+	this.sharedFun = sharedFun;
 	
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
@@ -36,8 +37,12 @@ WeChatMsg.prototype.onClickClose = function() {
 
 WeChatMsg.prototype.onShare = function() {
 	// 分享   
+	this.Hide();	
+	
     var url = Global_getShareUrl(this.aid);
     debugMsgOutput(url);
+    
+    var This = this;
     try
     {
 		var shareCallback = new cc.WeChatShareCallBackClass();
@@ -49,6 +54,7 @@ WeChatMsg.prototype.onShare = function() {
 	    			// 第一次分享成功
 	    			sys.localStorage.setItem("firstshare", "1");	
 	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
+	    			This.sharedFun();
 	    		}
 	    	}
 	    };
@@ -60,15 +66,16 @@ WeChatMsg.prototype.onShare = function() {
     } catch (e) {
     	debugMsgOutput("" + e);
     }
-    
-	this.Hide();	
 };
 
 WeChatMsg.prototype.onShareFriend = function() {
 	// 分享到朋友圈 
+	this.Hide();	
+	
     var url = Global_getShareUrl(this.aid);
     debugMsgOutput(url);
     
+    var This = this;
     try 
     {
 		var shareCallback = new cc.WeChatShareCallBackClass();
@@ -80,6 +87,7 @@ WeChatMsg.prototype.onShareFriend = function() {
 	    			// 第一次分享成功
 	    			sys.localStorage.setItem("firstshare", "1");	
 	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
+	    			This.sharedFun();
 	    		}
 	    	}
 	    };
@@ -90,6 +98,4 @@ WeChatMsg.prototype.onShareFriend = function() {
 	    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle", url,"Description lalala!",false,true);
     } catch (e) {
     }
-    
-	this.Hide();	
 };

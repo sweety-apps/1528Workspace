@@ -38,7 +38,6 @@ function CoinMgr_Change(add) {
 }
 
 function CoinMgr_Init() {
-    // 
 	sys.localStorage.setItem("coin", 1500);
     gCoin = sys.localStorage.getItem("coin");
     if ( gCoin == null || gCoin == "" ) {
@@ -78,40 +77,37 @@ function CoinMgr_Init() {
 }
 
 function CoinMgr_checkExtraCoin(callBackObj) {
-	// 
-	//if ( Global_isWeb() ) { // 
-	//    return ;	
-	//}
     CoinMgr_gCallBackObj = callBackObj;
-    try {
-		var time = sys.localStorage.getItem("WechatTime");
-		if ( time == "" || time == null ) { 
-			time = 0;
-		}
-		
-		var now = Math.floor(Date.now() / 1000 / 3600);	// 
-		
-		if ( Math.abs(time - now) >= 1 ) {
-			// ,1
-			sys.localStorage.setItem("WechatTime", now);
-			var http = new XMLHttpRequest();
-			
-			http.open("GET", "http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());		
-			//http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
-			http.onreadystatechange = function(){
-				if( http.readyState == 4 && http.status == 200 ) {
-	                gChooseTestsSceneThis.parseWeChatData(http.responseText);
-				}
-			};
-			http.send(null);
-				
-			debugMsgOutput(http);
-		} else {
-	        // app
-	        memeda.OfferWallController.getInstance().requestOnlinePointCheck();
-	    }
-    } catch (e) {
+
+    var time = sys.localStorage.getItem("WechatTime");
+    if ( time == "" || time == null ) {
+        time = 0;
     }
+		
+    var now = Math.floor(Date.now() / 1000 / 3600);	// 
+    debugMsgOutput("now " + now);
+    debugMsgOutput("time " + time);
+    debugMsgOutput("---- " + (time - now));
+    
+    sys.localStorage.setItem("WechatTime", now);
+    var http = new XMLHttpRequest();
+			
+    http.open("GET", "http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
+    debugMsgOutput("http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
+    //http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
+    http.onreadystatechange = function(){
+        if( http.readyState == 4 && http.status == 200 ) {
+            debugMsgOutput("http.readyState == 4 && http.status == 200");
+            if ( !callBackObj.wachatDidFinish(http.responseText) ) {
+                debugMsgOutput("callBackObj.wachatDidFinish");
+                memeda.OfferWallController.getInstance().requestOnlinePointCheck();
+            } else {
+                debugMsgOutput("callBackObj.wachatDidFinish true");
+            }
+        }
+    };
+    
+    http.send(null);
 }
 
 
