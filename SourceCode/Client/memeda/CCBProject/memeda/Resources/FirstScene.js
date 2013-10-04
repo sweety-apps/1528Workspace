@@ -3,7 +3,6 @@ var FirstScene = function() {};
 var gChooseTestsScene = null;
 
 FirstScene.prototype.onDidLoadFromCCB = function () {  
-	CoinMgr_Init();
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 };
 

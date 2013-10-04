@@ -3,6 +3,17 @@ var gRegisterID = 1;
 var gEventArr = new Array();
 var CoinMgr_gCallBackObj = null;
 
+isWeb = function() {
+    try {
+        if ( document == null ) {
+            return false;
+        }
+    }catch (e) {
+        return false;
+    }
+	return true;
+};
+
 function CoinMgr_Register(fun, context) {
 	var obj = new Object;
 	obj.fun = fun;
@@ -45,8 +56,8 @@ function CoinMgr_Init() {
     } else {
         gCoin = parseInt(gCoin);
     }
-    
-    if ( !Global_isWeb() ) {
+
+    if ( !isWeb() ) {
 	    memeda.OfferWallController.getInstance().init(Global_getUserID());
 	    
 	    memeda.OfferWallController.getInstance().offerWallDidFinishCheck = function (responseText) {
@@ -108,3 +119,5 @@ function CoinMgr_checkExtraCoin(callBackObj) {
     
     http.send(null);
 }
+
+CoinMgr_Init();
