@@ -8,6 +8,11 @@ RightMsgBox.prototype.ShowMsg = function(url, onClose) {
 	this.onCloseFun = onClose;
 	this.msgLayout.setVisible(true);
 	this.Url = url;
+	// 显示的链接长度不超过40个字符
+	if ( url.length >= 40 ) {
+		url = url.substr(0, 37);
+		url = url + "...";
+	}
 	this.aboutUrl.setString(url);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");
 };
