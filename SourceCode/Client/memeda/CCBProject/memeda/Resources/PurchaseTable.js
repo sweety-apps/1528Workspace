@@ -35,7 +35,7 @@ function Purchase_payForCoinWith6RMB()
 
         var iOSiapAPI = cc.iOSiapWrapper.getInstance();
         iOSiapAPI.setPurchaseCallbackTarget(paymentCallback);
-        iOSiapAPI.payForProduct("SpecialSpyPackage6");
+        iOSiapAPI.payForProduct("com.1528studio.memeda.buy300coin");
         //cc.SocialShareAPI.sharedInstance().testShare();
     }
 }
@@ -52,7 +52,7 @@ function Purchase_payForCoinWith12RMB()
 
         var iOSiapAPI = cc.iOSiapWrapper.getInstance();
         iOSiapAPI.setPurchaseCallbackTarget(paymentCallback);
-        iOSiapAPI.payForProduct("SpecialSpyPackage6");
+        iOSiapAPI.payForProduct("com.1528studio.memeda.buy600coin");
         //cc.SocialShareAPI.sharedInstance().testShare();
     }
 }
@@ -69,7 +69,7 @@ function Purchase_payForCoinWith30RMB()
 
         var iOSiapAPI = cc.iOSiapWrapper.getInstance();
         iOSiapAPI.setPurchaseCallbackTarget(paymentCallback);
-        iOSiapAPI.payForProduct("SpecialSpyPackage6");
+        iOSiapAPI.payForProduct("com.1528studio.memeda.buy1500coin");
         //cc.SocialShareAPI.sharedInstance().testShare();
     }
 }
@@ -86,7 +86,7 @@ function Purchase_payForCoinWith60RMB()
 
         var iOSiapAPI = cc.iOSiapWrapper.getInstance();
         iOSiapAPI.setPurchaseCallbackTarget(paymentCallback);
-        iOSiapAPI.payForProduct("SpecialSpyPackage6");
+        iOSiapAPI.payForProduct("com.1528studio.memeda.buy3000coin");
         //cc.SocialShareAPI.sharedInstance().testShare();
     }
 }
