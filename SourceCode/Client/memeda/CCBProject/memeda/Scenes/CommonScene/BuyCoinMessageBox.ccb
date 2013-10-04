@@ -2233,7 +2233,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>buyFont.fnt</string>
+												<string>arial-14.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -2674,7 +2674,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>buyFont.fnt</string>
+												<string>arial-14.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -3113,7 +3113,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>buyFont.fnt</string>
+												<string>arial-14.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -3552,7 +3552,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>buyFont.fnt</string>
+												<string>arial-14.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -3719,8 +3719,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>seqExpanded</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

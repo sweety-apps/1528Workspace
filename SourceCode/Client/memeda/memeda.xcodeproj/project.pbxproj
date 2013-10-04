@@ -531,7 +531,6 @@
 		A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginFactory.mm; sourceTree = "<group>"; };
 		A6A701BE17F01AEA005FBA13 /* PluginOCMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginOCMacros.h; sourceTree = "<group>"; };
 		A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginProtocol.mm; sourceTree = "<group>"; };
-		A6A701C017F01AEA005FBA13 /* PluginUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginUtilsIOS.h; sourceTree = "<group>"; };
 		A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginUtilsIOS.mm; sourceTree = "<group>"; };
 		A6A701C217F01AEA005FBA13 /* ProtocolAds.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolAds.mm; sourceTree = "<group>"; };
 		A6A701C317F01AEA005FBA13 /* ProtocolAnalytics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProtocolAnalytics.mm; sourceTree = "<group>"; };
@@ -1309,6 +1308,7 @@
 		F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
 		F396428117B740610022AA6B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F396428217B740610022AA6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
+		F398BBB417FD978E0029C563 /* PluginUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginUtilsIOS.h; sourceTree = "<group>"; };
 		F3D0895217EEC5950093A0B5 /* uncompressZipFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = uncompressZipFile.cpp; path = Classes/uncompressZipFile.cpp; sourceTree = "<group>"; };
 		F3D0895317EEC5950093A0B5 /* uncompressZipFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uncompressZipFile.h; path = Classes/uncompressZipFile.h; sourceTree = "<group>"; };
 		F3D08AD617EED6320093A0B5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1566,6 +1566,7 @@
 		A6A701B817F01AEA005FBA13 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				F398BBB417FD978E0029C563 /* PluginUtilsIOS.h */,
 				A6A701B917F01AEA005FBA13 /* InterfaceAds.h */,
 				A6A701BA17F01AEA005FBA13 /* InterfaceAnalytics.h */,
 				A6A701BB17F01AEA005FBA13 /* InterfaceIAP.h */,
@@ -1573,7 +1574,6 @@
 				A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */,
 				A6A701BE17F01AEA005FBA13 /* PluginOCMacros.h */,
 				A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */,
-				A6A701C017F01AEA005FBA13 /* PluginUtilsIOS.h */,
 				A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */,
 				A6A701C217F01AEA005FBA13 /* ProtocolAds.mm */,
 				A6A701C317F01AEA005FBA13 /* ProtocolAnalytics.mm */,
