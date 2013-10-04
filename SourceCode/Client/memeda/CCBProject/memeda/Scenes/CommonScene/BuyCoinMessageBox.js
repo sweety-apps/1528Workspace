@@ -13,6 +13,9 @@ var BuyCoinMessageBox = function() {
 
 BuyCoinMessageBox.prototype.sceneState = kFloorsSceneStateNormal;
 
+BuyCoinMessageBox.prototype.purchaseID = "";
+BuyCoinMessageBox.prototype.isPurchaseCoinsHere = true;
+
 BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 	// 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
@@ -27,11 +30,39 @@ BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 BuyCoinMessageBox.prototype.show = function ()
 {
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Popup Timeline");
+    this.isPurchaseCoinsHere = true;
 };
 
 BuyCoinMessageBox.prototype.hide = function ()
 {
-    this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Timeline");
+    if(this.isPurchaseCoinsHere)
+    {
+        this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Timeline");
+    }
+    else
+    {
+        this.rootNode.animationManager.runAnimationsForSequenceNamed("Normal Dismiss Timeline");
+    }
+};
+
+BuyCoinMessageBox.prototype.showAndBuyItem = function (itemName,productID)
+{
+    this.isPurchaseCoinsHere = false;
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Normal Buy Popup Timeline");
+    this.purchaseID = itemName;
+    Purchase_payForItem(productID,this,this.onBuyItemFinished);
+};
+
+BuyCoinMessageBox.prototype.onBuyItemFinished = function(state,productID,errMsg)
+{
+    if(state == "Success")
+    {
+        this.onBuyItemSucceed(this.purchaseID,state,errMsg);
+    }
+    else if(state == "Failed" || state == "Cancel")
+    {
+        this.onBuyItemFailedOrCancelled(this.purchaseID,state,errMsg);
+    }
 };
 
 BuyCoinMessageBox.prototype.onClickedModelBG = function ()
@@ -48,23 +79,43 @@ BuyCoinMessageBox.prototype.onClickedClose = function ()
 BuyCoinMessageBox.prototype.onClickedBuy6 = function ()
 {
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 6!");
-    Purchase_payForCoinWith6RMB();
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
+    this.purchaseID = "300金币";
+    Purchase_payForCoinWith6RMB(this,this.onBuyItemFinished);
 };
 
 BuyCoinMessageBox.prototype.onClickedBuy12 = function ()
 {
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 12!");
-    Purchase_payForCoinWith12RMB();
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
+    this.purchaseID = "600金币";
+    Purchase_payForCoinWith12RMB(this,this.onBuyItemFinished);
 };
 
 BuyCoinMessageBox.prototype.onClickedBuy30 = function ()
 {
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 30!");
-    Purchase_payForCoinWith30RMB();
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
+    this.purchaseID = "1500金币";
+    Purchase_payForCoinWith30RMB(this,this.onBuyItemFinished);
 };
 
 BuyCoinMessageBox.prototype.onClickedBuy60 = function ()
 {
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 60!");
-    Purchase_payForCoinWith60RMB();
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
+    this.purchaseID = "3000金币";
+    Purchase_payForCoinWith60RMB(this,this.onBuyItemFinished);
+};
+
+BuyCoinMessageBox.prototype.onBuyItemSucceed = function (itemName,state,msg)
+{
+    debugMsgOutput("\<IAP Callback\> On Buy "+itemName+" Succeed!");
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Succeed Pay Timeline");
+};
+
+BuyCoinMessageBox.prototype.onBuyItemFailedOrCancelled = function (itemName,state,msg)
+{
+    debugMsgOutput("\<IAP Callback\> On Buy "+itemName+" Failed! :(");
+    this.rootNode.animationManager.runAnimationsForSequenceNamed("Reset Timeline");
 };
