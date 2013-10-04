@@ -17,6 +17,7 @@
 #include "jsb_iOSiapWrapper.hpp"
 #include "uncompressZipFile.h"
 #include "Stat.h"
+#include "js_CommonFunction.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -157,6 +158,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(register_all_jsb_SocialShareAPI);
     sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
     sc->addRegisterCallback(js_OfferWallController::_js_register);
+    sc->addRegisterCallback(CommonFunction::_js_register);
     
     // 初始化友盟统计
     CStat* pStat = CStat::GetInstance();
