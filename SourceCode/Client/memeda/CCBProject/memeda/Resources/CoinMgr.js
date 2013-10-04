@@ -2,6 +2,7 @@ var gCoin = 0;
 var gRegisterID = 1;
 var gEventArr = new Array();
 var CoinMgr_gCallBackObj = null;
+var gCoinMgr_Init = false;
 
 isWeb = function() {
     try {
@@ -15,6 +16,8 @@ isWeb = function() {
 };
 
 function CoinMgr_Register(fun, context) {
+    CoinMgr_Init();
+    
 	var obj = new Object;
 	obj.fun = fun;
 	obj.context = context;
@@ -24,6 +27,8 @@ function CoinMgr_Register(fun, context) {
 }
 
 function CoinMgr_Unregister(id) {
+    CoinMgr_Init();
+    
     for ( var i = 0; i < gEventArr.length; i ++) {
         if ( gEventArr[i].registerID == id ) {
 			debugMsgOutput("CoinMgr_Unregister");    	
@@ -34,10 +39,14 @@ function CoinMgr_Unregister(id) {
 }
 
 function CoinMgr_GetCount() {
+    CoinMgr_Init();
+    
     return gCoin;
 }
 
 function CoinMgr_Change(add) {
+    CoinMgr_Init();
+    
     var oldCoin = gCoin;
     gCoin += add;
     
@@ -49,6 +58,11 @@ function CoinMgr_Change(add) {
 }
 
 function CoinMgr_Init() {
+    if ( gCoinMgr_Init ) {
+        return ;
+    }
+    gCoinMgr_Init = true;
+    
 	sys.localStorage.setItem("coin", 1500);
     gCoin = sys.localStorage.getItem("coin");
     if ( gCoin == null || gCoin == "" ) {
@@ -88,6 +102,8 @@ function CoinMgr_Init() {
 }
 
 function CoinMgr_checkExtraCoin(callBackObj) {
+    CoinMgr_Init();
+    
     CoinMgr_gCallBackObj = callBackObj;
 
     var time = sys.localStorage.getItem("WechatTime");
@@ -119,5 +135,3 @@ function CoinMgr_checkExtraCoin(callBackObj) {
     
     http.send(null);
 }
-
-CoinMgr_Init();

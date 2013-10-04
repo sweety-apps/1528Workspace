@@ -782,10 +782,6 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             	param.addKeyAndValue("index", ""+gProblem);
             	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
             	memeda.Stat.logEvent("guesssuccess", param);
-            } else {
-            	// 把结果上报到服务器
-            	WebFun_get("http://www.liux123.com/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	            	
-            	//WebFun_get("http://memeda.meme-da.com/Stat/WechatAnswerRight.php?aid=" + gCurrentTestObj.id + "&uid=" + getQueryString("uid"));	
             }
             //
             
@@ -798,7 +794,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             }
 
             this.EnableAllBtn(false);
-            this.answerRight.controller.ShowMsg(this.onClickNext);
+            this.answerRight.controller.ShowMsg(gCurrentTestObj.knowledgeTips.url, this.onClickNext);
         }
         else
         {

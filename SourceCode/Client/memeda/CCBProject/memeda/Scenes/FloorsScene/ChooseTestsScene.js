@@ -218,12 +218,11 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
     this.updateBuyMsgBoxState();
 };
 
-ChooseTestsScene.prototype.onPressedCollection = function () {
-	// test
-    if(!Global_isWeb())
-    {
-        memeda.OfferWallController.show();
-    }
+ChooseTestsScene.prototype.onPressedAward = function () {
+    // 打开领取奖励界面
+    debugMsgOutput("[UI Event] Clicked award Button!");
+	this.awardMsgBox.controller.show();
+
 };
 
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
