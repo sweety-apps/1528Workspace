@@ -97,7 +97,6 @@ function CoinMgr_checkExtraCoin(callBackObj) {
     //http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
     http.onreadystatechange = function(){
         if( http.readyState == 4 && http.status == 200 ) {
-            debugMsgOutput("http.readyState == 4 && http.status == 200");
             if ( !callBackObj.wachatDidFinish(http.responseText) ) {
                 debugMsgOutput("callBackObj.wachatDidFinish");
                 memeda.OfferWallController.getInstance().requestOnlinePointCheck();
@@ -109,6 +108,3 @@ function CoinMgr_checkExtraCoin(callBackObj) {
     
     http.send(null);
 }
-
-
-CoinMgr_Init();

@@ -56,13 +56,11 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
     // 初始化多盟
-    if(!Global_isWeb())
-    {
-        debugMsgOutput("" + memeda.OfferWallController);
-        memeda.OfferWallController.init();
-        
-        this.checkWechatShared();
-    }
+	if ( !Global_isWeb() ) {
+	    debugMsgOutput("" + memeda.OfferWallController);
+    	memeda.OfferWallController.init();
+	}
+    this.QueryExtraCoin();
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -220,40 +218,6 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
     this.updateBuyMsgBoxState();
 };
 
-ChooseTestsScene.prototype.checkWechatShared = function () {
-	// 查询通过微信分享是否获得金币
-	//if ( Global_isWeb() ) { // 页面版没有这个功能
-	//    return ;	
-	//}
-	
-	var time = sys.localStorage.getItem("WechatTime");
-	if ( time == "" || time == null ) { 
-		time = 0;
-	}
-	
-	var now = Math.floor(Date.now() / 1000 / 3600);	// 小时
-	
-	debugMsgOutput(""+now);
-	debugMsgOutput(""+time);
-	
-	if ( Math.abs(time - now) >= 0 ) {
-		// 查服务器
-		sys.localStorage.setItem("WechatTime", now);
-		var http = new XMLHttpRequest();
-		
-		http.open("GET", "http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());		
-		//http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
-		http.onreadystatechange = function(){
-			if( http.readyState == 4 && http.status == 200 ) {
-                gChooseTestsSceneThis.parseWeChatData(http.responseText);
-			}
-		};
-		http.send(null);
-			
-		debugMsgOutput(http);
-	}
-};
-
 ChooseTestsScene.prototype.onPressedCollection = function () {
 	// test
     if(!Global_isWeb())
@@ -270,7 +234,7 @@ ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
 
 ChooseTestsScene.prototype.QueryExtraCoin = function () {
     var callBackObj = new Object();
-    callBackObj.wachatDidFinish = parseWeChatData;
+    callBackObj.wachatDidFinish = this.parseWeChatData;
 
     callBackObj.offerWallDidFinishCheck = function(responseText) {
         debugMsgOutput("offerWallDidFinishCheck " + responseText);
