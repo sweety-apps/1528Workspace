@@ -18,20 +18,17 @@ GiftBuyMessageBox.prototype.onBuyCallbackMethod = null;
 
 GiftBuyMessageBox.prototype.onClickedBuy = function () {
     debugMsgOutput("Buy Clicked!");
-    if(!Global_isWeb())
+    if(this.onBuyCallbackMethod != null && this.onBuyCallbackMethod != undefined)
     {
-        if(this.onBuyCallbackMethod != null && this.onBuyCallbackMethod != undefined)
+        if(this.onBuyCallbackTarget != null && this.onBuyCallbackTarget != undefined)
         {
-            if(this.onBuyCallbackTarget != null && this.onBuyCallbackTarget != undefined)
-            {
-                this.onBuyCallbackTarget.onBuyCallbackMethodTmp = this.onBuyCallbackMethod;
-                this.onBuyCallbackTarget.onBuyCallbackMethodTmp();
-                this.onBuyCallbackTarget.onBuyCallbackMethodTmp = null;
-            }
-            else
-            {
-                this.onBuyCallbackMethod();
-            }
+            this.onBuyCallbackTarget.onBuyCallbackMethodTmp = this.onBuyCallbackMethod;
+            this.onBuyCallbackTarget.onBuyCallbackMethodTmp();
+            this.onBuyCallbackTarget.onBuyCallbackMethodTmp = null;
+        }
+        else
+        {
+            this.onBuyCallbackMethod();
         }
     }
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Animation Timeline");

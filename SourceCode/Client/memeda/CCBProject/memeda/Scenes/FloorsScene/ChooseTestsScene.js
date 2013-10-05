@@ -199,10 +199,18 @@ ChooseTestsScene.prototype.onScrollDoorToPresent = function (isDoorOpened, floor
 
 ChooseTestsScene.prototype.testsFinishedPercent = 5;
 
+ChooseTestsScene.prototype.onClickedBuySpyPackageButton = function () {
+    // 打开金币购买界面
+    debugMsgOutput("[UI Event] Clicked Buy Spy Package Button!");
+    this.buyCoinMsgBox.controller.showAndBuyItem("6元侦探礼包",Purchase_getSpyPackageProductID());
+};
+
 ChooseTestsScene.prototype.showBuyMessageBox = function()
 {
     if(this.buyMsgBox.showState != kBuyMessageBoxStateShowing)
     {
+        this.buyMsgBox.controller.onBuyCallbackTarget = this;
+        this.buyMsgBox.controller.onBuyCallbackMethod = this.onClickedBuySpyPackageButton;
         this.buyMsgBox.controller.setFinishedPercents(ChooseTestsScene.prototype.testsFinishedPercent);
         this.buyMsgBox.animationManager.runAnimationsForSequenceNamed("Popup Animation Timeline");
         this.buyMsgBox.showState = kBuyMessageBoxStateShowing;
