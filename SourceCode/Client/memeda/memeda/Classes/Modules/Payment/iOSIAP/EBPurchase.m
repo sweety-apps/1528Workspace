@@ -39,6 +39,12 @@
 
 -(bool) requestProduct:(NSString*)productId 
 {
+    while ([[[SKPaymentQueue defaultQueue] transactions] count] > 0)
+    {
+        SKPaymentTransaction *transaction = [[[SKPaymentQueue defaultQueue] transactions] objectAtIndex:0];
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    }
+    
     if (productId != nil) {
 
         NSLog(@"EBPurchase requestProduct: %@", productId);
@@ -117,9 +123,6 @@
     if ([SKPaymentQueue canMakePayments]) {
         // Yes, In-App Purchase is enabled on this device.
         // Proceed to restore purchases.
-                
-        // Assign an observer to monitor the transaction status.
-        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
         
         // Request to restore previous purchases.
         [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
@@ -198,11 +201,11 @@
 			case SKPaymentTransactionStateFailed:
 				// Purchase was either cancelled by user or an error occurred.
 				
-				if (transaction.error.code != SKErrorPaymentCancelled) {
+				//if (transaction.error.code != SKErrorPaymentCancelled) {
 					// A transaction error occurred, so notify user.
                     
                     [delegate failedPurchase:self error:transaction.error.code message:transaction.error.localizedDescription];
-				}
+				//}
 				// Finished transactions should be removed from the payment queue.
 				[[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 				break;
@@ -214,9 +217,6 @@
 - (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray *)transactions
 {
     NSLog(@"EBPurchase removedTransactions");
-    
-    // Release the transaction observer since transaction is finished/removed.
-    [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
 }
 
 // Called when SKPaymentQueue has finished sending restored transactions.
@@ -263,8 +263,20 @@
 
 #pragma mark - Internal Methods & Events
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        // Assign an observer to monitor the transaction status.
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    }
+    return self;
+}
+
 - (void)dealloc
 {
+    // Release the transaction observer since transaction is finished/removed.
+    [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
     [validProduct release];
     [delegate release];
     

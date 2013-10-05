@@ -2233,7 +2233,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>arial-14.fnt</string>
+												<string>UI/fonts/BuyFont.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -2685,7 +2685,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>arial-14.fnt</string>
+												<string>UI/fonts/BuyFont.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -3135,7 +3135,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>arial-14.fnt</string>
+												<string>UI/fonts/BuyFont.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -3585,7 +3585,7 @@
 												<key>type</key>
 												<string>FntFile</string>
 												<key>value</key>
-												<string>arial-14.fnt</string>
+												<string>UI/fonts/BuyFont.fnt</string>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -3607,6 +3607,8 @@
 												<string>x 300</string>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 								</array>
 								<key>customClass</key>

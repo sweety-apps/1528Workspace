@@ -2,12 +2,6 @@
 // BuyCoinMessageBox class
 //
 
-//场景状态
-var kBuyCoinMessageBoxStateHidden = 0;
-var kBuyCoinMessageBoxStatePopup = 1;
-var kBuyCoinMessageBoxStateShowing = 2;
-var kBuyCoinMessageBoxStateHiding = 3;
-
 //商品命名
 var kBuyCoinNameBuy300 = "300金币";
 var kBuyCoinNameBuy600 = "600金币";
@@ -19,10 +13,13 @@ var BuyCoinMessageBox = function() {
 
 BuyCoinMessageBox.prototype.sceneState = kFloorsSceneStateNormal;
 
-BuyCoinMessageBox.prototype.producID = "";
+BuyCoinMessageBox.prototype.productID = "";
 BuyCoinMessageBox.prototype.purchaseName = "";
 BuyCoinMessageBox.prototype.isPurchaseCoinsHere = true;
 BuyCoinMessageBox.prototype.coninAddNum = 0;
+BuyCoinMessageBox.prototype.hiddenCallbackTarget = null;
+BuyCoinMessageBox.prototype.hiddenCallbackMethod = null;
+BuyCoinMessageBox.prototype.purchaseHasSucceed = false;
 
 BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 	// 设备上面需要开启触摸
@@ -37,17 +34,41 @@ BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 
 BuyCoinMessageBox.prototype.show = function ()
 {
+    this.purchaseHasSucceed = false;
     this.purchaseName = null;
-    this.producID = null;
+    this.productID = null;
     this.coninAddNum = 0;
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Popup Timeline");
     this.isPurchaseCoinsHere = true;
 };
 
+BuyCoinMessageBox.prototype.doCallbackFunctions = function()
+{
+    //回调
+    if(this.hiddenCallbackMethod != null && this.hiddenCallbackMethod != null)
+    {
+        if(this.hiddenCallbackTarget != null && this.hiddenCallbackTarget != null)
+        {
+            this.hiddenCallbackTarget.hiddenCallbackMethodTmp = this.hiddenCallbackMethod;
+            this.hiddenCallbackTarget.hiddenCallbackMethodTmp(this.productID,this.purchaseHasSucceed);
+            this.hiddenCallbackTarget.hiddenCallbackMethodTmp = null;
+        }
+        else
+        {
+            this.hiddenCallbackMethod(this.productID,this.purchaseHasSucceed);
+        }
+    }
+    this.hiddenCallbackTarget = null;
+    this.hiddenCallbackMethod = null;
+};
+
 BuyCoinMessageBox.prototype.hide = function ()
 {
+    this.doCallbackFunctions();
+    //隐藏动画
     this.purchaseName = null;
-    this.producID = null;
+    this.productID = null;
+    this.purchaseHasSucceed = false;
     if(this.isPurchaseCoinsHere)
     {
         this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Timeline");
@@ -64,7 +85,7 @@ BuyCoinMessageBox.prototype.showAndBuyItem = function (itemName,productID)
     this.coninAddNum = 0;
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Normal Buy Popup Timeline");
     this.purchaseName = itemName;
-    this.producID = productID;
+    this.productID = productID;
     Purchase_payForItem(productID,this,this.onBuyItemFinished);
 };
 
@@ -108,6 +129,7 @@ BuyCoinMessageBox.prototype.onClickedGetCoin = function ()
     {
         CoinMgr_Change(this.coninAddNum);
     }
+    this.doCallbackFunctions();
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Succeed Pay Dismiss Timeline");
 };
 
@@ -146,6 +168,7 @@ BuyCoinMessageBox.prototype.onClickedBuy60 = function ()
 BuyCoinMessageBox.prototype.onBuyItemSucceed = function (itemName,state,msg)
 {
     debugMsgOutput("\<IAP Callback\> On Buy "+itemName+" Succeed!");
+    this.calculateCoinAddNum();
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Succeed Pay Timeline");
 };
 
@@ -153,34 +176,46 @@ BuyCoinMessageBox.prototype.onBuyItemFailedOrCancelled = function (itemName,stat
 {
     debugMsgOutput("\<IAP Callback\> On Buy "+itemName+" Failed! :(");
     this.coninAddNum = 0;
-    this.rootNode.animationManager.runAnimationsForSequenceNamed("Reset Timeline");
+    this.purchaseHasSucceed = false;
+    if(this.isPurchaseCoinsHere)
+    {
+        this.rootNode.animationManager.runAnimationsForSequenceNamed("Reset Timeline");
+    }
+    else
+    {
+        this.hide();
+    }
 };
 
 BuyCoinMessageBox.prototype.calculateCoinAddNum = function ()
 {
     if(this.purchaseName == kBuyCoinNameBuy300)
     {
+        this.purchaseHasSucceed = true;
         this.coninAddNum = 300;
     }
     else if(this.purchaseName == kBuyCoinNameBuy600)
     {
+        this.purchaseHasSucceed = true;
         this.coninAddNum = 600;
     }
     else if(this.purchaseName == kBuyCoinNameBuy1500)
     {
+        this.purchaseHasSucceed = true;
         this.coninAddNum = 1500;
     }
     else if(this.purchaseName == kBuyCoinNameBuy3000)
     {
+        this.purchaseHasSucceed = true;
         this.coninAddNum = 3666;
     }
-    else if(this.producID != null && this.producID.length > 0)
+    else if(this.productID != null && this.productID.length > 0)
     {
-        if(this.producID == Purchase_getSpyPackageProductID())
+        if(this.productID == Purchase_getSpyPackageProductID())
         {
+            this.purchaseHasSucceed = true;
             this.coninAddNum = 1000;
+            SpecialSpyPackageMgr_SetPurchased();
         }
     }
-
-    this.rootNode.animationManager.runAnimationsForSequenceNamed("Reset Timeline");
 };

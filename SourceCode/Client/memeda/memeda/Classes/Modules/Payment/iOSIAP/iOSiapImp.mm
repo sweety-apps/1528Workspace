@@ -102,6 +102,7 @@ typedef struct tagIOS_PurchaseHandle_C{
     [productID retain];
     [_productID release];
     _productID = productID;
+    isPurchased = NO;
     
     // First, ensure that the SKProduct that was requested by
     // the EBPurchase requestProduct method in the viewWillAppear
@@ -155,12 +156,10 @@ typedef struct tagIOS_PurchaseHandle_C{
     } else {
         // Product is NOT available in the App Store, so notify user.
         
-        //buyButton.enabled = NO; // Ensure buy button stays disabled.
-        //[buyButton setTitle:@"Buy Game Levels Pack" forState:UIControlStateNormal];
-        
-        UIAlertView *unavailAlert = [[UIAlertView alloc] initWithTitle:@"Not Available" message:@"This In-App Purchase item is not available in the App Store at this time. Please try again later." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [unavailAlert show];
-        [unavailAlert release];
+        if (_callback != NULL)
+        {
+            _callback(kiOSiap_ResultCancel,[_productID UTF8String],[@"请求超时了!请检测网络。" UTF8String],_context);
+        }
     }
 }
 
@@ -189,10 +188,6 @@ typedef struct tagIOS_PurchaseHandle_C{
         
         // 2 - Notify the user that the transaction was successful.
         
-        UIAlertView *updatedAlert = [[UIAlertView alloc] initWithTitle:@"Thank You!" message:@"Your purhase was successful and the Game Levels Pack is now unlocked for your enjoyment!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [updatedAlert show];
-        [updatedAlert release];
-        
         if (_callback != NULL)
         {
             _callback(kiOSiap_ResultSuccess,[productId UTF8String],"",_context);
@@ -206,10 +201,6 @@ typedef struct tagIOS_PurchaseHandle_C{
     NSLog(@"iOSPurchaseImpl failedPurchase");
     
     // Purchase or Restore request failed or was cancelled, so notify the user.
-    
-    UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:@"Purchase Stopped" message:@"Either you cancelled the request or Apple reported a transaction error. Please try again later, or contact the app's customer support for assistance." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [failedAlert show];
-    [failedAlert release];
     
     if (_callback != NULL)
     {
@@ -226,10 +217,6 @@ typedef struct tagIOS_PurchaseHandle_C{
     // If the user previously purchased the item, they will NOT be re-charged again, but it should
     // restore their purchase.
     
-    UIAlertView *restoreAlert = [[UIAlertView alloc] initWithTitle:@"Restore Issue" message:@"A prior purchase transaction could not be found. To restore the purchased product, tap the Buy button. Paid customers will NOT be charged again, but the purchase will be restored." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [restoreAlert show];
-    [restoreAlert release];
-    
     if (_callback != NULL)
     {
         _callback(kiOSiap_ResultCancel,[_productID UTF8String],"",_context);
@@ -242,22 +229,9 @@ typedef struct tagIOS_PurchaseHandle_C{
     
     // Restore request failed or was cancelled, so notify the user.
     
-    UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:@"Restore Stopped" message:@"Either you cancelled the request or your prior purchase could not be restored. Please try again later, or contact the app's customer support for assistance." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [failedAlert show];
-    [failedAlert release];
-    
     if (_callback != NULL)
     {
         _callback(kiOSiap_ResultFailed,[_productID UTF8String],[errorMessage UTF8String],_context);
-    }
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
     }
 }
 

@@ -31,7 +31,7 @@ GiftBuyMessageBox.prototype.onClickedBuy = function () {
             this.onBuyCallbackMethod();
         }
     }
-    this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Animation Timeline");
+    //this.rootNode.animationManager.runAnimationsForSequenceNamed("Dismiss Animation Timeline");
 };
 
 GiftBuyMessageBox.prototype.onClickedClose = function () {

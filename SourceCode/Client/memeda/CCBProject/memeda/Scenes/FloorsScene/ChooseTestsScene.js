@@ -90,7 +90,10 @@ ChooseTestsScene.prototype.updateBuyMsgBoxState = function ()
 
     if(this.wholeFloors.scrollState == kScrollingStateReachedBoxShowOffset && this.buyMsgBox.showState == kBuyMessageBoxStateHidden)
     {
-        this.showBuyMessageBox();
+        if(!SpecialSpyPackageMgr_IsPurchased())
+        {
+            this.showBuyMessageBox();
+        }
     }
 
     if(this.buyMsgBox.showState != kBuyMessageBoxStateShowing)
@@ -145,7 +148,10 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
 
 ChooseTestsScene.prototype.onPressedAwardButton = function()
 {
-    this.showBuyMessageBox();
+    if(!SpecialSpyPackageMgr_IsPurchased())
+    {
+        this.showBuyMessageBox();
+    }
 };
 
 ChooseTestsScene.prototype.onAnimationCompleted = function()
@@ -202,6 +208,13 @@ ChooseTestsScene.prototype.testsFinishedPercent = 5;
 ChooseTestsScene.prototype.onClickedBuySpyPackageButton = function () {
     // 打开金币购买界面
     debugMsgOutput("[UI Event] Clicked Buy Spy Package Button!");
+    this.buyCoinMsgBox.controller.hiddenCallbackTarget = this;
+    this.buyCoinMsgBox.controller.hiddenCallbackMethod = function(productID,succeed) {
+        if(succeed)
+        {
+            this.buyMsgBox.controller.onClickedClose();
+        }
+    };
     this.buyCoinMsgBox.controller.showAndBuyItem("6元侦探礼包",Purchase_getSpyPackageProductID());
 };
 

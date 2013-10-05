@@ -25,17 +25,17 @@ function Purchase_payForItem(itemID,callbackTarget,callbackMethod)
         paymentCallback.onPurchaseCallback = function (state, productID, errMsg) {
             cc.log("payment callback!");
             cc.log("state = " + state + ", productID = " + productID +", errMsg = " + errMsg);
-            if(this.callBackMethod != null)
+            if(paymentCallback.callBackMethod != null)
             {
-                if(this.callBackTarget != null)
+                if(paymentCallback.callBackTarget != null)
                 {
-                    this.callBackTarget.callBackMethodTmp = this.callBackMethod;
-                    this.callBackTarget.callBackMethodTmp.callBackMethod(state,productID,errMsg);
-                    this.callBackTarget.callBackMethodTmp = null;
+                    paymentCallback.callBackTarget.callBackMethodTmp = this.callBackMethod;
+                    paymentCallback.callBackTarget.callBackMethodTmp(state,productID,errMsg);
+                    paymentCallback.callBackTarget.callBackMethodTmp = null;
                 }
                 else
                 {
-                    this.callBackMethod(state,productID,errMsg);
+                    paymentCallback.callBackMethod(state,productID,errMsg);
                 }
             }
         };
