@@ -764,14 +764,18 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 				}
             } catch (e) {
             }
-
-            this.EnableAllBtn(false);
             
             this.clearInputAndResultChar();
             this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");	
             this.catAni.controller.Leave();
             
-            this.answerRight.controller.ShowMsg(gCurrentTestObj.knowledgeTips.url, this.onClickNext);
+            var url = null;
+            if ( gCurrentTestObj.knowledgeTips != null ) {
+            	url = gCurrentTestObj.knowledgeTips.url;
+            }
+            
+            this.EnableAllBtn(false);
+            this.answerRight.controller.ShowMsg(url, this.onClickNext);
         }
         else if ( showAni != false )
         {
@@ -949,6 +953,10 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
 }
 
 GuessScene.prototype.ClickBuy = function () {
+	if ( !gAllBtnEnable ) {
+		return ;
+	}
+	
 	var price = new Array(10, 20, 30, 40, 50, 60);
 	this.EnableAllBtn(false);
 	this.buyMsg.controller.ShowMsg(price[gBuyNum], "第" + (gBuyNum + 1) + "个字", this.onBuyMsgEnd, gBuyNum + 1);
@@ -1068,13 +1076,19 @@ GuessScene.prototype.onClickNext = function() {
 }
 
 GuessScene.prototype.EnableAllBtn = function (enable) {
+	debugMsgOutput("EnableAllBtn " + enable);
 	gAllBtnEnable = enable;
+	
 	this.coinBtn.setEnabled(enable);
 	this.returnBtn.setEnabled(enable);
 	this.chatShare.setEnabled(enable);
 }; 
 
 GuessScene.prototype.onClickedWeChatShare = function () {
+	if ( !gAllBtnEnable ) {
+		return ;
+	}
+	
 	this.EnableAllBtn(false);
     this.weChatMsg.controller.ShowMsg(gCurrentTestObj.id, function () {
 		gCurrentCCBView.EnableAllBtn(true);
@@ -1085,6 +1099,10 @@ GuessScene.prototype.onClickedWeChatShare = function () {
 };
 
 GuessScene.prototype.onClickJump = function () {
+	if ( !gAllBtnEnable ) {
+		return ;
+	}
+	
 	this.EnableAllBtn(false);
 	this.jumpMsg.controller.ShowMsg(500, function (res) {
 		if ( res == 1 ) {
@@ -1115,6 +1133,10 @@ GuessScene.prototype.checkExtraCoin = function () {
 }
 
 GuessScene.prototype.onClickedCoinButton = function (obj ) {
+	if ( !gAllBtnEnable ) {
+		return ;
+	}
+	
     debugMsgOutput("[UI Event] Clicked Coin Button!");
     obj.buyCoinMsgBox.controller.show();	
 }
