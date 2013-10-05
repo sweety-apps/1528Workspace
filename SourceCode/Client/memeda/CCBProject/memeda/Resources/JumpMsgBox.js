@@ -55,7 +55,7 @@ JumpMsgBox.prototype.onClickBuy = function() {
 	if ( CoinMgr_GetCount() < this.price ) {
 		// 金币不够
 		this.noEnoughEvent();
-		this.Hide(1);
+		this.Hide(0);
 	} else {
 		CoinMgr_Change(-1 * this.price);
 		// 加入到跳过题目的列表
