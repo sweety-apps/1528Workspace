@@ -8,12 +8,16 @@ var kAwardMessageBoxStatePopup = 1;
 var kAwardMessageBoxStateShowing = 2;
 var kAwardMessageBoxStateHiding = 1;
 
+var pAwardMessageBox = null;
+
 var AwardMessageBox = function() {
 };
 
 AwardMessageBox.prototype.sceneState = kFloorsSceneStateNormal;
 
 AwardMessageBox.prototype.onDidLoadFromCCB = function () {
+	pAwardMessageBox = this;
+	
 	// 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -46,16 +50,30 @@ AwardMessageBox.prototype.onClickedClose = function ()
 };
 
 AwardMessageBox.prototype.onClickedBuy6 = function ()
-{
-    debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 6!");
-    Purchase_payForCoinWith6RMB();
+{	// 评论
+	var url = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?mt=8&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software&id=";
+	url = url + "1234567890";
+	memeda.common.openURL(url);
 };
 
 AwardMessageBox.prototype.onClickedBuy12 = function ()
-{
-    debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 12!");
-    Purchase_payForCoinWith12RMB();
+{	// 分享
+	this.weChatMsg.controller.ShowMsg(null, function () {
+    	}, 
+    	function () {
+    		pAwardMessageBox.checkWeChat();
+    	});
 };
+
+AwardMessageBox.prototype.checkWeChat = function () {
+	var showsharecoin = sys.localStorage.getItem("showsharecoin");
+	if ( showsharecoin == "1" ) {
+		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
+		this.weChatCoinMsgBox.controller.show(function () {
+			CoinMgr_Change(500);
+		});
+	}
+}
 
 AwardMessageBox.prototype.onClickedBuy30 = function ()
 {

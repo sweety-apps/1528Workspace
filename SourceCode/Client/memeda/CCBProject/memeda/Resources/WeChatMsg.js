@@ -12,11 +12,12 @@ WeChatMsg.prototype.onDidLoadFromCCB = function () {
     {   
         this.msgLayout.setScaleX(0.84);
         this.msgLayout.setScaleY(0.84);
+        
+        this.msgLayout.setPositionY(-50);
     }
 };
 
-WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) {
-	// 显示购买消息    
+WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) { 
 	this.aid = id;
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;

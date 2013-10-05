@@ -11,6 +11,8 @@ JumpMsgBox.prototype.onDidLoadFromCCB = function () {
     {   
         this.msgLayout.setScaleX(0.84);
         this.msgLayout.setScaleY(0.84);
+        
+        this.msgLayout.setPositionY(-50);
     }
 };
 

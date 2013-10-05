@@ -12,10 +12,13 @@ WeChatCoinMessageBox.prototype.onDidLoadFromCCB = function () {
     {   
         this.msgLayout.setScaleX(0.84);
         this.msgLayout.setScaleY(0.84);
+        
+        this.msgLayout.setPositionY(-50);
     }
 };
 
 WeChatCoinMessageBox.prototype.show = function(endFun) {
+	this.rootLayer.setVisible(true);
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 

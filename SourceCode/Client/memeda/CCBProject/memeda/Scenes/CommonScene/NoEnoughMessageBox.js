@@ -3,6 +3,8 @@ var NoEnoughMessageBox = function() {};
 
 NoEnoughMessageBox.prototype.onDidLoadFromCCB = function () {
     // Do Scale
+    this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
+    
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
     var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
     var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
@@ -12,15 +14,25 @@ NoEnoughMessageBox.prototype.onDidLoadFromCCB = function () {
     {   
         this.msgLayout.setScaleX(0.84);
         this.msgLayout.setScaleY(0.84);
+        
+        this.msgLayout.setPositionY(-50);
     }
 };
 
 NoEnoughMessageBox.prototype.show = function(endFun) {
+	this.msgLayout.setVisible(true);
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
+
+NoEnoughMessageBox.prototype.onAnimationComplete = function () {
+	var name = this.rootNode.animationManager.getLastCompletedSequenceName();
+	if ( name == "End Timeline" ) {
+		this.msgLayout.setVisible(false);		
+	}
+}
 
 NoEnoughMessageBox.prototype.Hide = function(res) {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");

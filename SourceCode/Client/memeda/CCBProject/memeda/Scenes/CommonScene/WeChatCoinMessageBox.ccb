@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -735,7 +735,7 @@
 												<key>type</key>
 												<string>Degrees</string>
 												<key>value</key>
-												<real>0.0</real>
+												<real>72</real>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -893,7 +893,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>51.25</real>
+													<real>51.900001525878906</real>
 													<real>62</real>
 													<integer>4</integer>
 												</array>
@@ -1042,9 +1042,9 @@
 														<string>Position</string>
 														<key>value</key>
 														<array>
-															<real>50</real>
-															<real>32.042255401611328</real>
-															<integer>4</integer>
+															<real>160</real>
+															<real>182</real>
+															<integer>0</integer>
 														</array>
 													</dict>
 													<dict>
@@ -1162,9 +1162,9 @@
 														<string>Position</string>
 														<key>value</key>
 														<array>
-															<real>89.0625</real>
-															<real>67.253524780273438</real>
-															<integer>4</integer>
+															<real>285</real>
+															<real>382</real>
+															<integer>0</integer>
 														</array>
 													</dict>
 													<dict>
@@ -1273,7 +1273,7 @@
 												<array>
 													<real>0.0</real>
 													<real>0.0</real>
-													<integer>4</integer>
+													<integer>0</integer>
 												</array>
 											</dict>
 											<dict>
@@ -2012,9 +2012,9 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
-									<real>100</real>
-									<integer>1</integer>
+									<real>320</real>
+									<real>568</real>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -2084,11 +2084,19 @@
 				<key>displayName</key>
 				<string>CCLayer</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>rootLayer</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
+					<dict>
+						<key>name</key>
+						<string>visible</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
 					<dict>
 						<key>name</key>
 						<string>position</string>
@@ -2166,6 +2174,8 @@
 						<true/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -2426,7 +2436,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.73333334922790527</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

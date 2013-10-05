@@ -1273,7 +1273,7 @@
 												<array>
 													<real>0.0</real>
 													<real>0.0</real>
-													<integer>4</integer>
+													<integer>0</integer>
 												</array>
 											</dict>
 											<dict>
@@ -1940,9 +1940,9 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
-									<real>100</real>
-									<integer>1</integer>
+									<real>320</real>
+									<real>568</real>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -2003,6 +2003,8 @@
 								<true/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
