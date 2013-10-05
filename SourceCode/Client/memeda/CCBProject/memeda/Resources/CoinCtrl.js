@@ -21,6 +21,8 @@ CoinCtrl.prototype.onClickBuy = function () {
 
 CoinCtrl.prototype.onDidLoadFromCCB = function () {
 	debugMsgOutput("CoinCtrl.prototype.onDidLoadFromCCB");
+	this.schedule = false;
+	
 	if ( this.registerID == null ) {
 		this.registerID = CoinMgr_Register(CoinChanged, this);
 
@@ -36,6 +38,7 @@ CoinCtrl.prototype._isRunning = function () {
 CoinCtrl.prototype.update = function() {
 	debugMsgOutput("CoinCtrl.prototype.update");
 	if ( this.curCoin == this.targetCoin ) {
+		this.schedule = false;
 		cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
 	} else {
 		if ( this.curCoin < this.targetCoin ) {
@@ -72,6 +75,9 @@ CoinCtrl.prototype.update = function() {
 CoinCtrl.prototype.changed = function (coin) {
 	if ( this.curCoin != coin ) {
 		this.targetCoin = coin;
-		cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
+		if ( !this.schedule ) {
+			this.schedule = true;
+			cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
+		}
 	}
 };
