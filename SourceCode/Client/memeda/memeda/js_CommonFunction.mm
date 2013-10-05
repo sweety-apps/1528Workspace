@@ -80,5 +80,13 @@ void CommonFunction::_js_register(JSContext *cx, JSObject *obj)
 
 JSBool CommonFunction::openURL(JSContext* cx, uint32_t argc, jsval* vp)
 {
+    jsval *argv = JS_ARGV(cx, vp);
+    JSString* jsobj = JSVAL_TO_STRING(argv[0]);
+    JSStringWrapper pw(jsobj);
+    string strKey = pw.get().c_str();
+
+    NSString* url = [NSString stringWithUTF8String:strKey.c_str()];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+
     return JS_TRUE;
 }

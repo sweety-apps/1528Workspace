@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */; };
 		A614B3D317DF141E0095CD40 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */; };
+		A6234C5F17FFBC3400BD6492 /* js_CommonFunction.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6234C5E17FFBC3400BD6492 /* js_CommonFunction.mm */; };
 		A679A40417F1AD1D009B5AA4 /* jsb_SocialShareAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A679A40117F1AD1D009B5AA4 /* jsb_SocialShareAPI.cpp */; };
 		A679A47517F1AE67009B5AA4 /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CFB917B2059500821A66 /* libwebp.a */; };
 		A69A9A1217F57DAF001CF694 /* EverNoteConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A99CB17F57DAE001CF694 /* EverNoteConnection.framework */; };
@@ -45,7 +46,6 @@
 		A6A7021317F01B7E005FBA13 /* AnalyticsUmeng.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A7021017F01B7E005FBA13 /* AnalyticsUmeng.m */; };
 		A6A7021717F0328A005FBA13 /* Stat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6A7021617F0328A005FBA13 /* Stat.cpp */; };
 		A6B3B1DA17EECE2A00CC7708 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B3B1D917EECE2900CC7708 /* libz.dylib */; };
-		A6EDF9C817FEA77C00329ED9 /* js_CommonFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6EDF9C717FEA77C00329ED9 /* js_CommonFunction.cpp */; };
 		F30794F717F2FB33006D2102 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30794F617F2FB33006D2102 /* CoreTelephony.framework */; };
 		F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4217B2059300821A66 /* QuartzCore.framework */; };
 		F316CE4517B2059300821A66 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4417B2059300821A66 /* OpenGLES.framework */; };
@@ -483,6 +483,7 @@
 		A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A614B3D017DF14080095CD40 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		A6234C5E17FFBC3400BD6492 /* js_CommonFunction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = js_CommonFunction.mm; sourceTree = "<group>"; };
 		A679A40017F1AD1D009B5AA4 /* jsb_SocialShareAPI_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsb_SocialShareAPI_api.js; sourceTree = "<group>"; };
 		A679A40117F1AD1D009B5AA4 /* jsb_SocialShareAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_SocialShareAPI.cpp; sourceTree = "<group>"; };
 		A679A40217F1AD1D009B5AA4 /* jsb_SocialShareAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_SocialShareAPI.hpp; sourceTree = "<group>"; };
@@ -549,7 +550,6 @@
 		A6A7021617F0328A005FBA13 /* Stat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stat.cpp; sourceTree = "<group>"; };
 		A6B3B1D917EECE2900CC7708 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A6EDF9C617FEA76B00329ED9 /* js_CommonFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = js_CommonFunction.h; sourceTree = "<group>"; };
-		A6EDF9C717FEA77C00329ED9 /* js_CommonFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = js_CommonFunction.cpp; sourceTree = "<group>"; };
 		F30794F617F2FB33006D2102 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F316CE3F17B2059300821A66 /* memeda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memeda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F316CE4217B2059300821A66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -3051,7 +3051,7 @@
 				A69F062417F8177000B6B90A /* js_OfferWallController.h */,
 				A69F062517F8178100B6B90A /* js_OfferWallController.cpp */,
 				A6EDF9C617FEA76B00329ED9 /* js_CommonFunction.h */,
-				A6EDF9C717FEA77C00329ED9 /* js_CommonFunction.cpp */,
+				A6234C5E17FFBC3400BD6492 /* js_CommonFunction.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3600,6 +3600,7 @@
 				F316D00B17B2059500821A66 /* CCComponent.cpp in Sources */,
 				F316D00E17B2059500821A66 /* CCComponentContainer.cpp in Sources */,
 				F316D01217B2059500821A66 /* ccCArray.cpp in Sources */,
+				A6234C5F17FFBC3400BD6492 /* js_CommonFunction.mm in Sources */,
 				F316D01817B2059500821A66 /* TGAlib.cpp in Sources */,
 				F316D01C17B2059500821A66 /* tinyxml2.cpp in Sources */,
 				F316D01F17B2059500821A66 /* TransformUtils.cpp in Sources */,
@@ -3766,7 +3767,6 @@
 				F316D29417B2059A00821A66 /* spine-cocos2dx.cpp in Sources */,
 				F316D2A317B2059A00821A66 /* AppDelegate.cpp in Sources */,
 				A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */,
-				A6EDF9C817FEA77C00329ED9 /* js_CommonFunction.cpp in Sources */,
 				A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */,
 				A6A701F217F01AEA005FBA13 /* PluginUtilsIOS.mm in Sources */,
 				A6A701F317F01AEA005FBA13 /* ProtocolAds.mm in Sources */,

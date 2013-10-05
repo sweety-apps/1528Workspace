@@ -983,6 +983,16 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 			}
 		}
 		
+		// TODO :
+		if ( inputIndex == -1 ) {
+			// 	错字正在使用用
+			for (var i = 0; i < gResultCharButtons.length; i ++ ) {
+				if ( gResultCharButtons[i].controller.getText() == resultChar ) {
+
+					break;
+				}
+			}
+		}
 		debugMsgOutput("result " + resultIndex + "   " + resultChar + "   " + answer);
 
 		if ( choosedButtons[resultIndex] != emptyButton ) {

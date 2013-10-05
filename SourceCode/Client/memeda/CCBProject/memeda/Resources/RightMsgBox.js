@@ -22,7 +22,7 @@ RightMsgBox.prototype.onClickNext = function() {
 }
 
 RightMsgBox.prototype.onClickURL = function() {
-	
+	memeda.common.openURL(this.Url);
 }
 
 RightMsgBox.prototype.Hide = function () {
