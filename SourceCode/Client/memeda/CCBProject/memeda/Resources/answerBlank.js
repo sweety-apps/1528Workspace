@@ -40,6 +40,6 @@ AnswerBlank.prototype.GetIndexNumber = function () {
 	return this.numIndex;	
 }
 
-AnswerBlank.prototype.error = function () {
+AnswerBlank.prototype.flush = function () {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Error" + imageIndex + " Timeline");	
 }

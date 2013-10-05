@@ -4108,7 +4108,7 @@
 				F316D2EA17B2059B00821A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		F316D2EB17B2059B00821A66 /* Build configuration list for PBXNativeTarget "memeda" */ = {
 			isa = XCConfigurationList;
@@ -4117,7 +4117,7 @@
 				F316D2ED17B2059B00821A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

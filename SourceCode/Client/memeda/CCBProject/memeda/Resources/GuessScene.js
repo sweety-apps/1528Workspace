@@ -713,36 +713,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     for(i = 0; i < gResultCharButtons.length; i++)
     {
     	gResultCharButtons[i].controller.SetIndexNumber(i);
-    	gResultCharButtons[i].controller.AttachClickEvent(function (obj) {
-     		if ( !gAllBtnEnable ) {
-                return;				
-			}
-			
-			if(gCurrentGuessState != kGuessStateNormal) {
-                return;
-            }
-
-            debugMsgOutput("Result");
-
-            var choosedIndex = obj.GetIndexNumber();
-
-            if(choosedButtons[choosedIndex] != emptyButton) {
-                var sourceIndex = choosedButtons[choosedIndex].sourceButtonIndex;
-
-                choosedButtons[choosedIndex] = emptyButton;
-                choosedCharStrings[choosedIndex] = "";
-                choosedButtonCount--;
-
-                gCurrentChoosedCharButton = null;
-                gCurrentPushedResultButton = null;
-
-                cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-                gInputCharButtons[sourceIndex].setVisible(true);
-
-                gCurrentCCBView.updateInputCharsAndResultChars();
-
-            }
-        });
+    	gResultCharButtons[i].controller.AttachClickEvent(gCurrentCCBView.onClickResultBtn);
     }
 };
 
@@ -752,7 +723,7 @@ GuessScene.prototype.setupInputCharsAndResultChars = function (index)
     Problem_RequestInfo(index, this.onReceivedTestData,null,this);
 };
 
-GuessScene.prototype.updateInputCharsAndResultChars = function ()
+GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 {
     var i = 0;
     var resultString = "";
@@ -796,7 +767,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             this.EnableAllBtn(false);
             this.answerRight.controller.ShowMsg(gCurrentTestObj.knowledgeTips.url, this.onClickNext);
         }
-        else
+        else if ( showAni != false )
         {
             // 上报数据
             if ( !Global_isWeb() ) {
@@ -809,7 +780,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function ()
             //
 		    for(i = 0; i < gResultCharButtons.length; i++)
 		    {
-				gResultCharButtons[i].controller.error();
+				gResultCharButtons[i].controller.flush();
 		    }
             
             debugMsgOutput("可惜答错了，再接再厉！");
@@ -957,6 +928,38 @@ GuessScene.prototype.ClickBuy = function () {
 	this.buyMsg.controller.ShowMsg(price[gBuyNum], "第" + (gBuyNum + 1) + "个字", this.onBuyMsgEnd, gBuyNum + 1);
 }
 
+GuessScene.prototype.onClickResultBtn = function (obj, playmusic) {
+    if ( !gAllBtnEnable ) {
+        return;				
+	}
+			
+	if(gCurrentGuessState != kGuessStateNormal) {
+        return;
+    }
+
+    debugMsgOutput("Result");
+
+    var choosedIndex = obj.GetIndexNumber();
+
+    if(choosedButtons[choosedIndex] != emptyButton) {
+        var sourceIndex = choosedButtons[choosedIndex].sourceButtonIndex;
+
+        choosedButtons[choosedIndex] = emptyButton;
+        choosedCharStrings[choosedIndex] = "";
+        choosedButtonCount--;
+
+        gCurrentChoosedCharButton = null;
+        gCurrentPushedResultButton = null;
+
+		if ( playmusic != false ) {
+        	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+		}
+		
+		gInputCharButtons[sourceIndex].setVisible(true);
+        gCurrentCCBView.updateInputCharsAndResultChars();
+    }
+}
+        
 GuessScene.prototype.onBuyMsgEnd = function (res) {
 	gCurrentCCBView.EnableAllBtn(true);
 	if ( res == 1 ) {
@@ -983,16 +986,26 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 			}
 		}
 		
-		// TODO :
 		if ( inputIndex == -1 ) {
-			// 	错字正在使用用
+			// 	错字正在使用
+			var tmp = null;
 			for (var i = 0; i < gResultCharButtons.length; i ++ ) {
 				if ( gResultCharButtons[i].controller.getText() == resultChar ) {
-
+					tmp = gResultCharButtons[i].controller;
 					break;
 				}
 			}
+			gCurrentCCBView.onClickResultBtn(tmp, false);
+			
+			for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
+				if ( gInputCharButtons[i].isVisible() &&
+						gInputCharButtons[i].controller.getText() == resultChar ) {
+					inputIndex = i;
+					break;		
+				}
+			}
 		}
+		
 		debugMsgOutput("result " + resultIndex + "   " + resultChar + "   " + answer);
 
 		if ( choosedButtons[resultIndex] != emptyButton ) {
@@ -1015,8 +1028,9 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
         
         gInputCharButtons[inputIndex].setVisible(false);
         
-
-		gCurrentCCBView.updateInputCharsAndResultChars();
+		gCurrentCCBView.updateInputCharsAndResultChars(false);
+		
+		gResultCharButtons[resultIndex].controller.flush();
 	}
 }
 
