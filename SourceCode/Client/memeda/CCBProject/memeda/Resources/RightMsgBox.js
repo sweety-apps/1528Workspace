@@ -18,7 +18,7 @@ RightMsgBox.prototype.ShowMsg = function(url, onClose) {
 };
 
 RightMsgBox.prototype.onClickNext = function() {
-	this.onCloseFun();	
+	this.Hide();
 }
 
 RightMsgBox.prototype.onClickURL = function() {
@@ -32,5 +32,8 @@ RightMsgBox.prototype.Hide = function () {
 RightMsgBox.prototype.onAnimationComplete = function() {
 	if ( this.rootNode.animationManager.getLastCompletedSequenceName() == "Hide Timeline" ) {
 		this.msgLayout.setVisible(false);	
+		if ( this.onCloseFun != null ) {
+			this.onCloseFun();
+		}
 	}
 }

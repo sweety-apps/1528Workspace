@@ -183,6 +183,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 	
     for (var i = 0; i < gResultCharAllButtons.length; i ++) {
         gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
+        gResultCharAllButtons[i].controller.Hide();
     }
     
     this.checkExtraCoin();
@@ -765,6 +766,11 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             }
 
             this.EnableAllBtn(false);
+            
+            this.clearInputAndResultChar();
+            this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");	
+            this.catAni.controller.Leave();
+            
             this.answerRight.controller.ShowMsg(gCurrentTestObj.knowledgeTips.url, this.onClickNext);
         }
         else if ( showAni != false )
@@ -787,6 +793,21 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
         }
     }
 };
+
+GuessScene.prototype.clearInputAndResultChar = function () { 
+    for(i = 0; i < gInputCharButtons.length; i++)
+    {
+    	gInputCharButtons[i].setVisible(true);
+        gInputCharButtons[i].controller.setText("");
+        gInputCharButtons[i].controller.setStatus(false);	// 按钮不可点击
+    }
+
+    for(i = 0; i < gResultCharButtons.length; i++)
+    {
+        gResultCharButtons[i].controller.setText("");
+        gResultCharButtons[i].controller.Hide();
+    }	
+}
 
 GuessScene.prototype.clearInputCharsAndResultChars = function ()
 {
@@ -920,6 +941,11 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
 	for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
 		gInputCharButtons[i].controller.setStatus(true);	
 	}
+	
+    for(i = 0; i < gResultCharButtons.length; i++)
+    {
+    	gResultCharButtons[i].controller.Show();
+    }
 }
 
 GuessScene.prototype.ClickBuy = function () {
@@ -1038,7 +1064,6 @@ GuessScene.prototype.onClickNext = function() {
 	GuessScene_SetFloorInfo(gProblem + 1, 3);
 	           
 	gCurrentCCBView.EnableAllBtn(true);
-	gCurrentCCBView.answerRight.controller.Hide();
 	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
 }
 

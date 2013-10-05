@@ -2,7 +2,7 @@ var AnswerBlank = function() {};
 var imageIndex = 1;
 
 AnswerBlank.prototype.setImage = function(image) {
-	this.rootNode.animationManager.runAnimationsForSequenceNamed("Static" + image + " Timeline");	
+	//this.rootNode.animationManager.runAnimationsForSequenceNamed("Static" + image + " Timeline");	
 	imageIndex = image;
 };
 
@@ -42,4 +42,15 @@ AnswerBlank.prototype.GetIndexNumber = function () {
 
 AnswerBlank.prototype.flush = function () {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Error" + imageIndex + " Timeline");	
+}
+
+AnswerBlank.prototype.Hide = function () {
+	this.rootLayout.setVisible(false);
+	this.rootLayout.setScaleX(0);
+    this.rootLayout.setScaleY(0);	
+}
+
+AnswerBlank.prototype.Show = function () {
+	this.rootNode.animationManager.runAnimationsForSequenceNamed("Visible" + imageIndex + " Timeline");	
+	this.rootLayout.setVisible(true);
 }
