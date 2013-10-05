@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>12</integer>
+	<integer>20</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -3098,7 +3098,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>87</real>
+									<real>34</real>
 									<real>41</real>
 									<integer>4</integer>
 								</array>
@@ -4322,13 +4322,13 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>0.20000000298023224</real>
+			<real>0.10000000149011612</real>
 			<key>name</key>
 			<string>Fade Timeline3</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.10000000149011612</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -4356,7 +4356,7 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>0.20000000298023224</real>
+			<real>0.10000000149011612</real>
 			<key>name</key>
 			<string>Fade Timeline2</string>
 			<key>offset</key>
@@ -4390,7 +4390,7 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>0.20000000298023224</real>
+			<real>0.10000000149011612</real>
 			<key>name</key>
 			<string>Fade Timeline1</string>
 			<key>offset</key>

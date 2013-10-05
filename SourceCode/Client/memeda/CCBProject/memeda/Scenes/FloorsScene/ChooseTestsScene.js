@@ -143,6 +143,7 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
 	GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 1);
 	
     var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+    scene = cc.TransitionProgressInOut.create(0.5, scene);
     cc.Director.getInstance().replaceScene(scene);
 };
 
@@ -160,6 +161,7 @@ ChooseTestsScene.prototype.onAnimationCompleted = function()
     {
         this.sceneState = kFloorsSceneStateNormal;
         var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+        scene = cc.TransitionProgressInOut.create(0.5, scene);
         cc.Director.getInstance().replaceScene(scene);
     }
 };

@@ -326,7 +326,7 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,floorNum,sho
                     )
                 );
             }
-            else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Leave Lift Timeline") >= 0)
+            else if(this.catAndLift.animationManager.getLastCompletedSequenceName().indexOf("Fade Timeline") >= 0)
             {
                 this.sceneState = kFloorStateWaiting;
                 if(this.onCatMovedToDoorCallback != null && this.onCatMovedToDoorCallback != undefined)
@@ -349,7 +349,14 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,floorNum,sho
             this.onDoScrollFloorsToTarget(true,floorNum, doorNum);
             if(this.currentCatStayAtFloorNum == floorNum)
             {
-                this.catAndLift.animationManager.runAnimationsForSequenceNamed("Move Timeline"+this.currentCatStayAtDoorNum+""+doorNum);
+                if(this.currentCatStayAtDoorNum == doorNum)
+                {
+                    this.catAndLift.animationManager.runAnimationsForSequenceNamed("Fade Timeline"+doorNum);
+                }
+                else
+                {
+                    this.catAndLift.animationManager.runAnimationsForSequenceNamed("Move Timeline"+this.currentCatStayAtDoorNum+""+doorNum);
+                }
             }
             else
             {
