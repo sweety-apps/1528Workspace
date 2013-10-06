@@ -38,6 +38,8 @@ AwardScene.prototype.onDidLoadFromCCB = function () {
 	pThisAwardScene = this;
 	this.enableAllBtn = true;
 	
+	this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
+	    
     this.initStatus();
     
     // Do Scale
@@ -102,3 +104,16 @@ AwardScene.prototype.checkWeChat = function () {
 		CoinMgr_Change(500);
 	}
 }
+
+AwardScene.prototype.attachClickBuyEvent = function (context, clickFun) {
+	this.context = context;
+	this.clickFun = clickFun;
+}
+
+AwardScene.prototype.onClickedCoinButton = function (obj) {
+    // 打开金币购买界面
+	if ( obj.enableAllBtn ) {
+    	debugMsgOutput("[UI Event] Clicked Coin Button!");
+    	(obj.clickFun)(obj.context);
+	}
+};

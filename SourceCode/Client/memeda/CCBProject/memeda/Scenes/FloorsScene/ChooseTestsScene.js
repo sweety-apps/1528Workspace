@@ -25,7 +25,7 @@ ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 	gChooseTestsSceneThis = this;
-	
+
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -53,6 +53,7 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationCompleted);
     
     // 购买按钮
+	this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
     // 初始化多盟

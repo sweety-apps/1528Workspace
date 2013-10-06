@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>5</integer>
+	<integer>6</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -45,8 +45,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
+										<real>1000</real>
 										<real>0.0</real>
-										<real>-100</real>
 									</array>
 								</dict>
 								<dict>
@@ -63,8 +63,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
+										<real>1000</real>
 										<real>0.0</real>
-										<real>-100</real>
 									</array>
 								</dict>
 							</array>
@@ -83,121 +83,351 @@
 						<key>animatedProperties</key>
 						<dict>
 							<key>4</key>
-							<dict>
-								<key>position</key>
-								<dict>
-									<key>keyframes</key>
-									<array>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>opt</key>
-												<real>2</real>
-												<key>type</key>
-												<integer>3</integer>
-											</dict>
-											<key>name</key>
-											<string>position</string>
-											<key>time</key>
-											<real>0.0</real>
-											<key>type</key>
-											<integer>3</integer>
-											<key>value</key>
-											<array>
-												<real>0.0</real>
-												<real>-100</real>
-											</array>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>1</integer>
-											</dict>
-											<key>name</key>
-											<string>position</string>
-											<key>time</key>
-											<real>0.46666666865348816</real>
-											<key>type</key>
-											<integer>3</integer>
-											<key>value</key>
-											<array>
-												<real>0.0</real>
-												<real>0.0</real>
-											</array>
-										</dict>
-									</array>
-									<key>name</key>
-									<string>position</string>
-									<key>type</key>
-									<integer>3</integer>
-								</dict>
-							</dict>
+							<dict/>
 							<key>6</key>
-							<dict>
-								<key>position</key>
-								<dict>
-									<key>keyframes</key>
-									<array>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>opt</key>
-												<real>2</real>
-												<key>type</key>
-												<integer>3</integer>
-											</dict>
-											<key>name</key>
-											<string>position</string>
-											<key>time</key>
-											<real>0.0</real>
-											<key>type</key>
-											<integer>3</integer>
-											<key>value</key>
-											<array>
-												<real>0.0</real>
-												<real>0.0</real>
-											</array>
-										</dict>
-										<dict>
-											<key>easing</key>
-											<dict>
-												<key>type</key>
-												<integer>1</integer>
-											</dict>
-											<key>name</key>
-											<string>position</string>
-											<key>time</key>
-											<real>0.46666666865348816</real>
-											<key>type</key>
-											<integer>3</integer>
-											<key>value</key>
-											<array>
-												<real>0.0</real>
-												<real>-100</real>
-											</array>
-										</dict>
-									</array>
-									<key>name</key>
-									<string>position</string>
-									<key>type</key>
-									<integer>3</integer>
-								</dict>
-							</dict>
+							<dict/>
 						</dict>
 						<key>baseClass</key>
 						<string>CCLayer</string>
 						<key>children</key>
 						<array>
 							<dict>
+								<key>animatedProperties</key>
+								<dict>
+									<key>4</key>
+									<dict>
+										<key>position</key>
+										<dict>
+											<key>keyframes</key>
+											<array>
+												<dict>
+													<key>easing</key>
+													<dict>
+														<key>opt</key>
+														<real>2</real>
+														<key>type</key>
+														<integer>3</integer>
+													</dict>
+													<key>name</key>
+													<string>position</string>
+													<key>time</key>
+													<real>0.0</real>
+													<key>type</key>
+													<integer>3</integer>
+													<key>value</key>
+													<array>
+														<real>0.0</real>
+														<real>-100</real>
+													</array>
+												</dict>
+												<dict>
+													<key>easing</key>
+													<dict>
+														<key>type</key>
+														<integer>1</integer>
+													</dict>
+													<key>name</key>
+													<string>position</string>
+													<key>time</key>
+													<real>0.46666666865348816</real>
+													<key>type</key>
+													<integer>3</integer>
+													<key>value</key>
+													<array>
+														<real>0.0</real>
+														<real>0.0</real>
+													</array>
+												</dict>
+											</array>
+											<key>name</key>
+											<string>position</string>
+											<key>type</key>
+											<integer>3</integer>
+										</dict>
+									</dict>
+									<key>6</key>
+									<dict>
+										<key>position</key>
+										<dict>
+											<key>keyframes</key>
+											<array>
+												<dict>
+													<key>easing</key>
+													<dict>
+														<key>opt</key>
+														<real>2</real>
+														<key>type</key>
+														<integer>3</integer>
+													</dict>
+													<key>name</key>
+													<string>position</string>
+													<key>time</key>
+													<real>0.0</real>
+													<key>type</key>
+													<integer>3</integer>
+													<key>value</key>
+													<array>
+														<real>0.0</real>
+														<real>0.0</real>
+													</array>
+												</dict>
+												<dict>
+													<key>easing</key>
+													<dict>
+														<key>type</key>
+														<integer>1</integer>
+													</dict>
+													<key>name</key>
+													<string>position</string>
+													<key>time</key>
+													<real>0.46666666865348816</real>
+													<key>type</key>
+													<integer>3</integer>
+													<key>value</key>
+													<array>
+														<real>0.0</real>
+														<real>-100</real>
+													</array>
+												</dict>
+											</array>
+											<key>name</key>
+											<string>position</string>
+											<key>type</key>
+											<integer>3</integer>
+										</dict>
+									</dict>
+								</dict>
 								<key>baseClass</key>
-								<string>CCSprite</string>
+								<string>CCLayer</string>
 								<key>children</key>
-								<array/>
+								<array>
+									<dict>
+										<key>baseClass</key>
+										<string>CCSprite</string>
+										<key>children</key>
+										<array/>
+										<key>customClass</key>
+										<string></string>
+										<key>displayName</key>
+										<string>CCSprite</string>
+										<key>memberVarAssignmentName</key>
+										<string></string>
+										<key>memberVarAssignmentType</key>
+										<integer>0</integer>
+										<key>properties</key>
+										<array>
+											<dict>
+												<key>name</key>
+												<string>position</string>
+												<key>type</key>
+												<string>Position</string>
+												<key>value</key>
+												<array>
+													<real>50</real>
+													<real>50</real>
+													<integer>4</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>anchorPoint</string>
+												<key>type</key>
+												<string>Point</string>
+												<key>value</key>
+												<array>
+													<real>0.5</real>
+													<real>0.5</real>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>scale</string>
+												<key>type</key>
+												<string>ScaleLock</string>
+												<key>value</key>
+												<array>
+													<real>1</real>
+													<real>1</real>
+													<false/>
+													<integer>0</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>ignoreAnchorPointForPosition</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>displayFrame</string>
+												<key>type</key>
+												<string>SpriteFrame</string>
+												<key>value</key>
+												<array>
+													<string></string>
+													<string>UI/guess/award_bkg.png</string>
+												</array>
+											</dict>
+										</array>
+									</dict>
+									<dict>
+										<key>baseClass</key>
+										<string>CCBFile</string>
+										<key>children</key>
+										<array/>
+										<key>customClass</key>
+										<string></string>
+										<key>displayName</key>
+										<string>FirendCCB</string>
+										<key>memberVarAssignmentName</key>
+										<string>firendCtrl</string>
+										<key>memberVarAssignmentType</key>
+										<integer>1</integer>
+										<key>properties</key>
+										<array>
+											<dict>
+												<key>name</key>
+												<string>position</string>
+												<key>type</key>
+												<string>Position</string>
+												<key>value</key>
+												<array>
+													<real>162</real>
+													<real>211</real>
+													<integer>1</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>scale</string>
+												<key>type</key>
+												<string>ScaleLock</string>
+												<key>value</key>
+												<array>
+													<real>1</real>
+													<real>1</real>
+													<false/>
+													<integer>0</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>ccbFile</string>
+												<key>type</key>
+												<string>CCBFile</string>
+												<key>value</key>
+												<string>AwardItem.ccb</string>
+											</dict>
+										</array>
+									</dict>
+									<dict>
+										<key>baseClass</key>
+										<string>CCBFile</string>
+										<key>children</key>
+										<array/>
+										<key>customClass</key>
+										<string></string>
+										<key>displayName</key>
+										<string>CommentCCB</string>
+										<key>memberVarAssignmentName</key>
+										<string>commentCtrl</string>
+										<key>memberVarAssignmentType</key>
+										<integer>1</integer>
+										<key>properties</key>
+										<array>
+											<dict>
+												<key>name</key>
+												<string>position</string>
+												<key>type</key>
+												<string>Position</string>
+												<key>value</key>
+												<array>
+													<real>162</real>
+													<real>336</real>
+													<integer>1</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>scale</string>
+												<key>type</key>
+												<string>ScaleLock</string>
+												<key>value</key>
+												<array>
+													<real>1</real>
+													<real>1</real>
+													<false/>
+													<integer>0</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>ccbFile</string>
+												<key>type</key>
+												<string>CCBFile</string>
+												<key>value</key>
+												<string>AwardItem.ccb</string>
+											</dict>
+										</array>
+									</dict>
+									<dict>
+										<key>baseClass</key>
+										<string>CCBFile</string>
+										<key>children</key>
+										<array/>
+										<key>customClass</key>
+										<string></string>
+										<key>displayName</key>
+										<string>DuomengCCB</string>
+										<key>memberVarAssignmentName</key>
+										<string>duomengCtrl</string>
+										<key>memberVarAssignmentType</key>
+										<integer>1</integer>
+										<key>properties</key>
+										<array>
+											<dict>
+												<key>name</key>
+												<string>position</string>
+												<key>type</key>
+												<string>Position</string>
+												<key>value</key>
+												<array>
+													<real>162</real>
+													<real>461</real>
+													<integer>1</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>scale</string>
+												<key>type</key>
+												<string>ScaleLock</string>
+												<key>value</key>
+												<array>
+													<real>1</real>
+													<real>1</real>
+													<false/>
+													<integer>0</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>ccbFile</string>
+												<key>type</key>
+												<string>CCBFile</string>
+												<key>value</key>
+												<string>AwardItem.ccb</string>
+											</dict>
+										</array>
+									</dict>
+								</array>
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCSprite</string>
+								<string>CCLayer</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -205,15 +435,32 @@
 								<key>properties</key>
 								<array>
 									<dict>
+										<key>baseValue</key>
+										<array>
+											<real>0.0</real>
+											<real>0.0</real>
+										</array>
 										<key>name</key>
 										<string>position</string>
 										<key>type</key>
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>50</real>
-											<real>50</real>
+											<real>0.0</real>
+											<real>0.0</real>
 											<integer>4</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>contentSize</string>
+										<key>type</key>
+										<string>Size</string>
+										<key>value</key>
+										<array>
+											<real>100</real>
+											<real>100</real>
+											<integer>1</integer>
 										</array>
 									</dict>
 									<dict>
@@ -246,170 +493,31 @@
 										<key>type</key>
 										<string>Check</string>
 										<key>value</key>
-										<false/>
+										<true/>
 									</dict>
 									<dict>
 										<key>name</key>
-										<string>displayFrame</string>
+										<string>touchEnabled</string>
+										<key>platform</key>
+										<string>iOS</string>
 										<key>type</key>
-										<string>SpriteFrame</string>
+										<string>Check</string>
 										<key>value</key>
-										<array>
-											<string></string>
-											<string>UI/guess/award_bkg.png</string>
-										</array>
+										<true/>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>mouseEnabled</string>
+										<key>platform</key>
+										<string>Mac</string>
+										<key>type</key>
+										<string>Check</string>
+										<key>value</key>
+										<true/>
 									</dict>
 								</array>
-							</dict>
-							<dict>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>FirendCCB</string>
-								<key>memberVarAssignmentName</key>
-								<string>firendCtrl</string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>162</real>
-											<real>211</real>
-											<integer>1</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>AwardItem.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>CommentCCB</string>
-								<key>memberVarAssignmentName</key>
-								<string>commentCtrl</string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>162</real>
-											<real>336</real>
-											<integer>1</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>AwardItem.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>DuomengCCB</string>
-								<key>memberVarAssignmentName</key>
-								<string>duomengCtrl</string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>162</real>
-											<real>461</real>
-											<integer>1</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>AwardItem.ccb</string>
-									</dict>
-								</array>
+								<key>seqExpanded</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -423,11 +531,6 @@
 						<key>properties</key>
 						<array>
 							<dict>
-								<key>baseValue</key>
-								<array>
-									<real>0.0</real>
-									<real>0.0</real>
-								</array>
 								<key>name</key>
 								<string>position</string>
 								<key>type</key>
@@ -1103,6 +1206,138 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
+								<string>CCBFile</string>
+								<key>memberVarAssignmentName</key>
+								<string>coinCtrl</string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>CoinCtrl.ccb</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>CCLayer</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>0</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>0.0</real>
+									<real>0.0</real>
+									<integer>4</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>contentSize</string>
+								<key>type</key>
+								<string>Size</string>
+								<key>value</key>
+								<array>
+									<real>100</real>
+									<real>100</real>
+									<integer>1</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ignoreAnchorPointForPosition</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<true/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>touchEnabled</string>
+								<key>platform</key>
+								<string>iOS</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<true/>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>mouseEnabled</string>
+								<key>platform</key>
+								<string>Mac</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<true/>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>baseClass</key>
+						<string>CCLayer</string>
+						<key>children</key>
+						<array>
+							<dict>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
 								<string>WeChatMsg</string>
 								<key>memberVarAssignmentName</key>
 								<string>weChatMsg</string>
@@ -1640,7 +1875,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>-100</real>
+							<real>0.0</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -1664,7 +1899,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.5</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -1744,8 +1979,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.5</real>
-					<real>0.5</real>
+					<real>0.0</real>
+					<real>0.0</real>
 				</array>
 			</dict>
 			<dict>
@@ -1903,7 +2138,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.5</real>
+			<real>0.96666663885116577</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -1937,7 +2172,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>2.3333332538604736</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
