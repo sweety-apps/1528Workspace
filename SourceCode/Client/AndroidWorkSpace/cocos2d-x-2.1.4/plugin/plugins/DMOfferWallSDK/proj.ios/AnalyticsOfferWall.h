@@ -23,5 +23,5 @@
 
 // 积分查询
 - (void) requestOnlinePointCheck;
-- (void) requestOnlineConsumeWithPoint : (NSUInteger)pointToConsume;
+- (void) requestOnlineConsumeWithPoint : (NSNumber*) pointToConsume;
 @end

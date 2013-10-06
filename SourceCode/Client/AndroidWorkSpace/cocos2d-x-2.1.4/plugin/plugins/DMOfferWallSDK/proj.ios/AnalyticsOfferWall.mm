@@ -36,8 +36,9 @@
 }
 
 // 领取积分
-- (void) requestOnlineConsumeWithPoint : (NSUInteger)pointToConsume
+- (void) requestOnlineConsumeWithPoint : (NSNumber*) pointToConsume
 {
-    [_Controller requestOnlineConsumeWithPoint:pointToConsume];
+    int value = [pointToConsume intValue];
+    [_Controller requestOnlineConsumeWithPoint:value];
 }
 @end

@@ -148,6 +148,7 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
 
 ChooseTestsScene.prototype.onPressedAwardButton = function()
 {
+	// 显示奖励界面
     if(!SpecialSpyPackageMgr_IsPurchased())
     {
         this.showBuyMessageBox();
@@ -241,9 +242,10 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
 
 ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
-    debugMsgOutput("[UI Event] Clicked award Button!");
-	this.awardMsgBox.controller.show();
-
+	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+	
+    var scene = cc.BuilderReader.loadAsScene("AwardScene.ccbi");
+    cc.Director.getInstance().replaceScene(scene);
 };
 
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
@@ -259,7 +261,7 @@ ChooseTestsScene.prototype.QueryExtraCoin = function () {
     callBackObj.offerWallDidFinishCheck = function(responseText) {
         debugMsgOutput("offerWallDidFinishCheck " + responseText);
         // 请求到来自多盟的数据
-        this.parseOfferWallData(responseText);
+        gChooseTestsSceneThis.parseOfferWallData(responseText);
     };
     callBackObj.offerWallDidFinishConsume = function(responseText) {
         debugMsgOutput("offerWallDidFinishConsume " + responseText);

@@ -126,6 +126,7 @@ JSBool js_OfferWallController::js_requestOnlineConsumeWithPoint(JSContext* cx, u
     
     cocos2d::plugin::PluginParam value(nValue);
     
+    cocos2d::CCLog("requestOnlineConsumeWithPoint %d", nValue);
     g_ps->callFuncWithParam("requestOnlineConsumeWithPoint", &value, NULL);
 
     return JS_TRUE;
