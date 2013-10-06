@@ -244,8 +244,9 @@ ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
 	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
 	
-    var scene = cc.BuilderReader.loadAsScene("AwardScene.ccbi");
-    cc.Director.getInstance().replaceScene(scene);
+	this.awardScene.controller.showWindow();
+    //var scene = cc.BuilderReader.loadAsScene("AwardScene.ccbi");
+    //cc.Director.getInstance().replaceScene(scene);
 };
 
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {

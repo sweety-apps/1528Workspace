@@ -5,14 +5,13 @@
 var AwardScene = function() {};
 var pThisAwardScene = null;
 
-
-AwardScene.prototype.onDidLoadFromCCB = function () {
-	pThisAwardScene = this;
-	this.enableAllBtn = true;
+AwardScene.prototype.showWindow = function () {
+	this.initStatus();
 	
-	// 购买按钮
-    this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
-    
+	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");	
+};
+
+AwardScene.prototype.initStatus = function () {
     //
     this.firendCtrl.controller.setItemInfo("UI/guess/award_1.png", 500, this, this.onClickFirend);
     this.commentCtrl.controller.setItemInfo("UI/guess/award_2.png", 543, this, this.onClickComment);
@@ -33,6 +32,13 @@ AwardScene.prototype.onDidLoadFromCCB = function () {
     }
     
     this.duomengCtrl.controller.setItemStatus(0);
+}
+
+AwardScene.prototype.onDidLoadFromCCB = function () {
+	pThisAwardScene = this;
+	this.enableAllBtn = true;
+	
+    this.initStatus();
     
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
@@ -53,17 +59,10 @@ AwardScene.prototype.onBack = function () {
 	if ( this.enableAllBtn  ) {
 		cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
 	
-    	var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
-    	cc.Director.getInstance().replaceScene(scene);
+		this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");	
+    	//var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
+    	//cc.Director.getInstance().replaceScene(scene);
 	}
-};
-
-AwardScene.prototype.onClickedCoinButton = function (obj) {
-    // 打开金币购买界面
-    if ( obj.enableAllBtn ) {
-    	debugMsgOutput("[UI Event] Clicked Coin Button!");
-    	obj.buyCoinMsgBox.controller.show();
-    }
 };
 
 AwardScene.prototype.onClickFirend = function (obj) {
