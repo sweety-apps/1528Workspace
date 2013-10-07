@@ -330,8 +330,8 @@ GuessScene.prototype.InitInputAndResultChar = function(rightAnswers, inputkeys)
         gResultCharAllButtons[i].setVisible(false);
     }
 
-    var nChars = rightAnswers[0].length;    // 答案的字符数
-    debugMsgOutput("RightAnswers : " + rightAnswers[0]);
+    var nChars = rightAnswers.length;    // 答案的字符数
+    debugMsgOutput("RightAnswers : " + rightAnswers);
     for ( var i = 0; i < nChars && i < 6; i ++ )
     {
         gResultCharButtons[i] = gResultCharAllButtons[i];
@@ -495,31 +495,14 @@ GuessScene.prototype.onAccelerometer = function( event)
 
 
 // test Game Logic
-var gCurrentTestObj = {
-    id:"00000",
-    type:"text",
-    level:"1",
-    content:{
-        inputkeys:"你打的没土小水话上下题白兔来草木宫说",
-        inform:"打一种动物",
-        rightanswer:"小白兔123",
-        title:"小白＋小白＝？",
-        imageurl:"",
-        musicurl:""
-    },
-    knowladgetips:{
-        id:"1",
-        text:"小白兔是一种可以种植的中草药，对蛋疼有很好的疗效。"
-    }
-};
+var gCurrentTestObj = null;
 
 GuessScene.prototype.checkAnswer = function (inputString, answerStrings)
 {
-    for (var i = 0; i < answerStrings.length; i ++) {
-        if(inputString == answerStrings[i] ) {
-            return true;
-        }
+    if(inputString == answerStrings ) {
+        return true;
     }
+    
     return false;
 };
 
@@ -542,22 +525,20 @@ function InsertCharToArray(arr, inputKey)
 function MakeInputKeys(rightanswers, inputkeys) {
     var charArray = new Array();
     var ret = "";
+
     for (var i = 0; i < rightanswers.length; i ++) {
-    	for (var j = 0; j < rightanswers[i].length; j ++) {
-    		if ( i == 0 ) {
-                charArray.push(rightanswers[i][j]);
-    		} else {
-    			InsertCharToArray(charArray, inputkeys[i]);
-    		}
-        }
+        charArray.push(rightanswers[i]);
     }
     
-    for (var i = 0; i < inputkeys.length; i ++) {
-        InsertCharToArray(charArray, inputkeys[i]);
-        if ( charArray.length >= 18 ) {
-            break;
+    if ( inputkeys != undefined ) {
+        for (var i = 0; i < inputkeys.length; i ++) {
+            InsertCharToArray(charArray, inputkeys[i]);
+            if ( charArray.length >= 18 ) {
+                break;
+            }
         }
     }
+  
     // 添加无关干扰词
     var other = new Array('三', '于', '干', '亏', '士', '工', '土',
                           '才','木','五','支','厅','不','太','寸','下','大','丈','与','万','上',
@@ -610,15 +591,15 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     debugMsgOutput("onReceivedTestData");
     gCurrentTestObj = testObj;
 
-    debugMsgOutput(gCurrentTestObj.content.inputkeys);
+    debugMsgOutput(gCurrentTestObj.inputkeys);
 
     var i = 0;
-    var inputKeys = testObj.content.inputkeys;
+    var inputKeys = testObj.inputkeys;
     gCurrentCCBView.clearInputCharsAndResultChars();
 
     // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为18
-    inputKeys = MakeInputKeys(gCurrentTestObj.content.rightAnswers, inputKeys);
-	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.content.rightAnswers, gCurrentTestObj.content.inputkeys);
+    inputKeys = MakeInputKeys(gCurrentTestObj.rightanswer, inputKeys);
+	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.rightanswer, gCurrentTestObj.inputkeys);
     
     for(i = 0; i < gInputCharButtons.length; i++)
     {
@@ -635,10 +616,11 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 
     // 播放音乐
     if ( Global_isWeb() ) {
-    	gMusicURL = "../problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
+    	gMusicURL = "../problem/music/" + gCurrentTestObj.id + ".mp3";
     } else {
-    	gMusicURL = "problem/" + gCurrentTestObj.content.musicUrl + ".mp3";
+    	gMusicURL = "problem/music/" + gCurrentTestObj.id + ".mp3";
     }
+    debugMsgOutput("Music " + gMusicURL);
     
     gCurrentCCBView.CatEnter();
     
@@ -746,7 +728,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 
     if(choosedButtonCount >= gResultCharButtons.length)
     {
-        if(this.checkAnswer(resultString,gCurrentTestObj.content.rightAnswers))
+        if(this.checkAnswer(resultString,gCurrentTestObj.rightanswer))
         {
             // 上报数据
             if ( !Global_isWeb() ) {
@@ -775,7 +757,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             }
             
             this.EnableAllBtn(false);
-            this.answerRight.controller.ShowMsg(url, this.onClickNext);
+            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, this.onClickNext);
         }
         else if ( showAni != false )
         {
@@ -999,7 +981,7 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 	if ( res == 1 ) {
 		gBuyNum ++;
 		// 查找第一个错字的位置
-		var answer = gCurrentTestObj.content.rightAnswers[0];
+		var answer = gCurrentTestObj.rightanswer;
 		var resultIndex = -1;
 		var resultChar = "";
 		var inputIndex = -1;

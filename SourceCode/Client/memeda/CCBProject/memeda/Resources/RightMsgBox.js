@@ -4,7 +4,7 @@ RightMsgBox.prototype.onDidLoadFromCCB = function () {
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 };
 
-RightMsgBox.prototype.ShowMsg = function(url, onClose) {
+RightMsgBox.prototype.ShowMsg = function(id, url, onClose) {
 	this.onCloseFun = onClose;
 	this.msgLayout.setVisible(true);
 	this.Url = url;
@@ -19,6 +19,10 @@ RightMsgBox.prototype.ShowMsg = function(url, onClose) {
 	} else {
 		this.aboutUrl.setString("");
 	}
+	
+    var image = "problem/pic/" + id + ".jpg";
+    var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,195,135));
+    this.image.setDisplayFrame(spriteFrame);
 	
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");
 };
