@@ -2,19 +2,23 @@
 var FirstScene = function() {};
 var gChooseTestsScene = null;
 
-FirstScene.prototype.onDidLoadFromCCB = function () {  
+FirstScene.prototype.onDidLoadFromCCB = function () {
+    GuessScene_Preload(true);
+    
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 	
 	var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
 	chooseTestsScene = null;
-
+    
 	var GuessScene = cc.BuilderReader.loadAsScene("GuessScene");
-	GuessScene = null;	
+	GuessScene = null;
+    
+    GuessScene_Preload(false);
 };
 
 FirstScene.prototype.onClickStart = function () {
-	this.rootNode.animationManager.runAnimationsForSequenceNamed("Switch Timeline");	
-	this.homePage.animationManager.runAnimationsForSequenceNamed("Ani Timeline");	
+	this.rootNode.animationManager.runAnimationsForSequenceNamed("Switch Timeline");
+	this.homePage.animationManager.runAnimationsForSequenceNamed("Ani Timeline");
 };
 
 

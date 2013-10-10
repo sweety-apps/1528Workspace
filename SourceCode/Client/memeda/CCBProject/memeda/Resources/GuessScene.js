@@ -46,10 +46,15 @@ var gFlippingIndex = 1;
 var gTimeCount = 0;
 var gBuyNum = 0;		// 但前购买过的提示
 var gAllBtnEnable = true;
+var gPreload = false;
 
 function GuessScene_SetFloorInfo(index, source) {
 	gProblem = index;	//
 	gSource = source;
+}
+
+function GuessScene_Preload(preload) {
+    gPreload = preload;
 }
 
 function GuessScene_InitGlobel() {
@@ -102,6 +107,10 @@ GuessScene.prototype.onDidUnload = function () {
 }
 
 GuessScene.prototype.onDidLoadFromCCB = function () {
+    if ( gPreload ) {
+        return ;
+    }
+    
     GuessScene_InitGlobel();
     
     // 设备上面需要开启触摸
