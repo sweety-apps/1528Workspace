@@ -80,6 +80,8 @@ void CommonFunction::_js_register(JSContext *cx, JSObject *obj)
 
 JSBool CommonFunction::openURL(JSContext* cx, uint32_t argc, jsval* vp)
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    
     jsval *argv = JS_ARGV(cx, vp);
     JSString* jsobj = JSVAL_TO_STRING(argv[0]);
     JSStringWrapper pw(jsobj);

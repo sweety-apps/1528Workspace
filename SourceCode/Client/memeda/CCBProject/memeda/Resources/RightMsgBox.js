@@ -12,7 +12,7 @@ RightMsgBox.prototype.ShowMsg = function(id, url, onClose) {
 	this.msgLayout.setVisible(true);
 	this.Url = url;
 	
-	if ( url != null ) {
+	if ( url != null && url != "" ) {
 		// 显示的链接长度不超过40个字符
 		if ( url.length >= 40 ) {
 			url = url.substr(0, 37);
@@ -35,7 +35,9 @@ RightMsgBox.prototype.onClickNext = function() {
 }
 
 RightMsgBox.prototype.onClickURL = function() {
-	memeda.common.openURL(this.Url);
+	if ( this.Url != null && this.Url != "" ) {
+		memeda.common.openURL(this.Url);
+	}
 }
 
 RightMsgBox.prototype.Hide = function () {

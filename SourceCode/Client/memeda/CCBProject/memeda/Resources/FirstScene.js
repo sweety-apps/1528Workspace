@@ -4,6 +4,12 @@ var gChooseTestsScene = null;
 
 FirstScene.prototype.onDidLoadFromCCB = function () {  
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
+	
+	var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
+	chooseTestsScene = null;
+
+	var GuessScene = cc.BuilderReader.loadAsScene("GuessScene");
+	GuessScene = null;	
 };
 
 FirstScene.prototype.onClickStart = function () {

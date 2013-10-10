@@ -4,6 +4,10 @@
 
 var gProblemIndex = new Array();
 
+function Problem_Reposition() {
+	
+};
+
 function Problem_Initialize() {	
 	// 读取索引文件getWritablePath
 	var data = cc.FileUtils.getInstance().getStringFromFile("./problem/package.json");
@@ -23,6 +27,9 @@ function Problem_Initialize() {
         
         gProblemIndex.push(obj);
     }
+    
+    // 对题目顺序重新排列
+    Problem_Reposition();
 }
 
 function Problem_GetCount() {

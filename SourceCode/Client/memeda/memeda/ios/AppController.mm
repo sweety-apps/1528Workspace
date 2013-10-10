@@ -31,6 +31,9 @@ static AppDelegate s_sharedApplication;
     //初始化分享
     SocialShareAPI::getInstance()->initShareAPI();
     
+    // 隐藏状态条
+    [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.

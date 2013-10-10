@@ -93,7 +93,7 @@ AwardScene.prototype.onClickComment = function (obj) {
 		var url = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?mt=8&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software&id=";
 		url = url + "1234567890";
 		memeda.common.openURL(url);
-		
+		CoinMgr_Change(543);
 		sys.localStorage.setItem("comment", "1");	//
 	}
 }

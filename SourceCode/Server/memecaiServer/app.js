@@ -34,11 +34,12 @@ app.get('/users', user.list);
 
 
 
-//var test = require('./tools/excelxmlToTestJson');
-//test.createTestPackageFromExcelXml(null,null,null);
+var test = require('./tools/excelxmlToTestJson2');
+test.createTestPackageFromExcelXml(null,null,null);
 //test.createTestPackageFromExcelXml('./tools/excelxmlToTestJsonFileSpace/Input.xml','./tools/excelxmlToTestJsonFileSpace/Output','audio');
 
-
+/*
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+*/
