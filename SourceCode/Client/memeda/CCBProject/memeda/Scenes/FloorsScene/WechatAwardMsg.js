@@ -19,6 +19,7 @@ WechatAwardMsg.prototype.ShowMsg = function(msg, coin, endFun, index) {
 	this.endFun = endFun;
 	this.coin = coin;
     this.index = index;
+	this.bkgBtn.setVisible(true);
 	
     this.msgText.setString(msg);
     
@@ -28,6 +29,7 @@ WechatAwardMsg.prototype.ShowMsg = function(msg, coin, endFun, index) {
 WechatAwardMsg.prototype.Hide = function(res) {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
 	this.maskBkg.setVisible(false);
+	this.bkgBtn.setVisible(false);
 	this.endFun(this.coin);
 };
 

@@ -7,9 +7,14 @@ var pThisAwardScene = null;
 
 AwardScene.prototype.showWindow = function () {
 	this.initStatus();
-	
+	this.bkgBtn.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");	
 };
+
+AwardScene.prototype.onClickBkg = function () {
+	debugMsgOutput("AwardScene.prototype.onClickBkg");	
+};
+
 
 AwardScene.prototype.initStatus = function () {
     //
@@ -38,6 +43,9 @@ AwardScene.prototype.onDidLoadFromCCB = function () {
 	pThisAwardScene = this;
 	this.enableAllBtn = true;
 	
+    if( 'touches' in sys.capabilities )
+        this.rootNode.setTouchEnabled(true);
+        
 	this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
 	    
     this.initStatus();
@@ -61,6 +69,7 @@ AwardScene.prototype.onBack = function () {
 	if ( this.enableAllBtn  ) {
 		cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
 	
+		this.bkgBtn.setVisible(false);
 		this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");	
     	//var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
     	//cc.Director.getInstance().replaceScene(scene);

@@ -4,6 +4,9 @@ RightMsgBox.prototype.onDidLoadFromCCB = function () {
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 };
 
+RightMsgBox.prototype.onClickBkg = function () {
+};
+
 RightMsgBox.prototype.ShowMsg = function(id, url, onClose) {
 	this.onCloseFun = onClose;
 	this.msgLayout.setVisible(true);

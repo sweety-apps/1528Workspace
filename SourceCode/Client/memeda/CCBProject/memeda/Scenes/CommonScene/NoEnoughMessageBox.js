@@ -23,6 +23,8 @@ NoEnoughMessageBox.prototype.show = function(endFun) {
 	this.msgLayout.setVisible(true);
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
+	
+	this.bkgBtn.setVisible(true);
 
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
@@ -34,7 +36,11 @@ NoEnoughMessageBox.prototype.onAnimationComplete = function () {
 	}
 }
 
+NoEnoughMessageBox.prototype.onClickBkg = function () {
+};
+
 NoEnoughMessageBox.prototype.Hide = function(res) {
+	this.bkgBtn.setVisible(false);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
 	this.maskBkg.setVisible(false);
 	this.endFun(res);

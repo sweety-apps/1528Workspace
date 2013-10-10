@@ -23,7 +23,7 @@
 	<key>javascriptBased</key>
 	<true/>
 	<key>javascriptMainCCB</key>
-	<string>ChooseTestsScene</string>
+	<string>FirstScene</string>
 	<key>needRepublish</key>
 	<false/>
 	<key>onlyPublishCCBs</key>
