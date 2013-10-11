@@ -407,7 +407,9 @@ GuessScene.prototype.InitVars = function()
     gInputCharButtons[15] = this.charButton15;
     gInputCharButtons[16] = this.charButton16;
     gInputCharButtons[17] = this.charButton17;
-    
+    gInputCharButtons[18] = this.charButton18;
+    gInputCharButtons[19] = this.charButton19;
+    gInputCharButtons[20] = this.charButton20;
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
 
@@ -542,7 +544,7 @@ function MakeInputKeys(rightanswers, inputkeys) {
     if ( inputkeys != undefined ) {
         for (var i = 0; i < inputkeys.length; i ++) {
             InsertCharToArray(charArray, inputkeys[i]);
-            if ( charArray.length >= 18 ) {
+            if ( charArray.length >= 21 ) {
                 break;
             }
         }
@@ -553,16 +555,16 @@ function MakeInputKeys(rightanswers, inputkeys) {
     					  '天','龙','八','部', '西','游','记','武','林','外','传','甄','嬛','传','碟','中','谍','功','夫','食','神');
     // 随机排序
     other.sort(function(a,b){
-               if ( Math.random() > 0.5 ) {
+               if ( Math.random() > 0.7 ) {
                return 1;
                }
                return -1;
                });
     
-    if ( charArray.length < 18 )
+    if ( charArray.length < 21 )
         for (var i = 0; i < other.length; i ++) {
             InsertCharToArray(charArray, other[i]);
-            if ( charArray.length >= 18 ) {
+            if ( charArray.length >= 21 ) {
                 break;
             }
         }
@@ -604,7 +606,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     var inputKeys = testObj.inputkeys;
     gCurrentCCBView.clearInputCharsAndResultChars();
 
-    // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为18
+    // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为21
     inputKeys = MakeInputKeys(gCurrentTestObj.rightanswer, inputKeys);
 	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.rightanswer, gCurrentTestObj.inputkeys);
     

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60009C41807E62400CBDFE5 /* CPreloadHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */; };
+		A60009C51807E62400CBDFE5 /* js_CommonFunction.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */; };
+		A60009C61807E62400CBDFE5 /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A60009C01807E62400CBDFE5 /* js_OfferWallController.cpp */; };
+		A60009C71807E62400CBDFE5 /* Stat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A60009C21807E62400CBDFE5 /* Stat.cpp */; };
 		A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */; };
 		A614B3D317DF141E0095CD40 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */; };
-		A6234C5F17FFBC3400BD6492 /* js_CommonFunction.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6234C5E17FFBC3400BD6492 /* js_CommonFunction.mm */; };
 		A679A40417F1AD1D009B5AA4 /* jsb_SocialShareAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A679A40117F1AD1D009B5AA4 /* jsb_SocialShareAPI.cpp */; };
 		A679A47517F1AE67009B5AA4 /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CFB917B2059500821A66 /* libwebp.a */; };
 		A69A9A1217F57DAF001CF694 /* EverNoteConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A99CB17F57DAE001CF694 /* EverNoteConnection.framework */; };
@@ -32,7 +35,6 @@
 		A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054617F7F05A00B6B90A /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054817F7F07200B6B90A /* CoreLocation.framework */; };
 		A69F060217F807D900B6B90A /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */; };
-		A69F062617F8178100B6B90A /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69F062517F8178100B6B90A /* js_OfferWallController.cpp */; };
 		A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */; };
 		A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BF17F01AEA005FBA13 /* PluginProtocol.mm */; };
 		A6A701F217F01AEA005FBA13 /* PluginUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C117F01AEA005FBA13 /* PluginUtilsIOS.mm */; };
@@ -44,7 +46,6 @@
 		A6A701F817F01AEA005FBA13 /* PluginManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C817F01AEA005FBA13 /* PluginManager.cpp */; };
 		A6A701F917F01AEA005FBA13 /* PluginParam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6A701C917F01AEA005FBA13 /* PluginParam.cpp */; };
 		A6A7021317F01B7E005FBA13 /* AnalyticsUmeng.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A7021017F01B7E005FBA13 /* AnalyticsUmeng.m */; };
-		A6A7021717F0328A005FBA13 /* Stat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A6A7021617F0328A005FBA13 /* Stat.cpp */; };
 		A6B3B1DA17EECE2A00CC7708 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B3B1D917EECE2900CC7708 /* libz.dylib */; };
 		F30794F717F2FB33006D2102 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30794F617F2FB33006D2102 /* CoreTelephony.framework */; };
 		F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4217B2059300821A66 /* QuartzCore.framework */; };
@@ -480,10 +481,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A60009BC1807E62400CBDFE5 /* CPreloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPreloadHelper.h; path = Classes/CPreloadHelper.h; sourceTree = "<group>"; };
+		A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CPreloadHelper.mm; path = Classes/CPreloadHelper.mm; sourceTree = "<group>"; };
+		A60009BE1807E62400CBDFE5 /* js_CommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = js_CommonFunction.h; path = Classes/js_CommonFunction.h; sourceTree = "<group>"; };
+		A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = js_CommonFunction.mm; path = Classes/js_CommonFunction.mm; sourceTree = "<group>"; };
+		A60009C01807E62400CBDFE5 /* js_OfferWallController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = js_OfferWallController.cpp; path = Classes/js_OfferWallController.cpp; sourceTree = "<group>"; };
+		A60009C11807E62400CBDFE5 /* js_OfferWallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = js_OfferWallController.h; path = Classes/js_OfferWallController.h; sourceTree = "<group>"; };
+		A60009C21807E62400CBDFE5 /* Stat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Stat.cpp; path = Classes/Stat.cpp; sourceTree = "<group>"; };
+		A60009C31807E62400CBDFE5 /* Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stat.h; path = Classes/Stat.h; sourceTree = "<group>"; };
 		A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A614B3D017DF14080095CD40 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		A6234C5E17FFBC3400BD6492 /* js_CommonFunction.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = js_CommonFunction.mm; sourceTree = "<group>"; };
 		A679A40017F1AD1D009B5AA4 /* jsb_SocialShareAPI_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsb_SocialShareAPI_api.js; sourceTree = "<group>"; };
 		A679A40117F1AD1D009B5AA4 /* jsb_SocialShareAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_SocialShareAPI.cpp; sourceTree = "<group>"; };
 		A679A40217F1AD1D009B5AA4 /* jsb_SocialShareAPI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_SocialShareAPI.hpp; sourceTree = "<group>"; };
@@ -516,8 +524,6 @@
 		A69F05FD17F807D900B6B90A /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
 		A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PluginDMOfferWall.xcodeproj; sourceTree = "<group>"; };
 		A69F062117F8137400B6B90A /* OnlineWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlineWallViewController.h; sourceTree = "<group>"; };
-		A69F062417F8177000B6B90A /* js_OfferWallController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = js_OfferWallController.h; sourceTree = "<group>"; };
-		A69F062517F8178100B6B90A /* js_OfferWallController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = js_OfferWallController.cpp; sourceTree = "<group>"; };
 		A6A701A117F01AEA005FBA13 /* PluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginFactory.h; sourceTree = "<group>"; };
 		A6A701A217F01AEA005FBA13 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		A6A701A317F01AEA005FBA13 /* PluginParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginParam.h; sourceTree = "<group>"; };
@@ -546,10 +552,7 @@
 		A6A7021017F01B7E005FBA13 /* AnalyticsUmeng.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsUmeng.m; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios/AnalyticsUmeng.m"; sourceTree = "<group>"; };
 		A6A7021117F01B7E005FBA13 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios/libMobClickLibrary.a"; sourceTree = "<group>"; };
 		A6A7021217F01B7E005FBA13 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = "../../AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios/MobClick.h"; sourceTree = "<group>"; };
-		A6A7021517F03271005FBA13 /* Stat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stat.h; sourceTree = "<group>"; };
-		A6A7021617F0328A005FBA13 /* Stat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stat.cpp; sourceTree = "<group>"; };
 		A6B3B1D917EECE2900CC7708 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		A6EDF9C617FEA76B00329ED9 /* js_CommonFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = js_CommonFunction.h; sourceTree = "<group>"; };
 		F30794F617F2FB33006D2102 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F316CE3F17B2059300821A66 /* memeda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memeda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F316CE4217B2059300821A66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -3039,6 +3042,14 @@
 		F316D2A017B2059A00821A66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A60009BC1807E62400CBDFE5 /* CPreloadHelper.h */,
+				A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */,
+				A60009BE1807E62400CBDFE5 /* js_CommonFunction.h */,
+				A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */,
+				A60009C01807E62400CBDFE5 /* js_OfferWallController.cpp */,
+				A60009C11807E62400CBDFE5 /* js_OfferWallController.h */,
+				A60009C21807E62400CBDFE5 /* Stat.cpp */,
+				A60009C31807E62400CBDFE5 /* Stat.h */,
 				F3D0890D17EEC5950093A0B5 /* Modules */,
 				F3D0895217EEC5950093A0B5 /* uncompressZipFile.cpp */,
 				F3D0895317EEC5950093A0B5 /* uncompressZipFile.h */,
@@ -3046,12 +3057,6 @@
 				F316D2A217B2059A00821A66 /* AppDelegate.cpp */,
 				F3D08AD917EF5C410093A0B5 /* AppConfigVarDefines.h */,
 				A6A7019F17F01AD3005FBA13 /* plugin-x */,
-				A6A7021517F03271005FBA13 /* Stat.h */,
-				A6A7021617F0328A005FBA13 /* Stat.cpp */,
-				A69F062417F8177000B6B90A /* js_OfferWallController.h */,
-				A69F062517F8178100B6B90A /* js_OfferWallController.cpp */,
-				A6EDF9C617FEA76B00329ED9 /* js_CommonFunction.h */,
-				A6234C5E17FFBC3400BD6492 /* js_CommonFunction.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3511,7 +3516,6 @@
 				F316CEA617B2059300821A66 /* CCCamera.cpp in Sources */,
 				F316CEA917B2059300821A66 /* CCConfiguration.cpp in Sources */,
 				F316CEAC17B2059300821A66 /* CCDirector.cpp in Sources */,
-				A69F062617F8178100B6B90A /* js_OfferWallController.cpp in Sources */,
 				F316CEAF17B2059300821A66 /* ccFPSImages.c in Sources */,
 				F316CEB217B2059300821A66 /* CCScheduler.cpp in Sources */,
 				F316CEB617B2059300821A66 /* CCAffineTransform.cpp in Sources */,
@@ -3561,6 +3565,7 @@
 				F316CF5317B2059400821A66 /* CCProgressTimer.cpp in Sources */,
 				F316CF5617B2059400821A66 /* CCRenderTexture.cpp in Sources */,
 				F316CF5A17B2059400821A66 /* CCParticleBatchNode.cpp in Sources */,
+				A60009C51807E62400CBDFE5 /* js_CommonFunction.mm in Sources */,
 				F316CF5D17B2059400821A66 /* CCParticleExamples.cpp in Sources */,
 				F316CF6017B2059400821A66 /* CCParticleSystem.cpp in Sources */,
 				F316CF6317B2059400821A66 /* CCParticleSystemQuad.cpp in Sources */,
@@ -3605,7 +3610,6 @@
 				F316D00B17B2059500821A66 /* CCComponent.cpp in Sources */,
 				F316D00E17B2059500821A66 /* CCComponentContainer.cpp in Sources */,
 				F316D01217B2059500821A66 /* ccCArray.cpp in Sources */,
-				A6234C5F17FFBC3400BD6492 /* js_CommonFunction.mm in Sources */,
 				F316D01817B2059500821A66 /* TGAlib.cpp in Sources */,
 				F316D01C17B2059500821A66 /* tinyxml2.cpp in Sources */,
 				F316D01F17B2059500821A66 /* TransformUtils.cpp in Sources */,
@@ -3626,6 +3630,7 @@
 				F316D04F17B2059600821A66 /* CCTMXLayer.cpp in Sources */,
 				F316D05217B2059600821A66 /* CCTMXObjectGroup.cpp in Sources */,
 				F316D05517B2059600821A66 /* CCTMXTiledMap.cpp in Sources */,
+				A60009C61807E62400CBDFE5 /* js_OfferWallController.cpp in Sources */,
 				F316D05817B2059600821A66 /* CCTMXXMLParser.cpp in Sources */,
 				F3D0898417EEC5960093A0B5 /* uncompressZipFile.cpp in Sources */,
 				F316D05C17B2059600821A66 /* CCTouch.cpp in Sources */,
@@ -3674,6 +3679,7 @@
 				F316D17A17B2059900821A66 /* cpBB.c in Sources */,
 				F316D17C17B2059900821A66 /* cpBBTree.c in Sources */,
 				F316D17E17B2059900821A66 /* cpBody.c in Sources */,
+				A60009C71807E62400CBDFE5 /* Stat.cpp in Sources */,
 				F316D18017B2059900821A66 /* cpCollision.c in Sources */,
 				F316D18217B2059900821A66 /* cpHashSet.c in Sources */,
 				F316D18417B2059900821A66 /* cpPolyShape.c in Sources */,
@@ -3727,6 +3733,7 @@
 				F316D20C17B2059900821A66 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
 				F316D20F17B2059900821A66 /* CCControlSlider.cpp in Sources */,
 				F316D21217B2059900821A66 /* CCControlStepper.cpp in Sources */,
+				A60009C41807E62400CBDFE5 /* CPreloadHelper.mm in Sources */,
 				F316D21517B2059900821A66 /* CCControlSwitch.cpp in Sources */,
 				A69BC50517F955DD00F392F1 /* jsb_iOSiapWrapper.cpp in Sources */,
 				F316D21817B2059A00821A66 /* CCControlUtils.cpp in Sources */,
@@ -3782,7 +3789,6 @@
 				A6A701F817F01AEA005FBA13 /* PluginManager.cpp in Sources */,
 				A6A701F917F01AEA005FBA13 /* PluginParam.cpp in Sources */,
 				A6A7021317F01B7E005FBA13 /* AnalyticsUmeng.m in Sources */,
-				A6A7021717F0328A005FBA13 /* Stat.cpp in Sources */,
 				A679A40417F1AD1D009B5AA4 /* jsb_SocialShareAPI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -136,6 +136,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     //pDirector->setContentScaleFactor(resourceSize.width/designSize.width);
     pDirector->setContentScaleFactor(resizeFactor);
     
+    //m_Helper.Preload();
+    
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionNoBorder);
     
     
@@ -176,6 +178,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     pStat->logTimedEventBegin("runtime");   //
     
     //testUnzipFiles();
+   
+    //UInt32 category = AVAudioSessionCategoryPlayAndRecord;
+    //AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
+    
+    //UInt32 route = kAudioSessionOverrideAudioRoute_None;
+    //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(route), &route);
     
     return true;
 }
