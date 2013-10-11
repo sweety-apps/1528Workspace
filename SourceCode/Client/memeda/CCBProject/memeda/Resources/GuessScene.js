@@ -410,6 +410,10 @@ GuessScene.prototype.InitVars = function()
     gInputCharButtons[18] = this.charButton18;
     gInputCharButtons[19] = this.charButton19;
     gInputCharButtons[20] = this.charButton20;
+    gInputCharButtons[21] = this.charButton21;
+    gInputCharButtons[22] = this.charButton22;
+    gInputCharButtons[23] = this.charButton23;
+    
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
 
@@ -421,12 +425,6 @@ GuessScene.prototype.InitVars = function()
     // 针对非iphone5屏幕做缩小适配
     if(screenHeight / screenWidth < 1136/640)
     {   
-        for(var i = 0; i < gInputCharButtons.length; ++i)
-        {
-            gInputCharButtons[i].setScaleX(0.84);
-            gInputCharButtons[i].setScaleY(0.84);
-        }
-        
         this.answerLayout.setScaleX(0.88);
         this.answerLayout.setScaleY(0.88);
     }
@@ -544,7 +542,7 @@ function MakeInputKeys(rightanswers, inputkeys) {
     if ( inputkeys != undefined ) {
         for (var i = 0; i < inputkeys.length; i ++) {
             InsertCharToArray(charArray, inputkeys[i]);
-            if ( charArray.length >= 21 ) {
+            if ( charArray.length >= 24 ) {
                 break;
             }
         }
@@ -561,10 +559,10 @@ function MakeInputKeys(rightanswers, inputkeys) {
                return -1;
                });
     
-    if ( charArray.length < 21 )
+    if ( charArray.length < 24 )
         for (var i = 0; i < other.length; i ++) {
             InsertCharToArray(charArray, other[i]);
-            if ( charArray.length >= 21 ) {
+            if ( charArray.length >= 24 ) {
                 break;
             }
         }
@@ -606,7 +604,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     var inputKeys = testObj.inputkeys;
     gCurrentCCBView.clearInputCharsAndResultChars();
 
-    // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为21
+    // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为24
     inputKeys = MakeInputKeys(gCurrentTestObj.rightanswer, inputKeys);
 	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.rightanswer, gCurrentTestObj.inputkeys);
     

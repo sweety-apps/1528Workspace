@@ -2062,7 +2062,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-4</real>
+											<real>-6</real>
 											<real>0.0</real>
 											<integer>4</integer>
 										</array>
@@ -2074,8 +2074,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2112,7 +2112,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>14</real>
+											<real>10</real>
 											<real>0.0</real>
 											<integer>4</integer>
 										</array>
@@ -2124,8 +2124,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2162,7 +2162,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>32</real>
+											<real>26</real>
 											<real>0.0</real>
 											<integer>4</integer>
 										</array>
@@ -2174,8 +2174,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2212,7 +2212,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>50</real>
+											<real>42</real>
 											<real>0.0</real>
 											<integer>4</integer>
 										</array>
@@ -2224,8 +2224,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2262,7 +2262,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>68</real>
+											<real>58</real>
 											<real>0.0</real>
 											<integer>4</integer>
 										</array>
@@ -2274,8 +2274,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2312,7 +2312,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>86</real>
+											<real>74</real>
 											<real>0.0</real>
 											<integer>4</integer>
 										</array>
@@ -2324,8 +2324,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2362,7 +2362,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>104</real>
+											<real>90</real>
 											<real>0.0</real>
 											<integer>4</integer>
 										</array>
@@ -2374,8 +2374,58 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>InputCharBtn.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>CCBFile3</string>
+								<key>memberVarAssignmentName</key>
+								<string>charButton21</string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>106</real>
+											<real>0.0</real>
+											<integer>4</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2412,7 +2462,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-4</real>
+											<real>-6</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -2424,8 +2474,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2462,7 +2512,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>14</real>
+											<real>10</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -2474,8 +2524,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2512,7 +2562,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>32</real>
+											<real>26</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -2524,8 +2574,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2562,7 +2612,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>50</real>
+											<real>42</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -2574,8 +2624,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2612,7 +2662,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>68</real>
+											<real>58</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -2624,8 +2674,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2662,7 +2712,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>86</real>
+											<real>74</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -2674,8 +2724,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2712,7 +2762,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>104</real>
+											<real>90</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -2724,8 +2774,58 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>InputCharBtn.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>CCBFile2</string>
+								<key>memberVarAssignmentName</key>
+								<string>charButton22</string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>106</real>
+											<real>50</real>
+											<integer>4</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2762,7 +2862,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-4</real>
+											<real>-6</real>
 											<real>100</real>
 											<integer>4</integer>
 										</array>
@@ -2774,8 +2874,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2812,7 +2912,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>14</real>
+											<real>10</real>
 											<real>100</real>
 											<integer>4</integer>
 										</array>
@@ -2824,8 +2924,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2862,7 +2962,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>32</real>
+											<real>26</real>
 											<real>100</real>
 											<integer>4</integer>
 										</array>
@@ -2874,8 +2974,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2923,7 +3023,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>50</real>
+											<real>42</real>
 											<real>100</real>
 											<integer>4</integer>
 										</array>
@@ -2935,8 +3035,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2973,7 +3073,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>68</real>
+											<real>58</real>
 											<real>100</real>
 											<integer>4</integer>
 										</array>
@@ -2985,8 +3085,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -3023,7 +3123,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>86</real>
+											<real>74</real>
 											<real>100</real>
 											<integer>4</integer>
 										</array>
@@ -3035,8 +3135,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -3073,7 +3173,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>104</real>
+											<real>90</real>
 											<real>100</real>
 											<integer>4</integer>
 										</array>
@@ -3085,8 +3185,58 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.8399999737739563</real>
-											<real>0.8399999737739563</real>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>InputCharBtn.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>CCBFile1</string>
+								<key>memberVarAssignmentName</key>
+								<string>charButton23</string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>106</real>
+											<real>100</real>
+											<integer>4</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>0.80000001192092896</real>
+											<real>0.80000001192092896</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -3208,7 +3358,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>50</real>
+							<real>50.3125</real>
 							<real>15.845070838928223</real>
 							<integer>4</integer>
 						</array>
@@ -3278,6 +3428,8 @@
 						<true/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>

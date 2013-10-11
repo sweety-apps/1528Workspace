@@ -8,11 +8,11 @@ var pThisAwardScene = null;
 AwardScene.prototype.showWindow = function () {
 	this.initStatus();
 	this.bkgBtn.setVisible(true);
-	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");	
+	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
 
 AwardScene.prototype.onClickBkg = function () {
-	debugMsgOutput("AwardScene.prototype.onClickBkg");	
+	debugMsgOutput("AwardScene.prototype.onClickBkg");
 };
 
 
@@ -33,7 +33,7 @@ AwardScene.prototype.initStatus = function () {
     if ( comment == "1" ) {
     	this.commentCtrl.controller.setItemStatus(2);
     } else {
-     	this.commentCtrl.controller.setItemStatus(1);   	
+     	this.commentCtrl.controller.setItemStatus(1);
     }
     
     this.duomengCtrl.controller.setItemStatus(0);
@@ -45,19 +45,19 @@ AwardScene.prototype.onDidLoadFromCCB = function () {
 	
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
-        
+    
 	this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
-	    
+    
     this.initStatus();
     
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
     var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
     var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
-
+    
     // 针对非iphone5屏幕做缩小适配
     if(screenHeight / screenWidth < 1136/640)
-    {   
+    {
         this.infoLayout.setScaleX(0.88);
         this.infoLayout.setScaleY(0.88);
         
@@ -68,9 +68,9 @@ AwardScene.prototype.onDidLoadFromCCB = function () {
 AwardScene.prototype.onBack = function () {
 	if ( this.enableAllBtn  ) {
 		cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-	
+        
 		this.bkgBtn.setVisible(false);
-		this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");	
+		this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
     	//var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
     	//cc.Director.getInstance().replaceScene(scene);
 	}
@@ -80,11 +80,11 @@ AwardScene.prototype.onClickFirend = function (obj) {
 	if ( obj.enableAllBtn ) {
 		obj.enableAllBtn = false;
 		obj.weChatMsg.controller.ShowMsg(null, function () {
-				obj.enableAllBtn = true;
-			}, 
-			function () {
-				pThisAwardScene.checkWeChat();
-			});
+                                         obj.enableAllBtn = true;
+                                         },
+                                         function () {
+                                         pThisAwardScene.checkWeChat();
+                                         });
 	}
 }
 
@@ -94,6 +94,7 @@ AwardScene.prototype.onClickComment = function (obj) {
 		url = url + "1234567890";
 		memeda.common.openURL(url);
 		CoinMgr_Change(543);
+		obj.commentCtrl.controller.setItemStatus(2);
 		sys.localStorage.setItem("comment", "1");	//
 	}
 }
