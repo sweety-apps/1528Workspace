@@ -229,6 +229,7 @@ GuessScene.prototype.onBack = function ( ) {
     try {
 		if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 			cc.AudioEngine.getInstance().stopMusic();
+            cc.AudioEngine.getInstance().setMusicVolume(0.0);
 		}
     } catch (e) {
     }
@@ -293,6 +294,8 @@ GuessScene.prototype.onAnimationComplete = function()
     {
         gPushedButton = 0;
         cc.AudioEngine.getInstance().stopMusic();
+        cc.AudioEngine.getInstance().setMusicVolume(0.0);
+        
         gShouldKeepCoin = true;
         clearAllPressEventToSprite ();
         gCurrentCCBView.clearInputCharsAndResultChars();
@@ -779,6 +782,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             try {
             	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 					cc.AudioEngine.getInstance().stopMusic();
+                    cc.AudioEngine.getInstance().setMusicVolume(0.0);
 				}
             } catch (e) {
             }
@@ -929,6 +933,9 @@ GuessScene.prototype.update = function() {
         debugMsgOutput("music " + cc.AudioEngine.getInstance().isMusicPlaying() );
         if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
             gCurrentCCBView.onMusicStop();
+            
+            cc.AudioEngine.getInstance().setMusicVolume(0.0);
+            cc.AudioEngine.getInstance().stopMusic();
             cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
         }
         gTimeCount = 0;
@@ -947,7 +954,9 @@ GuessScene.prototype.PlayMusic = function () {
     try {
     	if ( cc.AudioEngine.getInstance().isMusicPlaying() ) {
     		cc.AudioEngine.getInstance().stopMusic();
+            cc.AudioEngine.getInstance().setMusicVolume(0.0);
     	}
+        debugMsgOutput("... playMusic  ");
    	 	cc.AudioEngine.getInstance().playMusic(gMusicURL, false);
     	cc.AudioEngine.getInstance().setMusicVolume(0.9);
     } catch (e) {
