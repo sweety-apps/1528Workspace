@@ -388,31 +388,31 @@ GuessScene.prototype.InitVars = function()
     // 猫爪
     gCatHand = this.catHand;
     
-    // Inputs
+    // Inputs 顺序打乱
     gInputCharButtons[0] = this.charButton0;
-    gInputCharButtons[1] = this.charButton1;
-    gInputCharButtons[2] = this.charButton2;
-    gInputCharButtons[3] = this.charButton3;
+    gInputCharButtons[1] = this.charButton11;
+    gInputCharButtons[2] = this.charButton23;
+    gInputCharButtons[3] = this.charButton13;
     gInputCharButtons[4] = this.charButton4;
-    gInputCharButtons[5] = this.charButton5;
+    gInputCharButtons[5] = this.charButton20;
     gInputCharButtons[6] = this.charButton6;
-    gInputCharButtons[7] = this.charButton7;
+    gInputCharButtons[7] = this.charButton17;
     gInputCharButtons[8] = this.charButton8;
-    gInputCharButtons[9] = this.charButton9;
+    gInputCharButtons[9] = this.charButton15;
     gInputCharButtons[10] = this.charButton10;
-    gInputCharButtons[11] = this.charButton11;
-    gInputCharButtons[12] = this.charButton12;
-    gInputCharButtons[13] = this.charButton13;
+    gInputCharButtons[11] = this.charButton22;
+    gInputCharButtons[12] = this.charButton1;
+    gInputCharButtons[13] = this.charButton9;
     gInputCharButtons[14] = this.charButton14;
-    gInputCharButtons[15] = this.charButton15;
+    gInputCharButtons[15] = this.charButton19;
     gInputCharButtons[16] = this.charButton16;
-    gInputCharButtons[17] = this.charButton17;
+    gInputCharButtons[17] = this.charButton7;
     gInputCharButtons[18] = this.charButton18;
-    gInputCharButtons[19] = this.charButton19;
-    gInputCharButtons[20] = this.charButton20;
+    gInputCharButtons[19] = this.charButton3;
+    gInputCharButtons[20] = this.charButton5;
     gInputCharButtons[21] = this.charButton21;
-    gInputCharButtons[22] = this.charButton22;
-    gInputCharButtons[23] = this.charButton23;
+    gInputCharButtons[22] = this.charButton2;
+    gInputCharButtons[23] = this.charButton12;
     
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
@@ -582,6 +582,32 @@ function MakeInputKeys(rightanswers, inputkeys) {
     return ret;
 }
 
+GuessScene.prototype.MakeFeelList = function (feel) {
+	this.curFeel = -1;		// 当前的初始表情
+	this.feelArray = new Array();
+	if ( feel != "" ) {
+		var tmp = feel.split(",");
+		for (var i = 0; i < tmp.length; i ++ ) {
+			var info = tmp[i].split(":");
+			var begin = parseInt(info[0]);
+			var contin = parseInt(info[1]);
+			var status = parseInt(info[2]);
+			
+			var obj = new Object();
+			obj.time = begin;
+			obj.status = status;
+			this.feelArray.push(obj);
+			
+			if ( contin != -1 ) {
+				obj = new Object;
+				obj.time = begin + contin;
+				obj.status = -1;
+				this.feelArray.push(obj);
+			}
+		}
+	}
+};
+
 GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 {	// 上报数据
     if ( !Global_isWeb() ) {
@@ -593,6 +619,9 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
 	//
 	
+	debugMsgOutput ( " feel " + testObj.feel );
+	gCurrentCCBView.MakeFeelList(testObj.feel);
+
 	gBuyNum = 0;
 
     debugMsgOutput("onReceivedTestData");
@@ -874,6 +903,25 @@ GuessScene.prototype.updateInputCharsAndResultCharsWithAnimation = function ()
     gCatHand.animationManager.runAnimationsForSequenceNamed("Push Timeline");
 };
 
+GuessScene.prototype.CheckFeel = function () {
+	if ( this.feelArray.length > 0  && this.Entered) {
+		// 判断表情变化	
+    	for ( var i = this.feelArray.length - 1; i >= 0; i -- ) {
+    		var obj = this.feelArray[i];
+    		var curTime = (new Date()).getTime();
+    		curTime = (curTime - this.beginPlayTime) / 1000;
+    		if ( curTime >= obj.time ) {
+    			if ( this.curFeel != obj.status ) {
+    				// 修改表情	
+    				this.catAni.controller.setStatus(obj.status);
+    				this.curFeel = obj.status;
+    			}
+    			
+    			break;	
+    		}
+    	}    
+    }
+};
 
 GuessScene.prototype.update = function() {
     gTimeCount ++;
@@ -884,6 +932,8 @@ GuessScene.prototype.update = function() {
             cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
         }
         gTimeCount = 0;
+        
+        gCurrentCCBView.CheckFeel();
     }
 }
 
@@ -903,6 +953,9 @@ GuessScene.prototype.PlayMusic = function () {
     } catch (e) {
     }
     
+   	this.curFeel = -1;
+	this.beginPlayTime = (new Date()).getTime();
+	
     cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
 
 }
@@ -915,6 +968,7 @@ GuessScene.prototype.onMusicStop = function () {
 GuessScene.prototype.CatEnter = function () {
 	this.PlayMusic();
     this.playMusic.setVisible(false);
+    this.Entered = false;
 	this.catAni.controller.Enter(this.onEnterCompleted, this);
 }
 
@@ -930,6 +984,9 @@ GuessScene.prototype.onClickReplay = function () {
 }
 
 GuessScene.prototype.onEnterCompleted = function(obj) {
+    obj.Entered = true;
+    
+    debugMsgOutput("GuessScene.prototype.onEnterCompleted");
 	obj.rootNode.animationManager.runAnimationsForSequenceNamed("Drawing Animation Timeline");	
 	for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
 		gInputCharButtons[i].controller.setStatus(true);	

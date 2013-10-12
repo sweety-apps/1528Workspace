@@ -24,9 +24,11 @@ CatAni.prototype.onDidLoadFromCCB = function () {
 };
 
 CatAni.prototype.Enter = function(fun, obj) {
+	debugMsgOutput("CatAni.prototype.Enter");
 	gFunOnEnterCompleted = fun;
 	gFunOnEnterObj = obj;
 	
+	this.isEnter = true;
 	this.musicCtrl.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Timeline");
 };
@@ -35,6 +37,7 @@ CatAni.prototype.Leave = function(fun, obj) {
 	gFunOnLeaveCompleted = fun;
 	gFunOnLeaveObj = obj;
 	
+	this.isEnter = false;
 	this.musicCtrl.setVisible(false);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Leave Timeline");
 };
@@ -50,5 +53,32 @@ CatAni.prototype.onAnimationComplete = function() {
 
 CatAni.prototype.Listen = function (listen) {
 	// 
-	this.musicCtrl.setVisible(listen);	
+	if ( this.isEnter ) {
+		this.musicCtrl.setVisible(listen);	
+		if ( listen ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Listen Timeline");
+			debugMsgOutput("----- Listen Timeline");
+		} else {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");	
+			debugMsgOutput("----- Default Timeline");
+		}
+	}
 };
+
+CatAni.prototype.setStatus = function ( status ) {
+	if ( this.isEnter ) {
+		if ( status == -1 ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Listen Timeline");
+		} else if ( status == 1 ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Happy Timeline");	
+		} else if ( status == 2 ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Unpleasant Timeline");			
+		} else if ( status == 3 ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Unpleasant Timeline");	// TODO
+		} else if ( status == 4 ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Happy Timeline");			// TODO
+		} else if ( status == 5 ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Unpleasant Timeline");	// TODO
+		}
+	}	
+}

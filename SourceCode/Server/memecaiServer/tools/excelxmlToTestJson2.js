@@ -121,6 +121,12 @@ MakeQuestion = function (id, inputPath, outputPath, node) {
 		obj.achievement = node.i.text();
 		objRet.achievement = obj.achievement;
 	}
+	
+	if ( node.j == null ) { 
+		obj.feel = "";
+	} else {
+		obj.feel = node.j.text();
+	}
 
 	// 判断图片和音频是否存在
 	if ( !outputFS.existsSync(inputPath + "/pic/" + obj.rightanswer + ".jpg") ) {
