@@ -1124,8 +1124,12 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 }
 
 GuessScene.prototype.onClickNext = function() {
-	GuessScene_SetFloorInfo(gProblem + 1, 3);
-	           
+    if ( gProblem + 1 == Problem_GetCount() ) {
+        GuessScene_SetFloorInfo(0, 3);
+    } else {
+        GuessScene_SetFloorInfo(gProblem + 1, 3);
+    }
+    
 	gCurrentCCBView.EnableAllBtn(true);
 	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
 }
@@ -1164,7 +1168,11 @@ GuessScene.prototype.onClickJump = function () {
 			// 跳过该题，进入下一题
 			Question_jump(gCurrentTestObj.id);
 			
-			GuessScene_SetFloorInfo(gProblem + 1, 4); // 4--通过跳过进入下一题
+            if ( gProblem + 1 == Problem_GetCount() ) {
+                GuessScene_SetFloorInfo(0, 4);
+            } else {
+                GuessScene_SetFloorInfo(gProblem + 1, 4);
+            }   // 4--通过跳过进入下一题
 	
 			gCurrentCCBView.EnableAllBtn(true);
 			gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
