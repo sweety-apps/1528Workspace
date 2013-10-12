@@ -162,6 +162,7 @@ ChooseTestsScene.prototype.onAnimationCompleted = function()
     {
         this.sceneState = kFloorsSceneStateNormal;
         var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+        scene = cc.TransitionProgressInOut.create(0.3,scene);
         cc.Director.getInstance().replaceScene(scene);
     }
 };
