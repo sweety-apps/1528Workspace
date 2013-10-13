@@ -140,7 +140,7 @@ function FloorsData_resetTestData_Device()
 
     for(var f = 0; f < flr_count; ++f)
     {
-        var floorData = new {bg:"floor_blue",bottom:"floorBottom_blue",
+        var floorData = {bg:"floor_blue",bottom:"floorBottom_blue",
             floorNum:"1F",specText:"",offsetY:0,
             doors:[
                 {hasFinished:true,image:"door_black",doorNum:"001"},
@@ -179,6 +179,16 @@ function FloorsData_resetTestData_Device()
         gTestFloor[f] = floorData;
     }
 
+    var lastAnsweredTest = 0;
+    for(var t = 0; t < pbl_count ; ++t)
+    {
+        var testInfo = Problem_GetBaseInfo(t);
+        if(Problem_isAnswerRight(testInfo.id) || Problem_isJump(testInfo.id))
+        {
+            lastAnsweredTest = t;
+        }
+    }
+
     for(var f = 0; f < flr_count; ++f)
     {
         var floorData = gTestFloor[f];
@@ -187,24 +197,33 @@ function FloorsData_resetTestData_Device()
         {
             var testNum = (f*3)+d;
             var testInfo = Problem_GetBaseInfo(testNum);
+            var lastTestInfo = null;
+            if(testNum > 0)
+            {
+                lastTestInfo = Problem_GetBaseInfo(testNum - 1);
+            }
+
             if(Problem_isAnswerRight(testInfo.id))
             {
                 floorData.doors[d].hasFinished = true;
             }
-            else if(Question_isJump(testInfo.id))
+            else if(Problem_isJump(testInfo.id))
             {
-                floorData.doors[d].hasFinished = false;
+                floorData.doors[d].hasFinished = true;
             }
             else
             {
                 floorData.doors[d].hasFinished = false;
             }
+
+            if(testNum == lastAnsweredTest)
+            {
+                floorData.doors[d].hasFinished = true;
+            }
         }
 
         gTestFloor[f] = floorData;
     }
-
-
 }
 
 function FloorsData_resetTestData()
