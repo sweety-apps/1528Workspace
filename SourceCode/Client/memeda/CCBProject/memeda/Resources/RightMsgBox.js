@@ -8,6 +8,7 @@ RightMsgBox.prototype.onClickBkg = function () {
 };
 
 RightMsgBox.prototype.ShowMsg = function(id, url, onClose) {
+	this.show = true;
 	this.onCloseFun = onClose;
 	this.msgLayout.setVisible(true);
 	this.Url = url;
@@ -44,7 +45,10 @@ RightMsgBox.prototype.onClickURL = function() {
 }
 
 RightMsgBox.prototype.Hide = function () {
-	this.rootNode.animationManager.runAnimationsForSequenceNamed("Hide Timeline");	
+	if ( this.show ) {
+		this.show = false;
+		this.rootNode.animationManager.runAnimationsForSequenceNamed("Hide Timeline");	
+	}
 }
 
 RightMsgBox.prototype.onAnimationComplete = function() {
