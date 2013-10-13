@@ -31,10 +31,10 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
         this.rootNode.setTouchEnabled(true);
 
     // Start playing looped background music
-    if ( !Global_isWeb() ) {
-    	cc.AudioEngine.getInstance().playMusic("sounds/CAT_FIGHT_BG.mp3",true);
+    //if ( !Global_isWeb() ) {
+    	cc.AudioEngine.getInstance().playMusic("sounds/Floor_BG.mp3",true);
     	cc.AudioEngine.getInstance().setMusicVolume(0.5);
-    }
+    //}
     
     this.floorScrollView.setDelegate(this);
     this.wholeFloors = this.floorScrollView.getContainer();
@@ -140,10 +140,12 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
 {
 	var floorNum = this.wholeFloors.controller.getCatStayAtFloorNum();
 	var doorNum = this.wholeFloors.controller.getCatStayAtDoorNum();
-	
+    cc.AudioEngine.getInstance().playEffect("sounds/Door_Locked_HandleRattle3.mp3");
+
 	GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 1);
-	
+
     var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
+    scene = cc.TransitionProgressInOut.create(0.2,scene);
     cc.Director.getInstance().replaceScene(scene);
 };
 
@@ -244,7 +246,7 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
 
 ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
-	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+	cc.AudioEngine.getInstance().playEffect("sounds/Click_Button.mp3");
 	
 	this.awardScene.controller.showWindow();
     //var scene = cc.BuilderReader.loadAsScene("AwardScene.ccbi");

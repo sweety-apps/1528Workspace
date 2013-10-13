@@ -67,7 +67,7 @@ AwardScene.prototype.onDidLoadFromCCB = function () {
 
 AwardScene.prototype.onBack = function () {
 	if ( this.enableAllBtn  ) {
-		cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+		cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
         
 		this.bkgBtn.setVisible(false);
 		this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
@@ -100,6 +100,7 @@ AwardScene.prototype.onClickComment = function (obj) {
 }
 
 AwardScene.prototype.onClickDuomeng = function (obj) {
+    cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
 	if ( obj.enableAllBtn ) {
 		debugMsgOutput("memeda.OfferWallController");
 		memeda.OfferWallController.show();

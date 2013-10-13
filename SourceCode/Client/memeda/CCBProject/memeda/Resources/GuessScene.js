@@ -234,7 +234,7 @@ GuessScene.prototype.onBack = function ( ) {
     } catch (e) {
     }
 	
-	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+	cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
 	
     var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
     cc.Director.getInstance().replaceScene(scene);
@@ -721,9 +721,9 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 gCurrentPushedResultButton = gResultCharButtons[choosedIndex];
                 choosedButtonCount++;
 
-                if(false)
+                if(true)
                 {   // 播放音乐
-                    cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+                    cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
                     gInputCharButtons[sourceIndex].setVisible(false);
                 }
 
@@ -797,7 +797,8 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             if ( gCurrentTestObj.knowledgeTips != null ) {
             	url = gCurrentTestObj.knowledgeTips.url;
             }
-            
+
+            cc.AudioEngine.getInstance().playEffect("sounds/RightAnswer.mp3");
             this.EnableAllBtn(false);
             this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, this.onClickNext);
         }
@@ -816,7 +817,8 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 		    {
 				gResultCharButtons[i].controller.flush();
 		    }
-            
+
+            cc.AudioEngine.getInstance().playEffect("sounds/WrongAnswer.mp3");
             debugMsgOutput("可惜答错了，再接再厉！");
         }
     }
@@ -1043,7 +1045,7 @@ GuessScene.prototype.onClickResultBtn = function (obj, playmusic) {
         gCurrentPushedResultButton = null;
 
 		if ( playmusic != false ) {
-        	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
+        	cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
 		}
 		
 		gInputCharButtons[sourceIndex].setVisible(true);

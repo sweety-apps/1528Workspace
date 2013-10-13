@@ -76,6 +76,7 @@ BuyMsg.prototype.onClickBuy = function() {
 	if ( CoinMgr_GetCount() < this.price ) {
 		// 金币不够
 		this.noEnoughEvent();
+        cc.AudioEngine.getInstance().playEffect("sounds/WrongAnswer.mp3");
 		this.Hide(1);
 	} else {
     	// 上报数据
@@ -85,7 +86,7 @@ BuyMsg.prototype.onClickBuy = function() {
     		memeda.Stat.logEvent("promptbuy", param);
     	}
     	//
-    
+        cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
 		CoinMgr_Change(-1 * this.price);
 		this.Hide(1);
 	}	
