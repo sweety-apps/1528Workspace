@@ -5,99 +5,6 @@
 var kFloorStateWaiting = 0;
 var kFloorStateCatMoving = 1;
 
-var gTestFloor = [
-    {bg:"floor_blue",bottom:"floorBottom_blue",
-        floorNum:"1F",specText:"",offsetY:0,
-    doors:[
-        {hasFinished:true,image:"door_black",doorNum:"001"},
-        {hasFinished:true,image:"door_pink",doorNum:"002"},
-        {hasFinished:true,image:"door_yellow",doorNum:"003"}
-    ]},
-    {bg:"floor_gray",bottom:"floorBottom_gray",
-        floorNum:"2F",specText:"",offsetY:0,
-        doors:[
-            {hasFinished:true,image:"door_pink",doorNum:"011"},
-            {hasFinished:false,image:"doorSpecial_1",doorNum:"012"},
-            {hasFinished:false,image:"doorSpecial_3",doorNum:"013"}
-        ]},
-    {bg:"floor_pink",bottom:"floorBottom_pink",
-        floorNum:"3F",specText:"SEX",offsetY:0,
-        doors:[
-            {hasFinished:true,image:"doorSpecial_2",doorNum:"021"},
-            {hasFinished:true,image:"doorSpecial_4",doorNum:"022"},
-            {hasFinished:true,image:"doorSpecial_5",doorNum:"023"}
-        ]},
-    {bg:"floor_yellow",bottom:"floorBottom_yellow",
-        floorNum:"4F",specText:"",offsetY:0,
-        doors:[
-            {hasFinished:true,image:"doorSpecial_8",doorNum:"031"},
-            {hasFinished:true,image:"doorSpecial_7",doorNum:"032"},
-            {hasFinished:false,image:"doorSpecial_6",doorNum:"033"}
-        ]}
-];
-
-function makeTestData()
-{
-    for(var i = 4; i < 40; i+=4)
-    {
-        var newFloors = [
-            {bg:"floor_blue",bottom:"floorBottom_blue",
-                floorNum:"1F",specText:"",offsetY:0,
-                doors:[
-                    {hasFinished:true,image:"door_black",doorNum:"001"},
-                    {hasFinished:false,image:"door_pink",doorNum:"002"},
-                    {hasFinished:true,image:"door_yellow",doorNum:"003"}
-                ]},
-            {bg:"floor_gray",bottom:"floorBottom_gray",
-                floorNum:"2F",specText:"",offsetY:0,
-                doors:[
-                    {hasFinished:true,image:"door_pink",doorNum:"011"},
-                    {hasFinished:false,image:"doorSpecial_1",doorNum:"012"},
-                    {hasFinished:false,image:"doorSpecial_3",doorNum:"013"}
-                ]},
-            {bg:"floor_pink",bottom:"floorBottom_pink",
-                floorNum:"3F",specText:"SEX",offsetY:0,
-                doors:[
-                    {hasFinished:true,image:"doorSpecial_2",doorNum:"021"},
-                    {hasFinished:true,image:"doorSpecial_4",doorNum:"022"},
-                    {hasFinished:true,image:"doorSpecial_5",doorNum:"023"}
-                ]},
-            {bg:"floor_yellow",bottom:"floorBottom_yellow",
-                floorNum:"4F",specText:"",offsetY:0,
-                doors:[
-                    {hasFinished:true,image:"doorSpecial_8",doorNum:"031"},
-                    {hasFinished:true,image:"doorSpecial_7",doorNum:"032"},
-                    {hasFinished:false,image:"doorSpecial_6",doorNum:"033"}
-                ]}
-        ];
-
-        newFloors[0].floorNum = ""+(i+0) +"F";
-        newFloors[0].doors[0].doorNum = ""+(i+0)+""+1;
-        newFloors[0].doors[1].doorNum = ""+(i+0)+""+2;
-        newFloors[0].doors[2].doorNum = ""+(i+0)+""+3;
-
-        newFloors[1].floorNum = ""+(i+1) +"F";
-        newFloors[1].doors[0].doorNum = ""+(i+1)+""+1;
-        newFloors[1].doors[1].doorNum = ""+(i+1)+""+2;
-        newFloors[1].doors[2].doorNum = ""+(i+1)+""+3;
-
-        newFloors[2].floorNum = ""+(i+2) +"F";
-        newFloors[2].doors[0].doorNum = ""+(i+2)+""+1;
-        newFloors[2].doors[1].doorNum = ""+(i+2)+""+2;
-        newFloors[2].doors[2].doorNum = ""+(i+2)+""+3;
-
-        newFloors[3].floorNum = ""+(i+3) +"F";
-        newFloors[3].doors[0].doorNum = ""+(i+3)+""+1;
-        newFloors[3].doors[1].doorNum = ""+(i+3)+""+2;
-        newFloors[3].doors[2].doorNum = ""+(i+3)+""+3;
-
-        gTestFloor[i+0]=newFloors[0];
-        gTestFloor[i+1]=newFloors[1];
-        gTestFloor[i+2]=newFloors[2];
-        gTestFloor[i+3]=newFloors[3];
-    }
-}
-
 var WholeFloors = function() {
 };
 
@@ -119,7 +26,7 @@ WholeFloors.prototype.onDidLoadFromCCB = function () {
     //debugMsgOutput(Floor0.toString());
     //Floor0.controller.doorCover1.setVisible(false);
 
-    makeTestData();
+    FloorsData_resetTestData();
     this.InitWholeFloors();
 };
 

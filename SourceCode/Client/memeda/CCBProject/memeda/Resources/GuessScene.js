@@ -703,7 +703,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 if(true)
                 {   // 播放音乐
                     cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
-                    gInputCharButtons[sourceIndex].setVisible(false);
+                    //gInputCharButtons[sourceIndex].setVisible(false);
                 }
                 
                 // 调整z序
