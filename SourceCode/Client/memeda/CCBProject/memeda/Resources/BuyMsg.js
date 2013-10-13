@@ -77,7 +77,7 @@ BuyMsg.prototype.onClickBuy = function() {
 		// 金币不够
 		this.noEnoughEvent();
         cc.AudioEngine.getInstance().playEffect("sounds/WrongAnswer.mp3");
-		this.Hide(1);
+		this.Hide(0);
 	} else {
     	// 上报数据
     	if ( !Global_isWeb() ) {
