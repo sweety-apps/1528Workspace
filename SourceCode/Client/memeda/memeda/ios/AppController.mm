@@ -32,7 +32,7 @@ static AppDelegate s_sharedApplication;
     SocialShareAPI::getInstance()->initShareAPI();
     
     // 隐藏状态条
-    [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
     // Override point for customization after application launch.
 
@@ -104,6 +104,9 @@ static AppDelegate s_sharedApplication;
     /*
      Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
      */
+    // 隐藏状态条
+    [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    
     cocos2d::CCApplication::sharedApplication()->applicationWillEnterForeground();
 }
 

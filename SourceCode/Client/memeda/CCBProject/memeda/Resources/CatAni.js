@@ -74,11 +74,11 @@ CatAni.prototype.setStatus = function ( status ) {
 		} else if ( status == 2 ) {
 			this.rootNode.animationManager.runAnimationsForSequenceNamed("Unpleasant Timeline");			
 		} else if ( status == 3 ) {
-			this.rootNode.animationManager.runAnimationsForSequenceNamed("Unpleasant Timeline");	// TODO
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Dreadful Timeline");
 		} else if ( status == 4 ) {
-			this.rootNode.animationManager.runAnimationsForSequenceNamed("Happy Timeline");			// TODO
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Forceful Timeline");
 		} else if ( status == 5 ) {
-			this.rootNode.animationManager.runAnimationsForSequenceNamed("Unpleasant Timeline");	// TODO
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Weep Timeline");
 		}
 	}	
 }
