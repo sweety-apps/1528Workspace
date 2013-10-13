@@ -37,10 +37,6 @@ var gCatHand = null;
 
 var gMusicURL = null;
 
-var gCurrentChoosedCharButton = null;
-var gCurrentPushedResultButton = null;
-
-var gCurrentGuessState = kGuessStateNormal;
 var gFlippingIndex = 1;
 
 var gTimeCount = 0;
@@ -82,9 +78,7 @@ function GuessScene_InitGlobel() {
     
     gCatHand = null;
     gMusicURL = null;
-    gCurrentChoosedCharButton = null;
-    gCurrentPushedResultButton = null;
-    gCurrentGuessState = kGuessStateNormal;
+
     gFlippingIndex = 1;
     
     choosedButtons = new Array();
@@ -166,34 +160,19 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 设置各种按钮的回调
     gCurrentCCBView = this;
     
+    this.catAni.controller.attachEvent(this, this.onClickReplay);
+    
     // 初始化输入等UI
     this.setupInputCharsAndResultChars(gProblem);
 
     // 初始化操作的动画
     this.setupSubCCBFileAnimationCallBacks();
-
-    // State Change
-    gCurrentGuessState = kGuessStateNormal;
     
     // 购买按钮
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
     this.jumpMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;
     this.buyMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;
-        
-	// 初始化背景,给背景和文字框选择合适的背景
-	if ( Global_isWeb() ) {
-    	gFlippingIndex = 1;
-    	this.bgLayer.controller.setBkg(1, 1);		
-	} else {
-    	gFlippingIndex = 3;
-    	this.bgLayer.controller.setBkg(2, 3);
-	}
-	
-    for (var i = 0; i < gResultCharAllButtons.length; i ++) {
-        gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
-        gResultCharAllButtons[i].controller.Hide();
-    }
     
     this.checkExtraCoin();
     debugMsgOutput("GuessScene.prototype.onDidLoadFromCCB");
@@ -622,6 +601,14 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
 	//
 	
+	// 初始化背景,给背景和文字框选择合适的背景
+    gFlippingIndex = 2;
+    gCurrentCCBView.bgLayer.controller.setBkg(2, 3);
+	
+    for (var i = 0; i < gResultCharAllButtons.length; i ++) {
+        gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
+    }
+    
 	debugMsgOutput ( " feel " + testObj.feel );
 	gCurrentCCBView.MakeFeelList(testObj.feel);
 
@@ -671,11 +658,11 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
         gInputCharButtons[i].controller.SetIndexNumber(i);
         if(i < inputKeys.length)
         {
-            gInputCharButtons[i].setVisible(true);
+            gInputCharButtons[i].controller.show(true);
         }
         else
         {
-            gInputCharButtons[i].setVisible(false);
+            gInputCharButtons[i].controller.show(false);
         }
 
 		gInputCharButtons[i].controller.AttachClickEvent(function (obj) {
@@ -683,20 +670,13 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 debugMsgOutput("Input Disable");
                 return;				
 			}
-			
-            if(gCurrentGuessState != kGuessStateNormal)
-            {
-                debugMsgOutput("Input return");
-                return;
-            }
-            
       
             var sourceIndex = obj.GetIndexNumber();
                 
             debugMsgOutput("choosedButtonCount " + choosedButtonCount + "  gResultCharButtons.length  " + gResultCharButtons.length);
             
             debugMsgOutput("choosedButtons.length " + choosedButtons.length);      
-            if(choosedButtonCount < gResultCharButtons.length && gInputCharButtons[sourceIndex].isVisible())
+            if(choosedButtonCount < gResultCharButtons.length && gInputCharButtons[sourceIndex].controller.isShow())
             {
                 var choosedIndex = -1;
 
@@ -711,23 +691,31 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
                 }
                 debugMsgOutput("emptyButton " + emptyButton);               
                 debugMsgOutput("choosedIndex " + choosedIndex);
-                
-                gCurrentGuessState = kGuessStatePullingChar;
-                gCurrentChoosedCharButton = gInputCharButtons[sourceIndex];
+           
 
                 choosedButtons[choosedIndex] = gInputCharButtons[sourceIndex];
                 choosedCharStrings[choosedIndex] = gInputCharButtons[sourceIndex].controller.getText();
                 choosedButtons[choosedIndex].sourceButtonIndex = sourceIndex;
-                gCurrentPushedResultButton = gResultCharButtons[choosedIndex];
                 choosedButtonCount++;
 
                 if(false)
                 {   // 播放音乐
                     cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
-                    gInputCharButtons[sourceIndex].setVisible(false);
                 }
-
-                gCurrentCCBView.updateInputCharsAndResultCharsWithAnimation();
+                
+                // 调整z序
+                for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
+                	gCurrentCCBView.inputCharBoard.reorderChild(gInputCharButtons[i], 0);	
+                }
+                
+                gCurrentCCBView.inputCharBoard.reorderChild(gInputCharButtons[sourceIndex], 1);	
+                
+                debugMsgOutput ( "z-order : " + "  " + gInputCharButtons[sourceIndex].getZOrder());
+                	
+                gInputCharButtons[sourceIndex].controller.show(false);
+				gResultCharButtons[choosedIndex].controller.setText(choosedCharStrings[choosedIndex]);
+				
+				gCurrentCCBView.updateInputCharsAndResultChars();
             }
         });
     }
@@ -761,10 +749,6 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 		gResultCharButtons[i].controller.setText(showString);
     }
 
-    gCurrentGuessState = kGuessStateNormal;
-    gCurrentChoosedCharButton = null;
-    gCurrentPushedResultButton = null;
-
     if(choosedButtonCount >= gResultCharButtons.length)
     {
         if(this.checkAnswer(resultString,gCurrentTestObj.rightanswer))
@@ -787,11 +771,16 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             } catch (e) {
             }
             
-            Question_answerRight(gCurrentTestObj.id);
+            if ( !Problem_isAnswerRight(gCurrentTestObj.id) ) {
+            	// 第一次答对
+            	Question_answerRight(gCurrentTestObj.id);
+            	CoinMgr_Change(50);
+            }
             
             this.clearInputAndResultChar();
             this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");	
             this.catAni.controller.Leave();
+            this.bgLayer.controller.setPlay(false);
             
             var url = null;
             if ( gCurrentTestObj.knowledgeTips != null ) {
@@ -825,7 +814,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 GuessScene.prototype.clearInputAndResultChar = function () { 
     for(i = 0; i < gInputCharButtons.length; i++)
     {
-    	gInputCharButtons[i].setVisible(true);
+    	gInputCharButtons[i].controller.show(true);
         gInputCharButtons[i].controller.setText("");
         gInputCharButtons[i].controller.setStatus(false);	// 按钮不可点击
     }
@@ -853,61 +842,7 @@ GuessScene.prototype.clearInputCharsAndResultChars = function ()
 //动画回调
 GuessScene.prototype.setupSubCCBFileAnimationCallBacks = function()
 {
-    gCatHand.animationManager.setCompletedAnimationCallback(this, this.onSubCCBFileAnimationComplete);
 }
-
-GuessScene.prototype.onSubCCBFileAnimationComplete = function()
-{
-    if(gCatHand != null && gCatHand != undefined && gCurrentPushedResultButton != null && gCurrentPushedResultButton!= undefined)
-    {
-        debugMsgOutput("[Hand Finished:] " + gCatHand.animationManager.getLastCompletedSequenceName()
-            + "\n[Result Char Finshed:] " +  gCurrentPushedResultButton.animationManager.getLastCompletedSequenceName()
-            + "\n[Current States:] " + parseInt(gCurrentGuessState)
-        );
-    }
-
-    if(gCatHand.animationManager.getLastCompletedSequenceName() == "Push Timeline")
-    {
-        if(gCurrentGuessState == kGuessStatePullingChar)
-        {
-            if(gCurrentChoosedCharButton != null && gCurrentChoosedCharButton != undefined)
-            {
-                gCurrentChoosedCharButton.setVisible(false);
-            }
-            else
-            {
-                debugMsgOutput("[Error] gCurrentChoosedCharButton = null!");
-            }
-            gCurrentChoosedCharButton = null;
-        }
-    }
-
-    if(/*gCatHand.animationManager.getLastCompletedSequenceName() == "Pull Timeline" ||*/ gCatHand.animationManager.getLastCompletedSequenceName() == "Hidden Timeline")
-    {
-        if(gCurrentGuessState == kGuessStatePullingChar)
-        {
-            debugMsgOutput("gCurrentGuessState == kGuessStatePullingChar");
-            var choosedResultButtonSize = gCurrentPushedResultButton.getContentSize();
-            var handPos = gCurrentPushedResultButton.convertToWorldSpace(cc.p(choosedResultButtonSize.width/2,choosedResultButtonSize.height/2));
-            gCatHand.setPosition(handPos);
-            gCatHand.animationManager.runAnimationsForSequenceNamed("Push Timeline");
-            gCurrentGuessState = kGuessStatePuttingResult;
-        }
-        else if(gCurrentGuessState == kGuessStatePuttingResult)
-        {
-        	gCurrentCCBView.updateInputCharsAndResultChars();
-        }
-        debugMsgOutput("gCurrentGuessState ... kGuessStatePuttingResult");
-    }
-};
-
-GuessScene.prototype.updateInputCharsAndResultCharsWithAnimation = function ()
-{
-    var choosedCharButtonSize = gCurrentChoosedCharButton.getContentSize();
-    var handPos = gCurrentChoosedCharButton.convertToWorldSpace(cc.p(choosedCharButtonSize.width/2,choosedCharButtonSize.height/2));
-    gCatHand.setPosition(handPos);
-    gCatHand.animationManager.runAnimationsForSequenceNamed("Push Timeline");
-};
 
 GuessScene.prototype.CheckFeel = function () {
 	if ( this.feelArray.length > 0  && this.Entered) {
@@ -973,25 +908,27 @@ GuessScene.prototype.PlayMusic = function () {
 
 GuessScene.prototype.onMusicStop = function () {
 	this.catAni.controller.Listen(false);
-	this.playMusic.setVisible(true);
+	this.bgLayer.controller.setPlay(false);
 }
 
 GuessScene.prototype.CatEnter = function () {
 	this.PlayMusic();
-    this.playMusic.setVisible(false);
     this.Entered = false;
+    
+    this.bgLayer.controller.setPlay(true);
 	this.catAni.controller.Enter(this.onEnterCompleted, this);
 }
 
 GuessScene.prototype.ListenMusic = function () {
 	this.PlayMusic();
 	this.catAni.controller.Listen(true);
-	this.playMusic.setVisible(false);
+	this.bgLayer.controller.setPlay(true);
 }
     
     
-GuessScene.prototype.onClickReplay = function () {
-    this.ListenMusic();  	
+GuessScene.prototype.onClickReplay = function (obj) {
+	// 重放
+    obj.ListenMusic();  	
 }
 
 GuessScene.prototype.onEnterCompleted = function(obj) {
@@ -1023,10 +960,7 @@ GuessScene.prototype.onClickResultBtn = function (obj, playmusic) {
     if ( !gAllBtnEnable ) {
         return;				
 	}
-			
-	if(gCurrentGuessState != kGuessStateNormal) {
-        return;
-    }
+		
 
     debugMsgOutput("Result");
 
@@ -1039,14 +973,11 @@ GuessScene.prototype.onClickResultBtn = function (obj, playmusic) {
         choosedCharStrings[choosedIndex] = "";
         choosedButtonCount--;
 
-        gCurrentChoosedCharButton = null;
-        gCurrentPushedResultButton = null;
-
 		if ( playmusic != false ) {
         	cc.AudioEngine.getInstance().playEffect("sounds/MIAO1.mp3");
 		}
 		
-		gInputCharButtons[sourceIndex].setVisible(true);
+		gInputCharButtons[sourceIndex].controller.show(true);
         gCurrentCCBView.updateInputCharsAndResultChars();
     }
 }
@@ -1070,7 +1001,7 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 		}
 		
 		for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
-			if ( gInputCharButtons[i].isVisible() &&
+			if ( gInputCharButtons[i].controller.isShow() &&
 					gInputCharButtons[i].controller.getText() == resultChar ) {
 				inputIndex = i;
 				break;		
@@ -1089,7 +1020,7 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 			gCurrentCCBView.onClickResultBtn(tmp, false);
 			
 			for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
-				if ( gInputCharButtons[i].isVisible() &&
+				if ( gInputCharButtons[i].controller.isShow() &&
 						gInputCharButtons[i].controller.getText() == resultChar ) {
 					inputIndex = i;
 					break;		
@@ -1104,20 +1035,17 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 			choosedButtons[resultIndex] = emptyButton;			choosedCharStrings[resultIndex] = "";
             choosedButtonCount--;
 
-			gCurrentChoosedCharButton = null;
-			gCurrentPushedResultButton = null;
-
-            gInputCharButtons[sourceIndex].setVisible(true);
+            gInputCharButtons[sourceIndex].controller.show(true);
 		}
                       
         choosedButtons[resultIndex] = gInputCharButtons[inputIndex];
         
         choosedCharStrings[resultIndex] = gInputCharButtons[inputIndex].controller.getText();
         choosedButtons[resultIndex].sourceButtonIndex = inputIndex;
-        gCurrentPushedResultButton = gResultCharButtons[resultIndex];
+
         choosedButtonCount++;
         
-        gInputCharButtons[inputIndex].setVisible(false);
+        gInputCharButtons[inputIndex].controller.show(false);
         
 		gCurrentCCBView.updateInputCharsAndResultChars(false);
 		
@@ -1151,8 +1079,13 @@ GuessScene.prototype.onClickedWeChatShare = function () {
 	}
 	
 	this.EnableAllBtn(false);
-    this.weChatMsg.controller.ShowMsg(gCurrentTestObj.id, function () {
+    this.weChatMsg.controller.ShowMsg(gCurrentTestObj.id, function (err) {
 		gCurrentCCBView.EnableAllBtn(true);
+		debugMsgOutput("showmsg " + err);
+		if ( err != null ) {
+			gCurrentCCBView.wechatError.controller.ShowMsg(err, function () {
+			});	
+		}
     }, 
     function () {
     	gCurrentCCBView.checkExtraCoin();

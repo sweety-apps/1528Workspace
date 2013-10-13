@@ -23,9 +23,12 @@ RightMsgBox.prototype.ShowMsg = function(id, url, onClose) {
 		this.aboutUrl.setString("");
 	}
 	
-    var image = "problem/pic/" + id + ".jpg";
-    var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,195,135));
-    this.image.setDisplayFrame(spriteFrame);
+	try {
+    	var image = "problem/pic/" + id + ".jpg";
+    	var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,195,135));
+    	this.image.setDisplayFrame(spriteFrame);
+	} catch ( e ) {
+	}
 	
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");
 };
