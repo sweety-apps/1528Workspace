@@ -600,14 +600,6 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 		memeda.Stat.logEvent("guess", param);
     }
 	//
-	
-	// 初始化背景,给背景和文字框选择合适的背景
-    gFlippingIndex = 2;
-    gCurrentCCBView.bgLayer.controller.setBkg(2, 3);
-	
-    for (var i = 0; i < gResultCharAllButtons.length; i ++) {
-        gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
-    }
     
 	debugMsgOutput ( " feel " + testObj.feel );
 	gCurrentCCBView.MakeFeelList(testObj.feel);
@@ -626,6 +618,16 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为24
     inputKeys = MakeInputKeys(gCurrentTestObj.rightanswer, inputKeys);
 	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.rightanswer, gCurrentTestObj.inputkeys);
+    
+	// 初始化背景,给背景和文字框选择合适的背景
+    gFlippingIndex = 2;
+    gCurrentCCBView.bgLayer.controller.setBkg(2, 3);
+	
+	debugMsgOutput("gResultCharAllButtons.length " + gResultCharAllButtons.length);
+    for (var i = 0; i < gResultCharAllButtons.length; i ++) {
+        gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
+    }
+    //
     
     for(i = 0; i < gInputCharButtons.length; i++)
     {
