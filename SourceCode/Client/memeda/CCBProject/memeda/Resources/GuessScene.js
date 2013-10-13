@@ -913,10 +913,11 @@ GuessScene.prototype.CheckFeel = function () {
     	for ( var i = this.feelArray.length - 1; i >= 0; i -- ) {
     		var obj = this.feelArray[i];
     		var curTime = (new Date()).getTime();
-    		curTime = (curTime - this.beginPlayTime) / 1000;
+    		curTime = 1.0 * (curTime - this.beginPlayTime) / 1000;
     		if ( curTime >= obj.time ) {
     			if ( this.curFeel != obj.status ) {
-    				// 修改表情	
+    				// 修改表情
+                    debugMsgOutput("time " + (curTime - obj.time));
     				this.catAni.controller.setStatus(obj.status);
     				this.curFeel = obj.status;
     			}
@@ -939,9 +940,8 @@ GuessScene.prototype.update = function() {
             cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
         }
         gTimeCount = 0;
-        
-        gCurrentCCBView.CheckFeel();
     }
+    gCurrentCCBView.CheckFeel();
 }
 
 GuessScene.prototype._isRunning = function () {

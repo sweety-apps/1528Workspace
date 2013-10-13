@@ -206,7 +206,7 @@ function Problem_Initialize() {
 }
 
 function Problem_GetCount() {
-	if ( Globel_isWeb() ) {
+	if ( Global_isWeb() ) {
 		return 0;
 	}
 	
@@ -216,7 +216,7 @@ function Problem_GetCount() {
 // 返回题目的基本信息
 // obj.id,obj.type,obj.level,obj.tag
 function Problem_GetBaseInfo(index) {
-	if ( Globel_isWeb() ) {
+	if ( Global_isWeb() ) {
 		return null;
 	}
 	
