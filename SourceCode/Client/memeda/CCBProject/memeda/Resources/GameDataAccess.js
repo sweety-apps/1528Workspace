@@ -294,6 +294,135 @@ function Problem_RequestInfo(index, succeedCallback,failedCallback,context){
 	}
 }
 
+
+var gQuestionJumpList = null;
+var gQuestionJumpEvent = null;
+var gQuestionJumpEventID = 0;
+var gQuestionAnswerRightList = null;
+
+Problem_isJump = function (aid) {
+	if ( gQuestionJumpList["" + aid] == null ) {
+		debugMsgOutput("jump false");
+		return false;	
+	}
+	debugMsgOutput("jump false");
+	return true;
+}
+
+Problem_isAnswerRight = function (aid) {
+	if ( gQuestionAnswerRightList["" + aid] == null ) {
+		debugMsgOutput("AnswerRight false");
+		return false;	
+	}
+	debugMsgOutput("AnswerRight true");
+	return true;
+}
+
+Problem_registerStatusChange = function (content, fun) {
+	var obj = new object();
+	obj.id = gQuestionJumpEventID ++;
+	obj.content = content;
+	obj.fun = fun;
+	gQuestionJumpEvent.push(obj);
+}
+
+Problem_unregisterStatusChange = function (cookie) {
+	var tmpList = new Array();
+	
+	for ( var i = 0; i < gQuestionJumpEvent.length; i ++ ) {
+		if ( gQuestionJumpEvent[i].id != cookie ) {
+			tmpList.push(gQuestionJumpEvent[i]);
+		}	
+	}
+	gQuestionJumpEvent = null;
+	gQuestionJumpEvent = tmpList;
+}
+
+
+Question_init = function () {
+	gQuestionJumpList = new Array();
+	gQuestionJumpEvent = new Array();
+	
+	var list = sys.localStorage.getItem("jump");
+	debugMsgOutput("jumplist " + list);
+	var jumplist = new Array();
+	if ( list != null && list != "" ) {
+		jumplist = list.split(",");	
+	}
+	for ( var i = 0; i < jumplist.length; i ++ ) {
+		gQuestionJumpList["" + jumplist[i] ] = 1;	
+	}
+	
+	gQuestionAnswerRightList = new Array();
+	var list = sys.localStorage.getItem("answerrightlist");
+	debugMsgOutput("answerrightlist " + list);
+	var jumplist = new Array();
+	if ( list != null && list != "" ) {
+		jumplist = list.split(",");	
+	}
+	for ( var i = 0; i < jumplist.length; i ++ ) {
+		gQuestionAnswerRightList["" + jumplist[i] ] = 1;	
+	}
+}
+
+Question_answerRight = function ( aid ) {
+	debugMsgOutput("Question_answerRight aid " + aid);
+	gQuestionAnswerRightList["" + aid] = 1;
+	var strlist = "";
+	var i = 0;
+	for (var key in gQuestionAnswerRightList) {
+		if ( gQuestionAnswerRightList[key] != null ) {
+			if ( i != 0 ) {
+				strlist = strlist + ",";
+			}
+			i ++;
+			strlist = strlist + key;
+		}
+	}
+	
+	debugMsgOutput("answerrightlist write " + strlist);
+	sys.localStorage.setItem("answerrightlist", strlist);
+	
+	if ( Problem_isJump(aid) ) {
+		// 在跳过列表中	
+		gQuestionJumpList["" + aid] = null;
+		Question_SaveJumpList();
+	}
+	
+	for ( var i = 0; i < gQuestionJumpEvent.length; i ++ ) {
+		(gQuestionJumpEvent[i].fun)(aid, gQuestionJumpEvent[i].content, 2);		// 1跳过，2答对了
+	}
+}
+
+Question_SaveJumpList = function () {
+	var strlist = "";
+	var i = 0;
+	for (var key in gQuestionJumpList) {
+		if ( gQuestionJumpList[key] != null ) {
+			if ( i != 0 ) {
+				strlist = strlist + ",";
+			}
+			i ++;
+			strlist = strlist + key;
+		}
+	}
+	
+	debugMsgOutput("jumplist write " + strlist);
+	sys.localStorage.setItem("jump", strlist);
+};
+
+Question_jump = function ( aid ) {
+	debugMsgOutput("Question_jump aid " + aid);
+	gQuestionJumpList["" + aid] = 1;
+
+	Question_SaveJumpList();
+	
+	for ( var i = 0; i < gQuestionJumpEvent.length; i ++ ) {
+		(gQuestionJumpEvent[i].fun)(aid, gQuestionJumpEvent[i].content, 1);		// 1跳过，2答对了
+	}
+}
+
+Question_init();
 Problem_Initialize();
 
 

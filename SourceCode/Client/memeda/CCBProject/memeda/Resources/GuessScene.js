@@ -787,6 +787,8 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             } catch (e) {
             }
             
+            Question_answerRight(gCurrentTestObj.id);
+            
             this.clearInputAndResultChar();
             this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");	
             this.catAni.controller.Leave();
@@ -1166,7 +1168,9 @@ GuessScene.prototype.onClickJump = function () {
 	this.jumpMsg.controller.ShowMsg(500, function (res) {
 		if ( res == 1 ) {
 			// 跳过该题，进入下一题
-			Question_jump(gCurrentTestObj.id);
+			if ( !Problem_isAnswerRight(gCurrentTestObj.id) ) {
+				Question_jump(gCurrentTestObj.id);
+			}
 			
             if ( gProblem + 1 == Problem_GetCount() ) {
                 GuessScene_SetFloorInfo(0, 4);
