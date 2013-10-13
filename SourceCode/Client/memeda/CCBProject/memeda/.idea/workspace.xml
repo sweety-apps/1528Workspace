@@ -66,7 +66,7 @@
       <file leaf-file-name="ChooseTestsScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="248" column="71" selection-start="8621" selection-end="8688" vertical-scroll-proportion="-3.1153846">
+            <state line="248" column="71" selection-start="8621" selection-end="8688" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
       <file leaf-file-name="GuessScene.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="800" column="71" selection-start="22606" selection-end="22606" vertical-scroll-proportion="0.60181">
+            <state line="701" column="27" selection-start="19323" selection-end="19323" vertical-scroll-proportion="22.012579">
               <folding />
             </state>
           </provider>
@@ -93,7 +93,7 @@
       <file leaf-file-name="AwardScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/AwardScene/AwardScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="59" selection-start="4067" selection-end="4067" vertical-scroll-proportion="0.0">
+            <state line="123" column="59" selection-start="4134" selection-end="4134" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -307,8 +307,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Server/memecaiServer" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -353,9 +353,8 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39182281" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20247933" sideWeight="0.6081772" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2520661" sideWeight="0.6081772" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25619835" sideWeight="0.6081772" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -364,6 +363,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39182281" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -434,23 +434,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Resources/CoinMgr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="45" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="79" column="45" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Published-iOS/ChooseTestsScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="8" selection-start="5499" selection-end="5499" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="164" column="8" selection-start="5499" selection-end="5499" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.ccb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Published-HTML5/ChooseTestsScene.js">
@@ -476,9 +470,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/CommonScene/BuyCoinMessageBox.ccb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10816" column="43" selection-start="293112" selection-end="293112" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="10816" column="43" selection-start="293112" selection-end="293112" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/MainScene.js">
@@ -490,21 +482,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/FirstSceneHome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WechatAwardMsg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="25" selection-start="575" selection-end="575" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="16" column="25" selection-start="575" selection-end="575" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="248" column="71" selection-start="8621" selection-end="8688" vertical-scroll-proportion="-3.1153846">
+        <state line="248" column="71" selection-start="8621" selection-end="8688" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -525,7 +513,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/AwardScene/AwardScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="59" selection-start="4067" selection-end="4067" vertical-scroll-proportion="0.0">
+        <state line="123" column="59" selection-start="4134" selection-end="4134" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -539,7 +527,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="800" column="71" selection-start="22606" selection-end="22606" vertical-scroll-proportion="0.60181">
+        <state line="701" column="27" selection-start="19323" selection-end="19323" vertical-scroll-proportion="22.012579">
           <folding />
         </state>
       </provider>

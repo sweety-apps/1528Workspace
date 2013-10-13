@@ -22,6 +22,7 @@ WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) {
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 	this.sharedFun = sharedFun;
+	this.errMsg = null;
 	
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
@@ -29,7 +30,7 @@ WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) {
 WeChatMsg.prototype.Hide = function() {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
 	this.maskBkg.setVisible(false);
-	this.endFun();
+	this.endFun(this.errMsg);
 };
 
 WeChatMsg.prototype.onClickClose = function() {
@@ -38,8 +39,6 @@ WeChatMsg.prototype.onClickClose = function() {
 
 WeChatMsg.prototype.onShare = function() {
 	// 分享   
-	this.Hide();	
-	
     var url = Global_getShareUrl(this.aid);
     debugMsgOutput(url);
     
@@ -49,6 +48,7 @@ WeChatMsg.prototype.onShare = function() {
 		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
 	    	if ( state == "Success" ) {
+	    		This.Hide();	
 	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
 	    		var share = sys.localStorage.getItem("firstshare");	
 	    		if ( share == null || share == "" ) {
@@ -57,6 +57,9 @@ WeChatMsg.prototype.onShare = function() {
 	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
 	    			This.sharedFun();
 	    		}
+	    	} else if ( state == "Fail" ) {
+	    		This.errMsg = errMsg;	
+	    		This.Hide();
 	    	}
 	    };
 	    
@@ -71,8 +74,6 @@ WeChatMsg.prototype.onShare = function() {
 
 WeChatMsg.prototype.onShareFriend = function() {
 	// 分享到朋友圈 
-	this.Hide();	
-	
     var url = Global_getShareUrl(this.aid);
     debugMsgOutput(url);
     
@@ -82,6 +83,7 @@ WeChatMsg.prototype.onShareFriend = function() {
 		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
 	    	if ( state == "Success" ) {
+	    		This.Hide();
 	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
 	    		var share = sys.localStorage.getItem("firstshare");	
 	    		if ( share == null || share == "" ) {
@@ -90,6 +92,9 @@ WeChatMsg.prototype.onShareFriend = function() {
 	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
 	    			This.sharedFun();
 	    		}
+	    	} else if ( state == "Fail" ) {
+	    		This.errMsg = errMsg;	
+	    		This.Hide();
 	    	}
 	    };
 	    

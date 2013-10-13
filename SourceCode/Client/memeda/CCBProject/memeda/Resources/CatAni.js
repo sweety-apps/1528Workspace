@@ -28,6 +28,7 @@ CatAni.prototype.Enter = function(fun, obj) {
 	gFunOnEnterCompleted = fun;
 	gFunOnEnterObj = obj;
 	
+	this.replay.setVisible(false);
 	this.isEnter = true;
 	this.musicCtrl.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Timeline");
@@ -37,6 +38,7 @@ CatAni.prototype.Leave = function(fun, obj) {
 	gFunOnLeaveCompleted = fun;
 	gFunOnLeaveObj = obj;
 	
+	this.replay.setVisible(false);
 	this.isEnter = false;
 	this.musicCtrl.setVisible(false);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Leave Timeline");
@@ -56,17 +58,29 @@ CatAni.prototype.Listen = function (listen) {
 	if ( this.isEnter ) {
 		this.musicCtrl.setVisible(listen);	
 		if ( listen ) {
+			this.replay.setVisible(false);
 			this.rootNode.animationManager.runAnimationsForSequenceNamed("Listen Timeline");
 			debugMsgOutput("----- Listen Timeline");
 		} else {
+			this.replay.setVisible(true);
 			this.rootNode.animationManager.runAnimationsForSequenceNamed("Default Timeline");	
 			debugMsgOutput("----- Default Timeline");
 		}
 	}
 };
 
+CatAni.prototype.onClickReplay = function () {
+	this.clickFun (this.context);
+};
+
+CatAni.prototype.attachEvent = function ( obj , fun) {
+	this.context = obj;
+	this.clickFun = fun;
+};
+
 CatAni.prototype.setStatus = function ( status ) {
 	if ( this.isEnter ) {
+		this.replay.setVisible(false);
 		if ( status == -1 ) {
 			this.rootNode.animationManager.runAnimationsForSequenceNamed("Listen Timeline");
 		} else if ( status == 1 ) {
