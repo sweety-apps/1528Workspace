@@ -135,7 +135,9 @@ function FloorsData_resetTestData_Device()
     var pbl_count = Problem_GetCount();
     var flr_count = Math.ceil(pbl_count/3);
 
-    //var flr_color = ["",];
+    var flr_color_loop = ["yellow","pink","blue"];
+    var door_color_loop = ["pink","blue","blue","black"];
+
     for(var f = 0; f < flr_count; ++f)
     {
         var floorData = new {bg:"floor_blue",bottom:"floorBottom_blue",
@@ -146,8 +148,63 @@ function FloorsData_resetTestData_Device()
                 {hasFinished:true,image:"door_yellow",doorNum:"003"}
             ]};
 
+        var flr_idx = f%(flr_color_loop.length);
+        var door_idx = f%(door_color_loop.length);
 
+        floorData.bg = "floor_"+flr_color_loop[flr_idx];
+        floorData.bottom = "floorBottom_"+flr_color_loop[flr_idx];
+
+        for(var d = 0; d < floorData.doors.length; ++d)
+        {
+            var testNum = (f*3)+d;
+            var doorNumStr = "";
+            if(testNum >= 100)
+            {
+                doorNumStr = ""+testNum;
+            }
+            else if(testNum >= 10)
+            {
+                doorNumStr = "0"+testNum;
+            }
+            else
+            {
+                doorNumStr = "00"+testNum;
+            }
+
+            floorData.doors[d].hasFinished = false;
+            floorData.doors[d].image = "door_"+door_color_loop[door_idx];
+            floorData.doors[d].doorNum = doorNumStr;
+        }
+
+        gTestFloor[f] = floorData;
     }
+
+    for(var f = 0; f < flr_count; ++f)
+    {
+        var floorData = gTestFloor[f];
+
+        for(var d = 0; d < floorData.doors.length; ++d)
+        {
+            var testNum = (f*3)+d;
+            var testInfo = Problem_GetBaseInfo(testNum);
+            if(Problem_isAnswerRight(testInfo.id))
+            {
+                floorData.doors[d].hasFinished = true;
+            }
+            else if(Question_isJump(testInfo.id))
+            {
+                floorData.doors[d].hasFinished = false;
+            }
+            else
+            {
+                floorData.doors[d].hasFinished = false;
+            }
+        }
+
+        gTestFloor[f] = floorData;
+    }
+
+
 }
 
 function FloorsData_resetTestData()
@@ -158,6 +215,6 @@ function FloorsData_resetTestData()
     }
     else
     {
-        FloorsData_resetTestData_Web();//FloorsData_resetTestData_Device();
+        FloorsData_resetTestData_Device();
     }
 }
