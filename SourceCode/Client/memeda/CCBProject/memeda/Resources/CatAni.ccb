@@ -600,9 +600,9 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>59.6875</real>
-													<real>77.5</real>
-													<integer>4</integer>
+													<real>191</real>
+													<real>108</real>
+													<integer>1</integer>
 												</array>
 											</dict>
 											<dict>
@@ -695,6 +695,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 										<key>seqExpanded</key>
 										<true/>
 									</dict>
@@ -863,8 +865,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>animatedProperties</key>
