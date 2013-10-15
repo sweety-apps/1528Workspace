@@ -25,7 +25,7 @@ InputCharBtn.prototype.AttachClickEvent = function ( fun ) {
 InputCharBtn.prototype.onClick = function () {
 	if ( this.ClickEvent != null ) {
 		this.ClickEvent(this);	
-	}	
+	}
 }
 
 InputCharBtn.prototype.setEnable = function ( enable ) {
@@ -57,8 +57,10 @@ InputCharBtn.prototype.isShow = function (  ) {
 
 InputCharBtn.prototype.show = function ( show ) {
 	if ( show ) {
-		this.rootLayout.setVisible ( true );	
+		this.rootLayout.setVisible ( true );
+		this.btn.setVisible(true);
 	} else {
+		this.btn.setVisible(false);
 		this.rootNode.animationManager.runAnimationsForSequenceNamed("Hide Timeline");	
 	}	
 }
