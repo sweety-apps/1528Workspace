@@ -59,3 +59,7 @@ AnswerBlank.prototype.Show = function () {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Visible" + imageIndex + " Timeline");	
 	this.rootLayout.setVisible(true);
 }
+
+AnswerBlank.prototype.setNone = function () {
+	this.rootNode.animationManager.runAnimationsForSequenceNamed("None Timeline");	
+}

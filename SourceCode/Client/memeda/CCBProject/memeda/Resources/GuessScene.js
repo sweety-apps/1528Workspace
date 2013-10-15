@@ -50,7 +50,13 @@ function GuessScene_SetFloorInfo(index, source, color) {
 	gSource = source;
 	gColor = color;
 	
-	debugMsgOutput("bg " + color.bg + "  door " + color.door);
+	if ( color == null ) {
+		gColor = new Object();
+		gColor.bg = "floor_pink";
+		gColor.door = "door_pink";
+	}
+		
+	//debugMsgOutput("bg " + color.bg + "  door " + color.door);
 }
 
 function GuessScene_Preload(preload) {
@@ -304,16 +310,6 @@ GuessScene.prototype.onAnimationComplete = function()
 
 GuessScene.prototype.InitInputAndResultChar = function(rightAnswers, inputkeys)
 {
-    if ( gResultCharAllButtons.length == 0 )
-    {
-        gResultCharAllButtons[0] = this.charButtonResult0;
-        gResultCharAllButtons[1] = this.charButtonResult1;
-        gResultCharAllButtons[2] = this.charButtonResult2;
-        gResultCharAllButtons[3] = this.charButtonResult3;
-        gResultCharAllButtons[4] = this.charButtonResult4;
-        gResultCharAllButtons[5] = this.charButtonResult5;
-    }
-
     // result
     while(gResultCharButtons.length > 0)
     {
@@ -322,7 +318,7 @@ GuessScene.prototype.InitInputAndResultChar = function(rightAnswers, inputkeys)
 
     for (var i = 0; i < gResultCharAllButtons.length; i ++)
     {
-        gResultCharAllButtons[i].setVisible(false);
+        gResultCharAllButtons[i].controller.setNone();
     }
 
     var nChars = rightAnswers.length;    // 答案的字符数
@@ -351,8 +347,6 @@ GuessScene.prototype.ResetResultButtonsPosition = function()
 
     for (var i = 0; i < gResultCharButtons.length; i ++)
     {
-        gResultCharButtons[i].setVisible(true);
-
         var pos = cc.p(btnPos + i * btnSp, gResultCharButtons[i].getPosition().y);
         gResultCharButtons[i].setPosition(pos);
 
@@ -621,35 +615,23 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 
     // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为24
     inputKeys = MakeInputKeys(gCurrentTestObj.rightanswer, inputKeys);
-	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.rightanswer, gCurrentTestObj.inputkeys);
     
+    if ( gResultCharAllButtons.length == 0 )
+    {
+        gResultCharAllButtons[0] = gCurrentCCBView.charButtonResult0;
+        gResultCharAllButtons[1] = gCurrentCCBView.charButtonResult1;
+        gResultCharAllButtons[2] = gCurrentCCBView.charButtonResult2;
+        gResultCharAllButtons[3] = gCurrentCCBView.charButtonResult3;
+        gResultCharAllButtons[4] = gCurrentCCBView.charButtonResult4;
+        gResultCharAllButtons[5] = gCurrentCCBView.charButtonResult5;
+    }
+    debugMsgOutput("gResultCharAllButtons.length " + gResultCharAllButtons.length);
 	// 初始化背景,给背景和文字框选择合适的背景
 	// 1.红色，2.黄色，3.蓝色
-	if ( gColor.bg == "floor_blue" ) {
-    	gFlippingIndex = 3;
-	} else if ( gColor.bg == "floor_pink" ) {
-    	gFlippingIndex = 1;		
-	} else {
-		gFlippingIndex = 2;
-	}
-	var doorColor = 2;
-	if ( gColor.door == "door_blue" ) {
-		doorColor = 3;
-	} else if ( gColor.door == "door_pink" ) {
-		doorColor = 1;
-	} else if ( gColor.door == "door_black" ) {
-		doorColor = 4;
-	} else {
-		doorColor = 2;
-	}
-	
-    gCurrentCCBView.bgLayer.controller.setBkg(gFlippingIndex, doorColor);
-	
-	debugMsgOutput("gResultCharAllButtons.length " + gResultCharAllButtons.length);
-    for (var i = 0; i < gResultCharAllButtons.length; i ++) {
-        gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
-    }
+	gCurrentCCBView.AdjuestDoorColor();
     //
+    
+	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.rightanswer, gCurrentTestObj.inputkeys);
     
     for(i = 0; i < gInputCharButtons.length; i++)
     {
@@ -814,7 +796,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 
             cc.AudioEngine.getInstance().playEffect("sounds/RightAnswer.mp3");
             this.EnableAllBtn(false);
-            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, this.onClickNext);
+            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, this.onClickNext, this.onShowCompleted);
         }
         else if ( showAni != false )
         {
@@ -1080,13 +1062,52 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 	}
 }
 
-GuessScene.prototype.onClickNext = function() {
+	// 初始化背景,给背景和文字框选择合适的背景
+	// 1.红色，2.黄色，3.蓝色
+GuessScene.prototype.AdjuestDoorColor = function () {
+	if ( gColor.bg == "floor_blue" ) {
+    	gFlippingIndex = 3;
+	} else if ( gColor.bg == "floor_pink" ) {
+    	gFlippingIndex = 1;		
+	} else {
+		gFlippingIndex = 2;
+	}
+	var doorColor = 2;
+	if ( gColor.door == "door_blue" ) {
+		doorColor = 3;
+	} else if ( gColor.door == "door_pink" ) {
+		doorColor = 1;
+	} else if ( gColor.door == "door_black" ) {
+		doorColor = 4;
+	} else {
+		doorColor = 2;
+	}
+	
+    gCurrentCCBView.bgLayer.controller.setBkg(gFlippingIndex, doorColor);
+	
+	debugMsgOutput("gResultCharAllButtons.length " + gResultCharAllButtons.length);
+    for (var i = 0; i < gResultCharAllButtons.length; i ++) {
+        gResultCharAllButtons[i].controller.setImage(gFlippingIndex);
+        gResultCharAllButtons[i].controller.setNone();
+        gResultCharAllButtons[i].controller.Hide();
+    }
+}    //
+    
+    
+GuessScene.prototype.onShowCompleted = function () {
     if ( gProblem + 1 == Problem_GetCount() ) {
-        GuessScene_SetFloorInfo(0, 3);
+   		var color = GetColorByFloor(0, 0);
+		GuessScene_SetFloorInfo(0, 3, color);
     } else {
-        GuessScene_SetFloorInfo(gProblem + 1, 3);
+    	var index = gProblem + 1;
+   		var color = GetColorByFloor(Math.floor(index / 3), index % 3);
+        GuessScene_SetFloorInfo(gProblem + 1, 3, color);
     }
     
+    gCurrentCCBView.AdjuestDoorColor();
+};
+
+GuessScene.prototype.onClickNext = function() {
 	gCurrentCCBView.EnableAllBtn(true);
 	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
 }
@@ -1131,13 +1152,16 @@ GuessScene.prototype.onClickJump = function () {
 			if ( !Problem_isAnswerRight(gCurrentTestObj.id) ) {
 				Question_jump(gCurrentTestObj.id);
 			}
-			
-            if ( gProblem + 1 == Problem_GetCount() ) {
-                GuessScene_SetFloorInfo(0, 4);
-            } else {
-                GuessScene_SetFloorInfo(gProblem + 1, 4);
-            }   // 4--通过跳过进入下一题
-	
+		
+    		if ( gProblem + 1 == Problem_GetCount() ) {
+   				var color = GetColorByFloor(0, 0);
+				GuessScene_SetFloorInfo(0, 4, color);
+    		} else {
+    			var index = gProblem + 1;
+   				var color = GetColorByFloor(Math.floor(index / 3), index % 3);
+        		GuessScene_SetFloorInfo(gProblem + 1, 4, color);
+    		}
+    
 			gCurrentCCBView.EnableAllBtn(true);
 			gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
 		} else {
