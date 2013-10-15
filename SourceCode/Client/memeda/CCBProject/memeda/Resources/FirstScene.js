@@ -20,6 +20,8 @@ FirstScene.prototype.onClickStart = function () {
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Button.mp3");
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Switch Timeline");
 	this.homePage.animationManager.runAnimationsForSequenceNamed("Ani Timeline");
+	
+	this.btn.setVisible(false);
 };
 
 

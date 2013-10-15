@@ -40,7 +40,7 @@ var gMusicURL = null;
 var gFlippingIndex = 1;
 
 var gTimeCount = 0;
-var gBuyNum = 0;		// 但前购买过的提示
+var gBuyList = null; // 但前购买过的提示
 var gAllBtnEnable = true;
 var gPreload = false;
 var gColor = null;
@@ -73,7 +73,7 @@ function GuessScene_InitGlobel() {
     // static Var
     kReturnButtonPushed = 1;
     
-    gBuyNum = 0;
+    gBuyList = null;
     gPushedButton = 0;
     
     gCurrentCCBView = null;
@@ -602,7 +602,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 	debugMsgOutput ( " feel " + testObj.feel );
 	gCurrentCCBView.MakeFeelList(testObj.feel);
 
-	gBuyNum = 0;
+	gBuyList = new Array();
 
     debugMsgOutput("onReceivedTestData");
     gCurrentTestObj = testObj;
@@ -962,7 +962,9 @@ GuessScene.prototype.ClickBuy = function () {
 	
 	var price = new Array(10, 20, 30, 40, 50, 60);
 	this.EnableAllBtn(false);
-	this.buyMsg.controller.ShowMsg(price[gBuyNum], "第" + (gBuyNum + 1) + "个字", this.onBuyMsgEnd, gBuyNum + 1);
+	debugMsgOutput("gBuyList.length " + this.getBuyCount());
+	var count = this.getBuyCount();
+	this.buyMsg.controller.ShowMsg(price[count], "第" + (count + 1) + "个字", this.onBuyMsgEnd, count + 1);
 }
 
 GuessScene.prototype.onClickResultBtn = function (obj, playmusic) {
@@ -990,25 +992,50 @@ GuessScene.prototype.onClickResultBtn = function (obj, playmusic) {
         gCurrentCCBView.updateInputCharsAndResultChars();
     }
 }
+
+GuessScene.prototype.getBuyCount = function () {
+	var count = 0;
+	for (  var key in gBuyList ) {
+		count ++;	
+	}
+	
+	return count;
+};
         
-GuessScene.prototype.onBuyMsgEnd = function (res) {
-	gCurrentCCBView.EnableAllBtn(true);
-	if ( res == 1 ) {
-		gBuyNum ++;
-		// 查找第一个错字的位置
-		var answer = gCurrentTestObj.rightanswer;
-		var resultIndex = -1;
-		var resultChar = "";
-		var inputIndex = -1;
+GuessScene.prototype.isBuy = function (index) {
+	for ( var key in gBuyList ) {
+		debugMsgOutput("isBuy " + key + "  index " + index);
+		if ( key == "_" + index ) { 
+			debugMsgOutput("isBuy true");
+			return true;	
+		}
+	}
+	debugMsgOutput("isBuy false");
+	return false;
+};
+
+GuessScene.prototype.showResultChar = function ( resultIndex, resultChar) {
+	var inputIndex = -1;
 		
+	for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
+		if ( gInputCharButtons[i].controller.isShow() &&
+				gInputCharButtons[i].controller.getText() == resultChar ) {
+			inputIndex = i;
+			break;		
+		}
+	}
+		
+	if ( inputIndex == -1 ) {
+		// 	错字正在使用
+		var tmp = null;
 		for (var i = 0; i < gResultCharButtons.length; i ++ ) {
-			if ( gResultCharButtons[i].controller.getText() != answer[i] ) {
-				resultIndex = i;
-				resultChar = answer[i];
+			if ( gResultCharButtons[i].controller.getText() == resultChar ) {
+				tmp = gResultCharButtons[i].controller;
 				break;
 			}
 		}
-		
+		gCurrentCCBView.onClickResultBtn(tmp, false);
+			
 		for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
 			if ( gInputCharButtons[i].controller.isShow() &&
 					gInputCharButtons[i].controller.getText() == resultChar ) {
@@ -1016,49 +1043,49 @@ GuessScene.prototype.onBuyMsgEnd = function (res) {
 				break;		
 			}
 		}
-		
-		if ( inputIndex == -1 ) {
-			// 	错字正在使用
-			var tmp = null;
-			for (var i = 0; i < gResultCharButtons.length; i ++ ) {
-				if ( gResultCharButtons[i].controller.getText() == resultChar ) {
-					tmp = gResultCharButtons[i].controller;
-					break;
-				}
-			}
-			gCurrentCCBView.onClickResultBtn(tmp, false);
-			
-			for ( var i = 0; i < gInputCharButtons.length; i ++ ) {
-				if ( gInputCharButtons[i].controller.isShow() &&
-						gInputCharButtons[i].controller.getText() == resultChar ) {
-					inputIndex = i;
-					break;		
-				}
-			}
-		}
-		
-		debugMsgOutput("result " + resultIndex + "   " + resultChar + "   " + answer);
+	}
 
-		if ( choosedButtons[resultIndex] != emptyButton ) {
-			var sourceIndex = choosedButtons[resultIndex].sourceButtonIndex;
-			choosedButtons[resultIndex] = emptyButton;			choosedCharStrings[resultIndex] = "";
-            choosedButtonCount--;
+	if ( choosedButtons[resultIndex] != emptyButton ) {
+		var sourceIndex = choosedButtons[resultIndex].sourceButtonIndex;
+		choosedButtons[resultIndex] = emptyButton;			
+		choosedCharStrings[resultIndex] = "";
+        choosedButtonCount--;
 
-            gInputCharButtons[sourceIndex].controller.show(true);
-		}
+        gInputCharButtons[sourceIndex].controller.show(true);
+	}
                       
-        choosedButtons[resultIndex] = gInputCharButtons[inputIndex];
+    choosedButtons[resultIndex] = gInputCharButtons[inputIndex];
         
-        choosedCharStrings[resultIndex] = gInputCharButtons[inputIndex].controller.getText();
-        choosedButtons[resultIndex].sourceButtonIndex = inputIndex;
+    choosedCharStrings[resultIndex] = gInputCharButtons[inputIndex].controller.getText();
+    choosedButtons[resultIndex].sourceButtonIndex = inputIndex;
 
-        choosedButtonCount++;
+    choosedButtonCount++;
         
-        gInputCharButtons[inputIndex].controller.show(false);
+    gInputCharButtons[inputIndex].controller.show(false);
         
-		gCurrentCCBView.updateInputCharsAndResultChars(false);
+    gCurrentCCBView.updateInputCharsAndResultChars(false);
 		
-		gResultCharButtons[resultIndex].controller.flush();
+	gResultCharButtons[resultIndex].controller.flush();
+};
+
+GuessScene.prototype.onBuyMsgEnd = function (res) {
+	gCurrentCCBView.EnableAllBtn(true);
+	if ( res == 1 ) {
+		// 查找第一个错字并且是没有购买过的位置
+		var answer = gCurrentTestObj.rightanswer;
+		
+		for (var i = 0; i < gResultCharButtons.length; i ++ ) {
+			if ( gResultCharButtons[i].controller.getText() != answer[i] ) {
+				// 判断是否购买过
+				if ( gCurrentCCBView.isBuy(i) ) {
+					gCurrentCCBView.showResultChar(i, answer[i]);
+				} else {
+					gCurrentCCBView.showResultChar(i, answer[i]);
+					gBuyList["_" + i] = 1;	// 添加到购买队列中
+					break;	
+				}
+			}
+		}
 	}
 }
 
