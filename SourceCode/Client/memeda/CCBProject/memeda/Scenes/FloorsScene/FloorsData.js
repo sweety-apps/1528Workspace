@@ -160,15 +160,15 @@ function FloorsData_resetTestData_Device()
             var doorNumStr = "";
             if(testNum >= 100)
             {
-                doorNumStr = ""+testNum;
+                doorNumStr = ""+testNum+1;
             }
             else if(testNum >= 10)
             {
-                doorNumStr = "0"+testNum;
+                doorNumStr = "0"+testNum+1;
             }
             else
             {
-                doorNumStr = "00"+testNum;
+                doorNumStr = "00"+testNum+1;
             }
 
             floorData.doors[d].hasFinished = false;
@@ -203,20 +203,23 @@ function FloorsData_resetTestData_Device()
                 lastTestInfo = Problem_GetBaseInfo(testNum - 1);
             }
 
-            if(Problem_isAnswerRight(testInfo.id))
+            if(testInfo != null)
             {
-                floorData.doors[d].hasFinished = true;
-            }
-            else if(Problem_isJump(testInfo.id))
-            {
-                floorData.doors[d].hasFinished = true;
-            }
-            else
-            {
-                floorData.doors[d].hasFinished = false;
+                if(Problem_isAnswerRight(testInfo.id))
+                {
+                    floorData.doors[d].hasFinished = true;
+                }
+                else if(Problem_isJump(testInfo.id))
+                {
+                    floorData.doors[d].hasFinished = true;
+                }
+                else
+                {
+                    floorData.doors[d].hasFinished = false;
+                }
             }
 
-            if(testNum == lastAnsweredTest)
+            if(testNum == lastAnsweredTest + 1)
             {
                 floorData.doors[d].hasFinished = true;
             }
