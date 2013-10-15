@@ -170,6 +170,12 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
     }
 };
 
+WholeFloors.prototype.GetColorByFloor = function (floor, num) {
+	var obj = new Object();
+	obj.bg = gTestFloor[floor].bg;
+	obj.door = gTestFloor[floor].doors[num].image;
+	return obj;
+};
 
 WholeFloors.prototype.CalculateHeight = function ()
 {

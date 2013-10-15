@@ -142,7 +142,8 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
 	var doorNum = this.wholeFloors.controller.getCatStayAtDoorNum();
     cc.AudioEngine.getInstance().playEffect("sounds/Door_Locked_HandleRattle3.mp3");
 
-	GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 1);
+	var color = this.wholeFloors.controller.GetColorByFloor(floorNum, doorNum-1);
+	GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 1, color);
 
     var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
     scene = cc.TransitionProgressInOut.create(0.2,scene);
@@ -176,7 +177,10 @@ ChooseTestsScene.prototype.onPressedDoor = function (isDoorOpened, floorNum, doo
         if(this.sceneState == kFloorsSceneStateNormal)
         {
             this.sceneState = kFloorsSceneStateEnteringDoor;
-            GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 2);
+            
+			var color = this.wholeFloors.controller.GetColorByFloor(floorNum, doorNum-1);
+			GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 2, color);
+	
             this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Door Timeline");
         }
     }

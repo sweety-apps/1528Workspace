@@ -43,10 +43,14 @@ var gTimeCount = 0;
 var gBuyNum = 0;		// 但前购买过的提示
 var gAllBtnEnable = true;
 var gPreload = false;
+var gColor = null;
 
-function GuessScene_SetFloorInfo(index, source) {
+function GuessScene_SetFloorInfo(index, source, color) {
 	gProblem = index;	//
 	gSource = source;
+	gColor = color;
+	
+	debugMsgOutput("bg " + color.bg + "  door " + color.door);
 }
 
 function GuessScene_Preload(preload) {
@@ -620,8 +624,26 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 	gCurrentCCBView.InitInputAndResultChar(gCurrentTestObj.rightanswer, gCurrentTestObj.inputkeys);
     
 	// 初始化背景,给背景和文字框选择合适的背景
-    gFlippingIndex = 2;
-    gCurrentCCBView.bgLayer.controller.setBkg(2, 3);
+	// 1.红色，2.黄色，3.蓝色
+	if ( gColor.bg == "floor_blue" ) {
+    	gFlippingIndex = 3;
+	} else if ( gColor.bg == "floor_pink" ) {
+    	gFlippingIndex = 1;		
+	} else {
+		gFlippingIndex = 2;
+	}
+	var doorColor = 2;
+	if ( gColor.door == "door_blue" ) {
+		doorColor = 3;
+	} else if ( gColor.door == "door_pink" ) {
+		doorColor = 1;
+	} else if ( gColor.door == "door_black" ) {
+		doorColor = 4;
+	} else {
+		doorColor = 2;
+	}
+	
+    gCurrentCCBView.bgLayer.controller.setBkg(gFlippingIndex, doorColor);
 	
 	debugMsgOutput("gResultCharAllButtons.length " + gResultCharAllButtons.length);
     for (var i = 0; i < gResultCharAllButtons.length; i ++) {
