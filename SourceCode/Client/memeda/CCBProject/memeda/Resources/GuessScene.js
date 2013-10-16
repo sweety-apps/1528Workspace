@@ -56,7 +56,7 @@ function GuessScene_SetFloorInfo(index, source, color) {
 		gColor.door = "door_pink";
 	}
 		
-	//debugMsgOutput("bg " + color.bg + "  door " + color.door);
+	debugMsgOutput("GuessScene_SetFloorInfo " + gProblem);
 }
 
 function GuessScene_Preload(preload) {
@@ -202,6 +202,7 @@ function clearAllPressEventToSprite ()
 
 ///// Logic Methods
 GuessScene.prototype.onClickCoin = function () {
+	debugMsgOutput("GuessScene.prototype.onClickCoin ...");
     gCurrentCCBView.ClickBuy();
 }
 
@@ -796,7 +797,18 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 
             cc.AudioEngine.getInstance().playEffect("sounds/RightAnswer.mp3");
             this.EnableAllBtn(false);
-            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, this.onClickNext, this.onShowCompleted);
+            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, this.onClickNext);
+            
+            if ( gProblem + 1 == Problem_GetCount() ) {
+                var color = GetColorByFloor(0, 0);
+                GuessScene_SetFloorInfo(0, 3, color);
+            } else {
+                var index = gProblem + 1;
+                var color = GetColorByFloor(Math.floor(index / 3), index % 3);
+                GuessScene_SetFloorInfo(gProblem + 1, 3, color);
+            }
+            
+            gCurrentCCBView.AdjuestDoorColor();
         }
         else if ( showAni != false )
         {
@@ -877,7 +889,6 @@ GuessScene.prototype.CheckFeel = function () {
 GuessScene.prototype.update = function() {
     gTimeCount ++;
     if ( gTimeCount >= 10 ) {
-        debugMsgOutput("music " + cc.AudioEngine.getInstance().isMusicPlaying() );
         if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
             gCurrentCCBView.onMusicStop();
             
@@ -1119,20 +1130,6 @@ GuessScene.prototype.AdjuestDoorColor = function () {
         gResultCharAllButtons[i].controller.Hide();
     }
 }    //
-    
-    
-GuessScene.prototype.onShowCompleted = function () {
-    if ( gProblem + 1 == Problem_GetCount() ) {
-   		var color = GetColorByFloor(0, 0);
-		GuessScene_SetFloorInfo(0, 3, color);
-    } else {
-    	var index = gProblem + 1;
-   		var color = GetColorByFloor(Math.floor(index / 3), index % 3);
-        GuessScene_SetFloorInfo(gProblem + 1, 3, color);
-    }
-    
-    gCurrentCCBView.AdjuestDoorColor();
-};
 
 GuessScene.prototype.onClickNext = function() {
 	gCurrentCCBView.EnableAllBtn(true);
@@ -1143,9 +1140,9 @@ GuessScene.prototype.EnableAllBtn = function (enable) {
 	debugMsgOutput("EnableAllBtn " + enable);
 	gAllBtnEnable = enable;
 	
-	this.coinBtn.setEnabled(enable);
-	this.returnBtn.setEnabled(enable);
-	this.chatShare.setEnabled(enable);
+	//this.coinBtn.setEnabled(enable);
+	//this.returnBtn.setEnabled(enable);
+	//this.chatShare.setEnabled(enable);
 }; 
 
 GuessScene.prototype.onClickedWeChatShare = function () {

@@ -7,11 +7,10 @@ RightMsgBox.prototype.onDidLoadFromCCB = function () {
 RightMsgBox.prototype.onClickBkg = function () {
 };
 
-RightMsgBox.prototype.ShowMsg = function(id, url, onClose, onShow) {
+RightMsgBox.prototype.ShowMsg = function(id, url, onClose) {
 	this.show = true;
 	this.onCloseFun = onClose;
 	this.msgLayout.setVisible(true);
-	this.onShowFun = onShow;
 	this.Url = url;
 	
 	if ( url != null && url != "" ) {
@@ -57,10 +56,6 @@ RightMsgBox.prototype.onAnimationComplete = function() {
 		this.msgLayout.setVisible(false);	
 		if ( this.onCloseFun != null ) {
 			this.onCloseFun();
-		}
-	} else if ( this.rootNode.animationManager.getLastCompletedSequenceName() == "Default Timeline" ) {
-		if ( this.onShowFun != null ) {
-			this.onShowFun();
 		}
 	}
 }

@@ -1,5 +1,7 @@
 var WeChatMsg = function() {};
 
+WeChatMsg.prototype.onClickBkg = function () {
+};
 
 WeChatMsg.prototype.onDidLoadFromCCB = function () {
     // Do Scale

@@ -2,10 +2,14 @@ var BuyMsg = function() {};
 var gBuyMsgThis = null;
 
 
-
+BuyMsg.prototype.onClickBkg = function () {
+	
+};
 
 BuyMsg.prototype.onDidLoadFromCCB = function () {
 	gBuyMsgThis = this;
+	
+	this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 	
     // Do Scale
     var screenSize = cc.Director.getInstance().getWinSizeInPixels();
@@ -32,6 +36,7 @@ BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
     }
     //
     
+    this.msgLayout.setVisible(true);
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 	this.price = price;
@@ -71,6 +76,15 @@ BuyMsg.prototype.onClickClose = function() {
     //
 };
 
+BuyMsg.prototype.onAnimationComplete = function()
+{
+	var aniName = this.rootNode.animationManager.getLastCompletedSequenceName();
+	if ( aniName == "End Timeline" ) {
+		this.msgLayout.setVisible(false);
+	}	
+}
+    
+    
 BuyMsg.prototype.onClickBuy = function() {
 	// 扣金币
 	if ( CoinMgr_GetCount() < this.price ) {
@@ -79,6 +93,7 @@ BuyMsg.prototype.onClickBuy = function() {
         cc.AudioEngine.getInstance().playEffect("sounds/WrongAnswer.mp3");
 		this.Hide(0);
 	} else {
+		debugMsgOutput("BuyMsg.prototype.onClickBuy");
     	// 上报数据
     	if ( !Global_isWeb() ) {
     		var param = memeda.Stat.createParam();
@@ -89,5 +104,6 @@ BuyMsg.prototype.onClickBuy = function() {
         cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
 		CoinMgr_Change(-1 * this.price);
 		this.Hide(1);
+		debugMsgOutput("BuyMsg.prototype.onClickBuy end");
 	}	
 };
