@@ -95,7 +95,7 @@ ChooseTestsScene.prototype.updateBuyMsgBoxState = function ()
     {
         if(!SpecialSpyPackageMgr_IsPurchased())
         {
-            this.showBuyMessageBox();
+            //this.showBuyMessageBox();
         }
     }
 

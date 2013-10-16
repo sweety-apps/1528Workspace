@@ -136,7 +136,7 @@ function FloorsData_resetTestData_Device()
     var flr_count = Math.ceil(pbl_count/3);
 
     var flr_color_loop = ["yellow","pink","blue"];
-    var door_color_loop = ["pink","blue","blue","black"];
+    var door_color_loop = ["pink","blue","yellow","black"];
 
     for(var f = 0; f < flr_count; ++f)
     {
@@ -152,7 +152,7 @@ function FloorsData_resetTestData_Device()
         var door_idx = f%(door_color_loop.length);
 
         floorData.bg = "floor_"+flr_color_loop[flr_idx];
-        floorData.bottom = "floorBottom_"+flr_color_loop[door_idx];
+        floorData.bottom = "floorBottom_"+flr_color_loop[flr_idx];
         floorData.floorNum = ""+(f+1)+"F";
 
         for(var d = 0; d < floorData.doors.length; ++d)
@@ -161,15 +161,15 @@ function FloorsData_resetTestData_Device()
             var doorNumStr = "";
             if(testNum >= 100)
             {
-                doorNumStr = ""+testNum+1;
+                doorNumStr = ""+(testNum+1);
             }
             else if(testNum >= 10)
             {
-                doorNumStr = "0"+testNum+1;
+                doorNumStr = "0"+(testNum+1);
             }
             else
             {
-                doorNumStr = "00"+testNum+1;
+                doorNumStr = "00"+(testNum+1);
             }
 
             floorData.doors[d].hasFinished = false;
@@ -186,7 +186,7 @@ function FloorsData_resetTestData_Device()
         var testInfo = Problem_GetBaseInfo(t);
         if(Problem_isAnswerRight(testInfo.id) || Problem_isJump(testInfo.id))
         {
-            lastAnsweredTest = t;
+            lastAnsweredTest = t + 1;
         }
     }
 
@@ -220,7 +220,7 @@ function FloorsData_resetTestData_Device()
                 }
             }
 
-            if(testNum == lastAnsweredTest + 1)
+            if(testNum == lastAnsweredTest)
             {
                 floorData.doors[d].hasFinished = true;
             }

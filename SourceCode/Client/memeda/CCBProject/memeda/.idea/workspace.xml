@@ -8,14 +8,14 @@
     <file path="/DebugUtils.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1376820033246" ignored="false" />
     <file path="/GameDataAccess.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381926635817" ignored="false" />
     <file path="/excelxmlToTestJson.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1377541580098" ignored="false" />
-    <file path="/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381937003096" ignored="false" />
+    <file path="/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381939568032" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/FloorsScene/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378711228939" ignored="false" />
     <file path="/ChooseTestScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379414353900" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/FloorsScene/ChooseTestScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1378670283467" ignored="false" />
     <file path="/GiftBuyMessageBox.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380890013940" ignored="false" />
     <file path="/Floor.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379338080797" ignored="false" />
     <file path="/ChooseTestsScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381928673306" ignored="false" />
-    <file path="/a.dummy" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935170080" ignored="false" />
+    <file path="/a.dummy" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381941853017" ignored="false" />
     <file path="/PurchaseTable.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380889392375" ignored="false" />
     <file path="/BuyCoinMessageBox.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380961422988" ignored="false" />
     <file path="/CoinMgr.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380866126537" ignored="false" />
@@ -23,15 +23,18 @@
     <file path="/MainScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381656241501" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/main.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381659319259" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/fileLookup.plist" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381659319259" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/boot-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935763719" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/boot-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381940744677" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/boot2-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935763719" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/index.html" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381659319259" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/AwardScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381665022536" ignored="false" />
     <file path="/FloorsData.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381917744120" ignored="false" />
     <file path="/Globel.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935536460" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/resources-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935763719" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/resources-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381941817715" ignored="false" />
     <file path="/FirstScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935611556" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/FirstScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935763719" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381940744677" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-iOS/ChooseTestsScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381941817715" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-iOS/WholeFloors.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381941817715" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +57,8 @@
       <file leaf-file-name="ChooseTestsScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="39" selection-start="2133" selection-end="2133" vertical-scroll-proportion="-31.73077">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="190" column="8" selection-start="6420" selection-end="6420" vertical-scroll-proportion="-3.1153846">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,7 +66,7 @@
       <file leaf-file-name="GuessScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="21" selection-start="1014" selection-end="1014" vertical-scroll-proportion="-4.269231">
+            <state line="50" column="21" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WholeFloors.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WholeFloors.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="398" column="31" selection-start="15427" selection-end="15427" vertical-scroll-proportion="0.6641791">
+            <state line="394" column="60" selection-start="15300" selection-end="15300" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -109,10 +110,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FloorsData.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FloorsData.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/FloorsData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="41" selection-start="1554" selection-end="1561" vertical-scroll-proportion="0.0">
+            <state line="243" column="0" selection-start="8512" selection-end="8512" vertical-scroll-proportion="0.8892989">
               <folding />
             </state>
           </provider>
@@ -155,18 +156,18 @@
         <option value="$PROJECT_DIR$/Resources/JumpMsgBox.js" />
         <option value="$PROJECT_DIR$/Resources/BuyMsg.js" />
         <option value="$PROJECT_DIR$/Resources/GuessScene.js" />
-        <option value="$PROJECT_DIR$/Scenes/FloorsScene/FloorsData.js" />
         <option value="$PROJECT_DIR$/Published-HTML5/GameDataAccess.js" />
         <option value="$PROJECT_DIR$/Resources/GameDataAccess.js" />
-        <option value="$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js" />
         <option value="$PROJECT_DIR$/Resources/Globel.js" />
         <option value="$PROJECT_DIR$/Resources/FirstScene.js" />
         <option value="$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js" />
+        <option value="$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js" />
+        <option value="$PROJECT_DIR$/Scenes/FloorsScene/FloorsData.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
+    <option name="x" value="96" />
     <option name="y" value="22" />
     <option name="width" value="1256" />
     <option name="height" value="707" />
@@ -258,20 +259,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="memeda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="memeda" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="memeda" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -286,8 +273,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Server/memecaiServer" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -327,14 +314,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="22" width="1256" height="707" extended-state="0" />
+    <frame x="96" y="22" width="1256" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39011925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20247933" sideWeight="0.60988075" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2694215" sideWeight="0.60988075" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27438018" sideWeight="0.60988075" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -411,6 +398,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Resources/GameDataAccess.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="408" column="18" selection-start="20341" selection-end="20341" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/JumpMsgBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="78" selection-start="2011" selection-end="2081" vertical-scroll-proportion="0.0" />
@@ -423,7 +417,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/GuessScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="21" selection-start="1014" selection-end="1014" vertical-scroll-proportion="-4.269231">
+        <state line="50" column="21" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -463,15 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="39" selection-start="2133" selection-end="2133" vertical-scroll-proportion="-31.73077">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Globel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="31" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0">
@@ -486,19 +471,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/FloorsData.js">
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="41" selection-start="1554" selection-end="1561" vertical-scroll-proportion="0.0">
+        <state line="394" column="60" selection-start="15300" selection-end="15300" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.ccb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js">
+    <entry file="file://$PROJECT_DIR$/Published-HTML5/ChooseTestsScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="398" column="31" selection-start="15427" selection-end="15427" vertical-scroll-proportion="0.6641791">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="159" column="13" selection-start="5415" selection-end="5415" vertical-scroll-proportion="0.33064517">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="190" column="8" selection-start="6420" selection-end="6420" vertical-scroll-proportion="-3.1153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/FloorsData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="243" column="0" selection-start="8512" selection-end="8512" vertical-scroll-proportion="0.8892989">
+          <folding />
         </state>
       </provider>
     </entry>

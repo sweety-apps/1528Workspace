@@ -382,6 +382,7 @@ WholeFloors.prototype.onUFOLightAnimationCompleted = function()
     if(this.UFOFloorFront.animationManager.getLastCompletedSequenceName().indexOf("UFO Light Timeline") >= 0)
     {
         this.catAndLift.setVisible(true);
+        this.catAndLift.animationManager.runAnimationsForSequenceNamed("Lift Down Timeline"+this.currentCatStayAtDoorNum);
     }
     if(this.UFOFloorFront.animationManager.getLastCompletedSequenceName().indexOf("UFO Light End Timeline") >= 0)
     {
@@ -391,7 +392,7 @@ WholeFloors.prototype.onUFOLightAnimationCompleted = function()
 
 WholeFloors.prototype.showUFOLight = function (floorNum,doorNum)
 {
-    imageUrl = "UI/levels/"+gTestFloor[floorNum].bottom + ".png";
+    imageUrl = "UI/levels/"+gTestFloor[floorNum].bottom + "_ufo.png";
     spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
     this.catAndLift.setVisible(false);
     this.UFOFloorFront.setPositionY(gTestFloor[floorNum].offsetY);
