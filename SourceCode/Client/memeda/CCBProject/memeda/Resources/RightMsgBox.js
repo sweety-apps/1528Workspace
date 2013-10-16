@@ -7,11 +7,15 @@ RightMsgBox.prototype.onDidLoadFromCCB = function () {
 RightMsgBox.prototype.onClickBkg = function () {
 };
 
-RightMsgBox.prototype.ShowMsg = function(id, url, onClose) {
+RightMsgBox.prototype.ShowMsg = function(id, url, isFirst, onClose) {
 	this.show = true;
+	this.isFirst = isFirst;
 	this.onCloseFun = onClose;
 	this.msgLayout.setVisible(true);
 	this.Url = url;
+	this.isAddCoin = false;
+    
+	this.coinAward.setVisible(isFirst);
 	
 	if ( url != null && url != "" ) {
 		// 显示的链接长度不超过40个字符
@@ -46,8 +50,18 @@ RightMsgBox.prototype.onClickURL = function() {
 
 RightMsgBox.prototype.Hide = function () {
 	if ( this.show ) {
+        if ( this.isFirst && !this.isAddCoin ) {
+			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
+			CoinMgr_Change(5);
+        }
+       
 		this.show = false;
-		this.rootNode.animationManager.runAnimationsForSequenceNamed("Hide Timeline");	
+		
+		if ( this.isFirst ) {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("CoinHide Timeline");
+		} else {
+			this.rootNode.animationManager.runAnimationsForSequenceNamed("Hide Timeline");		
+		}	
 	}
 }
 
@@ -57,5 +71,13 @@ RightMsgBox.prototype.onAnimationComplete = function() {
 		if ( this.onCloseFun != null ) {
 			this.onCloseFun();
 		}
+	} else if ( this.rootNode.animationManager.getLastCompletedSequenceName() == "Default Timeline" ) {
+		if ( this.isFirst ) {
+            this.isAddCoin = true;
+			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
+            debugMsgOutput("this.rootNode.animationManager.runAnimationsForSequenceNamed('CoinShow Timeline')");
+			//this.rootNode.animationManager.runAnimationsForSequenceNamed("CoinShow Timeline");		
+			CoinMgr_Change(5);
+		}	
 	}
 }

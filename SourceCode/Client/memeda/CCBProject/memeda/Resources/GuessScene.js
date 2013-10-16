@@ -779,10 +779,11 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             } catch (e) {
             }
             
+            var isFirst = false;
             if ( !Problem_isAnswerRight(gCurrentTestObj.id) ) {
             	// 第一次答对
             	Question_answerRight(gCurrentTestObj.id);
-            	CoinMgr_Change(50);
+            	isFirst = true;
             }
             
             this.clearInputAndResultChar();
@@ -797,7 +798,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 
             cc.AudioEngine.getInstance().playEffect("sounds/RightAnswer.mp3");
             this.EnableAllBtn(false);
-            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, this.onClickNext);
+            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, isFirst, this.onClickNext);
             
             if ( gProblem + 1 == Problem_GetCount() ) {
                 var color = GetColorByFloor(0, 0);
