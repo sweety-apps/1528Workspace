@@ -12,6 +12,8 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
     
 	var GuessScene = cc.BuilderReader.loadAsScene("GuessScene");
 	GuessScene = null;
+
+    Global_clearAllGloabalVars();
     
     GuessScene_Preload(false);
 };

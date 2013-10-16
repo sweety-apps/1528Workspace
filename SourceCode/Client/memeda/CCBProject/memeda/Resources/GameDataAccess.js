@@ -2,7 +2,7 @@
  * 获取游戏数据
  */
 // 加解密
-<!--//des加解密函数
+//des加解密函数
 //key：加密用的密钥
 //message：需要加密的字符串
 //encrypt：加密还是解密，1为加密，0，解密
@@ -406,7 +406,7 @@ function Problem_Initialize() {
 
 function Problem_GetCount() {
 	if ( Global_isWeb() ) {
-		return 0;
+		return gTestFloor.length;
 	}
 	
 	return gProblemIndex.length;
@@ -550,6 +550,18 @@ Problem_unregisterStatusChange = function (cookie) {
 	gQuestionJumpEvent = tmpList;
 }
 
+Problem_setCurrentIndex = function(index) {
+    sys.localStorage.setItem("problemIndex",index);
+}
+
+Problem_getCurrentIndex = function() {
+    var index = sys.localStorage.getItem("problemIndex");
+    if(index == null || index == undefined)
+    {
+        index = 0;
+    }
+    return index;
+}
 
 Question_init = function () {
 	gQuestionJumpList = new Array();

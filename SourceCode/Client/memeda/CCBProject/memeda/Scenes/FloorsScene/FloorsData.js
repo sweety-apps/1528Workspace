@@ -152,7 +152,8 @@ function FloorsData_resetTestData_Device()
         var door_idx = f%(door_color_loop.length);
 
         floorData.bg = "floor_"+flr_color_loop[flr_idx];
-        floorData.bottom = "floorBottom_"+flr_color_loop[flr_idx];
+        floorData.bottom = "floorBottom_"+flr_color_loop[door_idx];
+        floorData.floorNum = ""+(f+1)+"F";
 
         for(var d = 0; d < floorData.doors.length; ++d)
         {

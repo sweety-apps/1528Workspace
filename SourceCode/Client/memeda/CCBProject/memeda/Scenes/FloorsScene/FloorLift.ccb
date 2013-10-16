@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>4</integer>
+	<integer>0</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -3098,8 +3098,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>12</real>
-									<real>45</real>
+									<real>87</real>
+									<real>41</real>
 									<integer>4</integer>
 								</array>
 							</dict>
@@ -3126,8 +3126,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>0.30000001192092896</real>
-									<real>0.30000001192092896</real>
+									<real>0.5</real>
+									<real>0.5</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -3253,6 +3253,8 @@
 						<true/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -3566,6 +3568,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>seqExpanded</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

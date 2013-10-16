@@ -62,6 +62,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     	memeda.OfferWallController.init();
 	}
     this.QueryExtraCoin();
+    this.wholeFloors.controller.setupCatPosition();
+    this.scrollFloorsToCatPosition();
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
@@ -336,6 +338,13 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         		            					CoinMgr_Change(coin);
                                            });                  
         }
+};
+
+ChooseTestsScene.prototype.scrollFloorsToCatPosition = function ()
+{
+    var scrollX = this.floorScrollView.getContentOffset().x;
+    var scrollY = this.wholeFloors.controller.getShouldScrollToY(this.rootNode.getContentSize().height);
+    this.floorScrollView.setContentOffset(cc.p(scrollX,scrollY),false);
 };
 
         

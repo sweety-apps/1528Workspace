@@ -51,3 +51,7 @@ Global_getUserID = function () {
 	
 	return userId;
 };
+
+Global_clearAllGloabalVars = function () {
+    gHasShowedUFOLight = false;
+};

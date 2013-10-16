@@ -46,6 +46,7 @@ var gPreload = false;
 var gColor = null;
 
 function GuessScene_SetFloorInfo(index, source, color) {
+    Problem_setCurrentIndex(index);
 	gProblem = index;	//
 	gSource = source;
 	gColor = color;

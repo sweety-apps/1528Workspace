@@ -5,6 +5,8 @@
 var kFloorStateWaiting = 0;
 var kFloorStateCatMoving = 1;
 
+var gHasShowedUFOLight = false;
+
 var WholeFloors = function() {
 };
 
@@ -87,12 +89,6 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.floorRect = cc.rect(0,0,320,138);
 
     this.rootLayer.setContentSize(cc.size(width,this.CalculateHeight()+this.startFloorOffsetY));
-
-    //初始化cat的位置
-    this.sceneState = kFloorStateWaiting;
-    this.currentCatStayAtDoorNum = 1;
-    this.currentCatStayAtFloorNum = 0;
-    this.doLiftAnimationTo(offY,this.currentCatStayAtDoorNum,this.currentCatStayAtFloorNum,false,null,null);
 };
 
 WholeFloors.prototype.UninitWholeFloors = function ()
@@ -179,7 +175,7 @@ function GetColorByFloor (floor, num) {
 
 WholeFloors.prototype.CalculateHeight = function ()
 {
-    return gTestFloor.length * this.floorHeight;
+    return Problem_GetCount() * this.floorHeight;
 }
 
 WholeFloors.prototype.onClickedDoor = function(floor, floorNum, doorNum)
@@ -280,6 +276,7 @@ WholeFloors.prototype.doLiftAnimationTo = function(offsetY, doorNum,floorNum,sho
         this.currentCatStayAtFloorNum = floorNum;
         if(!showAnimation)
         {
+            this.catAndLift.setPositionY(offsetY);
             this.catAndLift.animationManager.runAnimationsForSequenceNamed("Stay Timeline"+this.currentCatStayAtDoorNum);
             this.sceneState = kFloorStateWaiting;
         }
@@ -342,4 +339,64 @@ WholeFloors.prototype.setScrollingCallback = function (target,callfunc)
 {
     this.onScrollingCallbackTarget = target;
     this.onScrollingCallbackMethod = callfunc;
+};
+
+WholeFloors.prototype.setupCatPosition = function ()
+{
+    //初始化cat的位置
+    this.sceneState = kFloorStateWaiting;
+    var problemIndex = Problem_getCurrentIndex();
+    this.currentCatStayAtDoorNum = problemIndex%3 + 1;
+    this.currentCatStayAtFloorNum = Math.floor(problemIndex/3);
+    var offY = this.startFloorOffsetY + (this.currentCatStayAtFloorNum * this.floorHeight);
+    this.doLiftAnimationTo(offY,this.currentCatStayAtDoorNum,this.currentCatStayAtFloorNum,false,null,null);
+    if(!gHasShowedUFOLight)
+    {
+        gHasShowedUFOLight = true;
+        this.showUFOLight(this.currentCatStayAtFloorNum,this.currentCatStayAtDoorNum)
+    }
+};
+
+WholeFloors.prototype.getShouldScrollToY = function(scrollViewHeight)
+{
+    var wholeFloorsHeight = this.rootLayer.getContentSize().height;
+    var catPosY = this.catAndLift.getPositionY();
+    var catHeight = this.catAndLift.getContentSize().height;
+    var startY = this.startFloorOffsetY;
+
+    var shouldYInContainer = (scrollViewHeight - catHeight) / 2;
+    var scrollToY = catPosY - shouldYInContainer;
+    if(scrollToY < 0)
+    {
+        scrollToY = 0;
+    }
+    if((scrollToY + scrollViewHeight) > wholeFloorsHeight)
+    {
+        scrollToY = wholeFloorsHeight - scrollViewHeight;
+    }
+    return -scrollToY;
+};
+
+WholeFloors.prototype.onUFOLightAnimationCompleted = function()
+{
+    if(this.UFOFloorFront.animationManager.getLastCompletedSequenceName().indexOf("UFO Light Timeline") >= 0)
+    {
+        this.catAndLift.setVisible(true);
+    }
+    if(this.UFOFloorFront.animationManager.getLastCompletedSequenceName().indexOf("UFO Light End Timeline") >= 0)
+    {
+        this.UFOFloorFront.setVisible(false);
+    }
+};
+
+WholeFloors.prototype.showUFOLight = function (floorNum,doorNum)
+{
+    imageUrl = "UI/levels/"+gTestFloor[floorNum].bottom + ".png";
+    spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
+    this.catAndLift.setVisible(false);
+    this.UFOFloorFront.setPositionY(gTestFloor[floorNum].offsetY);
+    this.UFOFloorFront.setVisible(true);
+    this.UFOFloorFront.controller.bottom.setDisplayFrame(spriteFrame);
+    this.UFOFloorFront.animationManager.setCompletedAnimationCallback(this, this.onUFOLightAnimationCompleted);
+    this.UFOFloorFront.animationManager.runAnimationsForSequenceNamed("UFO Light Timeline"+doorNum);
 };
