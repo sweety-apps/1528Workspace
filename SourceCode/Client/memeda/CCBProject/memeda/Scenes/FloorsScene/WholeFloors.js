@@ -175,7 +175,7 @@ function GetColorByFloor (floor, num) {
 
 WholeFloors.prototype.CalculateHeight = function ()
 {
-    return Problem_GetCount() * this.floorHeight;
+    return Math.ceil(Problem_GetCount() / 3) * this.floorHeight;
 }
 
 WholeFloors.prototype.onClickedDoor = function(floor, floorNum, doorNum)

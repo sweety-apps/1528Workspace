@@ -56,10 +56,7 @@
 		F316CE4D17B2059300821A66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4C17B2059300821A66 /* UIKit.framework */; };
 		F316CE4F17B2059300821A66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE4E17B2059300821A66 /* Foundation.framework */; };
 		F316CE5117B2059300821A66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F316CE5017B2059300821A66 /* CoreGraphics.framework */; };
-		F316CE5517B2059300821A66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE5417B2059300821A66 /* CloseNormal.png */; };
-		F316CE5717B2059300821A66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE5617B2059300821A66 /* CloseSelected.png */; };
 		F316CE5917B2059300821A66 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE5817B2059300821A66 /* Default.png */; };
-		F316CE5B17B2059300821A66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE5A17B2059300821A66 /* HelloWorld.png */; };
 		F316CE5D17B2059300821A66 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE5C17B2059300821A66 /* Icon-72.png */; };
 		F316CE5F17B2059300821A66 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE5E17B2059300821A66 /* Icon-Small-50.png */; };
 		F316CE6117B2059300821A66 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE6017B2059300821A66 /* Icon-Small.png */; };
@@ -402,6 +399,14 @@
 		F3D08AD717EED6320093A0B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D08AD617EED6320093A0B5 /* MessageUI.framework */; };
 		F3D08ADC17EFD3F50093A0B5 /* SocialShareAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D08ADA17EFD3F50093A0B5 /* SocialShareAPI.cpp */; };
 		F3D08ADF17EFD4230093A0B5 /* SocialShareAPIForiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3D08ADE17EFD4230093A0B5 /* SocialShareAPIForiOS.mm */; };
+		F3D102B718103B15002A3A9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D102B618103B15002A3A9B /* Images.xcassets */; };
+		F3D102BF18103CD0002A3A9B /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102B818103CD0002A3A9B /* Icon-40.png */; };
+		F3D102C018103CD0002A3A9B /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102B918103CD0002A3A9B /* Icon-60.png */; };
+		F3D102C118103CD0002A3A9B /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102BA18103CD0002A3A9B /* Icon-76.png */; };
+		F3D102C218103CD0002A3A9B /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102BB18103CD0002A3A9B /* Icon-80.png */; };
+		F3D102C318103CD0002A3A9B /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102BC18103CD0002A3A9B /* Icon-120.png */; };
+		F3D102C418103CD0002A3A9B /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102BD18103CD0002A3A9B /* Icon-152.png */; };
+		F3D102C518103CD0002A3A9B /* Icon-Small-72.png in Resources */ = {isa = PBXBuildFile; fileRef = F3D102BE18103CD0002A3A9B /* Icon-Small-72.png */; };
 		F3ECD8B017F8081500A0CA29 /* DouBanConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD86917F8081500A0CA29 /* DouBanConnection.framework */; };
 		F3ECD8B117F8081500A0CA29 /* DropboxConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD86A17F8081500A0CA29 /* DropboxConnection.framework */; };
 		F3ECD8B217F8081500A0CA29 /* EverNoteConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD86B17F8081500A0CA29 /* EverNoteConnection.framework */; };
@@ -563,10 +568,7 @@
 		F316CE4C17B2059300821A66 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F316CE4E17B2059300821A66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F316CE5017B2059300821A66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F316CE5417B2059300821A66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseNormal.png; path = Resources/CloseNormal.png; sourceTree = "<group>"; };
-		F316CE5617B2059300821A66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CloseSelected.png; path = Resources/CloseSelected.png; sourceTree = "<group>"; };
 		F316CE5817B2059300821A66 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
-		F316CE5A17B2059300821A66 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HelloWorld.png; path = Resources/HelloWorld.png; sourceTree = "<group>"; };
 		F316CE5C17B2059300821A66 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
 		F316CE5E17B2059300821A66 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
 		F316CE6017B2059300821A66 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
@@ -1323,6 +1325,14 @@
 		F3D08ADB17EFD3F50093A0B5 /* SocialShareAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialShareAPI.h; sourceTree = "<group>"; };
 		F3D08ADD17EFD4230093A0B5 /* SocialShareAPIForiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialShareAPIForiOS.h; sourceTree = "<group>"; };
 		F3D08ADE17EFD4230093A0B5 /* SocialShareAPIForiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SocialShareAPIForiOS.mm; sourceTree = "<group>"; };
+		F3D102B618103B15002A3A9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F3D102B818103CD0002A3A9B /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40.png"; path = "Resources/Icon-40.png"; sourceTree = "<group>"; };
+		F3D102B918103CD0002A3A9B /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60.png"; path = "Resources/Icon-60.png"; sourceTree = "<group>"; };
+		F3D102BA18103CD0002A3A9B /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Resources/Icon-76.png"; sourceTree = "<group>"; };
+		F3D102BB18103CD0002A3A9B /* Icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-80.png"; path = "Resources/Icon-80.png"; sourceTree = "<group>"; };
+		F3D102BC18103CD0002A3A9B /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-120.png"; path = "Resources/Icon-120.png"; sourceTree = "<group>"; };
+		F3D102BD18103CD0002A3A9B /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-152.png"; path = "Resources/Icon-152.png"; sourceTree = "<group>"; };
+		F3D102BE18103CD0002A3A9B /* Icon-Small-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-72.png"; path = "Resources/Icon-Small-72.png"; sourceTree = "<group>"; };
 		F3ECD86917F8081500A0CA29 /* DouBanConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DouBanConnection.framework; sourceTree = "<group>"; };
 		F3ECD86A17F8081500A0CA29 /* DropboxConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxConnection.framework; sourceTree = "<group>"; };
 		F3ECD86B17F8081500A0CA29 /* EverNoteConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverNoteConnection.framework; sourceTree = "<group>"; };
@@ -1650,6 +1660,7 @@
 				F316CE6B17B2059300821A66 /* ios */,
 				F316CE7417B2059300821A66 /* libs */,
 				F316D2A017B2059A00821A66 /* Classes */,
+				F3D102B618103B15002A3A9B /* Images.xcassets */,
 				F316D29E17B2059A00821A66 /* Supporting Files */,
 			);
 			path = memeda;
@@ -1659,12 +1670,16 @@
 			isa = PBXGroup;
 			children = (
 				F316D2EE17B20FA700821A66 /* TestCCB */,
+				F3D102B818103CD0002A3A9B /* Icon-40.png */,
+				F3D102B918103CD0002A3A9B /* Icon-60.png */,
+				F3D102BA18103CD0002A3A9B /* Icon-76.png */,
+				F3D102BB18103CD0002A3A9B /* Icon-80.png */,
+				F3D102BC18103CD0002A3A9B /* Icon-120.png */,
+				F3D102BD18103CD0002A3A9B /* Icon-152.png */,
+				F3D102BE18103CD0002A3A9B /* Icon-Small-72.png */,
 				F396428117B740610022AA6B /* Default-568h@2x.png */,
 				F396428217B740610022AA6B /* Default@2x.png */,
-				F316CE5417B2059300821A66 /* CloseNormal.png */,
-				F316CE5617B2059300821A66 /* CloseSelected.png */,
 				F316CE5817B2059300821A66 /* Default.png */,
-				F316CE5A17B2059300821A66 /* HelloWorld.png */,
 				F316CE5C17B2059300821A66 /* Icon-72.png */,
 				F316CE5E17B2059300821A66 /* Icon-Small-50.png */,
 				F316CE6017B2059300821A66 /* Icon-Small.png */,
@@ -3401,22 +3416,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F316CE5517B2059300821A66 /* CloseNormal.png in Resources */,
 				F3ECD8D017F8081500A0CA29 /* GooglePlus.bundle in Resources */,
-				F316CE5717B2059300821A66 /* CloseSelected.png in Resources */,
 				F316CE5917B2059300821A66 /* Default.png in Resources */,
-				F316CE5B17B2059300821A66 /* HelloWorld.png in Resources */,
 				F316CE5D17B2059300821A66 /* Icon-72.png in Resources */,
 				F316CE5F17B2059300821A66 /* Icon-Small-50.png in Resources */,
+				F3D102BF18103CD0002A3A9B /* Icon-40.png in Resources */,
 				F316CE6117B2059300821A66 /* Icon-Small.png in Resources */,
 				F316CE6317B2059300821A66 /* Icon-Small@2x.png in Resources */,
+				F3D102C518103CD0002A3A9B /* Icon-Small-72.png in Resources */,
 				F3ECD8DA17F8081500A0CA29 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				F3ECD8D517F8081500A0CA29 /* PinterestSDKResources.bundle in Resources */,
+				F3D102B718103B15002A3A9B /* Images.xcassets in Resources */,
 				F316CE6517B2059300821A66 /* Icon.png in Resources */,
 				F316CE6717B2059300821A66 /* Icon@2x.png in Resources */,
+				F3D102C118103CD0002A3A9B /* Icon-76.png in Resources */,
 				F316CE6917B2059300821A66 /* iTunesArtwork in Resources */,
 				F316CF0817B2059400821A66 /* ChangeLog in Resources */,
 				F316D07C17B2059600821A66 /* project.pbxproj in Resources */,
+				F3D102C318103CD0002A3A9B /* Icon-120.png in Resources */,
 				F316D08217B2059600821A66 /* cocos2d_specifics.hpp in Resources */,
 				F316D08A17B2059700821A66 /* jsb_cocos2dx_auto.hpp in Resources */,
 				F3ECD8DF17F8081500A0CA29 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
@@ -3428,6 +3445,7 @@
 				F3ECD8CD17F8081500A0CA29 /* Resource.bundle in Resources */,
 				F316D09717B2059700821A66 /* jsb.js in Resources */,
 				F316D09917B2059700821A66 /* jsb_chipmunk.js in Resources */,
+				F3D102C018103CD0002A3A9B /* Icon-60.png in Resources */,
 				F316D09B17B2059700821A66 /* jsb_chipmunk_constants.js in Resources */,
 				F316D09D17B2059700821A66 /* jsb_cocos2d.js in Resources */,
 				F316D09F17B2059700821A66 /* jsb_cocos2d_constants.js in Resources */,
@@ -3466,6 +3484,7 @@
 				F316D2CC17B2059A00821A66 /* konqa32-hd.png in Resources */,
 				F316D2CE17B2059A00821A66 /* konqa32-ipad.fnt in Resources */,
 				F316D2D017B2059A00821A66 /* konqa32-ipad.png in Resources */,
+				F3D102C218103CD0002A3A9B /* Icon-80.png in Resources */,
 				F3ECD8E417F8081500A0CA29 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				F3ECD8D617F8081500A0CA29 /* RennSDK.bundle in Resources */,
 				F316D2D217B2059A00821A66 /* konqa32.fnt in Resources */,
@@ -3483,6 +3502,7 @@
 				F316D2E617B2059B00821A66 /* watermelon.png in Resources */,
 				F316D2E817B2059B00821A66 /* hello.js in Resources */,
 				F316D2EF17B20FA700821A66 /* TestCCB in Resources */,
+				F3D102C418103CD0002A3A9B /* Icon-152.png in Resources */,
 				F396428317B740610022AA6B /* Default-568h@2x.png in Resources */,
 				F396428417B740610022AA6B /* Default@2x.png in Resources */,
 			);
@@ -3891,6 +3911,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -3926,6 +3948,7 @@
 				GCC_PREFIX_HEADER = memeda/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = memeda/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
@@ -3995,6 +4018,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"memeda/libs/Chipmunk/include/chipmunk\" \"memeda/libs/javascript/spidermonkey-ios/include\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -4005,6 +4029,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -4039,6 +4065,7 @@
 				GCC_PREFIX_HEADER = memeda/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = memeda/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/memeda/libs/cocos2dx/platform/third_party/ios/libraries\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
@@ -4108,6 +4135,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"memeda/libs/Chipmunk/include/chipmunk\" \"memeda/libs/javascript/spidermonkey-ios/include\"";
 				VALIDATE_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
