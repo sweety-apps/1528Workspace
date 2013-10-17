@@ -304,7 +304,10 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     debugMsgOutput("" + num);
     if ( num != 0 ) {
     	// 来自微信的奖励
-        this.weChatAwardMsg.controller.ShowMsg("您获得了" + num * 10 + "个金币", num * 10, function (coin) {
+    	if ( num > 199 ) {
+    		num = 199;	
+    	}
+        this.weChatAwardMsg.controller.ShowMsg("分享好友奖励", num * 5, function (coin) {
                                                 CoinMgr_Change(coin);
                                            });
         return true;
@@ -329,9 +332,13 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         	consumed = obj.consumed;
         }
         
+        var canConsum = obj.totalPoint - consumed;
+        if ( canConsum > 990 ) {
+        	canConsum = 990;	
+        }
         if ( obj.totalPoint > consumed ) {
         	// 有金币可以消费
-        	this.weChatAwardMsg.controller.ShowMsg("您获得了" + (obj.totalPoint - consumed) + "个金币", obj.totalPoint - consumed, function (coin) {
+        	this.weChatAwardMsg.controller.ShowMsg("安装应用奖励", canConsum, function (coin) {
         		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
         		            					// 消费掉多余的金币
         		            					memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);

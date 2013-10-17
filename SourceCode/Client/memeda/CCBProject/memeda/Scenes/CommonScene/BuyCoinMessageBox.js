@@ -34,6 +34,10 @@ BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 
 BuyCoinMessageBox.prototype.show = function ()
 {
+    if ( !Global_isWeb() ) {
+		memeda.Stat.logEvent("buyCoinMessagebox");
+    }
+    
     this.purchaseHasSucceed = false;
     this.purchaseName = null;
     this.productID = null;
@@ -135,6 +139,14 @@ BuyCoinMessageBox.prototype.onClickedGetCoin = function ()
 
 BuyCoinMessageBox.prototype.onClickedBuy6 = function ()
 {
+    if ( !Global_isWeb() ) {
+		var param = memeda.Stat.createParam();
+		param.addKeyAndValue("price", "6");		
+		memeda.Stat.logEvent("clickbuycoin", param);
+    }
+    
+    this.clickPrice = 6;
+    
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 6!");
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
     this.purchaseName = kBuyCoinNameBuy300;
@@ -143,6 +155,14 @@ BuyCoinMessageBox.prototype.onClickedBuy6 = function ()
 
 BuyCoinMessageBox.prototype.onClickedBuy12 = function ()
 {
+    if ( !Global_isWeb() ) {
+		var param = memeda.Stat.createParam();
+		param.addKeyAndValue("price", "12");		
+		memeda.Stat.logEvent("clickbuycoin", param);
+    }
+
+    this.clickPrice = 12;
+        
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 12!");
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
     this.purchaseName = kBuyCoinNameBuy600;
@@ -151,6 +171,14 @@ BuyCoinMessageBox.prototype.onClickedBuy12 = function ()
 
 BuyCoinMessageBox.prototype.onClickedBuy30 = function ()
 {
+    if ( !Global_isWeb() ) {
+		var param = memeda.Stat.createParam();
+		param.addKeyAndValue("price", "30");		
+		memeda.Stat.logEvent("clickbuycoin", param);
+    }
+    
+    this.clickPrice = 30;
+    
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 30!");
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
     this.purchaseName = kBuyCoinNameBuy1500;
@@ -159,6 +187,14 @@ BuyCoinMessageBox.prototype.onClickedBuy30 = function ()
 
 BuyCoinMessageBox.prototype.onClickedBuy60 = function ()
 {
+    if ( !Global_isWeb() ) {
+		var param = memeda.Stat.createParam();
+		param.addKeyAndValue("price", "60");		
+		memeda.Stat.logEvent("clickbuycoin", param);
+    }
+    
+    this.clickPrice = 60;
+    
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Buy 60!");
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Start Pay Timeline");
     this.purchaseName = kBuyCoinNameBuy3000;
@@ -167,6 +203,12 @@ BuyCoinMessageBox.prototype.onClickedBuy60 = function ()
 
 BuyCoinMessageBox.prototype.onBuyItemSucceed = function (itemName,state,msg)
 {
+    if ( !Global_isWeb() ) {
+		var param = memeda.Stat.createParam();
+		param.addKeyAndValue("price", "" + this.clickPrice);		
+		memeda.Stat.logEvent("buycoinsuccess", param);
+    }
+    
     debugMsgOutput("\<IAP Callback\> On Buy "+itemName+" Succeed!");
     this.calculateCoinAddNum();
     this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Succeed Pay Timeline");

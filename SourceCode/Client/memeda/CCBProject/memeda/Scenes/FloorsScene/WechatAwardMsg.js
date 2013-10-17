@@ -14,14 +14,43 @@ WechatAwardMsg.prototype.onDidLoadFromCCB = function () {
     }
 };
 
-WechatAwardMsg.prototype.ShowMsg = function(msg, coin, endFun, index) {
+WechatAwardMsg.prototype.ShowMsg = function(msg, price, endFun, index) {
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
-	this.coin = coin;
+	this.coin = price;
     this.index = index;
 	this.bkgBtn.setVisible(true);
 	
     this.msgText.setString(msg);
+    
+	var num0 = Math.floor(price / 100);
+	var num1 = Math.floor((price % 100) / 10);
+	var num2 = price % 10;
+
+	if ( price >= 100 ) {
+		this.num1.setVisible(true);	
+	} else {
+		this.num1.setVisible(false);	
+	}
+	
+	if ( price >= 10 ) {
+		this.num2.setVisible(true);	
+	} else {
+		this.num2.setVisible(false);
+	}
+	
+    var image = "UI/guess/tip_" + num0 + ".png";
+    var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
+    this.num1.setDisplayFrame(spriteFrame);
+    
+    image = "UI/guess/tip_" + num1 + ".png";
+    spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
+    this.num2.setDisplayFrame(spriteFrame);
+	
+	image = "UI/guess/tip_" + num2 + ".png";
+    spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
+    this.num3.setDisplayFrame(spriteFrame);
+    
     
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };

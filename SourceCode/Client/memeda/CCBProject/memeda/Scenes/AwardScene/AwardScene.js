@@ -9,6 +9,10 @@ AwardScene.prototype.showWindow = function () {
 	this.initStatus();
 	this.bkgBtn.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
+	
+	if ( !Global_isWeb() ) {
+    	memeda.Stat.logEvent("showAward");
+	}
 };
 
 AwardScene.prototype.onClickBkg = function () {
@@ -79,13 +83,21 @@ AwardScene.prototype.onBack = function () {
 AwardScene.prototype.onClickFirend = function (obj) {
     var url = Global_getShareUrl(this.aid);
     debugMsgOutput(url);
-    
+   
+	if ( !Global_isWeb() ) {
+    	memeda.Stat.logEvent("clickWeChat");
+	}
+	
     try 
     {
 		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
 	    	if ( state == "Success" ) {
 	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
+				if ( !Global_isWeb() ) {
+    				memeda.Stat.logEvent("wechatSuccess");
+				}
+	
 	    		var share = sys.localStorage.getItem("firstshare");	
 	    		if ( share == null || share == "" ) {
 	    			// 第一次分享成功
@@ -94,6 +106,10 @@ AwardScene.prototype.onClickFirend = function (obj) {
 	    			pThisAwardScene.checkWeChat();
 	    		}
 	    	} else if ( state == "Fail" ) {
+	    			if ( !Global_isWeb() ) {
+    					memeda.Stat.logEvent("wechatFail");
+					}
+					
 		    		pThisAwardScene.wechatError.controller.ShowMsg(errMsg, function () {
 	    		});
 	    	}
@@ -116,6 +132,10 @@ AwardScene.prototype.onClickComment = function (obj) {
 		obj.commentCtrl.controller.setItemStatus(2);
 		sys.localStorage.setItem("comment", "1");	//
 	}
+	
+	if ( !Global_isWeb() ) {
+    	memeda.Stat.logEvent("clickComment");
+	}
 }
 
 AwardScene.prototype.onClickDuomeng = function (obj) {
@@ -124,6 +144,10 @@ AwardScene.prototype.onClickDuomeng = function (obj) {
 		debugMsgOutput("memeda.OfferWallController");
 		memeda.OfferWallController.show();
 	}
+	
+	if ( !Global_isWeb() ) {
+    	memeda.Stat.logEvent("clickDuomeng");
+	}
 }
 
 AwardScene.prototype.checkWeChat = function () {
@@ -131,7 +155,7 @@ AwardScene.prototype.checkWeChat = function () {
 	if ( showsharecoin == "1" ) {
 		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
     	this.firendCtrl.controller.setItemStatus(2);
-		CoinMgr_Change(500);
+		CoinMgr_Change(100);
 	}
 }
 
@@ -145,5 +169,9 @@ AwardScene.prototype.onClickedCoinButton = function (obj) {
 	if ( obj.enableAllBtn ) {
     	debugMsgOutput("[UI Event] Clicked Coin Button!");
     	(obj.clickFun)(obj.context);
+	}
+	
+	if ( !Global_isWeb() ) {
+    	memeda.Stat.logEvent("showCoinScene");
 	}
 };

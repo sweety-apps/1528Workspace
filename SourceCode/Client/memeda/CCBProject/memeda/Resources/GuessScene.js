@@ -1172,7 +1172,7 @@ GuessScene.prototype.onClickJump = function () {
 	}
 	
 	this.EnableAllBtn(false);
-	this.jumpMsg.controller.ShowMsg(500, function (res) {
+	this.jumpMsg.controller.ShowMsg(500, gCurrentTestObj.id, function (res) {
 		if ( res == 1 ) {
 			// 跳过该题，进入下一题
 			if ( !Problem_isAnswerRight(gCurrentTestObj.id) ) {
@@ -1203,7 +1203,7 @@ GuessScene.prototype.checkExtraCoin = function () {
 		gCurrentCCBView.EnableAllBtn(false);
 		this.weChatCoinMsgBox.controller.show(function () {
 			gCurrentCCBView.EnableAllBtn(true);
-			CoinMgr_Change(500);
+			CoinMgr_Change(100);
 		});
 	}
 }
@@ -1217,9 +1217,9 @@ GuessScene.prototype.onClickedCoinButton = function (obj ) {
     obj.buyCoinMsgBox.controller.show();	
 }
 
-GuessScene.prototype.showNoCoinMsgBox = function () {
+GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
 	gCurrentCCBView.EnableAllBtn(false);
-	gCurrentCCBView.noCoinMsgBox.controller.show(function (res) { 
+	gCurrentCCBView.noCoinMsgBox.controller.show(src, function (res) { 
 		gCurrentCCBView.EnableAllBtn(true);
 		if ( res == 1 ) {
     		debugMsgOutput("[UI Event] Clicked Coin Button!");
