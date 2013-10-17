@@ -16,7 +16,7 @@ JumpMsgBox.prototype.onDidLoadFromCCB = function () {
     }
 };
 
-JumpMsgBox.prototype.ShowMsg = function(price, endFun) { 
+JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) { 
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 	this.price = price;
@@ -37,6 +37,12 @@ JumpMsgBox.prototype.ShowMsg = function(price, endFun) {
     spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num2.setDisplayFrame(spriteFrame);
         
+ 	if ( !Global_isWeb() ) {
+     	var param = memeda.Stat.createParam();
+    	param.addKeyAndValue("aid", ""+id);
+    	memeda.Stat.logEvent("clickJump", param);
+	}
+				
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
 
@@ -55,13 +61,20 @@ JumpMsgBox.prototype.onClickBuy = function() {
 	// 扣金币
 	if ( CoinMgr_GetCount() < this.price ) {
 		// 金币不够
-		this.noEnoughEvent();
+		this.noEnoughEvent(2);
         cc.AudioEngine.getInstance().playEffect("sounds/WrongAnswer.mp3");
 		this.Hide(0);
+		
+ 		if ( !Global_isWeb() ) {
+    		memeda.Stat.logEvent("clickJumpNoEnough");
+		}
 	} else {
 		CoinMgr_Change(-1 * this.price);
         cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
 		// 加入到跳过题目的列表
 		this.Hide(1);
+ 		if ( !Global_isWeb() ) {
+    		memeda.Stat.logEvent("clickJumpBuy");
+		}
 	}
 };

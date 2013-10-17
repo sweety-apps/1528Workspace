@@ -19,10 +19,11 @@ NoEnoughMessageBox.prototype.onDidLoadFromCCB = function () {
     }
 };
 
-NoEnoughMessageBox.prototype.show = function(endFun) {
+NoEnoughMessageBox.prototype.show = function(src, endFun) {
 	this.msgLayout.setVisible(true);
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
+	this.src = src;
 	
 	this.bkgBtn.setVisible(true);
 
@@ -51,5 +52,9 @@ NoEnoughMessageBox.prototype.onClickClose = function() {
 };
 
 NoEnoughMessageBox.prototype.onClickBuy = function() {
+ 	if ( !Global_isWeb() ) {
+    	memeda.Stat.logEvent("showBuyCoinScene" + this.src);
+	}
+		
 	this.Hide(1);	
 };

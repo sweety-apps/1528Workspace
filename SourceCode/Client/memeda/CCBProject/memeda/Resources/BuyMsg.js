@@ -89,9 +89,13 @@ BuyMsg.prototype.onClickBuy = function() {
 	// 扣金币
 	if ( CoinMgr_GetCount() < this.price ) {
 		// 金币不够
-		this.noEnoughEvent();
+		this.noEnoughEvent(1);
         cc.AudioEngine.getInstance().playEffect("sounds/WrongAnswer.mp3");
 		this.Hide(0);
+		
+ 		if ( !Global_isWeb() ) {
+    		memeda.Stat.logEvent("clickBuyNoEnough");
+		}
 	} else {
 		debugMsgOutput("BuyMsg.prototype.onClickBuy");
     	// 上报数据

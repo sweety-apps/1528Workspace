@@ -158,6 +158,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>animatedProperties</key>
@@ -2222,8 +2224,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>32.8125</real>
-													<real>50.704227447509766</real>
+													<real>35.3125</real>
+													<real>51.056339263916016</real>
 													<integer>4</integer>
 												</array>
 											</dict>
@@ -2294,7 +2296,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>47</real>
+													<real>49.375</real>
 													<real>51.232395172119141</real>
 													<integer>4</integer>
 												</array>
@@ -2366,7 +2368,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>54</real>
+													<real>56.5625</real>
 													<real>51.232395172119141</real>
 													<integer>4</integer>
 												</array>
@@ -2438,7 +2440,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>61</real>
+													<real>63.4375</real>
 													<real>51.232395172119141</real>
 													<integer>4</integer>
 												</array>
