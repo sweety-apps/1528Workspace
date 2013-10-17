@@ -131,7 +131,7 @@ AwardScene.prototype.checkWeChat = function () {
 	if ( showsharecoin == "1" ) {
 		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
     	this.firendCtrl.controller.setItemStatus(2);
-		CoinMgr_Change(500);
+		CoinMgr_Change(100);
 	}
 }
 

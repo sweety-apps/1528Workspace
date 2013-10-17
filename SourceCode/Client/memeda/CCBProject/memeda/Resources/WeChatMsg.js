@@ -26,6 +26,25 @@ WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) {
 	this.sharedFun = sharedFun;
 	this.errMsg = null;
 	
+	var share = sys.localStorage.getItem("firstshare");	
+	if ( share == null || share == "" ) {
+		// 还未分享过
+		this.coinImg.setVisible(true);	
+		this.num1.setVisible(true);
+		this.num2.setVisible(true);
+		this.num3.setVisible(true);
+		this.msgText.setString("首次分享奖励");
+		this.msgText2.setVisible(false);
+	} else {
+		this.coinImg.setVisible(false);
+		this.num1.setVisible(false);
+		this.num2.setVisible(false);
+		this.num3.setVisible(false);
+		this.msgText.setString("分享给好友");
+		this.msgText2.setVisible(true);
+		this.msgText2.setString("获取更多奖励");
+	}
+	
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
 

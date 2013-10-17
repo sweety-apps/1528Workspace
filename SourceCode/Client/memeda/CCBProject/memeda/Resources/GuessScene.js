@@ -1203,7 +1203,7 @@ GuessScene.prototype.checkExtraCoin = function () {
 		gCurrentCCBView.EnableAllBtn(false);
 		this.weChatCoinMsgBox.controller.show(function () {
 			gCurrentCCBView.EnableAllBtn(true);
-			CoinMgr_Change(500);
+			CoinMgr_Change(100);
 		});
 	}
 }
