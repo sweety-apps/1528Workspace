@@ -799,7 +799,9 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
 
             cc.AudioEngine.getInstance().playEffect("sounds/RightAnswer.mp3");
             this.EnableAllBtn(false);
-            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, url, isFirst, this.onClickNext);
+            debugMsgOutput("aaa " + gCurrentTestObj.label);
+            debugMsgOutput("bbb " + gCurrentTestObj.rightanswer);
+            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, gCurrentTestObj.label, gCurrentTestObj.rightanswer, url, isFirst, this.onClickNext);
             
             if ( gProblem + 1 == Problem_GetCount() ) {
                 var color = GetColorByFloor(0, 0);

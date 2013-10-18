@@ -7,7 +7,7 @@ RightMsgBox.prototype.onDidLoadFromCCB = function () {
 RightMsgBox.prototype.onClickBkg = function () {
 };
 
-RightMsgBox.prototype.ShowMsg = function(id, url, isFirst, onClose) {
+RightMsgBox.prototype.ShowMsg = function(id, lab, answerRight, url, isFirst, onClose) {
 	this.show = true;
 	this.isFirst = isFirst;
 	this.onCloseFun = onClose;
@@ -17,16 +17,17 @@ RightMsgBox.prototype.ShowMsg = function(id, url, isFirst, onClose) {
     
 	this.coinAward.setVisible(isFirst);
 	
-	if ( url != null && url != "" ) {
 		// 显示的链接长度不超过40个字符
+		url = "《" + lab + "-" + answerRight + "》";
+		if ( this.Url != null && this.Url != "" ) {
+			url = url + this.Url;
+		}
+		
 		if ( url.length >= 40 ) {
 			url = url.substr(0, 37);
 			url = url + "...";
 		}
 		this.aboutUrl.setString(url);
-	} else {
-		this.aboutUrl.setString("");
-	}
 	
 	try {
     	var image = "problem/pic/" + id + ".jpg";
