@@ -179,11 +179,19 @@
 						<key>displayName</key>
 						<string>LayerPage2</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>page2</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
+							<dict>
+								<key>name</key>
+								<string>visible</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
 							<dict>
 								<key>name</key>
 								<string>position</string>
@@ -261,6 +269,8 @@
 								<true/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>baseClass</key>
@@ -4159,8 +4169,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 										<key>seqExpanded</key>
 										<true/>
 									</dict>

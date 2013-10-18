@@ -20,6 +20,8 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
 
 FirstScene.prototype.onClickStart = function () {
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Button.mp3");
+    
+	this.page2.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Switch Timeline");
 	this.homePage.animationManager.runAnimationsForSequenceNamed("Ani Timeline");
 	
