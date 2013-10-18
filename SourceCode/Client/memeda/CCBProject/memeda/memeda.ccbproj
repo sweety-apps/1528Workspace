@@ -19,27 +19,7 @@
 	<key>flattenPaths</key>
 	<false/>
 	<key>generatedSpriteSheets</key>
-	<dict>
-		<key>sprites</key>
-		<dict>
-			<key>compress</key>
-			<true/>
-			<key>dither</key>
-			<true/>
-			<key>ditherAndroid</key>
-			<true/>
-			<key>ditherHTML5</key>
-			<true/>
-			<key>isDirty</key>
-			<false/>
-			<key>textureFileFormat</key>
-			<integer>0</integer>
-			<key>textureFileFormatAndroid</key>
-			<integer>0</integer>
-			<key>textureFileFormatHTML5</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
+	<dict/>
 	<key>javascriptBased</key>
 	<true/>
 	<key>javascriptMainCCB</key>

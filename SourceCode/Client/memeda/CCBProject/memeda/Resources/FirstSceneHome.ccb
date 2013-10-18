@@ -404,6 +404,17 @@
 									<string>Texture/firsthome_bkg.png</string>
 								</array>
 							</dict>
+							<dict>
+								<key>name</key>
+								<string>blendFunc</string>
+								<key>type</key>
+								<string>Blendmode</string>
+								<key>value</key>
+								<array>
+									<integer>770</integer>
+									<integer>771</integer>
+								</array>
+							</dict>
 						</array>
 					</dict>
 					<dict>
@@ -1652,6 +1663,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
