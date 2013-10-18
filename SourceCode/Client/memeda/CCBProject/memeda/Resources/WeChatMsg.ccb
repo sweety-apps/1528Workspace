@@ -2365,8 +2365,19 @@
 														<string>SpriteFrame</string>
 														<key>value</key>
 														<array>
-															<string></string>
-															<string>UI/guess/tip_1.png</string>
+															<string>Texture/guess1.plist</string>
+															<string>tip_1.png</string>
+														</array>
+													</dict>
+													<dict>
+														<key>name</key>
+														<string>blendFunc</string>
+														<key>type</key>
+														<string>Blendmode</string>
+														<key>value</key>
+														<array>
+															<integer>770</integer>
+															<integer>771</integer>
 														</array>
 													</dict>
 												</array>
@@ -2437,8 +2448,19 @@
 														<string>SpriteFrame</string>
 														<key>value</key>
 														<array>
-															<string></string>
-															<string>UI/guess/tip_0.png</string>
+															<string>Texture/guess1.plist</string>
+															<string>tip_0.png</string>
+														</array>
+													</dict>
+													<dict>
+														<key>name</key>
+														<string>blendFunc</string>
+														<key>type</key>
+														<string>Blendmode</string>
+														<key>value</key>
+														<array>
+															<integer>770</integer>
+															<integer>771</integer>
 														</array>
 													</dict>
 												</array>
@@ -2509,8 +2531,19 @@
 														<string>SpriteFrame</string>
 														<key>value</key>
 														<array>
-															<string></string>
-															<string>UI/guess/tip_0.png</string>
+															<string>Texture/guess1.plist</string>
+															<string>tip_0.png</string>
+														</array>
+													</dict>
+													<dict>
+														<key>name</key>
+														<string>blendFunc</string>
+														<key>type</key>
+														<string>Blendmode</string>
+														<key>value</key>
+														<array>
+															<integer>770</integer>
+															<integer>771</integer>
 														</array>
 													</dict>
 												</array>
@@ -3103,8 +3136,6 @@
 												<string>首次分享奖励</string>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 								</array>
 								<key>customClass</key>

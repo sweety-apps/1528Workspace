@@ -418,8 +418,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string>Texture/fist_bkg.png</string>
+											<string>Texture/firstpage1.plist</string>
+											<string>fist_bkg.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -584,7 +584,7 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
+													<string>Texture/firstpage2.plist</string>
 													<string>first_star3.png</string>
 												</array>
 											</dict>
@@ -868,7 +868,7 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
+													<string>Texture/firstpage2.plist</string>
 													<string>first_star4.png</string>
 												</array>
 											</dict>
@@ -1072,7 +1072,7 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
+													<string>Texture/firstpage2.plist</string>
 													<string>first_star5.png</string>
 												</array>
 											</dict>
@@ -1268,7 +1268,7 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
+													<string>Texture/firstpage2.plist</string>
 													<string>first_star6.png</string>
 												</array>
 											</dict>
@@ -1472,7 +1472,7 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
+													<string>Texture/firstpage2.plist</string>
 													<string>first_star7.png</string>
 												</array>
 											</dict>
@@ -1650,6 +1650,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>animatedProperties</key>
@@ -1814,8 +1816,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>animatedProperties</key>
@@ -3527,8 +3527,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string>Texture/first_y_cat.png</string>
+											<string>Texture/firstpage1.plist</string>
+											<string>first_y_cat.png</string>
 										</array>
 									</dict>
 									<dict>

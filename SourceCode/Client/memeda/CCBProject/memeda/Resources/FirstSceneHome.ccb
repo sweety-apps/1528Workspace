@@ -330,8 +330,19 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string>Texture/firstpage1.plist</string>
+											<string>Texture/firstpage2.plist</string>
 											<string>firsthome_bkg2.png</string>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>blendFunc</string>
+										<key>type</key>
+										<string>Blendmode</string>
+										<key>value</key>
+										<array>
+											<integer>770</integer>
+											<integer>771</integer>
 										</array>
 									</dict>
 								</array>
@@ -400,8 +411,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string></string>
-									<string>Texture/firsthome_bkg.png</string>
+									<string>Texture/firstpage1.plist</string>
+									<string>firsthome_bkg.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -485,6 +496,17 @@
 								<array>
 									<string>Texture/firstpage1.plist</string>
 									<string>firsthome_home.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>blendFunc</string>
+								<key>type</key>
+								<string>Blendmode</string>
+								<key>value</key>
+								<array>
+									<integer>770</integer>
+									<integer>771</integer>
 								</array>
 							</dict>
 						</array>
@@ -811,6 +833,17 @@
 											<string>firsthome_ufolight.png</string>
 										</array>
 									</dict>
+									<dict>
+										<key>name</key>
+										<string>blendFunc</string>
+										<key>type</key>
+										<string>Blendmode</string>
+										<key>value</key>
+										<array>
+											<integer>770</integer>
+											<integer>771</integer>
+										</array>
+									</dict>
 								</array>
 								<key>seqExpanded</key>
 								<true/>
@@ -1027,6 +1060,17 @@
 											<string>firsthome_ufo.png</string>
 										</array>
 									</dict>
+									<dict>
+										<key>name</key>
+										<string>blendFunc</string>
+										<key>type</key>
+										<string>Blendmode</string>
+										<key>value</key>
+										<array>
+											<integer>770</integer>
+											<integer>771</integer>
+										</array>
+									</dict>
 								</array>
 								<key>seqExpanded</key>
 								<true/>
@@ -1231,7 +1275,7 @@
 													<key>value</key>
 													<array>
 														<real>243</real>
-														<real>0.0</real>
+														<real>-2</real>
 													</array>
 												</dict>
 												<dict>
@@ -1287,7 +1331,7 @@
 										<key>value</key>
 										<array>
 											<real>243</real>
-											<real>0.0</real>
+											<real>-2</real>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -1334,7 +1378,20 @@
 											<string>firsthome_cloud2.png</string>
 										</array>
 									</dict>
+									<dict>
+										<key>name</key>
+										<string>blendFunc</string>
+										<key>type</key>
+										<string>Blendmode</string>
+										<key>value</key>
+										<array>
+											<integer>770</integer>
+											<integer>771</integer>
+										</array>
+									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -1557,7 +1614,7 @@
 													<key>value</key>
 													<array>
 														<real>147</real>
-														<real>0.0</real>
+														<real>-2</real>
 													</array>
 												</dict>
 												<dict>
@@ -1615,7 +1672,7 @@
 										<key>value</key>
 										<array>
 											<real>147</real>
-											<real>0.0</real>
+											<real>-2</real>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -1662,9 +1719,18 @@
 											<string>firsthome_cloud.png</string>
 										</array>
 									</dict>
+									<dict>
+										<key>name</key>
+										<string>blendFunc</string>
+										<key>type</key>
+										<string>Blendmode</string>
+										<key>value</key>
+										<array>
+											<integer>770</integer>
+											<integer>771</integer>
+										</array>
+									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>

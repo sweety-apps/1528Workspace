@@ -832,8 +832,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>0.10000000149011612</real>
 									<real>2</real>
+									<real>62</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -853,11 +853,24 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string></string>
-									<string>UI/guess/firsthome_ufolight.png</string>
+									<string>Texture/firstpage1.plist</string>
+									<string>firsthome_ufolight.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>blendFunc</string>
+								<key>type</key>
+								<string>Blendmode</string>
+								<key>value</key>
+								<array>
+									<integer>770</integer>
+									<integer>771</integer>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -1434,7 +1447,7 @@
 						<key>type</key>
 						<string>Check</string>
 						<key>value</key>
-						<false/>
+						<true/>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1492,8 +1505,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -1780,7 +1791,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.5</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
