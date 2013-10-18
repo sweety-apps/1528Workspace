@@ -7,11 +7,11 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
     
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 	
-	var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
-	chooseTestsScene = null;
+	//var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
+	//chooseTestsScene = null;
     
-	var GuessScene = cc.BuilderReader.loadAsScene("GuessScene");
-	GuessScene = null;
+	//var GuessScene = cc.BuilderReader.loadAsScene("GuessScene");
+	//GuessScene = null;
 
     Global_clearAllGloabalVars();
     

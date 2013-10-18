@@ -330,8 +330,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string>UI/guess/firsthome_bkg2.png</string>
+											<string>Texture/firstpage1.plist</string>
+											<string>firsthome_bkg2.png</string>
 										</array>
 									</dict>
 								</array>
@@ -401,7 +401,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/firsthome_bkg.png</string>
+									<string>Texture/firsthome_bkg.png</string>
 								</array>
 							</dict>
 						</array>
@@ -472,8 +472,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string></string>
-									<string>UI/guess/firsthome_home.png</string>
+									<string>Texture/firstpage1.plist</string>
+									<string>firsthome_home.png</string>
 								</array>
 							</dict>
 						</array>
@@ -796,8 +796,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string>UI/guess/firsthome_ufolight.png</string>
+											<string>Texture/firstpage1.plist</string>
+											<string>firsthome_ufolight.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1012,8 +1012,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string>UI/guess/firsthome_ufo.png</string>
+											<string>Texture/firstpage1.plist</string>
+											<string>firsthome_ufo.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1319,8 +1319,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string>UI/guess/firsthome_cloud2.png</string>
+											<string>Texture/firstpage1.plist</string>
+											<string>firsthome_cloud2.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1647,8 +1647,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string></string>
-											<string>UI/guess/firsthome_cloud.png</string>
+											<string>Texture/firstpage1.plist</string>
+											<string>firsthome_cloud.png</string>
 										</array>
 									</dict>
 								</array>

@@ -151,7 +151,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/first_star1.png</string>
+									<string>Texture/first_star1.png</string>
 								</array>
 							</dict>
 						</array>
@@ -282,10 +282,12 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/first_star1.png</string>
+									<string>Texture/first_star1.png</string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
