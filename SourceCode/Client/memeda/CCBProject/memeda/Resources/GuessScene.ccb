@@ -3572,7 +3572,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/transparentBlock.png</string>
+									<string>UI/common/transparentBlock.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3583,7 +3583,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/transparentBlock.png</string>
+									<string>UI/common/transparentBlock.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3594,7 +3594,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/transparentBlock.png</string>
+									<string>UI/common/transparentBlock.png</string>
 								</array>
 							</dict>
 						</array>
