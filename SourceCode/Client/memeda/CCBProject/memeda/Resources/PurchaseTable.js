@@ -49,7 +49,7 @@ function Purchase_payForItem(itemID,callbackTarget,callbackMethod)
 
 function Purchase_getSpyPackageProductID()
 {
-    return "SpecialSpyPackage6";
+    return "com.1528studio.qietingfengyun.buy6special_package";
 }
 
 function Purchase_payForSpyPackage(callbackTarget,callbackMethod)
@@ -61,20 +61,20 @@ function Purchase_payForSpyPackage(callbackTarget,callbackMethod)
 
 function Purchase_payForCoinWith6RMB(callbackTarget,callbackMethod)
 {
-    Purchase_payForItem("com.1528studio.memeda.buy300coin",callbackTarget,callbackMethod);
+    Purchase_payForItem("com.1528studio.qietingfengyun.buy300coin",callbackTarget,callbackMethod);
 }
 
 function Purchase_payForCoinWith12RMB(callbackTarget,callbackMethod)
 {
-    Purchase_payForItem("com.1528studio.memeda.buy600coin",callbackTarget,callbackMethod);
+    Purchase_payForItem("com.1528studio.qietingfengyun.buy600coin",callbackTarget,callbackMethod);
 }
 
 function Purchase_payForCoinWith30RMB(callbackTarget,callbackMethod)
 {
-    Purchase_payForItem("com.1528studio.memeda.buy1500coin",callbackTarget,callbackMethod);
+    Purchase_payForItem("com.1528studio.qietingfengyun.buy1500coin2",callbackTarget,callbackMethod);
 }
 
 function Purchase_payForCoinWith60RMB(callbackTarget,callbackMethod)
 {
-    Purchase_payForItem("com.1528studio.memeda.buy3000coin",callbackTarget,callbackMethod);
+    Purchase_payForItem("com.1528studio.qietingfengyun.buy3000coin",callbackTarget,callbackMethod);
 }
