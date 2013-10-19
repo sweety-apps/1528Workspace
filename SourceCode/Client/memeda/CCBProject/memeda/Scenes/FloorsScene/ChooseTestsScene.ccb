@@ -1288,7 +1288,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/upRoundCornerLeft.png</string>
+									<string>UI/common/upRoundCornerLeft.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1360,7 +1360,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/upRoundCornerRight.png</string>
+									<string>UI/common/upRoundCornerRight.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1432,7 +1432,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/downRoundCornerLeft.png</string>
+									<string>UI/common/downRoundCornerLeft.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1504,7 +1504,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/downRoundCornerRight.png</string>
+									<string>UI/common/downRoundCornerRight.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1889,6 +1889,8 @@
 								<string>WechatAwardMsg.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

@@ -220,7 +220,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/jiahao.png</string>
+													<string>UI/common/jiahao.png</string>
 												</array>
 											</dict>
 										</array>
@@ -288,7 +288,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/coin.png</string>
+											<string>UI/common/coin.png</string>
 										</array>
 									</dict>
 								</array>
@@ -473,7 +473,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
