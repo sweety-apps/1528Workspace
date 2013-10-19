@@ -118,7 +118,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -129,7 +129,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -140,7 +140,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -231,7 +231,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -344,7 +344,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -532,7 +532,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/doorCloseCover.png</string>
+											<string>UI/floors_doors/doorCloseCover.png</string>
 										</array>
 									</dict>
 								</array>
@@ -716,7 +716,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/door_black.png</string>
+									<string>UI/floors_doors/door_black.png</string>
 								</array>
 							</dict>
 						</array>
@@ -793,7 +793,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/doorCloseCover.png</string>
+											<string>UI/floors_doors/doorCloseCover.png</string>
 										</array>
 									</dict>
 								</array>
@@ -977,7 +977,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/doorSpecial_1.png</string>
+									<string>UI/floors_doors/doorSpecial_1.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1054,10 +1054,12 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/doorCloseCover.png</string>
+											<string>UI/floors_doors/doorCloseCover.png</string>
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>baseClass</key>
@@ -1238,7 +1240,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/door_yellow.png</string>
+									<string>UI/floors_doors/door_yellow.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1306,7 +1308,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/levels/floor_pink.png</string>
+							<string>UI/floors_doors/floor_pink.png</string>
 						</array>
 					</dict>
 				</array>

@@ -104,7 +104,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/levelBG_01.png</string>
+											<string>UI/floors_bg/levelBG_01.png</string>
 										</array>
 									</dict>
 								</array>
@@ -164,7 +164,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/levelBG_02.png</string>
+											<string>UI/floors_bg/levelBG_02.png</string>
 										</array>
 									</dict>
 								</array>
@@ -576,7 +576,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/ToolbarBG.png</string>
+									<string>UI/floors_doors/ToolbarBG.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -736,7 +736,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/bottonCollection.png</string>
+											<string>UI/floors_doors/bottonCollection.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -747,7 +747,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/bottonCollection.png</string>
+											<string>UI/floors_doors/bottonCollection.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -758,7 +758,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/bottonCollection.png</string>
+											<string>UI/floors_doors/bottonCollection.png</string>
 										</array>
 									</dict>
 								</array>
@@ -849,7 +849,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/buttonAward.png</string>
+											<string>UI/floors_doors/buttonAward.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -860,7 +860,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/buttonAward.png</string>
+											<string>UI/floors_doors/buttonAward.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -871,7 +871,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/buttonAward.png</string>
+											<string>UI/floors_doors/buttonAward.png</string>
 										</array>
 									</dict>
 								</array>
@@ -962,7 +962,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/bottonStart.png</string>
+											<string>UI/floors_doors/bottonStart.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -973,7 +973,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/bottonStart.png</string>
+											<string>UI/floors_doors/bottonStart.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -984,7 +984,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/bottonStart.png</string>
+											<string>UI/floors_doors/bottonStart.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1828,7 +1828,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/levels/UFO.png</string>
+							<string>UI/floors_doors/UFO.png</string>
 						</array>
 					</dict>
 				</array>
@@ -2189,6 +2189,8 @@
 								<string>BuyCoinMessageBox.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

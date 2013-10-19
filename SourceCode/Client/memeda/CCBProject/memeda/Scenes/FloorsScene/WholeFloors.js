@@ -131,23 +131,23 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
             var imageUrl;
             var spriteFrame;
 
-            imageUrl = "UI/levels/"+gTestFloor[floorNum].doors[0].image + ".png";
+            imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[0].image + ".png";
             spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
             floor.controller.door1.setDisplayFrame(spriteFrame);
 
-            imageUrl = "UI/levels/"+gTestFloor[floorNum].doors[1].image + ".png";
+            imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[1].image + ".png";
             spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
             floor.controller.door2.setDisplayFrame(spriteFrame);
 
-            imageUrl = "UI/levels/"+gTestFloor[floorNum].doors[2].image + ".png";
+            imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[2].image + ".png";
             spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
             floor.controller.door3.setDisplayFrame(spriteFrame);
 
-            imageUrl = "UI/levels/"+gTestFloor[floorNum].bg + ".png";
+            imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bg + ".png";
             spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
             floor.controller.bgWall.setDisplayFrame(spriteFrame);
 
-            imageUrl = "UI/levels/"+gTestFloor[floorNum].bottom + ".png";
+            imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bottom + ".png";
             spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
             floorFront.controller.bottom.setDisplayFrame(spriteFrame);
 
@@ -392,7 +392,7 @@ WholeFloors.prototype.onUFOLightAnimationCompleted = function()
 
 WholeFloors.prototype.showUFOLight = function (floorNum,doorNum)
 {
-    imageUrl = "UI/levels/"+gTestFloor[floorNum].bottom + "_ufo.png";
+    imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bottom + "_ufo.png";
     spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
     this.catAndLift.setVisible(false);
     this.UFOFloorFront.setPositionY(gTestFloor[floorNum].offsetY);

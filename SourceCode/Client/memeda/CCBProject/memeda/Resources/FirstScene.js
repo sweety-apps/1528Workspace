@@ -4,6 +4,11 @@ var gChooseTestsScene = null;
 
 FirstScene.prototype.onDidLoadFromCCB = function () {
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
+    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
+    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/buy_coin_msgbox.plist");
+    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
+    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
+    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
 	
     GuessScene_Preload(true);
     

@@ -8325,9 +8325,11 @@
 										<key>type</key>
 										<string>Texture</string>
 										<key>value</key>
-										<string>UI/buy_coin_msgbox/ParticleStar.png</string>
+										<string>UI/particles/ParticleStar.png</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -9066,12 +9068,10 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/buy_coin_msgbox/buyMsgBoxCenterBox.png</string>
+											<string>UI/floors_doors/buyMsgBoxCenterBox.png</string>
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>

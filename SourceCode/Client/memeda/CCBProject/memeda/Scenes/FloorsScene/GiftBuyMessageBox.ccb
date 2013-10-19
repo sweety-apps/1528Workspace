@@ -330,7 +330,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -341,7 +341,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -352,7 +352,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -443,7 +443,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -454,7 +454,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -465,7 +465,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/transparentBlock.png</string>
+											<string>UI/common/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -781,7 +781,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/buyMsgBoxCloseBtn.png</string>
+											<string>UI/floors_doors/buyMsgBoxCloseBtn.png</string>
 										</array>
 									</dict>
 								</array>
@@ -913,7 +913,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/buyMsgBoxShine1.png</string>
+											<string>UI/floors_doors/buyMsgBoxShine1.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1172,7 +1172,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/buyMsgBoxButton.png</string>
+											<string>UI/floors_doors/buyMsgBoxButton.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1264,7 +1264,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/buyMsgBoxNums_1.png</string>
+													<string>UI/floors_doors/buyMsgBoxNums_1.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1349,7 +1349,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/buyMsgBoxNums_0.png</string>
+													<string>UI/floors_doors/buyMsgBoxNums_0.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1426,7 +1426,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/buyMsgBoxNums_0.png</string>
+													<string>UI/floors_doors/buyMsgBoxNums_0.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1503,7 +1503,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/buyMsgBoxNums_Percent.png</string>
+													<string>UI/floors_doors/buyMsgBoxNums_Percent.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1664,7 +1664,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/levels/buyMsgBoxCenterBoxText.png</string>
+											<string>UI/floors_doors/buyMsgBoxCenterBoxText.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1725,8 +1725,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>0.0099999997764825821</real>
-									<real>0.0099999997764825821</real>
+									<real>1</real>
+									<real>1</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -1747,7 +1747,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/buyMsgBoxBG.png</string>
+									<string>UI/floors_doors/buyMsgBoxBG.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1877,10 +1877,12 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/levels/buyMsgBoxCenterBox.png</string>
+									<string>UI/floors_doors/buyMsgBoxCenterBox.png</string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1916,7 +1918,7 @@
 						<key>value</key>
 						<array>
 							<real>50</real>
-							<real>300</real>
+							<real>100</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -2237,7 +2239,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>1.5</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
