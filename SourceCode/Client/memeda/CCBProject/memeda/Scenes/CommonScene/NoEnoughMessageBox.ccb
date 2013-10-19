@@ -960,10 +960,12 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/buyMsgBoxShine1.png</string>
+													<string>UI/common/buyMsgBoxShine1.png</string>
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 										<key>seqExpanded</key>
 										<true/>
 									</dict>
