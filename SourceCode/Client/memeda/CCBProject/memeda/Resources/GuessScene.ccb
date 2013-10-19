@@ -648,8 +648,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/guess1.plist</string>
-									<string>0.png</string>
+									<string></string>
+									<string>UI/guess/0.png</string>
 								</array>
 							</dict>
 						</array>
@@ -720,8 +720,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/guess1.plist</string>
-									<string>1.png</string>
+									<string></string>
+									<string>UI/guess/1.png</string>
 								</array>
 							</dict>
 						</array>
@@ -792,8 +792,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/guess1.plist</string>
-									<string>0.png</string>
+									<string></string>
+									<string>UI/guess/0.png</string>
 								</array>
 							</dict>
 						</array>
@@ -1031,8 +1031,8 @@
 						<string>SpriteFrame</string>
 						<key>value</key>
 						<array>
-							<string>Texture/guess1.plist</string>
-							<string>shareButton.png</string>
+							<string></string>
+							<string>UI/guess/shareButton.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1630,8 +1630,8 @@
 						<string>SpriteFrame</string>
 						<key>value</key>
 						<array>
-							<string>Texture/guess1.plist</string>
-							<string>wechatButton.png</string>
+							<string></string>
+							<string>UI/guess/wechatButton.png</string>
 						</array>
 					</dict>
 				</array>

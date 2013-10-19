@@ -150,19 +150,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/firstpage2.plist</string>
-									<string>first_star2.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>blendFunc</string>
-								<key>type</key>
-								<string>Blendmode</string>
-								<key>value</key>
-								<array>
-									<integer>770</integer>
-									<integer>771</integer>
+									<string></string>
+									<string>UI/guess/first_star2.png</string>
 								</array>
 							</dict>
 						</array>
@@ -292,24 +281,11 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/firstpage2.plist</string>
-									<string>first_star2.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>blendFunc</string>
-								<key>type</key>
-								<string>Blendmode</string>
-								<key>value</key>
-								<array>
-									<integer>770</integer>
-									<integer>771</integer>
+									<string></string>
+									<string>UI/guess/first_star2.png</string>
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>

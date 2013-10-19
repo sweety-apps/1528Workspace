@@ -150,8 +150,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/firstpage2.plist</string>
-									<string>first_star1.png</string>
+									<string></string>
+									<string>UI/guess/first_star1.png</string>
 								</array>
 							</dict>
 						</array>
@@ -281,13 +281,11 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/firstpage2.plist</string>
-									<string>first_star1.png</string>
+									<string></string>
+									<string>UI/guess/first_star1.png</string>
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>

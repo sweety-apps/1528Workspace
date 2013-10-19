@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -57,8 +57,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>bg1.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/bg1.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -75,8 +75,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>bg1.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/bg1.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 									</array>
@@ -106,8 +106,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>bg2.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/bg2.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -124,8 +124,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>bg2.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/bg2.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 									</array>
@@ -155,8 +155,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>bg3.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/bg3.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -173,8 +173,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>bg3.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/bg3.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 									</array>
@@ -255,19 +255,8 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/guess2.plist</string>
-									<string>bg1.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>blendFunc</string>
-								<key>type</key>
-								<string>Blendmode</string>
-								<key>value</key>
-								<array>
-									<integer>770</integer>
-									<integer>771</integer>
+									<string></string>
+									<string>UI/guess/bg3.png</string>
 								</array>
 							</dict>
 						</array>
@@ -748,7 +737,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>1</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

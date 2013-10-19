@@ -241,16 +241,16 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num1 = Math.floor( (num % 100) / 10);
         var num0 = num % 10;
 
-        var image = "" + num2 + ".png";
-        var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        var image = "UI/guess/" + num2 + ".png";
+        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
         this.titleNum2.setDisplayFrame(spriteFrame);
 
-        image = "" + num1 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        image = "UI/guess/" + num1 + ".png";
+        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
         this.titleNum1.setDisplayFrame(spriteFrame);
 
-        image = "" + num0 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        image = "UI/guess/" + num0 + ".png";
+        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
         this.titleNum0.setDisplayFrame(spriteFrame);
     } else if ( num >= 10 ) {
         this.titleNum0.setVisible(true);
@@ -260,20 +260,20 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num1 = Math.floor( num / 10);
         var num0 = num % 10;
 
-        var image = "" + num1 + ".png";
-        var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        var image = "UI/guess/" + num1 + ".png";
+        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
         this.titleNum1.setDisplayFrame(spriteFrame);
 
-        image = "" + num0 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        image = "UI/guess/" + num0 + ".png";
+        spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
         this.titleNum0.setDisplayFrame(spriteFrame);
     } else {
         this.titleNum0.setVisible(false);
         this.titleNum1.setVisible(true);
         this.titleNum2.setVisible(false);
 
-        var image = "" + num + ".png";
-        var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        var image = "UI/guess/" + num + ".png";
+        var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,17,20));
         this.titleNum1.setDisplayFrame(spriteFrame);
     }
 }

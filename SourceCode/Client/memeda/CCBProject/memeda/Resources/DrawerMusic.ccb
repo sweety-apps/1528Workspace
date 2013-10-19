@@ -40,8 +40,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music1.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music1.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -58,8 +58,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music2.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music2.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -76,8 +76,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music3.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music3.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -94,8 +94,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music4.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music4.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -112,8 +112,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music5.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music5.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -130,8 +130,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music6.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music6.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -148,8 +148,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music7.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music7.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -166,8 +166,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music8.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music8.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -184,8 +184,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music9.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music9.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -202,8 +202,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music10.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music10.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -220,8 +220,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music11.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music11.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 						<dict>
@@ -238,8 +238,8 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>music1.png</string>
-								<string>Texture/guess2.plist</string>
+								<string>UI/guess/music1.png</string>
+								<string>Use regular file</string>
 							</array>
 						</dict>
 					</array>
@@ -299,8 +299,8 @@
 			<dict>
 				<key>baseValue</key>
 				<array>
-					<string>music1.png</string>
-					<string>Texture/guess2.plist</string>
+					<string>UI/guess/music1.png</string>
+					<string>Use regular file</string>
 				</array>
 				<key>name</key>
 				<string>displayFrame</string>
@@ -308,24 +308,11 @@
 				<string>SpriteFrame</string>
 				<key>value</key>
 				<array>
-					<string>Texture/guess2.plist</string>
-					<string>music2.png</string>
-				</array>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>blendFunc</string>
-				<key>type</key>
-				<string>Blendmode</string>
-				<key>value</key>
-				<array>
-					<integer>770</integer>
-					<integer>771</integer>
+					<string></string>
+					<string>UI/guess/music11.png</string>
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 		<key>seqExpanded</key>
 		<true/>
 	</dict>
@@ -369,7 +356,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.1666666716337204</real>
+			<real>1.1000000238418579</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

@@ -45,12 +45,12 @@ BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
 	var num1 = Math.floor(price / 10);
 	var num2 = price % 10;
 
-    var image = "tip_" + num1 + ".png";
-    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    var image = "UI/guess/tip_" + num1 + ".png";
+    var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num1.setDisplayFrame(spriteFrame);
 	
-	image = "tip_" + num2 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	image = "UI/guess/tip_" + num2 + ".png";
+    spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num2.setDisplayFrame(spriteFrame);
     
     this.msgText.setString(msg);

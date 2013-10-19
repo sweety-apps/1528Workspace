@@ -175,8 +175,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>door_window_1.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/door_window_1.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -193,8 +193,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>door_window_2.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/door_window_2.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -211,8 +211,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>door_window_3.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/door_window_3.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -229,8 +229,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>door_window_3.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/door_window_3.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -247,8 +247,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>door_window_2.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/door_window_2.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -265,8 +265,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>door_window_1.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/door_window_1.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 										<dict>
@@ -283,8 +283,8 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>door_window_0.png</string>
-												<string>Texture/guess2.plist</string>
+												<string>UI/guess/door_window_0.png</string>
+												<string>Use regular file</string>
 											</array>
 										</dict>
 									</array>
@@ -365,24 +365,11 @@
 								<string>SpriteFrame</string>
 								<key>value</key>
 								<array>
-									<string>Texture/guess2.plist</string>
-									<string>door_window_0.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>blendFunc</string>
-								<key>type</key>
-								<string>Blendmode</string>
-								<key>value</key>
-								<array>
-									<integer>770</integer>
-									<integer>771</integer>
+									<string></string>
+									<string>UI/guess/door_window_0.png</string>
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -822,9 +809,9 @@
 			<key>name</key>
 			<string>Play Timeline</string>
 			<key>offset</key>
-			<real>7.3657445907592773</real>
+			<real>7.3923172950744629</real>
 			<key>position</key>
-			<real>14</real>
+			<real>6.3666667938232422</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

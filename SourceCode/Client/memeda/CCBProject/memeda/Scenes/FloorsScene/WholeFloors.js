@@ -155,56 +155,14 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
             floor.controller.doorNum1.setString(gTestFloor[floorNum].doors[0].doorNum);
             floor.controller.doorNum2.setString(gTestFloor[floorNum].doors[1].doorNum);
             floor.controller.doorNum3.setString(gTestFloor[floorNum].doors[2].doorNum);
-
-            this.setupDoorApperanceWithState(floor.controller.door1,floor.controller.doorCover1,gTestFloor[floorNum].doors[0].doorState);
-            this.setupDoorApperanceWithState(floor.controller.door2,floor.controller.doorCover2,gTestFloor[floorNum].doors[1].doorState);
-            this.setupDoorApperanceWithState(floor.controller.door3,floor.controller.doorCover3,gTestFloor[floorNum].doors[2].doorState);
-
+            floor.controller.doorCover1.setVisible(!gTestFloor[floorNum].doors[0].hasFinished);
+            floor.controller.doorCover2.setVisible(!gTestFloor[floorNum].doors[1].hasFinished);
+            floor.controller.doorCover3.setVisible(!gTestFloor[floorNum].doors[2].hasFinished);
             floorFront.controller.floorNum.setString(gTestFloor[floorNum].floorNum);
             floorFront.controller.floorSpecialText.setString(gTestFloor[floorNum].specText);
 
             //floor.setPositionY();
         }
-    }
-};
-
-WholeFloors.prototype.setupDoorApperanceWithState = function (door,doorCover,state)
-{
-    var imageUrl = "";
-    var spriteFrame = null;
-    if(state == kDoorStateOpen)
-    {
-        door.setVisible(true);
-        doorCover.setVisible(false);
-    }
-    else if(state == kDoorStateLocked)
-    {
-        door.setVisible(true);
-        doorCover.setVisible(true);
-        imageUrl = "UI/levels/"+"doorCloseCover" + ".png";
-        spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
-        doorCover.setDisplayFrame(spriteFrame);
-    }
-    else if(state == kDoorStateJumped)
-    {
-        door.setVisible(true);
-        doorCover.setVisible(true);
-        imageUrl = "UI/levels/"+"doorJumpCover" + ".png";
-        spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
-        doorCover.setDisplayFrame(spriteFrame);
-    }
-    else if(state == kDoorStateFinished)
-    {
-        door.setVisible(true);
-        doorCover.setVisible(true);
-        imageUrl = "UI/levels/"+"doorFinishedCover" + ".png";
-        spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
-        doorCover.setDisplayFrame(spriteFrame);
-    }
-    else if(state == kDoorStateHide)
-    {
-        door.setVisible(false);
-        doorCover.setVisible(false);
     }
 };
 
@@ -217,7 +175,7 @@ function GetColorByFloor (floor, num) {
 
 WholeFloors.prototype.CalculateHeight = function ()
 {
-    return Math.ceil(Problem_GetCount() / 3) * this.floorHeight + 30;
+    return Math.ceil(Problem_GetCount() / 3) * this.floorHeight;
 }
 
 WholeFloors.prototype.onClickedDoor = function(floor, floorNum, doorNum)
@@ -225,19 +183,16 @@ WholeFloors.prototype.onClickedDoor = function(floor, floorNum, doorNum)
     var offsetY = floor.rootNode.getPositionY();
     debugMsgOutput("Clicked Floor Y="+offsetY+" doorNum="+doorNum);
     var floorData = gTestFloor[floorNum];
-    if(floorData.doors[doorNum - 1].doorState != kDoorStateHide)
+    if(!floorData.doors[doorNum - 1].hasFinished)
     {
-        if(floorData.doors[doorNum - 1].doorState == kDoorStateLocked)
+        if(this.onFinishedClickedDoorAnimation != null && this.onFinishedClickedDoorAnimation != undefined)
         {
-            if(this.onFinishedClickedDoorAnimation != null && this.onFinishedClickedDoorAnimation != undefined)
-            {
-                this.onFinishedClickedDoorAnimation(false,floorNum, doorNum);
-            }
+            this.onFinishedClickedDoorAnimation(false,floorNum, doorNum);
         }
-        else
-        {
-            this.doLiftAnimationTo(offsetY,doorNum,floorNum,true,this.onFinishedDoLiftAnimation,this);
-        }
+    }
+    else
+    {
+        this.doLiftAnimationTo(offsetY,doorNum,floorNum,true,this.onFinishedDoLiftAnimation,this);
     }
 }
 

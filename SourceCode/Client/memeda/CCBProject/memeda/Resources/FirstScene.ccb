@@ -269,6 +269,8 @@
 								<true/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>baseClass</key>
@@ -418,19 +420,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string>Texture/firstpage1.plist</string>
-											<string>fist_bkg.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>blendFunc</string>
-										<key>type</key>
-										<string>Blendmode</string>
-										<key>value</key>
-										<array>
-											<integer>770</integer>
-											<integer>771</integer>
+											<string></string>
+											<string>UI/guess/fist_bkg.png</string>
 										</array>
 									</dict>
 								</array>
@@ -584,19 +575,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage2.plist</string>
-													<string>first_star3.png</string>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>blendFunc</string>
-												<key>type</key>
-												<string>Blendmode</string>
-												<key>value</key>
-												<array>
-													<integer>770</integer>
-													<integer>771</integer>
+													<string></string>
+													<string>UI/guess/first_star3.png</string>
 												</array>
 											</dict>
 										</array>
@@ -868,19 +848,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage2.plist</string>
-													<string>first_star4.png</string>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>blendFunc</string>
-												<key>type</key>
-												<string>Blendmode</string>
-												<key>value</key>
-												<array>
-													<integer>770</integer>
-													<integer>771</integer>
+													<string></string>
+													<string>UI/guess/first_star4.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1072,19 +1041,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage2.plist</string>
-													<string>first_star5.png</string>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>blendFunc</string>
-												<key>type</key>
-												<string>Blendmode</string>
-												<key>value</key>
-												<array>
-													<integer>770</integer>
-													<integer>771</integer>
+													<string></string>
+													<string>UI/guess/first_star5.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1268,19 +1226,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage2.plist</string>
-													<string>first_star6.png</string>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>blendFunc</string>
-												<key>type</key>
-												<string>Blendmode</string>
-												<key>value</key>
-												<array>
-													<integer>770</integer>
-													<integer>771</integer>
+													<string></string>
+													<string>UI/guess/first_star6.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1472,19 +1419,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage2.plist</string>
-													<string>first_star7.png</string>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>blendFunc</string>
-												<key>type</key>
-												<string>Blendmode</string>
-												<key>value</key>
-												<array>
-													<integer>770</integer>
-													<integer>771</integer>
+													<string></string>
+													<string>UI/guess/first_star7.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1634,24 +1570,11 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string>Texture/firstpage1.plist</string>
-											<string>first_bkg2.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>blendFunc</string>
-										<key>type</key>
-										<string>Blendmode</string>
-										<key>value</key>
-										<array>
-											<integer>770</integer>
-											<integer>771</integer>
+											<string></string>
+											<string>UI/guess/first_bkg2.png</string>
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>animatedProperties</key>
@@ -1800,19 +1723,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string>Texture/firstpage1.plist</string>
-											<string>first_cloud.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>blendFunc</string>
-										<key>type</key>
-										<string>Blendmode</string>
-										<key>value</key>
-										<array>
-											<integer>770</integer>
-											<integer>771</integer>
+											<string></string>
+											<string>UI/guess/first_cloud.png</string>
 										</array>
 									</dict>
 								</array>
@@ -2571,19 +2483,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
-													<string>first_b_light.png</string>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>blendFunc</string>
-												<key>type</key>
-												<string>Blendmode</string>
-												<key>value</key>
-												<array>
-													<integer>770</integer>
-													<integer>771</integer>
+													<string></string>
+													<string>UI/guess/first_b_light.png</string>
 												</array>
 											</dict>
 										</array>
@@ -2668,19 +2569,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string>Texture/firstpage1.plist</string>
-											<string>first_b_cat.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>blendFunc</string>
-										<key>type</key>
-										<string>Blendmode</string>
-										<key>value</key>
-										<array>
-											<integer>770</integer>
-											<integer>771</integer>
+											<string></string>
+											<string>UI/guess/first_b_cat.png</string>
 										</array>
 									</dict>
 								</array>
@@ -3441,19 +3331,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
-													<string>first_y_light.png</string>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>blendFunc</string>
-												<key>type</key>
-												<string>Blendmode</string>
-												<key>value</key>
-												<array>
-													<integer>770</integer>
-													<integer>771</integer>
+													<string></string>
+													<string>UI/guess/first_y_light.png</string>
 												</array>
 											</dict>
 										</array>
@@ -3527,19 +3406,8 @@
 										<string>SpriteFrame</string>
 										<key>value</key>
 										<array>
-											<string>Texture/firstpage1.plist</string>
-											<string>first_y_cat.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>blendFunc</string>
-										<key>type</key>
-										<string>Blendmode</string>
-										<key>value</key>
-										<array>
-											<integer>770</integer>
-											<integer>771</integer>
+											<string></string>
+											<string>UI/guess/first_y_cat.png</string>
 										</array>
 									</dict>
 								</array>
@@ -4274,8 +4142,8 @@
 												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<string>Texture/firstpage1.plist</string>
-													<string>first_start.png</string>
+													<string></string>
+													<string>UI/guess/first_start.png</string>
 												</array>
 											</dict>
 											<dict>
