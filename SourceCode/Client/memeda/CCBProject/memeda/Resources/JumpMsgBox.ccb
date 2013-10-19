@@ -399,7 +399,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_bkg.png</string>
+													<string>UI/common/tip_bkg.png</string>
 												</array>
 											</dict>
 										</array>
@@ -427,7 +427,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -445,7 +445,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -463,7 +463,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -481,7 +481,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -499,7 +499,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -517,7 +517,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -535,7 +535,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -553,7 +553,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -571,7 +571,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -589,7 +589,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -607,7 +607,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -625,7 +625,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -643,7 +643,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -661,7 +661,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -679,7 +679,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -697,7 +697,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -715,7 +715,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -733,7 +733,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -751,7 +751,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head2.png</string>
+																<string>UI/common/tip_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -769,7 +769,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/tip_head1.png</string>
+																<string>UI/common/tip_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -842,7 +842,7 @@
 											<dict>
 												<key>baseValue</key>
 												<array>
-													<string>UI/guess/tip_head1.png</string>
+													<string>UI/common/tip_head1.png</string>
 													<string>Use regular file</string>
 												</array>
 												<key>name</key>
@@ -852,7 +852,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_head1.png</string>
+													<string>UI/common/tip_head1.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1027,7 +1027,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/buyMsgBoxShine1.png</string>
+													<string>UI/common/buyMsgBoxShine1.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1482,7 +1482,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_buytip.png</string>
+													<string>UI/common/tip_buytip.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1817,7 +1817,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/guess/tip_btn.png</string>
+															<string>UI/common/tip_btn.png</string>
 														</array>
 													</dict>
 													<dict>
@@ -1932,7 +1932,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/levels/transparentBlock.png</string>
+															<string>UI/common/transparentBlock.png</string>
 														</array>
 													</dict>
 													<dict>
@@ -2120,7 +2120,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/guess/tip_close.png</string>
+															<string>UI/common/tip_close.png</string>
 														</array>
 													</dict>
 												</array>
@@ -2269,7 +2269,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_coin.png</string>
+													<string>UI/common/tip_coin.png</string>
 												</array>
 											</dict>
 										</array>
@@ -2341,7 +2341,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_1.png</string>
+													<string>UI/common/tip_1.png</string>
 												</array>
 											</dict>
 										</array>
@@ -2413,7 +2413,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_1.png</string>
+													<string>UI/common/tip_1.png</string>
 												</array>
 											</dict>
 										</array>
@@ -2485,7 +2485,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_1.png</string>
+													<string>UI/common/tip_1.png</string>
 												</array>
 											</dict>
 										</array>
