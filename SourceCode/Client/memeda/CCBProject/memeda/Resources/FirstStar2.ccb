@@ -151,7 +151,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/first_star2.png</string>
+									<string>UI/firstscene/first_star2.png</string>
 								</array>
 							</dict>
 						</array>
@@ -282,7 +282,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/first_star2.png</string>
+									<string>UI/firstscene/first_star2.png</string>
 								</array>
 							</dict>
 						</array>

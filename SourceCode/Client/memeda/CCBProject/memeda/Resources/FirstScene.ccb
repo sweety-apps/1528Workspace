@@ -269,8 +269,6 @@
 								<true/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>baseClass</key>
@@ -421,7 +419,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/fist_bkg.png</string>
+											<string>UI/firstscene/fist_bkg.png</string>
 										</array>
 									</dict>
 								</array>
@@ -576,7 +574,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_star3.png</string>
+													<string>UI/firstscene/first_star3.png</string>
 												</array>
 											</dict>
 										</array>
@@ -849,7 +847,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_star4.png</string>
+													<string>UI/firstscene/first_star4.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1042,7 +1040,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_star5.png</string>
+													<string>UI/firstscene/first_star5.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1227,7 +1225,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_star6.png</string>
+													<string>UI/firstscene/first_star6.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1420,7 +1418,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_star7.png</string>
+													<string>UI/firstscene/first_star7.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1571,7 +1569,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/first_bkg2.png</string>
+											<string>UI/firstscene/first_bkg2.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1724,7 +1722,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/first_cloud.png</string>
+											<string>UI/firstscene/first_cloud.png</string>
 										</array>
 									</dict>
 								</array>
@@ -2484,7 +2482,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_b_light.png</string>
+													<string>UI/firstscene/first_b_light.png</string>
 												</array>
 											</dict>
 										</array>
@@ -2570,7 +2568,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/first_b_cat.png</string>
+											<string>UI/firstscene/first_b_cat.png</string>
 										</array>
 									</dict>
 								</array>
@@ -3332,7 +3330,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_y_light.png</string>
+													<string>UI/firstscene/first_y_light.png</string>
 												</array>
 											</dict>
 										</array>
@@ -3407,7 +3405,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/first_y_cat.png</string>
+											<string>UI/firstscene/first_y_cat.png</string>
 										</array>
 									</dict>
 								</array>
@@ -4143,7 +4141,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/first_start.png</string>
+													<string>UI/firstscene/first_start.png</string>
 												</array>
 											</dict>
 											<dict>

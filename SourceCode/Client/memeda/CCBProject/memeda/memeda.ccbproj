@@ -20,7 +20,7 @@
 	<false/>
 	<key>generatedSpriteSheets</key>
 	<dict>
-		<key>UI</key>
+		<key>UI/firstscene</key>
 		<dict>
 			<key>compress</key>
 			<true/>
@@ -33,13 +33,13 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>7</integer>
+			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
-		<key>sprites</key>
+		<key>UI/guess</key>
 		<dict>
 			<key>compress</key>
 			<true/>
