@@ -116,7 +116,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
         return ;
     }
     
-	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
+	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
 	
     GuessScene_InitGlobel();
