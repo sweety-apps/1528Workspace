@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>6</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -1999,7 +1999,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/tip_coin.png</string>
+													<string>UI/common/tip_coin.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -2338,8 +2338,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.0</real>
-											<real>0.0</real>
+											<real>1</real>
+											<real>1</real>
 											<false/>
 											<integer>0</integer>
 										</array>
