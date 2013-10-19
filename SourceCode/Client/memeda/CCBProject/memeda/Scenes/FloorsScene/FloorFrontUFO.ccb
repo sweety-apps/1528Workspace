@@ -221,8 +221,8 @@
 											<integer>3</integer>
 											<key>value</key>
 											<array>
-												<real>34.0625</real>
-												<real>371.01449584960938</real>
+												<real>109</real>
+												<real>512</real>
 											</array>
 										</dict>
 									</array>
@@ -316,8 +316,8 @@
 											<integer>3</integer>
 											<key>value</key>
 											<array>
-												<real>34.0625</real>
-												<real>371.01449584960938</real>
+												<real>109</real>
+												<real>512</real>
 											</array>
 										</dict>
 									</array>
@@ -413,8 +413,8 @@
 											<integer>3</integer>
 											<key>value</key>
 											<array>
-												<real>61</real>
-												<real>371.01449584960938</real>
+												<real>195</real>
+												<real>512</real>
 											</array>
 										</dict>
 									</array>
@@ -508,8 +508,8 @@
 											<integer>3</integer>
 											<key>value</key>
 											<array>
-												<real>61</real>
-												<real>371.01449584960938</real>
+												<real>195</real>
+												<real>512</real>
 											</array>
 										</dict>
 									</array>
@@ -605,8 +605,8 @@
 											<integer>3</integer>
 											<key>value</key>
 											<array>
-												<real>87</real>
-												<real>371.01449584960938</real>
+												<real>278</real>
+												<real>512</real>
 											</array>
 										</dict>
 									</array>
@@ -700,8 +700,8 @@
 											<integer>3</integer>
 											<key>value</key>
 											<array>
-												<real>87</real>
-												<real>371.01449584960938</real>
+												<real>278</real>
+												<real>512</real>
 											</array>
 										</dict>
 									</array>
@@ -795,8 +795,8 @@
 							<dict>
 								<key>baseValue</key>
 								<array>
-									<real>86.875</real>
-									<real>371.01449584960938</real>
+									<real>278</real>
+									<real>512</real>
 								</array>
 								<key>name</key>
 								<string>position</string>
@@ -804,9 +804,9 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>34.0625</real>
-									<real>371.01449584960938</real>
-									<integer>4</integer>
+									<real>109</real>
+									<real>512</real>
+									<integer>5</integer>
 								</array>
 							</dict>
 							<dict>
