@@ -116,7 +116,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
         return ;
     }
     
-	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
+	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
 	
     GuessScene_InitGlobel();
@@ -898,9 +898,12 @@ GuessScene.prototype.update = function() {
     if ( gTimeCount >= 10 ) {
         if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
             gCurrentCCBView.onMusicStop();
+            try {
+            	cc.AudioEngine.getInstance().setMusicVolume(0.0);
+            	cc.AudioEngine.getInstance().stopMusic();
+            }catch ( e ) {
+            }
             
-            cc.AudioEngine.getInstance().setMusicVolume(0.0);
-            cc.AudioEngine.getInstance().stopMusic();
             cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
         }
         gTimeCount = 0;
@@ -925,12 +928,6 @@ GuessScene.prototype.PlayMusic = function () {
     	cc.AudioEngine.getInstance().setMusicVolume(0.9);
     } catch (e) {
     }
-    
-   	this.curFeel = -1;
-	this.beginPlayTime = (new Date()).getTime();
-	
-    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
-
 }
 
 GuessScene.prototype.onMusicStop = function () {
@@ -948,6 +945,12 @@ GuessScene.prototype.CatEnter = function () {
 
 GuessScene.prototype.ListenMusic = function () {
 	this.PlayMusic();
+	
+   	this.curFeel = -1;
+	this.beginPlayTime = (new Date()).getTime();
+	
+    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
+    
 	this.catAni.controller.Listen(true);
 	this.bgLayer.controller.setPlay(true);
 }
@@ -960,6 +963,11 @@ GuessScene.prototype.onClickReplay = function (obj) {
 
 GuessScene.prototype.onEnterCompleted = function(obj) {
     obj.Entered = true;
+    
+   	obj.curFeel = -1;
+	obj.beginPlayTime = (new Date()).getTime();
+	
+    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(obj, 0, !obj._isRunning);
     
     debugMsgOutput("GuessScene.prototype.onEnterCompleted");
 	obj.rootNode.animationManager.runAnimationsForSequenceNamed("Drawing Animation Timeline");	
