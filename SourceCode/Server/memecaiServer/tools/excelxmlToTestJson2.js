@@ -302,64 +302,77 @@ MakeQuestion = function (id, inputPath, outputPath, node) {
 		return ;
 	}
 	
+	if ( id <= 245 ) {
+		return ;
+	}
+	
     var outputFS = require('fs');
     var path = require('path');
 	
 	var objRet = new Object;
 	var obj = new Object;
 	obj.id = id;	// 问题ID号
-	obj.level = node.e.text();
-	obj.label = node.f.text();
-	obj.rightanswer = node.g.text();
+	obj.level = node.d.text();
+	obj.label = node.e.text();
+	obj.rightanswer = node.f.text();
 	obj.rightanswer = trim(obj.rightanswer);
-	if ( node.i == null ) { 
+	if ( node.h == null ) { 
 		obj.achievement = "";
 	} else {
-		obj.achievement = node.i.text();
+		obj.achievement = node.h.text();
 		objRet.achievement = obj.achievement;
+	}
+	
+	if ( node.g == null ) { 
+		obj.inputkey = "";
+	} else {
+		obj.inputkey = node.g.text();
 	}
 	
 	if ( node.j == null ) { 
 		obj.feel = "";
 	} else {
-		obj.feel = node.j.text();
+		obj.feel = node.i.text();
 	}
 
 	// 判断图片和音频是否存在
-	if ( !outputFS.existsSync(inputPath + "/pic/" + obj.rightanswer + ".jpg") ) {
-		console.log("error : jpg not exists " + obj.rightanswer);
-	}
+	//if ( !outputFS.existsSync(inputPath + "/pic/" + obj.rightanswer + ".jpg") ) {
+	//	console.log("error : jpg not exists " + obj.rightanswer);
+	//}
 	
-	if ( !outputFS.existsSync(inputPath + "/music/" + obj.rightanswer + ".mp3") ) {
-		console.log("error : mp3 not exists " + obj.rightanswer);
-		return null;
-	}
+	//if ( !outputFS.existsSync(inputPath + "/music/" + obj.rightanswer + ".mp3") ) {
+	//	console.log("error : mp3 not exists " + obj.rightanswer);
+	//	return null;
+	//}
 	
 	
 	// 把图片和音频拷贝到指定位置
 	if ( outputFS.existsSync(inputPath + "/pic/" + obj.rightanswer + ".jpg") ) {
-		outputFS.renameSync(inputPath + "/pic/" + obj.rightanswer + ".jpg", inputPath + "/pic/" + obj.id + ".jpg");
+		//outputFS.renameSync(inputPath + "/pic/" + obj.rightanswer + ".jpg", inputPath + "/pic/" + obj.id + ".jpg");
 	}
 	
 	if ( outputFS.existsSync(inputPath + "/music/" + obj.rightanswer + ".mp3") ) {
-		outputFS.renameSync(inputPath + "/music/" + obj.rightanswer + ".mp3", inputPath + "/music/" + obj.id + ".mp3");
+		//outputFS.renameSync(inputPath + "/music/" + obj.rightanswer + ".mp3", inputPath + "/music/" + obj.id + ".mp3");
 	}
 	
 
 	obj.rightanswer = obj.rightanswer.replace("-2", "");
-	
+	obj.rightanswer = obj.rightanswer.replace("-3", "");
+	obj.rightanswer = obj.rightanswer.replace("-4", "");
+		
     var resultString = JSON.stringify(obj);
     resultString = encMe("fshf289fh2fhu9123esdlj09fr190j", resultString);
         //resultString = encrypt(resultString, "F6BB1731-E8CC-42A0-A033-6CE82B5E7A03");
+    console.log(outputPath + "/" + id);
     outputFS.writeFile(outputPath + "/" + id,resultString,function(err){
         if(err) {
-			console.log("WriteFile error : " + resultString);
+			console.log("WriteFile error : " + resultString + "" + err);
 			throw err;
 		}
     });
 		
 	objRet.id = id;
-	objRet.level = node.e.text();
+	objRet.level = node.d.text();
 	if ( node.b != null ) { 
 		objRet.pos = node.b.text();
 	}
