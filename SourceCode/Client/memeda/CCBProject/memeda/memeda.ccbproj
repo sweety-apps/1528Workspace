@@ -20,6 +20,25 @@
 	<false/>
 	<key>generatedSpriteSheets</key>
 	<dict>
+		<key>UI/buy_coin_msgbox</key>
+		<dict>
+			<key>compress</key>
+			<true/>
+			<key>dither</key>
+			<true/>
+			<key>ditherAndroid</key>
+			<true/>
+			<key>ditherHTML5</key>
+			<true/>
+			<key>isDirty</key>
+			<false/>
+			<key>textureFileFormat</key>
+			<integer>3</integer>
+			<key>textureFileFormatAndroid</key>
+			<integer>0</integer>
+			<key>textureFileFormatHTML5</key>
+			<integer>1</integer>
+		</dict>
 		<key>UI/firstscene</key>
 		<dict>
 			<key>compress</key>
@@ -38,6 +57,63 @@
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
 			<integer>0</integer>
+		</dict>
+		<key>UI/floors_bg</key>
+		<dict>
+			<key>compress</key>
+			<true/>
+			<key>dither</key>
+			<false/>
+			<key>ditherAndroid</key>
+			<true/>
+			<key>ditherHTML5</key>
+			<true/>
+			<key>isDirty</key>
+			<false/>
+			<key>textureFileFormat</key>
+			<integer>3</integer>
+			<key>textureFileFormatAndroid</key>
+			<integer>0</integer>
+			<key>textureFileFormatHTML5</key>
+			<integer>0</integer>
+		</dict>
+		<key>UI/floors_doors</key>
+		<dict>
+			<key>compress</key>
+			<true/>
+			<key>dither</key>
+			<true/>
+			<key>ditherAndroid</key>
+			<true/>
+			<key>ditherHTML5</key>
+			<true/>
+			<key>isDirty</key>
+			<false/>
+			<key>textureFileFormat</key>
+			<integer>0</integer>
+			<key>textureFileFormatAndroid</key>
+			<integer>0</integer>
+			<key>textureFileFormatHTML5</key>
+			<integer>0</integer>
+		</dict>
+		<key>UI/floorsscene</key>
+		<dict>
+			<key>compress</key>
+			<true/>
+			<key>dither</key>
+			<true/>
+			<key>ditherAndroid</key>
+			<true/>
+			<key>ditherHTML5</key>
+			<true/>
+			<key>isDirty</key>
+			<false/>
+			<key>textureFileFormat</key>
+			<integer>3</integer>
+			<key>textureFileFormatAndroid</key>
+			<integer>0</integer>
+			<key>textureFileFormatHTML5</key>
+			<integer>1</integer>
 		</dict>
 		<key>UI/guess</key>
 		<dict>
@@ -76,7 +152,7 @@
 	<key>publishEnabledAndroid</key>
 	<false/>
 	<key>publishEnabledHTML5</key>
-	<true/>
+	<false/>
 	<key>publishEnablediPhone</key>
 	<true/>
 	<key>publishResolutionHTML5_height</key>
@@ -90,9 +166,9 @@
 	<key>publishResolution_hd</key>
 	<true/>
 	<key>publishResolution_ipad</key>
-	<true/>
+	<false/>
 	<key>publishResolution_ipadhd</key>
-	<true/>
+	<false/>
 	<key>publishResolution_large</key>
 	<true/>
 	<key>publishResolution_medium</key>
