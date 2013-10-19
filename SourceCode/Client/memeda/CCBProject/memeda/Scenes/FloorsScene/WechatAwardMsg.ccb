@@ -358,7 +358,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/transparentBlock.png</string>
+													<string>UI/common/transparentBlock.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -960,10 +960,12 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/levels/buyMsgBoxShine1.png</string>
+													<string>UI/floors_doors/buyMsgBoxShine1.png</string>
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 										<key>seqExpanded</key>
 										<true/>
 									</dict>
@@ -1248,7 +1250,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/levels/transparentBlock.png</string>
+															<string>UI/common/transparentBlock.png</string>
 														</array>
 													</dict>
 													<dict>
@@ -2251,8 +2253,6 @@
 								<true/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>

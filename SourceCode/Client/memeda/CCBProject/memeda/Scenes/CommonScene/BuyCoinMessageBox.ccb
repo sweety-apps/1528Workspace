@@ -3811,8 +3811,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -8327,9 +8325,11 @@
 										<key>type</key>
 										<string>Texture</string>
 										<key>value</key>
-										<string>UI/buy_coin_msgbox/ParticleStar.png</string>
+										<string>UI/particles/ParticleStar.png</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -9072,8 +9072,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
