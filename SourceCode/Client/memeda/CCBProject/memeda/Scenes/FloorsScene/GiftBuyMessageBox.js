@@ -60,7 +60,7 @@ GiftBuyMessageBox.prototype.setFinishedPercents = function (numberOfPercents) {
 
     rect = this.percent100Num.getTextureRect();
     image = "UI/floors_doors/buyMsgBoxNums_" + digit100 + ".png";
-    spriteFrame = cc.SpriteFrame.create(image, rect);
+    spriteFrame = cc.SpriteFrameCache.getSpriteFrame(image);
     this.percent100Num.setDisplayFrame(spriteFrame);
     if(digit100 == 0)
     {
@@ -73,7 +73,7 @@ GiftBuyMessageBox.prototype.setFinishedPercents = function (numberOfPercents) {
 
     rect = this.percent10Num.getTextureRect();
     image = "UI/floors_doors/buyMsgBoxNums_" + digit10 + ".png";
-    spriteFrame = cc.SpriteFrame.create(image, rect);
+    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
     this.percent10Num.setDisplayFrame(spriteFrame);
     if(digit100 == 0 && digit10 == 0)
     {
@@ -86,7 +86,7 @@ GiftBuyMessageBox.prototype.setFinishedPercents = function (numberOfPercents) {
 
     rect = this.percent1Num.getTextureRect();
     image = "UI/floors_doors/buyMsgBoxNums_" + digit1 + ".png";
-    spriteFrame = cc.SpriteFrame.create(image, rect);
+    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
     this.percent1Num.setDisplayFrame(spriteFrame);
 
     if(numberOfPercents < 10)

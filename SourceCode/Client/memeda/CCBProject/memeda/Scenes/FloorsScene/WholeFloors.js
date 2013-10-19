@@ -132,23 +132,23 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
             var spriteFrame;
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[0].image + ".png";
-            spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
+            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
             floor.controller.door1.setDisplayFrame(spriteFrame);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[1].image + ".png";
-            spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
+            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
             floor.controller.door2.setDisplayFrame(spriteFrame);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[2].image + ".png";
-            spriteFrame = cc.SpriteFrame.create(imageUrl,this.doorRect);
+            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
             floor.controller.door3.setDisplayFrame(spriteFrame);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bg + ".png";
-            spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
+            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
             floor.controller.bgWall.setDisplayFrame(spriteFrame);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bottom + ".png";
-            spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
+            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
             floorFront.controller.bottom.setDisplayFrame(spriteFrame);
 
             floor.controller.floorNumber = floorNum;
@@ -392,8 +392,8 @@ WholeFloors.prototype.onUFOLightAnimationCompleted = function()
 
 WholeFloors.prototype.showUFOLight = function (floorNum,doorNum)
 {
-    imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bottom + "_ufo.png";
-    spriteFrame = cc.SpriteFrame.create(imageUrl,this.floorRect);
+    var imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bottom + "_ufo.png";
+    var spriteFrame = spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
     this.catAndLift.setVisible(false);
     this.UFOFloorFront.setPositionY(gTestFloor[floorNum].offsetY);
     this.UFOFloorFront.setVisible(true);
