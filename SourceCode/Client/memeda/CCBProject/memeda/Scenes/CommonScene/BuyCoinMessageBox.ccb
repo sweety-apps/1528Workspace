@@ -3034,8 +3034,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -9068,10 +9066,12 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/buyMsgBoxCenterBox.png</string>
+											<string>UI/buy_coin_msgbox/buyMsgBoxCenterBox.png</string>
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
