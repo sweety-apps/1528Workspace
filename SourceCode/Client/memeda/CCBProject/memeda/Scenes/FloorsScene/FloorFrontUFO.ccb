@@ -854,10 +854,12 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/firsthome_ufolight.png</string>
+									<string>UI/floorsscene/firsthome_ufolight.png</string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -1492,8 +1494,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

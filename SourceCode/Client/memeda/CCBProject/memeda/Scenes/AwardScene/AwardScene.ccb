@@ -475,7 +475,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/award_bkg.png</string>
+													<string>UI/floorsscene/award_bkg.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1001,7 +1001,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/header2.png</string>
+													<string>UI/common/header2.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1097,7 +1097,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/guess/backButton.png</string>
+															<string>UI/common/backButton.png</string>
 														</array>
 													</dict>
 													<dict>
@@ -1108,7 +1108,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/guess/backButton.png</string>
+															<string>UI/common/backButton.png</string>
 														</array>
 													</dict>
 													<dict>
@@ -1119,7 +1119,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/guess/backButton.png</string>
+															<string>UI/common/backButton.png</string>
 														</array>
 													</dict>
 												</array>
@@ -1604,7 +1604,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/upRoundCornerLeft.png</string>
+											<string>UI/common/upRoundCornerLeft.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1676,7 +1676,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/upRoundCornerRight.png</string>
+											<string>UI/common/upRoundCornerRight.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1748,7 +1748,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/downRoundCornerLeft.png</string>
+											<string>UI/common/downRoundCornerLeft.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1820,7 +1820,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/downRoundCornerRight.png</string>
+											<string>UI/common/downRoundCornerRight.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1968,8 +1968,6 @@
 										<string>WechatError.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
