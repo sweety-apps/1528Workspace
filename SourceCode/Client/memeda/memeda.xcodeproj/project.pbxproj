@@ -356,39 +356,6 @@
 		F316D29117B2059A00821A66 /* SlotData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316D29017B2059A00821A66 /* SlotData.cpp */; };
 		F316D29417B2059A00821A66 /* spine-cocos2dx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316D29317B2059A00821A66 /* spine-cocos2dx.cpp */; };
 		F316D2A317B2059A00821A66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316D2A217B2059A00821A66 /* AppDelegate.cpp */; };
-		F316D2A617B2059A00821A66 /* Abadi40-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2A517B2059A00821A66 /* Abadi40-hd.fnt */; };
-		F316D2A817B2059A00821A66 /* Abadi40-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2A717B2059A00821A66 /* Abadi40-hd.png */; };
-		F316D2AA17B2059A00821A66 /* Abadi40-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2A917B2059A00821A66 /* Abadi40-ipad.fnt */; };
-		F316D2AC17B2059A00821A66 /* Abadi40-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2AB17B2059A00821A66 /* Abadi40-ipad.png */; };
-		F316D2AE17B2059A00821A66 /* Abadi40.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2AD17B2059A00821A66 /* Abadi40.fnt */; };
-		F316D2B017B2059A00821A66 /* Abadi40.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2AF17B2059A00821A66 /* Abadi40.png */; };
-		F316D2B217B2059A00821A66 /* About.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F316D2B117B2059A00821A66 /* About.ccbi */; };
-		F316D2B417B2059A00821A66 /* coins-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F316D2B317B2059A00821A66 /* coins-hd.plist */; };
-		F316D2B617B2059A00821A66 /* coins-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2B517B2059A00821A66 /* coins-hd.png */; };
-		F316D2B817B2059A00821A66 /* coins.plist in Resources */ = {isa = PBXBuildFile; fileRef = F316D2B717B2059A00821A66 /* coins.plist */; };
-		F316D2BA17B2059A00821A66 /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2B917B2059A00821A66 /* coins.png */; };
-		F316D2BC17B2059A00821A66 /* Gas40-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2BB17B2059A00821A66 /* Gas40-hd.fnt */; };
-		F316D2BE17B2059A00821A66 /* Gas40-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2BD17B2059A00821A66 /* Gas40-hd.png */; };
-		F316D2C017B2059A00821A66 /* Gas40-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2BF17B2059A00821A66 /* Gas40-ipad.fnt */; };
-		F316D2C217B2059A00821A66 /* Gas40-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2C117B2059A00821A66 /* Gas40-ipad.png */; };
-		F316D2C417B2059A00821A66 /* Gas40.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2C317B2059A00821A66 /* Gas40.fnt */; };
-		F316D2C617B2059A00821A66 /* Gas40.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2C517B2059A00821A66 /* Gas40.png */; };
-		F316D2C817B2059A00821A66 /* HUD.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F316D2C717B2059A00821A66 /* HUD.ccbi */; };
-		F316D2CA17B2059A00821A66 /* konqa32-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2C917B2059A00821A66 /* konqa32-hd.fnt */; };
-		F316D2CC17B2059A00821A66 /* konqa32-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2CB17B2059A00821A66 /* konqa32-hd.png */; };
-		F316D2CE17B2059A00821A66 /* konqa32-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2CD17B2059A00821A66 /* konqa32-ipad.fnt */; };
-		F316D2D017B2059A00821A66 /* konqa32-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2CF17B2059A00821A66 /* konqa32-ipad.png */; };
-		F316D2D217B2059A00821A66 /* konqa32.fnt in Resources */ = {isa = PBXBuildFile; fileRef = F316D2D117B2059A00821A66 /* konqa32.fnt */; };
-		F316D2D417B2059A00821A66 /* konqa32.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2D317B2059A00821A66 /* konqa32.png */; };
-		F316D2D617B2059A00821A66 /* labels-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = F316D2D517B2059A00821A66 /* labels-hd.plist */; };
-		F316D2D817B2059A00821A66 /* labels-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2D717B2059A00821A66 /* labels-hd.png */; };
-		F316D2DA17B2059B00821A66 /* labels-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = F316D2D917B2059B00821A66 /* labels-ipad.plist */; };
-		F316D2DC17B2059B00821A66 /* labels-ipad.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = F316D2DB17B2059B00821A66 /* labels-ipad.pvr.gz */; };
-		F316D2DE17B2059B00821A66 /* labels.plist in Resources */ = {isa = PBXBuildFile; fileRef = F316D2DD17B2059B00821A66 /* labels.plist */; };
-		F316D2E017B2059B00821A66 /* labels.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2DF17B2059B00821A66 /* labels.png */; };
-		F316D2E217B2059B00821A66 /* MainMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E117B2059B00821A66 /* MainMenu.ccbi */; };
-		F316D2E417B2059B00821A66 /* stars2.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E317B2059B00821A66 /* stars2.png */; };
-		F316D2E617B2059B00821A66 /* watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E517B2059B00821A66 /* watermelon.png */; };
 		F316D2E817B2059B00821A66 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E717B2059B00821A66 /* hello.js */; };
 		F316D2EF17B20FA700821A66 /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F316D2EE17B20FA700821A66 /* TestCCB */; };
 		F3395C3917F8B09400EEF086 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -1278,39 +1245,6 @@
 		F316D29F17B2059A00821A66 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		F316D2A117B2059A00821A66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		F316D2A217B2059A00821A66 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		F316D2A517B2059A00821A66 /* Abadi40-hd.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Abadi40-hd.fnt"; path = "Resources/CCB/Abadi40-hd.fnt"; sourceTree = "<group>"; };
-		F316D2A717B2059A00821A66 /* Abadi40-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Abadi40-hd.png"; path = "Resources/CCB/Abadi40-hd.png"; sourceTree = "<group>"; };
-		F316D2A917B2059A00821A66 /* Abadi40-ipad.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Abadi40-ipad.fnt"; path = "Resources/CCB/Abadi40-ipad.fnt"; sourceTree = "<group>"; };
-		F316D2AB17B2059A00821A66 /* Abadi40-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Abadi40-ipad.png"; path = "Resources/CCB/Abadi40-ipad.png"; sourceTree = "<group>"; };
-		F316D2AD17B2059A00821A66 /* Abadi40.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Abadi40.fnt; path = Resources/CCB/Abadi40.fnt; sourceTree = "<group>"; };
-		F316D2AF17B2059A00821A66 /* Abadi40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Abadi40.png; path = Resources/CCB/Abadi40.png; sourceTree = "<group>"; };
-		F316D2B117B2059A00821A66 /* About.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = About.ccbi; path = Resources/CCB/About.ccbi; sourceTree = "<group>"; };
-		F316D2B317B2059A00821A66 /* coins-hd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "coins-hd.plist"; path = "Resources/CCB/coins-hd.plist"; sourceTree = "<group>"; };
-		F316D2B517B2059A00821A66 /* coins-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coins-hd.png"; path = "Resources/CCB/coins-hd.png"; sourceTree = "<group>"; };
-		F316D2B717B2059A00821A66 /* coins.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = coins.plist; path = Resources/CCB/coins.plist; sourceTree = "<group>"; };
-		F316D2B917B2059A00821A66 /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coins.png; path = Resources/CCB/coins.png; sourceTree = "<group>"; };
-		F316D2BB17B2059A00821A66 /* Gas40-hd.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Gas40-hd.fnt"; path = "Resources/CCB/Gas40-hd.fnt"; sourceTree = "<group>"; };
-		F316D2BD17B2059A00821A66 /* Gas40-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas40-hd.png"; path = "Resources/CCB/Gas40-hd.png"; sourceTree = "<group>"; };
-		F316D2BF17B2059A00821A66 /* Gas40-ipad.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Gas40-ipad.fnt"; path = "Resources/CCB/Gas40-ipad.fnt"; sourceTree = "<group>"; };
-		F316D2C117B2059A00821A66 /* Gas40-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas40-ipad.png"; path = "Resources/CCB/Gas40-ipad.png"; sourceTree = "<group>"; };
-		F316D2C317B2059A00821A66 /* Gas40.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gas40.fnt; path = Resources/CCB/Gas40.fnt; sourceTree = "<group>"; };
-		F316D2C517B2059A00821A66 /* Gas40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Gas40.png; path = Resources/CCB/Gas40.png; sourceTree = "<group>"; };
-		F316D2C717B2059A00821A66 /* HUD.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = HUD.ccbi; path = Resources/CCB/HUD.ccbi; sourceTree = "<group>"; };
-		F316D2C917B2059A00821A66 /* konqa32-hd.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "konqa32-hd.fnt"; path = "Resources/CCB/konqa32-hd.fnt"; sourceTree = "<group>"; };
-		F316D2CB17B2059A00821A66 /* konqa32-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "konqa32-hd.png"; path = "Resources/CCB/konqa32-hd.png"; sourceTree = "<group>"; };
-		F316D2CD17B2059A00821A66 /* konqa32-ipad.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "konqa32-ipad.fnt"; path = "Resources/CCB/konqa32-ipad.fnt"; sourceTree = "<group>"; };
-		F316D2CF17B2059A00821A66 /* konqa32-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "konqa32-ipad.png"; path = "Resources/CCB/konqa32-ipad.png"; sourceTree = "<group>"; };
-		F316D2D117B2059A00821A66 /* konqa32.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = konqa32.fnt; path = Resources/CCB/konqa32.fnt; sourceTree = "<group>"; };
-		F316D2D317B2059A00821A66 /* konqa32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = konqa32.png; path = Resources/CCB/konqa32.png; sourceTree = "<group>"; };
-		F316D2D517B2059A00821A66 /* labels-hd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "labels-hd.plist"; path = "Resources/CCB/labels-hd.plist"; sourceTree = "<group>"; };
-		F316D2D717B2059A00821A66 /* labels-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "labels-hd.png"; path = "Resources/CCB/labels-hd.png"; sourceTree = "<group>"; };
-		F316D2D917B2059B00821A66 /* labels-ipad.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "labels-ipad.plist"; path = "Resources/CCB/labels-ipad.plist"; sourceTree = "<group>"; };
-		F316D2DB17B2059B00821A66 /* labels-ipad.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "labels-ipad.pvr.gz"; path = "Resources/CCB/labels-ipad.pvr.gz"; sourceTree = "<group>"; };
-		F316D2DD17B2059B00821A66 /* labels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = labels.plist; path = Resources/CCB/labels.plist; sourceTree = "<group>"; };
-		F316D2DF17B2059B00821A66 /* labels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = labels.png; path = Resources/CCB/labels.png; sourceTree = "<group>"; };
-		F316D2E117B2059B00821A66 /* MainMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenu.ccbi; path = Resources/CCB/MainMenu.ccbi; sourceTree = "<group>"; };
-		F316D2E317B2059B00821A66 /* stars2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stars2.png; path = Resources/CCB/stars2.png; sourceTree = "<group>"; };
-		F316D2E517B2059B00821A66 /* watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = watermelon.png; path = Resources/CCB/watermelon.png; sourceTree = "<group>"; };
 		F316D2E717B2059B00821A66 /* hello.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = hello.js; path = Resources/hello.js; sourceTree = "<group>"; };
 		F316D2EE17B20FA700821A66 /* TestCCB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestCCB; path = Resources/TestCCB; sourceTree = "<group>"; };
 		F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
@@ -1689,7 +1623,6 @@
 				F316CE6817B2059300821A66 /* iTunesArtwork */,
 				F316CE6A17B2059300821A66 /* Info.plist */,
 				F316D2E717B2059B00821A66 /* hello.js */,
-				F316D2A417B2059A00821A66 /* CCB */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -3076,46 +3009,6 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		F316D2A417B2059A00821A66 /* CCB */ = {
-			isa = PBXGroup;
-			children = (
-				F316D2A517B2059A00821A66 /* Abadi40-hd.fnt */,
-				F316D2A717B2059A00821A66 /* Abadi40-hd.png */,
-				F316D2A917B2059A00821A66 /* Abadi40-ipad.fnt */,
-				F316D2AB17B2059A00821A66 /* Abadi40-ipad.png */,
-				F316D2AD17B2059A00821A66 /* Abadi40.fnt */,
-				F316D2AF17B2059A00821A66 /* Abadi40.png */,
-				F316D2B117B2059A00821A66 /* About.ccbi */,
-				F316D2B317B2059A00821A66 /* coins-hd.plist */,
-				F316D2B517B2059A00821A66 /* coins-hd.png */,
-				F316D2B717B2059A00821A66 /* coins.plist */,
-				F316D2B917B2059A00821A66 /* coins.png */,
-				F316D2BB17B2059A00821A66 /* Gas40-hd.fnt */,
-				F316D2BD17B2059A00821A66 /* Gas40-hd.png */,
-				F316D2BF17B2059A00821A66 /* Gas40-ipad.fnt */,
-				F316D2C117B2059A00821A66 /* Gas40-ipad.png */,
-				F316D2C317B2059A00821A66 /* Gas40.fnt */,
-				F316D2C517B2059A00821A66 /* Gas40.png */,
-				F316D2C717B2059A00821A66 /* HUD.ccbi */,
-				F316D2C917B2059A00821A66 /* konqa32-hd.fnt */,
-				F316D2CB17B2059A00821A66 /* konqa32-hd.png */,
-				F316D2CD17B2059A00821A66 /* konqa32-ipad.fnt */,
-				F316D2CF17B2059A00821A66 /* konqa32-ipad.png */,
-				F316D2D117B2059A00821A66 /* konqa32.fnt */,
-				F316D2D317B2059A00821A66 /* konqa32.png */,
-				F316D2D517B2059A00821A66 /* labels-hd.plist */,
-				F316D2D717B2059A00821A66 /* labels-hd.png */,
-				F316D2D917B2059B00821A66 /* labels-ipad.plist */,
-				F316D2DB17B2059B00821A66 /* labels-ipad.pvr.gz */,
-				F316D2DD17B2059B00821A66 /* labels.plist */,
-				F316D2DF17B2059B00821A66 /* labels.png */,
-				F316D2E117B2059B00821A66 /* MainMenu.ccbi */,
-				F316D2E317B2059B00821A66 /* stars2.png */,
-				F316D2E517B2059B00821A66 /* watermelon.png */,
-			);
-			name = CCB;
-			sourceTree = "<group>";
-		};
 		F366268617FD923B001F7674 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -3461,45 +3354,12 @@
 				F3ECD8B717F8081500A0CA29 /* InstapaperResource.bundle in Resources */,
 				F316D0E417B2059800821A66 /* obfuscate_exclude_cocos2d.js in Resources */,
 				F316D10217B2059800821A66 /* js.msg in Resources */,
-				F316D2A617B2059A00821A66 /* Abadi40-hd.fnt in Resources */,
-				F316D2A817B2059A00821A66 /* Abadi40-hd.png in Resources */,
 				F3ECD8D317F8081500A0CA29 /* WeiboSDK.bundle in Resources */,
-				F316D2AA17B2059A00821A66 /* Abadi40-ipad.fnt in Resources */,
-				F316D2AC17B2059A00821A66 /* Abadi40-ipad.png in Resources */,
-				F316D2AE17B2059A00821A66 /* Abadi40.fnt in Resources */,
-				F316D2B017B2059A00821A66 /* Abadi40.png in Resources */,
-				F316D2B217B2059A00821A66 /* About.ccbi in Resources */,
-				F316D2B417B2059A00821A66 /* coins-hd.plist in Resources */,
-				F316D2B617B2059A00821A66 /* coins-hd.png in Resources */,
-				F316D2B817B2059A00821A66 /* coins.plist in Resources */,
-				F316D2BA17B2059A00821A66 /* coins.png in Resources */,
-				F316D2BC17B2059A00821A66 /* Gas40-hd.fnt in Resources */,
-				F316D2BE17B2059A00821A66 /* Gas40-hd.png in Resources */,
-				F316D2C017B2059A00821A66 /* Gas40-ipad.fnt in Resources */,
-				F316D2C217B2059A00821A66 /* Gas40-ipad.png in Resources */,
-				F316D2C417B2059A00821A66 /* Gas40.fnt in Resources */,
-				F316D2C617B2059A00821A66 /* Gas40.png in Resources */,
-				F316D2C817B2059A00821A66 /* HUD.ccbi in Resources */,
-				F316D2CA17B2059A00821A66 /* konqa32-hd.fnt in Resources */,
-				F316D2CC17B2059A00821A66 /* konqa32-hd.png in Resources */,
-				F316D2CE17B2059A00821A66 /* konqa32-ipad.fnt in Resources */,
-				F316D2D017B2059A00821A66 /* konqa32-ipad.png in Resources */,
 				F3D102C218103CD0002A3A9B /* Icon-80.png in Resources */,
 				F3ECD8E417F8081500A0CA29 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				F3ECD8D617F8081500A0CA29 /* RennSDK.bundle in Resources */,
-				F316D2D217B2059A00821A66 /* konqa32.fnt in Resources */,
-				F316D2D417B2059A00821A66 /* konqa32.png in Resources */,
 				F3ECD8DD17F8081500A0CA29 /* ShareSDKiPadDefaultShareViewUI.bundle in Resources */,
-				F316D2D617B2059A00821A66 /* labels-hd.plist in Resources */,
-				F316D2D817B2059A00821A66 /* labels-hd.png in Resources */,
-				F316D2DA17B2059B00821A66 /* labels-ipad.plist in Resources */,
 				F3ECD8CC17F8081500A0CA29 /* ShareSDKLocalizable.strings in Resources */,
-				F316D2DC17B2059B00821A66 /* labels-ipad.pvr.gz in Resources */,
-				F316D2DE17B2059B00821A66 /* labels.plist in Resources */,
-				F316D2E017B2059B00821A66 /* labels.png in Resources */,
-				F316D2E217B2059B00821A66 /* MainMenu.ccbi in Resources */,
-				F316D2E417B2059B00821A66 /* stars2.png in Resources */,
-				F316D2E617B2059B00821A66 /* watermelon.png in Resources */,
 				F316D2E817B2059B00821A66 /* hello.js in Resources */,
 				F316D2EF17B20FA700821A66 /* TestCCB in Resources */,
 				F3D102C418103CD0002A3A9B /* Icon-152.png in Resources */,

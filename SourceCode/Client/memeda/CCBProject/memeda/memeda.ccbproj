@@ -33,7 +33,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -52,7 +52,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -71,7 +71,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -90,7 +90,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -109,7 +109,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -128,7 +128,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -147,7 +147,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -159,7 +159,7 @@
 	<key>javascriptMainCCB</key>
 	<string>FirstScene</string>
 	<key>needRepublish</key>
-	<false/>
+	<true/>
 	<key>onlyPublishCCBs</key>
 	<false/>
 	<key>publishDirectory</key>
@@ -185,9 +185,9 @@
 	<key>publishResolution_hd</key>
 	<true/>
 	<key>publishResolution_ipad</key>
-	<true/>
+	<false/>
 	<key>publishResolution_ipadhd</key>
-	<true/>
+	<false/>
 	<key>publishResolution_large</key>
 	<true/>
 	<key>publishResolution_medium</key>
