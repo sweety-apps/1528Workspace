@@ -15,25 +15,25 @@
     <file path="/GiftBuyMessageBox.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380890013940" ignored="false" />
     <file path="/Floor.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1379338080797" ignored="false" />
     <file path="/ChooseTestsScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381928673306" ignored="false" />
-    <file path="/a.dummy" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382177318285" ignored="false" />
+    <file path="/a.dummy" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382180253744" ignored="false" />
     <file path="/PurchaseTable.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380889392375" ignored="false" />
     <file path="/BuyCoinMessageBox.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380961422988" ignored="false" />
     <file path="/CoinMgr.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380866126537" ignored="false" />
     <file path="/SpecialSpyPackageMgr.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1380961601119" ignored="false" />
     <file path="/MainScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381656241501" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/main.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381659319259" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/fileLookup.plist" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381659319259" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/boot-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382177316354" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/boot2-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382177316354" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/index.html" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381659319259" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/main.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382180001778" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/fileLookup.plist" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382180001778" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/boot-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382180228638" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/boot2-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382180001778" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/index.html" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382180001778" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/AwardScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381665022536" ignored="false" />
     <file path="/FloorsData.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381999397421" ignored="false" />
     <file path="/Globel.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935536460" ignored="false" />
     <file path="/FirstScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1381935611556" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/FirstScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382177316354" ignored="false" />
     <file path="$PROJECT_DIR$/Published-iOS/ChooseTestsScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382021145670" ignored="false" />
     <file path="/AwardScene.ccb" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382175943220" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/resources-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382177316354" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/resources-html5.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382180228638" ignored="false" />
+    <file path="/ChooseTestsScene.ccb" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382179691579" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,7 @@
       <file leaf-file-name="ChooseTestsScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="190" column="8" selection-start="6545" selection-end="6545" vertical-scroll-proportion="0.0">
+            <state line="26" column="4" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,19 +107,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FirstScene.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FirstScene.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources/FirstScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="63" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
+            <state line="9" column="4" selection-start="431" selection-end="431" vertical-scroll-proportion="0.27675277">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuyCoinMessageBox.ccb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Scenes/CommonScene/BuyCoinMessageBox.ccb">
+      <file leaf-file-name="ChooseTestsScene.ccb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.ccb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8327" column="60" selection-start="228383" selection-end="228383" vertical-scroll-proportion="0.3321033">
+            <state line="1830" column="51" selection-start="44712" selection-end="44712" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,13 +153,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Resources/JumpMsgBox.js" />
         <option value="$PROJECT_DIR$/Resources/BuyMsg.js" />
         <option value="$PROJECT_DIR$/Resources/GuessScene.js" />
         <option value="$PROJECT_DIR$/Published-HTML5/GameDataAccess.js" />
         <option value="$PROJECT_DIR$/Resources/GameDataAccess.js" />
         <option value="$PROJECT_DIR$/Resources/Globel.js" />
-        <option value="$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js" />
         <option value="$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js" />
         <option value="$PROJECT_DIR$/Scenes/FloorsScene/FloorsData.js" />
         <option value="$PROJECT_DIR$/Published-iOS/GiftBuyMessageBox.js" />
@@ -167,13 +165,15 @@
         <option value="$PROJECT_DIR$/Scenes/AwardScene/AwardScene.ccb" />
         <option value="$PROJECT_DIR$/Scenes/CommonScene/NoEnoughMessageBox.ccb" />
         <option value="$PROJECT_DIR$/Scenes/FloorsScene/WechatAwardMsg.ccb" />
-        <option value="$PROJECT_DIR$/Resources/FirstScene.js" />
         <option value="$PROJECT_DIR$/Scenes/CommonScene/BuyCoinMessageBox.ccb" />
+        <option value="$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.ccb" />
+        <option value="$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js" />
+        <option value="$PROJECT_DIR$/Resources/FirstScene.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="110" />
+    <option name="x" value="69" />
     <option name="y" value="22" />
     <option name="width" value="1256" />
     <option name="height" value="707" />
@@ -293,8 +293,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Server/memecaiServer" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -334,14 +334,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="110" y="22" width="1256" height="707" extended-state="0" />
+    <frame x="69" y="22" width="1256" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39011925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20247933" sideWeight="0.60988075" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.246281" sideWeight="0.60988075" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2504132" sideWeight="0.60988075" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -439,18 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.ccb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="8" selection-start="6545" selection-end="6545" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/WholeFloors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="22" selection-start="91" selection-end="109" vertical-scroll-proportion="0.0">
@@ -514,16 +502,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/FirstScene.js">
+    <entry file="file://$PROJECT_DIR$/Scenes/CommonScene/BuyCoinMessageBox.ccb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="63" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
+        <state line="8327" column="60" selection-start="228383" selection-end="228383" vertical-scroll-proportion="0.03">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/CommonScene/BuyCoinMessageBox.ccb">
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.ccb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8327" column="60" selection-start="228383" selection-end="228383" vertical-scroll-proportion="0.3321033">
+        <state line="1830" column="51" selection-start="44712" selection-end="44712" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/FloorsScene/ChooseTestsScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="4" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/FirstScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="4" selection-start="431" selection-end="431" vertical-scroll-proportion="0.27675277">
           <folding />
         </state>
       </provider>
