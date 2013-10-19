@@ -58,7 +58,7 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>9.9666662216186523</real>
+									<real>10</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
@@ -101,7 +101,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>-1.8819981813430786</real>
 							<real>0.0</real>
 							<integer>1</integer>
 						</array>
@@ -150,6 +150,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -189,7 +191,7 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>9.9666662216186523</real>
+									<real>10</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
@@ -232,7 +234,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-282.29998779296875</real>
+							<real>-280.41799926757812</real>
 							<real>0.0</real>
 							<integer>1</integer>
 						</array>
@@ -513,7 +515,7 @@
 			<key>offset</key>
 			<real>7.421875</real>
 			<key>position</key>
-			<real>10</real>
+			<real>9.9333333969116211</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
