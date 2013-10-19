@@ -99,7 +99,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/floors_doors/doorCloseCover.png</string>
+											<string>UI/levels/doorCloseCover.png</string>
 										</array>
 									</dict>
 								</array>
@@ -283,7 +283,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/floors_doors/door_black.png</string>
+									<string>UI/levels/door_black.png</string>
 								</array>
 							</dict>
 						</array>
@@ -360,7 +360,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/floors_doors/doorCloseCover.png</string>
+											<string>UI/levels/doorCloseCover.png</string>
 										</array>
 									</dict>
 								</array>
@@ -544,7 +544,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/floors_doors/doorSpecial_1.png</string>
+									<string>UI/levels/doorSpecial_1.png</string>
 								</array>
 							</dict>
 						</array>
@@ -621,7 +621,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/floors_doors/doorCloseCover.png</string>
+											<string>UI/levels/doorCloseCover.png</string>
 										</array>
 									</dict>
 								</array>
@@ -805,7 +805,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/floors_doors/door_yellow.png</string>
+									<string>UI/levels/door_yellow.png</string>
 								</array>
 							</dict>
 						</array>
@@ -881,7 +881,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/floors_doors/floor_pink.png</string>
+							<string>UI/levels/floor_pink.png</string>
 						</array>
 					</dict>
 				</array>
@@ -1493,7 +1493,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/floors_doors/elevator.png</string>
+									<string>UI/levels/elevator.png</string>
 								</array>
 							</dict>
 						</array>
@@ -3399,7 +3399,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/floors_doors/listenCat.png</string>
+									<string>UI/levels/listenCat.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -3413,6 +3413,8 @@
 								<integer>255</integer>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -3741,8 +3743,6 @@
 								<string>SEX</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -3815,7 +3815,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/floors_doors/floorBottom_pink.png</string>
+							<string>UI/levels/floorBottom_pink.png</string>
 						</array>
 					</dict>
 				</array>

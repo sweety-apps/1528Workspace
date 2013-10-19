@@ -363,12 +363,10 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/floors_doors/floorBottom_pink.png</string>
+							<string>UI/levels/floorBottom_pink.png</string>
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>

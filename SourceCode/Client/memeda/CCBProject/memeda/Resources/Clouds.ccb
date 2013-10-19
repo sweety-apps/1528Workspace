@@ -146,10 +146,12 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/floors_bg/cloudBack.png</string>
+							<string>UI/levels/cloudBack.png</string>
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -277,12 +279,10 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>UI/floors_bg/cloudFront.png</string>
+							<string>UI/levels/cloudFront.png</string>
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
