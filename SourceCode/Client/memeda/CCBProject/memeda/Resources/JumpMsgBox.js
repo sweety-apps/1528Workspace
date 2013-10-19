@@ -25,16 +25,16 @@ JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) {
 	var num1 = Math.floor((price % 100) / 10);
 	var num2 = price % 10;
 
-    var image = "UI/common/tip_" + num0 + ".png";
-    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    var image = "UI/guess/tip_" + num0 + ".png";
+    var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num0.setDisplayFrame(spriteFrame);
     
-    image = "UI/common/tip_" + num1 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    image = "UI/guess/tip_" + num1 + ".png";
+    spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num1.setDisplayFrame(spriteFrame);
 	
-	image = "UI/common/tip_" + num2 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	image = "UI/guess/tip_" + num2 + ".png";
+    spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num2.setDisplayFrame(spriteFrame);
         
  	if ( !Global_isWeb() ) {

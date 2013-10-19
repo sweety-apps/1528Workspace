@@ -1123,7 +1123,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1134,7 +1134,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1145,7 +1145,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1279,7 +1279,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1290,7 +1290,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1301,7 +1301,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1435,7 +1435,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1446,7 +1446,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1457,7 +1457,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1678,7 +1678,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1689,7 +1689,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1700,7 +1700,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -2060,7 +2060,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2071,7 +2071,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2082,7 +2082,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -2216,7 +2216,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2374,7 +2374,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2385,7 +2385,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2396,7 +2396,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -2534,7 +2534,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2545,7 +2545,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2556,7 +2556,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -2692,7 +2692,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2703,7 +2703,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2714,7 +2714,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -2850,7 +2850,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2861,7 +2861,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -2872,7 +2872,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -3008,7 +3008,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -3019,7 +3019,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -3030,7 +3030,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/levels/transparentBlock.png</string>
 										</array>
 									</dict>
 								</array>
@@ -3807,7 +3807,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/tip_close.png</string>
+											<string>UI/guess/tip_close.png</string>
 										</array>
 									</dict>
 								</array>
@@ -9066,12 +9066,10 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/buy_coin_msgbox/buyMsgBoxCenterBox.png</string>
+											<string>UI/levels/buyMsgBoxCenterBox.png</string>
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -10314,7 +10312,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/tip_btn.png</string>
+											<string>UI/guess/tip_btn.png</string>
 										</array>
 									</dict>
 								</array>

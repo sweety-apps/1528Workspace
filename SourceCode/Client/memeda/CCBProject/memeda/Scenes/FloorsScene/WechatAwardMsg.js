@@ -40,15 +40,15 @@ WechatAwardMsg.prototype.ShowMsg = function(msg, price, endFun, index) {
 	}
 	
     var image = "UI/common/tip_" + num0 + ".png";
-    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    var spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num1.setDisplayFrame(spriteFrame);
     
     image = "UI/common/tip_" + num1 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num2.setDisplayFrame(spriteFrame);
 	
 	image = "UI/common/tip_" + num2 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    spriteFrame = cc.SpriteFrame.create(image, cc.rect(0,0,19,29));
     this.num3.setDisplayFrame(spriteFrame);
     
     
