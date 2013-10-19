@@ -218,7 +218,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/award_border.png</string>
+											<string>UI/floorsscene/award_border.png</string>
 										</array>
 									</dict>
 								</array>
@@ -292,7 +292,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/award_1.png</string>
+											<string>UI/floorsscene/award_1.png</string>
 										</array>
 									</dict>
 								</array>
@@ -492,7 +492,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/award_tip1.png</string>
+											<string>UI/floorsscene/award_tip1.png</string>
 										</array>
 									</dict>
 								</array>
@@ -684,7 +684,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/award_none.png</string>
+											<string>UI/floorsscene/award_none.png</string>
 										</array>
 									</dict>
 									<dict>

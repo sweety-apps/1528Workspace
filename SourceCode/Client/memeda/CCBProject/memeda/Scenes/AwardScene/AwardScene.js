@@ -22,9 +22,9 @@ AwardScene.prototype.onClickBkg = function () {
 
 AwardScene.prototype.initStatus = function () {
     //
-    this.firendCtrl.controller.setItemInfo("UI/guess/award_1.png", 500, this, this.onClickFirend);
-    this.commentCtrl.controller.setItemInfo("UI/guess/award_2.png", 543, this, this.onClickComment);
-    this.duomengCtrl.controller.setItemInfo("UI/guess/award_3.png", null, this, this.onClickDuomeng);
+    this.firendCtrl.controller.setItemInfo("UI/floorsscene/award_1.png", 500, this, this.onClickFirend);
+    this.commentCtrl.controller.setItemInfo("UI/floorsscene/award_2.png", 543, this, this.onClickComment);
+    this.duomengCtrl.controller.setItemInfo("UI/floorsscene/award_3.png", null, this, this.onClickDuomeng);
     
     var showsharecoin = sys.localStorage.getItem("showsharecoin");
     if ( showsharecoin == "2" ) {

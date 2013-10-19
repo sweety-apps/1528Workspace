@@ -24,6 +24,9 @@ var ChooseTestsScene = function() {
 ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
+	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
+	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
+	
 	gChooseTestsSceneThis = this;
 
     // 设备上面需要开启触摸
