@@ -245,17 +245,17 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num1 = Math.floor( (num % 100) / 10);
         var num0 = num % 10;
 
-        var image = "UI/common/" + num2 + ".png";
+        var image = "UI/title/" + num2 + ".png";
         //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum2.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum2,image);
 
-        image = "UI/common/" + num1 + ".png";
+        image = "UI/title/" + num1 + ".png";
         //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum1.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum1,image);
 
-        image = "UI/common/" + num0 + ".png";
+        image = "UI/title/" + num0 + ".png";
         //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum0.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum0,image);
@@ -267,12 +267,12 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num1 = Math.floor( num / 10);
         var num0 = num % 10;
 
-        var image = "UI/common/" + num1 + ".png";
+        var image = "UI/title/" + num1 + ".png";
         //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum1.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum1,image);
 
-        image = "UI/common/" + num0 + ".png";
+        image = "UI/title/" + num0 + ".png";
         //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum0.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum0,image);
@@ -281,7 +281,7 @@ GuessScene.prototype.SetTitleNum = function (num) {
         this.titleNum1.setVisible(true);
         this.titleNum2.setVisible(false);
 
-        var image = "UI/common/" + num + ".png";
+        var image = "UI/title/" + num + ".png";
         //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum1.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum1,image);
