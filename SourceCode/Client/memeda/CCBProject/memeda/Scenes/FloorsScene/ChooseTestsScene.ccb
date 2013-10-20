@@ -519,9 +519,9 @@
 						<key>displayName</key>
 						<string>ToolBarBG_9Sprite</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>toolBarSprite</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -644,6 +644,8 @@
 								<real>28</real>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>baseClass</key>
@@ -2475,6 +2477,20 @@
 			<real>2</real>
 			<key>width</key>
 			<integer>768</integer>
+		</dict>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>ipad iphonehd</string>
+			<key>height</key>
+			<integer>960</integer>
+			<key>name</key>
+			<string>iPhoneHD</string>
+			<key>scale</key>
+			<real>2</real>
+			<key>width</key>
+			<integer>640</integer>
 		</dict>
 	</array>
 	<key>sequences</key>

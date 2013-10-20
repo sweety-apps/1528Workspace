@@ -24,14 +24,15 @@ var ChooseTestsScene = function() {
 ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
-	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
+
+    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/buy_coin_msgbox.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_bg.plist");
+    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
-	
+    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
+    
 	gChooseTestsSceneThis = this;
 
     // 设备上面需要开启触摸
@@ -72,6 +73,11 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.QueryExtraCoin();
     this.wholeFloors.controller.setupCatPosition();
     this.scrollFloorsToCatPosition();
+
+
+    var imageUrl = "UI/floors_doors/"+ "ToolbarBG" + ".png";
+    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+    this.toolBarSprite.setSpriteFrame(spriteFrame);
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
