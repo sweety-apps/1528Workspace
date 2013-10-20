@@ -7,7 +7,7 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
 	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
 	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene2.plist");
 		
-  GuessScene_Preload(true);
+  //GuessScene_Preload(true);
     
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 	
@@ -19,7 +19,7 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
 
     Global_clearAllGloabalVars();
     
-    GuessScene_Preload(false);
+    //GuessScene_Preload(false);
     
     cc.AudioEngine.getInstance().playMusic("sounds/Floor_BG.mp3",true);
     cc.AudioEngine.getInstance().setMusicVolume(0.5);
