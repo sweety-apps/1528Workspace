@@ -23,7 +23,7 @@
 		<key>UI/buy_coin_msgbox</key>
 		<dict>
 			<key>compress</key>
-			<true/>
+			<false/>
 			<key>dither</key>
 			<true/>
 			<key>ditherAndroid</key>
@@ -59,6 +59,25 @@
 			<integer>0</integer>
 		</dict>
 		<key>UI/common</key>
+		<dict>
+			<key>compress</key>
+			<false/>
+			<key>dither</key>
+			<true/>
+			<key>ditherAndroid</key>
+			<true/>
+			<key>ditherHTML5</key>
+			<true/>
+			<key>isDirty</key>
+			<false/>
+			<key>textureFileFormat</key>
+			<integer>0</integer>
+			<key>textureFileFormatAndroid</key>
+			<integer>0</integer>
+			<key>textureFileFormatHTML5</key>
+			<integer>0</integer>
+		</dict>
+		<key>UI/door</key>
 		<dict>
 			<key>compress</key>
 			<true/>
@@ -137,7 +156,7 @@
 		<key>UI/floors_doors</key>
 		<dict>
 			<key>compress</key>
-			<true/>
+			<false/>
 			<key>dither</key>
 			<true/>
 			<key>ditherAndroid</key>

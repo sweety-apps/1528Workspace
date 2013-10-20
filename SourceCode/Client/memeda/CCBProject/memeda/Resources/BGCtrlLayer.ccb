@@ -57,7 +57,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/bg1.png</string>
+												<string>UI/door/bg1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -75,7 +75,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/bg1.png</string>
+												<string>UI/door/bg1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -106,7 +106,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/bg2.png</string>
+												<string>UI/door/bg2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -124,7 +124,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/bg2.png</string>
+												<string>UI/door/bg2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -155,7 +155,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/bg3.png</string>
+												<string>UI/door/bg3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -173,7 +173,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/bg3.png</string>
+												<string>UI/door/bg3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -246,7 +246,7 @@
 							<dict>
 								<key>baseValue</key>
 								<array>
-									<string>UI/guess/bg1.png</string>
+									<string>UI/door/bg1.png</string>
 									<string>Use regular file</string>
 								</array>
 								<key>name</key>
@@ -256,7 +256,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/bg3.png</string>
+									<string>UI/door/bg3.png</string>
 								</array>
 							</dict>
 						</array>

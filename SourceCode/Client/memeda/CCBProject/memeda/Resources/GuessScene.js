@@ -115,6 +115,10 @@ GuessScene.prototype.onDidUnload = function () {
     debugMsgOutput("fsdf");
 }
 
+GuessScene.prototype.onEnterTransitionDidFinish = function () {
+	debugMsgOutput("GuessScene.prototype.onEnterTransitionDidFinish");
+};
+
 GuessScene.prototype.onDidLoadFromCCB = function () {
     if ( gPreload ) {
         return ;
@@ -122,6 +126,7 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/cat.plist");
+	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/door.plist");
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
 	
     GuessScene_InitGlobel();

@@ -157,7 +157,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_0.png</string>
+												<string>UI/door/door_window_0.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -175,7 +175,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_1.png</string>
+												<string>UI/door/door_window_1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -193,7 +193,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_2.png</string>
+												<string>UI/door/door_window_2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -211,7 +211,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_3.png</string>
+												<string>UI/door/door_window_3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -229,7 +229,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_3.png</string>
+												<string>UI/door/door_window_3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -247,7 +247,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_2.png</string>
+												<string>UI/door/door_window_2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -265,7 +265,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_1.png</string>
+												<string>UI/door/door_window_1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -283,7 +283,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door_window_0.png</string>
+												<string>UI/door/door_window_0.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -356,7 +356,7 @@
 							<dict>
 								<key>baseValue</key>
 								<array>
-									<string>UI/guess/door_window_0.png</string>
+									<string>UI/door/door_window_0.png</string>
 									<string>Use regular file</string>
 								</array>
 								<key>name</key>
@@ -366,7 +366,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/door_window_0.png</string>
+									<string>UI/door/door_window_0.png</string>
 								</array>
 							</dict>
 						</array>

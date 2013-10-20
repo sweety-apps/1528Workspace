@@ -57,7 +57,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door1.png</string>
+												<string>UI/door/door1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -75,7 +75,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door1.png</string>
+												<string>UI/door/door1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -106,7 +106,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door2.png</string>
+												<string>UI/door/door2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -124,7 +124,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door2.png</string>
+												<string>UI/door/door2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -155,7 +155,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door3.png</string>
+												<string>UI/door/door3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -173,7 +173,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door3.png</string>
+												<string>UI/door/door3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -204,7 +204,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door4.png</string>
+												<string>UI/door/door4.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -222,7 +222,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/door4.png</string>
+												<string>UI/door/door4.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -295,7 +295,7 @@
 							<dict>
 								<key>baseValue</key>
 								<array>
-									<string>UI/guess/door1.png</string>
+									<string>UI/door/door1.png</string>
 									<string>Use regular file</string>
 								</array>
 								<key>name</key>
@@ -305,12 +305,10 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/door4.png</string>
+									<string>UI/door/door4.png</string>
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
