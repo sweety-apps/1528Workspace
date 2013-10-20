@@ -43,8 +43,9 @@ FirstScene.prototype.onAnimationComplete = function()
 		var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
 		
 		var director = cc.Director.getInstance();
-    	var runningScene = director.getRunningScene();
-    	if (runningScene === null) director.runWithScene(chooseTestsScene);
-    	else director.replaceScene(chooseTestsScene);
+    	director.replaceScene(chooseTestsScene);
+        
+        cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene.plist");
+        cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene2.plist");
 	}
 };
