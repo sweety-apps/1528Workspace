@@ -31,7 +31,7 @@
 			<key>ditherHTML5</key>
 			<true/>
 			<key>isDirty</key>
-			<true/>
+			<false/>
 			<key>textureFileFormat</key>
 			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>

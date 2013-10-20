@@ -27,30 +27,42 @@ WechatAwardMsg.prototype.ShowMsg = function(msg, price, endFun, index) {
 	var num1 = Math.floor((price % 100) / 10);
 	var num2 = price % 10;
 
+	this.num1.setVisible(true);
+	this.num2.setVisible(true);
+	this.num3.setVisible(true);
+	
 	if ( price >= 100 ) {
 		this.num1.setVisible(true);	
+		
+	    var image = "UI/common/tip_" + num0 + ".png";
+	    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    this.num1.setDisplayFrame(spriteFrame);
+	    
+	    image = "UI/common/tip_" + num1 + ".png";
+	    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    this.num2.setDisplayFrame(spriteFrame);
+		
+		image = "UI/common/tip_" + num2 + ".png";
+	    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    this.num3.setDisplayFrame(spriteFrame);
+	} else if ( price >= 10 ) {
+		this.num3.setVisible(false);	
+		
+	    var image = "UI/common/tip_" + num1 + ".png";
+	    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    this.num1.setDisplayFrame(spriteFrame);
+		
+		image = "UI/common/tip_" + num2 + ".png";
+	    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    this.num2.setDisplayFrame(spriteFrame);
 	} else {
-		this.num1.setVisible(false);	
+		this.num1.setVisible(false);
+		this.num3.setVisible(false);
+		
+	    var image = "UI/common/tip_" + num2 + ".png";
+	    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    this.num2.setDisplayFrame(spriteFrame);	
 	}
-	
-	if ( price >= 10 ) {
-		this.num2.setVisible(true);	
-	} else {
-		this.num2.setVisible(false);
-	}
-	
-    var image = "UI/common/tip_" + num0 + ".png";
-    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    this.num1.setDisplayFrame(spriteFrame);
-    
-    image = "UI/common/tip_" + num1 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    this.num2.setDisplayFrame(spriteFrame);
-	
-	image = "UI/common/tip_" + num2 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    this.num3.setDisplayFrame(spriteFrame);
-    
     
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
