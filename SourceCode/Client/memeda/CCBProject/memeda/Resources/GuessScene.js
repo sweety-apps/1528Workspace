@@ -128,7 +128,8 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/cat.plist");
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/door.plist");
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
-	
+	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guessbtn.plist");
+		
     GuessScene_InitGlobel();
     
     // 设备上面需要开启触摸
@@ -254,6 +255,7 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num1 = Math.floor( (num % 100) / 10);
         var num0 = num % 10;
 
+<<<<<<< HEAD
         var image = "UI/common/" + num2 + ".png";
         //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum2.setDisplayFrame(spriteFrame);
@@ -268,6 +270,19 @@ GuessScene.prototype.SetTitleNum = function (num) {
         //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum0.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum0,image);
+=======
+        var image = "UI/title/" + num2 + ".png";
+        var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        this.titleNum2.setDisplayFrame(spriteFrame);
+
+        image = "UI/title/" + num1 + ".png";
+        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        this.titleNum1.setDisplayFrame(spriteFrame);
+
+        image = "UI/title/" + num0 + ".png";
+        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        this.titleNum0.setDisplayFrame(spriteFrame);
+>>>>>>> bbaca684b079848d2887ee8b26897cf8fa8e50a7
     } else if ( num >= 10 ) {
         this.titleNum0.setVisible(true);
         this.titleNum1.setVisible(true);
@@ -1243,6 +1258,12 @@ GuessScene.prototype.onClickedCoinButton = function (obj ) {
 	}
 	
     debugMsgOutput("[UI Event] Clicked Coin Button!");
+    if ( obj.buyCoinMsgBox == null ) {
+    	debugMsgOutput("create BuyCoinMessageBox");
+    	obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    	obj.ccbLayout.addChild(	obj.buyCoinMsgBox );
+    }
+    
     obj.buyCoinMsgBox.controller.show();	
 }
 
@@ -1252,6 +1273,12 @@ GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
 		gCurrentCCBView.EnableAllBtn(true);
 		if ( res == 1 ) {
     		debugMsgOutput("[UI Event] Clicked Coin Button!");
+    		if ( gCurrentCCBView.buyCoinMsgBox == null ) {
+    			debugMsgOutput("create BuyCoinMessageBox");
+    			gCurrentCCBView.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    			gCurrentCCBView.ccbLayout.addChild(	obj.buyCoinMsgBox );
+    		}
+    
     		gCurrentCCBView.buyCoinMsgBox.controller.show();	
 		}
 	});

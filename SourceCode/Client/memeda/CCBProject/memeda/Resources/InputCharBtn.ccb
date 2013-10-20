@@ -112,7 +112,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton0.png</string>
+														<string>UI/guessbtn/charButton0.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -130,7 +130,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton0.png</string>
+														<string>UI/guessbtn/charButton0.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -161,7 +161,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton0.png</string>
+														<string>UI/guessbtn/charButton0.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -179,7 +179,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton1.png</string>
+														<string>UI/guessbtn/charButton1.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -197,7 +197,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton2.png</string>
+														<string>UI/guessbtn/charButton2.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -228,7 +228,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton2.png</string>
+														<string>UI/guessbtn/charButton2.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -246,7 +246,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton2.png</string>
+														<string>UI/guessbtn/charButton2.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -277,7 +277,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton2.png</string>
+														<string>UI/guessbtn/charButton2.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -295,7 +295,7 @@
 													<integer>7</integer>
 													<key>value</key>
 													<array>
-														<string>UI/guess/charButton2.png</string>
+														<string>UI/guessbtn/charButton2.png</string>
 														<string>Use regular file</string>
 													</array>
 												</dict>
@@ -368,8 +368,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>53.191490173339844</real>
-											<real>51.063831329345703</real>
+											<real>48.936168670654297</real>
+											<real>50</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -408,7 +408,7 @@
 									<dict>
 										<key>baseValue</key>
 										<array>
-											<string>UI/guess/charButton0.png</string>
+											<string>UI/guessbtn/charButton0.png</string>
 											<string>Use regular file</string>
 										</array>
 										<key>name</key>
@@ -418,7 +418,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/charButton2.png</string>
+											<string>UI/guessbtn/charButton2.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -429,7 +429,7 @@
 										<key>type</key>
 										<string>Byte</string>
 										<key>value</key>
-										<integer>255</integer>
+										<integer>0</integer>
 									</dict>
 								</array>
 								<key>seqExpanded</key>
@@ -462,7 +462,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>50</real>
+													<real>52</real>
 													<real>50</real>
 													<integer>4</integer>
 												</array>
@@ -526,7 +526,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/100none.png</string>
+													<string>UI/common/100none.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -537,7 +537,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/charButton2.png</string>
+													<string>UI/guessbtn/charButton2.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -572,7 +572,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>0.0</real>
+											<real>3</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -641,6 +641,8 @@
 										<true/>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>animatedProperties</key>
@@ -918,7 +920,7 @@
 										<key>type</key>
 										<string>Byte</string>
 										<key>value</key>
-										<integer>255</integer>
+										<integer>0</integer>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -990,9 +992,9 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
-									<real>100</real>
-									<integer>1</integer>
+									<real>47</real>
+									<real>46</real>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -1018,8 +1020,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>1.2000000476837158</real>
-									<real>1.2000000476837158</real>
+									<real>1.3999999761581421</real>
+									<real>1.3999999761581421</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -1067,6 +1069,14 @@
 				<integer>1</integer>
 				<key>properties</key>
 				<array>
+					<dict>
+						<key>name</key>
+						<string>visible</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
 					<dict>
 						<key>name</key>
 						<string>position</string>
@@ -1466,7 +1476,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.1666666716337204</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

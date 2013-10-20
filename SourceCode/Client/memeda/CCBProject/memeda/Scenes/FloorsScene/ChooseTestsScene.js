@@ -24,7 +24,10 @@ var ChooseTestsScene = function() {
 ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
-
+	if ( gPreload ) {
+		return ;
+	}
+	
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/buy_coin_msgbox.plist");
@@ -61,7 +64,6 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationCompleted);
     
     // 购买按钮
-	this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
     // 初始化多盟
@@ -233,6 +235,11 @@ ChooseTestsScene.prototype.testsFinishedPercent = 5;
 ChooseTestsScene.prototype.onClickedBuySpyPackageButton = function () {
     // 打开金币购买界面
     debugMsgOutput("[UI Event] Clicked Buy Spy Package Button!");
+    if ( this.buyCoinMsgBox == null ) {
+    	this.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    	this.ccbLayout.addChild( this.buyCoinMsgBox );
+    }
+    
     this.buyCoinMsgBox.controller.hiddenCallbackTarget = this;
     this.buyCoinMsgBox.controller.hiddenCallbackMethod = function(productID,succeed) {
         if(succeed)
@@ -267,7 +274,11 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
 ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
 	cc.AudioEngine.getInstance().playEffect("sounds/Click_Button.mp3");
-	
+	if ( this.awardScene == null ) {
+		this.awardScene = cc.BuilderReader.load("AwardScene");
+		this.ccbLayout2.addChild(this.awardScene);
+		this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);	
+	}
 	this.awardScene.controller.showWindow();
     //var scene = cc.BuilderReader.loadAsScene("AwardScene.ccbi");
     //cc.Director.getInstance().replaceScene(scene);
@@ -276,6 +287,11 @@ ChooseTestsScene.prototype.onPressedAward = function () {
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
     // 打开金币购买界面
     debugMsgOutput("[UI Event] Clicked Coin Button!");
+    if ( obj.buyCoinMsgBox == null ) {
+    	obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    	obj.ccbLayout.addChild( obj.buyCoinMsgBox );
+    }
+    
     obj.buyCoinMsgBox.controller.show();
 };
 
@@ -308,20 +324,25 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     var obj = JSON.parse(text);
     debugMsgOutput("count : " + obj.list.length);
     if ( obj == null || obj.list == null || obj.list.length == 0 ) {
-        return false;
+        //return false;
     }
     
     var num = 0;
     for (var i = 0; i < obj.list.length; i ++ ) {
         num += obj.list[i].num;
     }
-    debugMsgOutput("" + num);
+    
     if ( num != 0 ) {
     	// 来自微信的奖励
     	if ( num > 199 ) {
     		num = 199;	
     	}
-        this.weChatAwardMsg.controller.ShowMsg("分享好友奖励", num * 5, function (coin) {
+    	if ( gChooseTestsSceneThis.weChatAwardMsg == null ) {
+    		gChooseTestsSceneThis.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+    		gChooseTestsSceneThis.weChatAwardMsgLayout.addChild( gChooseTestsSceneThis.weChatAwardMsg );
+    	}
+    	debugMsgOutput("fsjflsdkjfklsdf");
+        gChooseTestsSceneThis.weChatAwardMsg.controller.ShowMsg("分享好友奖励", num * 5, function (coin) {
                                                 CoinMgr_Change(coin);
                                            });
         return true;
@@ -346,12 +367,17 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         	consumed = obj.consumed;
         }
         
-        var canConsum = obj.totalPoint - consumed;
+        var canConsum = obj.totalPoint - consumed;   
         if ( canConsum > 990 ) {
         	canConsum = 990;	
         }
         if ( obj.totalPoint > consumed ) {
         	// 有金币可以消费
+    		if ( this.weChatAwardMsg == null ) {
+    			this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+    			this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
+    		}
+    	
         	this.weChatAwardMsg.controller.ShowMsg("安装应用奖励", canConsum, function (coin) {
         		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
         		            					// 消费掉多余的金币
