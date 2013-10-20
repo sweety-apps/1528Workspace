@@ -7,13 +7,20 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>6</integer>
+	<integer>4</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
 	<integer>4</integer>
 	<key>guides</key>
-	<array/>
+	<array>
+		<dict>
+			<key>orientation</key>
+			<integer>0</integer>
+			<key>position</key>
+			<real>117</real>
+		</dict>
+	</array>
 	<key>jsControlled</key>
 	<true/>
 	<key>nodeGraph</key>
@@ -511,8 +518,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>1</real>
-											<real>1</real>
+											<real>1.3700000047683716</real>
+											<real>1.2799999713897705</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -605,7 +612,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/guess/right_bkg.png</string>
+											<string>UI/right/right_bkg.png</string>
 										</array>
 									</dict>
 								</array>
@@ -821,7 +828,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/right_tip.png</string>
+													<string>UI/right/right_tip.png</string>
 												</array>
 											</dict>
 										</array>
@@ -1171,6 +1178,76 @@
 								<key>children</key>
 								<array>
 									<dict>
+										<key>animatedProperties</key>
+										<dict>
+											<key>4</key>
+											<dict>
+												<key>scale</key>
+												<dict>
+													<key>keyframes</key>
+													<array>
+														<dict>
+															<key>easing</key>
+															<dict>
+																<key>type</key>
+																<integer>1</integer>
+															</dict>
+															<key>name</key>
+															<string>scale</string>
+															<key>time</key>
+															<real>0.0</real>
+															<key>type</key>
+															<integer>4</integer>
+															<key>value</key>
+															<array>
+																<real>1</real>
+																<real>1</real>
+															</array>
+														</dict>
+														<dict>
+															<key>easing</key>
+															<dict>
+																<key>type</key>
+																<integer>1</integer>
+															</dict>
+															<key>name</key>
+															<string>scale</string>
+															<key>time</key>
+															<real>0.40000000596046448</real>
+															<key>type</key>
+															<integer>4</integer>
+															<key>value</key>
+															<array>
+																<real>1.0499999523162842</real>
+																<real>1.0499999523162842</real>
+															</array>
+														</dict>
+														<dict>
+															<key>easing</key>
+															<dict>
+																<key>type</key>
+																<integer>1</integer>
+															</dict>
+															<key>name</key>
+															<string>scale</string>
+															<key>time</key>
+															<real>0.80000001192092896</real>
+															<key>type</key>
+															<integer>4</integer>
+															<key>value</key>
+															<array>
+																<real>1</real>
+																<real>1</real>
+															</array>
+														</dict>
+													</array>
+													<key>name</key>
+													<string>scale</string>
+													<key>type</key>
+													<integer>4</integer>
+												</dict>
+											</dict>
+										</dict>
 										<key>baseClass</key>
 										<string>CCSprite</string>
 										<key>children</key>
@@ -1209,6 +1286,11 @@
 												</array>
 											</dict>
 											<dict>
+												<key>baseValue</key>
+												<array>
+													<real>1</real>
+													<real>1</real>
+												</array>
 												<key>name</key>
 												<string>scale</string>
 												<key>type</key>
@@ -1237,10 +1319,12 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/right_next.png</string>
+													<string>UI/right/right_next.png</string>
 												</array>
 											</dict>
 										</array>
+										<key>seqExpanded</key>
+										<true/>
 									</dict>
 								</array>
 								<key>customClass</key>
@@ -1437,7 +1521,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/right_url.png</string>
+													<string>UI/right/right_url.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -1465,6 +1549,11 @@
 										</array>
 									</dict>
 									<dict>
+										<key>animatedProperties</key>
+										<dict>
+											<key>4</key>
+											<dict/>
+										</dict>
 										<key>baseClass</key>
 										<string>CCMenuItemImage</string>
 										<key>children</key>
@@ -1558,7 +1647,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/right_nextbtn.png</string>
+													<string>UI/right/right_nextbtn.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -1584,6 +1673,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>seqExpanded</key>
+										<true/>
 									</dict>
 								</array>
 								<key>customClass</key>
@@ -2576,8 +2667,6 @@
 						<true/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

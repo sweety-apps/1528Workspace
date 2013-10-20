@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>14</integer>
+	<integer>11</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -255,7 +255,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guessbtn/answerButtonNormal3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -273,7 +273,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guessbtn/answerButtonNormal3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -304,7 +304,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guessbtn/answerButtonNormal1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -322,7 +322,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guessbtn/answerButtonNormal1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -353,7 +353,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guessbtn/answerButtonNormal2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -371,7 +371,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guessbtn/answerButtonNormal2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -402,7 +402,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guessbtn/answerButtonNormal3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -420,7 +420,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guessbtn/answerButtonNormal3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -453,7 +453,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guessbtn/answerButtonNormal1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -471,7 +471,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guessbtn/answerButtonNormal1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -502,7 +502,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake10.png</string>
+												<string>UI/guessbtn/answerButtonTake10.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -520,7 +520,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake11.png</string>
+												<string>UI/guessbtn/answerButtonTake11.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -538,7 +538,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guessbtn/answerButtonNormal1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -569,7 +569,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guessbtn/answerButtonNormal2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -587,7 +587,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guessbtn/answerButtonNormal2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -618,7 +618,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guessbtn/answerButtonNormal3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -636,7 +636,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guessbtn/answerButtonNormal3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -667,7 +667,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake20.png</string>
+												<string>UI/guessbtn/answerButtonTake20.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -685,7 +685,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake21.png</string>
+												<string>UI/guessbtn/answerButtonTake21.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -703,7 +703,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guessbtn/answerButtonNormal2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -734,7 +734,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake30.png</string>
+												<string>UI/guessbtn/answerButtonTake30.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -752,7 +752,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonTake31.png</string>
+												<string>UI/guessbtn/answerButtonTake31.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -770,7 +770,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal3.png</string>
+												<string>UI/guessbtn/answerButtonNormal3.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -801,7 +801,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guessbtn/answerButtonNormal1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -819,7 +819,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal1.png</string>
+												<string>UI/guessbtn/answerButtonNormal1.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -850,7 +850,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guessbtn/answerButtonNormal2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -868,7 +868,7 @@
 											<integer>7</integer>
 											<key>value</key>
 											<array>
-												<string>UI/guess/answerButtonNormal2.png</string>
+												<string>UI/guessbtn/answerButtonNormal2.png</string>
 												<string>Use regular file</string>
 											</array>
 										</dict>
@@ -941,7 +941,7 @@
 							<dict>
 								<key>baseValue</key>
 								<array>
-									<string>UI/guess/answerButtonNormal1.png</string>
+									<string>UI/guessbtn/answerButtonNormal1.png</string>
 									<string>Use regular file</string>
 								</array>
 								<key>name</key>
@@ -951,7 +951,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/answerButtonNormal3.png</string>
+									<string>UI/guessbtn/answerButtonNormal3.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1020,7 +1020,7 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.46000000834465027</real>
+											<real>0.47999998927116394</real>
 											<real>0.44999998807907104</real>
 											<false/>
 											<integer>0</integer>
@@ -1087,6 +1087,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -2372,8 +2374,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>1</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -2407,8 +2409,6 @@
 						<true/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -2833,7 +2833,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.60000002384185791</real>
+			<real>0.033333335071802139</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

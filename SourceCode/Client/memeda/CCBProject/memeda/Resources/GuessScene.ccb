@@ -649,7 +649,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/common/0.png</string>
+									<string>UI/title/0.png</string>
 								</array>
 							</dict>
 						</array>
@@ -721,7 +721,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/common/1.png</string>
+									<string>UI/title/1.png</string>
 								</array>
 							</dict>
 						</array>
@@ -793,7 +793,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/common/0.png</string>
+									<string>UI/title/0.png</string>
 								</array>
 							</dict>
 						</array>
@@ -5618,7 +5618,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.5</real>
+			<real>0.26666668057441711</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
