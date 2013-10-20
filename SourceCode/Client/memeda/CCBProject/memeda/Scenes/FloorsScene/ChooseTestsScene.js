@@ -32,7 +32,7 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
 
-	  gChooseTestsSceneThis = this;
+	gChooseTestsSceneThis = this;
 
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
@@ -74,9 +74,9 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.scrollFloorsToCatPosition();
 
 
-    var imageUrl = "UI/floors_doors/"+ "ToolbarBG" + ".png";
-    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-    this.toolBarSprite.setSpriteFrame(spriteFrame);
+    //var imageUrl = "UI/floors_doors/"+ "ToolbarBG" + ".png";
+    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+    //this.toolBarSprite.setSpriteFrame(spriteFrame);
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)

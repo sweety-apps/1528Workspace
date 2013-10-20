@@ -52,7 +52,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -71,7 +71,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -90,7 +90,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -109,7 +109,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -128,7 +128,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -147,7 +147,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -185,7 +185,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -197,7 +197,7 @@
 	<key>javascriptMainCCB</key>
 	<string>FirstScene</string>
 	<key>needRepublish</key>
-	<true/>
+	<false/>
 	<key>onlyPublishCCBs</key>
 	<false/>
 	<key>publishDirectory</key>
