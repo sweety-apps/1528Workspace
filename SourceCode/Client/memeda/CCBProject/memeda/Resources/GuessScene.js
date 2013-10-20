@@ -255,7 +255,6 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num1 = Math.floor( (num % 100) / 10);
         var num0 = num % 10;
 
-<<<<<<< HEAD
         var image = "UI/common/" + num2 + ".png";
         //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum2.setDisplayFrame(spriteFrame);
@@ -270,19 +269,6 @@ GuessScene.prototype.SetTitleNum = function (num) {
         //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
         //this.titleNum0.setDisplayFrame(spriteFrame);
         UtilsFunctions_setSpriteImageWithName(this.titleNum0,image);
-=======
-        var image = "UI/title/" + num2 + ".png";
-        var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum2.setDisplayFrame(spriteFrame);
-
-        image = "UI/title/" + num1 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum1.setDisplayFrame(spriteFrame);
-
-        image = "UI/title/" + num0 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum0.setDisplayFrame(spriteFrame);
->>>>>>> bbaca684b079848d2887ee8b26897cf8fa8e50a7
     } else if ( num >= 10 ) {
         this.titleNum0.setVisible(true);
         this.titleNum1.setVisible(true);
