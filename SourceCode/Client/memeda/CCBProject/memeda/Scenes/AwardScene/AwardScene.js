@@ -44,8 +44,6 @@ AwardScene.prototype.initStatus = function () {
 }
 
 AwardScene.prototype.onDidLoadFromCCB = function () {
-	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
-	    
 	pThisAwardScene = this;
 	this.enableAllBtn = true;
 	
