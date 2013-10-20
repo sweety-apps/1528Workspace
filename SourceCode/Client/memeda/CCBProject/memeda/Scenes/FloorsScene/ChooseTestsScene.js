@@ -26,11 +26,11 @@ ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/buy_coin_msgbox.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_bg.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
+    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
+    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/buy_coin_msgbox.plist");
+    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_bg.plist");
+    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
+    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
 
 	gChooseTestsSceneThis = this;
 
@@ -75,8 +75,9 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 
 
     var imageUrl = "UI/floors_doors/"+ "ToolbarBG" + ".png";
-    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-    this.toolBarSprite.setSpriteFrame(spriteFrame);
+    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+    //this.toolBarSprite.setSpriteFrame(spriteFrame);
+    //UtilsFunctions_setScale9SpriteImageWithName(this.toolBarSprite,imageUrl);
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)

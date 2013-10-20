@@ -644,8 +644,6 @@
 								<real>28</real>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>baseClass</key>
@@ -1244,8 +1242,8 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>100</real>
-									<integer>4</integer>
+									<real>0.0</real>
+									<integer>1</integer>
 								</array>
 							</dict>
 							<dict>
@@ -1315,9 +1313,9 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
-									<real>100</real>
-									<integer>4</integer>
+									<real>0.0</real>
+									<real>0.0</real>
+									<integer>2</integer>
 								</array>
 							</dict>
 							<dict>
@@ -1380,18 +1378,6 @@
 						<integer>0</integer>
 						<key>properties</key>
 						<array>
-							<dict>
-								<key>name</key>
-								<string>position</string>
-								<key>type</key>
-								<string>Position</string>
-								<key>value</key>
-								<array>
-									<real>0.0</real>
-									<real>0.0</real>
-									<integer>4</integer>
-								</array>
-							</dict>
 							<dict>
 								<key>name</key>
 								<string>anchorPoint</string>
@@ -1459,9 +1445,9 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
 									<real>0.0</real>
-									<integer>4</integer>
+									<real>0.0</real>
+									<integer>3</integer>
 								</array>
 							</dict>
 							<dict>
@@ -1508,6 +1494,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

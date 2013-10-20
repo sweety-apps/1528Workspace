@@ -40,16 +40,19 @@ WechatAwardMsg.prototype.ShowMsg = function(msg, price, endFun, index) {
 	}
 	
     var image = "UI/common/tip_" + num0 + ".png";
-    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    this.num1.setDisplayFrame(spriteFrame);
+    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    //this.num1.setDisplayFrame(spriteFrame);
+    UtilsFunctions_setSpriteImageWithName(this.num1,image);
     
     image = "UI/common/tip_" + num1 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    this.num2.setDisplayFrame(spriteFrame);
+    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    //this.num2.setDisplayFrame(spriteFrame);
+    UtilsFunctions_setSpriteImageWithName(this.num2,image);
 	
 	image = "UI/common/tip_" + num2 + ".png";
-    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    this.num3.setDisplayFrame(spriteFrame);
+    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    //this.num3.setDisplayFrame(spriteFrame);
+    UtilsFunctions_setSpriteImageWithName(this.num3,image);
     
     
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");

@@ -4,8 +4,8 @@ var gChooseTestsScene = null;
 
 FirstScene.prototype.onDidLoadFromCCB = function () {
 
-	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
-	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene2.plist");
+	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
+	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene2.plist");
 		
   GuessScene_Preload(true);
     
@@ -46,7 +46,7 @@ FirstScene.prototype.onAnimationComplete = function()
 		var director = cc.Director.getInstance();
     	director.replaceScene(chooseTestsScene);
         
-        cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene.plist");
-        cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene2.plist");
+        //cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene.plist");
+        //cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene2.plist");
 	}
 };

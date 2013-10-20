@@ -31,9 +31,10 @@ RightMsgBox.prototype.ShowMsg = function(id, lab, answerRight, url, isFirst, onC
 	
 	try {
     	var image = "problem/pic/" + id + ".jpg";
-        var spriteFrame = null;
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    	this.image.setDisplayFrame(spriteFrame);
+        //var spriteFrame = null;
+        //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+    	//this.image.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.image,image);
 	} catch ( e ) {
 	}
 	

@@ -88,7 +88,7 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.doorRect = cc.rect(0,0,58,76);
     this.floorRect = cc.rect(0,0,320,138);
 
-    this.rootLayer.setContentSize(cc.size(width,this.CalculateHeight()+this.startFloorOffsetY));
+    this.rootLayer.setContentSize(cc.size(width,this.CalculateHeight()+this.startFloorOffsetY + 35));
 };
 
 WholeFloors.prototype.UninitWholeFloors = function ()
@@ -132,24 +132,29 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
             var spriteFrame;
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[0].image + ".png";
-            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-            floor.controller.door1.setDisplayFrame(spriteFrame);
+            //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+            //floor.controller.door1.setDisplayFrame(spriteFrame);
+            UtilsFunctions_setSpriteImageWithName(floor.controller.door1,imageUrl);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[1].image + ".png";
-            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-            floor.controller.door2.setDisplayFrame(spriteFrame);
+            //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+            //floor.controller.door2.setDisplayFrame(spriteFrame);
+            UtilsFunctions_setSpriteImageWithName(floor.controller.door2,imageUrl);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].doors[2].image + ".png";
-            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-            floor.controller.door3.setDisplayFrame(spriteFrame);
+            //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+            //floor.controller.door3.setDisplayFrame(spriteFrame);
+            UtilsFunctions_setSpriteImageWithName(floor.controller.door3,imageUrl);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bg + ".png";
-            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-            floor.controller.bgWall.setDisplayFrame(spriteFrame);
+            //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+            //floor.controller.bgWall.setDisplayFrame(spriteFrame);
+            UtilsFunctions_setSpriteImageWithName(floor.controller.bgWall,imageUrl);
 
             imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bottom + ".png";
-            spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-            floorFront.controller.bottom.setDisplayFrame(spriteFrame);
+            //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+            //floorFront.controller.bottom.setDisplayFrame(spriteFrame);
+            UtilsFunctions_setSpriteImageWithName(floorFront.controller.bottom,imageUrl);
 
             floor.controller.floorNumber = floorNum;
             floor.controller.doorNum1.setString(gTestFloor[floorNum].doors[0].doorNum);
@@ -393,11 +398,12 @@ WholeFloors.prototype.onUFOLightAnimationCompleted = function()
 WholeFloors.prototype.showUFOLight = function (floorNum,doorNum)
 {
     var imageUrl = "UI/floors_doors/"+gTestFloor[floorNum].bottom + "_ufo.png";
-    var spriteFrame = spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+    //var spriteFrame = spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
     this.catAndLift.setVisible(false);
     this.UFOFloorFront.setPositionY(gTestFloor[floorNum].offsetY);
     this.UFOFloorFront.setVisible(true);
-    this.UFOFloorFront.controller.bottom.setDisplayFrame(spriteFrame);
+    //this.UFOFloorFront.controller.bottom.setDisplayFrame(spriteFrame);
+    UtilsFunctions_setSpriteImageWithName(this.UFOFloorFront.controller.bottom,imageUrl);
     this.UFOFloorFront.animationManager.setCompletedAnimationCallback(this, this.onUFOLightAnimationCompleted);
     this.UFOFloorFront.animationManager.runAnimationsForSequenceNamed("UFO Light Timeline"+doorNum);
 };

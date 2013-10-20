@@ -255,16 +255,19 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num0 = num % 10;
 
         var image = "UI/common/" + num2 + ".png";
-        var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum2.setDisplayFrame(spriteFrame);
+        //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        //this.titleNum2.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.titleNum2,image);
 
         image = "UI/common/" + num1 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum1.setDisplayFrame(spriteFrame);
+        //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        //this.titleNum1.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.titleNum1,image);
 
         image = "UI/common/" + num0 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum0.setDisplayFrame(spriteFrame);
+        //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        //this.titleNum0.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.titleNum0,image);
     } else if ( num >= 10 ) {
         this.titleNum0.setVisible(true);
         this.titleNum1.setVisible(true);
@@ -274,20 +277,23 @@ GuessScene.prototype.SetTitleNum = function (num) {
         var num0 = num % 10;
 
         var image = "UI/common/" + num1 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum1.setDisplayFrame(spriteFrame);
+        //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        //this.titleNum1.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.titleNum1,image);
 
         image = "UI/common/" + num0 + ".png";
-        spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum0.setDisplayFrame(spriteFrame);
+        //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        //this.titleNum0.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.titleNum0,image);
     } else {
         this.titleNum0.setVisible(false);
         this.titleNum1.setVisible(true);
         this.titleNum2.setVisible(false);
 
         var image = "UI/common/" + num + ".png";
-        var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-        this.titleNum1.setDisplayFrame(spriteFrame);
+        //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+        //this.titleNum1.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.titleNum1,image);
     }
 }
 
