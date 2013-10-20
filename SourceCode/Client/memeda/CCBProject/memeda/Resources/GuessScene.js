@@ -612,10 +612,10 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     debugMsgOutput("onReceivedTestData");
     gCurrentTestObj = testObj;
 
-    debugMsgOutput(gCurrentTestObj.inputkeys);
+    debugMsgOutput(gCurrentTestObj.inputkey);
 
     var i = 0;
-    var inputKeys = testObj.inputkeys;
+    var inputKeys = testObj.inputkey;
     gCurrentCCBView.clearInputCharsAndResultChars();
 
     // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为24
