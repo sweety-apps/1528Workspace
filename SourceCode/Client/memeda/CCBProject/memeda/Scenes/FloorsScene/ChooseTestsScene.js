@@ -74,9 +74,9 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.scrollFloorsToCatPosition();
 
 
-    //var imageUrl = "UI/floors_doors/"+ "ToolbarBG" + ".png";
-    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
-    //this.toolBarSprite.setSpriteFrame(spriteFrame);
+    var imageUrl = "UI/floors_doors/"+ "ToolbarBG" + ".png";
+    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
+    this.toolBarSprite.setSpriteFrame(spriteFrame);
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
