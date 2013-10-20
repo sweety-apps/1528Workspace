@@ -1238,6 +1238,12 @@ GuessScene.prototype.onClickedCoinButton = function (obj ) {
 	}
 	
     debugMsgOutput("[UI Event] Clicked Coin Button!");
+    if ( obj.buyCoinMsgBox == null ) {
+    	debugMsgOutput("create BuyCoinMessageBox");
+    	obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    	obj.ccbLayout.addChild(	obj.buyCoinMsgBox );
+    }
+    
     obj.buyCoinMsgBox.controller.show();	
 }
 
@@ -1247,6 +1253,12 @@ GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
 		gCurrentCCBView.EnableAllBtn(true);
 		if ( res == 1 ) {
     		debugMsgOutput("[UI Event] Clicked Coin Button!");
+    		if ( gCurrentCCBView.buyCoinMsgBox == null ) {
+    			debugMsgOutput("create BuyCoinMessageBox");
+    			gCurrentCCBView.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    			gCurrentCCBView.ccbLayout.addChild(	obj.buyCoinMsgBox );
+    		}
+    
     		gCurrentCCBView.buyCoinMsgBox.controller.show();	
 		}
 	});

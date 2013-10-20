@@ -23,6 +23,8 @@ BuyCoinMessageBox.prototype.purchaseHasSucceed = false;
 
 BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 	// 设备上面需要开启触摸
+    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/buy_coin_msgbox.plist");
+    
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
 

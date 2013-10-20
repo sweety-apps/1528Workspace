@@ -27,7 +27,6 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/buy_coin_msgbox.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_bg.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
@@ -232,6 +231,11 @@ ChooseTestsScene.prototype.testsFinishedPercent = 5;
 ChooseTestsScene.prototype.onClickedBuySpyPackageButton = function () {
     // 打开金币购买界面
     debugMsgOutput("[UI Event] Clicked Buy Spy Package Button!");
+    if ( this.buyCoinMsgBox == null ) {
+    	this.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    	this.ccbLayout.addChild( obj.buyCoinMsgBox );
+    }
+    
     this.buyCoinMsgBox.controller.hiddenCallbackTarget = this;
     this.buyCoinMsgBox.controller.hiddenCallbackMethod = function(productID,succeed) {
         if(succeed)
@@ -275,6 +279,11 @@ ChooseTestsScene.prototype.onPressedAward = function () {
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
     // 打开金币购买界面
     debugMsgOutput("[UI Event] Clicked Coin Button!");
+    if ( this.buyCoinMsgBox == null ) {
+    	this.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    	this.ccbLayout.addChild( obj.buyCoinMsgBox );
+    }
+    
     obj.buyCoinMsgBox.controller.show();
 };
 
