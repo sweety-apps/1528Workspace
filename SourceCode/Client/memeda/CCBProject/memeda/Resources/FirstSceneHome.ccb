@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -286,7 +286,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>47.5</real>
+											<real>52.5</real>
 											<real>50</real>
 											<integer>4</integer>
 										</array>
@@ -401,12 +401,21 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/firstscene/firsthome_bkg.png</string>
+									<string>UI/firstscene2/firsthome_bkg.png</string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
+						<key>animatedProperties</key>
+						<dict>
+							<key>3</key>
+							<dict/>
+							<key>4</key>
+							<dict/>
+						</dict>
 						<key>baseClass</key>
 						<string>CCSprite</string>
 						<key>children</key>
@@ -416,9 +425,9 @@
 						<key>displayName</key>
 						<string>CCSprite</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>home</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -473,10 +482,12 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/firstscene/firsthome_home.png</string>
+									<string>UI/firstscene2/firsthome_home.png</string>
 								</array>
 							</dict>
 						</array>
+						<key>seqExpanded</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>animatedProperties</key>
@@ -776,7 +787,7 @@
 										<key>value</key>
 										<array>
 											<real>1</real>
-											<real>0.0</real>
+											<real>57</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -969,7 +980,7 @@
 										<key>value</key>
 										<array>
 											<real>65</real>
-											<real>110</real>
+											<real>78</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -1275,7 +1286,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>243</real>
+											<real>225</real>
 											<real>-2</real>
 											<integer>1</integer>
 										</array>
@@ -1320,12 +1331,10 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/firstscene/firsthome_cloud2.png</string>
+											<string>UI/firstscene2/firsthome_cloud2.png</string>
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -1605,7 +1614,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>147</real>
+											<real>173</real>
 											<real>-2</real>
 											<integer>1</integer>
 										</array>
@@ -1650,7 +1659,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/firstscene/firsthome_cloud.png</string>
+											<string>UI/firstscene2/firsthome_cloud.png</string>
 										</array>
 									</dict>
 								</array>
@@ -1992,7 +2001,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>16</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

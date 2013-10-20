@@ -52,7 +52,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -71,7 +71,26 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>0</integer>
+			<key>textureFileFormatAndroid</key>
+			<integer>0</integer>
+			<key>textureFileFormatHTML5</key>
+			<integer>0</integer>
+		</dict>
+		<key>UI/firstscene2</key>
+		<dict>
+			<key>compress</key>
+			<true/>
+			<key>dither</key>
+			<true/>
+			<key>ditherAndroid</key>
+			<true/>
+			<key>ditherHTML5</key>
+			<true/>
+			<key>isDirty</key>
+			<false/>
+			<key>textureFileFormat</key>
+			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -90,7 +109,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -109,7 +128,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
@@ -147,7 +166,7 @@
 			<key>isDirty</key>
 			<false/>
 			<key>textureFileFormat</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>
 			<integer>0</integer>
 			<key>textureFileFormatHTML5</key>
