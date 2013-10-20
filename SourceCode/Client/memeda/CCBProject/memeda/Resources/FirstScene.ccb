@@ -2420,9 +2420,9 @@
 										<key>displayName</key>
 										<string>CCSprite</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>catLight2</string>
 										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
+										<integer>1</integer>
 										<key>properties</key>
 										<array>
 											<dict>
@@ -2482,7 +2482,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/firstscene/first_b_light.png</string>
+													<string>UI/firstscene2/first_b_light.png</string>
 												</array>
 											</dict>
 										</array>
@@ -2495,9 +2495,9 @@
 								<key>displayName</key>
 								<string>CCSprite</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>cat2</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -2568,7 +2568,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/firstscene/first_b_cat.png</string>
+											<string>UI/firstscene2/first_b_cat.png</string>
 										</array>
 									</dict>
 								</array>
@@ -3268,9 +3268,9 @@
 										<key>displayName</key>
 										<string>CCSprite</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>catLight</string>
 										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
+										<integer>1</integer>
 										<key>properties</key>
 										<array>
 											<dict>
@@ -3330,7 +3330,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/firstscene/first_y_light.png</string>
+													<string>UI/firstscene2/first_y_light.png</string>
 												</array>
 											</dict>
 										</array>
@@ -3343,9 +3343,9 @@
 								<key>displayName</key>
 								<string>CCSprite</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>cat</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -3405,7 +3405,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/firstscene/first_y_cat.png</string>
+											<string>UI/firstscene2/first_y_cat.png</string>
 										</array>
 									</dict>
 								</array>
@@ -4141,7 +4141,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/firstscene/first_start.png</string>
+													<string>UI/firstscene2/first_start.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -4167,6 +4167,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 										<key>seqExpanded</key>
 										<true/>
 									</dict>
@@ -4189,7 +4191,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>0.0</real>
+											<real>0.35211268067359924</real>
 											<integer>4</integer>
 										</array>
 									</dict>

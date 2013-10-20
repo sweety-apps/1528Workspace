@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>5</integer>
+	<integer>0</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -669,7 +669,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/cat_play.png</string>
+													<string>UI/cat/cat_play.png</string>
 												</array>
 											</dict>
 											<dict>
@@ -859,7 +859,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/cat_shadow.png</string>
+													<string>UI/cat/cat_shadow.png</string>
 												</array>
 											</dict>
 										</array>
@@ -887,7 +887,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -905,7 +905,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body2.png</string>
+																<string>UI/cat/cat_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -923,7 +923,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -941,7 +941,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body2.png</string>
+																<string>UI/cat/cat_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -959,7 +959,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -977,7 +977,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body2.png</string>
+																<string>UI/cat/cat_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -995,7 +995,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1026,7 +1026,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1044,7 +1044,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1062,7 +1062,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1080,7 +1080,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1098,7 +1098,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1129,7 +1129,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1147,7 +1147,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body2.png</string>
+																<string>UI/cat/cat_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1165,7 +1165,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1183,7 +1183,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body2.png</string>
+																<string>UI/cat/cat_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1201,7 +1201,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1219,7 +1219,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body2.png</string>
+																<string>UI/cat/cat_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1237,7 +1237,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_body1.png</string>
+																<string>UI/cat/cat_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1268,7 +1268,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1286,7 +1286,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1304,7 +1304,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1322,7 +1322,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1340,7 +1340,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1371,7 +1371,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1389,7 +1389,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1407,7 +1407,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1425,7 +1425,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1443,7 +1443,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1474,7 +1474,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1492,7 +1492,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1510,7 +1510,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1528,7 +1528,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1546,7 +1546,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1577,7 +1577,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1595,7 +1595,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1613,7 +1613,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1631,7 +1631,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1649,7 +1649,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1680,7 +1680,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1698,7 +1698,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1716,7 +1716,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1734,7 +1734,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1752,7 +1752,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1783,7 +1783,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1801,7 +1801,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1819,7 +1819,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1837,7 +1837,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1855,7 +1855,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1886,7 +1886,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1904,7 +1904,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1922,7 +1922,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body3.png</string>
+																<string>UI/cat/cat_listen_body3.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1940,7 +1940,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body2.png</string>
+																<string>UI/cat/cat_listen_body2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -1958,7 +1958,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_body1.png</string>
+																<string>UI/cat/cat_listen_body1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2014,8 +2014,8 @@
 												<string>ScaleLock</string>
 												<key>value</key>
 												<array>
-													<real>0.34999999403953552</real>
-													<real>0.34999999403953552</real>
+													<real>1</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -2031,7 +2031,7 @@
 											<dict>
 												<key>baseValue</key>
 												<array>
-													<string>UI/guess/cat_body1.png</string>
+													<string>UI/cat/cat_body1.png</string>
 													<string>Use regular file</string>
 												</array>
 												<key>name</key>
@@ -2041,7 +2041,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/cat_listen_body1.png</string>
+													<string>UI/cat/cat_listen_body1.png</string>
 												</array>
 											</dict>
 										</array>
@@ -2071,7 +2071,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2089,7 +2089,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head2.png</string>
+																<string>UI/cat/cat_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2107,7 +2107,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2125,7 +2125,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head2.png</string>
+																<string>UI/cat/cat_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2143,7 +2143,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2161,7 +2161,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head2.png</string>
+																<string>UI/cat/cat_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2179,7 +2179,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2210,7 +2210,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head1.png</string>
+																<string>UI/cat/cat_listen_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2228,7 +2228,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head2.png</string>
+																<string>UI/cat/cat_listen_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2246,7 +2246,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head1.png</string>
+																<string>UI/cat/cat_listen_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2264,7 +2264,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head2.png</string>
+																<string>UI/cat/cat_listen_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2282,7 +2282,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head1.png</string>
+																<string>UI/cat/cat_listen_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2359,7 +2359,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2377,7 +2377,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head2.png</string>
+																<string>UI/cat/cat_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2395,7 +2395,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2413,7 +2413,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head2.png</string>
+																<string>UI/cat/cat_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2431,7 +2431,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2449,7 +2449,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head2.png</string>
+																<string>UI/cat/cat_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2467,7 +2467,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_head1.png</string>
+																<string>UI/cat/cat_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2498,7 +2498,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant1.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2516,7 +2516,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant2.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2534,7 +2534,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant1.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2552,7 +2552,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant2.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2570,7 +2570,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant1.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2601,7 +2601,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head1.png</string>
+																<string>UI/cat/cat_listen_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2619,7 +2619,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head2.png</string>
+																<string>UI/cat/cat_listen_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2637,7 +2637,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head1.png</string>
+																<string>UI/cat/cat_listen_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2655,7 +2655,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head2.png</string>
+																<string>UI/cat/cat_listen_head2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2673,7 +2673,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head1.png</string>
+																<string>UI/cat/cat_listen_head1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2750,7 +2750,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_happy1.png</string>
+																<string>UI/cat/cat_listen_head_happy1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2768,7 +2768,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_happy2.png</string>
+																<string>UI/cat/cat_listen_head_happy2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2786,7 +2786,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_happy1.png</string>
+																<string>UI/cat/cat_listen_head_happy1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2804,7 +2804,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_happy2.png</string>
+																<string>UI/cat/cat_listen_head_happy2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2822,7 +2822,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_happy1.png</string>
+																<string>UI/cat/cat_listen_head_happy1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2899,7 +2899,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant1.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2917,7 +2917,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant2.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2935,7 +2935,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant1.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2953,7 +2953,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant2.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -2971,7 +2971,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_head_unpleasant1.png</string>
+																<string>UI/cat/cat_listen_head_unpleasant1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3048,7 +3048,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_dreadful1.png</string>
+																<string>UI/cat/cat_listen_dreadful1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3066,7 +3066,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_dreadful2.png</string>
+																<string>UI/cat/cat_listen_dreadful2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3084,7 +3084,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_dreadful1.png</string>
+																<string>UI/cat/cat_listen_dreadful1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3102,7 +3102,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_dreadful2.png</string>
+																<string>UI/cat/cat_listen_dreadful2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3120,7 +3120,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_dreadful1.png</string>
+																<string>UI/cat/cat_listen_dreadful1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3197,7 +3197,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_forceful1.png</string>
+																<string>UI/cat/cat_listen_forceful1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3215,7 +3215,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_forcefu2.png</string>
+																<string>UI/cat/cat_listen_forcefu2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3233,7 +3233,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_forceful1.png</string>
+																<string>UI/cat/cat_listen_forceful1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3251,7 +3251,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_forcefu2.png</string>
+																<string>UI/cat/cat_listen_forcefu2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3269,7 +3269,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_forceful1.png</string>
+																<string>UI/cat/cat_listen_forceful1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3346,7 +3346,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_weep1.png</string>
+																<string>UI/cat/cat_listen_weep1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3364,7 +3364,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_weep2.png</string>
+																<string>UI/cat/cat_listen_weep2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3382,7 +3382,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_weep1.png</string>
+																<string>UI/cat/cat_listen_weep1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3400,7 +3400,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_weep2.png</string>
+																<string>UI/cat/cat_listen_weep2.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3418,7 +3418,7 @@
 															<integer>7</integer>
 															<key>value</key>
 															<array>
-																<string>UI/guess/cat_listen_weep1.png</string>
+																<string>UI/cat/cat_listen_weep1.png</string>
 																<string>Use regular file</string>
 															</array>
 														</dict>
@@ -3502,8 +3502,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>187</real>
-													<real>177</real>
+													<real>191</real>
+													<real>179</real>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -3525,8 +3525,8 @@
 												<string>ScaleLock</string>
 												<key>value</key>
 												<array>
-													<real>0.34999999403953552</real>
-													<real>0.34999999403953552</real>
+													<real>1</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -3542,7 +3542,7 @@
 											<dict>
 												<key>baseValue</key>
 												<array>
-													<string>UI/guess/cat_head1.png</string>
+													<string>UI/cat/cat_head1.png</string>
 													<string>Use regular file</string>
 												</array>
 												<key>name</key>
@@ -3552,7 +3552,7 @@
 												<key>value</key>
 												<array>
 													<string></string>
-													<string>UI/guess/cat_listen_weep2.png</string>
+													<string>UI/cat/cat_listen_weep2.png</string>
 												</array>
 											</dict>
 										</array>
@@ -4202,7 +4202,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.96666663885116577</real>
+			<real>1</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

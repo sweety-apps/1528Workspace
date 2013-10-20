@@ -45,6 +45,10 @@ var gAllBtnEnable = true;
 var gPreload = false;
 var gColor = null;
 
+gColor = new Object();
+gColor.bg = "floor_pink";
+gColor.door = "door_pink";
+		
 function GuessScene_SetFloorInfo(index, source, color) {
     Problem_setCurrentIndex(index);
 	gProblem = index;	//
@@ -116,7 +120,8 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
         return ;
     }
     
-	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
+	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
+	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/cat.plist");
 	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
 	
     GuessScene_InitGlobel();
@@ -612,10 +617,10 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     debugMsgOutput("onReceivedTestData");
     gCurrentTestObj = testObj;
 
-    debugMsgOutput(gCurrentTestObj.inputkeys);
+    debugMsgOutput(gCurrentTestObj.inputkey);
 
     var i = 0;
-    var inputKeys = testObj.inputkeys;
+    var inputKeys = testObj.inputkey;
     gCurrentCCBView.clearInputCharsAndResultChars();
 
     // 构造一个包含inputKeys和rightanswer中字符的字符串，长度为24

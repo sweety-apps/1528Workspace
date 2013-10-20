@@ -31,9 +31,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_bg.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
-    //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/guess.plist");
-    
-	gChooseTestsSceneThis = this;
+
+	  gChooseTestsSceneThis = this;
 
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
