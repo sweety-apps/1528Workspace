@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>6</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -540,7 +540,18 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>UI/common/transparentBlock.png</string>
+											<string>UI/guess/1.jpg</string>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>blendFunc</string>
+										<key>type</key>
+										<string>Blendmode</string>
+										<key>value</key>
+										<array>
+											<integer>770</integer>
+											<integer>771</integer>
 										</array>
 									</dict>
 								</array>
@@ -1364,8 +1375,8 @@
 												<string>ScaleLock</string>
 												<key>value</key>
 												<array>
-													<real>1</real>
-													<real>1</real>
+													<real>1.0083333253860474</real>
+													<real>1.0083333253860474</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -2175,66 +2186,18 @@
 										<true/>
 									</dict>
 									<dict>
-										<key>animatedProperties</key>
-										<dict>
-											<key>5</key>
-											<dict/>
-											<key>7</key>
-											<dict>
-												<key>opacity</key>
-												<dict>
-													<key>keyframes</key>
-													<array>
-														<dict>
-															<key>easing</key>
-															<dict>
-																<key>type</key>
-																<integer>1</integer>
-															</dict>
-															<key>name</key>
-															<string>opacity</string>
-															<key>time</key>
-															<real>0.0</real>
-															<key>type</key>
-															<integer>5</integer>
-															<key>value</key>
-															<integer>255</integer>
-														</dict>
-														<dict>
-															<key>easing</key>
-															<dict>
-																<key>type</key>
-																<integer>1</integer>
-															</dict>
-															<key>name</key>
-															<string>opacity</string>
-															<key>time</key>
-															<real>0.20000000298023224</real>
-															<key>type</key>
-															<integer>5</integer>
-															<key>value</key>
-															<integer>0</integer>
-														</dict>
-													</array>
-													<key>name</key>
-													<string>opacity</string>
-													<key>type</key>
-													<integer>5</integer>
-												</dict>
-											</dict>
-										</dict>
 										<key>baseClass</key>
-										<string>CCSprite</string>
+										<string>CCLabelBMFont</string>
 										<key>children</key>
 										<array/>
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>CCSprite</string>
+										<string>CCLabelBMFont</string>
 										<key>memberVarAssignmentName</key>
-										<string></string>
+										<string>num</string>
 										<key>memberVarAssignmentType</key>
-										<integer>0</integer>
+										<integer>1</integer>
 										<key>properties</key>
 										<array>
 											<dict>
@@ -2244,7 +2207,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>13</real>
+													<real>5</real>
 													<real>1</real>
 													<integer>0</integer>
 												</array>
@@ -2256,7 +2219,7 @@
 												<string>Point</string>
 												<key>value</key>
 												<array>
-													<real>0.5</real>
+													<real>0.0</real>
 													<real>0.5</real>
 												</array>
 											</dict>
@@ -2267,8 +2230,8 @@
 												<string>ScaleLock</string>
 												<key>value</key>
 												<array>
-													<real>1.5</real>
-													<real>1.5</real>
+													<real>1.6000000238418579</real>
+													<real>1.6000000238418579</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -2283,86 +2246,31 @@
 											</dict>
 											<dict>
 												<key>name</key>
-												<string>displayFrame</string>
+												<string>fntFile</string>
 												<key>type</key>
-												<string>SpriteFrame</string>
+												<string>FntFile</string>
 												<key>value</key>
-												<array>
-													<string></string>
-													<string>UI/buy_coin_msgbox/BuyCoinMsgboxNum_5.png</string>
-												</array>
+												<string>UI/fonts/BuyFont.fnt</string>
 											</dict>
 											<dict>
-												<key>baseValue</key>
-												<integer>255</integer>
 												<key>name</key>
-												<string>opacity</string>
+												<string>string</string>
 												<key>type</key>
-												<string>Byte</string>
+												<string>Text</string>
 												<key>value</key>
-												<integer>255</integer>
+												<string>5</string>
 											</dict>
 										</array>
-										<key>seqExpanded</key>
-										<true/>
 									</dict>
 									<dict>
-										<key>animatedProperties</key>
-										<dict>
-											<key>5</key>
-											<dict/>
-											<key>7</key>
-											<dict>
-												<key>opacity</key>
-												<dict>
-													<key>keyframes</key>
-													<array>
-														<dict>
-															<key>easing</key>
-															<dict>
-																<key>type</key>
-																<integer>1</integer>
-															</dict>
-															<key>name</key>
-															<string>opacity</string>
-															<key>time</key>
-															<real>0.0</real>
-															<key>type</key>
-															<integer>5</integer>
-															<key>value</key>
-															<integer>255</integer>
-														</dict>
-														<dict>
-															<key>easing</key>
-															<dict>
-																<key>type</key>
-																<integer>1</integer>
-															</dict>
-															<key>name</key>
-															<string>opacity</string>
-															<key>time</key>
-															<real>0.20000000298023224</real>
-															<key>type</key>
-															<integer>5</integer>
-															<key>value</key>
-															<integer>0</integer>
-														</dict>
-													</array>
-													<key>name</key>
-													<string>opacity</string>
-													<key>type</key>
-													<integer>5</integer>
-												</dict>
-											</dict>
-										</dict>
 										<key>baseClass</key>
-										<string>CCSprite</string>
+										<string>CCLabelBMFont</string>
 										<key>children</key>
 										<array/>
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>CCSprite</string>
+										<string>CCLabelBMFont</string>
 										<key>memberVarAssignmentName</key>
 										<string></string>
 										<key>memberVarAssignmentType</key>
@@ -2376,8 +2284,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>-11</real>
-													<real>1</real>
+													<real>-9</real>
+													<real>-1</real>
 													<integer>0</integer>
 												</array>
 											</dict>
@@ -2399,8 +2307,8 @@
 												<string>ScaleLock</string>
 												<key>value</key>
 												<array>
-													<real>1.5</real>
-													<real>1.5</real>
+													<real>1.6000000238418579</real>
+													<real>1.6000000238418579</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -2415,28 +2323,21 @@
 											</dict>
 											<dict>
 												<key>name</key>
-												<string>displayFrame</string>
+												<string>fntFile</string>
 												<key>type</key>
-												<string>SpriteFrame</string>
+												<string>FntFile</string>
 												<key>value</key>
-												<array>
-													<string></string>
-													<string>UI/buy_coin_msgbox/BuyCoinMsgboxNum_+.png</string>
-												</array>
+												<string>UI/fonts/BuyFont.fnt</string>
 											</dict>
 											<dict>
-												<key>baseValue</key>
-												<integer>255</integer>
 												<key>name</key>
-												<string>opacity</string>
+												<string>string</string>
 												<key>type</key>
-												<string>Byte</string>
+												<string>Text</string>
 												<key>value</key>
-												<integer>255</integer>
+												<string>+</string>
 											</dict>
 										</array>
-										<key>seqExpanded</key>
-										<true/>
 									</dict>
 								</array>
 								<key>customClass</key>
@@ -2456,7 +2357,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>37.1875</real>
+											<real>36.5625</real>
 											<real>93.309860229492188</real>
 											<integer>4</integer>
 										</array>
@@ -2496,8 +2397,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.0</real>
-											<real>0.0</real>
+											<real>1</real>
+											<real>1</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2996,7 +2897,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.73333334922790527</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

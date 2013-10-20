@@ -356,16 +356,28 @@ function Problem_Initialize() {
     var objJson = JSON.parse(data);
     var index = objJson;
     debugMsgOutput("length " + index.length);
+    
+    var rand = Math.random();
+    
     for (var i = 0; i < index.length; i ++) {
         var item = index[i];
         var obj = new Object;
         obj.id = item.id;
         obj.level = parseInt("" + item.level);
         obj.achievement = item.achievement;
-        obj.pos = item.pos;
+        obj.pos1 = item.pos1;
+        obj.pos2 = item.pos2;
+        obj.pos3 = item.pos3;
         
-        if ( obj.pos != null && obj.pos != "" && obj.pos != undefined ) {
-        	arrayFixed["" + obj.pos] = i;
+        var pos = obj.pos1;
+        if ( rand < 0.3 ) {
+        	pos = obj.pos2;
+        } else if ( rand < 0.6 ) {
+        	pos = obj.pos3;
+        }
+        
+        if ( pos != null && pos != "" && pos != undefined ) {
+        	arrayFixed["" + pos] = i;
         } else {
         	arrayLevel[obj.level].push(i);
         }

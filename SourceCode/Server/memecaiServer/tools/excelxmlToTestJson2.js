@@ -294,6 +294,10 @@ function trim(str){
     return str.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');   
 }  
 
+var posArray1 = new Array();
+var posArray2 = new Array();
+var posArray3 = new Array();
+
 // 返回该问题的索引
 MakeQuestion = function (id, inputPath, outputPath, node) {
 	if ( node.e == null || node.f == null || node.g == null ) {
@@ -333,7 +337,7 @@ MakeQuestion = function (id, inputPath, outputPath, node) {
 
 	// 判断图片和音频是否存在
 	//if ( !outputFS.existsSync(inputPath + "/pic/" + obj.rightanswer + ".jpg") ) {
-	//	console.log("error : jpg not exists " + obj.rightanswer);
+	//	//console.log("error : jpg not exists " + obj.rightanswer);
 	//}
 	
 	//if ( !outputFS.existsSync(inputPath + "/music/" + obj.rightanswer + ".mp3") ) {
@@ -359,22 +363,49 @@ MakeQuestion = function (id, inputPath, outputPath, node) {
     var resultString = JSON.stringify(obj);
     resultString = encMe("fshf289fh2fhu9123esdlj09fr190j", resultString);
         //resultString = encrypt(resultString, "F6BB1731-E8CC-42A0-A033-6CE82B5E7A03");
-    console.log(outputPath + "/" + id);
-    
-   	if ( id > 245 ) {
-	
+    //console.log(outputPath + "/" + id);
+	if ( id > 245 ) {
     outputFS.writeFile(outputPath + "/" + id,resultString,function(err){
         if(err) {
 			console.log("WriteFile error : " + resultString + "" + err);
 			throw err;
 		}
-    });
-	}
+  }); 
+  }
 	
 	objRet.id = id;
 	objRet.level = node.d.text();
 	if ( node.b != null ) { 
-		objRet.pos = node.b.text();
+		objRet.pos2 = node.b.text();
+		
+		if ( posArray2["" + objRet.pos2] == 1 ) {
+			throw ("posArray2");	
+		}
+		
+		posArray2["" + objRet.pos2] = 1;
 	}
+	
+	if ( node.a != null ) { 
+		objRet.pos1 = node.a.text();
+	
+		if ( posArray1["" + objRet.pos1] == 1 ) {
+			throw ("posArray1");	
+		}
+		
+		posArray1["" + objRet.pos1] = 1;
+	}
+	
+	
+	if ( node.c != null ) { 
+		objRet.pos3 = node.c.text();
+		
+		if ( posArray3["" + objRet.pos3] == 1 ) {
+			throw ("posArray3");	
+		}
+		
+		posArray3["" + objRet.pos3] = 1;
+		
+	}
+	
 	return objRet;
 }
