@@ -1,8 +1,6 @@
 var RightMsgBox = function() {};
 
 RightMsgBox.prototype.onDidLoadFromCCB = function () {
-	cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/right.plist");
-	
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 };
 
