@@ -120,6 +120,10 @@ GuessScene.prototype.onEnterTransitionDidFinish = function () {
 };
 
 GuessScene.prototype.onDidLoadFromCCB = function () {
+	if ( gPreload ) {
+		return ;
+	}
+	
     GuessScene_InitGlobel();
     
     // 设备上面需要开启触摸

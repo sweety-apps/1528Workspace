@@ -106,7 +106,9 @@ JSBool CStatParam::js_addKeyAndValue(JSContext* cx, uint32_t argc, jsval* vp)
     string strValue = pw2.get().c_str();
     
     pParam->addKeyAndValue(strKey, strValue);
+    
     ok = JS_TRUE;
+    
     return ok;
 }
 
@@ -130,7 +132,7 @@ void   CStat::Init()
 {
     cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsUmeng");
     m_analytics = dynamic_cast<cocos2d::plugin::ProtocolAnalytics*>(plugin);
-    m_analytics->setDebugMode(true);
+    m_analytics->setDebugMode(false);
     m_analytics->setCaptureUncaughtException(true);
     m_analytics->startSession(kUmengAppId);
 }
