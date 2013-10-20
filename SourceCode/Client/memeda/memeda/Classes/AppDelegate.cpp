@@ -92,8 +92,9 @@ bool AppDelegate::applicationDidFinishLaunching()
         {
             designSize = CCSizeMake(320, 480);
             resourceSize = CCSizeMake(320, 480);
+            resDirOrders.push_back("resources-iphonehd");
             resDirOrders.push_back("resources-iphone");
-            resizeFactor = 1.0;
+            resizeFactor = 2.0;
         }
         
     }

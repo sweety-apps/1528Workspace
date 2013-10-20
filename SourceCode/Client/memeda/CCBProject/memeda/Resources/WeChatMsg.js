@@ -87,7 +87,7 @@ WeChatMsg.prototype.onShare = function() {
 	    var socialAPI = cc.SocialShareAPI.getInstance();
 	    socialAPI.setWeChatShareCallbackTarget(shareCallback);
 	    
-	    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle", url,"Description lalala!",false,false);
+	    socialAPI.shareWeChatURL("Test","AppIcon40x40@2x.png","testTitle", url,"Description lalala!",false,false);
     } catch (e) {
     	debugMsgOutput("" + e);
     }
@@ -122,7 +122,7 @@ WeChatMsg.prototype.onShareFriend = function() {
 	    var socialAPI = cc.SocialShareAPI.getInstance();
 	    socialAPI.setWeChatShareCallbackTarget(shareCallback);
 	    
-	    socialAPI.shareWeChatURL("Test","Icon-72.png","testTitle", url,"Description lalala!",false,true);
+	    socialAPI.shareWeChatURL("Test","AppIcon40x40@2x.png","testTitle", url,"Description lalala!",false,true);
     } catch (e) {
     }
 };

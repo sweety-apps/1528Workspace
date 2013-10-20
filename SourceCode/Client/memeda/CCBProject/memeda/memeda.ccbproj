@@ -47,7 +47,7 @@
 	<key>publishResolutionHTML5_width</key>
 	<integer>320</integer>
 	<key>publishResolution_</key>
-	<true/>
+	<false/>
 	<key>publishResolution_hd</key>
 	<true/>
 	<key>publishResolution_ipad</key>
