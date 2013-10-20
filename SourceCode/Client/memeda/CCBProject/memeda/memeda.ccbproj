@@ -23,7 +23,7 @@
 		<key>UI/buy_coin_msgbox</key>
 		<dict>
 			<key>compress</key>
-			<false/>
+			<true/>
 			<key>dither</key>
 			<true/>
 			<key>ditherAndroid</key>
@@ -31,7 +31,7 @@
 			<key>ditherHTML5</key>
 			<true/>
 			<key>isDirty</key>
-			<false/>
+			<true/>
 			<key>textureFileFormat</key>
 			<integer>0</integer>
 			<key>textureFileFormatAndroid</key>

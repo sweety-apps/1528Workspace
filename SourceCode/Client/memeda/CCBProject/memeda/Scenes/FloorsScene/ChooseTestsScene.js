@@ -24,12 +24,14 @@ var ChooseTestsScene = function() {
 ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
-
+	if ( gPreload ) {
+		return ;
+	}
+	
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_bg.plist");
     cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
-    cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
 
 	gChooseTestsSceneThis = this;
 
@@ -60,7 +62,6 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationCompleted);
     
     // 购买按钮
-	this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
     // 初始化多盟
@@ -233,7 +234,7 @@ ChooseTestsScene.prototype.onClickedBuySpyPackageButton = function () {
     debugMsgOutput("[UI Event] Clicked Buy Spy Package Button!");
     if ( this.buyCoinMsgBox == null ) {
     	this.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
-    	this.ccbLayout.addChild( obj.buyCoinMsgBox );
+    	this.ccbLayout.addChild( this.buyCoinMsgBox );
     }
     
     this.buyCoinMsgBox.controller.hiddenCallbackTarget = this;
@@ -270,7 +271,11 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
 ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
 	cc.AudioEngine.getInstance().playEffect("sounds/Click_Button.mp3");
-	
+	if ( this.awardScene == null ) {
+		this.awardScene = cc.BuilderReader.load("AwardScene");
+		this.ccbLayout2.addChild(this.awardScene);
+		this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);	
+	}
 	this.awardScene.controller.showWindow();
     //var scene = cc.BuilderReader.loadAsScene("AwardScene.ccbi");
     //cc.Director.getInstance().replaceScene(scene);
@@ -279,9 +284,9 @@ ChooseTestsScene.prototype.onPressedAward = function () {
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
     // 打开金币购买界面
     debugMsgOutput("[UI Event] Clicked Coin Button!");
-    if ( this.buyCoinMsgBox == null ) {
-    	this.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
-    	this.ccbLayout.addChild( obj.buyCoinMsgBox );
+    if ( obj.buyCoinMsgBox == null ) {
+    	obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    	obj.ccbLayout.addChild( obj.buyCoinMsgBox );
     }
     
     obj.buyCoinMsgBox.controller.show();
