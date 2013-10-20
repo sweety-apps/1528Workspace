@@ -1367,7 +1367,7 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/coin_none.png</string>
+									<string>UI/common/transparentBlock.png</string>
 								</array>
 							</dict>
 							<dict>
@@ -1378,10 +1378,12 @@
 								<key>value</key>
 								<array>
 									<string></string>
-									<string>UI/guess/coin_none.png</string>
+									<string>UI/common/transparentBlock.png</string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
