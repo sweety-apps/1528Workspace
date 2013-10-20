@@ -305,16 +305,6 @@ function Problem_MakeRepositionArray(arrayFixed, arrayLevel, num) {
     debugMsgOutput("indexs " + subIndexs.length);
     debugMsgOutput("indexs " + indexs.length);
     
-    // test
-    for ( var i = 0; i < indexs.length; i ++) {
-        for ( var j = i + 1; j < indexs.length; j ++ ) {
-            if ( indexs[i] == indexs[j] ) {
-                debugMsgOutput(" error" );
-                throw(",,");
-            }
-        }
-    }
-    
     return indexs;
 };
 
@@ -338,19 +328,12 @@ function Problem_Reposition(indexArrays) {
         var objArr = new Array();
         
 		for ( var i = 0; i < indexArrays.length; i ++ ) {
-			if ( indexArrays[i] != i ) {
-				// 修改位置
-				var index = indexArrays[i];
+			var index = indexArrays[i];
                 
-                objArr.push(gProblemIndex[index]);
-			}
+            objArr.push(gProblemIndex[index]);
 		}
         
         gProblemIndex = objArr;
-        
-        for ( var i = 0; i < gProblemIndex.length; i ++ ) {
-            debugMsgOutput("**-- " + gProblemIndex[i].id);
-        }
 	}
 };
 
@@ -402,13 +385,15 @@ function Problem_Initialize() {
     
     arrayLevel = null;
     arrayFixed = null;
+    
+    for (var i = 0; i < Problem_GetCount(); i ++ ) {
+    	Problem_RequestInfo(i, function (obj) {
+    		debugMsgOutput(obj.rightanswer);
+    	}, function () { }, null);
+    }
 }
 
 function Problem_GetCount() {
-	if ( Global_isWeb() ) {
-		return gTestFloor.length;
-	}
-	
 	return gProblemIndex.length;
 }
 
@@ -464,7 +449,7 @@ function encrypt(str,secret) {
 
 // 返回题目的详细信息
 function Problem_RequestInfo(index, succeedCallback,failedCallback,context){
-	if ( Global_isWeb() ) {
+	if ( false ) {
 		var id = getQueryString("aid");
 		if ( id == null ) {
             /*

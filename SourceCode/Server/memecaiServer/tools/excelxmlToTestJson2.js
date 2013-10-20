@@ -302,10 +302,6 @@ MakeQuestion = function (id, inputPath, outputPath, node) {
 		return ;
 	}
 	
-	if ( id <= 245 ) {
-		return ;
-	}
-	
     var outputFS = require('fs');
     var path = require('path');
 	
@@ -364,13 +360,17 @@ MakeQuestion = function (id, inputPath, outputPath, node) {
     resultString = encMe("fshf289fh2fhu9123esdlj09fr190j", resultString);
         //resultString = encrypt(resultString, "F6BB1731-E8CC-42A0-A033-6CE82B5E7A03");
     console.log(outputPath + "/" + id);
+    
+   	if ( id > 245 ) {
+	
     outputFS.writeFile(outputPath + "/" + id,resultString,function(err){
         if(err) {
 			console.log("WriteFile error : " + resultString + "" + err);
 			throw err;
 		}
     });
-		
+	}
+	
 	objRet.id = id;
 	objRet.level = node.d.text();
 	if ( node.b != null ) { 
