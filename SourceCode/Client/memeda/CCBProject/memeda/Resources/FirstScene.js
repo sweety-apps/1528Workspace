@@ -43,8 +43,8 @@ FirstScene.prototype.onAnimationComplete = function()
 	if ( aniName == "Ani Timeline" ) {
 		var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
 		
-		var director = cc.Director.getInstance();
-    	director.replaceScene(chooseTestsScene);
+    	chooseTestsScene = cc.TransitionFade.create(0.2,chooseTestsScene);
+    	cc.Director.getInstance().replaceScene(chooseTestsScene);
         
         //cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene.plist");
         //cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene2.plist");
