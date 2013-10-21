@@ -539,10 +539,12 @@ function MakeInputKeys(rightanswers, inputkeys) {
     
     if ( inputkeys != undefined ) {
         for (var i = 0; i < inputkeys.length; i ++) {
-            InsertCharToArray(charArray, inputkeys[i]);
-            if ( charArray.length >= 24 ) {
-                break;
-            }
+        	if ( inputkeys[i] != ' ' ) {
+            	InsertCharToArray(charArray, inputkeys[i]);
+            	if ( charArray.length >= 24 ) {
+            	    break;
+            	}
+        	}
         }
     }
   
