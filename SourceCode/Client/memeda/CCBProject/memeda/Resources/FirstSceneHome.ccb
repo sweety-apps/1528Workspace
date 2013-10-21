@@ -243,7 +243,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>1.8666666746139526</real>
+													<real>0.73333334922790527</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -613,7 +613,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>0.5</real>
+													<real>0.033333335071802139</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -631,7 +631,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>1</real>
+													<real>0.53333336114883423</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -649,7 +649,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>1.8666666746139526</real>
+													<real>0.73333334922790527</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -695,7 +695,7 @@
 													<key>name</key>
 													<string>scale</string>
 													<key>time</key>
-													<real>1.0333333015441895</real>
+													<real>0.56666666269302368</real>
 													<key>type</key>
 													<integer>4</integer>
 													<key>value</key>
@@ -713,7 +713,7 @@
 													<key>name</key>
 													<string>scale</string>
 													<key>time</key>
-													<real>1.8666666746139526</real>
+													<real>0.73333334922790527</real>
 													<key>type</key>
 													<integer>4</integer>
 													<key>value</key>
@@ -898,7 +898,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>0.5</real>
+													<real>0.066666670143604279</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -916,7 +916,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>1</real>
+													<real>0.53333336114883423</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -934,7 +934,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>1.8666666746139526</real>
+													<real>0.73333334922790527</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -1241,7 +1241,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>1.8666666746139526</real>
+													<real>0.73333334922790527</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -1569,7 +1569,7 @@
 													<key>name</key>
 													<string>position</string>
 													<key>time</key>
-													<real>1.8666666746139526</real>
+													<real>0.73333334922790527</real>
 													<key>type</key>
 													<integer>3</integer>
 													<key>value</key>
@@ -2027,17 +2027,17 @@
 			<key>chainedSequenceId</key>
 			<integer>4</integer>
 			<key>length</key>
-			<real>1.8666666746139526</real>
+			<real>0.73333334922790527</real>
 			<key>name</key>
 			<string>Ani Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1.8666666746139526</real>
+			<real>0.73333334922790527</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
-			<real>32</real>
+			<real>199.19100952148438</real>
 			<key>sequenceId</key>
 			<integer>4</integer>
 			<key>soundChannel</key>

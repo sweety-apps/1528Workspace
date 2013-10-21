@@ -238,7 +238,7 @@ GuessScene.prototype.onBack = function ( ) {
 	cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
 	
     var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
-    scene = cc.TransitionFadeTR.create(0.2,scene);
+    scene = cc.TransitionFadeTR.create(0.4,scene);
     cc.Director.getInstance().replaceScene(scene);
 }
 

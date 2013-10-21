@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -60,7 +60,7 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>0.83333331346511841</real>
+									<real>0.5</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
@@ -802,8 +802,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>24</real>
-													<real>88.400001525878906</real>
+													<real>21</real>
+													<real>89</real>
 													<integer>4</integer>
 												</array>
 											</dict>
@@ -995,8 +995,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>71.5625</real>
-													<real>78.873237609863281</real>
+													<real>73.5</real>
+													<real>82</real>
 													<integer>4</integer>
 												</array>
 											</dict>
@@ -1181,7 +1181,7 @@
 												<key>value</key>
 												<array>
 													<real>88.4375</real>
-													<real>32</real>
+													<real>33.978874206542969</real>
 													<integer>4</integer>
 												</array>
 											</dict>
@@ -1373,7 +1373,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>6.5999999046325684</real>
+													<real>10.625</real>
 													<real>32.394367218017578</real>
 													<integer>4</integer>
 												</array>
@@ -2512,8 +2512,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>67</real>
-											<real>52.799999237060547</real>
+											<real>65</real>
+											<real>44</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -3308,8 +3308,8 @@
 												<string>ScaleLock</string>
 												<key>value</key>
 												<array>
-													<real>0.94999998807907104</real>
-													<real>0.94999998807907104</real>
+													<real>1</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -3361,7 +3361,7 @@
 										<key>value</key>
 										<array>
 											<real>40</real>
-											<real>45.422534942626953</real>
+											<real>40</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -4100,8 +4100,8 @@
 												<string>ScaleLock</string>
 												<key>value</key>
 												<array>
-													<real>1</real>
-													<real>1</real>
+													<real>0.80000001192092896</real>
+													<real>0.80000001192092896</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -4167,8 +4167,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 										<key>seqExpanded</key>
 										<true/>
 									</dict>
@@ -4376,7 +4374,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0</real>
+							<real>100</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -4633,13 +4631,13 @@
 			<key>chainedSequenceId</key>
 			<integer>5</integer>
 			<key>length</key>
-			<real>0.83333331346511841</real>
+			<real>0.5</real>
 			<key>name</key>
 			<string>Switch Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.83333331346511841</real>
+			<real>0.5</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
