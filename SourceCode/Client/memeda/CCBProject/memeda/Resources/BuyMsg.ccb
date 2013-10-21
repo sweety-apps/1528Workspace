@@ -2117,8 +2117,6 @@
 														</array>
 													</dict>
 												</array>
-												<key>selected</key>
-												<true/>
 											</dict>
 										</array>
 										<key>customClass</key>
@@ -2385,7 +2383,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>37.1875</real>
+													<real>35</real>
 													<real>51.056339263916016</real>
 													<integer>4</integer>
 												</array>
@@ -2434,6 +2432,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -2457,7 +2457,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>52.5</real>
+													<real>50.3125</real>
 													<real>51.232395172119141</real>
 													<integer>4</integer>
 												</array>
@@ -2506,6 +2506,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -2529,7 +2531,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>59.6875</real>
+													<real>57.5</real>
 													<real>51.232395172119141</real>
 													<integer>4</integer>
 												</array>
@@ -2578,6 +2580,82 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
+									</dict>
+									<dict>
+										<key>baseClass</key>
+										<string>CCSprite</string>
+										<key>children</key>
+										<array/>
+										<key>customClass</key>
+										<string></string>
+										<key>displayName</key>
+										<string>Num</string>
+										<key>memberVarAssignmentName</key>
+										<string>num3</string>
+										<key>memberVarAssignmentType</key>
+										<integer>1</integer>
+										<key>properties</key>
+										<array>
+											<dict>
+												<key>name</key>
+												<string>position</string>
+												<key>type</key>
+												<string>Position</string>
+												<key>value</key>
+												<array>
+													<real>64.6875</real>
+													<real>51.232395172119141</real>
+													<integer>4</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>anchorPoint</string>
+												<key>type</key>
+												<string>Point</string>
+												<key>value</key>
+												<array>
+													<real>0.5</real>
+													<real>0.5</real>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>scale</string>
+												<key>type</key>
+												<string>ScaleLock</string>
+												<key>value</key>
+												<array>
+													<real>1</real>
+													<real>1</real>
+													<false/>
+													<integer>0</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>ignoreAnchorPointForPosition</string>
+												<key>type</key>
+												<string>Check</string>
+												<key>value</key>
+												<false/>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>displayFrame</string>
+												<key>type</key>
+												<string>SpriteFrame</string>
+												<key>value</key>
+												<array>
+													<string></string>
+													<string>UI/common/tip_1.png</string>
+												</array>
+											</dict>
+										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>

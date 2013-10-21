@@ -1005,7 +1005,7 @@ GuessScene.prototype.ClickBuy = function () {
 		return ;
 	}
 	
-	var price = new Array(10, 20, 30, 40, 50, 60);
+	var price = new Array(50, 50, 100, 100, 200, 200);
 	this.EnableAllBtn(false);
 	debugMsgOutput("gBuyList.length " + this.getBuyCount());
 	var count = this.getBuyCount();
@@ -1204,7 +1204,7 @@ GuessScene.prototype.onClickJump = function () {
 	}
 	
 	this.EnableAllBtn(false);
-	this.jumpMsg.controller.ShowMsg(500, gCurrentTestObj.id, function (res) {
+	this.jumpMsg.controller.ShowMsg(200, gCurrentTestObj.id, function (res) {
 		if ( res == 1 ) {
 			// 跳过该题，进入下一题
 			if ( !Problem_isAnswerRight(gCurrentTestObj.id) ) {
@@ -1235,7 +1235,7 @@ GuessScene.prototype.checkExtraCoin = function () {
 		gCurrentCCBView.EnableAllBtn(false);
 		this.weChatCoinMsgBox.controller.show(function () {
 			gCurrentCCBView.EnableAllBtn(true);
-			CoinMgr_Change(100);
+			CoinMgr_Change(200);
 		});
 	}
 }

@@ -2366,7 +2366,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/common/tip_1.png</string>
+															<string>UI/common/tip_2.png</string>
 														</array>
 													</dict>
 												</array>
@@ -3293,8 +3293,6 @@
 								<true/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>

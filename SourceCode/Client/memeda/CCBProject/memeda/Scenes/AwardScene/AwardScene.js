@@ -25,8 +25,8 @@ AwardScene.prototype.onClickBkg = function () {
 
 AwardScene.prototype.initStatus = function () {
     //
-    this.firendCtrl.controller.setItemInfo("UI/floorsscene/award_1.png", 500, this, this.onClickFirend);
-    this.commentCtrl.controller.setItemInfo("UI/floorsscene/award_2.png", 543, this, this.onClickComment);
+    this.firendCtrl.controller.setItemInfo("UI/floorsscene/award_1.png", 200, this, this.onClickFirend);
+    this.commentCtrl.controller.setItemInfo("UI/floorsscene/award_2.png", 200, this, this.onClickComment);
     this.duomengCtrl.controller.setItemInfo("UI/floorsscene/award_3.png", null, this, this.onClickDuomeng);
     
     var showsharecoin = sys.localStorage.getItem("showsharecoin");
@@ -138,7 +138,7 @@ AwardScene.prototype.onClickComment = function (obj) {
 		var url = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?mt=8&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software&id=";
 		url = url + "723564814";
 		memeda.common.openURL(url);
-		CoinMgr_Change(543);
+		CoinMgr_Change(200);
 		obj.commentCtrl.controller.setItemStatus(2);
 		sys.localStorage.setItem("comment", "1");	//
 	}
@@ -169,7 +169,7 @@ AwardScene.prototype.checkWeChat = function () {
 	if ( showsharecoin == "1" ) {
 		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
     	this.firendCtrl.controller.setItemStatus(2);
-		CoinMgr_Change(100);
+		CoinMgr_Change(200);
 	}
 }
 

@@ -44,18 +44,43 @@ BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
 	this.price = price;
     this.index = index;
 	
-	var num1 = Math.floor(price / 10);
-	var num2 = price % 10;
+	var num1 = Math.floor(price / 100);
+	var num2 = Math.floor( (price % 100) / 10 );
+	var num3 = price % 10;
 
-    var image = "UI/common/tip_" + num1 + ".png";
-    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    //this.num1.setDisplayFrame(spriteFrame);
-    UtilsFunctions_setSpriteImageWithName(this.num1,image);
+	this.num1.setVisible(true);
+	this.num2.setVisible(true);
 	
-	image = "UI/common/tip_" + num2 + ".png";
-    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    //this.num2.setDisplayFrame(spriteFrame);
-    UtilsFunctions_setSpriteImageWithName(this.num2,image);
+	if ( num1 == 0 ) {
+	    var image = "UI/common/tip_" + num2 + ".png";
+	    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    //this.num1.setDisplayFrame(spriteFrame);
+	    UtilsFunctions_setSpriteImageWithName(this.num1,image);
+		
+		image = "UI/common/tip_" + num3 + ".png";
+	    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    //this.num2.setDisplayFrame(spriteFrame);
+	    UtilsFunctions_setSpriteImageWithName(this.num2,image);	
+	    
+	    this.num3.setVisible(false);
+	} else {
+	    var image = "UI/common/tip_" + num1 + ".png";
+	    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    //this.num1.setDisplayFrame(spriteFrame);
+	    UtilsFunctions_setSpriteImageWithName(this.num1,image);
+		
+		image = "UI/common/tip_" + num2 + ".png";
+	    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    //this.num2.setDisplayFrame(spriteFrame);
+	    UtilsFunctions_setSpriteImageWithName(this.num2,image);	
+	    
+		image = "UI/common/tip_" + num3 + ".png";
+	    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
+	    //this.num2.setDisplayFrame(spriteFrame);
+	    UtilsFunctions_setSpriteImageWithName(this.num3,image);	
+	       
+		this.num3.setVisible(true);
+	}
     
     this.msgText.setString(msg);
     

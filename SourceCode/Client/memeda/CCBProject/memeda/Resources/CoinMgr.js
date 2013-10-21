@@ -63,10 +63,9 @@ function CoinMgr_Init() {
     }
     gCoinMgr_Init = true;
     
-	sys.localStorage.setItem("coin", 1500);
     gCoin = sys.localStorage.getItem("coin");
     if ( gCoin == null || gCoin == "" ) {
-    	gCoin = 50;
+    	gCoin = 100;
     } else {
         gCoin = parseInt(gCoin);
     }
