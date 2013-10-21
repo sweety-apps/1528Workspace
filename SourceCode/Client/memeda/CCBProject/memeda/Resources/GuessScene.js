@@ -1235,6 +1235,7 @@ GuessScene.prototype.checkExtraCoin = function () {
 		gCurrentCCBView.EnableAllBtn(false);
 		this.weChatCoinMsgBox.controller.show(function () {
 			gCurrentCCBView.EnableAllBtn(true);
+			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
 			CoinMgr_Change(200);
 		});
 	}

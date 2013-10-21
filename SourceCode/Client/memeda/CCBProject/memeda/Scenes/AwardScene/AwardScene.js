@@ -128,7 +128,7 @@ AwardScene.prototype.onClickFirend = function (obj) {
 	    var socialAPI = cc.SocialShareAPI.getInstance();
 	    socialAPI.setWeChatShareCallbackTarget(shareCallback);
 	    
-	    socialAPI.shareWeChatURL("Test","AppIcon40x40@2x.png","testTitle", url,"Description lalala!",false,true);
+	    socialAPI.shareWeChatURL("对，是窃听！考验耳朵的时候到了","AppIcon40x40@2x.png","一起窃听吧", url,"",false,true);
     } catch (e) {
     }
 }
@@ -139,6 +139,7 @@ AwardScene.prototype.onClickComment = function (obj) {
 		url = url + "723564814";
 		memeda.common.openURL(url);
 		CoinMgr_Change(200);
+		cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
 		obj.commentCtrl.controller.setItemStatus(2);
 		sys.localStorage.setItem("comment", "1");	//
 	}
@@ -170,6 +171,7 @@ AwardScene.prototype.checkWeChat = function () {
 		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
     	this.firendCtrl.controller.setItemStatus(2);
 		CoinMgr_Change(200);
+		cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
 	}
 }
 
