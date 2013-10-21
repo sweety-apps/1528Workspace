@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>9</integer>
+	<integer>1</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -3748,7 +3748,7 @@
 										<key>type</key>
 										<string>Check</string>
 										<key>value</key>
-										<false/>
+										<true/>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -3785,8 +3785,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.0</real>
-											<real>0.0099999997764825821</real>
+											<real>1</real>
+											<real>1</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -5117,7 +5117,7 @@
 														<string>Position</string>
 														<key>value</key>
 														<array>
-															<real>23</real>
+															<real>34</real>
 															<real>50</real>
 															<integer>4</integer>
 														</array>
@@ -5129,7 +5129,7 @@
 														<string>Point</string>
 														<key>value</key>
 														<array>
-															<real>0.0</real>
+															<real>0.5</real>
 															<real>0.5</real>
 														</array>
 													</dict>
@@ -5179,7 +5179,7 @@
 														<key>type</key>
 														<string>Text</string>
 														<key>value</key>
-														<string>x 300</string>
+														<string>300</string>
 													</dict>
 												</array>
 											</dict>
@@ -5202,7 +5202,7 @@
 												<key>type</key>
 												<string>Check</string>
 												<key>value</key>
-												<false/>
+												<true/>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -5240,7 +5240,7 @@
 												<key>value</key>
 												<array>
 													<real>1</real>
-													<real>0.0</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -5950,7 +5950,7 @@
 														<string>Position</string>
 														<key>value</key>
 														<array>
-															<real>23</real>
+															<real>34</real>
 															<real>50</real>
 															<integer>4</integer>
 														</array>
@@ -5962,7 +5962,7 @@
 														<string>Point</string>
 														<key>value</key>
 														<array>
-															<real>0.0</real>
+															<real>0.5</real>
 															<real>0.5</real>
 														</array>
 													</dict>
@@ -5993,7 +5993,7 @@
 														<key>type</key>
 														<string>FntFile</string>
 														<key>value</key>
-														<string>UI/fonts/BuyFont.fnt</string>
+														<string>UI/fonts/BuyFont2.fnt</string>
 													</dict>
 													<dict>
 														<key>name</key>
@@ -6012,7 +6012,7 @@
 														<key>type</key>
 														<string>Text</string>
 														<key>value</key>
-														<string>x 600</string>
+														<string>600x 50</string>
 													</dict>
 												</array>
 											</dict>
@@ -6035,7 +6035,7 @@
 												<key>type</key>
 												<string>Check</string>
 												<key>value</key>
-												<false/>
+												<true/>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -6073,7 +6073,7 @@
 												<key>value</key>
 												<array>
 													<real>1</real>
-													<real>0.0</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -6744,7 +6744,7 @@
 														<string>Position</string>
 														<key>value</key>
 														<array>
-															<real>23</real>
+															<real>34</real>
 															<real>50</real>
 															<integer>4</integer>
 														</array>
@@ -6756,7 +6756,7 @@
 														<string>Point</string>
 														<key>value</key>
 														<array>
-															<real>0.0</real>
+															<real>0.5</real>
 															<real>0.5</real>
 														</array>
 													</dict>
@@ -6787,7 +6787,7 @@
 														<key>type</key>
 														<string>FntFile</string>
 														<key>value</key>
-														<string>UI/fonts/BuyFont.fnt</string>
+														<string>UI/fonts/BuyFont2.fnt</string>
 													</dict>
 													<dict>
 														<key>name</key>
@@ -6806,7 +6806,7 @@
 														<key>type</key>
 														<string>Text</string>
 														<key>value</key>
-														<string>x 1500</string>
+														<string>1500x 200</string>
 													</dict>
 												</array>
 											</dict>
@@ -6829,7 +6829,7 @@
 												<key>type</key>
 												<string>Check</string>
 												<key>value</key>
-												<false/>
+												<true/>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -6867,7 +6867,7 @@
 												<key>value</key>
 												<array>
 													<real>1</real>
-													<real>0.0</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -7538,7 +7538,7 @@
 														<string>Position</string>
 														<key>value</key>
 														<array>
-															<real>17</real>
+															<real>34</real>
 															<real>50</real>
 															<integer>4</integer>
 														</array>
@@ -7550,7 +7550,7 @@
 														<string>Point</string>
 														<key>value</key>
 														<array>
-															<real>0.0</real>
+															<real>0.5</real>
 															<real>0.5</real>
 														</array>
 													</dict>
@@ -7581,7 +7581,7 @@
 														<key>type</key>
 														<string>FntFile</string>
 														<key>value</key>
-														<string>UI/fonts/BuyFont.fnt</string>
+														<string>UI/fonts/BuyFont2.fnt</string>
 													</dict>
 													<dict>
 														<key>name</key>
@@ -7600,7 +7600,7 @@
 														<key>type</key>
 														<string>Text</string>
 														<key>value</key>
-														<string>x 3000+666</string>
+														<string>3000x 999</string>
 													</dict>
 												</array>
 												<key>seqExpanded</key>
@@ -7625,7 +7625,7 @@
 												<key>type</key>
 												<string>Check</string>
 												<key>value</key>
-												<false/>
+												<true/>
 											</dict>
 											<dict>
 												<key>name</key>
@@ -7663,7 +7663,7 @@
 												<key>value</key>
 												<array>
 													<real>1</real>
-													<real>0.0</real>
+													<real>1</real>
 													<false/>
 													<integer>0</integer>
 												</array>
@@ -8328,8 +8328,6 @@
 										<string>UI/particles/ParticleStar.png</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -10793,7 +10791,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>1</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

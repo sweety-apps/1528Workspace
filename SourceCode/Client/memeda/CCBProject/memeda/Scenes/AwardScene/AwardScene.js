@@ -136,7 +136,7 @@ AwardScene.prototype.onClickFirend = function (obj) {
 AwardScene.prototype.onClickComment = function (obj) {
 	if ( obj.enableAllBtn ) {
 		var url = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?mt=8&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software&id=";
-		url = url + "1234567890";
+		url = url + "723564814";
 		memeda.common.openURL(url);
 		CoinMgr_Change(543);
 		obj.commentCtrl.controller.setItemStatus(2);
