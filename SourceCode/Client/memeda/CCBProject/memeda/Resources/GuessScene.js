@@ -221,6 +221,8 @@ GuessScene.prototype.onBack = function ( ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("index", ""+gProblem);
     	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+        param.addKeyAndValue("question", gProblemProject);
+            
     	memeda.Stat.logEvent("guessback", param);
     }
     //
@@ -610,7 +612,9 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 		var param = memeda.Stat.createParam();
 		param.addKeyAndValue("index", ""+gProblem);
 		param.addKeyAndValue("aid", ""+testObj.id);	
-		param.addKeyAndValue("source", ""+gSource);		
+		param.addKeyAndValue("source", ""+gSource);
+        param.addKeyAndValue("question", gProblemProject);
+            
 		memeda.Stat.logEvent("guess", param);
     }
 	//
@@ -781,6 +785,8 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             	var param = memeda.Stat.createParam();
             	param.addKeyAndValue("index", ""+gProblem);
             	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+                param.addKeyAndValue("question", gProblemProject);
+                    
             	memeda.Stat.logEvent("guesssuccess", param);
             }
             //
@@ -835,6 +841,8 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             	var param = memeda.Stat.createParam();
             	param.addKeyAndValue("index", ""+gProblem);
             	param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+                param.addKeyAndValue("question", gProblemProject);
+                    
             	memeda.Stat.logEvent("guesserror", param);
             }
             
@@ -1256,7 +1264,7 @@ GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
     		if ( gCurrentCCBView.buyCoinMsgBox == null ) {
     			debugMsgOutput("create BuyCoinMessageBox");
     			gCurrentCCBView.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
-    			gCurrentCCBView.ccbLayout.addChild(	obj.buyCoinMsgBox );
+    			gCurrentCCBView.ccbLayout.addChild(	gCurrentCCBView.buyCoinMsgBox );
     		}
     
     		gCurrentCCBView.buyCoinMsgBox.controller.show();	

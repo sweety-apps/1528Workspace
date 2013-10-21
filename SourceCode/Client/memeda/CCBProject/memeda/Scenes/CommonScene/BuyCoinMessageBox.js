@@ -35,7 +35,9 @@ BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 BuyCoinMessageBox.prototype.show = function ()
 {
     if ( !Global_isWeb() ) {
-		memeda.Stat.logEvent("buyCoinMessagebox");
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("question", gProblemProject);
+		memeda.Stat.logEvent("buyCoinMessagebox", param);
     }
     
     this.purchaseHasSucceed = false;
@@ -141,7 +143,8 @@ BuyCoinMessageBox.prototype.onClickedBuy6 = function ()
 {
     if ( !Global_isWeb() ) {
 		var param = memeda.Stat.createParam();
-		param.addKeyAndValue("price", "6");		
+		param.addKeyAndValue("price", "6");
+        param.addKeyAndValue("question", gProblemProject);
 		memeda.Stat.logEvent("clickbuycoin", param);
     }
     
@@ -157,7 +160,8 @@ BuyCoinMessageBox.prototype.onClickedBuy12 = function ()
 {
     if ( !Global_isWeb() ) {
 		var param = memeda.Stat.createParam();
-		param.addKeyAndValue("price", "12");		
+		param.addKeyAndValue("price", "12");
+        param.addKeyAndValue("question", gProblemProject);
 		memeda.Stat.logEvent("clickbuycoin", param);
     }
 
@@ -173,7 +177,8 @@ BuyCoinMessageBox.prototype.onClickedBuy30 = function ()
 {
     if ( !Global_isWeb() ) {
 		var param = memeda.Stat.createParam();
-		param.addKeyAndValue("price", "30");		
+		param.addKeyAndValue("price", "30");
+        param.addKeyAndValue("question", gProblemProject);
 		memeda.Stat.logEvent("clickbuycoin", param);
     }
     
@@ -189,7 +194,8 @@ BuyCoinMessageBox.prototype.onClickedBuy60 = function ()
 {
     if ( !Global_isWeb() ) {
 		var param = memeda.Stat.createParam();
-		param.addKeyAndValue("price", "60");		
+		param.addKeyAndValue("price", "60");
+        param.addKeyAndValue("question", gProblemProject);
 		memeda.Stat.logEvent("clickbuycoin", param);
     }
     
@@ -205,7 +211,8 @@ BuyCoinMessageBox.prototype.onBuyItemSucceed = function (itemName,state,msg)
 {
     if ( !Global_isWeb() ) {
 		var param = memeda.Stat.createParam();
-		param.addKeyAndValue("price", "" + this.clickPrice);		
+		param.addKeyAndValue("price", "" + this.clickPrice);
+        param.addKeyAndValue("question", gProblemProject);
 		memeda.Stat.logEvent("buycoinsuccess", param);
     }
     

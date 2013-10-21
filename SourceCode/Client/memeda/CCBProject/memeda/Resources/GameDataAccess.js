@@ -202,7 +202,9 @@ function encMe(key,s){
 //
 
 var gProblemIndex = new Array();
-
+var gProblemProject = "";
+    
+    
 function Problem_MakeSubArray(arrayLevel, arrayCompose) {
 	var retArr = new Array();
 	for ( var i = 1; i < arrayLevel.length; i ++ ) {
@@ -315,6 +317,9 @@ function Problem_GetRepositionArray() {
 	if ( indexs != null ) {
         debugMsgOutput("indexs " + indexs);
         
+        // 使用的题库版本
+    	gProblemProject = sys.localStorage.getItem("problem_project");
+    
 		indexArray = indexs.split(",");
 		if ( indexArray == null || indexArray.length != gProblemIndex.length ) {
 			indexArray = null;
@@ -358,6 +363,15 @@ function Problem_Initialize() {
     debugMsgOutput("length " + index.length);
     
     var rand = Math.random();
+    gProblemProject = "A";
+    if ( rand < 0.3 ) {
+        gProblemProject = "B";
+    } else if ( rand < 0.6 ) {
+        gProblemProject = "C";
+    }
+        
+    // 使用的题库版本
+    sys.localStorage.setItem("problem_project", gProblemProject);
     
     for (var i = 0; i < index.length; i ++) {
         var item = index[i];

@@ -32,6 +32,8 @@ BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
     if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("num", ""+index);
+        param.addKeyAndValue("question", gProblemProject);
+        
     	memeda.Stat.logEvent("promptclick", param);
     }
     //
@@ -73,6 +75,7 @@ BuyMsg.prototype.onClickClose = function() {
     if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("num", ""+this.index);
+        param.addKeyAndValue("question", gProblemProject);
     	memeda.Stat.logEvent("promptclose", param);
     }
     //
@@ -96,7 +99,9 @@ BuyMsg.prototype.onClickBuy = function() {
 		this.Hide(0);
 		
  		if ( !Global_isWeb() ) {
-    		memeda.Stat.logEvent("clickBuyNoEnough");
+            var param = memeda.Stat.createParam();
+            param.addKeyAndValue("question", gProblemProject);
+    		memeda.Stat.logEvent("clickBuyNoEnough", param);
 		}
 	} else {
 		debugMsgOutput("BuyMsg.prototype.onClickBuy");
@@ -104,6 +109,7 @@ BuyMsg.prototype.onClickBuy = function() {
     	if ( !Global_isWeb() ) {
     		var param = memeda.Stat.createParam();
     		param.addKeyAndValue("num", ""+this.index);
+            param.addKeyAndValue("question", gProblemProject);
     		memeda.Stat.logEvent("promptbuy", param);
     	}
     	//

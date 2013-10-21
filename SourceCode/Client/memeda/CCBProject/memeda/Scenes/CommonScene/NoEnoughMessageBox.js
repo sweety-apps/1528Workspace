@@ -53,7 +53,9 @@ NoEnoughMessageBox.prototype.onClickClose = function() {
 
 NoEnoughMessageBox.prototype.onClickBuy = function() {
  	if ( !Global_isWeb() ) {
-    	memeda.Stat.logEvent("showBuyCoinScene" + this.src);
+        var param = memeda.Stat.createParam();
+    	param.addKeyAndValue("question", gProblemProject);
+    	memeda.Stat.logEvent("showBuyCoinScene" + this.src, param);
 	}
 		
 	this.Hide(1);	

@@ -43,6 +43,7 @@ JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) {
  	if ( !Global_isWeb() ) {
      	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("aid", ""+id);
+        param.addKeyAndValue("question", gProblemProject);
     	memeda.Stat.logEvent("clickJump", param);
 	}
 				
@@ -69,6 +70,8 @@ JumpMsgBox.prototype.onClickBuy = function() {
 		this.Hide(0);
 		
  		if ( !Global_isWeb() ) {
+            var param = memeda.Stat.createParam();
+            param.addKeyAndValue("question", gProblemProject);
     		memeda.Stat.logEvent("clickJumpNoEnough");
 		}
 	} else {
@@ -77,6 +80,8 @@ JumpMsgBox.prototype.onClickBuy = function() {
 		// 加入到跳过题目的列表
 		this.Hide(1);
  		if ( !Global_isWeb() ) {
+            var param = memeda.Stat.createParam();
+            param.addKeyAndValue("question", gProblemProject);
     		memeda.Stat.logEvent("clickJumpBuy");
 		}
 	}

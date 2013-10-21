@@ -11,7 +11,10 @@ AwardScene.prototype.showWindow = function () {
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 	
 	if ( !Global_isWeb() ) {
-    	memeda.Stat.logEvent("showAward");
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("question", gProblemProject);
+            
+    	memeda.Stat.logEvent("showAward", param);
 	}
 };
 
@@ -85,7 +88,10 @@ AwardScene.prototype.onClickFirend = function (obj) {
     debugMsgOutput(url);
    
 	if ( !Global_isWeb() ) {
-    	memeda.Stat.logEvent("clickWeChat");
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("question", gProblemProject);
+            
+    	memeda.Stat.logEvent("clickWeChat", param);
 	}
 	
     try 
@@ -95,7 +101,9 @@ AwardScene.prototype.onClickFirend = function (obj) {
 	    	if ( state == "Success" ) {
 	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
 				if ( !Global_isWeb() ) {
-    				memeda.Stat.logEvent("wechatSuccess");
+                    var param = memeda.Stat.createParam();
+                    param.addKeyAndValue("question", gProblemProject);
+    				memeda.Stat.logEvent("wechatSuccess", param);
 				}
 	
 	    		var share = sys.localStorage.getItem("firstshare");	
@@ -107,7 +115,9 @@ AwardScene.prototype.onClickFirend = function (obj) {
 	    		}
 	    	} else if ( state == "Fail" ) {
 	    			if ( !Global_isWeb() ) {
-    					memeda.Stat.logEvent("wechatFail");
+                        var param = memeda.Stat.createParam();
+                        param.addKeyAndValue("question", gProblemProject);
+    					memeda.Stat.logEvent("wechatFail", param);
 					}
 					
 		    		pThisAwardScene.wechatError.controller.ShowMsg(errMsg, function () {
@@ -134,7 +144,9 @@ AwardScene.prototype.onClickComment = function (obj) {
 	}
 	
 	if ( !Global_isWeb() ) {
-    	memeda.Stat.logEvent("clickComment");
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("question", gProblemProject);
+    	memeda.Stat.logEvent("clickComment", param);
 	}
 }
 
@@ -146,7 +158,9 @@ AwardScene.prototype.onClickDuomeng = function (obj) {
 	}
 	
 	if ( !Global_isWeb() ) {
-    	memeda.Stat.logEvent("clickDuomeng");
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("question", gProblemProject);
+    	memeda.Stat.logEvent("clickDuomeng", param);
 	}
 }
 
@@ -172,6 +186,8 @@ AwardScene.prototype.onClickedCoinButton = function (obj) {
 	}
 	
 	if ( !Global_isWeb() ) {
-    	memeda.Stat.logEvent("showCoinScene");
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("question", gProblemProject);
+    	memeda.Stat.logEvent("showCoinScene", param);
 	}
 };
