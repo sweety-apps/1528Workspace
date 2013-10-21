@@ -11,6 +11,8 @@ WechatAwardMsg.prototype.onDidLoadFromCCB = function () {
     {   
         this.msgLayout.setScaleX(0.84);
         this.msgLayout.setScaleY(0.84);
+        
+        this.msgLayout.setPositionY(-50);
     }
 };
 
@@ -35,50 +37,28 @@ WechatAwardMsg.prototype.ShowMsg = function(msg, price, endFun, index) {
 		this.num1.setVisible(true);	
 		
 	    var image = "UI/common/tip_" + num0 + ".png";
-	    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-	    this.num1.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.num1,image);
 	    
 	    image = "UI/common/tip_" + num1 + ".png";
-	    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-	    this.num2.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.num2,image);
 		
 		image = "UI/common/tip_" + num2 + ".png";
-	    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-	    this.num3.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.num3,image);
 	} else if ( price >= 10 ) {
 		this.num3.setVisible(false);	
 		
 	    var image = "UI/common/tip_" + num1 + ".png";
-	    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-	    this.num1.setDisplayFrame(spriteFrame);
-		
+        UtilsFunctions_setSpriteImageWithName(this.num1,image);
+        
 		image = "UI/common/tip_" + num2 + ".png";
-	    spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-	    this.num2.setDisplayFrame(spriteFrame);
+        UtilsFunctions_setSpriteImageWithName(this.num2,image);
 	} else {
 		this.num1.setVisible(false);
 		this.num3.setVisible(false);
 		
 	    var image = "UI/common/tip_" + num2 + ".png";
-	    var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-	    this.num2.setDisplayFrame(spriteFrame);	
+        UtilsFunctions_setSpriteImageWithName(this.num2,image);
 	}
-	
-    var image = "UI/common/tip_" + num0 + ".png";
-    //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    //this.num1.setDisplayFrame(spriteFrame);
-    UtilsFunctions_setSpriteImageWithName(this.num1,image);
-    
-    image = "UI/common/tip_" + num1 + ".png";
-    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    //this.num2.setDisplayFrame(spriteFrame);
-    UtilsFunctions_setSpriteImageWithName(this.num2,image);
-	
-	image = "UI/common/tip_" + num2 + ".png";
-    //spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(image);
-    //this.num3.setDisplayFrame(spriteFrame);
-    UtilsFunctions_setSpriteImageWithName(this.num3,image);
-    
     
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };

@@ -1363,8 +1363,6 @@
 												<true/>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -2157,6 +2155,8 @@
 										<true/>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 								<key>seqExpanded</key>
 								<true/>
 							</dict>
@@ -2190,9 +2190,9 @@
 								<string>Size</string>
 								<key>value</key>
 								<array>
-									<real>100</real>
-									<real>100</real>
-									<integer>1</integer>
+									<real>320</real>
+									<real>568</real>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -2519,7 +2519,7 @@
 		</dict>
 		<dict>
 			<key>autoPlay</key>
-			<false/>
+			<true/>
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>
@@ -2606,7 +2606,7 @@
 		</dict>
 		<dict>
 			<key>autoPlay</key>
-			<true/>
+			<false/>
 			<key>callbackChannel</key>
 			<dict>
 				<key>keyframes</key>

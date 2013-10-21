@@ -24,9 +24,9 @@ var ChooseTestsScene = function() {
 ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
-	//if ( gPreload ) {
-	//	return ;
-	//}
+	if ( gPreload ) {
+		return ;
+	}
 	
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/common.plist");
