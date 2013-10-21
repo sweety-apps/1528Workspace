@@ -80,6 +80,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     //var spriteFrame = cc.SpriteFrameCache.getInstance().getSpriteFrame(imageUrl);
     //this.toolBarSprite.setSpriteFrame(spriteFrame);
     //UtilsFunctions_setScale9SpriteImageWithName(this.toolBarSprite,imageUrl);
+
+    this.answeredPercentsLbl.setString("已完成 "+Problem_getRightAnswersPercents()+"% 的问题");
 };
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)

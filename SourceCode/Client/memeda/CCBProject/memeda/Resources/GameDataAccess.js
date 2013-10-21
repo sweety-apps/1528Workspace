@@ -567,6 +567,28 @@ Problem_getCurrentIndex = function() {
     return index;
 }
 
+Problem_getRightAnswersCount = function() {
+    if(gQuestionAnswerRightList != null)
+    {
+        var right_count = 0;
+        var count = Problem_GetCount();
+        for(var i = 0; i < count; ++i)
+        {
+            var info = Problem_GetBaseInfo(i);
+            if(info != null && info != undefined && Problem_isAnswerRight(info.id))
+            {
+                right_count++;
+            }
+        }
+        return right_count;
+    }
+    return 0;
+}
+
+Problem_getRightAnswersPercents = function() {
+    return (100 * Problem_getRightAnswersCount())/Problem_GetCount();
+}
+
 Question_init = function () {
 	gQuestionJumpList = new Array();
 	gQuestionJumpEvent = new Array();

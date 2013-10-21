@@ -9,66 +9,36 @@
 var kDoorStateOpen = "open";
 var kDoorStateLocked = "locked";
 var kDoorStateJumped = "jumped";
-
-var gTestFloorUIConfig = [
-    {bg:"floor_pink",bottom:"floorBottom_pink",
-        floorNum:"1F",specText:"",offsetY:0,
-        doors:[
-            {hasFinished:true,image:"door_pink",doorNum:"001",doorState:"locked"},
-            {hasFinished:true,image:"door_pink",doorNum:"002",doorState:"locked"},
-            {hasFinished:true,image:"door_pink",doorNum:"003",doorState:"locked"}
-        ]},
-    {bg:"floor_pink",bottom:"floorBottom_pink",
-        floorNum:"2F",specText:"SEX",offsetY:0,
-        doors:[
-            {hasFinished:true,image:"door_blue",doorNum:"011",doorState:"locked"},
-            {hasFinished:false,image:"door_blue",doorNum:"012",doorState:"locked"},
-            {hasFinished:false,image:"door_blue",doorNum:"013",doorState:"locked"}
-        ]},
-    {bg:"floor_blue",bottom:"floorBottom_blue",
-        floorNum:"3F",specText:"",offsetY:0,
-        doors:[
-            {hasFinished:true,image:"door_yellow",doorNum:"021",doorState:"locked"},
-            {hasFinished:true,image:"door_yellow",doorNum:"022",doorState:"locked"},
-            {hasFinished:true,image:"door_yellow",doorNum:"023",doorState:"locked"}
-        ]},
-    {bg:"floor_pink",bottom:"floorBottom_pink",
-        floorNum:"4F",specText:"",offsetY:0,
-        doors:[
-            {hasFinished:true,image:"door_gray",doorNum:"031",doorState:"locked"},
-            {hasFinished:true,image:"door_gray",doorNum:"032",doorState:"locked"},
-            {hasFinished:false,image:"door_gray",doorNum:"033",doorState:"locked"}
-        ]}
-];
+var kDoorStateHide = "hide";
 
 var gTestFloor = [
     {bg:"floor_blue",bottom:"floorBottom_blue",
         floorNum:"1F",specText:"",offsetY:0,
         doors:[
-            {hasFinished:true,image:"door_black",doorNum:"001",doorState:"locked"},
-            {hasFinished:true,image:"door_pink",doorNum:"002",doorState:"locked"},
-            {hasFinished:true,image:"door_yellow",doorNum:"003",doorState:"locked"}
+            {hasFinished:true,image:"door_pink",doorNum:"001",doorState:kDoorStateOpen},
+            {hasFinished:true,image:"door_pink",doorNum:"002",doorState:kDoorStateJumped},
+            {hasFinished:true,image:"door_pink",doorNum:"003",doorState:kDoorStateLocked}
         ]},
     {bg:"floor_gray",bottom:"floorBottom_gray",
         floorNum:"2F",specText:"",offsetY:0,
         doors:[
-            {hasFinished:true,image:"door_pink",doorNum:"011",doorState:"locked"},
-            {hasFinished:false,image:"doorSpecial_1",doorNum:"012",doorState:"locked"},
-            {hasFinished:false,image:"doorSpecial_3",doorNum:"013",doorState:"locked"}
+            {hasFinished:true,image:"door_pink",doorNum:"011",doorState:kDoorStateOpen},
+            {hasFinished:false,image:"door_pink",doorNum:"012",doorState:kDoorStateLocked},
+            {hasFinished:false,image:"door_pink",doorNum:"013",doorState:kDoorStateOpen}
         ]},
     {bg:"floor_pink",bottom:"floorBottom_pink",
         floorNum:"3F",specText:"SEX",offsetY:0,
         doors:[
-            {hasFinished:true,image:"doorSpecial_2",doorNum:"021",doorState:"locked"},
-            {hasFinished:true,image:"doorSpecial_4",doorNum:"022",doorState:"locked"},
-            {hasFinished:true,image:"doorSpecial_5",doorNum:"023",doorState:"locked"}
+            {hasFinished:true,image:"door_pink",doorNum:"021",doorState:kDoorStateOpen},
+            {hasFinished:true,image:"door_pink",doorNum:"022",doorState:kDoorStateJumped},
+            {hasFinished:true,image:"door_pink",doorNum:"023",doorState:kDoorStateHide}
         ]},
     {bg:"floor_yellow",bottom:"floorBottom_yellow",
         floorNum:"4F",specText:"",offsetY:0,
         doors:[
-            {hasFinished:true,image:"doorSpecial_8",doorNum:"031",doorState:"locked"},
-            {hasFinished:true,image:"doorSpecial_7",doorNum:"032",doorState:"locked"},
-            {hasFinished:false,image:"doorSpecial_6",doorNum:"033",doorState:"locked"}
+            {hasFinished:true,image:"door_pink",doorNum:"031",doorState:kDoorStateJumped},
+            {hasFinished:true,image:"door_pink",doorNum:"032",doorState:kDoorStateLocked},
+            {hasFinished:false,image:"door_pink",doorNum:"033",doorState:kDoorStateOpen}
         ]}
 ];
 
@@ -80,30 +50,30 @@ function FloorsData_resetTestData_Web()
             {bg:"floor_blue",bottom:"floorBottom_blue",
                 floorNum:"1F",specText:"",offsetY:0,
                 doors:[
-                    {hasFinished:true,image:"door_black",doorNum:"001",doorState:"locked"},
-                    {hasFinished:false,image:"door_pink",doorNum:"002",doorState:"locked"},
-                    {hasFinished:true,image:"door_yellow",doorNum:"003",doorState:"locked"}
+                    {hasFinished:true,image:"door_pink",doorNum:"001",doorState:kDoorStateOpen},
+                    {hasFinished:true,image:"door_pink",doorNum:"002",doorState:kDoorStateJumped},
+                    {hasFinished:true,image:"door_pink",doorNum:"003",doorState:kDoorStateLocked}
                 ]},
             {bg:"floor_gray",bottom:"floorBottom_gray",
                 floorNum:"2F",specText:"",offsetY:0,
                 doors:[
-                    {hasFinished:true,image:"door_pink",doorNum:"011",doorState:"locked"},
-                    {hasFinished:false,image:"doorSpecial_1",doorNum:"012",doorState:"locked"},
-                    {hasFinished:false,image:"doorSpecial_3",doorNum:"013",doorState:"locked"}
+                    {hasFinished:true,image:"door_pink",doorNum:"011",doorState:kDoorStateOpen},
+                    {hasFinished:false,image:"door_pink",doorNum:"012",doorState:kDoorStateLocked},
+                    {hasFinished:false,image:"door_pink",doorNum:"013",doorState:kDoorStateOpen}
                 ]},
             {bg:"floor_pink",bottom:"floorBottom_pink",
                 floorNum:"3F",specText:"SEX",offsetY:0,
                 doors:[
-                    {hasFinished:true,image:"doorSpecial_2",doorNum:"021",doorState:"locked"},
-                    {hasFinished:true,image:"doorSpecial_4",doorNum:"022",doorState:"locked"},
-                    {hasFinished:true,image:"doorSpecial_5",doorNum:"023",doorState:"locked"}
+                    {hasFinished:true,image:"door_pink",doorNum:"021",doorState:kDoorStateOpen},
+                    {hasFinished:true,image:"door_pink",doorNum:"022",doorState:kDoorStateJumped},
+                    {hasFinished:true,image:"door_pink",doorNum:"023",doorState:kDoorStateHide}
                 ]},
             {bg:"floor_yellow",bottom:"floorBottom_yellow",
                 floorNum:"4F",specText:"",offsetY:0,
                 doors:[
-                    {hasFinished:true,image:"doorSpecial_8",doorNum:"031",doorState:"locked"},
-                    {hasFinished:true,image:"doorSpecial_7",doorNum:"032",doorState:"locked"},
-                    {hasFinished:false,image:"doorSpecial_6",doorNum:"033",doorState:"locked"}
+                    {hasFinished:true,image:"door_pink",doorNum:"031",doorState:kDoorStateJumped},
+                    {hasFinished:true,image:"door_pink",doorNum:"032",doorState:kDoorStateLocked},
+                    {hasFinished:false,image:"door_pink",doorNum:"033",doorState:kDoorStateOpen}
                 ]}
         ];
 
@@ -147,9 +117,9 @@ function FloorsData_resetTestData_Device()
         var floorData = {bg:"floor_blue",bottom:"floorBottom_blue",
             floorNum:"1F",specText:"",offsetY:0,
             doors:[
-                {hasFinished:true,image:"door_black",doorNum:"001",doorState:"locked"},
-                {hasFinished:false,image:"door_pink",doorNum:"002",doorState:"locked"},
-                {hasFinished:true,image:"door_yellow",doorNum:"003",doorState:"locked"}
+                {hasFinished:true,image:"door_black",doorNum:"001",doorState:kDoorStateHide},
+                {hasFinished:false,image:"door_pink",doorNum:"002",doorState:kDoorStateHide},
+                {hasFinished:true,image:"door_yellow",doorNum:"003",doorState:kDoorStateHide}
             ]};
 
         var flr_idx = f%(flr_color_loop.length);
@@ -163,11 +133,11 @@ function FloorsData_resetTestData_Device()
         {
             var testNum = (f*3)+d;
             var doorNumStr = "";
-            if(testNum >= 100)
+            if(testNum > 98)
             {
                 doorNumStr = ""+(testNum+1);
             }
-            else if(testNum >= 10)
+            else if(testNum > 8)
             {
                 doorNumStr = "0"+(testNum+1);
             }
@@ -213,20 +183,24 @@ function FloorsData_resetTestData_Device()
                 if(Problem_isAnswerRight(testInfo.id))
                 {
                     floorData.doors[d].hasFinished = true;
+                    floorData.doors[d].doorState = kDoorStateOpen;
                 }
                 else if(Problem_isJump(testInfo.id))
                 {
                     floorData.doors[d].hasFinished = true;
+                    floorData.doors[d].doorState = kDoorStateJumped;
                 }
                 else
                 {
                     floorData.doors[d].hasFinished = false;
+                    floorData.doors[d].doorState = kDoorStateLocked;
                 }
             }
 
             if(testNum == lastAnsweredTest)
             {
                 floorData.doors[d].hasFinished = true;
+                floorData.doors[d].doorState = kDoorStateOpen;
             }
         }
 

@@ -160,9 +160,10 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
             floor.controller.doorNum1.setString(gTestFloor[floorNum].doors[0].doorNum);
             floor.controller.doorNum2.setString(gTestFloor[floorNum].doors[1].doorNum);
             floor.controller.doorNum3.setString(gTestFloor[floorNum].doors[2].doorNum);
-            floor.controller.doorCover1.setVisible(!gTestFloor[floorNum].doors[0].hasFinished);
-            floor.controller.doorCover2.setVisible(!gTestFloor[floorNum].doors[1].hasFinished);
-            floor.controller.doorCover3.setVisible(!gTestFloor[floorNum].doors[2].hasFinished);
+            setupDoorApperance(floor.controller.door1,floor.controller.doorCover1,gTestFloor[floorNum].doors[0].doorState);
+            setupDoorApperance(floor.controller.door2,floor.controller.doorCover2,gTestFloor[floorNum].doors[1].doorState);
+            setupDoorApperance(floor.controller.door3,floor.controller.doorCover3,gTestFloor[floorNum].doors[2].doorState);
+
             floorFront.controller.floorNum.setString(gTestFloor[floorNum].floorNum);
             floorFront.controller.floorSpecialText.setString(gTestFloor[floorNum].specText);
 
@@ -170,6 +171,40 @@ WholeFloors.prototype.UpdateWholeFloors = function (scrollView)
         }
     }
 };
+
+function setupDoorApperance(door,doorCover,doorState)
+{
+    var imageUrl = null;
+    if(doorState == kDoorStateHide)
+    {
+        door.setVisible(false);
+        doorCover.setVisible(false);
+    }
+    else if(doorState == kDoorStateLocked)
+    {
+        door.setVisible(true);
+        doorCover.setVisible(true);
+        imageUrl = "UI/floors_doors/doorCloseCover.png";
+        UtilsFunctions_setSpriteImageWithName(doorCover,imageUrl);
+    }
+    else if(doorState == kDoorStateJumped)
+    {
+        door.setVisible(true);
+        doorCover.setVisible(true);
+        imageUrl = "UI/floors_doors/doorJumpCover.png";
+        UtilsFunctions_setSpriteImageWithName(doorCover,imageUrl);
+    }
+    else if(doorState == kDoorStateOpen)
+    {
+        door.setVisible(true);
+        doorCover.setVisible(false);
+    }
+    else
+    {
+        door.setVisible(false);
+        doorCover.setVisible(false);
+    }
+}
 
 function GetColorByFloor (floor, num) {
 	var obj = new Object();
@@ -188,12 +223,16 @@ WholeFloors.prototype.onClickedDoor = function(floor, floorNum, doorNum)
     var offsetY = floor.rootNode.getPositionY();
     debugMsgOutput("Clicked Floor Y="+offsetY+" doorNum="+doorNum);
     var floorData = gTestFloor[floorNum];
-    if(!floorData.doors[doorNum - 1].hasFinished)
+    if(floorData.doors[doorNum - 1].doorState == kDoorStateLocked)
     {
         if(this.onFinishedClickedDoorAnimation != null && this.onFinishedClickedDoorAnimation != undefined)
         {
             this.onFinishedClickedDoorAnimation(false,floorNum, doorNum);
         }
+    }
+    else if(floorData.doors[doorNum - 1].doorState == kDoorStateHide)
+    {
+        //隐藏了，啥都不做
     }
     else
     {
