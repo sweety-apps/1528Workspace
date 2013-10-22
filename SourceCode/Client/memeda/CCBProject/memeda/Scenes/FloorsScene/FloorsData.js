@@ -128,6 +128,14 @@ function FloorsData_resetTestData_Device()
         floorData.bg = "floor_"+flr_color_loop[flr_idx];
         floorData.bottom = "floorBottom_"+flr_color_loop[flr_idx];
         floorData.floorNum = ""+(f+1)+"F";
+        if(flr_color_loop[flr_idx]=="pink")
+        {
+            floorData.specText = "PINK";
+        }
+        else
+        {
+            floorData.specText = "";
+        }
 
         for(var d = 0; d < floorData.doors.length; ++d)
         {
