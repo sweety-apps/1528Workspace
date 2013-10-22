@@ -82,7 +82,13 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     //UtilsFunctions_setScale9SpriteImageWithName(this.toolBarSprite,imageUrl);
 
     this.answeredPercentsLbl.setString("已完成 "+Problem_getRightAnswersPercents()+"% 的问题");
+
+    this.cloudCCB.animationManager.setCompletedAnimationCallback(this,this.onCloudsCCBFinishedAnimation);
 };
+
+ChooseTestsScene.prototype.onCloudsCCBFinishedAnimation = function() {
+    //this.cloudCCB.animationManager.runAnimationsForSequenceNamed("Animation Timeline");
+}
 
 ChooseTestsScene.prototype.scrollViewDidZoom = function (scrollView)
 {

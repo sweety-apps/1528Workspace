@@ -101,7 +101,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>-282.29998779296875</real>
 							<real>0.0</real>
 							<integer>1</integer>
 						</array>
@@ -232,7 +232,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-282.29998779296875</real>
+							<real>0.0</real>
 							<real>0.0</real>
 							<integer>1</integer>
 						</array>
@@ -289,12 +289,10 @@
 		<string></string>
 		<key>displayName</key>
 		<string>CCLayer</string>
-		<key>jsController</key>
-		<string>Clouds</string>
 		<key>memberVarAssignmentName</key>
-		<string>rootLayer</string>
+		<string></string>
 		<key>memberVarAssignmentType</key>
-		<integer>1</integer>
+		<integer>0</integer>
 		<key>properties</key>
 		<array>
 			<dict>
@@ -362,8 +360,6 @@
 				<true/>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -375,125 +371,13 @@
 			<key>ext</key>
 			<string>iphone</string>
 			<key>height</key>
-			<integer>480</integer>
+			<integer>320</integer>
 			<key>name</key>
-			<string>iPhone Portrait</string>
+			<string>iPhone Landscape</string>
 			<key>scale</key>
 			<real>1</real>
 			<key>width</key>
-			<integer>320</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>iphone</string>
-			<key>height</key>
-			<integer>568</integer>
-			<key>name</key>
-			<string>iPhone 5 Portrait</string>
-			<key>scale</key>
-			<real>1</real>
-			<key>width</key>
-			<integer>320</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>ipad iphonehd</string>
-			<key>height</key>
-			<integer>1024</integer>
-			<key>name</key>
-			<string>iPad Portrait</string>
-			<key>scale</key>
-			<real>2</real>
-			<key>width</key>
-			<integer>768</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>xsmall</string>
-			<key>height</key>
-			<integer>320</integer>
-			<key>name</key>
-			<string>Android X-Small Portrait</string>
-			<key>scale</key>
-			<real>0.5</real>
-			<key>width</key>
-			<integer>240</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>small</string>
-			<key>height</key>
 			<integer>480</integer>
-			<key>name</key>
-			<string>Android Small Portrait</string>
-			<key>scale</key>
-			<real>1</real>
-			<key>width</key>
-			<integer>340</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>medium</string>
-			<key>height</key>
-			<integer>800</integer>
-			<key>name</key>
-			<string>Android Medium Portrait</string>
-			<key>scale</key>
-			<real>1.5</real>
-			<key>width</key>
-			<integer>480</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>large</string>
-			<key>height</key>
-			<integer>1280</integer>
-			<key>name</key>
-			<string>Android Large Portrait</string>
-			<key>scale</key>
-			<real>2</real>
-			<key>width</key>
-			<integer>800</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>xlarge</string>
-			<key>height</key>
-			<integer>2048</integer>
-			<key>name</key>
-			<string>Android X-Large Portrait</string>
-			<key>scale</key>
-			<real>4</real>
-			<key>width</key>
-			<integer>1536</integer>
-		</dict>
-		<dict>
-			<key>centeredOrigin</key>
-			<false/>
-			<key>ext</key>
-			<string>html5</string>
-			<key>height</key>
-			<integer>1024</integer>
-			<key>name</key>
-			<string>HTML 5 Portrait</string>
-			<key>scale</key>
-			<real>2</real>
-			<key>width</key>
-			<integer>768</integer>
 		</dict>
 	</array>
 	<key>sequences</key>
@@ -513,11 +397,11 @@
 			<key>length</key>
 			<real>10</real>
 			<key>name</key>
-			<string>Animation Timeline</string>
+			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>10</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

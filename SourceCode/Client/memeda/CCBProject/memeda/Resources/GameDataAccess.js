@@ -586,7 +586,8 @@ Problem_getRightAnswersCount = function() {
 }
 
 Problem_getRightAnswersPercents = function() {
-    return (100 * Problem_getRightAnswersCount())/Problem_GetCount();
+    var num = (100 * Problem_getRightAnswersCount())/Problem_GetCount();
+    return Math.round(num*100)/100
 }
 
 Question_init = function () {
