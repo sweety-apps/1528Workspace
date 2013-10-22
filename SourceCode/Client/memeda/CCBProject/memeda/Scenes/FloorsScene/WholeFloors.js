@@ -421,11 +421,29 @@ WholeFloors.prototype.getShouldScrollToY = function(scrollViewHeight)
     return -scrollToY;
 };
 
+WholeFloors.prototype.onUFOLightAnimationCompletedCallbackTarget = null;
+WholeFloors.prototype.onUFOLightAnimationCompletedCallbackFunc = null;
+
 WholeFloors.prototype.onUFOLightAnimationCompleted = function()
 {
     if(this.UFOFloorFront.animationManager.getLastCompletedSequenceName().indexOf("UFO Light Timeline") >= 0)
     {
         this.catAndLift.setVisible(true);
+        if(this.onUFOLightAnimationCompletedCallbackFunc != null
+            && this.onUFOLightAnimationCompletedCallbackFunc != undefined)
+        {
+            if(this.onUFOLightAnimationCompletedCallbackTarget != null
+                && this.onUFOLightAnimationCompletedCallbackTarget != undefined)
+            {
+                this.onUFOLightAnimationCompletedCallbackTarget.onUFOLightAnimationCompletedCallbackFuncTmp = this.onUFOLightAnimationCompletedCallbackFunc;
+                this.onUFOLightAnimationCompletedCallbackTarget.onUFOLightAnimationCompletedCallbackFuncTmp();
+                this.onUFOLightAnimationCompletedCallbackTarget.onUFOLightAnimationCompletedCallbackFuncTmp = null;
+            }
+            else
+            {
+                this.onUFOLightAnimationCompletedCallbackFunc();
+            }
+        }
         this.catAndLift.animationManager.runAnimationsForSequenceNamed("Lift Down Timeline"+this.currentCatStayAtDoorNum);
     }
     if(this.UFOFloorFront.animationManager.getLastCompletedSequenceName().indexOf("UFO Light End Timeline") >= 0)
