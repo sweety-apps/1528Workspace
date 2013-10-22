@@ -350,7 +350,7 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     		gChooseTestsSceneThis.weChatAwardMsgLayout.addChild( gChooseTestsSceneThis.weChatAwardMsg );
     	}
     	debugMsgOutput("fsjflsdkjfklsdf");
-        gChooseTestsSceneThis.weChatAwardMsg.controller.ShowMsg("分享好友奖励", num * 5, function (coin) {
+        gChooseTestsSceneThis.weChatAwardMsg.controller.ShowMsg("wechattitle.png", num * 5, function (coin) {
                                                 CoinMgr_Change(coin);
                                            });
         return true;
@@ -386,7 +386,7 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
     			this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
     		}
     	
-        	this.weChatAwardMsg.controller.ShowMsg("安装应用奖励", canConsum, function (coin) {
+        	this.weChatAwardMsg.controller.ShowMsg("installapptitle.png", canConsum, function (coin) {
         		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
         		            					// 消费掉多余的金币
         		            					memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);

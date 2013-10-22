@@ -33,16 +33,26 @@ WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) {
 		this.num1.setVisible(true);
 		this.num2.setVisible(true);
 		this.num3.setVisible(true);
-		this.msgText.setString("首次分享奖励");
-		this.msgText2.setVisible(false);
+
+		this.title.setVisible(true);
+		
+		this.btn1.setPositionY(230);
+		this.btn2.setPositionY(170);	
+		
+		this.btnText1.setPositionY(232);
+		this.btnText2.setPositionY(172);	
 	} else {
 		this.coinImg.setVisible(false);
 		this.num1.setVisible(false);
 		this.num2.setVisible(false);
 		this.num3.setVisible(false);
-		this.msgText.setString("分享给好友");
-		this.msgText2.setVisible(true);
-		this.msgText2.setString("获取更多奖励");
+
+		this.title.setVisible(false);
+		this.btn1.setPositionY(297);
+		this.btn2.setPositionY(217);
+		
+		this.btnText1.setPositionY(298);
+		this.btnText2.setPositionY(219);
 	}
 	
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");

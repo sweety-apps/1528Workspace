@@ -22,12 +22,6 @@ WechatError.prototype.onDidLoadFromCCB = function () {
 WechatError.prototype.ShowMsg = function(msg, endFun) {
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
-
-	if ( msg.indexOf("安装") > 0 ) {
-    	this.msgText.setString(msg);
-	} else {
-    	this.msgText.setString("您可以重新试试");
-	}
 	
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };

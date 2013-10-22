@@ -82,8 +82,6 @@ BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
 		this.num3.setVisible(true);
 	}
     
-    this.msgText.setString(msg);
-    
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
 };
 

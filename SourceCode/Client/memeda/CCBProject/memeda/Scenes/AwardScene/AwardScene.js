@@ -119,9 +119,10 @@ AwardScene.prototype.onClickFirend = function (obj) {
                         param.addKeyAndValue("question", gProblemProject);
     					memeda.Stat.logEvent("wechatFail", param);
 					}
-					
-		    		pThisAwardScene.wechatError.controller.ShowMsg(errMsg, function () {
-	    		});
+					if ( errMsg.indexOf("安装") > 0 ) {
+		    			pThisAwardScene.wechatError.controller.ShowMsg(errMsg, function () {
+	    			});
+				}
 	    	}
 	    };
 	    

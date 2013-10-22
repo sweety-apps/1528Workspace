@@ -1907,7 +1907,7 @@
 														<string>Position</string>
 														<key>value</key>
 														<array>
-															<real>50</real>
+															<real>50.625</real>
 															<real>32.042255401611328</real>
 															<integer>4</integer>
 														</array>
@@ -2432,8 +2432,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -2506,8 +2504,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -2580,8 +2576,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -2654,8 +2648,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
@@ -2679,7 +2671,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>50.3125</real>
+													<real>50.9375</real>
 													<real>32.218311309814453</real>
 													<integer>4</integer>
 												</array>
@@ -2784,20 +2776,22 @@
 												<string>购买</string>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>
-										<string>CCLabelTTF</string>
+										<string>CCSprite</string>
 										<key>children</key>
 										<array/>
 										<key>customClass</key>
 										<string></string>
 										<key>displayName</key>
-										<string>CCLabelTTF</string>
+										<string>CCSprite</string>
 										<key>memberVarAssignmentName</key>
-										<string>msgText</string>
+										<string></string>
 										<key>memberVarAssignmentType</key>
-										<integer>1</integer>
+										<integer>0</integer>
 										<key>properties</key>
 										<array>
 											<dict>
@@ -2807,8 +2801,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>50.625</real>
-													<real>41.901409149169922</real>
+													<real>51.875</real>
+													<real>41.021125793457031</real>
 													<integer>4</integer>
 												</array>
 											</dict>
@@ -2846,70 +2840,14 @@
 											</dict>
 											<dict>
 												<key>name</key>
-												<string>fontName</string>
+												<string>displayFrame</string>
 												<key>type</key>
-												<string>FontTTF</string>
-												<key>value</key>
-												<string>Helvetica</string>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>fontSize</string>
-												<key>type</key>
-												<string>FloatScale</string>
+												<string>SpriteFrame</string>
 												<key>value</key>
 												<array>
-													<real>18</real>
-													<integer>0</integer>
+													<string></string>
+													<string>UI/common/buychar.png</string>
 												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>color</string>
-												<key>type</key>
-												<string>Color3</string>
-												<key>value</key>
-												<array>
-													<integer>44</integer>
-													<integer>44</integer>
-													<integer>44</integer>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>dimensions</string>
-												<key>type</key>
-												<string>Size</string>
-												<key>value</key>
-												<array>
-													<real>0.0</real>
-													<real>0.0</real>
-													<integer>0</integer>
-												</array>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>horizontalAlignment</string>
-												<key>type</key>
-												<string>IntegerLabeled</string>
-												<key>value</key>
-												<integer>1</integer>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>verticalAlignment</string>
-												<key>type</key>
-												<string>IntegerLabeled</string>
-												<key>value</key>
-												<integer>0</integer>
-											</dict>
-											<dict>
-												<key>name</key>
-												<string>string</string>
-												<key>type</key>
-												<string>Text</string>
-												<key>value</key>
-												<string>第10个字</string>
 											</dict>
 										</array>
 									</dict>
