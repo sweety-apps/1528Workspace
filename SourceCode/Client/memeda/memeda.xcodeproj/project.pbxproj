@@ -344,6 +344,7 @@
 		F316D2E817B2059B00821A66 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E717B2059B00821A66 /* hello.js */; };
 		F316D2EF17B20FA700821A66 /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F316D2EE17B20FA700821A66 /* TestCCB */; };
 		F3395C4317F92A6600EEF086 /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */; };
+		F36DB7AB1816F41900A582DB /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = F36DB7AA1816F41900A582DB /* Icon-114.png */; };
 		F396428317B740610022AA6B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428117B740610022AA6B /* Default-568h@2x.png */; };
 		F396428417B740610022AA6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428217B740610022AA6B /* Default@2x.png */; };
 		F3D0898417EEC5960093A0B5 /* uncompressZipFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D0895217EEC5950093A0B5 /* uncompressZipFile.cpp */; };
@@ -1161,6 +1162,7 @@
 		F316D2E717B2059B00821A66 /* hello.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = hello.js; path = Resources/hello.js; sourceTree = "<group>"; };
 		F316D2EE17B20FA700821A66 /* TestCCB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestCCB; path = Resources/TestCCB; sourceTree = "<group>"; };
 		F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
+		F36DB7AA1816F41900A582DB /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "Resources/Icon-114.png"; sourceTree = "<group>"; };
 		F396428117B740610022AA6B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F396428217B740610022AA6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		F398BBB417FD978E0029C563 /* PluginUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginUtilsIOS.h; sourceTree = "<group>"; };
@@ -1455,6 +1457,7 @@
 			isa = PBXGroup;
 			children = (
 				F316D2EE17B20FA700821A66 /* TestCCB */,
+				F36DB7AA1816F41900A582DB /* Icon-114.png */,
 				F396428117B740610022AA6B /* Default-568h@2x.png */,
 				F396428217B740610022AA6B /* Default@2x.png */,
 				F316CE5817B2059300821A66 /* Default.png */,
@@ -3136,6 +3139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F316CE5917B2059300821A66 /* Default.png in Resources */,
+				F36DB7AB1816F41900A582DB /* Icon-114.png in Resources */,
 				F3D102B718103B15002A3A9B /* Images.xcassets in Resources */,
 				F316CE6917B2059300821A66 /* iTunesArtwork in Resources */,
 				F316CF0817B2059400821A66 /* ChangeLog in Resources */,

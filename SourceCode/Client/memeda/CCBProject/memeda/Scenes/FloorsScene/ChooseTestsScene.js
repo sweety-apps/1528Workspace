@@ -81,7 +81,7 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     //this.toolBarSprite.setSpriteFrame(spriteFrame);
     //UtilsFunctions_setScale9SpriteImageWithName(this.toolBarSprite,imageUrl);
 
-    this.answeredPercentsLbl.setString("已完成 "+Problem_getRightAnswersPercents()+"% 的问题");
+    this.answeredPercentsLbl.setString(""+Problem_getRightAnswersPercents()+"%");
 
     this.cloudCCB.animationManager.runAnimationsForSequenceNamed("Default Timeline");
     //this.cloudCCB.animationManager.setCompletedAnimationCallback(this,this.onCloudsCCBFinishedAnimation);
@@ -292,7 +292,7 @@ ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
 
 ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
-    cc.AudioEngine.getInstance().playEffect("sounds/Click_Button.mp3");
+    cc.AudioEngine.getInstance().playEffect("sounds/Click_Coins.mp3");
     if ( this.awardScene == null ) {
         this.awardScene = cc.BuilderReader.load("AwardScene");
         this.ccbLayout2.addChild(this.awardScene);
