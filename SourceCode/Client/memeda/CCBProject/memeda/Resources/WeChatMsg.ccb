@@ -3652,7 +3652,7 @@
 						<integer>9</integer>
 						<key>value</key>
 						<array>
-							<string>sounds/Click_Wood_Cancel.wav</string>
+							<string>sounds/Click_Wood_Cancel.mp3</string>
 							<real>1</real>
 							<real>0.0</real>
 							<real>1</real>

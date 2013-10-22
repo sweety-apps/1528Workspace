@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>1</integer>
+	<integer>3</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -26,6 +26,8 @@
 				<key>animatedProperties</key>
 				<dict>
 					<key>2</key>
+					<dict/>
+					<key>3</key>
 					<dict/>
 				</dict>
 				<key>baseClass</key>
@@ -259,6 +261,130 @@
 						</array>
 					</dict>
 					<dict>
+						<key>animatedProperties</key>
+						<dict>
+							<key>3</key>
+							<dict>
+								<key>position</key>
+								<dict>
+									<key>keyframes</key>
+									<array>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>position</string>
+											<key>time</key>
+											<real>0.0</real>
+											<key>type</key>
+											<integer>3</integer>
+											<key>value</key>
+											<array>
+												<real>0.0</real>
+												<real>0.0</real>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>position</string>
+											<key>time</key>
+											<real>0.066666670143604279</real>
+											<key>type</key>
+											<integer>3</integer>
+											<key>value</key>
+											<array>
+												<real>0.0</real>
+												<real>1</real>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>position</string>
+											<key>time</key>
+											<real>0.13333334028720856</real>
+											<key>type</key>
+											<integer>3</integer>
+											<key>value</key>
+											<array>
+												<real>-0.20000000298023224</real>
+												<real>-1</real>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>position</string>
+											<key>time</key>
+											<real>0.20000000298023224</real>
+											<key>type</key>
+											<integer>3</integer>
+											<key>value</key>
+											<array>
+												<real>0.20000000298023224</real>
+												<real>0.5</real>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>position</string>
+											<key>time</key>
+											<real>0.26666668057441711</real>
+											<key>type</key>
+											<integer>3</integer>
+											<key>value</key>
+											<array>
+												<real>-0.10000000149011612</real>
+												<real>-0.5</real>
+											</array>
+										</dict>
+										<dict>
+											<key>easing</key>
+											<dict>
+												<key>type</key>
+												<integer>1</integer>
+											</dict>
+											<key>name</key>
+											<string>position</string>
+											<key>time</key>
+											<real>0.3333333432674408</real>
+											<key>type</key>
+											<integer>3</integer>
+											<key>value</key>
+											<array>
+												<real>0.0</real>
+												<real>0.0</real>
+											</array>
+										</dict>
+									</array>
+									<key>name</key>
+									<string>position</string>
+									<key>type</key>
+									<integer>3</integer>
+								</dict>
+							</dict>
+						</dict>
 						<key>baseClass</key>
 						<string>CCScrollView</string>
 						<key>children</key>
@@ -274,6 +400,11 @@
 						<key>properties</key>
 						<array>
 							<dict>
+								<key>baseValue</key>
+								<array>
+									<real>0.0</real>
+									<real>0.0</real>
+								</array>
 								<key>name</key>
 								<string>position</string>
 								<key>type</key>
@@ -357,6 +488,8 @@
 								<true/>
 							</dict>
 						</array>
+						<key>seqExpanded</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -446,6 +579,8 @@
 						<true/>
 					</dict>
 				</array>
+				<key>seqExpanded</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -2123,7 +2258,7 @@
 				<integer>10</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>1</integer>
+			<integer>-1</integer>
 			<key>length</key>
 			<real>10</real>
 			<key>name</key>
@@ -2131,7 +2266,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>6.0666666030883789</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -2176,6 +2311,59 @@
 			<dict>
 				<key>keyframes</key>
 				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>autoPlay</key>
+			<false/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>1</integer>
+			<key>length</key>
+			<real>0.3333333432674408</real>
+			<key>name</key>
+			<string>Shake Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>3</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array>
+					<dict>
+						<key>easing</key>
+						<dict>
+							<key>type</key>
+							<integer>0</integer>
+						</dict>
+						<key>time</key>
+						<real>0.0</real>
+						<key>type</key>
+						<integer>9</integer>
+						<key>value</key>
+						<array>
+							<string>sounds/Cat_Fall.mp3</string>
+							<real>1</real>
+							<real>0.0</real>
+							<real>1</real>
+						</array>
+					</dict>
+				</array>
 				<key>type</key>
 				<integer>9</integer>
 			</dict>
