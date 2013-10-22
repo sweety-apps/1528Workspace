@@ -329,7 +329,7 @@ MakeQuestion = function (id, inputPath, outputPath, node) {
 		obj.inputkey = node.g.text();
 	}
 	
-	if ( node.j == null ) { 
+	if ( node.i == null ) { 
 		obj.feel = "";
 	} else {
 		obj.feel = node.i.text();

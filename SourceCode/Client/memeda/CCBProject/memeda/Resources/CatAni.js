@@ -53,6 +53,16 @@ CatAni.prototype.onAnimationComplete = function() {
 	}
 };
 
+
+CatAni.prototype.onClickCat = function () {
+    debugMsgOutput("CatAni.prototype.onClickCat");
+	if ( this.isEnter && !this.replay.isVisible() ) {
+		(this.clickCat)(this.context);	
+	} else {
+        this.clickFun (this.context);
+    }
+};
+
 CatAni.prototype.Listen = function (listen) {
 	// 
 	if ( this.isEnter ) {
@@ -73,9 +83,10 @@ CatAni.prototype.onClickReplay = function () {
 	this.clickFun (this.context);
 };
 
-CatAni.prototype.attachEvent = function ( obj , fun) {
+CatAni.prototype.attachEvent = function ( obj , fun, clickCat) {
 	this.context = obj;
 	this.clickFun = fun;
+	this.clickCat = clickCat;
 };
 
 CatAni.prototype.setStatus = function ( status ) {
