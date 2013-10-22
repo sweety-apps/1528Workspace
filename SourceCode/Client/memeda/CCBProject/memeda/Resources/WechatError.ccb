@@ -1215,8 +1215,8 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>50</real>
-													<real>50</real>
+													<real>51.5625</real>
+													<real>50.528167724609375</real>
 													<integer>4</integer>
 												</array>
 											</dict>
@@ -1264,8 +1264,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>animatedProperties</key>

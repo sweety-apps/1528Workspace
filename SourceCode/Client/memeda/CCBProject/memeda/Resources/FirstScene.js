@@ -23,7 +23,26 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
     
     cc.AudioEngine.getInstance().playMusic("sounds/Floor_BG.mp3",true);
     cc.AudioEngine.getInstance().setMusicVolume(0.5);
+    
+    var screenSize = cc.Director.getInstance().getWinSizeInPixels();
+    var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
+    var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
+    if(screenHeight / screenWidth < 1136/640)
+    {   
+    	this.subLayout.setScaleX(0.88);
+    	this.subLayout.setScaleY(0.88);
+    	
+    	this.subLayout.setPositionY(-60);
+    	
+    	this.cat2Layout.setPositionX(10);
+    	this.cat2Layout.setPositionY(-30);
 
+    	this.cat1Layout.setPositionX(-20);
+    	this.cat1Layout.setPositionY(20);
+    	
+    	this.cat2.setScaleX(0.9);
+    	this.cat2.setScaleY(0.9);
+    }
 };
 
 FirstScene.prototype.onClickStart = function () {
