@@ -1221,7 +1221,7 @@ GuessScene.prototype.onClickedWeChatShare = function () {
 		gCurrentCCBView.EnableAllBtn(true);
 		debugMsgOutput("showmsg " + err);
 		if ( err != null ) {
-			if ( msg.indexOf("安装") > 0 ) {
+			if ( err.indexOf("安装") > 0 ) {
 				gCurrentCCBView.wechatError.controller.ShowMsg(err, function () {
 				});
 			}
