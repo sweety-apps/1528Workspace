@@ -3431,29 +3431,40 @@
 			</dict>
 			<dict>
 				<key>baseClass</key>
-				<string>CCBFile</string>
+				<string>CCLayer</string>
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCBFile</string>
+				<string>CCLayer</string>
 				<key>memberVarAssignmentName</key>
-				<string>catAni</string>
+				<string>catLayout</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
 						<key>name</key>
-						<string>position</string>
+						<string>contentSize</string>
 						<key>type</key>
-						<string>Position</string>
+						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
-							<integer>4</integer>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
 						</array>
 					</dict>
 					<dict>
@@ -3471,13 +3482,35 @@
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>ccbFile</string>
+						<string>ignoreAnchorPointForPosition</string>
 						<key>type</key>
-						<string>CCBFile</string>
+						<string>Check</string>
 						<key>value</key>
-						<string>CatAni.ccb</string>
+						<true/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>touchEnabled</string>
+						<key>platform</key>
+						<string>iOS</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>mouseEnabled</string>
+						<key>platform</key>
+						<string>Mac</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<true/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>

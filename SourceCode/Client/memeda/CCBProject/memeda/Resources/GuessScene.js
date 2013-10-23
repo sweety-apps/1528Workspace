@@ -179,8 +179,6 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 设置各种按钮的回调
     gCurrentCCBView = this;
     
-    this.catAni.controller.attachEvent(this, this.onClickReplay, this.onClickCat);
-    
     // 初始化输入等UI
     this.setupInputCharsAndResultChars(gProblem);
 
@@ -965,6 +963,14 @@ GuessScene.prototype.CatEnter = function () {
     this.Entered = false;
     
     this.bgLayer.controller.setPlay(true);
+    
+    if ( this.catAni == null ) {
+    	this.catAni = cc.BuilderReader.load("CatAni");
+    	this.catLayout.addChild( this.catAni );
+    	
+    	this.catAni.controller.attachEvent(this, this.onClickReplay, this.onClickCat);	
+    }
+    
 	this.catAni.controller.Enter(this.onEnterCompleted, this);
 }
 
