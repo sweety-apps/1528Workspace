@@ -824,6 +824,12 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             this.EnableAllBtn(false);
             debugMsgOutput("aaa " + gCurrentTestObj.label);
             debugMsgOutput("bbb " + gCurrentTestObj.rightanswer);
+            
+            if ( this.answerRight == null ) {
+            	this.answerRight = cc.BuilderReader.load("RightMsgBox");
+    			this.answerRightLayout.addChild(this.answerRight);	
+            }
+            
             this.answerRight.controller.ShowMsg(gCurrentTestObj.id, gCurrentTestObj.label, gCurrentTestObj.rightanswer, url, isFirst, this.onClickNext);
             
             if ( gProblem + 1 == Problem_GetCount() ) {
