@@ -23,9 +23,14 @@ WechatAwardMsg.prototype.ShowMsg = function(msg, price, endFun, index) {
     this.index = index;
 	this.bkgBtn.setVisible(true);
 	
-	var image = "UI/common/" + msg;
-    UtilsFunctions_setSpriteImageWithName(this.title,image);
-    
+	if ( msg == 1 ) {
+		this.title1.setVisible(true);
+		this.title2.setVisible(false);
+	} else {
+		this.title1.setVisible(false);
+		this.title2.setVisible(true);	
+	}
+	
 	var num0 = Math.floor(price / 100);
 	var num1 = Math.floor((price % 100) / 10);
 	var num2 = price % 10;

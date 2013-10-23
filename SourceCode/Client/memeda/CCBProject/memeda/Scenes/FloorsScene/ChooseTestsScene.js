@@ -343,7 +343,7 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     var obj = JSON.parse(text);
     debugMsgOutput("count : " + obj.list.length);
     if ( obj == null || obj.list == null || obj.list.length == 0 ) {
-        //return false;
+        return false;
     }
 
     var num = 0;
@@ -361,7 +361,7 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     		gChooseTestsSceneThis.weChatAwardMsgLayout.addChild( gChooseTestsSceneThis.weChatAwardMsg );
     	}
     	debugMsgOutput("fsjflsdkjfklsdf");
-        gChooseTestsSceneThis.weChatAwardMsg.controller.ShowMsg("wechattitle.png", num * 5, function (coin) {
+        gChooseTestsSceneThis.weChatAwardMsg.controller.ShowMsg(1, num * 5, function (coin) {
                                                 CoinMgr_Change(coin);
                                            });
 
@@ -383,7 +383,8 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         if ( consumed < obj.consumed ) {
             consumed = obj.consumed;
         }
-        
+    }
+    
         var canConsum = obj.totalPoint - consumed;   
         if ( canConsum > 990 ) {
         	canConsum = 990;	
@@ -395,7 +396,7 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
     			this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
     		}
     	
-        	this.weChatAwardMsg.controller.ShowMsg("installapptitle.png", canConsum, function (coin) {
+        	this.weChatAwardMsg.controller.ShowMsg(2, canConsum, function (coin) {
         		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
         		            					// 消费掉多余的金币
         		            					memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
@@ -409,7 +410,6 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
             memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
             CoinMgr_Change(coin);
         });
-    }
 };
 
 ChooseTestsScene.prototype.scrollFloorsToCatPosition = function ()
