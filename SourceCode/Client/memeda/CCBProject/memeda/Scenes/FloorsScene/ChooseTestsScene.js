@@ -403,13 +403,6 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         		            					CoinMgr_Change(coin);
                                            });                  
         }
-
-        this.weChatAwardMsg.controller.ShowMsg("安装应用奖励", canConsum, function (coin) {
-            sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
-            // 消费掉多余的金币
-            memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
-            CoinMgr_Change(coin);
-        });
 };
 
 ChooseTestsScene.prototype.scrollFloorsToCatPosition = function ()
