@@ -85,7 +85,7 @@ RightMsgBox.prototype.onAnimationComplete = function() {
 			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
             debugMsgOutput("this.rootNode.animationManager.runAnimationsForSequenceNamed('CoinShow Timeline')");
 			//this.rootNode.animationManager.runAnimationsForSequenceNamed("CoinShow Timeline");		
-			CoinMgr_Change(5);
+			CoinMgr_Change(3);
 		}	
 	}
 }
