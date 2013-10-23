@@ -2,6 +2,10 @@
 // BuyCoinMessageBox class
 //
 
+//状态
+var kBuyCoinMBStateNormal = 0;
+var kBuyCoinMBStateFailed = 1;
+
 //商品命名
 var kBuyCoinNameBuy300 = "300金币";
 var kBuyCoinNameBuy600 = "600金币";
@@ -11,7 +15,7 @@ var kBuyCoinNameBuy3000 = "3000金币";
 var BuyCoinMessageBox = function() {
 };
 
-BuyCoinMessageBox.prototype.sceneState = kFloorsSceneStateNormal;
+BuyCoinMessageBox.prototype.sceneState = kBuyCoinMBStateNormal;
 
 BuyCoinMessageBox.prototype.productID = "";
 BuyCoinMessageBox.prototype.purchaseName = "";
@@ -25,6 +29,8 @@ BuyCoinMessageBox.prototype.onDidLoadFromCCB = function () {
 	// 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
+
+    this.sceneState = kBuyCoinMBStateNormal;
 
     // Start playing looped background music
     if ( !Global_isWeb() ) {
@@ -131,12 +137,20 @@ BuyCoinMessageBox.prototype.onClickedClose = function ()
 BuyCoinMessageBox.prototype.onClickedGetCoin = function ()
 {
     debugMsgOutput("[UI Event]Clicked BuyCoinBox Close!");
-    if(this.coninAddNum != 0)
+    if(this.sceneState == kBuyCoinMBStateFailed)
     {
-        CoinMgr_Change(this.coninAddNum);
+        this.rootNode.animationManager.runAnimationsForSequenceNamed("Reset Timeline");
+        this.sceneState = kBuyCoinMBStateNormal;
     }
-    this.doCallbackFunctions();
-    this.rootNode.animationManager.runAnimationsForSequenceNamed("Succeed Pay Dismiss Timeline");
+    else
+    {
+        if(this.coninAddNum != 0)
+        {
+            CoinMgr_Change(this.coninAddNum);
+        }
+        this.doCallbackFunctions();
+        this.rootNode.animationManager.runAnimationsForSequenceNamed("Succeed Pay Dismiss Timeline");
+    }
 };
 
 BuyCoinMessageBox.prototype.onClickedBuy6 = function ()
@@ -228,7 +242,9 @@ BuyCoinMessageBox.prototype.onBuyItemFailedOrCancelled = function (itemName,stat
     this.purchaseHasSucceed = false;
     if(this.isPurchaseCoinsHere)
     {
-        this.rootNode.animationManager.runAnimationsForSequenceNamed("Reset Timeline");
+        this.rootNode.animationManager.runAnimationsForSequenceNamed("Enter Failed Pay Timeline");
+        this.failedMsgLbl.setString(msg);
+        this.sceneState = kBuyCoinMBStateFailed;
     }
     else
     {
@@ -246,17 +262,17 @@ BuyCoinMessageBox.prototype.calculateCoinAddNum = function ()
     else if(this.purchaseName == kBuyCoinNameBuy600)
     {
         this.purchaseHasSucceed = true;
-        this.coninAddNum = 600;
+        this.coninAddNum = 600 + 50;
     }
     else if(this.purchaseName == kBuyCoinNameBuy1500)
     {
         this.purchaseHasSucceed = true;
-        this.coninAddNum = 1500;
+        this.coninAddNum = 1500 + 200;
     }
     else if(this.purchaseName == kBuyCoinNameBuy3000)
     {
         this.purchaseHasSucceed = true;
-        this.coninAddNum = 3666;
+        this.coninAddNum = 3000 + 999;
     }
     else if(this.productID != null && this.productID.length > 0)
     {

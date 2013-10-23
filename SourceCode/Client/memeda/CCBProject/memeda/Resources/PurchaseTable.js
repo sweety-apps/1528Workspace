@@ -76,5 +76,5 @@ function Purchase_payForCoinWith30RMB(callbackTarget,callbackMethod)
 
 function Purchase_payForCoinWith60RMB(callbackTarget,callbackMethod)
 {
-    Purchase_payForItem("com.1528studio.qietingfengyun.buy6000coin",callbackTarget,callbackMethod);
+    Purchase_payForItem("com.1528studio.qietingfengyun.buy3000coin",callbackTarget,callbackMethod);
 }
