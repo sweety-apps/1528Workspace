@@ -16,8 +16,8 @@
 #define kShareSDKAppId @"982e185ccb2"
 #define kWeixinAppId @"wxdea41cab84b6c578"
 #define kUmengAppId "523e8a0856240bb65f01a5c7"
-//#define kOfferWallPubID "96ZJ2rNgzeykPwTA/a"    // 发布用
-#define kOfferWallPubID "96ZJ06UgzeimTwTAs3"    // 测试用
+#define kOfferWallPubID "96ZJ2rNgzeykPwTA/a"    // 发布用
+//#define kOfferWallPubID "96ZJ06UgzeimTwTAs3"    // 测试用
 
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 
