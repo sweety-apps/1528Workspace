@@ -60,7 +60,7 @@ RightMsgBox.prototype.Hide = function () {
 	if ( this.show ) {
         if ( this.isFirst && !this.isAddCoin ) {
 			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
-			CoinMgr_Change(5);
+			CoinMgr_Change(3);
         }
        
 		this.show = false;
