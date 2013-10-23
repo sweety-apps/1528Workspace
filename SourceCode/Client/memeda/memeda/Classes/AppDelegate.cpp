@@ -185,6 +185,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     //UInt32 route = kAudioSessionOverrideAudioRoute_None;
     //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(route), &route);
+    SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.8);
     
     return true;
 }
@@ -230,6 +231,8 @@ void AppDelegate::applicationWillEnterForeground()
     CCDirector::sharedDirector()->startAnimation();
     SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
     SimpleAudioEngine::sharedEngine()->resumeAllEffects();
+    
+    SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.8);
 }
 
 
