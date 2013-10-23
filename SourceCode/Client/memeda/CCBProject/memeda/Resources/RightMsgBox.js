@@ -14,7 +14,7 @@ RightMsgBox.prototype.ShowMsg = function(id, lab, answerRight, url, isFirst, onC
 	this.msgLayout.setVisible(true);
 	this.Url = url;
 	this.isAddCoin = false;
-    this.searchkey = lab + "+" + answerRight;
+    this.searchkey = lab + " " + answerRight;
 	this.coinAward.setVisible(isFirst);
 	
 		// 显示的链接长度不超过40个字符
@@ -50,7 +50,7 @@ RightMsgBox.prototype.onClickURL = function() {
 		memeda.common.openURL(this.Url);
 	} else {
 		var url = "http://m.baidu.com/ssid=0/from=0/bd_page_type=1/uid=0/baiduid=7C67E7660105AE7338E870BD5DE722AF/s?word=";
-		url = url + this.searchkey;
+		url = url + encodeURI(this.searchkey);
 		memeda.common.openURL(url);
 		debugMsgOutput("... " + url);
 	}
