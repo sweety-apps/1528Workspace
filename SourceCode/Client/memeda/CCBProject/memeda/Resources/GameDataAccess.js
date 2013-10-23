@@ -366,7 +366,7 @@ function Problem_Initialize() {
     gProblemProject = "A";
     if ( rand < 0.3 ) {
         gProblemProject = "B";
-    } else if ( rand < 0.6 ) {
+    } else if ( rand < 0.4 ) {
         gProblemProject = "C";
     }
         
@@ -386,7 +386,7 @@ function Problem_Initialize() {
         var pos = obj.pos1;
         if ( rand < 0.3 ) {
         	pos = obj.pos2;
-        } else if ( rand < 0.6 ) {
+        } else if ( rand < 0.4 ) {
         	pos = obj.pos3;
         }
         
