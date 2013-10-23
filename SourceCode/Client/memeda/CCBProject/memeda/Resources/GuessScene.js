@@ -190,9 +190,6 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 购买按钮
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
-    this.jumpMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;
-    this.buyMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;
-    
     this.checkExtraCoin();
     debugMsgOutput("GuessScene.prototype.onDidLoadFromCCB");
 };
@@ -1026,6 +1023,13 @@ GuessScene.prototype.ClickBuy = function () {
 	this.EnableAllBtn(false);
 	debugMsgOutput("gBuyList.length " + this.getBuyCount());
 	var count = this.getBuyCount();
+	
+	if ( this.buyMsg == null ) {
+		this.buyMsg = cc.BuilderReader.load("BuyMsg");
+	    this.buyMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;	
+    	this.ccbLayout.addChild(	this.buyMsg );
+	}
+	
 	this.buyMsg.controller.ShowMsg(price[count], "第" + (count + 1) + "个字", this.onBuyMsgEnd, count + 1);
 }
 
@@ -1202,6 +1206,11 @@ GuessScene.prototype.onClickedWeChatShare = function () {
 	}
 	
 	this.EnableAllBtn(false);
+	if ( this.weChatMsg == null ) {
+		this.weChatMsg = cc.BuilderReader.load("WeChatMsg");
+    	this.ccbLayout.addChild(this.weChatMsg);	
+	}
+	
     this.weChatMsg.controller.ShowMsg(gCurrentTestObj.id, function (err) {
 		gCurrentCCBView.EnableAllBtn(true);
 		debugMsgOutput("showmsg " + err);
@@ -1223,6 +1232,14 @@ GuessScene.prototype.onClickJump = function () {
 	}
 	
 	this.EnableAllBtn(false);
+	
+	if ( this.jumpMsg == null ) {
+		this.jumpMsg = cc.BuilderReader.load("JumpMsgBox");
+    	this.ccbLayout.addChild(this.jumpMsg);
+    	
+	    this.jumpMsg.controller.noEnoughEvent = this.showNoCoinMsgBox;	
+	}
+	
 	this.jumpMsg.controller.ShowMsg(200, gCurrentTestObj.id, function (res) {
 		if ( res == 1 ) {
 			// 跳过该题，进入下一题
@@ -1252,6 +1269,12 @@ GuessScene.prototype.checkExtraCoin = function () {
 	if ( showsharecoin == "1" ) {
 		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
 		gCurrentCCBView.EnableAllBtn(false);
+		
+		if ( this.weChatCoinMsgBox == null ) {
+			this.weChatCoinMsgBox = cc.BuilderReader.load("WeChatCoinMessageBox");
+    		this.ccbLayout.addChild(	this.weChatCoinMsgBox );
+		}
+		
 		this.weChatCoinMsgBox.controller.show(function () {
 			gCurrentCCBView.EnableAllBtn(true);
 			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
@@ -1277,6 +1300,12 @@ GuessScene.prototype.onClickedCoinButton = function (obj ) {
 
 GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
 	gCurrentCCBView.EnableAllBtn(false);
+	
+	if ( gCurrentCCBView.noCoinMsgBox == null ) {
+    	gCurrentCCBView.noCoinMsgBox = cc.BuilderReader.load("NoEnoughMessageBox");
+    	gCurrentCCBView.ccbLayout.addChild(	gCurrentCCBView.noCoinMsgBox );
+	}
+	
 	gCurrentCCBView.noCoinMsgBox.controller.show(src, function (res) { 
 		gCurrentCCBView.EnableAllBtn(true);
 		if ( res == 1 ) {
