@@ -71,3 +71,8 @@ void iOSiapWrapper::payForProduct(std::string productID)
 {
     iOSiap_payforPuduct(handle, productID, iOS_Purchase_Callback, this);
 }
+
+void iOSiapWrapper::initAll()
+{
+    iOSiap_init();
+}

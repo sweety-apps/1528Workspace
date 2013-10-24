@@ -41,6 +41,8 @@ public:
     };
     
     void payForProduct(std::string productID);
+    
+    static void initAll();
 };
 
 #endif /* defined(__memeda__iOSiapWrapper__) */

@@ -23,7 +23,6 @@
 		A69BC50717F955DD00F392F1 /* iOSiapImp.mm in Sources */ = {isa = PBXBuildFile; fileRef = A69BC50117F955DD00F392F1 /* iOSiapImp.mm */; };
 		A69BC50817F955DD00F392F1 /* iOSiapWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A69BC50217F955DD00F392F1 /* iOSiapWrapper.cpp */; };
 		A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054417F7F05300B6B90A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054617F7F05A00B6B90A /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69F054817F7F07200B6B90A /* CoreLocation.framework */; };
 		A69F060217F807D900B6B90A /* DomobOfferWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A69F05FC17F807D900B6B90A /* DomobOfferWallBundle.bundle */; };
 		A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = A6A701BD17F01AEA005FBA13 /* PluginFactory.mm */; };
@@ -344,6 +343,7 @@
 		F316D2E817B2059B00821A66 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E717B2059B00821A66 /* hello.js */; };
 		F316D2EF17B20FA700821A66 /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F316D2EE17B20FA700821A66 /* TestCCB */; };
 		F3395C4317F92A6600EEF086 /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */; };
+		F34AE84C1818ED9500A52976 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34AE84B1818ED9500A52976 /* StoreKit.framework */; };
 		F36DB7AB1816F41900A582DB /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = F36DB7AA1816F41900A582DB /* Icon-114.png */; };
 		F396428317B740610022AA6B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428117B740610022AA6B /* Default-568h@2x.png */; };
 		F396428417B740610022AA6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428217B740610022AA6B /* Default@2x.png */; };
@@ -352,6 +352,7 @@
 		F3D08ADC17EFD3F50093A0B5 /* SocialShareAPI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D08ADA17EFD3F50093A0B5 /* SocialShareAPI.cpp */; };
 		F3D08ADF17EFD4230093A0B5 /* SocialShareAPIForiOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F3D08ADE17EFD4230093A0B5 /* SocialShareAPIForiOS.mm */; };
 		F3D102B718103B15002A3A9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D102B618103B15002A3A9B /* Images.xcassets */; };
+		F3DC5790181835010088B4B4 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3DC578F181835010088B4B4 /* MKStoreKitConfigs.plist */; };
 		F3ECD8C917F8081500A0CA29 /* WeChatConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD88217F8081500A0CA29 /* WeChatConnection.framework */; };
 		F3ECD8CB17F8081500A0CA29 /* AGCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD88517F8081500A0CA29 /* AGCommon.framework */; };
 		F3ECD8CC17F8081500A0CA29 /* ShareSDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3ECD88617F8081500A0CA29 /* ShareSDKLocalizable.strings */; };
@@ -408,7 +409,6 @@
 		A69BC50217F955DD00F392F1 /* iOSiapWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iOSiapWrapper.cpp; sourceTree = "<group>"; };
 		A69BC50317F955DD00F392F1 /* iOSiapWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSiapWrapper.h; sourceTree = "<group>"; };
 		A69F054417F7F05300B6B90A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		A69F054617F7F05A00B6B90A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A69F054817F7F07200B6B90A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A69F05F817F807D900B6B90A /* AnalyticsOfferWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsOfferWall.h; sourceTree = "<group>"; };
 		A69F05FA17F807D900B6B90A /* DMOfferWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfferWallViewController.h; sourceTree = "<group>"; };
@@ -1162,6 +1162,8 @@
 		F316D2E717B2059B00821A66 /* hello.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = hello.js; path = Resources/hello.js; sourceTree = "<group>"; };
 		F316D2EE17B20FA700821A66 /* TestCCB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestCCB; path = Resources/TestCCB; sourceTree = "<group>"; };
 		F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
+		F34AE84A1818E2B700A52976 /* memeda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = memeda.entitlements; sourceTree = "<group>"; };
+		F34AE84B1818ED9500A52976 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F36DB7AA1816F41900A582DB /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "Resources/Icon-114.png"; sourceTree = "<group>"; };
 		F396428117B740610022AA6B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F396428217B740610022AA6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
@@ -1175,6 +1177,8 @@
 		F3D08ADD17EFD4230093A0B5 /* SocialShareAPIForiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialShareAPIForiOS.h; sourceTree = "<group>"; };
 		F3D08ADE17EFD4230093A0B5 /* SocialShareAPIForiOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SocialShareAPIForiOS.mm; sourceTree = "<group>"; };
 		F3D102B618103B15002A3A9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F3DC578A18182CF50088B4B4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F3DC578F181835010088B4B4 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MKStoreKitConfigs.plist; path = Classes/Modules/Payment/iOSIAP/MKStoreLib/MKStoreLib/MKStoreKit/MKStoreKitConfigs.plist; sourceTree = "<group>"; };
 		F3ECD86917F8081500A0CA29 /* DouBanConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DouBanConnection.framework; sourceTree = "<group>"; };
 		F3ECD86A17F8081500A0CA29 /* DropboxConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxConnection.framework; sourceTree = "<group>"; };
 		F3ECD86B17F8081500A0CA29 /* EverNoteConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverNoteConnection.framework; sourceTree = "<group>"; };
@@ -1236,12 +1240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F316CE4D17B2059300821A66 /* UIKit.framework in Frameworks */,
+				F34AE84C1818ED9500A52976 /* StoreKit.framework in Frameworks */,
 				F316CE5117B2059300821A66 /* CoreGraphics.framework in Frameworks */,
 				F316CE4F17B2059300821A66 /* Foundation.framework in Frameworks */,
 				A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */,
 				A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */,
 				F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */,
-				A69F054717F7F05A00B6B90A /* StoreKit.framework in Frameworks */,
 				A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */,
 				F3ECD8E917F80A0D00A0CA29 /* libMobClickLibrary.a in Frameworks */,
 				F3ECD8E817F809B400A0CA29 /* libcurl.a in Frameworks */,
@@ -1423,8 +1427,9 @@
 		F316CE4117B2059300821A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F34AE84B1818ED9500A52976 /* StoreKit.framework */,
+				F3DC578A18182CF50088B4B4 /* Security.framework */,
 				A69F054817F7F07200B6B90A /* CoreLocation.framework */,
-				A69F054617F7F05A00B6B90A /* StoreKit.framework */,
 				A69F054417F7F05300B6B90A /* AdSupport.framework */,
 				F30794F617F2FB33006D2102 /* CoreTelephony.framework */,
 				F3D08AD617EED6320093A0B5 /* MessageUI.framework */,
@@ -1443,6 +1448,7 @@
 		F316CE5217B2059300821A66 /* memeda */ = {
 			isa = PBXGroup;
 			children = (
+				F34AE84A1818E2B700A52976 /* memeda.entitlements */,
 				F316CE5317B2059300821A66 /* Resources */,
 				F316CE6B17B2059300821A66 /* ios */,
 				F316CE7417B2059300821A66 /* libs */,
@@ -1456,6 +1462,7 @@
 		F316CE5317B2059300821A66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3DC578F181835010088B4B4 /* MKStoreKitConfigs.plist */,
 				F316D2EE17B20FA700821A66 /* TestCCB */,
 				F36DB7AA1816F41900A582DB /* Icon-114.png */,
 				F396428117B740610022AA6B /* Default-568h@2x.png */,
@@ -3098,6 +3105,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					F316CE3E17B2059300821A66 = {
+						DevelopmentTeam = B4BR4E2M87;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = F316CE3A17B2059300821A66 /* Build configuration list for PBXProject "memeda" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3138,6 +3158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3DC5790181835010088B4B4 /* MKStoreKitConfigs.plist in Resources */,
 				F316CE5917B2059300821A66 /* Default.png in Resources */,
 				F36DB7AB1816F41900A582DB /* Icon-114.png in Resources */,
 				F3D102B718103B15002A3A9B /* Images.xcassets in Resources */,
@@ -3579,6 +3600,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = memeda/memeda.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
@@ -3697,6 +3719,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = memeda/memeda.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;

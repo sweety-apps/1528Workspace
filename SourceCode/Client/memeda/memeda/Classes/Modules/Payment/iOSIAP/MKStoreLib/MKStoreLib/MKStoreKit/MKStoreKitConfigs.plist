@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Consumables</key>
+	<dict>
+		<key>com.1528studio.qietingfengyun.buy300coin</key>
+		<dict>
+			<key>Count</key>
+			<integer>9223372036854775807</integer>
+			<key>Name</key>
+			<string>300金币</string>
+		</dict>
+		<key>com.1528studio.qietingfengyun.buy600coin</key>
+		<dict>
+			<key>Count</key>
+			<integer>9223372036854775807</integer>
+			<key>Name</key>
+			<string>600金币</string>
+		</dict>
+		<key>com.1528studio.qietingfengyun.buy1500coin2</key>
+		<dict>
+			<key>Count</key>
+			<integer>9223372036854775807</integer>
+			<key>Name</key>
+			<string>1500金币</string>
+		</dict>
+		<key>com.1528studio.qietingfengyun.buy3000coin</key>
+		<dict>
+			<key>Count</key>
+			<integer>9223372036854775807</integer>
+			<key>Name</key>
+			<string>3000金币</string>
+		</dict>
+	</dict>
+	<key>Non-Consumables</key>
+	<array>
+		<string>com.1528studio.qietingfengyun.buy6special_package</string>
+	</array>
+	<key>Subscriptions</key>
+	<dict/>
+</dict>
+</plist>

@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F36DB7EC18180FAD00A582DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36DB7EB18180FAD00A582DB /* Foundation.framework */; };
+		F36DB7F318180FAD00A582DB /* MKStoreLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB7F218180FAD00A582DB /* MKStoreLib.m */; };
+		F36DB7FA18180FAD00A582DB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36DB7F918180FAD00A582DB /* XCTest.framework */; };
+		F36DB7FB18180FAD00A582DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36DB7EB18180FAD00A582DB /* Foundation.framework */; };
+		F36DB7FD18180FAD00A582DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36DB7FC18180FAD00A582DB /* UIKit.framework */; };
+		F36DB80018180FAD00A582DB /* libMKStoreLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F36DB7E818180FAD00A582DB /* libMKStoreLib.a */; };
+		F36DB80618180FAD00A582DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F36DB80418180FAD00A582DB /* InfoPlist.strings */; };
+		F36DB80818180FAD00A582DB /* MKStoreLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB80718180FAD00A582DB /* MKStoreLibTests.m */; };
+		F36DB8281818107800A582DB /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB8141818107800A582DB /* NSData+MKBase64.m */; };
+		F36DB8291818107800A582DB /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB8161818107800A582DB /* SFHFKeychainUtils.m */; };
+		F36DB82A1818107800A582DB /* MKSKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB8181818107800A582DB /* MKSKProduct.m */; };
+		F36DB82B1818107800A582DB /* MKSKSubscriptionProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB81A1818107800A582DB /* MKSKSubscriptionProduct.m */; };
+		F36DB82C1818107800A582DB /* MKStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB81E1818107800A582DB /* MKStoreManager.m */; };
+		F36DB82D1818107800A582DB /* VerificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F36DB8271818107800A582DB /* VerificationController.m */; };
+		F3DC578D1818349C0088B4B4 /* MKStoreManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F36DB81D1818107800A582DB /* MKStoreManager.h */; };
+		F3DC578E181834A20088B4B4 /* MKStoreKitConfigs.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = F36DB81C1818107800A582DB /* MKStoreKitConfigs.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F36DB7FE18180FAD00A582DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F36DB7E018180FAD00A582DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F36DB7E718180FAD00A582DB;
+			remoteInfo = MKStoreLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F36DB7E618180FAD00A582DB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				F3DC578E181834A20088B4B4 /* MKStoreKitConfigs.plist in CopyFiles */,
+				F3DC578D1818349C0088B4B4 /* MKStoreManager.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F36DB7E818180FAD00A582DB /* libMKStoreLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKStoreLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F36DB7EB18180FAD00A582DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F36DB7EF18180FAD00A582DB /* MKStoreLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKStoreLib-Prefix.pch"; sourceTree = "<group>"; };
+		F36DB7F018180FAD00A582DB /* MKStoreLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKStoreLib.h; sourceTree = "<group>"; };
+		F36DB7F218180FAD00A582DB /* MKStoreLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKStoreLib.m; sourceTree = "<group>"; };
+		F36DB7F818180FAD00A582DB /* MKStoreLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKStoreLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F36DB7F918180FAD00A582DB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F36DB7FC18180FAD00A582DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F36DB80318180FAD00A582DB /* MKStoreLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKStoreLibTests-Info.plist"; sourceTree = "<group>"; };
+		F36DB80518180FAD00A582DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F36DB80718180FAD00A582DB /* MKStoreLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKStoreLibTests.m; sourceTree = "<group>"; };
+		F36DB8131818107800A582DB /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
+		F36DB8141818107800A582DB /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
+		F36DB8151818107800A582DB /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		F36DB8161818107800A582DB /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		F36DB8171818107800A582DB /* MKSKProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSKProduct.h; sourceTree = "<group>"; };
+		F36DB8181818107800A582DB /* MKSKProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSKProduct.m; sourceTree = "<group>"; };
+		F36DB8191818107800A582DB /* MKSKSubscriptionProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSKSubscriptionProduct.h; sourceTree = "<group>"; };
+		F36DB81A1818107800A582DB /* MKSKSubscriptionProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSKSubscriptionProduct.m; sourceTree = "<group>"; };
+		F36DB81B1818107800A582DB /* MKStoreKitConfigs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKitConfigs.h; sourceTree = "<group>"; };
+		F36DB81C1818107800A582DB /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
+		F36DB81D1818107800A582DB /* MKStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreManager.h; sourceTree = "<group>"; };
+		F36DB81E1818107800A582DB /* MKStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreManager.m; sourceTree = "<group>"; };
+		F36DB81F1818107800A582DB /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		F36DB8211818107800A582DB /* AddDevice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AddDevice.html; sourceTree = "<group>"; };
+		F36DB8221818107800A582DB /* DBSetup.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DBSetup.sql; sourceTree = "<group>"; };
+		F36DB8231818107800A582DB /* featureCheck.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = featureCheck.php; sourceTree = "<group>"; };
+		F36DB8241818107800A582DB /* requestAccess.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = requestAccess.php; sourceTree = "<group>"; };
+		F36DB8251818107800A582DB /* verifyProduct.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = verifyProduct.php; sourceTree = "<group>"; };
+		F36DB8261818107800A582DB /* VerificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerificationController.h; sourceTree = "<group>"; };
+		F36DB8271818107800A582DB /* VerificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerificationController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F36DB7E518180FAD00A582DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F36DB7EC18180FAD00A582DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F36DB7F518180FAD00A582DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F36DB7FA18180FAD00A582DB /* XCTest.framework in Frameworks */,
+				F36DB80018180FAD00A582DB /* libMKStoreLib.a in Frameworks */,
+				F36DB7FD18180FAD00A582DB /* UIKit.framework in Frameworks */,
+				F36DB7FB18180FAD00A582DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F36DB7DF18180FAD00A582DB = {
+			isa = PBXGroup;
+			children = (
+				F36DB7ED18180FAD00A582DB /* MKStoreLib */,
+				F36DB80118180FAD00A582DB /* MKStoreLibTests */,
+				F36DB7EA18180FAD00A582DB /* Frameworks */,
+				F36DB7E918180FAD00A582DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F36DB7E918180FAD00A582DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB7E818180FAD00A582DB /* libMKStoreLib.a */,
+				F36DB7F818180FAD00A582DB /* MKStoreLibTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F36DB7EA18180FAD00A582DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB7EB18180FAD00A582DB /* Foundation.framework */,
+				F36DB7F918180FAD00A582DB /* XCTest.framework */,
+				F36DB7FC18180FAD00A582DB /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F36DB7ED18180FAD00A582DB /* MKStoreLib */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB8111818107800A582DB /* MKStoreKit */,
+				F36DB7F018180FAD00A582DB /* MKStoreLib.h */,
+				F36DB7F218180FAD00A582DB /* MKStoreLib.m */,
+				F36DB7EE18180FAD00A582DB /* Supporting Files */,
+			);
+			path = MKStoreLib;
+			sourceTree = "<group>";
+		};
+		F36DB7EE18180FAD00A582DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB7EF18180FAD00A582DB /* MKStoreLib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F36DB80118180FAD00A582DB /* MKStoreLibTests */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB80718180FAD00A582DB /* MKStoreLibTests.m */,
+				F36DB80218180FAD00A582DB /* Supporting Files */,
+			);
+			path = MKStoreLibTests;
+			sourceTree = "<group>";
+		};
+		F36DB80218180FAD00A582DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB80318180FAD00A582DB /* MKStoreLibTests-Info.plist */,
+				F36DB80418180FAD00A582DB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F36DB8111818107800A582DB /* MKStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB8121818107800A582DB /* Externals */,
+				F36DB8171818107800A582DB /* MKSKProduct.h */,
+				F36DB8181818107800A582DB /* MKSKProduct.m */,
+				F36DB8191818107800A582DB /* MKSKSubscriptionProduct.h */,
+				F36DB81A1818107800A582DB /* MKSKSubscriptionProduct.m */,
+				F36DB81B1818107800A582DB /* MKStoreKitConfigs.h */,
+				F36DB81C1818107800A582DB /* MKStoreKitConfigs.plist */,
+				F36DB81D1818107800A582DB /* MKStoreManager.h */,
+				F36DB81E1818107800A582DB /* MKStoreManager.m */,
+				F36DB81F1818107800A582DB /* README.mdown */,
+				F36DB8201818107800A582DB /* Server Code */,
+				F36DB8261818107800A582DB /* VerificationController.h */,
+				F36DB8271818107800A582DB /* VerificationController.m */,
+			);
+			path = MKStoreKit;
+			sourceTree = "<group>";
+		};
+		F36DB8121818107800A582DB /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB8131818107800A582DB /* NSData+MKBase64.h */,
+				F36DB8141818107800A582DB /* NSData+MKBase64.m */,
+				F36DB8151818107800A582DB /* SFHFKeychainUtils.h */,
+				F36DB8161818107800A582DB /* SFHFKeychainUtils.m */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		F36DB8201818107800A582DB /* Server Code */ = {
+			isa = PBXGroup;
+			children = (
+				F36DB8211818107800A582DB /* AddDevice.html */,
+				F36DB8221818107800A582DB /* DBSetup.sql */,
+				F36DB8231818107800A582DB /* featureCheck.php */,
+				F36DB8241818107800A582DB /* requestAccess.php */,
+				F36DB8251818107800A582DB /* verifyProduct.php */,
+			);
+			path = "Server Code";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F36DB7E718180FAD00A582DB /* MKStoreLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F36DB80B18180FAD00A582DB /* Build configuration list for PBXNativeTarget "MKStoreLib" */;
+			buildPhases = (
+				F36DB7E418180FAD00A582DB /* Sources */,
+				F36DB7E518180FAD00A582DB /* Frameworks */,
+				F36DB7E618180FAD00A582DB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MKStoreLib;
+			productName = MKStoreLib;
+			productReference = F36DB7E818180FAD00A582DB /* libMKStoreLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F36DB7F718180FAD00A582DB /* MKStoreLibTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F36DB80E18180FAD00A582DB /* Build configuration list for PBXNativeTarget "MKStoreLibTests" */;
+			buildPhases = (
+				F36DB7F418180FAD00A582DB /* Sources */,
+				F36DB7F518180FAD00A582DB /* Frameworks */,
+				F36DB7F618180FAD00A582DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F36DB7FF18180FAD00A582DB /* PBXTargetDependency */,
+			);
+			name = MKStoreLibTests;
+			productName = MKStoreLibTests;
+			productReference = F36DB7F818180FAD00A582DB /* MKStoreLibTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F36DB7E018180FAD00A582DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Lee Justin";
+			};
+			buildConfigurationList = F36DB7E318180FAD00A582DB /* Build configuration list for PBXProject "MKStoreLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F36DB7DF18180FAD00A582DB;
+			productRefGroup = F36DB7E918180FAD00A582DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F36DB7E718180FAD00A582DB /* MKStoreLib */,
+				F36DB7F718180FAD00A582DB /* MKStoreLibTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F36DB7F618180FAD00A582DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F36DB80618180FAD00A582DB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F36DB7E418180FAD00A582DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F36DB7F318180FAD00A582DB /* MKStoreLib.m in Sources */,
+				F36DB82C1818107800A582DB /* MKStoreManager.m in Sources */,
+				F36DB8281818107800A582DB /* NSData+MKBase64.m in Sources */,
+				F36DB82B1818107800A582DB /* MKSKSubscriptionProduct.m in Sources */,
+				F36DB8291818107800A582DB /* SFHFKeychainUtils.m in Sources */,
+				F36DB82A1818107800A582DB /* MKSKProduct.m in Sources */,
+				F36DB82D1818107800A582DB /* VerificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F36DB7F418180FAD00A582DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F36DB80818180FAD00A582DB /* MKStoreLibTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F36DB7FF18180FAD00A582DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F36DB7E718180FAD00A582DB /* MKStoreLib */;
+			targetProxy = F36DB7FE18180FAD00A582DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F36DB80418180FAD00A582DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F36DB80518180FAD00A582DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F36DB80918180FAD00A582DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F36DB80A18180FAD00A582DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F36DB80C18180FAD00A582DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MKStoreLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKStoreLib/MKStoreLib-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F36DB80D18180FAD00A582DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MKStoreLib.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKStoreLib/MKStoreLib-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F36DB80F18180FAD00A582DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKStoreLib/MKStoreLib-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MKStoreLibTests/MKStoreLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F36DB81018180FAD00A582DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKStoreLib/MKStoreLib-Prefix.pch";
+				INFOPLIST_FILE = "MKStoreLibTests/MKStoreLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F36DB7E318180FAD00A582DB /* Build configuration list for PBXProject "MKStoreLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F36DB80918180FAD00A582DB /* Debug */,
+				F36DB80A18180FAD00A582DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F36DB80B18180FAD00A582DB /* Build configuration list for PBXNativeTarget "MKStoreLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F36DB80C18180FAD00A582DB /* Debug */,
+				F36DB80D18180FAD00A582DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F36DB80E18180FAD00A582DB /* Build configuration list for PBXNativeTarget "MKStoreLibTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F36DB80F18180FAD00A582DB /* Debug */,
+				F36DB81018180FAD00A582DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F36DB7E018180FAD00A582DB /* Project object */;
+}

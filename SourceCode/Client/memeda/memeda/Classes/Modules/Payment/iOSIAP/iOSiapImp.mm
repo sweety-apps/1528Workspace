@@ -9,6 +9,8 @@
 #include "iOSiapImp.h"
 #import "EBPurchase.h"
 
+#import "MKStoreLib/MKStoreLib/MKStoreKit/MKStoreManager.h"
+
 #pragma mark - Data Struct Handle Defines
 
 @class iOSPurchaseImpl;
@@ -163,7 +165,7 @@ typedef struct tagIOS_PurchaseHandle_C{
     }
 }
 
--(void) successfulPurchase:(EBPurchase*)ebp identifier:(NSString*)productId receipt:(NSData*)transactionReceipt
+-(void) successfulPurchase:(EBPurchase*)ebp restored:(bool)isRestore identifier:(NSString*)productId receipt:(NSData*)transactionReceipt
 {
     NSLog(@"iOSPurchaseImpl successfulPurchase");
     
@@ -240,6 +242,15 @@ typedef struct tagIOS_PurchaseHandle_C{
 
 #pragma mark - Extern Functions
 
+void iOSiap_init()
+{
+    /*
+    [[MKStoreManager sharedManager] removeAllKeychainData];
+    [MKStoreManager sharedManager];
+    [[MKStoreManager sharedManager] purchasableObjectsDescription];
+     */
+}
+
 void* iOSiap_create()
 {
     IOS_PurchaseHandle_C* handle_C = (IOS_PurchaseHandle_C*)malloc(sizeof(IOS_PurchaseHandle_C));
@@ -259,6 +270,13 @@ void iOSiap_payforPuduct(void* handle, std::string productID, iOSiap_ResultCallb
     handle_C->obj.callback = callback;
     handle_C->obj.context = context;
     
+    /*
+    [[MKStoreManager sharedManager] buyFeature:[NSString stringWithUTF8String:productID.c_str()] onComplete:^(NSString* purchasedFeature, NSData*purchasedReceipt, NSArray* availableDownloads){
+        handle_C->obj.callback(kiOSiap_ResultSuccess,productID.c_str(),"",handle_C->obj.context);
+    } onCancelled:^(){
+        handle_C->obj.callback(kiOSiap_ResultCancel,productID.c_str(),"",handle_C->obj.context);
+    }];
+     */
     [handle_C->obj purchaseProduct:[NSString stringWithUTF8String:productID.c_str()]];
 }
 

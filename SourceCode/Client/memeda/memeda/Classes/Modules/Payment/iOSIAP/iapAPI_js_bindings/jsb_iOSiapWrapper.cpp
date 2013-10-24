@@ -347,6 +347,8 @@ void js_register_jsb_iOSiapWrapper_iOSiapWrapper(JSContext *cx, JSObject *global
 		p->parentProto = NULL;
 		HASH_ADD_INT(_js_global_type_ht, type, p);
 	}
+    
+    iOSiapWrapper::initAll();
 }
 
 void register_all_jsb_iOSiapWrapper(JSContext* cx, JSObject* obj) {

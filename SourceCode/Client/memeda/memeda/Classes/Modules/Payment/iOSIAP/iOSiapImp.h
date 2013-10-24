@@ -17,6 +17,7 @@
 
 typedef void (*iOSiap_ResultCallback)(std::string result, std::string productID, std::string errorMsg, void* context);
 
+void iOSiap_init();
 void* iOSiap_create();
 void iOSiap_payforPuduct(void* handle, std::string productID, iOSiap_ResultCallback callback,void* context);
 void iOSiap_destory(void* handle);
