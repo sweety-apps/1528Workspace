@@ -98,6 +98,30 @@ static AppDelegate s_sharedApplication;
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
     cocos2d::CCApplication::sharedApplication()->applicationDidEnterBackground();
+    
+    createLocalNotification();
+}
+
+void createLocalNotification()
+{
+    // 创建本地通知
+    UILocalNotification* newNotification = [[UILocalNotification alloc]init];
+    if ( newNotification )
+    {
+        newNotification.timeZone = [NSTimeZone defaultTimeZone];
+        newNotification.fireDate = [[NSDate date]dateByAddingTimeInterval:10];
+        newNotification.alertBody = @"金币已经恢复满了，快来猜猜大家都在看什么吧";
+        newNotification.repeatInterval = NSCalendarUnitDay;
+        newNotification.soundName = @"notify.mp3";
+        [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
+        
+        [newNotification release];
+    }
+}
+
+void removeLocalNotification()
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -109,6 +133,8 @@ static AppDelegate s_sharedApplication;
     [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
     cocos2d::CCApplication::sharedApplication()->applicationWillEnterForeground();
+    
+    removeLocalNotification();
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		599B24271823AE7C00CBB03C /* notify.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 599B24261823AE7C00CBB03C /* notify.mp3 */; };
 		A60009C41807E62400CBDFE5 /* CPreloadHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */; };
 		A60009C51807E62400CBDFE5 /* js_CommonFunction.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */; };
 		A60009C61807E62400CBDFE5 /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A60009C01807E62400CBDFE5 /* js_OfferWallController.cpp */; };
@@ -383,6 +384,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		599B24261823AE7C00CBB03C /* notify.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = notify.mp3; path = Resources/notify.mp3; sourceTree = "<group>"; };
 		A60009BC1807E62400CBDFE5 /* CPreloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPreloadHelper.h; path = Classes/CPreloadHelper.h; sourceTree = "<group>"; };
 		A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CPreloadHelper.mm; path = Classes/CPreloadHelper.mm; sourceTree = "<group>"; };
 		A60009BE1807E62400CBDFE5 /* js_CommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = js_CommonFunction.h; path = Classes/js_CommonFunction.h; sourceTree = "<group>"; };
@@ -1462,6 +1464,7 @@
 		F316CE5317B2059300821A66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				599B24261823AE7C00CBB03C /* notify.mp3 */,
 				F3DC578F181835010088B4B4 /* MKStoreKitConfigs.plist */,
 				F316D2EE17B20FA700821A66 /* TestCCB */,
 				F36DB7AA1816F41900A582DB /* Icon-114.png */,
@@ -3164,6 +3167,7 @@
 				F3D102B718103B15002A3A9B /* Images.xcassets in Resources */,
 				F316CE6917B2059300821A66 /* iTunesArtwork in Resources */,
 				F316CF0817B2059400821A66 /* ChangeLog in Resources */,
+				599B24271823AE7C00CBB03C /* notify.mp3 in Resources */,
 				F316D07C17B2059600821A66 /* project.pbxproj in Resources */,
 				F316D08217B2059600821A66 /* cocos2d_specifics.hpp in Resources */,
 				F316D08A17B2059700821A66 /* jsb_cocos2dx_auto.hpp in Resources */,
@@ -3629,6 +3633,17 @@
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend,
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0,
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/UI,
+
+
+
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Connection,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Core,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/GooglePlusSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/Pinterest.embeddedframework,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/RenRenSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/UI,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3694,6 +3709,15 @@
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
+
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -3705,6 +3729,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A5906C1D-9E6E-450D-A7AD-E242C274025D";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"memeda/libs/Chipmunk/include/chipmunk\" \"memeda/libs/javascript/spidermonkey-ios/include\"";
 				VALIDATE_PRODUCT = YES;
@@ -3811,6 +3836,14 @@
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
