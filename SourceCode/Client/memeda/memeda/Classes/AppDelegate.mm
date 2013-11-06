@@ -18,6 +18,7 @@
 #include "uncompressZipFile.h"
 #include "Stat.h"
 #include "js_CommonFunction.h"
+#include "LocalStorage.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -173,6 +174,42 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     CCScriptEngineProtocol *pEngine = ScriptingCore::getInstance();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
+    
+    // 判断是否恢复金币
+    const char* szLocalNotify = localStorageGetItem("localNotification");
+    if ( szLocalNotify != NULL && strcmp(szLocalNotify, "") != 0 )
+    {
+        CCLOG("time : %s", szLocalNotify);
+        
+        NSDateFormatter* df = [[[NSDateFormatter alloc] init] autorelease];
+        [df setDateFormat:@"EEE MMM dd HH:mm:ss yyyy"];
+        NSString* nsstr = [[NSString alloc]initWithUTF8String:szLocalNotify];
+        
+        NSDate* oldDate = [df dateFromString:nsstr];
+        NSDate* now = [NSDate date];
+        
+        [nsstr release];
+        
+        char* szStopString;
+        const char* szCoin = localStorageGetItem("coin");
+        long lCoin = 50;
+        if ( szCoin != NULL )
+        {
+            lCoin = strtol(szCoin, &szStopString, 10);
+        }
+        
+        if ( lCoin < 50 )
+        {
+            NSTimeInterval time= [now timeIntervalSinceDate:oldDate];
+            int nDays= ((int)time)/(3600*24);
+            if ( nDays >= 5 )
+            {   // 相差超过5天，增加金币
+                localStorageSetItem("coin", "100");
+            }
+        }
+        
+        localStorageSetItem("localNotification", "");
+    }
     
     ScriptingCore::getInstance()->runScript("main.js");
     //ScriptingCore::getInstance()->runScript("hello.js");

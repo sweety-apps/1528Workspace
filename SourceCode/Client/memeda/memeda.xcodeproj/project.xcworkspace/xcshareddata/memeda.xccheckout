@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>58A74A1F-F36E-4A74-88AB-CFF67BEE1349</string>
+	<key>IDESourceControlProjectName</key>
+	<string>memeda</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CE508E66-0BBB-4C2F-AF7C-F5AD0782C2AA</key>
+		<string>https://github.com/sweety-apps/1528Workspace.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SourceCode/Client/memeda/memeda.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CE508E66-0BBB-4C2F-AF7C-F5AD0782C2AA</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sweety-apps/1528Workspace.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CE508E66-0BBB-4C2F-AF7C-F5AD0782C2AA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CE508E66-0BBB-4C2F-AF7C-F5AD0782C2AA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>1528Workspace</string>
+		</dict>
+	</array>
+</dict>
+</plist>

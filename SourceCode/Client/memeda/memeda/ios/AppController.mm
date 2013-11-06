@@ -14,6 +14,7 @@
 #import "RootViewController.h"
 
 #import "SocialShareAPI.h"
+#include "localStorage.h"
 
 @implementation AppController
 
@@ -67,7 +68,7 @@ static AppDelegate s_sharedApplication;
     [window makeKeyAndVisible];
 
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
-
+    
     cocos2d::CCApplication::sharedApplication()->run();
     
     //微信分享测试代码
@@ -104,24 +105,43 @@ static AppDelegate s_sharedApplication;
 
 void createLocalNotification()
 {
-    // 创建本地通知
-    UILocalNotification* newNotification = [[UILocalNotification alloc]init];
-    if ( newNotification )
+    char* szStopString;
+    const char* szCoin = localStorageGetItem("coin");
+    long lCoin = 50;
+    if ( szCoin != NULL )
     {
-        newNotification.timeZone = [NSTimeZone defaultTimeZone];
-        newNotification.fireDate = [[NSDate date]dateByAddingTimeInterval:10];
-        newNotification.alertBody = @"金币已经恢复满了，快来猜猜大家都在看什么吧";
-        newNotification.repeatInterval = NSCalendarUnitDay;
-        newNotification.soundName = @"notify.mp3";
-        [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
+        lCoin = strtol(szCoin, &szStopString, 10);
+    }
+    
+    if ( lCoin < 50 )
+    {
+        // 创建本地通知
+        UILocalNotification* newNotification = [[UILocalNotification alloc]init];
+        if ( newNotification )
+        {
+            newNotification.timeZone = [NSTimeZone defaultTimeZone];
+            newNotification.fireDate = [[NSDate date]dateByAddingTimeInterval:(3600*24*5 + 10)];
+            newNotification.alertBody = @"金币已经恢复满了，快来猜猜大家都在看什么吧";
+            newNotification.soundName = @"notify.mp3";
+            [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
         
-        [newNotification release];
+            [newNotification release];
+            
+            // 保存当前时间
+            NSDate* now = [NSDate date];
+            NSDateFormatter* df = [[[NSDateFormatter alloc] init] autorelease];
+            [df setDateFormat:@"EEE MMM dd HH:mm:ss yyyy"];
+            
+            NSString* text = [df stringFromDate:now];
+            localStorageSetItem("localNotification", [text UTF8String]);
+        }
     }
 }
 
 void removeLocalNotification()
 {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    localStorageSetItem("localNotification", "");
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
