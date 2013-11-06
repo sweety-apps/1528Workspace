@@ -6,6 +6,12 @@ var AwardScene = function() {};
 var pThisAwardScene = null;
 
 AwardScene.prototype.showWindow = function () {
+	if ( RemoteConfig.domob == "1" ) {
+		this.duomengCtrl.setVisible(true);
+	} else { 
+		this.duomengCtrl.setVisible(false);	
+	}
+	
 	this.initStatus();
 	this.bkgBtn.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
