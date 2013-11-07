@@ -42,6 +42,7 @@ public:
     */
     virtual void applicationWillEnterForeground();
     
+    void ResetCoin();
 private:
     CPreloadHelper m_Helper;
 };

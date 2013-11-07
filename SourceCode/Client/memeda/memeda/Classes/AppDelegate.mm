@@ -175,6 +175,26 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCScriptEngineProtocol *pEngine = ScriptingCore::getInstance();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
     
+    ResetCoin();
+    
+    ScriptingCore::getInstance()->runScript("main.js");
+    //ScriptingCore::getInstance()->runScript("hello.js");
+    pStat->logTimedEventBegin("runtime");   //
+    
+    //testUnzipFiles();
+   
+    //UInt32 category = AVAudioSessionCategoryPlayAndRecord;
+    //AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
+    
+    //UInt32 route = kAudioSessionOverrideAudioRoute_None;
+    //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(route), &route);
+    SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.8);
+    
+    return true;
+}
+
+void AppDelegate::ResetCoin()
+{
     // 判断是否恢复金币
     const char* szLocalNotify = localStorageGetItem("localNotification");
     if ( szLocalNotify != NULL && strcmp(szLocalNotify, "") != 0 )
@@ -210,23 +230,7 @@ bool AppDelegate::applicationDidFinishLaunching()
         
         localStorageSetItem("localNotification", "");
     }
-    
-    ScriptingCore::getInstance()->runScript("main.js");
-    //ScriptingCore::getInstance()->runScript("hello.js");
-    pStat->logTimedEventBegin("runtime");   //
-    
-    //testUnzipFiles();
-   
-    //UInt32 category = AVAudioSessionCategoryPlayAndRecord;
-    //AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
-    
-    //UInt32 route = kAudioSessionOverrideAudioRoute_None;
-    //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(route), &route);
-    SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.8);
-    
-    return true;
 }
-
 
 void handle_signal(int signal) {
     static int internal_state = 0;
