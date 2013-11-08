@@ -138,7 +138,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     //pDirector->setContentScaleFactor(resourceSize.width/designSize.width);
     pDirector->setContentScaleFactor(resizeFactor);
     
-    //m_Helper.Preload();
+    m_Helper.Preload();
     
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionNoBorder);
     

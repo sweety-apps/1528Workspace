@@ -16,11 +16,19 @@
 
 using namespace cocos2d;
 
-void CPreloadHelper::Preload()
+void* CPreloadHelper::PreloadThread(void* pobj)
 {
-    return ;
+    CPreloadHelper* pHelper = (CPreloadHelper*)pobj;
+    
+    pHelper->load();
+    
+    return 0;
+}
+
+void CPreloadHelper::load()
+{
     cocos2d::CCTextureCache* pTextureCache = cocos2d::CCTextureCache::sharedTextureCache();
- 
+    
     NSString* curPath = [[NSBundle mainBundle] resourcePath];
     NSLog(@"%@",curPath);
     
@@ -42,6 +50,17 @@ void CPreloadHelper::Preload()
             pTextureCache->addImageAsync([file UTF8String], this, callfuncO_selector(CPreloadHelper::loadedCallback));
         }
     }
+}
+
+void CPreloadHelper::Preload()
+{
+    pthread_t id;
+    pthread_attr_t attr;
+    
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+    
+    pthread_create(&id, &attr, PreloadThread, this);
 }
 
 void CPreloadHelper::loadedCallback()

@@ -15,8 +15,10 @@ class CPreloadHelper : public cocos2d::CCObject
 {
 public:
     void Preload();
-    
+    void load();
     void loadedCallback();
+    
+    static void* PreloadThread(void*);
 };
 
 #endif /* defined(__memeda__CPreloadHelper__) */
