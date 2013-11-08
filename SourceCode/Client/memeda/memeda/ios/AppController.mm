@@ -121,7 +121,7 @@ void createLocalNotification()
         {
             newNotification.timeZone = [NSTimeZone defaultTimeZone];
             newNotification.fireDate = [[NSDate date]dateByAddingTimeInterval:(3600*24*5 + 10)];
-            newNotification.alertBody = @"金币已经恢复满了，快来猜猜大家都在看什么吧";
+            newNotification.alertBody = @"猫猫帮你捡到了一袋金币，快去帮它继续闯关吧";
             newNotification.soundName = @"notify.mp3";
             [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
         
