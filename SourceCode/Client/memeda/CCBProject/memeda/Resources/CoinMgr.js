@@ -118,8 +118,7 @@ function CoinMgr_checkExtraCoin(callBackObj) {
     sys.localStorage.setItem("WechatTime", now);
     var http = new XMLHttpRequest();
 			
-    http.open("GET", "http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
-    debugMsgOutput("http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
+    http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
     //http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
     http.onreadystatechange = function(){
         if( http.readyState == 4 && http.status == 200 ) {
