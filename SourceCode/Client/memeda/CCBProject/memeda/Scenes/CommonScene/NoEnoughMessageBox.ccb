@@ -158,6 +158,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>animatedProperties</key>
@@ -1635,7 +1637,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/common/tip_btn.png</string>
+															<string>UI/common/tip_btn2.png</string>
 														</array>
 													</dict>
 													<dict>
