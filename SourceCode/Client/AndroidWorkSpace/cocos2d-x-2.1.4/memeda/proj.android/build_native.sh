@@ -36,6 +36,10 @@ done
 
 # paths
 
+# 
+#NDK_ROOT="/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/android-ndk-r9"
+NDK_ROOT=PATH:${NDK_ROOT}
+
 if [ -z "${NDK_ROOT+aaa}" ];then
 echo "NDK_ROOT not defined. Please define NDK_ROOT in your environment or in local.properties"
 exit 1

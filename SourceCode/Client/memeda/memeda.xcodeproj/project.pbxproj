@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		599B24271823AE7C00CBB03C /* notify.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 599B24261823AE7C00CBB03C /* notify.mp3 */; };
-		599F6A07182A3A1C00C8C83F /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 599F6A06182A3A1C00C8C83F /* AppDelegate.cpp */; };
 		A60009C41807E62400CBDFE5 /* CPreloadHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */; };
 		A60009C51807E62400CBDFE5 /* js_CommonFunction.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */; };
 		A60009C61807E62400CBDFE5 /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A60009C01807E62400CBDFE5 /* js_OfferWallController.cpp */; };
@@ -348,6 +347,7 @@
 		F34AE84C1818ED9500A52976 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34AE84B1818ED9500A52976 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F35F777F1830A54800E06111 /* Game_Util_Functions_Android.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */; };
 		F35F77811830A59100E06111 /* Game_Util_Functions_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F35F77801830A59100E06111 /* Game_Util_Functions_iOS.mm */; };
+		F35F77861830AEBE00E06111 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35F77851830AEBE00E06111 /* AppDelegate.cpp */; };
 		F36DB7AB1816F41900A582DB /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = F36DB7AA1816F41900A582DB /* Icon-114.png */; };
 		F396428317B740610022AA6B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428117B740610022AA6B /* Default-568h@2x.png */; };
 		F396428417B740610022AA6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428217B740610022AA6B /* Default@2x.png */; };
@@ -388,7 +388,6 @@
 
 /* Begin PBXFileReference section */
 		599B24261823AE7C00CBB03C /* notify.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = notify.mp3; path = Resources/notify.mp3; sourceTree = "<group>"; };
-		599F6A06182A3A1C00C8C83F /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		A60009BC1807E62400CBDFE5 /* CPreloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPreloadHelper.h; path = Classes/CPreloadHelper.h; sourceTree = "<group>"; };
 		A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CPreloadHelper.mm; path = Classes/CPreloadHelper.mm; sourceTree = "<group>"; };
 		A60009BE1807E62400CBDFE5 /* js_CommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = js_CommonFunction.h; path = Classes/js_CommonFunction.h; sourceTree = "<group>"; };
@@ -1173,6 +1172,7 @@
 		F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game_Util_Functions_Android.cpp; path = Classes/Game_Util_Functions_Android.cpp; sourceTree = "<group>"; };
 		F35F777E1830A54800E06111 /* Game_Util_Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game_Util_Functions.h; path = Classes/Game_Util_Functions.h; sourceTree = "<group>"; };
 		F35F77801830A59100E06111 /* Game_Util_Functions_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Game_Util_Functions_iOS.mm; path = Classes/Game_Util_Functions_iOS.mm; sourceTree = "<group>"; };
+		F35F77851830AEBE00E06111 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		F36DB7AA1816F41900A582DB /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "Resources/Icon-114.png"; sourceTree = "<group>"; };
 		F396428117B740610022AA6B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F396428217B740610022AA6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
@@ -2861,7 +2861,7 @@
 				F3D0895217EEC5950093A0B5 /* uncompressZipFile.cpp */,
 				F3D0895317EEC5950093A0B5 /* uncompressZipFile.h */,
 				F316D2A117B2059A00821A66 /* AppDelegate.h */,
-				599F6A06182A3A1C00C8C83F /* AppDelegate.cpp */,
+				F35F77851830AEBE00E06111 /* AppDelegate.cpp */,
 				F3D08AD917EF5C410093A0B5 /* AppConfigVarDefines.h */,
 				A6A7019F17F01AD3005FBA13 /* plugin-x */,
 				F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */,
@@ -3347,6 +3347,7 @@
 				F316D03917B2059600821A66 /* CCTexture2D.cpp in Sources */,
 				F316D03C17B2059600821A66 /* CCTextureAtlas.cpp in Sources */,
 				F316D03F17B2059600821A66 /* CCTextureCache.cpp in Sources */,
+				F35F77861830AEBE00E06111 /* AppDelegate.cpp in Sources */,
 				F316D04217B2059600821A66 /* CCTextureETC.cpp in Sources */,
 				F316D04517B2059600821A66 /* CCTexturePVR.cpp in Sources */,
 				F316D04917B2059600821A66 /* CCParallaxNode.cpp in Sources */,
@@ -3488,7 +3489,6 @@
 				F316D26417B2059A00821A66 /* AtlasAttachmentLoader.cpp in Sources */,
 				F316D26717B2059A00821A66 /* Attachment.cpp in Sources */,
 				F316D26A17B2059A00821A66 /* AttachmentLoader.cpp in Sources */,
-				599F6A07182A3A1C00C8C83F /* AppDelegate.cpp in Sources */,
 				F316D26D17B2059A00821A66 /* Bone.cpp in Sources */,
 				F316D27017B2059A00821A66 /* BoneData.cpp in Sources */,
 				F316D27317B2059A00821A66 /* CCSkeleton.cpp in Sources */,
