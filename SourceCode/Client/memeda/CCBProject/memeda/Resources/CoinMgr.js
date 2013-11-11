@@ -71,32 +71,35 @@ function CoinMgr_Init() {
     }
 
     if ( !isWeb() ) {
-	    memeda.OfferWallController.getInstance().init(Global_getUserID());
-	    
-	    memeda.OfferWallController.getInstance().offerWallDidFinishCheck = function (responseText) {
-	    		if ( CoinMgr_gCallBackObj != null ) {
-	                debugMsgOutput("aaa" + CoinMgr_gCallBackObj.offerWallDidFinishCheck);
-	    				CoinMgr_gCallBackObj.offerWallDidFinishCheck(responseText);
-	    		}
-	    };
-	    
-	    memeda.OfferWallController.getInstance().offerWallDidFinishConsume = function (responseText) {
-	    		if ( CoinMgr_gCallBackObj != null ) {
-	    				CoinMgr_gCallBackObj.offerWallDidFinishConsume(responseText);
-	    		}
-	    };
-	    
-	    memeda.OfferWallController.getInstance().offerWallDidFailCheck = function () {
-	    		if ( CoinMgr_gCallBackObj != null ) {
-	    				CoinMgr_gCallBackObj.offerWallDidFailCheck();
-	    		}
-	    };
-	    
-	    memeda.OfferWallController.getInstance().offerWallDidFailConsume = function (responseText) {
-	    		if ( CoinMgr_gCallBackObj != null ) {
-	    				CoinMgr_gCallBackObj.offerWallDidFailConsume(responseText);
-	    		}
-	    };
+        if(sys.os != "android" && sys.os != "Android")
+        {
+            memeda.OfferWallController.getInstance().init(Global_getUserID());
+
+            memeda.OfferWallController.getInstance().offerWallDidFinishCheck = function (responseText) {
+                if ( CoinMgr_gCallBackObj != null ) {
+                    debugMsgOutput("aaa" + CoinMgr_gCallBackObj.offerWallDidFinishCheck);
+                    CoinMgr_gCallBackObj.offerWallDidFinishCheck(responseText);
+                }
+            };
+
+            memeda.OfferWallController.getInstance().offerWallDidFinishConsume = function (responseText) {
+                if ( CoinMgr_gCallBackObj != null ) {
+                    CoinMgr_gCallBackObj.offerWallDidFinishConsume(responseText);
+                }
+            };
+
+            memeda.OfferWallController.getInstance().offerWallDidFailCheck = function () {
+                if ( CoinMgr_gCallBackObj != null ) {
+                    CoinMgr_gCallBackObj.offerWallDidFailCheck();
+                }
+            };
+
+            memeda.OfferWallController.getInstance().offerWallDidFailConsume = function (responseText) {
+                if ( CoinMgr_gCallBackObj != null ) {
+                    CoinMgr_gCallBackObj.offerWallDidFailConsume(responseText);
+                }
+            };
+        }
     }
 }
 
@@ -118,14 +121,16 @@ function CoinMgr_checkExtraCoin(callBackObj) {
     sys.localStorage.setItem("WechatTime", now);
     var http = new XMLHttpRequest();
 			
-    http.open("GET", "http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
-    debugMsgOutput("http://121.197.3.27/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
+    http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
     //http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
     http.onreadystatechange = function(){
         if( http.readyState == 4 && http.status == 200 ) {
             if ( !callBackObj.wachatDidFinish(http.responseText) ) {
                 debugMsgOutput("callBackObj.wachatDidFinish");
-                memeda.OfferWallController.getInstance().requestOnlinePointCheck();
+                if(sys.os != "android" && sys.os != "Android")
+                {
+                    memeda.OfferWallController.getInstance().requestOnlinePointCheck();
+                }
             } else {
                 debugMsgOutput("callBackObj.wachatDidFinish true");
             }

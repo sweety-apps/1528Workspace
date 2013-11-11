@@ -3,6 +3,7 @@ APPNAME="memeda"
 # options
 
 buildexternalsfromsource=
+PARALLEL_BUILD_FLAG=
 
 usage(){
 cat << EOF
@@ -12,14 +13,18 @@ Build C/C++ code for $APPNAME using Android NDK
 
 OPTIONS:
 -s	Build externals from source
+-p  Run make with -j8 option to take advantage of multiple processors
 -h	this help
 EOF
 }
 
-while getopts "sh" OPTION; do
+while getopts "sph" OPTION; do
 case "$OPTION" in
 s)
 buildexternalsfromsource=1
+;;
+p)
+PARALLEL_BUILD_FLAG=\-j8
 ;;
 h)
 usage
@@ -28,24 +33,33 @@ exit 0
 esac
 done
 
+
 # paths
 
 if [ -z "${NDK_ROOT+aaa}" ];then
-echo "please define NDK_ROOT"
+echo "NDK_ROOT not defined. Please define NDK_ROOT in your environment or in local.properties"
 exit 1
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # ... use paths relative to current directory
+PLUGIN_ROOT="$DIR/../../plugin"
 COCOS2DX_ROOT="$DIR/../.."
 APP_ROOT="$DIR/.."
 APP_ANDROID_ROOT="$DIR"
+RESROUCE_ROOT="$APP_ROOT/Resources"
 BINDINGS_JS_ROOT="$APP_ROOT/../scripting/javascript/bindings/js"
 
-echo "NDK_ROOT = $NDK_ROOT"
-echo "COCOS2DX_ROOT = $COCOS2DX_ROOT"
-echo "APP_ROOT = $APP_ROOT"
-echo "APP_ANDROID_ROOT = $APP_ANDROID_ROOT"
+echo ""
+echo "Paths"
+echo "    NDK_ROOT = $NDK_ROOT"
+echo "    COCOS2DX_ROOT = $COCOS2DX_ROOT"
+echo "    APP_ROOT = $APP_ROOT"
+echo "    APP_ANDROID_ROOT = $APP_ANDROID_ROOT"
+echo ""
+
+# Debug
+set -x
 
 # make sure assets is exist
 if [ -d "$APP_ANDROID_ROOT"/assets ]; then
@@ -54,42 +68,21 @@ fi
 
 mkdir "$APP_ANDROID_ROOT"/assets
 
-# copy resources
-for file in "$APP_ROOT"/Resources/*
-do
-if [ -d "$file" ]; then
-    cp -rf "$file" "$APP_ANDROID_ROOT"/assets
-fi
-
-if [ -f "$file" ]; then
-    cp "$file" "$APP_ANDROID_ROOT"/assets
-fi
-done
+# copy "Resources" into "assets"
+cp -rf "$RESROUCE_ROOT"/* "$APP_ANDROID_ROOT"/assets
 
 # copy bindings/*.js into assets' root
-cp -f "$BINDINGS_JS_ROOT"/* "$APP_ANDROID_ROOT"/assets
+cp -f "$BINDINGS_JS_ROOT"/*.js "$APP_ANDROID_ROOT"/assets
 
-# copy icons (if they exist)
-file="$APP_ANDROID_ROOT"/assets/Icon-72.png
-if [ -f "$file" ]; then
-	cp "$file" "$APP_ANDROID_ROOT"/res/drawable-hdpi/icon.png
-fi
-file="$APP_ANDROID_ROOT"/assets/Icon-48.png
-if [ -f "$file" ]; then
-	cp "$file" "$APP_ANDROID_ROOT"/res/drawable-mdpi/icon.png
-fi
-file="$APP_ANDROID_ROOT"/assets/Icon-32.png
-if [ -f "$file" ]; then
-	cp "$file" "$APP_ANDROID_ROOT"/res/drawable-ldpi/icon.png
-fi
+# copy plugin js into assets' path
+cp -f "$PLUGIN_ROOT/jsbindings/js"/* "$APP_ANDROID_ROOT"/assets
 
 
-if [[ "$buildexternalsfromsource" ]]; then
-    echo "Building external dependencies from source"
-    "$NDK_ROOT"/ndk-build -C "$APP_ANDROID_ROOT" $* \
-        "NDK_MODULE_PATH=${COCOS2DX_ROOT}:${COCOS2DX_ROOT}/cocos2dx/platform/third_party/android/source"
-else
-    echo "Using prebuilt externals"
-    "$NDK_ROOT"/ndk-build -C "$APP_ANDROID_ROOT" $* \
-        "NDK_MODULE_PATH=${COCOS2DX_ROOT}:${COCOS2DX_ROOT}/cocos2dx/platform/third_party/android/prebuilt"
-fi
+echo "Using prebuilt externals"
+echo ""
+
+set -x
+
+"$NDK_ROOT"/ndk-build $PARALLEL_BUILD_FLAG -C "$APP_ANDROID_ROOT" $* \
+    "NDK_MODULE_PATH=${PLUGIN_ROOT}/publish:${COCOS2DX_ROOT}:${COCOS2DX_ROOT}/cocos2dx/platform/third_party/android/prebuilt" \
+    NDK_LOG=0 V=0

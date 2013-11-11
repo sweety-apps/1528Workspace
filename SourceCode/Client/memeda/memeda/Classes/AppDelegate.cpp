@@ -15,9 +15,11 @@
 #include "js_OfferWallController.h"
 #include "jsb_SocialShareAPI.hpp"
 #include "jsb_iOSiapWrapper.hpp"
-#include "uncompressZipFile.h"
+//#include "uncompressZipFile.h"
 #include "Stat.h"
 #include "js_CommonFunction.h"
+#include "LocalStorage.h"
+#include "Game_Util_Functions.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -137,7 +139,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     //pDirector->setContentScaleFactor(resourceSize.width/designSize.width);
     pDirector->setContentScaleFactor(resizeFactor);
     
-    //m_Helper.Preload();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    m_Helper.Preload();
+#endif
     
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionNoBorder);
     
@@ -158,10 +162,13 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(jsb_register_system);
     sc->addRegisterCallback(JSB_register_opengl);
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    sc->addRegisterCallback(js_OfferWallController::_js_register);
     sc->addRegisterCallback(register_all_jsb_SocialShareAPI);
     sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
-    sc->addRegisterCallback(js_OfferWallController::_js_register);
     sc->addRegisterCallback(CommonFunction::_js_register);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
     
     // 初始化友盟统计
     CStat* pStat = CStat::GetInstance();
@@ -174,8 +181,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCScriptEngineProtocol *pEngine = ScriptingCore::getInstance();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
     
+    ResetCoin();
+    
     ScriptingCore::getInstance()->runScript("main.js");
     //ScriptingCore::getInstance()->runScript("hello.js");
+
     pStat->logTimedEventBegin("runtime");   //
     
     //testUnzipFiles();
@@ -190,6 +200,34 @@ bool AppDelegate::applicationDidFinishLaunching()
     return true;
 }
 
+void AppDelegate::ResetCoin()
+{
+    // 判断是否恢复金币
+    const char* szLocalNotify = localStorageGetItem("localNotification");
+    if ( szLocalNotify != NULL && strcmp(szLocalNotify, "") != 0 )
+    {
+        CCLOG("time : %s", szLocalNotify);
+        
+        char* szStopString;
+        const char* szCoin = localStorageGetItem("coin");
+        long lCoin = 50;
+        if ( szCoin != NULL )
+        {
+            lCoin = strtol(szCoin, &szStopString, 10);
+        }
+        if ( lCoin < 50 )
+        {
+            double time = Game_Util_getIntervalSecondsFromDateString(szLocalNotify);
+            int nDays= ((int)time)/(3600*24);
+            if ( nDays >= 5 )
+            {   // 相差超过5天，增加金币
+                localStorageSetItem("coin", "100");
+            }
+        }
+        
+        localStorageSetItem("localNotification", "");
+    }
+}
 
 void handle_signal(int signal) {
     static int internal_state = 0;
@@ -214,8 +252,11 @@ void handle_signal(int signal) {
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground()
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     CStat* pStat = CStat::GetInstance();
     pStat->logTimedEventEnd("runtime");   //
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
     
     CCDirector::sharedDirector()->stopAnimation();
     SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
@@ -225,8 +266,11 @@ void AppDelegate::applicationDidEnterBackground()
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground()
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     CStat* pStat = CStat::GetInstance();
     pStat->logTimedEventBegin("runtime");   //
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
     
     CCDirector::sharedDirector()->startAnimation();
     SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();

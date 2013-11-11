@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "platform/android/jni/JniHelper.h"
+#include "PluginJniHelper.h"
 #include <jni.h>
 #include <android/log.h>
 
@@ -15,7 +16,10 @@ extern "C"
 
 jint JNI_OnLoad(JavaVM *vm, void *reserved)
 {
+	CCLOG("[JVM INIT] vm = %p",vm);
+
     JniHelper::setJavaVM(vm);
+    PluginJniHelper::setJavaVM(vm);  // for plugins
 
     return JNI_VERSION_1_4;
 }

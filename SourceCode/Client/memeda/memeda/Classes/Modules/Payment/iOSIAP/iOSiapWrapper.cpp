@@ -12,7 +12,11 @@
 #include "cocos2d_specifics.hpp"
 
 #include "iOSiapWrapper.h"
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "iOSiapImp.h"
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
 
 #pragma mark - iOSiapWrapperCallBackClass
 
@@ -59,20 +63,32 @@ iOSiapWrapper* iOSiapWrapper::getInstance()
 
 iOSiapWrapper::iOSiapWrapper()
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     handle = iOSiap_create();
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
 }
 
 iOSiapWrapper::~iOSiapWrapper()
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     iOSiap_destory(handle);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
 }
 
 void iOSiapWrapper::payForProduct(std::string productID)
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     iOSiap_payforPuduct(handle, productID, iOS_Purchase_Callback, this);
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
 }
 
 void iOSiapWrapper::initAll()
 {
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     iOSiap_init();
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#endif /*CC_TARGET_PLATFORM*/
 }

@@ -14,6 +14,7 @@
 #import "RootViewController.h"
 
 #import "SocialShareAPI.h"
+#include "localStorage.h"
 
 @implementation AppController
 
@@ -67,7 +68,7 @@ static AppDelegate s_sharedApplication;
     [window makeKeyAndVisible];
 
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
-
+    
     cocos2d::CCApplication::sharedApplication()->run();
     
     //微信分享测试代码
@@ -98,6 +99,49 @@ static AppDelegate s_sharedApplication;
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
     cocos2d::CCApplication::sharedApplication()->applicationDidEnterBackground();
+    
+    createLocalNotification();
+}
+
+void createLocalNotification()
+{
+    char* szStopString;
+    const char* szCoin = localStorageGetItem("coin");
+    long lCoin = 50;
+    if ( szCoin != NULL )
+    {
+        lCoin = strtol(szCoin, &szStopString, 10);
+    }
+    
+    if ( lCoin < 50 )
+    {
+        // 创建本地通知
+        UILocalNotification* newNotification = [[UILocalNotification alloc]init];
+        if ( newNotification )
+        {
+            newNotification.timeZone = [NSTimeZone defaultTimeZone];
+            newNotification.fireDate = [[NSDate date]dateByAddingTimeInterval:(3600*24*5 + 10)];
+            newNotification.alertBody = @"猫猫帮你捡到了一袋金币，快去帮它继续闯关吧";
+            newNotification.soundName = @"notify.mp3";
+            [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
+        
+            [newNotification release];
+            
+            // 保存当前时间
+            NSDate* now = [NSDate date];
+            NSDateFormatter* df = [[[NSDateFormatter alloc] init] autorelease];
+            [df setDateFormat:@"EEE MMM dd HH:mm:ss yyyy"];
+            
+            NSString* text = [df stringFromDate:now];
+            localStorageSetItem("localNotification", [text UTF8String]);
+        }
+    }
+}
+
+void removeLocalNotification()
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    localStorageSetItem("localNotification", "");
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -109,6 +153,8 @@ static AppDelegate s_sharedApplication;
     [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     
     cocos2d::CCApplication::sharedApplication()->applicationWillEnterForeground();
+    
+    removeLocalNotification();
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

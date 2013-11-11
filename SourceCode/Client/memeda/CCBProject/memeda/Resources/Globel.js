@@ -17,16 +17,12 @@ Global_getShareUrl = function (aid) {
 		var userId = Global_getUserID();
 		var param = "uid=" + userId;
 		
-		return "http://121.197.3.27/memeda.php?" + param;
-				
-		//return "http://memeda.meme-da.com/memeda.php?" + param;
+		return "http://memeda.meme-da.com/memeda.php?" + param;
 	} else {
 		var userId = Global_getUserID();
 		var param = "aid=" + aid + "&uid=" + userId;
 
-		return "http://121.197.3.27/memeda.php?" + param;
-		
-		//return "http://memeda.meme-da.com/memeda.php?" + param;
+		return "http://memeda.meme-da.com/memeda.php?" + param;
 	}
 };
 
@@ -55,3 +51,31 @@ Global_getUserID = function () {
 Global_clearAllGloabalVars = function () {
     gHasShowedUFOLight = false;
 };
+
+var RemoteConfig = new Object;
+
+Global_InitRemoteConfig = function () {
+    RemoteConfig.alipay = "0";
+    RemoteConfig.domob = "0";
+    
+    var http = new XMLHttpRequest();
+    http.open("GET", "http://memeda.meme-da.com/ServiceConfig.php?id=" + CreateGuid());
+    
+    http.onreadystatechange = function(){
+        if( http.readyState == 4 && http.status == 200 ) {
+            debugMsgOutput(http.responseText);
+            var obj = JSON.parse(http.responseText);
+        
+            RemoteConfig = obj;
+            if ( RemoteConfig.alipay != "0" && RemoteConfig.alipay != "1" ) {
+                RemoteConfig.alipay = "0";
+            }
+            if ( RemoteConfig.domob != "0" && RemoteConfig.domob != "1" ) {
+                RemoteConfig.domob = "0";
+            }
+        }
+    }
+    http.send(null);
+}
+
+Global_InitRemoteConfig();

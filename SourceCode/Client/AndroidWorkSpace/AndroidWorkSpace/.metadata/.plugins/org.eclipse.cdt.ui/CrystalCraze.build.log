@@ -1,0 +1,7 @@
+
+**** Build of configuration Default for project CrystalCraze ****
+
+bash /Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/samples/Javascript/CrystalCraze/proj.android/build_native.sh 
+NDK_ROOT not defined. Please define NDK_ROOT in your environment or in local.properties
+
+**** Build Finished ****

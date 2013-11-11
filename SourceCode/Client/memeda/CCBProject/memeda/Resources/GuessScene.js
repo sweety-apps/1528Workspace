@@ -1319,6 +1319,14 @@ GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
 	gCurrentCCBView.noCoinMsgBox.controller.show(src, function (res) { 
 		gCurrentCCBView.EnableAllBtn(true);
 		if ( res == 1 ) {
+            try {
+            	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+					cc.AudioEngine.getInstance().stopMusic();
+                    cc.AudioEngine.getInstance().setMusicVolume(0.0);
+				}
+            } catch (e) {
+            }
+            
     		debugMsgOutput("[UI Event] Clicked Coin Button!");
     		if ( gCurrentCCBView.buyCoinMsgBox == null ) {
     			debugMsgOutput("create BuyCoinMessageBox");
@@ -1327,6 +1335,17 @@ GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
     		}
     
     		gCurrentCCBView.buyCoinMsgBox.controller.show();	
+		} else if ( res == 2 ) {
+            try {
+            	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+					cc.AudioEngine.getInstance().stopMusic();
+                    cc.AudioEngine.getInstance().setMusicVolume(0.0);
+				}
+            } catch (e) {
+            }
+            
+			cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
+			memeda.OfferWallController.show();
 		}
 	});
 }

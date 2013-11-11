@@ -2,24 +2,45 @@
 var FirstScene = function() {};
 var gChooseTestsScene = null;
 
+
+var debugTimeArray = new Array();
+function debugTimeBgin(head) {
+    var time = new Date();
+    debugTimeArray["" + head] = time.getSeconds() * 1000 + time.getMilliseconds();
+    
+    debugMsgOutput(head + " begin");
+}
+
+function debugTimeEnd(head) {
+    var time = new Date();
+    
+    var diff = time.getSeconds() * 1000 + time.getMilliseconds() - debugTimeArray["" + head];
+    
+    debugMsgOutput(head + " end " + diff);
+}
+
 FirstScene.prototype.onDidLoadFromCCB = function () {
 
 	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene.plist");
 	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene2.plist");
 		
-  	GuessScene_Preload(true);
+  	//GuessScene_Preload(true);
     
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 	
-	var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
-	chooseTestsScene = null;
+    //debugTimeBgin("loadAsScene");
     
-	var GuessScene = cc.BuilderReader.loadAsScene("GuessScene");
-	GuessScene = null;
+	//var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
+	//chooseTestsScene = null;
+    
+	//var GuessScene = cc.BuilderReader.loadAsScene("GuessScene");
+	//GuessScene = null;
 
+    //debugTimeEnd("loadAsScene");
+    
     Global_clearAllGloabalVars();
     
-    GuessScene_Preload(false);
+    //GuessScene_Preload(false);
     
     cc.AudioEngine.getInstance().playMusic("sounds/Floor_BG.mp3",true);
     cc.AudioEngine.getInstance().setMusicVolume(0.5);
@@ -60,8 +81,11 @@ FirstScene.prototype.onAnimationComplete = function()
 {
 	var aniName = this.homePage.animationManager.getLastCompletedSequenceName();
 	if ( aniName == "Ani Timeline" ) {
+    debugTimeBgin("loadAsScene");
+        
 		var chooseTestsScene = cc.BuilderReader.loadAsScene("ChooseTestsScene");
-		
+    debugTimeEnd("loadAsScene");
+        
     	chooseTestsScene = cc.TransitionFade.create(0.2,chooseTestsScene);
     	cc.Director.getInstance().replaceScene(chooseTestsScene);
         

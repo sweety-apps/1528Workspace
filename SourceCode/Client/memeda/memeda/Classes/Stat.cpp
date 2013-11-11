@@ -130,11 +130,18 @@ CStat* CStat::GetInstance()
 
 void   CStat::Init()
 {
+    CCLOG("[UMENG Step Init] %d",1);
     cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsUmeng");
+    CCLOG("[UMENG Step Init] %d",2);
+    CCLOG("[UMENG Step Init] plugin == %p",plugin);
     m_analytics = dynamic_cast<cocos2d::plugin::ProtocolAnalytics*>(plugin);
+    CCLOG("[UMENG Step Init] %d",3);
     m_analytics->setDebugMode(false);
+    CCLOG("[UMENG Step Init] %d",4);
     m_analytics->setCaptureUncaughtException(true);
+    CCLOG("[UMENG Step Init] %d",5);
     m_analytics->startSession(kUmengAppId);
+    CCLOG("[UMENG Step Init] %d",6);
 }
 
 bool CStat::init()

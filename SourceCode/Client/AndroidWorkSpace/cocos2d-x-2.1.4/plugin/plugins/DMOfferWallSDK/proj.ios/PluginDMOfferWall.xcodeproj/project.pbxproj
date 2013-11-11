@@ -312,6 +312,7 @@
 					"$(inherited)",
 					"/Users/1528/Documents/1528GithubWorkSpace/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos7.0;

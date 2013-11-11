@@ -1,5 +1,5 @@
 APPNAME="memeda"
-APP_ANDROID_NAME="com.studio1528"
+APP_ANDROID_NAME="com.studio1528.memeda"
 
 if [ -z "${SDK_ROOT+aaa}" ]; then
 # ... if SDK_ROOT is not set, use "$HOME/bin/android-sdk"

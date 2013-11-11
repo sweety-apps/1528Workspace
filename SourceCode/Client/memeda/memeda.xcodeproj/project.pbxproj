@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		599B24271823AE7C00CBB03C /* notify.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 599B24261823AE7C00CBB03C /* notify.mp3 */; };
+		599F6A07182A3A1C00C8C83F /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 599F6A06182A3A1C00C8C83F /* AppDelegate.cpp */; };
 		A60009C41807E62400CBDFE5 /* CPreloadHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */; };
 		A60009C51807E62400CBDFE5 /* js_CommonFunction.mm in Sources */ = {isa = PBXBuildFile; fileRef = A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */; };
 		A60009C61807E62400CBDFE5 /* js_OfferWallController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A60009C01807E62400CBDFE5 /* js_OfferWallController.cpp */; };
@@ -339,11 +341,13 @@
 		F316D28E17B2059A00821A66 /* Slot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316D28D17B2059A00821A66 /* Slot.cpp */; };
 		F316D29117B2059A00821A66 /* SlotData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316D29017B2059A00821A66 /* SlotData.cpp */; };
 		F316D29417B2059A00821A66 /* spine-cocos2dx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316D29317B2059A00821A66 /* spine-cocos2dx.cpp */; };
-		F316D2A317B2059A00821A66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316D2A217B2059A00821A66 /* AppDelegate.cpp */; };
 		F316D2E817B2059B00821A66 /* hello.js in Resources */ = {isa = PBXBuildFile; fileRef = F316D2E717B2059B00821A66 /* hello.js */; };
 		F316D2EF17B20FA700821A66 /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F316D2EE17B20FA700821A66 /* TestCCB */; };
 		F3395C4317F92A6600EEF086 /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */; };
-		F34AE84C1818ED9500A52976 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34AE84B1818ED9500A52976 /* StoreKit.framework */; };
+		F33F2371182393E600B23D75 /* js_CommonFunctionAndroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33F2370182393E600B23D75 /* js_CommonFunctionAndroid.cpp */; };
+		F34AE84C1818ED9500A52976 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34AE84B1818ED9500A52976 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F35F777F1830A54800E06111 /* Game_Util_Functions_Android.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */; };
+		F35F77811830A59100E06111 /* Game_Util_Functions_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F35F77801830A59100E06111 /* Game_Util_Functions_iOS.mm */; };
 		F36DB7AB1816F41900A582DB /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = F36DB7AA1816F41900A582DB /* Icon-114.png */; };
 		F396428317B740610022AA6B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428117B740610022AA6B /* Default-568h@2x.png */; };
 		F396428417B740610022AA6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428217B740610022AA6B /* Default@2x.png */; };
@@ -383,6 +387,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		599B24261823AE7C00CBB03C /* notify.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = notify.mp3; path = Resources/notify.mp3; sourceTree = "<group>"; };
+		599F6A06182A3A1C00C8C83F /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		A60009BC1807E62400CBDFE5 /* CPreloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPreloadHelper.h; path = Classes/CPreloadHelper.h; sourceTree = "<group>"; };
 		A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CPreloadHelper.mm; path = Classes/CPreloadHelper.mm; sourceTree = "<group>"; };
 		A60009BE1807E62400CBDFE5 /* js_CommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = js_CommonFunction.h; path = Classes/js_CommonFunction.h; sourceTree = "<group>"; };
@@ -1158,12 +1164,15 @@
 		F316D29C17B2059A00821A66 /* libwebsockets.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwebsockets.a; path = libs/libwebsockets/ios/lib/libwebsockets.a; sourceTree = "<group>"; };
 		F316D29F17B2059A00821A66 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		F316D2A117B2059A00821A66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
-		F316D2A217B2059A00821A66 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		F316D2E717B2059B00821A66 /* hello.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = hello.js; path = Resources/hello.js; sourceTree = "<group>"; };
 		F316D2EE17B20FA700821A66 /* TestCCB */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TestCCB; path = Resources/TestCCB; sourceTree = "<group>"; };
 		F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
+		F33F2370182393E600B23D75 /* js_CommonFunctionAndroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = js_CommonFunctionAndroid.cpp; path = Classes/js_CommonFunctionAndroid.cpp; sourceTree = "<group>"; };
 		F34AE84A1818E2B700A52976 /* memeda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = memeda.entitlements; sourceTree = "<group>"; };
 		F34AE84B1818ED9500A52976 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game_Util_Functions_Android.cpp; path = Classes/Game_Util_Functions_Android.cpp; sourceTree = "<group>"; };
+		F35F777E1830A54800E06111 /* Game_Util_Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game_Util_Functions.h; path = Classes/Game_Util_Functions.h; sourceTree = "<group>"; };
+		F35F77801830A59100E06111 /* Game_Util_Functions_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Game_Util_Functions_iOS.mm; path = Classes/Game_Util_Functions_iOS.mm; sourceTree = "<group>"; };
 		F36DB7AA1816F41900A582DB /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "Resources/Icon-114.png"; sourceTree = "<group>"; };
 		F396428117B740610022AA6B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F396428217B740610022AA6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
@@ -1462,6 +1471,7 @@
 		F316CE5317B2059300821A66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				599B24261823AE7C00CBB03C /* notify.mp3 */,
 				F3DC578F181835010088B4B4 /* MKStoreKitConfigs.plist */,
 				F316D2EE17B20FA700821A66 /* TestCCB */,
 				F36DB7AA1816F41900A582DB /* Icon-114.png */,
@@ -2842,6 +2852,7 @@
 				A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */,
 				A60009BE1807E62400CBDFE5 /* js_CommonFunction.h */,
 				A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */,
+				F33F2370182393E600B23D75 /* js_CommonFunctionAndroid.cpp */,
 				A60009C01807E62400CBDFE5 /* js_OfferWallController.cpp */,
 				A60009C11807E62400CBDFE5 /* js_OfferWallController.h */,
 				A60009C21807E62400CBDFE5 /* Stat.cpp */,
@@ -2850,9 +2861,12 @@
 				F3D0895217EEC5950093A0B5 /* uncompressZipFile.cpp */,
 				F3D0895317EEC5950093A0B5 /* uncompressZipFile.h */,
 				F316D2A117B2059A00821A66 /* AppDelegate.h */,
-				F316D2A217B2059A00821A66 /* AppDelegate.cpp */,
+				599F6A06182A3A1C00C8C83F /* AppDelegate.cpp */,
 				F3D08AD917EF5C410093A0B5 /* AppConfigVarDefines.h */,
 				A6A7019F17F01AD3005FBA13 /* plugin-x */,
+				F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */,
+				F35F777E1830A54800E06111 /* Game_Util_Functions.h */,
+				F35F77801830A59100E06111 /* Game_Util_Functions_iOS.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3164,6 +3178,7 @@
 				F3D102B718103B15002A3A9B /* Images.xcassets in Resources */,
 				F316CE6917B2059300821A66 /* iTunesArtwork in Resources */,
 				F316CF0817B2059400821A66 /* ChangeLog in Resources */,
+				599B24271823AE7C00CBB03C /* notify.mp3 in Resources */,
 				F316D07C17B2059600821A66 /* project.pbxproj in Resources */,
 				F316D08217B2059600821A66 /* cocos2d_specifics.hpp in Resources */,
 				F316D08A17B2059700821A66 /* jsb_cocos2dx_auto.hpp in Resources */,
@@ -3236,12 +3251,14 @@
 				F316CED217B2059400821A66 /* CCSet.cpp in Sources */,
 				F316CED517B2059400821A66 /* CCString.cpp in Sources */,
 				F316CED817B2059400821A66 /* CCZone.cpp in Sources */,
+				F35F777F1830A54800E06111 /* Game_Util_Functions_Android.cpp in Sources */,
 				F316CEDB17B2059400821A66 /* cocos2d.cpp in Sources */,
 				F316CEDE17B2059400821A66 /* CCDrawingPrimitives.cpp in Sources */,
 				F316CEE117B2059400821A66 /* CCDrawNode.cpp in Sources */,
 				F316CEE517B2059400821A66 /* CCGrabber.cpp in Sources */,
 				F316CEE817B2059400821A66 /* CCGrid.cpp in Sources */,
 				F316CF0617B2059400821A66 /* aabb.c in Sources */,
+				F35F77811830A59100E06111 /* Game_Util_Functions_iOS.mm in Sources */,
 				F316CF0C17B2059400821A66 /* mat4stack.c in Sources */,
 				F316CF0E17B2059400821A66 /* matrix.c in Sources */,
 				F316CF1017B2059400821A66 /* mat3.c in Sources */,
@@ -3355,6 +3372,7 @@
 				F316D0AF17B2059700821A66 /* js_bindings_ccbreader.cpp in Sources */,
 				F316D0B217B2059700821A66 /* js_bindings_chipmunk_auto_classes.cpp in Sources */,
 				F316D0B617B2059700821A66 /* js_bindings_chipmunk_functions.cpp in Sources */,
+				F33F2371182393E600B23D75 /* js_CommonFunctionAndroid.cpp in Sources */,
 				F316D0BA17B2059800821A66 /* js_bindings_chipmunk_manual.cpp in Sources */,
 				F316D0BD17B2059800821A66 /* js_bindings_chipmunk_registration.cpp in Sources */,
 				F316D0C117B2059800821A66 /* js_bindings_core.cpp in Sources */,
@@ -3470,6 +3488,7 @@
 				F316D26417B2059A00821A66 /* AtlasAttachmentLoader.cpp in Sources */,
 				F316D26717B2059A00821A66 /* Attachment.cpp in Sources */,
 				F316D26A17B2059A00821A66 /* AttachmentLoader.cpp in Sources */,
+				599F6A07182A3A1C00C8C83F /* AppDelegate.cpp in Sources */,
 				F316D26D17B2059A00821A66 /* Bone.cpp in Sources */,
 				F316D27017B2059A00821A66 /* BoneData.cpp in Sources */,
 				F316D27317B2059A00821A66 /* CCSkeleton.cpp in Sources */,
@@ -3484,7 +3503,6 @@
 				F316D28E17B2059A00821A66 /* Slot.cpp in Sources */,
 				F316D29117B2059A00821A66 /* SlotData.cpp in Sources */,
 				F316D29417B2059A00821A66 /* spine-cocos2dx.cpp in Sources */,
-				F316D2A317B2059A00821A66 /* AppDelegate.cpp in Sources */,
 				A6A701F017F01AEA005FBA13 /* PluginFactory.mm in Sources */,
 				A6A701F117F01AEA005FBA13 /* PluginProtocol.mm in Sources */,
 				A6A701F217F01AEA005FBA13 /* PluginUtilsIOS.mm in Sources */,
@@ -3528,7 +3546,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 1;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3600,8 +3618,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3629,6 +3647,14 @@
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend,
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0,
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/UI,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Connection,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Core,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/GooglePlusSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/Pinterest.embeddedframework,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/RenRenSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/UI,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3694,6 +3720,14 @@
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -3705,6 +3739,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"memeda/libs/Chipmunk/include/chipmunk\" \"memeda/libs/javascript/spidermonkey-ios/include\"";
 				VALIDATE_PRODUCT = YES;
@@ -3718,8 +3753,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BIN Li (B4BR4E2M87)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BIN Li (B4BR4E2M87)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3811,6 +3846,14 @@
 					/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
 					"/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/libWeiboSDK,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/SDKExport,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/Classes/Modules/OpenSocial/ShareSDK/iOS/ShareSDK_v2.5.0/Extend/TencentWeiboSSO,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/javascript/spidermonkey-ios/lib",
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/libwebsockets/ios/lib,
+					/Users/zc/Desktop/1528Workspace/SourceCode/Client/memeda/memeda/libs/cocos2dx/platform/third_party/ios/libraries,
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/umeng/proj.ios",
+					"/Users/zc/Desktop/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/plugin/plugins/DMOfferWallSDK/proj.ios",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
