@@ -11,7 +11,7 @@
 <listAttribute key="com.android.ide.eclipse.ndk.ndklaunch.solib">
 <listEntry value="${NdkProject}/obj/local/${NdkCompatAbi}/"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/android-ndk-r9/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-gdb"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/android-ndk-r9b/toolchains/arm-linux-androideabi-4.6/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-gdb"/>
 <stringAttribute key="org.eclipse.cdt.dsf.gdb.GDB_INIT" value=""/>
 <stringAttribute key="org.eclipse.cdt.dsf.gdb.HOST" value="localhost"/>
 <stringAttribute key="org.eclipse.cdt.dsf.gdb.PORT" value="5039"/>
