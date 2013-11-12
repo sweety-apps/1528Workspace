@@ -70,14 +70,14 @@ public class qietingfengyun extends Cocos2dxActivity{
 		ShareSDK.initSDK(this);
 		
 		//测试分享
-		timer.schedule(task,2000,10000);
+		//timer.schedule(task,2000,10000);
 	}
 	
 	@Override
 	protected void onDestroy()
 	{
 		//测试分享
-		timer.cancel();
+		//timer.cancel();
 		
 		// 停掉ShareSDK
 		ShareSDK.stopSDK(this);
