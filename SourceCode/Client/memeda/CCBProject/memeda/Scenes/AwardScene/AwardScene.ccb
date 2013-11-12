@@ -318,8 +318,6 @@
 														</array>
 													</dict>
 												</array>
-												<key>selected</key>
-												<true/>
 											</dict>
 										</array>
 										<key>customClass</key>
@@ -505,7 +503,7 @@
 												<key>value</key>
 												<array>
 													<real>162</real>
-													<real>240</real>
+													<real>211</real>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -555,7 +553,57 @@
 												<key>value</key>
 												<array>
 													<real>162</real>
-													<real>400</real>
+													<real>336</real>
+													<integer>1</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>scale</string>
+												<key>type</key>
+												<string>ScaleLock</string>
+												<key>value</key>
+												<array>
+													<real>1</real>
+													<real>1</real>
+													<false/>
+													<integer>0</integer>
+												</array>
+											</dict>
+											<dict>
+												<key>name</key>
+												<string>ccbFile</string>
+												<key>type</key>
+												<string>CCBFile</string>
+												<key>value</key>
+												<string>AwardItem.ccb</string>
+											</dict>
+										</array>
+									</dict>
+									<dict>
+										<key>baseClass</key>
+										<string>CCBFile</string>
+										<key>children</key>
+										<array/>
+										<key>customClass</key>
+										<string></string>
+										<key>displayName</key>
+										<string>DuomengCCB</string>
+										<key>memberVarAssignmentName</key>
+										<string>duomengCtrl</string>
+										<key>memberVarAssignmentType</key>
+										<integer>1</integer>
+										<key>properties</key>
+										<array>
+											<dict>
+												<key>name</key>
+												<string>position</string>
+												<key>type</key>
+												<string>Position</string>
+												<key>value</key>
+												<array>
+													<real>162</real>
+													<real>461</real>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -606,7 +654,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>0.0</real>
+											<real>-100</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -1189,7 +1237,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>0.0</real>
+											<real>-80</real>
 											<integer>1</integer>
 										</array>
 									</dict>
@@ -2365,7 +2413,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.3333333432674408</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
