@@ -33,7 +33,7 @@ AwardScene.prototype.initStatus = function () {
     //
     this.firendCtrl.controller.setItemInfo("UI/floorsscene/award_1.png", 200, this, this.onClickFirend);
     this.commentCtrl.controller.setItemInfo("UI/floorsscene/award_2.png", 200, this, this.onClickComment);
-    //this.duomengCtrl.controller.setItemInfo("UI/floorsscene/award_3.png", null, this, this.onClickDuomeng);
+    this.duomengCtrl.controller.setItemInfo("UI/floorsscene/award_3.png", null, this, this.onClickDuomeng);
     
     var showsharecoin = sys.localStorage.getItem("showsharecoin");
     if ( showsharecoin == "2" ) {
@@ -49,7 +49,7 @@ AwardScene.prototype.initStatus = function () {
      	this.commentCtrl.controller.setItemStatus(1);
     }
     
-    //this.duomengCtrl.controller.setItemStatus(0);
+    this.duomengCtrl.controller.setItemStatus(0);
 }
 
 AwardScene.prototype.onDidLoadFromCCB = function () {
