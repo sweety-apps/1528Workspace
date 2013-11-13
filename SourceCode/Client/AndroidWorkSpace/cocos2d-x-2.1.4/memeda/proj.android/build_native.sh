@@ -37,7 +37,7 @@ done
 # paths
 
 # 
-NDK_ROOT="/Users/1528/adt-bundle-mac/android-ndk-r9b"
+NDK_ROOT="/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/android-ndk-r9"
 #NDK_ROOT="PATH:${NDK_ROOT}"
 
 if [ -z "${NDK_ROOT+aaa}" ];then
