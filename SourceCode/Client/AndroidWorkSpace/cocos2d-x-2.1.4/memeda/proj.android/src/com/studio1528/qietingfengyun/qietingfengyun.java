@@ -10,7 +10,6 @@ import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.sina.weibo.SinaWeibo;
-import cn.sharesdk.wechat.friends.Wechat;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

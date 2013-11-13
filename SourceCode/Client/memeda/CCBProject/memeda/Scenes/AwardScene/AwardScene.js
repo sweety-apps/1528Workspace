@@ -161,11 +161,8 @@ AwardScene.prototype.onClickComment = function (obj) {
 AwardScene.prototype.onClickDuomeng = function (obj) {
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
 	if ( obj.enableAllBtn ) {
-        if(sys.os != "android" && sys.os != "Android")
-        {
-            debugMsgOutput("memeda.OfferWallController");
-            memeda.OfferWallController.show();
-        }
+        debugMsgOutput("memeda.OfferWallController");
+        memeda.OfferWallController.show();
 	}
 	
 	if ( !Global_isWeb() ) {

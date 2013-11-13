@@ -24,7 +24,8 @@
 #define kShareSDKAppId @"98333c6897c"
 #define kWeixinAppId @"wxdea41cab84b6c578"
 #define kUmengAppId "5282175156240b5d3e00e748"
-#define kOfferWallPubID "96ZJ2rNgzeykPwTA/a"    // 发布用
+//#define kOfferWallPubID "96ZJ3qMgzeykPwTA6q"    // 发布用
+#define kOfferWallPubID "96ZJ2b8QzehB3wTAwQ"	// 测试用
 
 #endif /*CC_TARGET_PLATFORM*/
 

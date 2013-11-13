@@ -162,8 +162,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(jsb_register_system);
     sc->addRegisterCallback(JSB_register_opengl);
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+
     sc->addRegisterCallback(js_OfferWallController::_js_register);
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     sc->addRegisterCallback(register_all_jsb_SocialShareAPI);
     sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
     sc->addRegisterCallback(CommonFunction::_js_register);

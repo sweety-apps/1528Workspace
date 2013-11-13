@@ -6,6 +6,12 @@ var AwardScene = function() {};
 var pThisAwardScene = null;
 
 AwardScene.prototype.showWindow = function () {
+	if ( RemoteConfig.domob == "1" ) {
+		this.duomengCtrl.setVisible(true);
+	} else { 
+		this.duomengCtrl.setVisible(false);	
+	}
+	
 	this.initStatus();
 	this.bkgBtn.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Begin Timeline");
@@ -27,7 +33,7 @@ AwardScene.prototype.initStatus = function () {
     //
     this.firendCtrl.controller.setItemInfo("UI/floorsscene/award_1.png", 200, this, this.onClickFirend);
     this.commentCtrl.controller.setItemInfo("UI/floorsscene/award_2.png", 200, this, this.onClickComment);
-    //this.duomengCtrl.controller.setItemInfo("UI/floorsscene/award_3.png", null, this, this.onClickDuomeng);
+    this.duomengCtrl.controller.setItemInfo("UI/floorsscene/award_3.png", null, this, this.onClickDuomeng);
     
     var showsharecoin = sys.localStorage.getItem("showsharecoin");
     if ( showsharecoin == "2" ) {
@@ -43,7 +49,7 @@ AwardScene.prototype.initStatus = function () {
      	this.commentCtrl.controller.setItemStatus(1);
     }
     
-    //this.duomengCtrl.controller.setItemStatus(0);
+    this.duomengCtrl.controller.setItemStatus(0);
 }
 
 AwardScene.prototype.onDidLoadFromCCB = function () {
@@ -155,11 +161,8 @@ AwardScene.prototype.onClickComment = function (obj) {
 AwardScene.prototype.onClickDuomeng = function (obj) {
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
 	if ( obj.enableAllBtn ) {
-        if(sys.os != "android" && sys.os != "Android")
-        {
-            debugMsgOutput("memeda.OfferWallController");
-            memeda.OfferWallController.show();
-        }
+        debugMsgOutput("memeda.OfferWallController");
+        memeda.OfferWallController.show();
 	}
 	
 	if ( !Global_isWeb() ) {

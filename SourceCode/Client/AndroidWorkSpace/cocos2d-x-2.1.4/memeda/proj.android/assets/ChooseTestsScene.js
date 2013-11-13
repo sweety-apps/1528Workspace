@@ -68,11 +68,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 
     // 初始化多盟
     if ( !Global_isWeb() ) {
-        if(sys.os != "android" && sys.os != "Android")
-        {
-            debugMsgOutput("" + memeda.OfferWallController);
-            memeda.OfferWallController.init();
-        }
+        debugMsgOutput("" + memeda.OfferWallController);
+        memeda.OfferWallController.init(Global_getUserID());
     }
     this.QueryExtraCoin();
     this.wholeFloors.controller.setupCatPosition();

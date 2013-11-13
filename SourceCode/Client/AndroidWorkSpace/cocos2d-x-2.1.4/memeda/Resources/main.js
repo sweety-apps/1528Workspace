@@ -2,7 +2,7 @@
 
 require("jsb.js");
 
-require("answerBlank.js");
+require("AnswerBlank.js");
 require("BGCtrlLayer.js");
 require("BGDoorLayer.js");
 require("BGLayer.js");

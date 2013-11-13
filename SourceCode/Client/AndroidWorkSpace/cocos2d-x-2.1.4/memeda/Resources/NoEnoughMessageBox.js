@@ -9,6 +9,8 @@ NoEnoughMessageBox.prototype.onDidLoadFromCCB = function () {
     var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
     var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
 
+	this.msgLayout.setVisible(false);
+	
     // 针对非iphone5屏幕做缩小适配
     if(screenHeight / screenWidth < 1136/640)
     {   
@@ -20,6 +22,20 @@ NoEnoughMessageBox.prototype.onDidLoadFromCCB = function () {
 };
 
 NoEnoughMessageBox.prototype.show = function(src, endFun) {
+	if ( RemoteConfig.domob == "1" ) {
+		this.freeBtnText.setVisible(true);
+		this.freeBtn.setVisible(true);	
+		
+		this.buyBtn.setPositionY(259);
+		this.buyBtnText.setPositionY(261);		
+	} else {
+		this.freeBtnText.setVisible(false);
+		this.freeBtn.setVisible(false);
+		
+		this.buyBtn.setPositionY(182);
+		this.buyBtnText.setPositionY(184);	
+	}
+	
 	this.msgLayout.setVisible(true);
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
@@ -51,6 +67,7 @@ NoEnoughMessageBox.prototype.onClickClose = function() {
 	this.Hide(0);
 };
 
+
 NoEnoughMessageBox.prototype.onClickBuy = function() {
  	if ( !Global_isWeb() ) {
         var param = memeda.Stat.createParam();
@@ -59,4 +76,15 @@ NoEnoughMessageBox.prototype.onClickBuy = function() {
 	}
 		
 	this.Hide(1);	
+};
+
+NoEnoughMessageBox.prototype.onClickFree = function () {
+ 	if ( !Global_isWeb() ) {
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("question", gProblemProject);
+        param.addKeyAndValue("src", "guess");
+    	memeda.Stat.logEvent("clickDuomeng", param);
+	}
+		
+	this.Hide(2);	
 };
