@@ -1,9 +1,0 @@
-eclipse.preferences.version=1
-environment/project/0.2103072919/NDK_MODULE_PATH/delimiter=\:
-environment/project/0.2103072919/NDK_MODULE_PATH/operation=replace
-environment/project/0.2103072919/NDK_MODULE_PATH/value=$COCOS2DX_ROOT\:$COCOS2DX_ROOT/cocos2dx/platform/third_party/android/prebuilt
-environment/project/0.2103072919/NDK_ROOT/delimiter=\:
-environment/project/0.2103072919/NDK_ROOT/operation=append
-environment/project/0.2103072919/NDK_ROOT/value=/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/android-ndk-r9
-environment/project/0.2103072919/append=true
-environment/project/0.2103072919/appendContributed=true
