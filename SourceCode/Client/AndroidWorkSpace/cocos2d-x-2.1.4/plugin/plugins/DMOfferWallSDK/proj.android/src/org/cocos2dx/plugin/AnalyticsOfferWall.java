@@ -4,9 +4,7 @@ import java.util.Hashtable;
 
 import android.content.Context;
 import android.util.Log;
-import cn.domob.offer.wall.data.DomobOfferWallErrorInfo;
 import cn.domob.offer.wall.data.DomobOfferWallManager;
-import cn.domob.offer.wall.data.DomobOfferWallManager.ConsumeStatus;
 
 public class AnalyticsOfferWall implements InterfaceSocial {
     protected static void LogD(String msg) {
@@ -57,7 +55,7 @@ public class AnalyticsOfferWall implements InterfaceSocial {
 	{
 		strPublishId = publishId;
 		
-		mDomobOfferWallManager = new DomobOfferWallManager(mContext, strPublishId);
+		mDomobOfferWallManager = new DomobOfferWallManager(mContext, strPublishId, strUserId);
 	}
 	
 	public void SetUserID(String userID)
@@ -78,7 +76,7 @@ public class AnalyticsOfferWall implements InterfaceSocial {
 	
 	public void requestOnlineConsumeWithPoint(int num)
 	{
-		
+		 
 	}
 	
 	private String strPublishId;
