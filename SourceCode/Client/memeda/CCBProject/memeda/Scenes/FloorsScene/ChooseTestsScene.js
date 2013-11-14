@@ -399,10 +399,7 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         	this.weChatAwardMsg.controller.ShowMsg(2, canConsum, function (coin) {
         		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
         		            					// 消费掉多余的金币
-                                                if(sys.os != "android" && sys.os != "Android")
-                                                {
                                                     memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
-                                                }
         		            					CoinMgr_Change(coin);
                                            });                  
         }

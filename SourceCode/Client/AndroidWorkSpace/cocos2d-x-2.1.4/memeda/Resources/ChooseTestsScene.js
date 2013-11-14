@@ -373,6 +373,7 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
 ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
     var obj = JSON.parse(responseText);
     var consumed = sys.localStorage.getItem("consumed");
+
     // 消费掉的积分，取本地和服务器上纪录的最大值
     debugMsgOutput("obj.totalPoint " + obj.totalPoint);
     debugMsgOutput("obj.consumed " + obj.consumed);
@@ -399,10 +400,7 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         	this.weChatAwardMsg.controller.ShowMsg(2, canConsum, function (coin) {
         		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
         		            					// 消费掉多余的金币
-                                                if(sys.os != "android" && sys.os != "Android")
-                                                {
                                                     memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
-                                                }
         		            					CoinMgr_Change(coin);
                                            });                  
         }
