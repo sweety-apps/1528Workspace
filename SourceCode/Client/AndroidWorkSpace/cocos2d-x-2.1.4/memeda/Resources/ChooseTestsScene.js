@@ -294,7 +294,12 @@ ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Coins.mp3");
     if ( this.awardScene == null ) {
-        this.awardScene = cc.BuilderReader.load("AwardScene");
+    	if ( sys.os != "android" && sys.os != "Android" ) {
+    		this.awardScene = cc.BuilderReader.load("AwardScene");
+    	} else {
+    		this.awardScene = cc.BuilderReader.load("AwardSceneForAndroid");
+    	}
+    	
         this.ccbLayout2.addChild(this.awardScene);
         this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);
     }
@@ -373,7 +378,6 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
 ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
     var obj = JSON.parse(responseText);
     var consumed = sys.localStorage.getItem("consumed");
-
     // 消费掉的积分，取本地和服务器上纪录的最大值
     debugMsgOutput("obj.totalPoint " + obj.totalPoint);
     debugMsgOutput("obj.consumed " + obj.consumed);

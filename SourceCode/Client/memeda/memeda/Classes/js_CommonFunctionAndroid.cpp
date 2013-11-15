@@ -87,8 +87,8 @@ JSBool CommonFunction::openURL(JSContext* cx, uint32_t argc, jsval* vp)
     JSStringWrapper pw(jsobj);
     string strKey = pw.get().c_str();
     
-    //这里增加拉起URL的逻辑
-    
+
+
     return JS_TRUE;
 }
 

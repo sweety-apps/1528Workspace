@@ -18,28 +18,28 @@ public class ResultChecker {
 		this.mContent = content;
 	}
 
-	/**
-	 * 从验签内容中获取成功状态
-	 * 
-	 * @return
-	 */
-	private String getSuccess() {
-		String success = null;
-
-		try {
-			JSONObject objContent = BaseHelper.string2JSON(this.mContent, ";");
-			String result = objContent.getString("result");
-			result = result.substring(1, result.length() - 1);
-
-			JSONObject objResult = BaseHelper.string2JSON(result, "&");
-			success = objResult.getString("success");
-			success = success.replace("\"", "");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return success;
-	}
+//	/**
+//	 * 从验签内容中获取成功状态
+//	 * 
+//	 * @return
+//	 */
+//	private String getSuccess() {
+//		String success = null;
+//
+//		try {
+//			JSONObject objContent = BaseHelper.string2JSON(this.mContent, ";");
+//			String result = objContent.getString("result");
+//			result = result.substring(1, result.length() - 1);
+//
+//			JSONObject objResult = BaseHelper.string2JSON(result, "&");
+//			success = objResult.getString("success");
+//			success = success.replace("\"", "");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//		return success;
+//	}
 
 	/**
 	 * 对签名进行验签
@@ -76,34 +76,15 @@ public class ResultChecker {
 
 		return retVal;
 	}
-	
-	int getResultStatus() {
-		int ret = 9000;
-		try {
-			JSONObject objContent = BaseHelper.string2JSON(this.mContent, ";");
-			String result = objContent.getString("resultStatus");
-			result = result.substring(1, result.length() - 1);
-			
-			ret = Integer.parseInt(result);
-		} catch (Exception e) {
-			e.printStackTrace();
-			ret = 4001;
-		}
-		return ret;
-	}
 
-	private static final int PAY_SUCCESS_STATUS_CODE = 9000;
-	public boolean isPayOk() {
-		boolean isPayOk = false;
-
-		String success = getSuccess();
-		if (success.equalsIgnoreCase("true") &&
-			checkSign() == RESULT_CHECK_SIGN_SUCCEED &&
-			PAY_SUCCESS_STATUS_CODE == getResultStatus())
-		{
-			isPayOk = true;
-		}
-
-		return isPayOk;
-	}
+//	boolean isPayOk() {
+//		boolean isPayOk = false;
+//
+//		String success = getSuccess();
+//		if (success.equalsIgnoreCase("true")
+//				&& checkSign() == RESULT_CHECK_SIGN_SUCCEED)
+//			isPayOk = true;
+//
+//		return isPayOk;
+//	}
 }

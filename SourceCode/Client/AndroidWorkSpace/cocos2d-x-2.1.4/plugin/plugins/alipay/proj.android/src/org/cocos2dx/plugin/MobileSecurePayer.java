@@ -150,8 +150,7 @@ public class MobileSecurePayer {
 		 * values. Note that IPC calls are dispatched through a thread pool
 		 * running in each process, so the code executing here will NOT be
 		 * running in our main thread like most other things -- so, to update
-		 * the UI, we need to use a Handler to hop over there.
-		 * 通过IPC机制启动安全支付服务
+		 * the UI, we need to use a Handler to hop over there. 通过IPC机制启动安全支付服务
 		 */
 		public void startActivity(String packageName, String className,
 				int iCallingPid, Bundle bundle) throws RemoteException {
@@ -171,5 +170,22 @@ public class MobileSecurePayer {
 			intent.setClassName(packageName, className);
 			mActivity.startActivity(intent);
 		}
+
+		/**
+		 * when the msp loading dialog gone, call back this method.
+		 */
+		@Override
+		public boolean isHideLoadingScreen() throws RemoteException {
+			return false;
+		}
+
+		/**
+		 * when the current trade is finished or cancelled, call back this method.
+		 */
+		@Override
+		public void payEnd(boolean arg0, String arg1) throws RemoteException {
+
+		}
+
 	};
 }
