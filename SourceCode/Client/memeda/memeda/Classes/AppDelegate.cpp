@@ -164,10 +164,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
 
     sc->addRegisterCallback(js_OfferWallController::_js_register);
+    sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     sc->addRegisterCallback(register_all_jsb_SocialShareAPI);
-    sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
     sc->addRegisterCallback(CommonFunction::_js_register);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #endif /*CC_TARGET_PLATFORM*/

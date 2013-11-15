@@ -10,6 +10,7 @@
 #define __memeda__iOSiapWrapper__
 
 #include <iostream>
+#include "ProtocolIAP.h"
 
 class iOSiapWrapperCallBackClass
 {
@@ -23,6 +24,7 @@ class iOSiapWrapper
 {
 protected:
     static iOSiapWrapper* g_singleInstance;
+    static cocos2d::plugin::ProtocolIAP* g_aliPay;
     void* handle;
 public:
     iOSiapWrapper();

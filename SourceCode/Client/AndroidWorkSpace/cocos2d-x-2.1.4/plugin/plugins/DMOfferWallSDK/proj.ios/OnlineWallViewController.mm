@@ -76,7 +76,7 @@
 - (void) requestOnlinePointCheck
 {   // 检查积分
     [_offerWallController requestOnlinePointCheck];
-}
+}	
 
 // 领取积分
 - (void) requestOnlineConsumeWithPoint : (NSUInteger)pointToConsume
