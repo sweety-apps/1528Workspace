@@ -15,6 +15,11 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import org.cocos2dx.plugin.FileDownloader.IDownloadProgress;
+
+import com.studio1528.qietingfengyun.R;
+
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -25,11 +30,13 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 /**
  * 检测安全支付服务是否正确安装，如果没有安装进行本地安装，或者下载安装， 检测安全支付服务版本，有新版本时进行下载。
  * 
  */
+@SuppressLint("HandlerLeak")
 public class MobileSecurePayHelper {
 	static final String TAG = "MobileSecurePayHelper";
 
@@ -37,7 +44,7 @@ public class MobileSecurePayHelper {
 	Context mContext = null;
 
 	public MobileSecurePayHelper(Context context) {
-		this.mContext = context;
+		mContext = context;
 	}
 
 	/**
@@ -71,15 +78,40 @@ public class MobileSecurePayHelper {
 
 					//
 					// 动态下载
-					if (newApkdlUrl != null)
-						retrieveApkFromNet(mContext, newApkdlUrl, cachePath);
+					if (newApkdlUrl != null) {
+						FileDownloader fd = new FileDownloader();
+						fd.setFileUrl(newApkdlUrl);
+						fd.setSavePath(cachePath);
+						fd.setProgressOutput(new IDownloadProgress() {
+							@Override
+							public void downloadSucess() {
+								Message msg = mHandler.obtainMessage(
+										AlixId.RQF_INSTALL_CHECK, cachePath);
+								mHandler.sendMessage(msg);
+							}
+
+							@Override
+							public void downloadProgress(float progress) {
+
+							}
+
+							@Override
+							public void downloadFail() {
+								Message msg = mHandler.obtainMessage(
+										AlixId.RQF_DOWNLOAD_FAILED, cachePath);
+								mHandler.sendMessage(msg);
+							}
+						});
+						fd.start();
+					}else{
+						Message msg = mHandler.obtainMessage(
+								AlixId.RQF_INSTALL_WITHOUT_DOWNLOAD, cachePath);
+						mHandler.sendMessage(msg);
+					}
 
 					// send the result back to caller.
 					// 发送结果
-					Message msg = new Message();
-					msg.what = AlixId.RQF_INSTALL_CHECK;
-					msg.obj = cachePath;
-					mHandler.sendMessage(msg);
+
 				}
 			}).start();
 		}
@@ -98,11 +130,12 @@ public class MobileSecurePayHelper {
 	 */
 	public void showInstallConfirmDialog(final Context context,
 			final String cachePath) {
-		AlertDialog.Builder tDialog = new AlertDialog.Builder(context);
-		tDialog.setTitle("安装提示");
-		tDialog.setMessage("为保证您的交易安全，需要您安装支付宝安全支付服务，才能进行付款。\n\n点击确定，立即安装。");
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setIcon(R.drawable.icon);
+		builder.setTitle("支付宝");
+		builder.setMessage("安装安全支付服务");
 
-		tDialog.setPositiveButton("确定",
+		builder.setPositiveButton(android.R.string.ok,
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						//
@@ -120,13 +153,10 @@ public class MobileSecurePayHelper {
 					}
 				});
 
-		tDialog.setNegativeButton("取消",
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-					}
-				});
+		builder.setNegativeButton(
+				context.getResources().getString(android.R.string.cancel), null);
 
-		tDialog.show();
+		builder.show();
 	}
 
 	/**
@@ -258,7 +288,6 @@ public class MobileSecurePayHelper {
 	 * @param content
 	 * @return
 	 */
-	public final static String server_url = "https://msp.alipay.com/x.htm";
 	public JSONObject sendRequest(final String content) {
 		NetworkManager nM = new NetworkManager(this.mContext);
 
@@ -269,7 +298,7 @@ public class MobileSecurePayHelper {
 
 			synchronized (nM) {
 				//
-				response = nM.SendAndWaitResponse(content, server_url);
+				response = nM.SendAndWaitResponse(content, Constant.server_url);
 			}
 
 			jsonResponse = new JSONObject(response);
@@ -289,24 +318,24 @@ public class MobileSecurePayHelper {
 	 * 
 	 * @param context
 	 *            上下文环境
-	 * @param strurl
+	 * @param url
 	 *            下载地址
 	 * @param filename
 	 *            文件名称
 	 * @return
 	 */
-	public boolean retrieveApkFromNet(Context context, String strurl,
+	public boolean retrieveApkFromNet(Context context, String url,
 			String filename) {
-		boolean bRet = false;
+		boolean ret = false;
 
 		try {
-			NetworkManager nM = new NetworkManager(this.mContext);
-			bRet = nM.urlDownloadToFile(context, strurl, filename);
+			NetworkManager nm = new NetworkManager(mContext);
+			ret = nm.urlDownloadToFile(context, url, filename);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return bRet;
+		return ret;
 	}
 
 	//
@@ -325,12 +354,17 @@ public class MobileSecurePayHelper {
 	//
 	// the handler use to receive the install check result.
 	// 此处接收安装检测结果
+	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler() {
 		public void handleMessage(Message msg) {
 			try {
+				Log.e(TAG, "msg = "+msg);
 				switch (msg.what) {
-				case AlixId.RQF_INSTALL_CHECK: {
+				case AlixId.RQF_INSTALL_CHECK:
+				case AlixId.RQF_INSTALL_WITHOUT_DOWNLOAD:
+				case AlixId.RQF_DOWNLOAD_FAILED: {
 					//
+					Log.i(TAG, "show Install dialog");
 					closeProgress();
 					String cachePath = (String) msg.obj;
 
@@ -338,8 +372,6 @@ public class MobileSecurePayHelper {
 				}
 					break;
 				}
-
-				super.handleMessage(msg);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

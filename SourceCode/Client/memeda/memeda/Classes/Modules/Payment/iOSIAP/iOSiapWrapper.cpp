@@ -16,6 +16,8 @@
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "iOSiapImp.h"
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "PluginManager.h"
+#include "ProtocolIAP.h"
 #endif /*CC_TARGET_PLATFORM*/
 
 #pragma mark - iOSiapWrapperCallBackClass
@@ -51,6 +53,7 @@ static void iOS_Purchase_Callback(std::string result, std::string productID, std
 }
 
 iOSiapWrapper* iOSiapWrapper::g_singleInstance = NULL;
+cocos2d::plugin::ProtocolIAP* iOSiapWrapper::g_aliPay = NULL;
 
 iOSiapWrapper* iOSiapWrapper::getInstance()
 {
@@ -66,6 +69,10 @@ iOSiapWrapper::iOSiapWrapper()
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     handle = iOSiap_create();
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    cocos2d::CCLog("iOSiapWrapper::js_init");
+    cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("IAPAlipay");
+    
+    g_aliPay = (cocos2d::plugin::ProtocolIAP*)plugin;
 #endif /*CC_TARGET_PLATFORM*/
 }
 
@@ -82,6 +89,9 @@ void iOSiapWrapper::payForProduct(std::string productID)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     iOSiap_payforPuduct(handle, productID, iOS_Purchase_Callback, this);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    cocos2d::plugin::TProductInfo info;
+    info["product"] = productID;
+    g_aliPay->payForProduct(info);
 #endif /*CC_TARGET_PLATFORM*/
 }
 

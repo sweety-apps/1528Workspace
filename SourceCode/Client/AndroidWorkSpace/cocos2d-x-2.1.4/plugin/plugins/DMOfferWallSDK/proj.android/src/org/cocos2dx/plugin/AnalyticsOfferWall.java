@@ -57,7 +57,73 @@ public class AnalyticsOfferWall implements InterfaceSocial {
 	{
 		strPublishId = publishId;
 		
-		mDomobOfferWallManager = new DomobOfferWallManager(mContext, strPublishId);
+		mDomobOfferWallManager = new DomobOfferWallManager(mContext, strPublishId, strUserId);
+		
+		mDomobOfferWallManager.setAddWallListener(new DomobOfferWallManager.AddWallListener() {
+			@Override
+			public void onAddWallFailed(DomobOfferWallErrorInfo mDomobOfferWallErrorInfo) {
+			}
+
+			@Override
+			public void onAddWallClose() {
+				// 积分墙关闭
+				offerWallDidClosed();
+			}
+
+			@Override
+			public void onAddWallSucess() {
+			}
+		});
+
+		mDomobOfferWallManager.setCheckPointsListener(new DomobOfferWallManager.CheckPointsListener() {
+			@Override
+			public void onCheckPointsSucess(final int point, final int consumed) {
+				String msg = "offerWallDidFinishCheck {\"totalPoint\" : ";
+				msg += String.valueOf(point);
+				msg += ", \"consumed\":";
+				msg += String.valueOf(consumed);
+				msg += "}";		
+				
+				SendEvent(msg);
+			}
+
+			@Override
+			public void onCheckPointsFailed(final DomobOfferWallErrorInfo mDomobOfferWallErrorInfo) {
+				SendEvent("offerWallDidFailCheck");
+			}
+		});
+	
+		mDomobOfferWallManager.setConsumeListener(new DomobOfferWallManager.ConsumeListener() {
+
+			@Override
+			public void onConsumeFailed(final DomobOfferWallErrorInfo mDomobOfferWallErrorInfo) {
+				SendEvent("offerWallDidFailConsume");
+			}
+
+			@Override
+			public void onConsumeSucess(final int point,
+					final int consumed, final ConsumeStatus cs) {
+				String msg;
+				switch (cs) {
+				case SUCCEED:
+					msg = "offerWallDidFinishConsume {\"totalPoint\" : ";
+					msg += String.valueOf(point);
+					msg += ", \"consumed\":";
+					msg += String.valueOf(consumed);
+					msg += ", \"statusCode\":";
+					msg += String.valueOf(cs);				
+					msg += "}";
+				    
+				    SendEvent(msg);
+					break;
+				default:
+					SendEvent("offerWallDidFailConsume");
+					break;
+				}
+			}
+		});
+		
+
 	}
 	
 	public void SetUserID(String userID)
@@ -73,12 +139,23 @@ public class AnalyticsOfferWall implements InterfaceSocial {
 	
 	public void requestOnlinePointCheck()
 	{
-		
+		mDomobOfferWallManager.checkPoints();
 	}
 	
 	public void requestOnlineConsumeWithPoint(int num)
 	{
-		
+		mDomobOfferWallManager.consumePoints(num);
+	}
+	
+	void offerWallDidClosed()
+	{
+		SendEvent("WindowClosed");
+	}
+	
+	void SendEvent(String msg)
+	{
+		LogD(msg);
+		SocialWrapper.onShareResult(this, 0, msg);
 	}
 	
 	private String strPublishId;

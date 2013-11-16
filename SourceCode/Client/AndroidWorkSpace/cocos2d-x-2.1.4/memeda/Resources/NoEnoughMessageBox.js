@@ -22,7 +22,7 @@ NoEnoughMessageBox.prototype.onDidLoadFromCCB = function () {
 };
 
 NoEnoughMessageBox.prototype.show = function(src, endFun) {
-	if ( RemoteConfig.domob == "1" ) {
+	if ( RemoteConfig.domob == "1" || sys.os == "android" || sys.os == "Android" ) {
 		this.freeBtnText.setVisible(true);
 		this.freeBtn.setVisible(true);	
 		

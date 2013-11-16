@@ -68,7 +68,7 @@ public class BaseHelper {
 		tDialog.setIcon(icon);
 		tDialog.setTitle(strTitle);
 		tDialog.setMessage(strText);
-		tDialog.setPositiveButton("确定", null);
+		tDialog.setPositiveButton(android.R.string.ok, null);
 		tDialog.show();
 	}
 
@@ -137,6 +137,7 @@ public class BaseHelper {
 
 	/**
 	 * 字符串转json对象
+	 * 
 	 * @param str
 	 * @param split
 	 * @return

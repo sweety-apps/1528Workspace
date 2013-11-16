@@ -6,10 +6,15 @@ var AwardScene = function() {};
 var pThisAwardScene = null;
 
 AwardScene.prototype.showWindow = function () {
-	if ( RemoteConfig.domob == "1" ) {
+	if(sys.os != "android" && sys.os != "Android") {
+		if ( RemoteConfig.domob == "1" ) {
+			this.duomengCtrl.setVisible(true);
+		} else { 
+			this.duomengCtrl.setVisible(false);	
+		}	
+	} else {
 		this.duomengCtrl.setVisible(true);
-	} else { 
-		this.duomengCtrl.setVisible(false);	
+		this.commentCtrl.setVisible(false);
 	}
 	
 	this.initStatus();

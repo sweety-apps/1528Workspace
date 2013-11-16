@@ -42,3 +42,5 @@ SourceCode/Client/AndroidWorkSpace/AndroidWorkSpace/.metadata/.log
 SourceCode/Client/AndroidWorkSpace/AndroidWorkSpace/.metadata/.log
 
 SourceCode/Client/AndroidWorkSpace/AndroidWorkSpace/.metadata/.plugins/org.eclipse.core.resources/.projects/libcocos2dx/.markers
+
+*.so

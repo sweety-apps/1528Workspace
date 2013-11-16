@@ -294,7 +294,12 @@ ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Coins.mp3");
     if ( this.awardScene == null ) {
-        this.awardScene = cc.BuilderReader.load("AwardScene");
+    	if ( sys.os != "android" && sys.os != "Android" ) {
+    		this.awardScene = cc.BuilderReader.load("AwardScene");
+    	} else {
+    		this.awardScene = cc.BuilderReader.load("AwardSceneForAndroid");
+    	}
+    	
         this.ccbLayout2.addChild(this.awardScene);
         this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);
     }
@@ -399,10 +404,7 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         	this.weChatAwardMsg.controller.ShowMsg(2, canConsum, function (coin) {
         		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
         		            					// 消费掉多余的金币
-                                                if(sys.os != "android" && sys.os != "Android")
-                                                {
                                                     memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
-                                                }
         		            					CoinMgr_Change(coin);
                                            });                  
         }

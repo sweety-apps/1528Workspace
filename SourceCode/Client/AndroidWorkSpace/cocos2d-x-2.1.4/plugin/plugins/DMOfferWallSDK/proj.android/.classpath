@@ -6,5 +6,7 @@
 	<classpathentry kind="src" path="/libPluginProtocol"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path="libs"/>
+	<classpathentry kind="lib" path="/memeda/jar/domob_android_offer_wall_sdk.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

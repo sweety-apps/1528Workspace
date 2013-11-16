@@ -71,10 +71,6 @@ function CoinMgr_Init() {
     }
 
     if ( !isWeb() ) {
-        if(sys.os != "android" && sys.os != "Android")
-        {
-            memeda.OfferWallController.getInstance().init(Global_getUserID());
-
             memeda.OfferWallController.getInstance().offerWallDidFinishCheck = function (responseText) {
                 if ( CoinMgr_gCallBackObj != null ) {
                     debugMsgOutput("aaa" + CoinMgr_gCallBackObj.offerWallDidFinishCheck);
@@ -99,7 +95,6 @@ function CoinMgr_Init() {
                     CoinMgr_gCallBackObj.offerWallDidFailConsume(responseText);
                 }
             };
-        }
     }
 }
 
@@ -127,10 +122,7 @@ function CoinMgr_checkExtraCoin(callBackObj) {
         if( http.readyState == 4 && http.status == 200 ) {
             if ( !callBackObj.wachatDidFinish(http.responseText) ) {
                 debugMsgOutput("callBackObj.wachatDidFinish");
-                if(sys.os != "android" && sys.os != "Android")
-                {
-                    memeda.OfferWallController.getInstance().requestOnlinePointCheck();
-                }
+                memeda.OfferWallController.getInstance().requestOnlinePointCheck();
             } else {
                 debugMsgOutput("callBackObj.wachatDidFinish true");
             }

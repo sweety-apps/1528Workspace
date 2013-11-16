@@ -11,5 +11,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/libPluginOfferWall"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/libPluginUmeng"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ShareSDK_C2dPluginX"/>
+	<classpathentry kind="src" path="jar"/>
+	<classpathentry kind="lib" path="jar/domob_android_offer_wall_sdk.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -130,8 +130,6 @@ CStat* CStat::GetInstance()
 
 void   CStat::Init()
 {
-	return ;
-
     CCLOG("[UMENG Step Init] %d",1);
     cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsUmeng");
     CCLOG("[UMENG Step Init] %d",2);
@@ -310,29 +308,21 @@ JSBool CStat::js_logEvent(JSContext* cx, uint32_t argc, jsval* vp)
 
 void CStat::logTimedEventBegin(string eventId)
 {
-	return ;
-
     m_analytics->logTimedEventBegin(eventId.c_str());
 }
 
 void CStat::logTimedEventEnd(string eventId)
 {
-	return ;
-
     m_analytics->logTimedEventEnd(eventId.c_str());
 }
 
 void CStat::logEvent(string strKey)
 {
-	return ;
-
     m_analytics->logEvent(strKey.c_str());
 }
 
 void CStat::logEvent(string strKey, CStatParam* pParam)
 {
-	return ;
-
     cocos2d::plugin::LogEventParamMap* ptr = pParam->getParamPtr();
     m_analytics->logEvent(strKey.c_str(), ptr);
 }
