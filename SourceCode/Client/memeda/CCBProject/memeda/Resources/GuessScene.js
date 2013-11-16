@@ -179,23 +179,18 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 设置各种按钮的回调
     gCurrentCCBView = this;
     
+    this.showTaskTip = false;
     var showTaskTip = sys.localStorage.getItem("tasktip");
     if ( showTaskTip == null || showTaskTip == "" ) {
-    	this.taskTipLayout.setVisible(true);
-    	var screenSize = cc.Director.getInstance().getWinSizeInPixels();
-    	var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
-    	var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
-   	 	if(screenHeight / screenWidth < 1136/640) {       	
-     		this.taskTip5.setVisible(false);
-    		this.taskTip4.setVisible(true);
-    	} else {
-    		this.taskTip5.setVisible(true);
-    		this.taskTip4.setVisible(false);
-    	}
+    	this.showTaskTip = true;
+    	this.setupInputCharsAndResultChars(gProblem);	
+    	    	
+    	this.taskTip.controller.onClick = this.onClickTaskTip;
+    	this.taskTip.setVisible(true);
     
-    	//sys.localStorage.setItem("tasktip", "1");
+    	sys.localStorage.setItem("tasktip", "1");
   	} else {
-    	this.taskTipLayout.setVisible(false);	
+    	this.taskTip.setVisible(false);	
     	// 初始化输入等UI
     	this.setupInputCharsAndResultChars(gProblem);	
     }
@@ -209,6 +204,14 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     this.checkExtraCoin();
     debugMsgOutput("GuessScene.prototype.onDidLoadFromCCB");
 };
+
+GuessScene.prototype.onClickTaskTip = function() {
+    // 初始化输入等UI
+    gCurrentCCBView.showTaskTip = false;
+    gCurrentCCBView.CatEnter();
+    
+    gCurrentCCBView.taskTip.setVisible(false);
+}
 
 function clearAllPressEventToSprite ()
 {
@@ -239,12 +242,12 @@ GuessScene.prototype.onBack = function ( ) {
     	memeda.Stat.logEvent("guessback", param);
     }
     //
-    cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
     try {
 		if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 			cc.AudioEngine.getInstance().stopMusic();
             cc.AudioEngine.getInstance().setMusicVolume(0.0);
 		}
+    	cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
     } catch (e) {
     }
 	
@@ -694,7 +697,9 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
     debugMsgOutput("Music " + gMusicURL);
     
-    gCurrentCCBView.CatEnter();
+    if ( !gCurrentCCBView.showTaskTip ) {
+    	gCurrentCCBView.CatEnter();
+    }
     
     gCurrentCCBView.SetTitleNum(gProblem + 1);
     choosedButtonCount = 0;
