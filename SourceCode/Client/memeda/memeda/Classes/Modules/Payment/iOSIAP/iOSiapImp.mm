@@ -61,7 +61,14 @@ typedef struct tagIOS_PurchaseHandle_C{
     
     if (_callback != NULL)
     {
-        _callback(kiOSiap_ResultFailed,[_productID UTF8String],"内购功能没有打开",_context);
+        std::string product_Id = "";
+        std::string errMsg = "";
+        if ([_productID UTF8String] != NULL)
+        {
+            product_Id = [_productID UTF8String];
+        }
+        errMsg = "内购功能没有打开";
+        _callback(kiOSiap_ResultFailed,product_Id,errMsg,_context);
     }
 }
 
@@ -160,7 +167,14 @@ typedef struct tagIOS_PurchaseHandle_C{
         
         if (_callback != NULL)
         {
-            _callback(kiOSiap_ResultCancel,[_productID UTF8String],[@"请求超时了!请检测网络。" UTF8String],_context);
+            std::string product_Id = "";
+            std::string errMsg = "";
+            if ([_productID UTF8String] != NULL)
+            {
+                product_Id = [_productID UTF8String];
+            }
+            errMsg = [@"请求超时了!请检测网络。" UTF8String];
+            _callback(kiOSiap_ResultCancel,product_Id,errMsg,_context);
         }
     }
 }
@@ -192,7 +206,14 @@ typedef struct tagIOS_PurchaseHandle_C{
         
         if (_callback != NULL)
         {
-            _callback(kiOSiap_ResultSuccess,[productId UTF8String],"",_context);
+            std::string product_Id = "";
+            std::string errMsg = "";
+            if ([_productID UTF8String] != NULL)
+            {
+                product_Id = [_productID UTF8String];
+            }
+            errMsg = "";
+            _callback(kiOSiap_ResultSuccess,product_Id,errMsg,_context);
         }
     }
     
@@ -206,7 +227,17 @@ typedef struct tagIOS_PurchaseHandle_C{
     
     if (_callback != NULL)
     {
-        _callback(kiOSiap_ResultFailed,[_productID UTF8String],[errorMessage UTF8String],_context);
+        std::string product_Id = "";
+        std::string errMsg = "";
+        if ([_productID UTF8String] != NULL)
+        {
+            product_Id = [_productID UTF8String];
+        }
+        if ([errorMessage UTF8String] != NULL)
+        {
+            errMsg = [errorMessage UTF8String];
+        }
+        _callback(kiOSiap_ResultFailed,product_Id,errMsg,_context);
     }
 }
 
@@ -221,7 +252,14 @@ typedef struct tagIOS_PurchaseHandle_C{
     
     if (_callback != NULL)
     {
-        _callback(kiOSiap_ResultCancel,[_productID UTF8String],"",_context);
+        std::string product_Id = "";
+        std::string errMsg = "";
+        if ([_productID UTF8String] != NULL)
+        {
+            product_Id = [_productID UTF8String];
+        }
+        errMsg = "";
+        _callback(kiOSiap_ResultCancel,product_Id,errMsg,_context);
     }
 }
 
@@ -233,7 +271,17 @@ typedef struct tagIOS_PurchaseHandle_C{
     
     if (_callback != NULL)
     {
-        _callback(kiOSiap_ResultFailed,[_productID UTF8String],[errorMessage UTF8String],_context);
+        std::string product_Id = "";
+        std::string errMsg = "";
+        if ([_productID UTF8String] != NULL)
+        {
+            product_Id = [_productID UTF8String];
+        }
+        if ([errorMessage UTF8String] != NULL)
+        {
+            errMsg = [errorMessage UTF8String];
+        }
+        _callback(kiOSiap_ResultFailed,product_Id,errMsg,_context);
     }
 }
 
