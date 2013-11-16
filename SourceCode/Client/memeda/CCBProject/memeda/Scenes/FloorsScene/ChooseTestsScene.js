@@ -172,7 +172,13 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
     var floorNum = this.wholeFloors.controller.getCatStayAtFloorNum();
     var doorNum = this.wholeFloors.controller.getCatStayAtDoorNum();
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
-
+    
+    try {
+        cc.AudioEngine.getInstance().setMusicVolume(0.0);
+        cc.AudioEngine.getInstance().stopMusic();
+    }catch ( e ) {
+    }
+    
     var color = GetColorByFloor(floorNum, doorNum-1);
     GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 1, color);
 
@@ -194,6 +200,12 @@ ChooseTestsScene.prototype.onAnimationCompleted = function()
 {
     if(this.sceneState == kFloorsSceneStateEnteringDoor && this.rootNode.animationManager.getLastCompletedSequenceName() == "Enter Door Timeline")
     {
+        try {
+            cc.AudioEngine.getInstance().setMusicVolume(0.0);
+            cc.AudioEngine.getInstance().stopMusic();
+        }catch ( e ) {
+        }
+        
         this.sceneState = kFloorsSceneStateNormal;
         var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
         scene = cc.TransitionProgressInOut.create(0.2,scene);

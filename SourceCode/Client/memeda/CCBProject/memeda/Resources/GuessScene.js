@@ -179,8 +179,26 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     // 设置各种按钮的回调
     gCurrentCCBView = this;
     
-    // 初始化输入等UI
-    this.setupInputCharsAndResultChars(gProblem);
+    var showTaskTip = sys.localStorage.getItem("tasktip");
+    if ( showTaskTip == null || showTaskTip == "" ) {
+    	this.taskTipLayout.setVisible(true);
+    	var screenSize = cc.Director.getInstance().getWinSizeInPixels();
+    	var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
+    	var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
+   	 	if(screenHeight / screenWidth < 1136/640) {       	
+     		this.taskTip5.setVisible(false);
+    		this.taskTip4.setVisible(true);
+    	} else {
+    		this.taskTip5.setVisible(true);
+    		this.taskTip4.setVisible(false);
+    	}
+    
+    	//sys.localStorage.setItem("tasktip", "1");
+  	} else {
+    	this.taskTipLayout.setVisible(false);	
+    	// 初始化输入等UI
+    	this.setupInputCharsAndResultChars(gProblem);	
+    }
 
     // 初始化操作的动画
     this.setupSubCCBFileAnimationCallBacks();
@@ -221,7 +239,7 @@ GuessScene.prototype.onBack = function ( ) {
     	memeda.Stat.logEvent("guessback", param);
     }
     //
-    
+    cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
     try {
 		if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 			cc.AudioEngine.getInstance().stopMusic();
@@ -922,6 +940,18 @@ GuessScene.prototype.CheckFeel = function () {
 
 GuessScene.prototype.update = function() {
     gTimeCount ++;
+    debugMsgOutput("GuessScene.prototype.update " + this.waitPlayMusic);
+	if ( this.waitPlayMusic ) {
+		if ( gTimeCount >= 30 ) {
+			this.PlayMusic();
+			gTimeCount = 0;
+            this.beginPlayTime = (new Date()).getTime();
+			this.waitPlayMusic = false;
+            cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
+		}
+		return ;
+	}
+    
     if ( gTimeCount >= 10 ) {
         if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
             gCurrentCCBView.onMusicStop();
@@ -963,7 +993,6 @@ GuessScene.prototype.onMusicStop = function () {
 }
 
 GuessScene.prototype.CatEnter = function () {
-	this.PlayMusic();
     this.Entered = false;
     
     this.bgLayer.controller.setPlay(true);
@@ -1008,8 +1037,8 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
     obj.Entered = true;
     
    	obj.curFeel = -1;
-	obj.beginPlayTime = (new Date()).getTime();
 	
+	obj.waitPlayMusic = true;
     cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(obj, 0, !obj._isRunning);
     
     debugMsgOutput("GuessScene.prototype.onEnterCompleted");
