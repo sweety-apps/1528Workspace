@@ -8,8 +8,14 @@ var pThisAwardScene = null;
 AwardScene.prototype.showWindow = function () {
 	if ( RemoteConfig.domob == "1" ) {
 		this.duomengCtrl.setVisible(true);
+		
+		this.firendCtrl.setPositionY(361);
+		this.commentCtrl.setPositionY(236);		
+		this.duomengCtrl.setPositionY(111);		
 	} else { 
 		this.duomengCtrl.setVisible(false);	
+		this.firendCtrl.setPositionY(320);
+		this.commentCtrl.setPositionY(170);	
 	}
 	
 	this.initStatus();
