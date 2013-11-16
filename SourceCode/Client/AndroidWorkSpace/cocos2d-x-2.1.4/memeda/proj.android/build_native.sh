@@ -81,6 +81,8 @@ cp -f "$BINDINGS_JS_ROOT"/*.js "$APP_ANDROID_ROOT"/assets
 # copy plugin js into assets' path
 cp -f "$PLUGIN_ROOT/jsbindings/js"/* "$APP_ANDROID_ROOT"/assets
 
+# copy "shareSDK config" into "assets"
+cp -f "$RESROUCE_ROOT"/../ShareSDK.conf "$APP_ANDROID_ROOT"/assets
 
 echo "Using prebuilt externals"
 echo ""

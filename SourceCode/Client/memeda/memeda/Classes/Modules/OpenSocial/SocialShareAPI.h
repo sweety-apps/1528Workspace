@@ -9,7 +9,19 @@
 #ifndef __memeda__SocialShareAPI__
 #define __memeda__SocialShareAPI__
 
+#include "cocos2d.h"
 #include <iostream>
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#define SHARE_USE_PLUGIN_X 1
+#else
+#define SHARE_USE_PLUGIN_X 1
+#endif
+
+#if SHARE_USE_PLUGIN_X
+#include "PluginManager.h"
+#include "ProtocolSocial.h"
+#endif
 
 class WeChatShareCallBackClass
 {
@@ -25,6 +37,11 @@ protected:
     static SocialShareAPI* g_singleInstance;
     WeChatShareCallBackClass* wechatShareCallbackTarget;
     friend void IOS_WeChatShareCallback(std::string state, std::string errorMsg, void* context);
+#if SHARE_USE_PLUGIN_X
+    cocos2d::plugin::ProtocolSocial* m_sharePlugin;
+    cocos2d::plugin::ShareResultListener* m_resultListener;
+#endif /*CC_TARGET_PLATFORM*/
+    
 public:
     SocialShareAPI();
     virtual ~SocialShareAPI();

@@ -29,9 +29,6 @@ static AppDelegate s_sharedApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //初始化分享
-    SocialShareAPI::getInstance()->initShareAPI();
-    
     // 隐藏状态条
     [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
     

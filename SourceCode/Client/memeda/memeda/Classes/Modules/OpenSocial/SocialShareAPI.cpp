@@ -7,19 +7,25 @@
 //
 
 #include "cocos2d.h"
-#include "SocialShareAPI.h"
 
 #include "jsapi.h"
 #include "jsfriendapi.h"
 #include "cocos2d_specifics.hpp"
+#include "SocialShareAPI.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 
 #include "SocialShareAPIForiOS.h"
 
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-
 #endif /*CC_TARGET_PLATFORM*/
+
+#if SHARE_USE_PLUGIN_X
+
+using namespace cocos2d::plugin;
+
+#endif /*SHARE_USE_PLUGIN_X*/
+
+void IOS_WeChatShareCallback(std::string state, std::string errorMsg, void* context);
 
 #pragma mark - WeChatShareCallBackClass
 
@@ -33,15 +39,60 @@ WeChatShareCallBackClass::~WeChatShareCallBackClass()
     
 }
 
+#pragma mark - PluginSocial Callback
+
+#if SHARE_USE_PLUGIN_X
+//namespace cocos2d {
+class ShareResultListenerLocalImp : cocos2d::plugin::ShareResultListener
+{
+public:
+    void* m_Context;
+    
+    ShareResultListenerLocalImp():m_Context(NULL){};
+    virtual ~ShareResultListenerLocalImp(){};
+    
+    void onShareResult(ShareResultCode ret, const char* msg)
+    {
+        string state;
+        string errorMsg = msg;
+        switch (ret) {
+            case kShareSuccess:
+                state = "Success";
+                break;
+            case kShareFail:
+                state = "Fail";
+                break;
+            case kShareCancel:
+                state = "Cancel";
+                break;
+            case kShareTimeOut:
+                state = "Fail";
+                break;
+                
+            default:
+                break;
+        }
+        
+        IOS_WeChatShareCallback(state, errorMsg, m_Context);
+    };
+};
+//};
+#endif
+
 #pragma mark - SocialShareAPI
 
 SocialShareAPI::SocialShareAPI()
 {
     wechatShareCallbackTarget = NULL;
+#if SHARE_USE_PLUGIN_X
+    m_sharePlugin = NULL;
+    m_resultListener = NULL;
+#endif /*SHARE_USE_PLUGIN_X*/
 }
 
 SocialShareAPI::~SocialShareAPI()
 {
+
 }
 
 SocialShareAPI* SocialShareAPI::g_singleInstance = NULL;
@@ -59,27 +110,52 @@ void SocialShareAPI::initShareAPI()
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     SocialShareAPIForiOS_initShareAPI();
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    
 #endif /*CC_TARGET_PLATFORM*/
+    
+#if SHARE_USE_PLUGIN_X
+    if (NULL == m_sharePlugin)
+	{
+        m_sharePlugin = dynamic_cast<ProtocolSocial*>(PluginManager::getInstance()->loadPlugin("ShareSDKPluginX"));
+        ShareResultListenerLocalImp* listener = new ShareResultListenerLocalImp();
+        listener->m_Context = this;
+        m_resultListener = (ShareResultListener*)listener;
+        m_sharePlugin->setResultListener(m_resultListener);
+	}
+#endif /*SHARE_USE_PLUGIN_X*/
 }
 
 void SocialShareAPI::uninitShareAPI()
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     SocialShareAPIForiOS_uninitShareAPI();
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    
 #endif /*CC_TARGET_PLATFORM*/
+    
+#if SHARE_USE_PLUGIN_X
+    if (NULL != m_sharePlugin)
+	{
+		PluginManager::getInstance()->unloadPlugin("ShareSDKPluginX");
+		m_sharePlugin = NULL;
+        ShareResultListenerLocalImp* listener = (ShareResultListenerLocalImp*)m_resultListener;
+        delete listener;
+        m_resultListener = NULL;
+	}
+#endif
+
 }
 
 void SocialShareAPI::testShare()
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     SocialShareAPIForiOS_doTestShare();
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    
 #endif /*CC_TARGET_PLATFORM*/
+    
+#if SHARE_USE_PLUGIN_X
+    if (NULL != m_sharePlugin) {
+	    TShareInfo pInfo;
+	    pInfo["text"] = "cocos2d-x share sdk plugin-x test";
+	    m_sharePlugin->share(pInfo);
+	}
+#endif /*SHARE_USE_PLUGIN_X*/
     
 }
 
@@ -110,8 +186,10 @@ void SocialShareAPI::setShareButtonRectAtScreenForIPad(int x,int y,int width, in
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     SocialShareAPIForiOS_setShareButtonRectAtScreenForIPad(x, y, width, height);
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #endif /*CC_TARGET_PLATFORM*/
+    
+#if SHARE_USE_PLUGIN_X
+#endif /*SHARE_USE_PLUGIN_X*/
 }
 
 void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,std::string title, std::string url, std::string description ,bool withMenuUI, bool isTimeline)
@@ -124,24 +202,33 @@ void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,s
     std::string imgPath = cocos2d::CCFileUtils::sharedFileUtils()->fullPathForFilename(imageName.c_str());
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     SocialShareAPIForiOS_shareWeChatURL(content, imgPath, title, url, description,  (void*)IOS_WeChatShareCallback, (void*)this,withMenuUI,isTimeline);
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #endif /*CC_TARGET_PLATFORM*/
+    
+#if SHARE_USE_PLUGIN_X
+    TShareInfo pInfo;
+    pInfo["text"] = "cocos2d-x share sdk plugin-x test";
+    m_sharePlugin->share(pInfo);
+#endif /*SHARE_USE_PLUGIN_X*/
 }
 
 signed char SocialShareAPI::iOS_application_handleOpenURL(void* application, void* url, void* wxDelegate)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     return SocialShareAPIForiOS_application_handleOpenURL(application, url, wxDelegate);
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    return 0;
 #endif /*CC_TARGET_PLATFORM*/
+    
+#if SHARE_USE_PLUGIN_X
+    return 0;
+#endif /*SHARE_USE_PLUGIN_X*/
 }
 
 signed char SocialShareAPI::iOS_application_openURL_sourceApplication_annotation(void* application, void* url, void* sourceApplication, void* annotation, void* wxDelegate)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     return SocialShareAPIForiOS_application_openURL_sourceApplication_annotation(application, url, sourceApplication, annotation, wxDelegate);
-#elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    return 0;
 #endif /*CC_TARGET_PLATFORM*/
+    
+#if SHARE_USE_PLUGIN_X
+    return 0;
+#endif /*SHARE_USE_PLUGIN_X*/
 }

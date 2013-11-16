@@ -9,7 +9,7 @@ import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.ShareSDK;
-import cn.sharesdk.sina.weibo.SinaWeibo;
+import cn.sharesdk.wechat.friends.Wechat;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -28,14 +28,14 @@ public class qietingfengyun extends Cocos2dxActivity{
 			case 1:
 				Log.e("[!!! Test Timer]","Timer");
 				
-				Platform.ShareParams sp = new SinaWeibo.ShareParams();
+				Platform.ShareParams sp = new Wechat.ShareParams();
 				sp.text = "测试分享的文本";
-				//sp.imagePath = “/mnt/sdcard/测试分享的图片.jpg”;
+				sp.imagePath = "/mnt/sdcard/icon.png";
 
-				Platform weibo = ShareSDK.getPlatform(getBaseContext(), SinaWeibo.NAME);
+				Platform weixin = ShareSDK.getPlatform(getBaseContext(), Wechat.NAME);
 				//weibo.setPlatformActionListener(paListener); // 设置分享事件回调
 				// 执行图文分享
-				weibo.share(sp);
+				weixin.share(sp);
 				
 				timer.cancel();
 				
@@ -60,16 +60,16 @@ public class qietingfengyun extends Cocos2dxActivity{
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
+		// 初始化ShareSDK
+		ShareSDK.initSDK(this);
+		
 		PluginWrapper.init(this); // for plugins
 		
 		// If you want your callback function can be invoked in GL thread, add this line:
 		PluginWrapper.setGLSurfaceView(Cocos2dxGLSurfaceView.getInstance());
 		
-		// 初始化ShareSDK
-		ShareSDK.initSDK(this);
-		
 		//测试分享
-		//timer.schedule(task,2000,10000);
+		timer.schedule(task,2000,10000);
 	}
 	
 	@Override

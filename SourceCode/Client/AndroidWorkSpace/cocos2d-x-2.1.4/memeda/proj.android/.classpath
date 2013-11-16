@@ -4,11 +4,12 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="jar/umeng_sdk.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/memeda/ShareSDK/MainLibs/libs/ShareSDK-Core-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/memeda/ShareSDK/MainLibs/libs/ShareSDK-SinaWeibo-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/memeda/ShareSDK/MainLibs/libs/ShareSDK-Wechat-Core-2.1.2.jar"/>
 	<classpathentry kind="src" path="/libPluginProtocol"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/libcocos2dx"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/libPluginOfferWall"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/libPluginUmeng"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ShareSDK_C2dPluginX"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

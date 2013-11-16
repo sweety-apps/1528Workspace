@@ -20,6 +20,7 @@
 #include "js_CommonFunction.h"
 #include "LocalStorage.h"
 #include "Game_Util_Functions.h"
+#include "SocialShareAPI.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -35,6 +36,9 @@ AppDelegate::~AppDelegate()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
+    //初始化分享
+    SocialShareAPI::getInstance()->initShareAPI();
+    
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
@@ -162,11 +166,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(jsb_register_system);
     sc->addRegisterCallback(JSB_register_opengl);
     sc->addRegisterCallback(MinXmlHttpRequest::_js_register);
-
     sc->addRegisterCallback(js_OfferWallController::_js_register);
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     sc->addRegisterCallback(register_all_jsb_SocialShareAPI);
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
     sc->addRegisterCallback(CommonFunction::_js_register);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
