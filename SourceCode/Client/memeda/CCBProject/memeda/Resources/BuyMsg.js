@@ -29,6 +29,8 @@ BuyMsg.prototype.onDidLoadFromCCB = function () {
 BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
 	// 显示购买消息
     // 上报数据
+    this.show = true;
+    
     if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("num", ""+index);
@@ -86,12 +88,18 @@ BuyMsg.prototype.ShowMsg = function(price, msg, endFun, index) {
 };
 
 BuyMsg.prototype.Hide = function(res) {
+    this.show = false;
+    
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
 	this.maskBkg.setVisible(false);
 	this.endFun(res);
 };
 
 BuyMsg.prototype.onClickClose = function() {
+    if ( !this.show ) {
+        return ;
+    }
+    
 	this.Hide(0);
     
     // 上报数据
@@ -115,6 +123,10 @@ BuyMsg.prototype.onAnimationComplete = function()
     
 BuyMsg.prototype.onClickBuy = function() {
 	// 扣金币
+    if ( !this.show ) {
+        return ;
+    }
+    
 	if ( CoinMgr_GetCount() < this.price ) {
 		// 金币不够
 		this.noEnoughEvent(1);
