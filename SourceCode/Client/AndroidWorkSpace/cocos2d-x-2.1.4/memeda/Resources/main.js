@@ -22,6 +22,7 @@ require("JumpMsgBox.js");
 require("PurchaseTable.js");
 require("RightMsgBox.js");
 require("SpecialSpyPackageMgr.js");
+require("TaskTip.js");
 require("UtilsFunctions.js");
 require("WebFun.js");
 require("WechatError.js");
