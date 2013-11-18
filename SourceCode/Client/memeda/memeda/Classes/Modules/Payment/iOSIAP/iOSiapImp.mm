@@ -173,7 +173,7 @@ typedef struct tagIOS_PurchaseHandle_C{
             {
                 product_Id = [_productID UTF8String];
             }
-            errMsg = [@"请求超时了!请检测网络。" UTF8String];
+            errMsg = [@"商品不在App Store中。" UTF8String];
             _callback(kiOSiap_ResultCancel,product_Id,errMsg,_context);
         }
     }
