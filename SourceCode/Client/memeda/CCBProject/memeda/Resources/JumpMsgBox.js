@@ -61,11 +61,10 @@ JumpMsgBox.prototype.Hide = function(res) {
 };
 
 JumpMsgBox.prototype.onClickClose = function() {
-    if ( !this.show ) {
+  if ( !this.show ) {
 		return ;	
 	}
-	
-    cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
+  cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
 	this.Hide(0);
 };
 

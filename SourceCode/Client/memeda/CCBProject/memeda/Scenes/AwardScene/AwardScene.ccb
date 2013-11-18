@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>1</integer>
 	<key>currentSequenceId</key>
-	<integer>6</integer>
+	<integer>3</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -503,7 +503,7 @@
 												<key>value</key>
 												<array>
 													<real>162</real>
-													<real>211</real>
+													<real>250</real>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -654,7 +654,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>-100</real>
+											<real>0.0</real>
 											<integer>4</integer>
 										</array>
 									</dict>
@@ -1237,7 +1237,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>-80</real>
+											<real>0.0</real>
 											<integer>1</integer>
 										</array>
 									</dict>

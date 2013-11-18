@@ -13,7 +13,7 @@
 #include <iostream>
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#define SHARE_USE_PLUGIN_X 1
+#define SHARE_USE_PLUGIN_X 0
 #else
 #define SHARE_USE_PLUGIN_X 1
 #endif

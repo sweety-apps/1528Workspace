@@ -71,6 +71,11 @@ static AppDelegate s_sharedApplication;
     //微信分享测试代码
     //[NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(wxShareTest) userInfo:nil repeats:NO];
     
+    //存储系统及版本号，以供兼容逻辑使用。
+    localStorageSetItem("system_os_name", "ios");
+    const char* version = [[[UIDevice currentDevice] systemVersion] UTF8String];
+    localStorageSetItem("system_os_version", version);
+    
     return YES;
 }
 
