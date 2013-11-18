@@ -44,10 +44,9 @@
     <file path="$PROJECT_DIR$/Published-iOS/GuessScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382497880543" ignored="false" />
     <file path="$PROJECT_DIR$/Published-iOS/FloorsData.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382437082619" ignored="false" />
     <file path="$PROJECT_DIR$/Published-HTML5/BuyMsg.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382497880543" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-iOS/AwardScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1384590700751" ignored="false" />
-    <file path="$PROJECT_DIR$/Published-HTML5/AwardScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1384590700751" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-iOS/AwardScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382497880543" ignored="false" />
+    <file path="$PROJECT_DIR$/Published-HTML5/AwardScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382497880543" ignored="false" />
     <file path="$PROJECT_DIR$/Published-iOS/BuyCoinMessageBox.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1382500191045" ignored="false" />
-    <file path="/AwardScene.js" changelist="16d934ce-39a1-4a22-9f49-20cc9d5e859c" time="1384590720267" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +217,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,6 +248,10 @@
               <option name="myItemId" value="Scenes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FloorsScene" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -264,6 +266,16 @@
               <option name="myItemId" value="Scenes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="memeda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="memeda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -271,6 +283,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,8 +292,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Server/memecaiServer" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">

@@ -16,9 +16,15 @@ JumpMsgBox.prototype.onDidLoadFromCCB = function () {
     }
 };
 
+<<<<<<< HEAD
 JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) { 
 	this.show = true;
 	
+=======
+JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) {
+    this.show = true;
+
+>>>>>>> 43ad67ec63c649e6a26a0a5fed4e4535bb744240
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 	this.price = price;
@@ -73,7 +79,7 @@ JumpMsgBox.prototype.onClickBuy = function() {
 	if ( !this.show ) {
 		return ;	
 	}
-	
+
 	if ( CoinMgr_GetCount() < this.price ) {
 		// 金币不够
 		this.noEnoughEvent(2);
@@ -88,7 +94,7 @@ JumpMsgBox.prototype.onClickBuy = function() {
 	} else {
 		CoinMgr_Change(-1 * this.price);
         cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
-		// 加入到跳过题目的列表
+
 		this.Hide(1);
  		if ( !Global_isWeb() ) {
             var param = memeda.Stat.createParam();
