@@ -40,7 +40,5 @@ AwardItem.prototype.setItemStatus = function (status) {
 }
 
 AwardItem.prototype.onClick = function () {
-	if ( this.Status != 2 ) {
-		(this.onClickFun)(this.context);	
-	}	
+    (this.onClickFun)(this.context);
 }

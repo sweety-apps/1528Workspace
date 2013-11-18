@@ -223,12 +223,27 @@
 			case SKPaymentTransactionStateFailed:
             // Purchase was either cancelled by user or an error occurred.
             
+            if (transaction)
+            {
+                NSLog(@"Transation Err Code = [%@] code = [%d]",transaction.error,transaction.error.code);
+                if ([delegate respondsToSelector:@selector(failedPurchase:error:message:)])
+                {
+                    NSString* errMsg = transaction.error.localizedDescription;
+                    if (transaction.error.code == SKErrorPaymentCancelled)
+                    {
+                        errMsg = @"已经被取消";
+                    }
+                    [delegate failedPurchase:self error:transaction.error.code message:errMsg];
+                }
+            }
+                /*
             if (transaction.error.code != SKErrorPaymentCancelled) {
                 
                 // A transaction error occurred, so notify user.
                 if ([delegate respondsToSelector:@selector(failedPurchase:error:message:)])
                 [delegate failedPurchase:self error:transaction.error.code message:transaction.error.localizedDescription];
             }
+                 */
             
             // Finished transactions should be removed from the payment queue.
             [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
