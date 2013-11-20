@@ -10,6 +10,9 @@
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 
+#include <jni.h>
+#include "platform/android/jni/JniHelper.h"
+
 JSClass* CommonFunction::jsb_Class = 0;
 JSObject* CommonFunction::jsb_prototype = 0;
 
@@ -54,6 +57,7 @@ void CommonFunction::_js_register(JSContext *cx, JSObject *obj)
     
     static JSFunctionSpec funcs[] = {
         JS_FN("openURL", openURL, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("setActualDefaultRingtoneUri", setActualDefaultRingtoneUri, 3, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
     
@@ -87,8 +91,50 @@ JSBool CommonFunction::openURL(JSContext* cx, uint32_t argc, jsval* vp)
     JSStringWrapper pw(jsobj);
     string strKey = pw.get().c_str();
     
+    JniMethodInfo t;
+    if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "openUrl", "(Ljava/lang/String;)V"))
+    {
+        cocos2d::CCLog("JniHelper::getStaticMethodInfo Failed");
+    }
 
+	jstring url = t.env->NewStringUTF(strKey.c_str());
+	t.env->CallStaticObjectMethod(t.classID, t.methodID, url);
+	t.env->DeleteLocalRef(url);
 
+    return JS_TRUE;
+}
+
+JSBool CommonFunction::setActualDefaultRingtoneUri(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    jsval *argv = JS_ARGV(cx, vp);
+    JSString* jsobj = JSVAL_TO_STRING(argv[0]);
+    JSStringWrapper ring(jsobj);
+    string strRing = ring.get().c_str();
+
+    jsobj = JSVAL_TO_STRING(argv[1]);
+    JSStringWrapper uri(jsobj);
+    string strUri = uri.get().c_str();
+
+    jsobj = JSVAL_TO_STRING(argv[2]);
+    JSStringWrapper name(jsobj);
+    string strName = name.get().c_str();
+
+    JniMethodInfo t;
+    if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "setActualDefaultRingtoneUri", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"))
+    {
+        cocos2d::CCLog("JniHelper::setActualDefaultRingtoneUri Failed");
+    }
+
+	jstring surl = t.env->NewStringUTF(strUri.c_str());
+	jstring sring = t.env->NewStringUTF(strRing.c_str());
+	jstring sname = t.env->NewStringUTF(strName.c_str());
+
+	t.env->CallStaticObjectMethod(t.classID, t.methodID, sring, surl, sname);
+	t.env->DeleteLocalRef(sring);
+	t.env->DeleteLocalRef(surl);
+	t.env->DeleteLocalRef(sname);
+
+    cocos2d::CCLog("setActualDefaultRingtoneUri");
     return JS_TRUE;
 }
 

@@ -344,11 +344,11 @@
 		F316D2EF17B20FA700821A66 /* TestCCB in Resources */ = {isa = PBXBuildFile; fileRef = F316D2EE17B20FA700821A66 /* TestCCB */; };
 		F3395C4317F92A6600EEF086 /* libDomobOfferWallSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */; };
 		F33F2371182393E600B23D75 /* js_CommonFunctionAndroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F33F2370182393E600B23D75 /* js_CommonFunctionAndroid.cpp */; };
-		F34AE84C1818ED9500A52976 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34AE84B1818ED9500A52976 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F35F777F1830A54800E06111 /* Game_Util_Functions_Android.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */; };
 		F35F77811830A59100E06111 /* Game_Util_Functions_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F35F77801830A59100E06111 /* Game_Util_Functions_iOS.mm */; };
 		F35F77861830AEBE00E06111 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35F77851830AEBE00E06111 /* AppDelegate.cpp */; };
 		F36DB7AB1816F41900A582DB /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = F36DB7AA1816F41900A582DB /* Icon-114.png */; };
+		F382A1C5183CC3190057CD1D /* CPreloadHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F382A1C4183CC3190057CD1D /* CPreloadHelper.cpp */; };
 		F396428317B740610022AA6B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428117B740610022AA6B /* Default-568h@2x.png */; };
 		F396428417B740610022AA6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F396428217B740610022AA6B /* Default@2x.png */; };
 		F3D0898417EEC5960093A0B5 /* uncompressZipFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D0895217EEC5950093A0B5 /* uncompressZipFile.cpp */; };
@@ -1169,12 +1169,12 @@
 		F3395C4217F92A6600EEF086 /* libDomobOfferWallSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobOfferWallSDK.a; sourceTree = "<group>"; };
 		F33F2370182393E600B23D75 /* js_CommonFunctionAndroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = js_CommonFunctionAndroid.cpp; path = Classes/js_CommonFunctionAndroid.cpp; sourceTree = "<group>"; };
 		F34AE84A1818E2B700A52976 /* memeda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = memeda.entitlements; sourceTree = "<group>"; };
-		F34AE84B1818ED9500A52976 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F35F777D1830A54700E06111 /* Game_Util_Functions_Android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game_Util_Functions_Android.cpp; path = Classes/Game_Util_Functions_Android.cpp; sourceTree = "<group>"; };
 		F35F777E1830A54800E06111 /* Game_Util_Functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game_Util_Functions.h; path = Classes/Game_Util_Functions.h; sourceTree = "<group>"; };
 		F35F77801830A59100E06111 /* Game_Util_Functions_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Game_Util_Functions_iOS.mm; path = Classes/Game_Util_Functions_iOS.mm; sourceTree = "<group>"; };
 		F35F77851830AEBE00E06111 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		F36DB7AA1816F41900A582DB /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "Resources/Icon-114.png"; sourceTree = "<group>"; };
+		F382A1C4183CC3190057CD1D /* CPreloadHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPreloadHelper.cpp; path = Classes/CPreloadHelper.cpp; sourceTree = "<group>"; };
 		F396428117B740610022AA6B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F396428217B740610022AA6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		F398BBB417FD978E0029C563 /* PluginUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginUtilsIOS.h; sourceTree = "<group>"; };
@@ -2851,6 +2851,7 @@
 			isa = PBXGroup;
 			children = (
 				A60009BC1807E62400CBDFE5 /* CPreloadHelper.h */,
+				F382A1C4183CC3190057CD1D /* CPreloadHelper.cpp */,
 				A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */,
 				A60009BE1807E62400CBDFE5 /* js_CommonFunction.h */,
 				A60009BF1807E62400CBDFE5 /* js_CommonFunction.mm */,
@@ -3402,6 +3403,7 @@
 				F316D17017B2059900821A66 /* cpRotaryLimitJoint.c in Sources */,
 				F316D17217B2059900821A66 /* cpSimpleMotor.c in Sources */,
 				F316D17417B2059900821A66 /* cpSlideJoint.c in Sources */,
+				F382A1C5183CC3190057CD1D /* CPreloadHelper.cpp in Sources */,
 				F316D17617B2059900821A66 /* cpArbiter.c in Sources */,
 				F316D17817B2059900821A66 /* cpArray.c in Sources */,
 				F316D17A17B2059900821A66 /* cpBB.c in Sources */,

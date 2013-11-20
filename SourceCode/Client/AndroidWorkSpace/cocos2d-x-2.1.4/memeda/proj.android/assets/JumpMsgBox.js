@@ -16,9 +16,9 @@ JumpMsgBox.prototype.onDidLoadFromCCB = function () {
     }
 };
 
-JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) { 
-	this.show = true;
-	
+JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) {
+    this.show = true;
+
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 	this.price = price;
@@ -61,11 +61,10 @@ JumpMsgBox.prototype.Hide = function(res) {
 };
 
 JumpMsgBox.prototype.onClickClose = function() {
-    if ( !this.show ) {
+  if ( !this.show ) {
 		return ;	
 	}
-	
-    cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
+  cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
 	this.Hide(0);
 };
 
@@ -74,7 +73,7 @@ JumpMsgBox.prototype.onClickBuy = function() {
 	if ( !this.show ) {
 		return ;	
 	}
-	
+
 	if ( CoinMgr_GetCount() < this.price ) {
 		// 金币不够
 		this.noEnoughEvent(2);
@@ -89,7 +88,7 @@ JumpMsgBox.prototype.onClickBuy = function() {
 	} else {
 		CoinMgr_Change(-1 * this.price);
         cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
-		// 加入到跳过题目的列表
+
 		this.Hide(1);
  		if ( !Global_isWeb() ) {
             var param = memeda.Stat.createParam();

@@ -49,7 +49,11 @@ include $(BUILD_SHARED_LIBRARY)
 
 $(call import-add-path,$(LOCAL_PATH)/../../..)
 $(call import-add-path,$(LOCAL_PATH)/../../../cocos2dx/platform/third_party/android/prebuilt)
-$(call import-add-path,$(LOCAL_PATH)/../../../plugin/publish)
+$(call import-add-path,$(LOCAL_PATH)/../../../plugin/protocols/platform/android)
+$(call import-add-path,$(LOCAL_PATH)/../../../plugin/protocols/include)
+$(call import-add-path,$(LOCAL_PATH)/../../../plugin)
+$(call import-add-path,$(LOCAL_PATH)/../../../plugin/protocols/platform)
+$(call import-add-path,$(LOCAL_PATH)/../../../plugin/protocols)
 ##$(call import-add-path,/Users/leejustin/Documents/SourceCode/GitHub/1528Workspace/SourceCode/Client/AndroidWorkSpace/cocos2d-x-2.1.4/scripting/javascript/bindings/js)
 
 $(call import-module,cocos2dx)

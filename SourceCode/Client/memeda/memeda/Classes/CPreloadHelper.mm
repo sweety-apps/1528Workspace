@@ -6,6 +6,8 @@
 //
 //
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+
 #include "CPreloadHelper.h"
 #include <CCTextureCache.h>
 
@@ -67,3 +69,5 @@ void CPreloadHelper::loadedCallback()
 {
     
 }
+
+#endif

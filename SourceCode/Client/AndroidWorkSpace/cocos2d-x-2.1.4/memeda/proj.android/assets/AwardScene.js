@@ -147,13 +147,31 @@ AwardScene.prototype.onClickFirend = function (obj) {
 
 AwardScene.prototype.onClickComment = function (obj) {
 	if ( obj.enableAllBtn ) {
-		var url = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?mt=8&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software&id=";
-		url = url + "723564814";
-		memeda.common.openURL(url);
-		CoinMgr_Change(200);
-		cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
-		obj.commentCtrl.controller.setItemStatus(2);
-		sys.localStorage.setItem("comment", "1");	//
+        var url_old = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?mt=8&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software&id=";
+        var url_ios6 = "itms-apps://itunes.apple.com/app/id";
+        var url = null;
+        var system_os_name = sys.localStorage.getItem("system_os_name");
+        var system_os_version = sys.localStorage.getItem("system_os_version");
+
+        cc.log("[system_os_name] = "+system_os_name+" [version] = "+system_os_version);
+        if(system_os_name == "ios")
+        {
+            if(parseFloat(system_os_version)>=6.0)
+            {
+                url = url_ios6 + "723564814";
+            }
+            else
+            {
+                url = url_old + "723564814";
+            }
+            cc.log("[open url] = "+url);
+
+            memeda.common.openURL(url);
+            CoinMgr_Change(200);
+            cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
+            obj.commentCtrl.controller.setItemStatus(2);
+            sys.localStorage.setItem("comment", "1");	//
+        }
 	}
 	
 	if ( !Global_isWeb() ) {

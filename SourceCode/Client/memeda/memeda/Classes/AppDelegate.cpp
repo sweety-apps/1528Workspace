@@ -171,9 +171,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
-    sc->addRegisterCallback(CommonFunction::_js_register);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #endif /*CC_TARGET_PLATFORM*/
+    
+    sc->addRegisterCallback(CommonFunction::_js_register);
     
     // 初始化友盟统计
     CStat* pStat = CStat::GetInstance();

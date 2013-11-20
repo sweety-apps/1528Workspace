@@ -27,6 +27,9 @@ public:
     static void Finialize(JSFreeOp* fop, JSObject* obj);
     
     static JSBool openURL(JSContext* cx, uint32_t argc, jsval* vp);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    static JSBool setActualDefaultRingtoneUri(JSContext* cx, uint32_t argc, jsval* vp);
+#endif
 };
 
 #endif
