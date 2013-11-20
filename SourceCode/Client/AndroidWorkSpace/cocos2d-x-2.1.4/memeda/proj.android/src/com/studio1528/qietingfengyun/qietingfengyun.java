@@ -60,6 +60,8 @@ public class qietingfengyun extends Cocos2dxActivity{
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
+		CommonFunction.setContext(this);
+		
 		// 初始化ShareSDK
 		ShareSDK.initSDK(this);
 		

@@ -10,6 +10,13 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/libPluginOfferWall"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ShareSDK_C2dPluginX"/>
 	<classpathentry kind="src" path="jar"/>
-	<classpathentry kind="lib" path="jar/domob_android_offer_wall_sdk.jar"/>
+	<classpathentry kind="lib" path="/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/sdk/platforms/android-19/android.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://developer.android.com/reference/"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

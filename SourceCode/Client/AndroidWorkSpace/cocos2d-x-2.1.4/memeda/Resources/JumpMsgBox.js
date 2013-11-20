@@ -16,9 +16,9 @@ JumpMsgBox.prototype.onDidLoadFromCCB = function () {
     }
 };
 
-JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) { 
-	this.show = true;
-	
+JumpMsgBox.prototype.ShowMsg = function(price, id, endFun) {
+    this.show = true;
+
 	this.maskBkg.setVisible(true);
 	this.endFun = endFun;
 	this.price = price;

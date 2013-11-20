@@ -203,6 +203,12 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     
     this.checkExtraCoin();
     debugMsgOutput("GuessScene.prototype.onDidLoadFromCCB");
+    
+    if ( sys.os != "android" && sys.os != "Android" ) {
+    	this.RingLayout.setVisible(false);
+    } else {
+    	this.RingLayout.setVisible(true);	
+    }
 };
 
 GuessScene.prototype.onClickTaskTip = function() {
@@ -1380,6 +1386,31 @@ GuessScene.prototype.showNoCoinMsgBox = function ( src ) {
             
 			cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
 			memeda.OfferWallController.show();
+		}
+	});
+}
+
+GuessScene.prototype.onClickRing = function () {
+	// 设置铃声	
+	gCurrentCCBView.EnableAllBtn(false);
+	
+	if ( gCurrentCCBView.ringMsgBox == null ) {
+    	gCurrentCCBView.ringMsgBox = cc.BuilderReader.load("RingMsgBox");
+    	gCurrentCCBView.ccbLayout.addChild(	gCurrentCCBView.ringMsgBox );
+	}
+	
+	gCurrentCCBView.ringMsgBox.controller.ShowMsg(function (res) { 
+		gCurrentCCBView.EnableAllBtn(true);
+		if ( res == 1 ) {
+		    if ( !Global_isWeb() ) {
+    			var param = memeda.Stat.createParam();
+    			param.addKeyAndValue("index", ""+gProblem);
+    			param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+        		param.addKeyAndValue("question", gProblemProject);
+            
+    			memeda.Stat.logEvent("ring", param);
+		    }
+		    memeda.common.setActualDefaultRingtoneUri("RINGTONE", "problem/music/" + gCurrentTestObj.id + ".mp3", gCurrentTestObj.rightanswer);
 		}
 	});
 }
