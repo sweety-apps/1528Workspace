@@ -15,9 +15,10 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import org.cocos2dx.libIAPAlipay.R;
 import org.cocos2dx.plugin.FileDownloader.IDownloadProgress;
 
-import com.studio1528.qietingfengyun.R;
+//import com.studio1528.qietingfengyun.R;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
