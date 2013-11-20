@@ -55,12 +55,15 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     std::vector<std::string> resDirOrders;
     
+    ResolutionPolicy resolutionPolicy = kResolutionNoBorder;
+    
     TargetPlatform platform = CCApplication::sharedApplication()->getTargetPlatform();
     if (platform == kTargetIphone || platform == kTargetIpad)
     {
         std::vector<std::string> searchPaths = CCFileUtils::sharedFileUtils()->getSearchPaths();
         searchPaths.insert(searchPaths.begin(), "TestCCB");
         CCFileUtils::sharedFileUtils()->setSearchPaths(searchPaths);
+        
         if (screenSize.height > 1136)
         {
             designSize = CCSizeMake(384, 512);
@@ -103,9 +106,12 @@ bool AppDelegate::applicationDidFinishLaunching()
             resizeFactor = 2.0;
         }
         
+        resolutionPolicy = kResolutionNoBorder;
+        
     }
     else if (platform == kTargetAndroid || platform == kTargetWindows)
     {
+#if 0
         if (screenSize.height > 960)
         {
             resourceSize = CCSizeMake(1280, 1920);
@@ -132,9 +138,39 @@ bool AppDelegate::applicationDidFinishLaunching()
             resourceSize = CCSizeMake(320, 480);
             resDirOrders.push_back("resources-small");
         }
+#endif
+        if (screenSize.height > 720)
+        {
+            if(screenSize.height / screenSize.width >= 1136/640)
+            {
+                resourceSize = CCSizeMake(640, 1136);
+            }
+            else
+            {
+                resourceSize = CCSizeMake(640, 960);
+            }
+            resDirOrders.push_back("resources-large");
+            //resDirOrders.push_back("resources-medium");
+            resDirOrders.push_back("resources-small");
+        }
+        else
+        {
+            if(screenSize.height / screenSize.width >= 568/320)
+            {
+                resourceSize = CCSizeMake(320, 568);
+            }
+            else
+            {
+                resourceSize = CCSizeMake(320, 480);
+            }
+            resDirOrders.push_back("resources-small");
+        }
+        
+        resolutionPolicy = kResolutionFixedWidth;
         
         resizeFactor = resourceSize.width/designSize.width;
         
+        //designSize.height = designSize.width * resourceSize.height / resourceSize.width;
         designSize.height = designSize.width * screenSize.height / screenSize.width;
     }
     
