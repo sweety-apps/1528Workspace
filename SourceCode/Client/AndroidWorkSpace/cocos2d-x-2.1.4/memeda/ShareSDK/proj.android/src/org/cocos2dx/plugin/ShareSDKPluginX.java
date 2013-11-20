@@ -31,6 +31,7 @@ public class ShareSDKPluginX implements InterfaceSocial {
 			public void run() {
 				ShareSDK.initSDK(context);
 				
+				/*
 				Platform.ShareParams sp = new Wechat.ShareParams();
 				//AssetManager
 				sp.text = "测试分享的文本";
@@ -40,8 +41,8 @@ public class ShareSDKPluginX implements InterfaceSocial {
 				//weibo.setPlatformActionListener(paListener); // 设置分享事件回调
 				// 执行图文分享
 				weixin.share(sp);
+				*/
 				
-				/*
 				OnekeyShare oks = new OnekeyShare();
 				
 				if (cpInfo.containsKey("notifyIcon") && cpInfo.containsKey("notifyTitle")) {
@@ -127,7 +128,7 @@ public class ShareSDKPluginX implements InterfaceSocial {
 					oks.setDialogMode();
 				}
 				oks.show(context);
-				*/
+				
 			}
 		});
 	}
