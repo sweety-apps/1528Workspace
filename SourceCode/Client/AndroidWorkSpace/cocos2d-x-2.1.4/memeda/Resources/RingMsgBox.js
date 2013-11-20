@@ -50,6 +50,10 @@ RingMsgBox.prototype.onClickOK = function() {
 	this.Hide(1);
 };
 
+RingMsgBox.prototype.onClickBkg = function () {
+	
+}
+
 RingMsgBox.prototype.onClickCancel = function() {
 	// 扣金币
 	if ( !this.show ) {

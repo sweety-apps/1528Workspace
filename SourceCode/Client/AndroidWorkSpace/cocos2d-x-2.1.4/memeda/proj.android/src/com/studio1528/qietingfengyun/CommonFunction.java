@@ -38,14 +38,29 @@ public class CommonFunction {
 	{
 		if ( ring.contentEquals("RINGTONE") )
 		{
-			try 
-			{
-				String strPath = copyFile(path, name);
-				settingRingertone(strPath, name);
-			}
-			catch (Exception e)
-			{
-			}
+			RingtoneHelper helper = new RingtoneHelper(ring, path, name);
+			helper.start();
+		}
+	}
+	
+	public static Context gContext;
+}
+
+class RingtoneHelper extends Thread {
+	RingtoneHelper(String ring, String path, String name) {
+		this.ring = ring;
+		this.path = path;
+		this.name = name;
+	}
+	
+	public void run() {
+		try 
+		{
+			String strPath = copyFile(path, name);
+			settingRingertone(strPath, name);
+		}
+		catch (Exception e)
+		{
 		}
 	}
 	
@@ -65,7 +80,7 @@ public class CommonFunction {
     	
     	Log.d("settingRingertone", strDestPath);
     	
-    	AssetManager am = gContext.getAssets();
+    	AssetManager am = CommonFunction.gContext.getAssets();
     	InputStream input = am.open(path);
     	byte[] reader = new byte[input.available()];
     
@@ -96,7 +111,7 @@ public class CommonFunction {
           ContentValues cv = new ContentValues();
           Uri uri = MediaStore.Audio.Media.getContentUriForPath(path);
             
-          Cursor cursor = gContext.getContentResolver().query(uri,
+          Cursor cursor = CommonFunction.gContext.getContentResolver().query(uri,
             null, null, null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
           Uri newUri = null;
           if (cursor.moveToFirst()) {
@@ -108,14 +123,18 @@ public class CommonFunction {
                cv.put(MediaStore.Audio.Media.MIME_TYPE, "audio/mp3");
                cv.put(MediaStore.Audio.Media.TITLE, name);
                cv.put(AudioColumns.DATA,path);
-               newUri = gContext.getContentResolver().insert(uri, cv);
+               newUri = CommonFunction.gContext.getContentResolver().insert(uri, cv);
           }
           // 设置铃声
-           RingtoneManager.setActualDefaultRingtoneUri(gContext, RingtoneManager.TYPE_RINGTONE, newUri );
+           RingtoneManager.setActualDefaultRingtoneUri(CommonFunction.gContext, RingtoneManager.TYPE_RINGTONE, newUri );
           if(cursor != null){
               cursor.close();
           }
     }
    
-	public static Context gContext;
+    
+	private String ring;
+	private String path;
+	private String name;
 }
+

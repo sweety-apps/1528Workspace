@@ -6,7 +6,7 @@
 //
 //
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 
 #include "CPreloadHelper.h"
 #include <CCTextureCache.h>
@@ -28,7 +28,7 @@ void* CPreloadHelper::PreloadThread(void* pobj)
 }
 
 void CPreloadHelper::load()
-{
+{/*
     cocos2d::CCTextureCache* pTextureCache = cocos2d::CCTextureCache::sharedTextureCache();
     
     NSString* curPath = [[NSBundle mainBundle] resourcePath];
@@ -52,10 +52,11 @@ void CPreloadHelper::load()
             pTextureCache->addImageAsync([file UTF8String], this, callfuncO_selector(CPreloadHelper::loadedCallback));
         }
     }
+  */
 }
 
 void CPreloadHelper::Preload()
-{
+{/*
     pthread_t id;
     pthread_attr_t attr;
     
@@ -63,6 +64,7 @@ void CPreloadHelper::Preload()
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
     
     pthread_create(&id, &attr, PreloadThread, this);
+  */
 }
 
 void CPreloadHelper::loadedCallback()
