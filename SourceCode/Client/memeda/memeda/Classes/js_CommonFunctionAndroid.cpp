@@ -138,4 +138,17 @@ JSBool CommonFunction::setActualDefaultRingtoneUri(JSContext* cx, uint32_t argc,
     return JS_TRUE;
 }
 
+void CommonFunction_Notify_Splash_Fade()
+{
+    JniMethodInfo t;
+    if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "removeSplashView", "()V"))
+    {
+        cocos2d::CCLog("JniHelper::RemoveSplashView Failed");
+    }
+    
+    t.env->CallStaticVoidMethod(t.classID, t.methodID);
+    
+    cocos2d::CCLog("RemoveSplashView");
+}
+
 #endif /*CC_TARGET_PLATFORM*/

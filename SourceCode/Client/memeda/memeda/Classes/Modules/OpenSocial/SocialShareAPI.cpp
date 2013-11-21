@@ -206,7 +206,12 @@ void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,s
     
 #if SHARE_USE_PLUGIN_X
     TShareInfo pInfo;
-    pInfo["text"] = "cocos2d-x share sdk plugin-x test";
+    pInfo["isTimeline"] = isTimeline ? "true" : "false";
+    pInfo["title"] = title.c_str();
+    pInfo["imagePath"] = imgPath.c_str();
+    pInfo["url"] = content.c_str();
+    pInfo["text"] = url.c_str();
+    pInfo["extInfo"] = description.c_str();
     m_sharePlugin->share(pInfo);
 #endif /*SHARE_USE_PLUGIN_X*/
 }

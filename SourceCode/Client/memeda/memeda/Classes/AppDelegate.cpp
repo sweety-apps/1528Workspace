@@ -64,47 +64,60 @@ bool AppDelegate::applicationDidFinishLaunching()
         searchPaths.insert(searchPaths.begin(), "TestCCB");
         CCFileUtils::sharedFileUtils()->setSearchPaths(searchPaths);
         
-        if (screenSize.height > 1136)
+        if (platform == kTargetIphone)
         {
-            designSize = CCSizeMake(384, 512);
-            resourceSize = CCSizeMake(1536, 2048);
-            resDirOrders.push_back("resources-ipadhd");
-            resDirOrders.push_back("resources-ipad");
-            resDirOrders.push_back("resources-iphonehd");
-            resizeFactor = 4.0;
-        }
-        else if (screenSize.height > 1024)
-        {
-            designSize = CCSizeMake(320, 568);
-            resourceSize = CCSizeMake(640, 1136);
-            resDirOrders.push_back("resources-ipad");
-            resDirOrders.push_back("resources-iphonehd");
-            resizeFactor = 2.0;
-        }
-        else if (screenSize.height > 960)
-        {
-            designSize = CCSizeMake(384, 512);
-            resourceSize = CCSizeMake(768, 1024);
-            resDirOrders.push_back("resources-ipad");
-            resDirOrders.push_back("resources-iphonehd");
-            resizeFactor = 2.0;
-        }
-        else if (screenSize.height > 480)
-        {
-            designSize = CCSizeMake(320, 480);
-            resourceSize = CCSizeMake(640, 960);
-            resDirOrders.push_back("resources-iphonehd");
-            resDirOrders.push_back("resources-iphone");
-            resizeFactor = 2.0;
+            if (screenSize.height > 1136)
+            {
+                designSize = CCSizeMake(384, 512);
+                resourceSize = CCSizeMake(1536, 2048);
+                resDirOrders.push_back("resources-ipadhd");
+                resDirOrders.push_back("resources-ipad");
+                resDirOrders.push_back("resources-iphonehd");
+                resizeFactor = 4.0;
+            }
+            else if (screenSize.height > 1024)
+            {
+                designSize = CCSizeMake(320, 568);
+                resourceSize = CCSizeMake(640, 1136);
+                resDirOrders.push_back("resources-ipad");
+                resDirOrders.push_back("resources-iphonehd");
+                resizeFactor = 2.0;
+            }
+            else if (screenSize.height > 960)
+            {
+                designSize = CCSizeMake(384, 512);
+                resourceSize = CCSizeMake(768, 1024);
+                resDirOrders.push_back("resources-ipad");
+                resDirOrders.push_back("resources-iphonehd");
+                resizeFactor = 2.0;
+            }
+            else if (screenSize.height > 480)
+            {
+                designSize = CCSizeMake(320, 480);
+                resourceSize = CCSizeMake(640, 960);
+                resDirOrders.push_back("resources-iphonehd");
+                resDirOrders.push_back("resources-iphone");
+                resizeFactor = 2.0;
+            }
+            else
+            {
+                designSize = CCSizeMake(320, 480);
+                resourceSize = CCSizeMake(320, 480);
+                resDirOrders.push_back("resources-iphonehd");
+                resDirOrders.push_back("resources-iphone");
+                resizeFactor = 2.0;
+            }
         }
         else
         {
-            designSize = CCSizeMake(320, 480);
-            resourceSize = CCSizeMake(320, 480);
+            // for iPad, Just Scale Up
+            designSize = CCSizeMake(320, 426);
+            resourceSize = CCSizeMake(640, 960);
             resDirOrders.push_back("resources-iphonehd");
             resDirOrders.push_back("resources-iphone");
-            resizeFactor = 2.0;
+            resizeFactor = resourceSize.width/designSize.width;
         }
+        
         
         resolutionPolicy = kResolutionNoBorder;
         
@@ -238,6 +251,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     //UInt32 route = kAudioSessionOverrideAudioRoute_None;
     //AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(route), &route);
     SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.8);
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    CommonFunction_Notify_Splash_Fade();
+#endif
     
     return true;
 }

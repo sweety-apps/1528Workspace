@@ -6,7 +6,7 @@
 //
 //
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "cocos2d.h"
 
 #include "CPreloadHelper.h"
 #include <CCTextureCache.h>
@@ -15,6 +15,8 @@
 #include <stdio.h>
 #include <dirent.h>
 #include <sys/stat.h>
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 
 using namespace cocos2d;
 

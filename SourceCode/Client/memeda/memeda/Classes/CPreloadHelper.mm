@@ -6,8 +6,7 @@
 //
 //
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-
+#include "cocos2d.h"
 #include "CPreloadHelper.h"
 #include <CCTextureCache.h>
 
@@ -15,6 +14,8 @@
 #include <stdio.h>
 #include <dirent.h>
 #include <sys/stat.h>
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 
 using namespace cocos2d;
 
@@ -70,4 +71,5 @@ void CPreloadHelper::loadedCallback()
     
 }
 
-#endif
+#endif /*CC_TARGET_PLATFORM*/
+

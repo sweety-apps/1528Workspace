@@ -12,6 +12,13 @@
     <application android:label="@string/app_name"
         android:icon="@drawable/icon">
 
+        <!-- <activity android:name=".SplashActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                  android:configChanges="orientation">
+        </activity> -->
+        
         <activity android:name=".qietingfengyun"
                   android:label="@string/app_name"
                   android:screenOrientation="portrait"

@@ -43,6 +43,11 @@ public class CommonFunction {
 		}
 	}
 	
+	public static void removeSplashView()
+	{
+		qietingfengyun.RemoveSplashView();
+	}
+	
 	public static Context gContext;
 }
 

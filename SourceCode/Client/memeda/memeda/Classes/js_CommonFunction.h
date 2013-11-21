@@ -32,4 +32,8 @@ public:
 #endif
 };
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+void CommonFunction_Notify_Splash_Fade();
+#endif
+
 #endif
