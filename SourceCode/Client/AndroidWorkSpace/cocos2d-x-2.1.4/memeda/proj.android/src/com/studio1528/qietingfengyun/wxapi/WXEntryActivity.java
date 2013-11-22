@@ -1,50 +1,95 @@
 /*
- * 官网地站:http://www.ShareSDK.cn
- * 技术支持QQ: 4006852216
- * 官方微信:ShareSDK   （如果发布新版本的话，我们将会第一时间通过微信将版本更新内容推送给您。如果使用过程中有任何问题，也可以通过微信与我们取得联系，我们将会在24小时内给予回复）
+ * 瀹�缃���扮��:http://www.ShareSDK.cn
+ * ������������QQ: 4006852216
+ * 瀹���瑰井淇�:ShareSDK   锛�濡�������甯���扮��������璇�锛����浠�灏�浼�绗�涓���堕�撮��杩�寰�淇″����������存�板��瀹规�ㄩ��缁���ㄣ��濡����浣跨�ㄨ��绋�涓����浠讳�����棰�锛�涔����浠ラ��杩�寰�淇′�����浠����寰����绯伙�����浠�灏�浼����24灏���跺��缁�浜����澶�锛�
  *
- * Copyright (c) 2013年 ShareSDK.cn. All rights reserved.
+ * Copyright (c) 2013骞� ShareSDK.cn. All rights reserved.
  */
 
 package com.studio1528.qietingfengyun.wxapi;
 
+import org.cocos2dx.plugin.ShareSDKPluginX;
+import org.cocos2dx.plugin.SocialWrapper;
+
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import com.studio1528.qietingfengyun.qietingfengyun;
-import cn.sharesdk.wechat.utils.WXAppExtendObject;
-import cn.sharesdk.wechat.utils.WXMediaMessage;
-import cn.sharesdk.wechat.utils.WechatHandlerActivity;
+import com.tencent.mm.sdk.openapi.BaseReq;
+import com.tencent.mm.sdk.openapi.BaseResp;
+import com.tencent.mm.sdk.openapi.ConstantsAPI;
+import com.tencent.mm.sdk.openapi.ShowMessageFromWX;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.mm.sdk.openapi.WXAppExtendObject;
+import com.tencent.mm.sdk.openapi.WXMediaMessage;
 
-/** 微信客户端回调activity示例 */
-public class WXEntryActivity extends WechatHandlerActivity {
+public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
-	/**
-	 * 处理微信发出的向第三方应用请求app message
-	 * <p>
-	 * 在微信客户端中的聊天页面有“添加工具”，可以将本应用的图标添加到其中
-	 * 此后点击图标，下面的代码会被执行。Demo仅仅只是打开自己而已，但你可
-	 * 做点其他的事情，包括根本不打开任何页面
-	 */
-	public void onGetMessageFromWXReq(WXMediaMessage msg) {
-		startActivity(new Intent(this, qietingfengyun.class));
+	// IWXAPI 是第三方app和微信通信的openapi接口
+    private IWXAPI api;
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        // 通过WXAPIFactory工厂，获取IWXAPI的实例
+    	api = WXAPIFactory.createWXAPI(this, ShareSDKPluginX.APP_ID, false);
+        
+        api.handleIntent(getIntent(), this);
+    }
+	
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		
+		setIntent(intent);
+        api.handleIntent(intent, this);
 	}
-
-	/**
-	 * 处理微信向第三方应用发起的消息
-	 * <p>
-	 * 此处用来接收从微信发送过来的消息，比方说本demo在wechatpage里面分享
-	 * 应用时可以不分享应用文件，而分享一段应用的自定义信息。接受方的微信
-	 * 客户端会通过这个方法，将这个信息发送回接收方手机上的本demo中，当作
-	 * 回调。
-	 * <p>
-	 * 本Demo只是将信息展示出来，但你可做点其他的事情，而不仅仅只是Toast
-	 */
-	public void onShowMessageFromWXReq(WXMediaMessage msg) {
-		if (msg != null && msg.mediaObject != null
-				&& (msg.mediaObject instanceof WXAppExtendObject)) {
-			WXAppExtendObject obj = (WXAppExtendObject) msg.mediaObject;
-			Toast.makeText(this, obj.extInfo, Toast.LENGTH_SHORT).show();
+	
+	// 微信发送请求到第三方应用时，会回调到该方法
+		@Override
+		public void onReq(BaseReq req) {
+			switch (req.getType()) {
+			case ConstantsAPI.COMMAND_GETMESSAGE_FROM_WX:
+				//goToGetMsg();		
+				break;
+			case ConstantsAPI.COMMAND_SHOWMESSAGE_FROM_WX:
+				//goToShowMsg((ShowMessageFromWX.Req) req);
+				break;
+			default:
+				break;
+			}
 		}
-	}
 
+		// 第三方应用发送到微信的请求处理后的响应结果，会回调到该方法
+		@Override
+		public void onResp(BaseResp resp) {
+			int result = 0;
+			
+			switch (resp.errCode) {
+			case BaseResp.ErrCode.ERR_OK:
+				//result = R.string.errcode_success;
+				SocialWrapper.onShareResult(ShareSDKPluginX.sharedInstance, SocialWrapper.SHARERESULT_SUCCESS, "success");
+				break;
+			case BaseResp.ErrCode.ERR_USER_CANCEL:
+				//result = R.string.errcode_cancel;
+				SocialWrapper.onShareResult(ShareSDKPluginX.sharedInstance, SocialWrapper.SHARERESULT_CANCEL, "cancelled");
+				break;
+			case BaseResp.ErrCode.ERR_AUTH_DENIED:
+				//result = R.string.errcode_deny;
+				SocialWrapper.onShareResult(ShareSDKPluginX.sharedInstance, SocialWrapper.SHARERESULT_FAIL, "failed");
+				break;
+			default:
+				//result = R.string.errcode_unknown;
+				break;
+			}
+			
+			finish();
+			//startActivity(new Intent(this, qietingfengyun.class));
+		}
 }

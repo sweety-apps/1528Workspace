@@ -73,6 +73,8 @@ public:
                 break;
         }
         
+         cocos2d::CCLog("onShareResult With state = %s, msg = %s",state.c_str(),msg);
+        
         IOS_WeChatShareCallback(state, errorMsg, m_Context);
     };
 };
@@ -209,8 +211,8 @@ void SocialShareAPI::shareWeChatURL(std::string content, std::string imageName,s
     pInfo["isTimeline"] = isTimeline ? "true" : "false";
     pInfo["title"] = title.c_str();
     pInfo["imagePath"] = imgPath.c_str();
-    pInfo["url"] = content.c_str();
-    pInfo["text"] = url.c_str();
+    pInfo["url"] = url.c_str();
+    pInfo["text"] = content.c_str();
     pInfo["extInfo"] = description.c_str();
     m_sharePlugin->share(pInfo);
 #endif /*SHARE_USE_PLUGIN_X*/

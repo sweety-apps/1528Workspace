@@ -6,15 +6,7 @@
 	<classpathentry kind="src" path="/libPluginProtocol"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/libcocos2dx"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/libPluginOfferWall"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ShareSDK_C2dPluginX"/>
 	<classpathentry kind="src" path="jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Core-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Wechat-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Wechat-Core-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Wechat-Moments-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/mframework.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/android-support-v4.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-SinaWeibo-2.1.2.jar"/>
 	<classpathentry kind="lib" path="/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/sdk/platforms/android-19/android.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="http://developer.android.com/reference/"/>
@@ -23,32 +15,8 @@
 			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
 		</accessrules>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/libPluginUmeng/sdk/umeng_sdk.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry exported="true" kind="lib" path="/libPluginUmeng/sdk/umeng_sdk.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Douban-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Dropbox-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Email-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Evernote-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Facebook-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Flickr-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Foursquare-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-GooglePlus-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Instagram-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-KaiXin-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Linkedin-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-NetEaseMicroBlog-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Pinterest-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-QQ-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-QZone-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Renren-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-ShortMessage-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-SohuSuishenkan-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-SouhuMicroBlog-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-TencentWeibo-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Tumblr-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-Twitter-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-VKontakte-2.1.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="/ShareSDK_C2dPluginX/jar/ShareSDK-YouDao-2.1.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

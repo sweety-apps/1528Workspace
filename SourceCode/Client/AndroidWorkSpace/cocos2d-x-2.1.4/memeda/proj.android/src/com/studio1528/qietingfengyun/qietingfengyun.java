@@ -7,12 +7,6 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.plugin.PluginWrapper;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
-import cn.sharesdk.framework.Platform;
-import cn.sharesdk.framework.ShareSDK;
-import cn.sharesdk.sina.weibo.SinaWeibo;
-import cn.sharesdk.wechat.friends.Wechat;
-import cn.sharesdk.wechat.moments.WechatMoments;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -36,6 +30,7 @@ public class qietingfengyun extends Cocos2dxActivity{
 			case 1:
 				Log.e("[!!! Test Timer]","Timer");
 				
+				/*
 				//Wechat.ShareParams sp = new Wechat.ShareParams();
 				WechatMoments.ShareParams sp = new WechatMoments.ShareParams();
 				sp.title = "ShareSDK 微信好友测试 title";
@@ -100,7 +95,7 @@ public class qietingfengyun extends Cocos2dxActivity{
 		CommonFunction.setContext(this);
 		
 		// 初始化ShareSDK
-		ShareSDK.initSDK(this,"98333c6897c");
+		//ShareSDK.initSDK(this,"98333c6897c");
 		
 		PluginWrapper.init(this); // for plugins
 		
@@ -173,7 +168,7 @@ public class qietingfengyun extends Cocos2dxActivity{
 		//timer.cancel();
 		
 		// 停掉ShareSDK
-		ShareSDK.stopSDK(this);
+		//ShareSDK.stopSDK(this);
 		
 		super.onDestroy();
 	}
