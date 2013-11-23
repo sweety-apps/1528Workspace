@@ -37,6 +37,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 
     gChooseTestsSceneThis = this;
 
+	this.isShowScene = true;
+	
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -184,6 +186,9 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
 
     var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
     scene = cc.TransitionProgressInOut.create(0.2,scene);
+    
+    this.isShowScene = false;
+    
     cc.Director.getInstance().replaceScene(scene);
 };
 
@@ -209,6 +214,8 @@ ChooseTestsScene.prototype.onAnimationCompleted = function()
         this.sceneState = kFloorsSceneStateNormal;
         var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
         scene = cc.TransitionProgressInOut.create(0.2,scene);
+        
+        this.isShowScene = false;
         cc.Director.getInstance().replaceScene(scene);
     }
     if(this.rootNode.animationManager.getLastCompletedSequenceName() == "Loop Timeline")
@@ -420,6 +427,10 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
                                                    });
         }
     } else {
+    	if ( !this.isShowScene ) {
+    		return ;	
+    	}
+    	
         var obj = JSON.parse(responseText);
         var consumed = sys.localStorage.getItem("consumed");
         // 消费掉的积分，取本地和服务器上纪录的最大值

@@ -249,6 +249,7 @@ GuessScene.prototype.onBack = function ( ) {
     }
     //
     try {
+    	gCurrentCCBView.onMusicStop();
 		if(cc.AudioEngine.getInstance().isMusicPlaying()) {
 			cc.AudioEngine.getInstance().stopMusic();
             cc.AudioEngine.getInstance().setMusicVolume(0.0);
@@ -1293,6 +1294,16 @@ GuessScene.prototype.onClickJump = function () {
 	this.jumpMsg.controller.ShowMsg(200, gCurrentTestObj.id, function (res) {
 		if ( res == 1 ) {
 			// 跳过该题，进入下一题
+            try {
+                if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+                    cc.AudioEngine.getInstance().stopMusic();
+                    cc.AudioEngine.getInstance().setMusicVolume(0.0);
+                }
+                gCurrentCCBView.onMusicStop();
+                cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(gCurrentCCBView);
+            } catch (e) {
+            }
+                                    
 			if ( !Problem_isAnswerRight(gCurrentTestObj.id) ) {
 				Question_jump(gCurrentTestObj.id);
 			}

@@ -83,7 +83,7 @@ JumpMsgBox.prototype.onClickBuy = function() {
  		if ( !Global_isWeb() ) {
             var param = memeda.Stat.createParam();
             param.addKeyAndValue("question", gProblemProject);
-    		memeda.Stat.logEvent("clickJumpNoEnough");
+    		memeda.Stat.logEvent("clickJumpNoEnough", param);
 		}
 	} else {
 		CoinMgr_Change(-1 * this.price);
@@ -93,7 +93,7 @@ JumpMsgBox.prototype.onClickBuy = function() {
  		if ( !Global_isWeb() ) {
             var param = memeda.Stat.createParam();
             param.addKeyAndValue("question", gProblemProject);
-    		memeda.Stat.logEvent("clickJumpBuy");
+    		memeda.Stat.logEvent("clickJumpBuy", param);
 		}
 	}
 };

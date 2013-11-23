@@ -35,11 +35,11 @@
 	<key>publishDirectoryHTML5</key>
 	<string>Published-HTML5</string>
 	<key>publishEnabledAndroid</key>
-	<true/>
+	<false/>
 	<key>publishEnabledHTML5</key>
-	<false/>
+	<true/>
 	<key>publishEnablediPhone</key>
-	<false/>
+	<true/>
 	<key>publishResolutionHTML5_height</key>
 	<integer>568</integer>
 	<key>publishResolutionHTML5_scale</key>
