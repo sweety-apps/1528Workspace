@@ -30,12 +30,6 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="cn.sharesdk.framework.ShareSDKUIShell" 
-            	  android:theme="@android:style/Theme.Translucent.NoTitleBar" 
-            	  android:configChanges="keyboardHidden|orientation|screenSize" 
-            	  android:screenOrientation="portrait" 
-            	  android:windowSoftInputMode="stateHidden|adjustResize" />
-        
         <activity android:name=".wxapi.WXEntryActivity" 
             	  android:theme="@android:style/Theme.Translucent.NoTitleBar" 
             	  android:configChanges="keyboardHidden|orientation|screenSize" 
