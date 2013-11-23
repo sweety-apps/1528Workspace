@@ -330,13 +330,8 @@ ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
 			}
         } catch (e) {
         }
-        
-        var param = memeda.Stat.createParam();
-        param.addKeyAndValue("index", ""+gProblem);
-        param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
-        param.addKeyAndValue("question", gProblemProject);
                     
-        memeda.Stat.logEvent("offerwellfromfloor", param);
+        memeda.Stat.logEvent("offerwellfromfloor");
             	
 		cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
 		memeda.OfferWallController.show();
