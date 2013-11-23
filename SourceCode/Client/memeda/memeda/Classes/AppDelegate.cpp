@@ -1,5 +1,8 @@
 #include "AppDelegate.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
 #include "ScriptingCore.h"
@@ -286,6 +289,32 @@ void AppDelegate::ResetCoin()
         
         localStorageSetItem("localNotification", "");
     }
+    
+    // 判断是否是覆盖安装
+    const char* szProblem = localStorageGetItem("problem_project");
+    if ( szProblem != NULL )
+    {   // 覆盖安装
+        const char* szAward = localStorageGetItem("installaward");
+        if ( szAward == NULL ) {
+            // 覆盖安装奖励
+            const char* szCoin = localStorageGetItem("coin");
+            if ( szCoin != NULL )
+            {
+                char* szStopString;
+                long lCoin = strtol(szCoin, &szStopString, 10);
+                lCoin += 100;
+                char szNewCoin[128];
+                sprintf(szNewCoin, "%ld", lCoin);
+                localStorageSetItem("coin", szNewCoin);
+            }
+            else
+            {
+                localStorageSetItem("coin", "150");
+            }
+        }
+    }
+    // 不是覆盖不加金币
+    localStorageSetItem("installaward", "1");
 }
 
 void handle_signal(int signal) {
