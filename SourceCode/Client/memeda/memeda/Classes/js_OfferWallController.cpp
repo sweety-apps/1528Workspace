@@ -79,8 +79,8 @@ void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
         JS_FN("getInstance", js_getInstance, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_init, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_show, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("requestOnlinePointCheck", js_requestOnlinePointCheck, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("requestOnlineConsumeWithPoint", js_requestOnlineConsumeWithPoint, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("requestOnlinePointCheck", js_requestOnlinePointCheck, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
     
@@ -123,6 +123,7 @@ JSBool js_OfferWallController::js_requestOnlinePointCheck(JSContext* cx, uint32_
 
 JSBool js_OfferWallController::js_requestOnlineConsumeWithPoint(JSContext* cx, uint32_t argc, jsval* vp)
 {
+    cocos2d::CCLog("requestOnlineConsumeWithPoint");
     jsval *argv = JS_ARGV(cx, vp);
     int32_t nValue = JSVAL_TO_INT(argv[0]);
     
@@ -212,5 +213,15 @@ void OfferWallResultListener::onShareResult(cocos2d::plugin::ShareResultCode ret
         js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
         
         ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "offerWallDidFailConsume");
+    }
+    else if ( strcmp(msg, "requestOnlineConsumeWithPoint") == 0) {
+        js_proxy_t* p = jsb_get_native_proxy(js_OfferWallController::g_Instance);
+        jsval retval;
+        JSContext* jc = ScriptingCore::getInstance()->getGlobalContext();
+
+        jsval v[] = {
+            v[0] = c_string_to_jsval(jc, msg + strlen("requestOnlineConsumeWithPoint "))
+        };
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(p->obj), "requestOnlineConsumeWithPoint", 1, v, &retval);
     }
 }

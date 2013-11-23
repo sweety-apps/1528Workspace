@@ -2,7 +2,7 @@
 export ALL_PLUGINS=("flurry" "umeng" \
 "alipay" "nd91" \
 "admob" \
-"twitter" "weibo" "DMOfferWallSDK")
+"twitter" "weibo" "DMOfferWallSDK" "youmi")
 
 # define the plugin root directory & publish target directory
 export TARGET_DIR_NAME="publish"

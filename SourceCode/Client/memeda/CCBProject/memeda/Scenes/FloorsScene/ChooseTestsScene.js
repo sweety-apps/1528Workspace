@@ -369,6 +369,8 @@ ChooseTestsScene.prototype.QueryExtraCoin = function () {
     callBackObj.offerWallDidFailConsume = function() {
         debugMsgOutput("offerWallDidFailConsume");
     };
+    callBackObj.spendPoints = function(responseText) {
+    };
 
     CoinMgr_checkExtraCoin(callBackObj);  // 检测额外的金币奖励，包括微信和多盟
     debugMsgOutput("-0-=-=-=-=-=");
@@ -408,19 +410,34 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
 };
 
 ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
-    var obj = JSON.parse(responseText);
-    var consumed = sys.localStorage.getItem("consumed");
-    // 消费掉的积分，取本地和服务器上纪录的最大值
-    debugMsgOutput("obj.totalPoint " + obj.totalPoint);
-    debugMsgOutput("obj.consumed " + obj.consumed);
-    debugMsgOutput("consumed " + consumed);
-
-    if ( consumed != null && consumed != "" ) {
-        consumed = parseInt(consumed);
-        if ( consumed < obj.consumed ) {
-            consumed = obj.consumed;
+    if ( sys.os == "android" || sys.os == "Android" ) {
+        var obj = JSON.parse(responseText);
+        if ( obj.Point > 0 ) {
+            // 有可消费的积分
+    		if ( this.weChatAwardMsg == null ) {
+    			this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+    			this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
+    		}
+            
+        	this.weChatAwardMsg.controller.ShowMsg(2, obj.Point, function (coin) {
+                                                   // 消费掉多余的金币
+                                                   CoinMgr_Change(coin);
+                                                   });
         }
-    }
+    } else {
+        var obj = JSON.parse(responseText);
+        var consumed = sys.localStorage.getItem("consumed");
+        // 消费掉的积分，取本地和服务器上纪录的最大值
+        debugMsgOutput("obj.totalPoint " + obj.totalPoint);
+        debugMsgOutput("obj.consumed " + obj.consumed);
+        debugMsgOutput("consumed " + consumed);
+
+        if ( consumed != null && consumed != "" ) {
+            consumed = parseInt(consumed);
+            if ( consumed < obj.consumed ) {
+                consumed = obj.consumed;
+            }
+        }
     
         var canConsum = obj.totalPoint - consumed;   
         if ( canConsum > 990 ) {
@@ -440,6 +457,7 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         		            					CoinMgr_Change(coin);
                                            });                  
         }
+    }
 };
 
 ChooseTestsScene.prototype.scrollFloorsToCatPosition = function ()

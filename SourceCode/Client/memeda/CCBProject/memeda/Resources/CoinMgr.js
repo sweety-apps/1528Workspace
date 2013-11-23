@@ -95,6 +95,12 @@ function CoinMgr_Init() {
                     CoinMgr_gCallBackObj.offerWallDidFailConsume(responseText);
                 }
             };
+        
+            memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint = function (responseText) {
+                if ( CoinMgr_gCallBackObj != null ) {
+                    CoinMgr_gCallBackObj.spendPoints(responseText);
+                }
+            };
     }
 }
 

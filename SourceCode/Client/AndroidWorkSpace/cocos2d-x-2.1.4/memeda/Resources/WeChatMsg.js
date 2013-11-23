@@ -70,6 +70,14 @@ WeChatMsg.prototype.onClickClose = function() {
 
 WeChatMsg.prototype.onShare = function() {
 	// 分享   
+    if ( !Global_isWeb() ) {
+    	var param = memeda.Stat.createParam();
+    	param.addKeyAndValue("aid", ""+this.aid);
+        param.addKeyAndValue("type", "wechat");
+            
+    	memeda.Stat.logEvent("clickWechat", param);
+    }
+	
     var url = Global_getShareUrl(this.aid);
     debugMsgOutput(url);
     
@@ -105,6 +113,14 @@ WeChatMsg.prototype.onShare = function() {
 
 WeChatMsg.prototype.onShareFriend = function() {
 	// 分享到朋友圈 
+    if ( !Global_isWeb() ) {
+    	var param = memeda.Stat.createParam();
+    	param.addKeyAndValue("aid", ""+this.aid);
+        param.addKeyAndValue("type", "firend");
+            
+    	memeda.Stat.logEvent("clickWechat", param);
+    }
+    
     var url = Global_getShareUrl(this.aid);
     debugMsgOutput(url);
     
