@@ -23,11 +23,22 @@ NoEnoughMessageBox.prototype.onDidLoadFromCCB = function () {
 
 NoEnoughMessageBox.prototype.show = function(src, endFun) {
 	if ( RemoteConfig.domob == "1" || sys.os == "android" || sys.os == "Android" ) {
-		this.freeBtnText.setVisible(true);
-		this.freeBtn.setVisible(true);	
+		if ( sys.os == "android" || sys.os == "Android" ) {
+			// 只显示免费金币	
+			this.freeBtnText.setVisible(true);
+			this.freeBtn.setVisible(true);	
+			this.buyBtn.setVisible(false);
+			this.buyBtnText.setVisible(false);		
+			
+			this.freeBtn.setPositionY(182);
+			this.freeBtnText.setPositionY(184);			
+		} else {
+			this.freeBtnText.setVisible(true);
+			this.freeBtn.setVisible(true);	
 		
-		this.buyBtn.setPositionY(259);
-		this.buyBtnText.setPositionY(261);		
+			this.buyBtn.setPositionY(259);
+			this.buyBtnText.setPositionY(261);	
+		}	
 	} else {
 		this.freeBtnText.setVisible(false);
 		this.freeBtn.setVisible(false);

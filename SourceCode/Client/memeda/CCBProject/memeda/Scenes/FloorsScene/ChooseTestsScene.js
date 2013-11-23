@@ -322,13 +322,33 @@ ChooseTestsScene.prototype.onPressedAward = function () {
 
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
     // 打开金币购买界面
-    debugMsgOutput("[UI Event] Clicked Coin Button!");
-    if ( obj.buyCoinMsgBox == null ) {
-        obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
-        obj.ccbLayout.addChild( obj.buyCoinMsgBox );
-    }
+	if ( sys.os == "android" || sys.os == "Android" ) {
+		try {
+        	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+				cc.AudioEngine.getInstance().stopMusic();
+                cc.AudioEngine.getInstance().setMusicVolume(0.0);
+			}
+        } catch (e) {
+        }
+        
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("index", ""+gProblem);
+        param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+        param.addKeyAndValue("question", gProblemProject);
+                    
+        memeda.Stat.logEvent("offerwellfromfloor", param);
+            	
+		cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
+		memeda.OfferWallController.show();
+	} else {
+    	debugMsgOutput("[UI Event] Clicked Coin Button!");
+    	if ( obj.buyCoinMsgBox == null ) {
+        	obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+        	obj.ccbLayout.addChild( obj.buyCoinMsgBox );
+    	}
 
-    obj.buyCoinMsgBox.controller.show();
+    	obj.buyCoinMsgBox.controller.show();
+	}
 };
 
 ChooseTestsScene.prototype.QueryExtraCoin = function () {
