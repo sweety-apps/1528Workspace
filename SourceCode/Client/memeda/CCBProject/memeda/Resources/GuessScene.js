@@ -872,6 +872,7 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
                 var index = gProblem + 1;
                 var color = GetColorByFloor(Math.floor(index / 3), index % 3);
                 GuessScene_SetFloorInfo(gProblem + 1, 3, color);
+                this.answerRight.controller.ShowMsg(gCurrentTestObj.id, gCurrentTestObj.label, gCurrentTestObj.rightanswer, url, isFirst, this.onClickNext, allRight);
             }
             
             gCurrentCCBView.AdjuestDoorColor();
