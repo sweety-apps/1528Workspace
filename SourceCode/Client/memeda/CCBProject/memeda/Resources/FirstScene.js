@@ -63,6 +63,10 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
     	
     	this.cat2.setScaleX(0.9);
     	this.cat2.setScaleY(0.9);
+    	
+    	this.about.setPositionY(screenSize.height - 26);
+    	this.about.setScaleX(0.9);
+    	this.about.setScaleY(0.9);
     }
 };
 
@@ -92,4 +96,8 @@ FirstScene.prototype.onAnimationComplete = function()
         //cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene.plist");
         //cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile("UI/firstscene2.plist");
 	}
+};
+
+FirstScene.prototype.onClickAbout = function () {
+	this.aboutCtrl.controller.ShowMsg();
 };

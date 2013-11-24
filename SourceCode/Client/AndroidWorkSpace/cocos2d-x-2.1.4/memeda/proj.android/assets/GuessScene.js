@@ -1338,14 +1338,34 @@ GuessScene.prototype.onClickedCoinButton = function (obj ) {
 		return ;
 	}
 	
-    debugMsgOutput("[UI Event] Clicked Coin Button!");
-    if ( obj.buyCoinMsgBox == null ) {
-    	debugMsgOutput("create BuyCoinMessageBox");
-    	obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
-    	obj.ccbLayout.addChild(	obj.buyCoinMsgBox );
-    }
-    
-    obj.buyCoinMsgBox.controller.show();	
+	if ( sys.os == "android" || sys.os == "Android" ) {
+		try {
+        	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+				cc.AudioEngine.getInstance().stopMusic();
+                cc.AudioEngine.getInstance().setMusicVolume(0.0);
+			}
+        } catch (e) {
+        }
+        
+        var param = memeda.Stat.createParam();
+        param.addKeyAndValue("index", ""+gProblem);
+        param.addKeyAndValue("aid", ""+gCurrentTestObj.id);
+        param.addKeyAndValue("question", gProblemProject);
+                    
+        memeda.Stat.logEvent("offerwellfromguess", param);
+            	
+		cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
+		memeda.OfferWallController.show();
+	} else {
+    	debugMsgOutput("[UI Event] Clicked Coin Button!");
+    	if ( obj.buyCoinMsgBox == null ) {
+    		debugMsgOutput("create BuyCoinMessageBox");
+    		obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+    		obj.ccbLayout.addChild(	obj.buyCoinMsgBox );
+    	}
+    	
+    	obj.buyCoinMsgBox.controller.show();	
+	}
 }
 
 GuessScene.prototype.showNoCoinMsgBox = function ( src ) {

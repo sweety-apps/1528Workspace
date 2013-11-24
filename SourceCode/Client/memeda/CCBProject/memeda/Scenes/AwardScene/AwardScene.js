@@ -173,6 +173,8 @@ AwardScene.prototype.onClickComment = function (obj) {
         var system_os_version = sys.localStorage.getItem("system_os_version");
 
         cc.log("[system_os_name] = "+system_os_name+" [version] = "+system_os_version);
+        
+        var comment = sys.localStorage.getItem("comment");
         if(system_os_name == "ios")
         {
             if(parseFloat(system_os_version)>=6.0)
@@ -186,10 +188,13 @@ AwardScene.prototype.onClickComment = function (obj) {
             cc.log("[open url] = "+url);
 
             memeda.common.openURL(url);
-            CoinMgr_Change(200);
-            cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
-            obj.commentCtrl.controller.setItemStatus(2);
-            sys.localStorage.setItem("comment", "1");	//
+            
+            if ( comment != "1" ) {
+            	CoinMgr_Change(200);
+            	cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
+            	obj.commentCtrl.controller.setItemStatus(2);
+            	sys.localStorage.setItem("comment", "1");	//
+            }
         }
     }
 

@@ -503,7 +503,7 @@
 												<key>value</key>
 												<array>
 													<real>162</real>
-													<real>250</real>
+													<real>209</real>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -529,6 +529,8 @@
 												<string>AwardItem.ccb</string>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>baseClass</key>

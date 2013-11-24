@@ -56,10 +56,13 @@ var RemoteConfig = new Object;
 
 Global_InitRemoteConfig = function () {
     RemoteConfig.alipay = "0";
-    RemoteConfig.domob = "0";
+    RemoteConfig.domob = sys.localStorage.getItem("openDomob");
+    if ( RemoteConfig.domob == "" || RemoteConfig.domob == null ) {
+    	RemoteConfig.domob = "0";	
+    }
     
     var http = new XMLHttpRequest();
-    http.open("GET", "http://memeda.meme-da.com/ServiceConfig.php?id=" + CreateGuid());
+    http.open("GET", "http://memeda.meme-da.com/ServiceConfig2.php?id=" + CreateGuid());
     
     http.onreadystatechange = function(){
         if( http.readyState == 4 && http.status == 200 ) {
@@ -73,6 +76,10 @@ Global_InitRemoteConfig = function () {
             if ( RemoteConfig.domob != "0" && RemoteConfig.domob != "1" ) {
                 RemoteConfig.domob = "0";
             }
+            
+            sys.localStorage.setItem("openDomob", RemoteConfig.domob);
+        } else {
+        	
         }
     }
     http.send(null);

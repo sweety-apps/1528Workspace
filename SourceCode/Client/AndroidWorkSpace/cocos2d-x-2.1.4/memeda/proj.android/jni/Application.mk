@@ -10,4 +10,4 @@ APP_ABI := armeabi
 APP_OPTIM := debug
 NDK_APP_OPTIM := debug
 NDK_DEBUG := 1
-APP_PLATFORM := android-14
+APP_PLATFORM := android-19

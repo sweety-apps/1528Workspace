@@ -5,7 +5,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="/libPluginProtocol"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/libcocos2dx"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/libPluginOfferWall"/>
 	<classpathentry kind="src" path="jar"/>
 	<classpathentry kind="lib" path="/Users/leejustin/Documents/adt-bundle-mac-x86_64-20130729/sdk/platforms/android-19/android.jar">
 		<attributes>
