@@ -109,9 +109,9 @@ void js_OfferWallController::_js_register(JSContext *cx, JSObject *obj)
 
 JSBool js_OfferWallController::js_show(JSContext* cx, uint32_t argc, jsval* vp)
 {
-	cocos2d::CCLog("ShowModal");
+	CCLOG("ShowModal");
     g_ps->callFuncWithParam("ShowModal", NULL);
-    cocos2d::CCLog("ShowModal end");
+    CCLOG("ShowModal end");
     return JS_TRUE;
 }
 
@@ -128,7 +128,7 @@ JSBool js_OfferWallController::js_requestOnlineConsumeWithPoint(JSContext* cx, u
     
     cocos2d::plugin::PluginParam value(nValue);
     
-    cocos2d::CCLog("requestOnlineConsumeWithPoint %d", nValue);
+    CCLOG("requestOnlineConsumeWithPoint %d", nValue);
     g_ps->callFuncWithParam("requestOnlineConsumeWithPoint", &value, NULL);
 
     return JS_TRUE;
@@ -137,22 +137,22 @@ JSBool js_OfferWallController::js_requestOnlineConsumeWithPoint(JSContext* cx, u
 
 JSBool js_OfferWallController::js_init(JSContext* cx, uint32_t argc, jsval* vp)
 {
-    cocos2d::CCLog("js_OfferWallController::js_init");
+    CCLOG("js_OfferWallController::js_init");
     if ( !g_bInit ) {
-        cocos2d::CCLog("js_OfferWallController::js_init 2");
+        CCLOG("js_OfferWallController::js_init 2");
         g_bInit = true;
         cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("AnalyticsOfferWall");
         if ( plugin == NULL )
         {
-            cocos2d::CCLog("js_OfferWallController::js_init 5");
+            CCLOG("js_OfferWallController::js_init 5");
         }
 
         g_ps = dynamic_cast<cocos2d::plugin::ProtocolSocial*>(plugin);
         if ( g_ps == NULL)
         {
-            cocos2d::CCLog("js_OfferWallController::js_init 4");
+            CCLOG("js_OfferWallController::js_init 4");
         }
-        cocos2d::CCLog("js_OfferWallController::js_init 3");
+        CCLOG("js_OfferWallController::js_init 3");
         
         jsval *argv = JS_ARGV(cx, vp);
         JSString* pObj = JSVAL_TO_STRING(argv[0]);
@@ -161,7 +161,7 @@ JSBool js_OfferWallController::js_init(JSContext* cx, uint32_t argc, jsval* vp)
         cocos2d::plugin::PluginParam id(kOfferWallPubID);
         cocos2d::plugin::PluginParam userID(jsUserID.get().c_str());
         
-        cocos2d::CCLog("%s", (jsUserID.get().c_str()));
+        CCLOG("%s", (jsUserID.get().c_str()));
 
         g_ps->callFuncWithParam("SetUserID", &userID, NULL);
         g_ps->callFuncWithParam("Init", &id, NULL);

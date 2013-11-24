@@ -165,6 +165,8 @@ bool AppDelegate::applicationDidFinishLaunching()
             resDirOrders.push_back("resources-large");
             //resDirOrders.push_back("resources-medium");
             resDirOrders.push_back("resources-small");
+            
+            m_Helper.androidResourceType = kCPreloadHelperAndroidResourceTypeLarge;
         }
         else
         {
@@ -177,6 +179,8 @@ bool AppDelegate::applicationDidFinishLaunching()
                 resourceSize = CCSizeMake(320, 480);
             }
             resDirOrders.push_back("resources-small");
+            
+            m_Helper.androidResourceType = kCPreloadHelperAndroidResourceTypeSmall;
         }
         
         resolutionPolicy = kResolutionFixedWidth;
@@ -218,6 +222,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     sc->addRegisterCallback(js_OfferWallController::_js_register);
     sc->addRegisterCallback(register_all_jsb_SocialShareAPI);
     
+    
+    
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     sc->addRegisterCallback(register_all_jsb_iOSiapWrapper);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
@@ -240,6 +246,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     ScriptingCore::getInstance()->runScript("main.js");
     //ScriptingCore::getInstance()->runScript("hello.js");
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    m_Helper.load();
+#endif
 
     pStat->logTimedEventBegin("runtime");   //
     

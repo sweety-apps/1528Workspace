@@ -358,6 +358,7 @@
 		F3D102B718103B15002A3A9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D102B618103B15002A3A9B /* Images.xcassets */; };
 		F3D8B2A018378E4400670A52 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D8B29E18378D2300670A52 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F3DC5790181835010088B4B4 /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3DC578F181835010088B4B4 /* MKStoreKitConfigs.plist */; };
+		F3E1D4D21840B979006A10A6 /* CPreloadHelperAndroidVar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E1D4D11840B979006A10A6 /* CPreloadHelperAndroidVar.cpp */; };
 		F3ECD8C917F8081500A0CA29 /* WeChatConnection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD88217F8081500A0CA29 /* WeChatConnection.framework */; };
 		F3ECD8CB17F8081500A0CA29 /* AGCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECD88517F8081500A0CA29 /* AGCommon.framework */; };
 		F3ECD8CC17F8081500A0CA29 /* ShareSDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3ECD88617F8081500A0CA29 /* ShareSDKLocalizable.strings */; };
@@ -1190,6 +1191,8 @@
 		F3D8B29E18378D2300670A52 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F3DC578A18182CF50088B4B4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F3DC578F181835010088B4B4 /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MKStoreKitConfigs.plist; path = Classes/Modules/Payment/iOSIAP/MKStoreLib/MKStoreLib/MKStoreKit/MKStoreKitConfigs.plist; sourceTree = "<group>"; };
+		F3E1D4CE1840B367006A10A6 /* CPreloadHelperAndroidVar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CPreloadHelperAndroidVar.h; path = Classes/CPreloadHelperAndroidVar.h; sourceTree = "<group>"; };
+		F3E1D4D11840B979006A10A6 /* CPreloadHelperAndroidVar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPreloadHelperAndroidVar.cpp; path = Classes/CPreloadHelperAndroidVar.cpp; sourceTree = "<group>"; };
 		F3ECD86917F8081500A0CA29 /* DouBanConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DouBanConnection.framework; sourceTree = "<group>"; };
 		F3ECD86A17F8081500A0CA29 /* DropboxConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxConnection.framework; sourceTree = "<group>"; };
 		F3ECD86B17F8081500A0CA29 /* EverNoteConnection.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EverNoteConnection.framework; sourceTree = "<group>"; };
@@ -2850,6 +2853,8 @@
 		F316D2A017B2059A00821A66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F3E1D4D11840B979006A10A6 /* CPreloadHelperAndroidVar.cpp */,
+				F3E1D4CE1840B367006A10A6 /* CPreloadHelperAndroidVar.h */,
 				A60009BC1807E62400CBDFE5 /* CPreloadHelper.h */,
 				F382A1C4183CC3190057CD1D /* CPreloadHelper.cpp */,
 				A60009BD1807E62400CBDFE5 /* CPreloadHelper.mm */,
@@ -3365,6 +3370,7 @@
 				F316D06017B2059600821A66 /* CCTouchDispatcher.cpp in Sources */,
 				F316D06317B2059600821A66 /* CCTouchHandler.cpp in Sources */,
 				F316D06C17B2059600821A66 /* CDAudioManager.m in Sources */,
+				F3E1D4D21840B979006A10A6 /* CPreloadHelperAndroidVar.cpp in Sources */,
 				F316D07017B2059600821A66 /* CDOpenALSupport.m in Sources */,
 				F316D07317B2059600821A66 /* CocosDenshion.m in Sources */,
 				F316D07517B2059600821A66 /* SimpleAudioEngine.mm in Sources */,

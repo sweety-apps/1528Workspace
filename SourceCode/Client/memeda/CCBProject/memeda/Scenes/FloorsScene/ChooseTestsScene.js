@@ -18,10 +18,14 @@ var kScrollingStateNormal = 0;
 var kScrollingStateReachedBoxShowOffset = 1;
 var gChooseTestsSceneThis = null;
 
+var kFloorsSceneTopStateHidden = 0;
+var kFloorsSceneTopStateShow = 1;
+
 var ChooseTestsScene = function() {
 };
 
 ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
+ChooseTestsScene.prototype.topState = kFloorsSceneTopStateHidden;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     if ( gPreload ) {
@@ -55,11 +59,10 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.wholeFloors.controller.setScrollingCallback(this,this.onScrollDoorToPresent);
 
     //设置状态
-    this.buyMsgBox.showState = kBuyMessageBoxStateHidden;
     this.wholeFloors.scrollState = kScrollingStateNormal;
-    this.buyMsgBox.animationManager.setCompletedAnimationCallback(this, this.onMsgboxAnimationCompleted);
+    this.topState = kFloorsSceneTopStateHidden;
 
-    //设置场景状态
+        //设置场景状态
     this.sceneState = kFloorsSceneStateNormal;
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationCompleted);
 
@@ -119,46 +122,41 @@ ChooseTestsScene.prototype.updateBuyMsgBoxState = function ()
     {
         this.wholeFloors.scrollState = kScrollingStateNormal;
     }
-
-    if(this.wholeFloors.scrollState == kScrollingStateReachedBoxShowOffset && this.buyMsgBox.showState == kBuyMessageBoxStateHidden)
-    {
-        if(!SpecialSpyPackageMgr_IsPurchased())
-        {
-            //this.showBuyMessageBox();
-        }
-    }
-
-    if(this.buyMsgBox.showState != kBuyMessageBoxStateShowing)
-    {
-        if(this.wholeFloors.scrollState == kScrollingStateReachedBoxShowOffset)
-        {
-            this.buyMsgBox.showState = kBuyMessageBoxStateClosedInTopRange;
-        }
-        else
-        {
-            this.buyMsgBox.showState = kBuyMessageBoxStateHidden;
-        }
-    }
 }
 
 ChooseTestsScene.prototype.scrollViewDidScroll = function (scrollView)
 {
-    var containerHeight = scrollView.getContentSize().height;
+    var containerHeight = scrollView.getContentSize().height - 539;
     var scrolledY = scrollView.getContentOffset().y;
     var scrollViewHeight = scrollView.getViewSize().height;
     var scrolledPercent = scrolledY / (containerHeight - scrollViewHeight);
-    var bgScrolledOffset = (this.bgScape.getContentSize().height - scrollViewHeight) * scrolledPercent;
+    var bgScapeHeight = this.bgScape.getContentSize().height;
+    var bgScrolledOffset = (bgScapeHeight - scrollViewHeight) * scrolledPercent;
+    //var bgScrolledOffset = (this.bgScape.getContentSize().height - 539) * scrolledPercent;
+
 
     this.updateBuyMsgBoxState();
 
     //手动将bounce disable掉，保证加速度滑动和非bounce兼容
-    if(Math.abs(scrolledY) < kDisableBounceOffsetY || containerHeight - scrollViewHeight - Math.abs(scrolledY) < kDisableBounceOffsetY)
+    if(Math.abs(scrolledY) < kDisableBounceOffsetY || (containerHeight + 539 - scrollViewHeight) - Math.abs(scrolledY) < kDisableBounceOffsetY)
     {
         scrollView.setBounceable(false);
+        //如果滑到顶了，展示楼顶动画
+        if(this.topState == kFloorsSceneTopStateHidden && (containerHeight + 539 - scrollViewHeight) - Math.abs(scrolledY) < 1)
+        {
+            this.topState = kFloorsSceneTopStateShow;
+            this.wholeFloors.controller.showFloorsTopAnimation();
+        }
     }
     else
     {
         scrollView.setBounceable(true);
+    }
+
+    if(scrolledPercent < -1.0)
+    {
+        debugMsgOutput("scroll over bgScape");
+        bgScrolledOffset = -bgScapeHeight + containerHeight + scrolledY;
     }
 
     this.bgScape.setPositionY(bgScrolledOffset);
@@ -275,7 +273,7 @@ ChooseTestsScene.prototype.onClickedBuySpyPackageButton = function () {
     this.buyCoinMsgBox.controller.hiddenCallbackMethod = function(productID,succeed) {
         if(succeed)
         {
-            this.buyMsgBox.controller.onClickedClose();
+            //todo
         }
     };
     this.buyCoinMsgBox.controller.showAndBuyItem("6元侦探礼包",Purchase_getSpyPackageProductID());
@@ -283,22 +281,11 @@ ChooseTestsScene.prototype.onClickedBuySpyPackageButton = function () {
 
 ChooseTestsScene.prototype.showBuyMessageBox = function()
 {
-    if(this.buyMsgBox.showState != kBuyMessageBoxStateShowing)
-    {
-        this.buyMsgBox.controller.onBuyCallbackTarget = this;
-        this.buyMsgBox.controller.onBuyCallbackMethod = this.onClickedBuySpyPackageButton;
-        this.buyMsgBox.controller.setFinishedPercents(ChooseTestsScene.prototype.testsFinishedPercent);
-        this.buyMsgBox.animationManager.runAnimationsForSequenceNamed("Popup Animation Timeline");
-        this.buyMsgBox.showState = kBuyMessageBoxStateShowing;
-    }
+
 };
 
 ChooseTestsScene.prototype.onMsgboxAnimationCompleted = function()
 {
-    if(this.buyMsgBox.animationManager.getLastCompletedSequenceName() == "Dismiss Animation Timeline")
-    {
-        this.buyMsgBox.showState = kBuyMessageBoxStateClosedInTopRange;
-    }
     this.updateBuyMsgBoxState();
 };
 
@@ -446,7 +433,17 @@ ChooseTestsScene.prototype.scrollFloorsToCatPosition = function ()
 {
     var scrollX = this.floorScrollView.getContentOffset().x;
     var scrollY = this.wholeFloors.controller.getShouldScrollToY(this.rootNode.getContentSize().height);
+    //答完了，华到顶并展示动画
+    if(this.wholeFloors.controller.isCatStayAtLastDoor() && this.topState == kFloorsSceneTopStateHidden)
+    {
+        var wholeFloorsHeight = this.floorScrollView.getContentSize().height;
+        var scrollViewHeight = this.floorScrollView.getViewSize().height;
+        scrollY = -(wholeFloorsHeight - scrollViewHeight);
+        this.topState = kFloorsSceneTopStateShow;
+        this.wholeFloors.controller.showPreFloorsTopAnimation();
+    }
     this.floorScrollView.setContentOffset(cc.p(scrollX,scrollY),false);
+
 };
 
         

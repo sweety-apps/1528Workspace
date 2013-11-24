@@ -20,7 +20,7 @@
 					<folderInfo id="0.2103072919." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.631933974" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.631933974.985887997" name=""/>
-							<builder arguments="${workspace_loc:/memeda}/build_native.sh NDK_DEBUG=1 V=1" command="bash" id="cdt.managedbuild.target.gnu.builder.base.593050608" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<builder arguments="${workspace_loc:/memeda}/build_native.sh NDK_DEBUG=0 V=0" command="bash" id="cdt.managedbuild.target.gnu.builder.base.593050608" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.base"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.998563133" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1515875885" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.138647617" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
