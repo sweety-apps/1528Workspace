@@ -422,6 +422,11 @@ WholeFloors.prototype.getShouldScrollToY = function(scrollViewHeight)
     {
         scrollToY = wholeFloorsHeight - scrollViewHeight;
     }
+    if(scrollToY > wholeFloorsHeight - scrollViewHeight - 539 && !this.isCatStayAtLastDoor())
+    {
+        //如果没停在最后一题，先不刷出顶楼，以免光线看到有BUG
+        scrollToY = wholeFloorsHeight - scrollViewHeight - 539;
+    }
     return -scrollToY;
 };
 
