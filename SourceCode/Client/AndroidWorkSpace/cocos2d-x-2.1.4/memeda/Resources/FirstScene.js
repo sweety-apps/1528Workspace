@@ -1,4 +1,6 @@
 
+cc.COCOS2D_DEBUG = 0;
+
 var FirstScene = function() {};
 var gChooseTestsScene = null;
 
