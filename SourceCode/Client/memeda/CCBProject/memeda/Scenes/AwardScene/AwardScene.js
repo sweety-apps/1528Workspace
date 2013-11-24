@@ -36,8 +36,8 @@ AwardScene.prototype.onClickBkg = function () {
 
 AwardScene.prototype.initStatus = function () {
     //
-    this.firendCtrl.controller.setItemInfo("UI/floorsscene/award_1.png", 200, this, this.onClickFirend);
-    this.commentCtrl.controller.setItemInfo("UI/floorsscene/award_2.png", 200, this, this.onClickComment);
+    this.firendCtrl.controller.setItemInfo("UI/floorsscene/award_1.png", 188, this, this.onClickFirend);
+    this.commentCtrl.controller.setItemInfo("UI/floorsscene/award_2.png", 188, this, this.onClickComment);
     this.duomengCtrl.controller.setItemInfo("UI/floorsscene/award_3.png", null, this, this.onClickDuomeng);
 
     var showsharecoin = sys.localStorage.getItem("showsharecoin");
@@ -190,7 +190,7 @@ AwardScene.prototype.onClickComment = function (obj) {
             memeda.common.openURL(url);
             
             if ( comment != "1" ) {
-            	CoinMgr_Change(200);
+            	CoinMgr_Change(188);
             	cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
             	obj.commentCtrl.controller.setItemStatus(2);
             	sys.localStorage.setItem("comment", "1");	//
@@ -224,7 +224,7 @@ AwardScene.prototype.checkWeChat = function () {
     if ( showsharecoin == "1" ) {
         sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
         this.firendCtrl.controller.setItemStatus(2);
-        CoinMgr_Change(200);
+        CoinMgr_Change(188);
         cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
     }
 }

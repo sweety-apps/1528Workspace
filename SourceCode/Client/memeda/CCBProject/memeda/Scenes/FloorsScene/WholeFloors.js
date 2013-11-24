@@ -394,6 +394,11 @@ WholeFloors.prototype.setupCatPosition = function ()
     //初始化cat的位置
     this.sceneState = kFloorStateWaiting;
     var problemIndex = Problem_getCurrentIndex();
+    //debugMsgOutput("<scene> Problem Index = "+problemIndex);
+    if(problemIndex < 0 || problemIndex > Problem_GetCount())
+    {
+        problemIndex = Problem_GetCount() - 1;
+    }
     this.currentCatStayAtDoorNum = problemIndex%3 + 1;
     this.currentCatStayAtFloorNum = Math.floor(problemIndex/3);
     var offY = this.startFloorOffsetY + (this.currentCatStayAtFloorNum * this.floorHeight);

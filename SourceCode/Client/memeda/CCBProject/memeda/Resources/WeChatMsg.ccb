@@ -2821,7 +2821,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/common/tip_2.png</string>
+															<string>UI/common/tip_1.png</string>
 														</array>
 													</dict>
 												</array>
@@ -2893,7 +2893,7 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/common/tip_0.png</string>
+															<string>UI/common/tip_8.png</string>
 														</array>
 													</dict>
 												</array>
@@ -2965,10 +2965,12 @@
 														<key>value</key>
 														<array>
 															<string></string>
-															<string>UI/common/tip_0.png</string>
+															<string>UI/common/tip_8.png</string>
 														</array>
 													</dict>
 												</array>
+												<key>selected</key>
+												<true/>
 											</dict>
 										</array>
 										<key>customClass</key>

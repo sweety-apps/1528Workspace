@@ -7,13 +7,14 @@ RightMsgBox.prototype.onDidLoadFromCCB = function () {
 RightMsgBox.prototype.onClickBkg = function () {
 };
 
-RightMsgBox.prototype.ShowMsg = function(id, lab, answerRight, url, isFirst, onClose) {
+RightMsgBox.prototype.ShowMsg = function(id, lab, answerRight, url, isFirst, onClose, allRight) {
 	this.show = true;
 	this.isFirst = isFirst;
 	this.onCloseFun = onClose;
 	this.msgLayout.setVisible(true);
 	this.Url = url;
 	this.isAddCoin = false;
+	this.allRight = allRight;
     this.searchkey = lab + " " + answerRight;
 	this.coinAward.setVisible(isFirst);
 	
@@ -42,6 +43,12 @@ RightMsgBox.prototype.ShowMsg = function(id, lab, answerRight, url, isFirst, onC
 };
 
 RightMsgBox.prototype.onClickNext = function() {
+	if ( this.allRight ) {
+		var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
+		scene = cc.TransitionFadeTR.create(0.4,scene);
+		cc.Director.getInstance().replaceScene(scene);
+		return ;	
+	}
 	this.Hide();
 }
 

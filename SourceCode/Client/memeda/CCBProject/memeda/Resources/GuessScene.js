@@ -859,11 +859,15 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
     			this.answerRightLayout.addChild(this.answerRight);	
             }
             
-            this.answerRight.controller.ShowMsg(gCurrentTestObj.id, gCurrentTestObj.label, gCurrentTestObj.rightanswer, url, isFirst, this.onClickNext);
+            var allRight = false;
+            if ( gProblem + 1 == Problem_GetCount() ) {
+            	allRight = true;	
+            }
             
             if ( gProblem + 1 == Problem_GetCount() ) {
                 var color = GetColorByFloor(0, 0);
-                GuessScene_SetFloorInfo(0, 3, color);
+                GuessScene_SetFloorInfo(-1, 3, color);
+                this.answerRight.controller.ShowMsg(gCurrentTestObj.id, gCurrentTestObj.label, gCurrentTestObj.rightanswer, url, isFirst, this.onClickNext, allRight);
             } else {
                 var index = gProblem + 1;
                 var color = GetColorByFloor(Math.floor(index / 3), index % 3);
@@ -1309,8 +1313,10 @@ GuessScene.prototype.onClickJump = function () {
 			}
 		
     		if ( gProblem + 1 == Problem_GetCount() ) {
-   				var color = GetColorByFloor(0, 0);
-				GuessScene_SetFloorInfo(0, 4, color);
+                var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
+                scene = cc.TransitionFadeTR.create(0.4,scene);
+                cc.Director.getInstance().replaceScene(scene);
+                return ;
     		} else {
     			var index = gProblem + 1;
    				var color = GetColorByFloor(Math.floor(index / 3), index % 3);
@@ -1339,7 +1345,7 @@ GuessScene.prototype.checkExtraCoin = function () {
 		this.weChatCoinMsgBox.controller.show(function () {
 			gCurrentCCBView.EnableAllBtn(true);
 			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
-			CoinMgr_Change(200);
+			CoinMgr_Change(188);
 		});
 	}
 }
