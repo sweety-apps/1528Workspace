@@ -26,6 +26,7 @@ var ChooseTestsScene = function() {
 
 ChooseTestsScene.prototype.sceneState = kFloorsSceneStateNormal;
 ChooseTestsScene.prototype.topState = kFloorsSceneTopStateHidden;
+ChooseTestsScene.prototype.topSceneHeight = 568;
 
 ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     if ( gPreload ) {
@@ -41,8 +42,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
 
     gChooseTestsSceneThis = this;
 
-	this.isShowScene = true;
-	
+    this.isShowScene = true;
+
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -53,6 +54,13 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     cc.AudioEngine.getInstance().setMusicVolume(0.5);
     //}
 
+    // 重新设置楼顶高度
+    var screenSize = cc.Director.getInstance().getWinSize();
+    var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
+    var topSceneHeight = (screenHeight - 29);
+    this.topSceneHeight = topSceneHeight;
+
+    //
     this.floorScrollView.setDelegate(this);
     this.wholeFloors = this.floorScrollView.getContainer();
     //debugMsgOutput(this.wholeFloors.getPositionX() + this.wholeFloors.getPositionY());
@@ -64,7 +72,7 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     this.wholeFloors.scrollState = kScrollingStateNormal;
     this.topState = kFloorsSceneTopStateHidden;
 
-        //设置场景状态
+    //设置场景状态
     this.sceneState = kFloorsSceneStateNormal;
     this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationCompleted);
 
@@ -128,23 +136,21 @@ ChooseTestsScene.prototype.updateBuyMsgBoxState = function ()
 
 ChooseTestsScene.prototype.scrollViewDidScroll = function (scrollView)
 {
-    var containerHeight = scrollView.getContentSize().height - 539;
+    var containerHeight = scrollView.getContentSize().height - this.topSceneHeight;
     var scrolledY = scrollView.getContentOffset().y;
     var scrollViewHeight = scrollView.getViewSize().height;
     var scrolledPercent = scrolledY / (containerHeight - scrollViewHeight);
     var bgScapeHeight = this.bgScape.getContentSize().height;
     var bgScrolledOffset = (bgScapeHeight - scrollViewHeight) * scrolledPercent;
-    //var bgScrolledOffset = (this.bgScape.getContentSize().height - 539) * scrolledPercent;
-
 
     this.updateBuyMsgBoxState();
 
     //手动将bounce disable掉，保证加速度滑动和非bounce兼容
-    if(Math.abs(scrolledY) < kDisableBounceOffsetY || (containerHeight + 539 - scrollViewHeight) - Math.abs(scrolledY) < kDisableBounceOffsetY)
+    if(Math.abs(scrolledY) < kDisableBounceOffsetY || (containerHeight + this.topSceneHeight - scrollViewHeight) - Math.abs(scrolledY) < kDisableBounceOffsetY)
     {
         scrollView.setBounceable(false);
         //如果滑到顶了，展示楼顶动画
-        if(this.topState == kFloorsSceneTopStateHidden && (containerHeight + 539 - scrollViewHeight) - Math.abs(scrolledY) < 1)
+        if(this.topState == kFloorsSceneTopStateHidden && (containerHeight + this.topSceneHeight - scrollViewHeight) - Math.abs(scrolledY) < 1)
         {
             this.topState = kFloorsSceneTopStateShow;
             this.wholeFloors.controller.showFloorsTopAnimation();
@@ -172,21 +178,21 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
     var floorNum = this.wholeFloors.controller.getCatStayAtFloorNum();
     var doorNum = this.wholeFloors.controller.getCatStayAtDoorNum();
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
-    
+
     try {
         cc.AudioEngine.getInstance().setMusicVolume(0.0);
         cc.AudioEngine.getInstance().stopMusic();
     }catch ( e ) {
     }
-    
+
     var color = GetColorByFloor(floorNum, doorNum-1);
     GuessScene_SetFloorInfo(floorNum*3 + (doorNum - 1), 1, color);
 
     var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
     scene = cc.TransitionProgressInOut.create(0.2,scene);
-    
+
     this.isShowScene = false;
-    
+
     cc.Director.getInstance().replaceScene(scene);
 };
 
@@ -208,11 +214,11 @@ ChooseTestsScene.prototype.onAnimationCompleted = function()
             cc.AudioEngine.getInstance().stopMusic();
         }catch ( e ) {
         }
-        
+
         this.sceneState = kFloorsSceneStateNormal;
         var scene = cc.BuilderReader.loadAsScene("GuessScene.ccbi");
         scene = cc.TransitionProgressInOut.create(0.2,scene);
-        
+
         this.isShowScene = false;
         cc.Director.getInstance().replaceScene(scene);
     }
@@ -300,12 +306,12 @@ ChooseTestsScene.prototype.onPressedAward = function () {
     // 打开领取奖励界面
     cc.AudioEngine.getInstance().playEffect("sounds/Click_Coins.mp3");
     if ( this.awardScene == null ) {
-    	if ( sys.os != "android" && sys.os != "Android" ) {
-    		this.awardScene = cc.BuilderReader.load("AwardScene");
-    	} else {
-    		this.awardScene = cc.BuilderReader.load("AwardSceneForAndroid");
-    	}
-    	
+        if ( sys.os != "android" && sys.os != "Android" ) {
+            this.awardScene = cc.BuilderReader.load("AwardScene");
+        } else {
+            this.awardScene = cc.BuilderReader.load("AwardSceneForAndroid");
+        }
+
         this.ccbLayout2.addChild(this.awardScene);
         this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);
     }
@@ -316,28 +322,28 @@ ChooseTestsScene.prototype.onPressedAward = function () {
 
 ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
     // 打开金币购买界面
-	if ( sys.os == "android" || sys.os == "Android" ) {
-		try {
-        	if(cc.AudioEngine.getInstance().isMusicPlaying()) {
-				cc.AudioEngine.getInstance().stopMusic();
+    if ( sys.os == "android" || sys.os == "Android" ) {
+        try {
+            if(cc.AudioEngine.getInstance().isMusicPlaying()) {
+                cc.AudioEngine.getInstance().stopMusic();
                 cc.AudioEngine.getInstance().setMusicVolume(0.0);
-			}
+            }
         } catch (e) {
         }
-                    
-        memeda.Stat.logEvent("offerwellfromfloor");
-            	
-		cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
-		memeda.OfferWallController.show();
-	} else {
-    	debugMsgOutput("[UI Event] Clicked Coin Button!");
-    	if ( obj.buyCoinMsgBox == null ) {
-        	obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
-        	obj.ccbLayout.addChild( obj.buyCoinMsgBox );
-    	}
 
-    	obj.buyCoinMsgBox.controller.show();
-	}
+        memeda.Stat.logEvent("offerwellfromfloor");
+
+        cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_OK.mp3");
+        memeda.OfferWallController.show();
+    } else {
+        debugMsgOutput("[UI Event] Clicked Coin Button!");
+        if ( obj.buyCoinMsgBox == null ) {
+            obj.buyCoinMsgBox = cc.BuilderReader.load("BuyCoinMessageBox");
+            obj.ccbLayout.addChild( obj.buyCoinMsgBox );
+        }
+
+        obj.buyCoinMsgBox.controller.show();
+    }
 };
 
 ChooseTestsScene.prototype.QueryExtraCoin = function () {
@@ -380,18 +386,18 @@ ChooseTestsScene.prototype.parseWeChatData = function (text) {
     }
 
     if ( num != 0 ) {
-    	// 来自微信的奖励
-    	if ( num > 199 ) {
-    		num = 199;	
-    	}
-    	if ( gChooseTestsSceneThis.weChatAwardMsg == null ) {
-    		gChooseTestsSceneThis.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
-    		gChooseTestsSceneThis.weChatAwardMsgLayout.addChild( gChooseTestsSceneThis.weChatAwardMsg );
-    	}
-    	debugMsgOutput("fsjflsdkjfklsdf");
+        // 来自微信的奖励
+        if ( num > 199 ) {
+            num = 199;
+        }
+        if ( gChooseTestsSceneThis.weChatAwardMsg == null ) {
+            gChooseTestsSceneThis.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+            gChooseTestsSceneThis.weChatAwardMsgLayout.addChild( gChooseTestsSceneThis.weChatAwardMsg );
+        }
+        debugMsgOutput("fsjflsdkjfklsdf");
         gChooseTestsSceneThis.weChatAwardMsg.controller.ShowMsg(1, num * 5, function (coin) {
-                                                CoinMgr_Change(coin);
-                                           });
+            CoinMgr_Change(coin);
+        });
 
         return true;
     }
@@ -403,21 +409,21 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         var obj = JSON.parse(responseText);
         if ( obj.Point > 0 ) {
             // 有可消费的积分
-    		if ( this.weChatAwardMsg == null ) {
-    			this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
-    			this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
-    		}
-            
-        	this.weChatAwardMsg.controller.ShowMsg(2, obj.Point, function (coin) {
-                                                   // 消费掉多余的金币
-                                                   CoinMgr_Change(coin);
-                                                   });
+            if ( this.weChatAwardMsg == null ) {
+                this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+                this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
+            }
+
+            this.weChatAwardMsg.controller.ShowMsg(2, obj.Point, function (coin) {
+                // 消费掉多余的金币
+                CoinMgr_Change(coin);
+            });
         }
     } else {
-    	if ( !this.isShowScene ) {
-    		return ;	
-    	}
-    	
+        if ( !this.isShowScene ) {
+            return ;
+        }
+
         var obj = JSON.parse(responseText);
         var consumed = sys.localStorage.getItem("consumed");
         // 消费掉的积分，取本地和服务器上纪录的最大值
@@ -431,24 +437,24 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
                 consumed = obj.consumed;
             }
         }
-    
-        var canConsum = obj.totalPoint - consumed;   
+
+        var canConsum = obj.totalPoint - consumed;
         if ( canConsum > 990 ) {
-        	canConsum = 990;	
+            canConsum = 990;
         }
         if ( obj.totalPoint > consumed ) {
-        	// 有金币可以消费
-    		if ( this.weChatAwardMsg == null ) {
-    			this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
-    			this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
-    		}
-    	
-        	this.weChatAwardMsg.controller.ShowMsg(2, canConsum, function (coin) {
-        		            					sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
-        		            					// 消费掉多余的金币
-                                                    memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
-        		            					CoinMgr_Change(coin);
-                                           });                  
+            // 有金币可以消费
+            if ( this.weChatAwardMsg == null ) {
+                this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+                this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
+            }
+
+            this.weChatAwardMsg.controller.ShowMsg(2, canConsum, function (coin) {
+                sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
+                // 消费掉多余的金币
+                memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
+                CoinMgr_Change(coin);
+            });
         }
     }
 };

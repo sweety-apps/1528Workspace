@@ -10,20 +10,22 @@ var gHasShowedUFOLight = false;
 var WholeFloors = function() {
 };
 
+WholeFloors.prototype.topSceneHeight = 568;
+
 WholeFloors.prototype.getCatStayAtDoorNum = function () {
-	return this.currentCatStayAtDoorNum;
+    return this.currentCatStayAtDoorNum;
 }
 
 WholeFloors.prototype.getCatStayAtFloorNum = function () {
-	return this.currentCatStayAtFloorNum;
+    return this.currentCatStayAtFloorNum;
 }
-    
+
 WholeFloors.prototype.onDidLoadFromCCB = function () {
 
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
-        
+
     //var Floor0 = this.rawFloor0;
     //debugMsgOutput(Floor0.toString());
     //Floor0.controller.doorCover1.setVisible(false);
@@ -88,7 +90,16 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.doorRect = cc.rect(0,0,58,76);
     this.floorRect = cc.rect(0,0,320,138);
 
-    //重设整个Layer大小
+    // 重新设置楼顶高度
+    var screenSize = cc.Director.getInstance().getWinSize();
+    var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
+    var topSceneHeight = (screenHeight - 29);
+    this.topSceneHeight = topSceneHeight;
+    this.floorTop.setContentSize(cc.size(width,topSceneHeight));
+    var topLabelPosY = this.floorTop.controller.topLabels.getPositionY();
+    topLabelPosY = 539 - (568-screenHeight) - 78;
+    this.floorTop.controller.topLabels.setPositionY(topLabelPosY);
+
     var floorTopPosY = this.CalculateHeight() + this.startFloorOffsetY;
     var floorTopSize = this.floorTop.getContentSize();
     this.floorTop.setPositionY(floorTopPosY);
@@ -211,10 +222,10 @@ function setupDoorApperance(door,doorCover,doorState)
 }
 
 function GetColorByFloor (floor, num) {
-	var obj = new Object();
-	obj.bg = gTestFloor[floor].bg;
-	obj.door = gTestFloor[floor].doors[num].image;
-	return obj;
+    var obj = new Object();
+    obj.bg = gTestFloor[floor].bg;
+    obj.door = gTestFloor[floor].doors[num].image;
+    return obj;
 };
 
 WholeFloors.prototype.CalculateHeight = function ()
@@ -427,10 +438,10 @@ WholeFloors.prototype.getShouldScrollToY = function(scrollViewHeight)
     {
         scrollToY = wholeFloorsHeight - scrollViewHeight;
     }
-    if(scrollToY > wholeFloorsHeight - scrollViewHeight - 539 && !this.isCatStayAtLastDoor())
+    if(scrollToY > wholeFloorsHeight - scrollViewHeight - this.topSceneHeight && !this.isCatStayAtLastDoor())
     {
         //如果没停在最后一题，先不刷出顶楼，以免光线看到有BUG
-        scrollToY = wholeFloorsHeight - scrollViewHeight - 539;
+        scrollToY = wholeFloorsHeight - scrollViewHeight - this.topSceneHeight;
     }
     return -scrollToY;
 };
