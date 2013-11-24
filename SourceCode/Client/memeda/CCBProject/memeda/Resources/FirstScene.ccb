@@ -4659,6 +4659,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 										<key>seqExpanded</key>
 										<true/>
 									</dict>
@@ -4680,8 +4682,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-0.3125</real>
-											<real>0.52816903591156006</real>
+											<real>0.0</real>
+											<real>0.0</real>
 											<integer>4</integer>
 										</array>
 									</dict>

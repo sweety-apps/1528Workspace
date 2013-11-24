@@ -64,7 +64,7 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
     	this.cat2.setScaleX(0.9);
     	this.cat2.setScaleY(0.9);
     	
-    	this.about.setPositionY(screenSize.height - 26);
+    	this.about.setPositionY(454);
     	this.about.setScaleX(0.9);
     	this.about.setScaleY(0.9);
     }
