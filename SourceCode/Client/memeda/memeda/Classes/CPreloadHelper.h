@@ -11,12 +11,19 @@
 
 #include <cocoa/CCObject.h>
 
+typedef int CPreloadHelperAndroidResourceType;
+
+#define kCPreloadHelperAndroidResourceTypeLarge (1)
+#define kCPreloadHelperAndroidResourceTypeSmall (2)
+
 class CPreloadHelper : public cocos2d::CCObject
 {
 public:
     void Preload();
     void load();
+    void loadAndroid();
     void loadedCallback();
+    CPreloadHelperAndroidResourceType androidResourceType;
     
     static void* PreloadThread(void*);
 };

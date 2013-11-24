@@ -73,7 +73,7 @@ public:
                 break;
         }
         
-         cocos2d::CCLog("onShareResult With state = %s, msg = %s",state.c_str(),msg);
+        CCLOG("onShareResult With state = %s, msg = %s",state.c_str(),msg);
         
         IOS_WeChatShareCallback(state, errorMsg, m_Context);
     };

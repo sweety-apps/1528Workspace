@@ -15,7 +15,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#if 0//(CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 
 using namespace cocos2d;
 

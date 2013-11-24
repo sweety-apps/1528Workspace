@@ -26,14 +26,14 @@ var gTestFloor = [
             {hasFinished:false,image:"door_pink",doorNum:"012",doorState:kDoorStateLocked},
             {hasFinished:false,image:"door_pink",doorNum:"013",doorState:kDoorStateOpen}
         ]},
-    {bg:"floor_pink",bottom:"floorBottom_pink",
+    {bg:"floor_yellow",bottom:"floorBottom_yellow",
         floorNum:"3F",specText:"SEX",offsetY:0,
         doors:[
             {hasFinished:true,image:"door_pink",doorNum:"021",doorState:kDoorStateOpen},
             {hasFinished:true,image:"door_pink",doorNum:"022",doorState:kDoorStateJumped},
             {hasFinished:true,image:"door_pink",doorNum:"023",doorState:kDoorStateHide}
         ]},
-    {bg:"floor_yellow",bottom:"floorBottom_yellow",
+    {bg:"floor_pink",bottom:"floorBottom_pink",
         floorNum:"4F",specText:"",offsetY:0,
         doors:[
             {hasFinished:true,image:"door_pink",doorNum:"031",doorState:kDoorStateJumped},
@@ -61,14 +61,14 @@ function FloorsData_resetTestData_Web()
                     {hasFinished:false,image:"door_pink",doorNum:"012",doorState:kDoorStateLocked},
                     {hasFinished:false,image:"door_pink",doorNum:"013",doorState:kDoorStateOpen}
                 ]},
-            {bg:"floor_pink",bottom:"floorBottom_pink",
+            {bg:"floor_yellow",bottom:"floorBottom_yellow",
                 floorNum:"3F",specText:"SEX",offsetY:0,
                 doors:[
                     {hasFinished:true,image:"door_pink",doorNum:"021",doorState:kDoorStateOpen},
                     {hasFinished:true,image:"door_pink",doorNum:"022",doorState:kDoorStateJumped},
                     {hasFinished:true,image:"door_pink",doorNum:"023",doorState:kDoorStateHide}
                 ]},
-            {bg:"floor_yellow",bottom:"floorBottom_yellow",
+            {bg:"floor_pink",bottom:"floorBottom_pink",
                 floorNum:"4F",specText:"",offsetY:0,
                 doors:[
                     {hasFinished:true,image:"door_pink",doorNum:"031",doorState:kDoorStateJumped},
@@ -125,8 +125,18 @@ function FloorsData_resetTestData_Device()
         var flr_idx = f%(flr_color_loop.length);
         var door_idx = f%(door_color_loop.length);
 
-        floorData.bg = "floor_"+flr_color_loop[flr_idx];
-        floorData.bottom = "floorBottom_"+flr_color_loop[flr_idx];
+        if(f == (flr_count - 1))
+        {
+            //最后一层设为粉色
+            floorData.bg = "floor_pink";
+            floorData.bottom = "floorBottom_pink";
+        }
+        else
+        {
+            floorData.bg = "floor_"+flr_color_loop[flr_idx];
+            floorData.bottom = "floorBottom_"+flr_color_loop[flr_idx];
+        }
+
         floorData.floorNum = ""+(f+1)+"F";
         if(flr_color_loop[flr_idx]=="pink")
         {

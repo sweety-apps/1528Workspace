@@ -10,10 +10,7 @@
 #define  _APP_DELEGATE_H_
 
 #include "CCApplication.h"
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "CPreloadHelper.h"
-#endif
 
 /**
 @brief    The cocos2d Application.
@@ -46,10 +43,9 @@ public:
     virtual void applicationWillEnterForeground();
     
     void ResetCoin();
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+
 private:
     CPreloadHelper m_Helper;
-#endif
 };
 
 #endif // _APP_DELEGATE_H_

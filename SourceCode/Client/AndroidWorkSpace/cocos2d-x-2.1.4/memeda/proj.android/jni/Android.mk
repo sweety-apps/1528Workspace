@@ -15,7 +15,9 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../../../memeda/memeda/Classes/Modules/OpenSocial/SocialShareAPI.cpp \
                    ../../../../../memeda/memeda/Classes/Modules/Payment/iOSIAP/iapAPI_js_bindings/jsb_iOSiapWrapper.cpp \
                    ../../../../../memeda/memeda/Classes/Modules/Payment/iOSIAP/iOSiapWrapper.cpp \
-                   ../../../../../memeda/memeda/Classes/Game_Util_Functions_Android.cpp
+                   ../../../../../memeda/memeda/Classes/Game_Util_Functions_Android.cpp \
+                   ../../../../../memeda/memeda/Classes/CPreloadHelper.cpp \
+                   ../../../../../memeda/memeda/Classes/CPreloadHelperAndroidVar.cpp
                    
 LOCAL_SRC_FILES += ../../../plugin/jsbindings/auto/jsb_pluginx_protocols_auto.cpp \
                    ../../../plugin/jsbindings/manual/pluginxUTF8.cpp \
@@ -31,6 +33,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../../../memeda/memeda/Classes/Modules/O
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../../../memeda/memeda/Classes/Modules/OpenSocial/SocialShareAPI_js_bindings
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../../../memeda/memeda/Classes/Modules/Payment/iOSIAP
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../../../memeda/memeda/Classes/Modules/Payment/iOSIAP/iapAPI_js_bindings
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../cocos2dx/textures
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../plugin/platform/android
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../plugin/protocols/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../plugin/jsbindings/manual
@@ -43,7 +46,8 @@ LOCAL_WHOLE_STATIC_LIBRARIES += chipmunk_static
 LOCAL_WHOLE_STATIC_LIBRARIES += spidermonkey_static
 LOCAL_WHOLE_STATIC_LIBRARIES += scriptingcore-spidermonkey
 
-LOCAL_EXPORT_CFLAGS := -DCOCOS2D_DEBUG=2 -DCOCOS2D_JAVASCRIPT
+#LOCAL_EXPORT_CFLAGS := -DCOCOS2D_DEBUG=2 -DCOCOS2D_JAVASCRIPT
+LOCAL_EXPORT_CFLAGS := -DCOCOS2D_DEBUG=0 -DCOCOS2D_JAVASCRIPT
 
 include $(BUILD_SHARED_LIBRARY)
 

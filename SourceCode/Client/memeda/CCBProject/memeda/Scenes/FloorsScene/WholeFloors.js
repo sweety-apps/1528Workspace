@@ -88,7 +88,11 @@ WholeFloors.prototype.InitWholeFloors = function ()
     this.doorRect = cc.rect(0,0,58,76);
     this.floorRect = cc.rect(0,0,320,138);
 
-    this.rootLayer.setContentSize(cc.size(width,this.CalculateHeight()+this.startFloorOffsetY + 35));
+    //重设整个Layer大小
+    var floorTopPosY = this.CalculateHeight() + this.startFloorOffsetY;
+    var floorTopSize = this.floorTop.getContentSize();
+    this.floorTop.setPositionY(floorTopPosY);
+    this.rootLayer.setContentSize(cc.size(width, floorTopPosY + floorTopSize.height));
 };
 
 WholeFloors.prototype.UninitWholeFloors = function ()
@@ -464,3 +468,22 @@ WholeFloors.prototype.showUFOLight = function (floorNum,doorNum)
     this.UFOFloorFront.animationManager.setCompletedAnimationCallback(this, this.onUFOLightAnimationCompleted);
     this.UFOFloorFront.animationManager.runAnimationsForSequenceNamed("UFO Light Timeline"+doorNum);
 };
+
+WholeFloors.prototype.showFloorsTopAnimation = function()
+{
+    this.floorTop.animationManager.runAnimationsForSequenceNamed("Enter Timeline");
+}
+
+WholeFloors.prototype.showPreFloorsTopAnimation = function()
+{
+    this.floorTop.animationManager.runAnimationsForSequenceNamed("PreEnter Timeline");
+}
+
+WholeFloors.prototype.isCatStayAtLastDoor = function()
+{
+    if(this.currentCatStayAtFloorNum >= (gTestFloor.length - 1)  && this.currentCatStayAtDoorNum == 3)
+    {
+        return true;
+    }
+    return false;
+}

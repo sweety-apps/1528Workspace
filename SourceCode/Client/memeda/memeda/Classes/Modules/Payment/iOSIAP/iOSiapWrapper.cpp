@@ -69,7 +69,7 @@ iOSiapWrapper::iOSiapWrapper()
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     handle = iOSiap_create();
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    cocos2d::CCLog("iOSiapWrapper::js_init");
+    CCLOG("iOSiapWrapper::js_init");
     cocos2d::plugin::PluginProtocol* plugin = cocos2d::plugin::PluginManager::getInstance()->loadPlugin("IAPAlipay");
     
     g_aliPay = (cocos2d::plugin::ProtocolIAP*)plugin;

@@ -94,7 +94,7 @@ JSBool CommonFunction::openURL(JSContext* cx, uint32_t argc, jsval* vp)
     JniMethodInfo t;
     if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "openUrl", "(Ljava/lang/String;)V"))
     {
-        cocos2d::CCLog("JniHelper::getStaticMethodInfo Failed");
+        CCLOG("JniHelper::getStaticMethodInfo Failed");
     }
 
 	jstring url = t.env->NewStringUTF(strKey.c_str());
@@ -122,7 +122,7 @@ JSBool CommonFunction::setActualDefaultRingtoneUri(JSContext* cx, uint32_t argc,
     JniMethodInfo t;
     if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "setActualDefaultRingtoneUri", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"))
     {
-        cocos2d::CCLog("JniHelper::setActualDefaultRingtoneUri Failed");
+        CCLOG("JniHelper::setActualDefaultRingtoneUri Failed");
     }
 
 	jstring surl = t.env->NewStringUTF(strUri.c_str());
@@ -134,7 +134,7 @@ JSBool CommonFunction::setActualDefaultRingtoneUri(JSContext* cx, uint32_t argc,
 	t.env->DeleteLocalRef(surl);
 	t.env->DeleteLocalRef(sname);
 
-    cocos2d::CCLog("setActualDefaultRingtoneUri");
+    CCLOG("setActualDefaultRingtoneUri");
     return JS_TRUE;
 }
 
@@ -143,12 +143,12 @@ void CommonFunction_Notify_Splash_Fade()
     JniMethodInfo t;
     if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "removeSplashView", "()V"))
     {
-        cocos2d::CCLog("JniHelper::RemoveSplashView Failed");
+        CCLOG("JniHelper::RemoveSplashView Failed");
     }
     
     t.env->CallStaticVoidMethod(t.classID, t.methodID);
     
-    cocos2d::CCLog("RemoveSplashView");
+    CCLOG("RemoveSplashView");
 }
 
 #endif /*CC_TARGET_PLATFORM*/
