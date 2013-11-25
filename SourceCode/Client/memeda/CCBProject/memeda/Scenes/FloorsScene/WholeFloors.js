@@ -498,6 +498,7 @@ WholeFloors.prototype.showFloorsTopAnimation = function()
 WholeFloors.prototype.showPreFloorsTopAnimation = function()
 {
     this.floorTop.animationManager.runAnimationsForSequenceNamed("PreEnter Timeline");
+    //测试提交
 }
 
 WholeFloors.prototype.isCatStayAtLastDoor = function()
