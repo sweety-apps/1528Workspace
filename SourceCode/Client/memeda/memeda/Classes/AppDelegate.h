@@ -11,12 +11,21 @@
 
 #include "CCApplication.h"
 #include "CPreloadHelper.h"
+#include <keypad_dispatcher/CCKeypadDelegate.h>
 
 /**
 @brief    The cocos2d Application.
 
 The reason for implement as private inheritance is to hide some interface call by CCDirector.
 */
+
+class CCMyKeypadDelegate : public cocos2d::CCKeypadDelegate
+{
+public:
+    virtual void keyBackClicked();
+    virtual void keyMenuClicked();
+};
+
 class  AppDelegate : private cocos2d::CCApplication
 {
 public:
@@ -46,6 +55,7 @@ public:
 
 private:
     CPreloadHelper m_Helper;
+    CCMyKeypadDelegate* m_pKeypadDelegate;
 };
 
 #endif // _APP_DELEGATE_H_

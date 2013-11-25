@@ -202,7 +202,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     m_Helper.Preload();
 #endif
-    
+
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionNoBorder);
     
     
@@ -268,7 +268,17 @@ bool AppDelegate::applicationDidFinishLaunching()
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     CommonFunction_Notify_Splash_Fade();
 #endif
-    
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    CCLOG("m_pKeypadDelegate");
+    m_pKeypadDelegate = new CCMyKeypadDelegate();
+    if ( pDirector->getKeypadDispatcher() != NULL )
+    {
+    	pDirector->getKeypadDispatcher()->addDelegate(m_pKeypadDelegate);
+    }
+    CCLOG("m_pKeypadDelegate 2");
+#endif
+
     return true;
 }
 
@@ -380,4 +390,13 @@ void AppDelegate::applicationWillEnterForeground()
     SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.8);
 }
 
+void CCMyKeypadDelegate::keyBackClicked()
+{
+    CCLOG("keyBackClicked");
+}
+
+void CCMyKeypadDelegate::keyMenuClicked()
+{
+    CCLOG("keyMenuClicked");
+}
 
