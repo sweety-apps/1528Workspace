@@ -370,6 +370,9 @@ void AppDelegate::applicationWillEnterForeground()
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #endif /*CC_TARGET_PLATFORM*/
     
+    // 界面进入前台
+    localStorageSetItem("enterforeground", "1");
+    
     CCDirector::sharedDirector()->startAnimation();
     SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
     SimpleAudioEngine::sharedEngine()->resumeAllEffects();

@@ -125,6 +125,8 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 	}
 	
     GuessScene_InitGlobel();
+    this.isShowScene = true;
+    this.scheduleMusic = false;
     
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
@@ -192,16 +194,20 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
   	} else {
     	this.taskTip.setVisible(false);	
     	// 初始化输入等UI
-    	this.setupInputCharsAndResultChars(gProblem);	
+    	this.setupInputCharsAndResultChars(gProblem);
     }
 
+    if ( !this.checkExtraCoin() ) {
+    	this.QueryExtraCoin();
+    }
+    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
+    
     // 初始化操作的动画
     this.setupSubCCBFileAnimationCallBacks();
     
     // 购买按钮
     this.coinCtrl.controller.registerBuyEvent(this, this.onClickedCoinButton);
     
-    this.checkExtraCoin();
     debugMsgOutput("GuessScene.prototype.onDidLoadFromCCB");
     
     if ( sys.os != "android" && sys.os != "Android" ) {
@@ -254,7 +260,7 @@ GuessScene.prototype.onBack = function ( ) {
 			cc.AudioEngine.getInstance().stopMusic();
             cc.AudioEngine.getInstance().setMusicVolume(0.0);
 		}
-    	cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
+        gCurrentCCBView.scheduleMusic = false;
     } catch (e) {
     }
 	
@@ -262,6 +268,10 @@ GuessScene.prototype.onBack = function ( ) {
 	
     var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
     scene = cc.TransitionFadeTR.create(0.4,scene);
+    
+    this.isShowScene = false;
+    cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
+    
     cc.Director.getInstance().replaceScene(scene);
 }
 
@@ -332,6 +342,9 @@ GuessScene.prototype.onAnimationComplete = function()
         gCurrentCCBView.clearInputCharsAndResultChars();
         gCurrentCCBView.ClearVars();
         var scene = cc.BuilderReader.loadAsScene("MainScene.ccbi");
+        
+        this.isShowScene = false;
+        cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
         cc.Director.getInstance().replaceScene(scene);
       
         //gAudioEngine.stopMusic();
@@ -867,11 +880,13 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             if ( gProblem + 1 == Problem_GetCount() ) {
                 var color = GetColorByFloor(0, 0);
                 GuessScene_SetFloorInfo(-1, 3, color);
+                this.isShowScene = false;
                 this.answerRight.controller.ShowMsg(gCurrentTestObj.id, gCurrentTestObj.label, gCurrentTestObj.rightanswer, url, isFirst, this.onClickNext, allRight);
             } else {
                 var index = gProblem + 1;
                 var color = GetColorByFloor(Math.floor(index / 3), index % 3);
                 GuessScene_SetFloorInfo(gProblem + 1, 3, color);
+                this.isShowScene = false;
                 this.answerRight.controller.ShowMsg(gCurrentTestObj.id, gCurrentTestObj.label, gCurrentTestObj.rightanswer, url, isFirst, this.onClickNext, allRight);
             }
             
@@ -956,33 +971,50 @@ GuessScene.prototype.CheckFeel = function () {
 };
 
 GuessScene.prototype.update = function() {
-    gTimeCount ++;
-    debugMsgOutput("GuessScene.prototype.update " + this.waitPlayMusic);
-	if ( this.waitPlayMusic ) {
-		if ( gTimeCount >= 30 ) {
-			this.PlayMusic();
-			gTimeCount = 0;
-            this.beginPlayTime = (new Date()).getTime();
-			this.waitPlayMusic = false;
-            cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
-		}
-		return ;
-	}
-    
-    if ( gTimeCount >= 10 ) {
-        if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
-            gCurrentCCBView.onMusicStop();
-            try {
-            	cc.AudioEngine.getInstance().setMusicVolume(0.0);
-            	cc.AudioEngine.getInstance().stopMusic();
-            }catch ( e ) {
+    if ( this.scheduleMusic ) {
+        gTimeCount ++;
+        if ( this.waitPlayMusic ) {
+            if ( gTimeCount >= 30 ) {
+                this.PlayMusic();
+                gTimeCount = 0;
+                this.beginPlayTime = (new Date()).getTime();
+                this.waitPlayMusic = false;
+            
+                this.scheduleMusic = true;
+            }
+            return ;
+        }
+        
+        if ( gTimeCount >= 10 ) {
+            if ( !cc.AudioEngine.getInstance().isMusicPlaying() ) {
+                gCurrentCCBView.onMusicStop();
+                try {
+                    cc.AudioEngine.getInstance().setMusicVolume(0.0);
+                    cc.AudioEngine.getInstance().stopMusic();
+                }catch ( e ) {
+                }
+            
+                this.scheduleMusic = false;
+            }
+            gTimeCount = 0;
+        }
+        gCurrentCCBView.CheckFeel();
+    } else {
+        if ( this.isShowScene ) {
+            if ( this.gTimeCount == null ) {
+                this.gTimeCount = 0;
             }
             
-            cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
+            this.gTimeCount ++;
+            if ( this.gTimeCount == 60 ) {
+                if ( sys.localStorage.getItem("enterforeground") == "1" ) {
+                    sys.localStorage.setItem("enterforeground", "0");
+                    this.QueryExtraCoin();
+                }
+                this.gTimeCount = 0;
+            }
         }
-        gTimeCount = 0;
     }
-    gCurrentCCBView.CheckFeel();
 }
 
 GuessScene.prototype._isRunning = function () {
@@ -990,7 +1022,7 @@ GuessScene.prototype._isRunning = function () {
 }
 
 GuessScene.prototype.PlayMusic = function () {
-    cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
+    gCurrentCCBView.scheduleMusic = false;
     
     try {
     	if ( cc.AudioEngine.getInstance().isMusicPlaying() ) {
@@ -1020,17 +1052,17 @@ GuessScene.prototype.CatEnter = function () {
     	
     	this.catAni.controller.attachEvent(this, this.onClickReplay, this.onClickCat);	
     }
-    
+    debugMsgOutput("this.catAni.controller.Enter(this.onEnterCompleted, this);");
 	this.catAni.controller.Enter(this.onEnterCompleted, this);
 }
 
 GuessScene.prototype.ListenMusic = function () {
 	this.PlayMusic();
-	
+	debugMsgOutput("GuessScene.prototype.ListenMusic");
    	this.curFeel = -1;
 	this.beginPlayTime = (new Date()).getTime();
 	
-    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
+    this.scheduleMusic = true;
     
 	this.catAni.controller.Listen(true);
 	this.bgLayer.controller.setPlay(true);
@@ -1056,7 +1088,7 @@ GuessScene.prototype.onEnterCompleted = function(obj) {
    	obj.curFeel = -1;
 	
 	obj.waitPlayMusic = true;
-    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(obj, 0, !obj._isRunning);
+    obj.scheduleMusic = true;
     
     debugMsgOutput("GuessScene.prototype.onEnterCompleted");
 	obj.rootNode.animationManager.runAnimationsForSequenceNamed("Drawing Animation Timeline");	
@@ -1243,6 +1275,8 @@ GuessScene.prototype.AdjuestDoorColor = function () {
 }    //
 
 GuessScene.prototype.onClickNext = function() {
+	gCurrentCCBView.isShowScene = true;
+
 	gCurrentCCBView.EnableAllBtn(true);
 	gCurrentCCBView.setupInputCharsAndResultChars(gProblem);
 }
@@ -1305,7 +1339,8 @@ GuessScene.prototype.onClickJump = function () {
                     cc.AudioEngine.getInstance().setMusicVolume(0.0);
                 }
                 gCurrentCCBView.onMusicStop();
-                cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(gCurrentCCBView);
+                
+                gCurrentCCBView.scheduleMusic = false;
             } catch (e) {
             }
                                     
@@ -1316,6 +1351,8 @@ GuessScene.prototype.onClickJump = function () {
     		if ( gProblem + 1 == Problem_GetCount() ) {
                 var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
                 scene = cc.TransitionFadeTR.create(0.4,scene);
+                this.isShowScene = false;
+                cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
                 cc.Director.getInstance().replaceScene(scene);
                 return ;
     		} else {
@@ -1348,7 +1385,9 @@ GuessScene.prototype.checkExtraCoin = function () {
 			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
 			CoinMgr_Change(188);
 		});
+		return true;
 	}
+	return false;
 }
 
 GuessScene.prototype.onClickedCoinButton = function (obj ) {
@@ -1452,3 +1491,104 @@ GuessScene.prototype.onClickRing = function () {
 		}
 	});
 }
+
+
+
+GuessScene.prototype.QueryExtraCoin = function () {
+	if ( gCurrentCCBView.isQuery ) {
+		return ;
+	}
+	
+	gCurrentCCBView.isQuery = true;
+		
+    var callBackObj = new Object();
+
+    callBackObj.offerWallDidFinishCheck = function(responseText) {
+        debugMsgOutput("offerWallDidFinishCheck " + responseText);
+        // 请求到来自多盟的数据
+        gCurrentCCBView.parseOfferWallData(responseText);
+    };
+    callBackObj.offerWallDidFinishConsume = function(responseText) {
+        debugMsgOutput("offerWallDidFinishConsume " + responseText);
+    };
+    callBackObj.offerWallDidFailCheck = function() {
+    	gCurrentCCBView.isQuery = false;
+        debugMsgOutput("offerWallDidFailCheck");
+    };
+    callBackObj.offerWallDidFailConsume = function() {
+        debugMsgOutput("offerWallDidFailConsume");
+    };
+    callBackObj.spendPoints = function(responseText) {
+    };
+    callBackObj.windowClosed = function() {
+    	debugMsgOutput("callBackObj.windowClosed");
+    	gCurrentCCBView.QueryExtraCoin();
+    };
+
+    CoinMgr_checkExtraCoin(callBackObj);  // 检测额外的金币奖励，包括微信和多盟
+    debugMsgOutput("-0-=-=-=-=-=");
+};
+
+GuessScene.prototype.parseOfferWallData = function (responseText) {
+    if ( sys.os == "android" || sys.os == "Android" ) {
+        var obj = JSON.parse(responseText);
+        if ( obj.Point > 0 ) {
+            // 有可消费的积分
+            if ( this.weChatAwardMsg == null ) {
+                this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+                this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
+            }
+
+            this.weChatAwardMsg.controller.ShowMsg(2, obj.Point, function (coin) {
+                // 消费掉多余的金币
+                CoinMgr_Change(coin);
+            });
+        }
+    } else {
+        debugMsgOutput("showScene " + this.isShowScene);
+        if ( !gAllBtnEnable ) {
+            return ;
+        }
+        
+        if ( !this.isShowScene ) {
+            gCurrentCCBView.isQuery = false;
+            return ;
+        }
+
+        var obj = JSON.parse(responseText);
+        var consumed = sys.localStorage.getItem("consumed");
+        // 消费掉的积分，取本地和服务器上纪录的最大值
+        debugMsgOutput("obj.totalPoint " + obj.totalPoint);
+        debugMsgOutput("obj.consumed " + obj.consumed);
+        debugMsgOutput("consumed " + consumed);
+
+        if ( consumed != null && consumed != "" ) {
+            consumed = parseInt(consumed);
+            if ( consumed < obj.consumed ) {
+                consumed = obj.consumed;
+            }
+        }
+
+        var canConsum = obj.totalPoint - consumed;
+        if ( canConsum > 990 ) {
+            canConsum = 990;
+        }
+        if ( obj.totalPoint > consumed ) {
+            // 有金币可以消费
+            if ( this.weChatAwardMsg == null ) {
+                this.weChatAwardMsg = cc.BuilderReader.load("WechatAwardMsg");
+                this.weChatAwardMsgLayout.addChild( this.weChatAwardMsg );
+            }
+
+            this.weChatAwardMsg.controller.ShowMsg(2, canConsum, function (coin) {
+                sys.localStorage.setItem("consumed", obj.totalPoint); // 保存本地数据
+                // 消费掉多余的金币
+                memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
+                CoinMgr_Change(coin);
+                gCurrentCCBView.isQuery = false;
+            });
+        } else {
+            gCurrentCCBView.isQuery = false;
+        }
+    }
+};

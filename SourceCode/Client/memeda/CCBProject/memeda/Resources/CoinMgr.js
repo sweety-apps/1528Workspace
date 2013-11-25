@@ -101,6 +101,12 @@ function CoinMgr_Init() {
                     CoinMgr_gCallBackObj.spendPoints(responseText);
                 }
             };
+            
+             memeda.OfferWallController.getInstance().windowClosed = function () {
+                if ( CoinMgr_gCallBackObj != null ) {
+                    CoinMgr_gCallBackObj.windowClosed();
+                }
+            };           
     }
 }
 
@@ -120,20 +126,10 @@ function CoinMgr_checkExtraCoin(callBackObj) {
     debugMsgOutput("---- " + (time - now));
     
     sys.localStorage.setItem("WechatTime", now);
-    var http = new XMLHttpRequest();
-			
-    http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
-    //http.open("GET", "http://memeda.meme-da.com/Stat/WechatAnswerQuery.php?uid=" + Global_getUserID());
-    http.onreadystatechange = function(){
-        if( http.readyState == 4 && http.status == 200 ) {
-            if ( !callBackObj.wachatDidFinish(http.responseText) ) {
-                debugMsgOutput("callBackObj.wachatDidFinish");
-                memeda.OfferWallController.getInstance().requestOnlinePointCheck();
-            } else {
-                debugMsgOutput("callBackObj.wachatDidFinish true");
-            }
-        }
-    };
     
-    http.send(null);
+    if ( Global_isWeb() ) {
+    	return ;
+    }
+    
+    memeda.OfferWallController.getInstance().requestOnlinePointCheck();
 }

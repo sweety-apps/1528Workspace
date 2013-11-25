@@ -43,7 +43,8 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     gChooseTestsSceneThis = this;
 
     this.isShowScene = true;
-
+	this.isQuery = false;
+	
     // 设备上面需要开启触摸
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
@@ -84,7 +85,7 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
         debugMsgOutput("" + memeda.OfferWallController);
         memeda.OfferWallController.init(Global_getUserID());
     }
-    this.QueryExtraCoin();
+    
     this.wholeFloors.controller.setupCatPosition();
     this.scrollFloorsToCatPosition();
 
@@ -102,6 +103,9 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     //UFO 光线地震动画
     this.wholeFloors.controller.onUFOLightAnimationCompletedCallbackTarget = this;
     this.wholeFloors.controller.onUFOLightAnimationCompletedCallbackFunc = this.doShakeFloorsAnimation;
+    
+    this.QueryExtraCoin();
+    cc.Director.getInstance().getScheduler().scheduleUpdateForTarget(this, 0, !this._isRunning);
 };
 
 ChooseTestsScene.prototype.doShakeFloorsAnimation = function() {
@@ -192,7 +196,7 @@ ChooseTestsScene.prototype.onPressedStartPlay = function()
     scene = cc.TransitionProgressInOut.create(0.2,scene);
 
     this.isShowScene = false;
-
+    cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
     cc.Director.getInstance().replaceScene(scene);
 };
 
@@ -220,6 +224,7 @@ ChooseTestsScene.prototype.onAnimationCompleted = function()
         scene = cc.TransitionProgressInOut.create(0.2,scene);
 
         this.isShowScene = false;
+        cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
         cc.Director.getInstance().replaceScene(scene);
     }
     if(this.rootNode.animationManager.getLastCompletedSequenceName() == "Loop Timeline")
@@ -347,6 +352,12 @@ ChooseTestsScene.prototype.onClickedCoinButton = function (obj) {
 };
 
 ChooseTestsScene.prototype.QueryExtraCoin = function () {
+    debugMsgOutput("gChooseTestsSceneThis.isQuery " + gChooseTestsSceneThis.isQuery);
+	if ( gChooseTestsSceneThis.isQuery ) {
+		return ;
+	}
+	
+	gChooseTestsSceneThis.isQuery = true;
     var callBackObj = new Object();
     callBackObj.wachatDidFinish = this.parseWeChatData;
 
@@ -359,6 +370,7 @@ ChooseTestsScene.prototype.QueryExtraCoin = function () {
         debugMsgOutput("offerWallDidFinishConsume " + responseText);
     };
     callBackObj.offerWallDidFailCheck = function() {
+        gChooseTestsSceneThis.isQuery = false;
         debugMsgOutput("offerWallDidFailCheck");
     };
     callBackObj.offerWallDidFailConsume = function() {
@@ -366,7 +378,11 @@ ChooseTestsScene.prototype.QueryExtraCoin = function () {
     };
     callBackObj.spendPoints = function(responseText) {
     };
-
+    callBackObj.windowClosed = function() {
+    	debugMsgOutput("callBackObj.windowClosed");
+    	gChooseTestsSceneThis.QueryExtraCoin();	
+    };
+    
     CoinMgr_checkExtraCoin(callBackObj);  // 检测额外的金币奖励，包括微信和多盟
     debugMsgOutput("-0-=-=-=-=-=");
 };
@@ -421,6 +437,7 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
         }
     } else {
         if ( !this.isShowScene ) {
+            gChooseTestsSceneThis.isQuery = false;
             return ;
         }
 
@@ -454,7 +471,10 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
                 // 消费掉多余的金币
                 memeda.OfferWallController.getInstance().requestOnlineConsumeWithPoint(obj.totalPoint - obj.consumed);
                 CoinMgr_Change(coin);
+                gChooseTestsSceneThis.isQuery = false;
             });
+        } else {
+            gChooseTestsSceneThis.isQuery = false;
         }
     }
 };
@@ -476,4 +496,24 @@ ChooseTestsScene.prototype.scrollFloorsToCatPosition = function ()
 
 };
 
+
+ChooseTestsScene.prototype.update = function() {
+    if ( this.isShowScene ) {
+        if ( this.gTimeCount == null ) {
+            this.gTimeCount = 0;
+        }
         
+        this.gTimeCount ++;
+        if ( this.gTimeCount == 60 ) {
+            if ( sys.localStorage.getItem("enterforeground") == "1" ) {
+                sys.localStorage.setItem("enterforeground", "0");
+                this.QueryExtraCoin();
+            }
+            this.gTimeCount = 0;
+        }
+    }
+}
+
+ChooseTestsScene.prototype._isRunning = function () {
+    return true;
+}
