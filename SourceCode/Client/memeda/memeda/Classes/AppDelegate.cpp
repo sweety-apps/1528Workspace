@@ -270,13 +270,11 @@ bool AppDelegate::applicationDidFinishLaunching()
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    CCLOG("m_pKeypadDelegate");
     m_pKeypadDelegate = new CCMyKeypadDelegate();
     if ( pDirector->getKeypadDispatcher() != NULL )
     {
     	pDirector->getKeypadDispatcher()->addDelegate(m_pKeypadDelegate);
     }
-    CCLOG("m_pKeypadDelegate 2");
 #endif
 
     return true;
@@ -393,6 +391,11 @@ void AppDelegate::applicationWillEnterForeground()
 void CCMyKeypadDelegate::keyBackClicked()
 {
     CCLOG("keyBackClicked");
+
+	ScriptingCore* sc = ScriptingCore::getInstance();
+    
+    jsval res;
+    JS_CallFunctionName(sc->getGlobalContext(), sc->getGlobalObject(), "Key_onBackClicked", 0, NULL, &res);
 }
 
 void CCMyKeypadDelegate::keyMenuClicked()

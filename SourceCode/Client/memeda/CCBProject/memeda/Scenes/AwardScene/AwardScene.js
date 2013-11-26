@@ -6,6 +6,7 @@ var AwardScene = function() {};
 var pThisAwardScene = null;
 
 AwardScene.prototype.showWindow = function () {
+	this.show = true;
     if(sys.os != "android" && sys.os != "Android") {
         if ( RemoteConfig.domob == "1" ) {
             this.duomengCtrl.setVisible(true);
@@ -60,7 +61,8 @@ AwardScene.prototype.initStatus = function () {
 AwardScene.prototype.onDidLoadFromCCB = function () {
     pThisAwardScene = this;
     this.enableAllBtn = true;
-
+	this.show = false;
+	
     if( 'touches' in sys.capabilities )
         this.rootNode.setTouchEnabled(true);
 
@@ -106,6 +108,7 @@ AwardScene.prototype.onBack = function () {
     if ( this.enableAllBtn  ) {
         cc.AudioEngine.getInstance().playEffect("sounds/Click_Wood_Cancel.mp3");
 
+		this.show = false;
         this.bkgBtn.setVisible(false);
         this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
         //var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");

@@ -39,7 +39,9 @@ ChooseTestsScene.prototype.onDidLoadFromCCB = function () {
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_bg.plist");
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floors_doors.plist");
     //cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/floorsscene.plist");
-
+    
+    Key_setCurrentScene(this);
+    
     gChooseTestsSceneThis = this;
 
     this.isShowScene = true;
@@ -517,3 +519,16 @@ ChooseTestsScene.prototype.update = function() {
 ChooseTestsScene.prototype._isRunning = function () {
     return true;
 }
+
+ChooseTestsScene.prototype.Key_onBackClicked = function() {
+	if ( this.awardScene != null && this.awardScene.controller.show ) {
+		this.awardScene.controller.onBack();
+	} else {
+    	var scene = cc.BuilderReader.loadAsScene("FirstScene.ccbi");
+    	scene = cc.TransitionProgressInOut.create(0.2,scene);
+
+    	this.isShowScene = false;
+    	cc.Director.getInstance().getScheduler().unscheduleUpdateForTarget(this);
+    	cc.Director.getInstance().replaceScene(scene);
+	}
+};

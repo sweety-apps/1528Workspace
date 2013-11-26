@@ -1,4 +1,6 @@
 
+cc.COCOS2D_DEBUG = 1;
+
 var FirstScene = function() {};
 var gChooseTestsScene = null;
 
@@ -25,7 +27,8 @@ FirstScene.prototype.onDidLoadFromCCB = function () {
 	//cc.SpriteFrameCache.getInstance().addSpriteFrames("UI/firstscene2.plist");
 		
   	//GuessScene_Preload(true);
-    
+    Key_setCurrentScene(this);
+    this.clickStart = false;
 	this.homePage.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
 	
     //debugTimeBgin("loadAsScene");
@@ -76,7 +79,7 @@ FirstScene.prototype.onClickStart = function () {
 	this.page2.setVisible(true);
 	this.rootNode.animationManager.runAnimationsForSequenceNamed("Switch Timeline");
 	this.homePage.animationManager.runAnimationsForSequenceNamed("Ani Timeline");
-	
+	this.clickStart = true;
 	this.btn.setVisible(false);
 };
 
@@ -100,4 +103,10 @@ FirstScene.prototype.onAnimationComplete = function()
 
 FirstScene.prototype.onClickAbout = function () {
 	this.aboutCtrl.controller.ShowMsg();
+};
+
+FirstScene.prototype.Key_onBackClicked = function() {
+	if ( !this.clickStart ) {
+		this.exitMsg.controller.ShowMsg();
+	}
 };

@@ -124,6 +124,8 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
 		return ;
 	}
 	
+    Key_setCurrentScene(this);
+    
     GuessScene_InitGlobel();
     this.isShowScene = true;
     this.scheduleMusic = false;
@@ -1591,4 +1593,9 @@ GuessScene.prototype.parseOfferWallData = function (responseText) {
             gCurrentCCBView.isQuery = false;
         }
     }
+};
+
+
+GuessScene.prototype.Key_onBackClicked = function() {
+	this.onBack();
 };

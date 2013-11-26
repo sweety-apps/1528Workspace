@@ -86,3 +86,14 @@ Global_InitRemoteConfig = function () {
 }
 
 Global_InitRemoteConfig();
+
+var gCurScene = null;
+function Key_setCurrentScene(scene) {
+	gCurScene = scene;
+};
+
+function Key_onBackClicked() {
+	if ( gCurScene != null ) {
+		gCurScene.Key_onBackClicked();
+	}	
+};
