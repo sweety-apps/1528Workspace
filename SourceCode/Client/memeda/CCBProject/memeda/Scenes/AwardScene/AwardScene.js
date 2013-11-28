@@ -15,7 +15,12 @@ AwardScene.prototype.showWindow = function (endFun) {
             this.duomengCtrl.setVisible(false);
         }
     } else {
-        this.duomengCtrl.setVisible(true);
+    	if ( RemoteConfig.domob == "1" ) {
+        	this.duomengCtrl.setVisible(true);
+    	} else {
+        	this.duomengCtrl.setVisible(false);
+    	}
+    	
         this.commentCtrl.setVisible(false);
     }
 

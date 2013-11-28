@@ -28,6 +28,31 @@
 USING_NS_CC;
 using namespace CocosDenshion;
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include <jni.h>
+#include "platform/android/jni/JniHelper.h"
+#include "js_bindings_config.h"
+#include "ScriptingCore.h"
+#include "jstypes.h"
+#include "jsapi.h"
+#include "jsfriendapi.h"
+#include "jsb_helper.h"
+
+
+void initChannel()
+{
+    JniMethodInfo t;
+    if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "initChannel", "()V"))
+    {
+        CCLOG("JniHelper::initChannel Failed");
+    }
+
+    t.env->CallStaticVoidMethod(t.classID, t.methodID);
+
+    CCLOG("initChannel");
+}
+#endif /*CC_TARGET_PLATFORM*/
+
 AppDelegate::AppDelegate()
 {
 }
@@ -247,6 +272,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     ResetCoin();
     
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    initChannel();
+#endif /*CC_TARGET_PLATFORM*/
+
     ScriptingCore::getInstance()->runScript("main.js");
     //ScriptingCore::getInstance()->runScript("hello.js");
     

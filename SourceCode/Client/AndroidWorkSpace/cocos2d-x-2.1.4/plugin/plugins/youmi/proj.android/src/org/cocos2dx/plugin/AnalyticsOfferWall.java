@@ -2,6 +2,8 @@ package org.cocos2dx.plugin;
 
 import java.util.Hashtable;
 
+import org.cocos2dx.lib.Cocos2dxLocalStorage;
+
 import net.youmi.android.AdManager;
 import net.youmi.android.offers.OffersManager;
 import net.youmi.android.offers.PointsChangeNotify;
@@ -72,7 +74,10 @@ public class AnalyticsOfferWall implements InterfaceSocial {
 	
 	public void ShowModal()
 	{	// 显示积分墙
-		OffersManager.getInstance(mContext).showOffersWall();
+		if ( Cocos2dxLocalStorage.getItem("openDomob").contentEquals("1") ) 
+		{
+			OffersManager.getInstance(mContext).showOffersWall();
+		}
 	}
 	
 	public void requestOnlinePointCheck()

@@ -52,6 +52,22 @@ Global_clearAllGloabalVars = function () {
     gHasShowedUFOLight = false;
 };
 
+Global_getChannel = function () {
+	var channel = sys.localStorage.getItem("channel");
+	if ( channel == null ) {
+		channel = "";	
+	}
+	return channel;
+};
+
+Global_getProtoVersion = function () {
+	var protoVersion = sys.localStorage.getItem("protoVersion");
+	if ( protoVersion == null ) {
+		protoVersion = "";	
+	}
+	return protoVersion;
+};
+
 var RemoteConfig = new Object;
 
 Global_InitRemoteConfig = function () {
@@ -62,7 +78,11 @@ Global_InitRemoteConfig = function () {
     }
     
     var http = new XMLHttpRequest();
-    http.open("GET", "http://memeda.meme-da.com/ServiceConfig2.php?id=" + CreateGuid());
+    if ( sys.os == "android" || sys.os == "Android" ) {
+    	http.open("GET", "http://memeda.meme-da.com/android/ServiceConfig_" + Global_getChannel() + "_" + Global_getProtoVersion() + ".php?id=" + CreateGuid());
+    } else {
+    	http.open("GET", "http://memeda.meme-da.com/ServiceConfig2.php?id=" + CreateGuid());
+    }
     
     http.onreadystatechange = function(){
         if( http.readyState == 4 && http.status == 200 ) {
