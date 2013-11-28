@@ -322,7 +322,10 @@ ChooseTestsScene.prototype.onPressedAward = function () {
         this.ccbLayout2.addChild(this.awardScene);
         this.awardScene.controller.attachClickBuyEvent(this, this.onClickedCoinButton);
     }
-    this.awardScene.controller.showWindow();
+    this.awardScene.controller.showWindow(function () {
+    	gChooseTestsSceneThis.QueryExtraCoin();
+    });
+    
     //var scene = cc.BuilderReader.loadAsScene("AwardScene.ccbi");
     //cc.Director.getInstance().replaceScene(scene);
 };
@@ -434,8 +437,11 @@ ChooseTestsScene.prototype.parseOfferWallData = function (responseText) {
 
             this.weChatAwardMsg.controller.ShowMsg(2, obj.Point, function (coin) {
                 // 消费掉多余的金币
+                gChooseTestsSceneThis.isQuery = false;
                 CoinMgr_Change(coin);
             });
+        } else {
+        	gChooseTestsSceneThis.isQuery = false;	
         }
     } else {
         if ( !this.isShowScene ) {

@@ -366,8 +366,6 @@ function Problem_Initialize() {
     gProblemProject = "A";
     if ( rand < 0.3 ) {
         gProblemProject = "B";
-    } else if ( rand < 0.4 ) {
-        gProblemProject = "C";
     }
         
     // 使用的题库版本

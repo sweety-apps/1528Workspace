@@ -5,8 +5,9 @@
 var AwardScene = function() {};
 var pThisAwardScene = null;
 
-AwardScene.prototype.showWindow = function () {
+AwardScene.prototype.showWindow = function (endFun) {
 	this.show = true;
+	this.endFun = endFun;
     if(sys.os != "android" && sys.os != "Android") {
         if ( RemoteConfig.domob == "1" ) {
             this.duomengCtrl.setVisible(true);
@@ -113,6 +114,9 @@ AwardScene.prototype.onBack = function () {
         this.rootNode.animationManager.runAnimationsForSequenceNamed("End Timeline");
         //var scene = cc.BuilderReader.loadAsScene("ChooseTestsScene.ccbi");
         //cc.Director.getInstance().replaceScene(scene);
+        if ( this.endFun != null ) {
+        	this.endFun();
+        }
     }
 };
 
