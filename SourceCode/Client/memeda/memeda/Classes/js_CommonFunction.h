@@ -30,6 +30,13 @@ public:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     static JSBool setActualDefaultRingtoneUri(JSContext* cx, uint32_t argc, jsval* vp);
 #endif
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS ) 
+    static JSBool getReportActiveURL(JSContext* cx, uint32_t argc, jsval* vp);
+    
+    static JSBool initAd(JSContext* cx, uint32_t argc, jsval* vp);
+    static JSBool presentAd(JSContext* cx, uint32_t argc, jsval* vp);
+#endif
 };
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)

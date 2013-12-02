@@ -73,15 +73,21 @@ var RemoteConfig = new Object;
 Global_InitRemoteConfig = function () {
     RemoteConfig.alipay = "0";
     RemoteConfig.domob = sys.localStorage.getItem("openDomob");
+    RemoteConfig.ad = sys.localStorage.getItem("showAd");
+    RemoteConfig.adRate = sys.localStorage.getItem("adRate");
+    
     if ( RemoteConfig.domob == "" || RemoteConfig.domob == null ) {
     	RemoteConfig.domob = "0";	
+    }
+    if ( RemoteConfig.ad == "" || RemoteConfig.ad == null ) {
+    	RemoteConfig.ad = "0";	
     }
     
     var http = new XMLHttpRequest();
     if ( sys.os == "android" || sys.os == "Android" ) {
     	http.open("GET", "http://memeda.meme-da.com/android/ServiceConfig_" + Global_getChannel() + "_" + Global_getProtoVersion() + ".php?id=" + CreateGuid());
     } else {
-    	http.open("GET", "http://memeda.meme-da.com/ServiceConfig2.php?id=" + CreateGuid());
+    	http.open("GET", "http://memeda.meme-da.com/ios_config/ServiceConfig3.php?id=" + CreateGuid());
     }
     
     http.onreadystatechange = function(){
@@ -96,10 +102,18 @@ Global_InitRemoteConfig = function () {
             if ( RemoteConfig.domob != "0" && RemoteConfig.domob != "1" ) {
                 RemoteConfig.domob = "0";
             }
-            
+            if ( RemoteConfig.ad != "0" && RemoteConfig.ad != "1" ) {
+                RemoteConfig.ad = "0";
+            }
+
+            sys.localStorage.setItem("showAd", RemoteConfig.ad);
+            sys.localStorage.setItem("adRate", RemoteConfig.adRate);                   
             sys.localStorage.setItem("openDomob", RemoteConfig.domob);
+            debugMsgOutput("showAd " + RemoteConfig.ad + " adRate " + RemoteConfig.adRate);
+            if ( RemoteConfig.ad == "1" ) {
+            	memeda.common.initAd();	
+            }
         } else {
-        	
         }
     }
     http.send(null);

@@ -7,6 +7,9 @@ var kGuessStatePuttingResult = 3;
 // static Var
 var kReturnButtonPushed = 1;
 
+var gAnswerRightNum = 0;	// 答对题目的总数
+var gCurShowAdNum = 0;		// 显示广告时，答对的题目数
+
 var gPushedButton = 0;
 
 var pressSprites = new Array();
@@ -214,9 +217,21 @@ GuessScene.prototype.onDidLoadFromCCB = function () {
     
     if ( sys.os != "android" && sys.os != "Android" ) {
     	this.RingLayout.setVisible(false);
+        // 把应用激活信息上报给服务器
+        this.reportActive();
     } else {
     	this.RingLayout.setVisible(true);	
     }
+};
+
+GuessScene.prototype.reportActive = function () {
+    var url = memeda.common.getReportActiveURL();
+    debugMsgOutput("url : " + url);
+    var http = new XMLHttpRequest();
+    http.open("GET", url + "&id=" + CreateGuid());
+    http.onreadystatechange = function(){
+    };
+    http.send(null);
 };
 
 GuessScene.prototype.onClickTaskTip = function() {
@@ -799,6 +814,16 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     	gResultCharButtons[i].controller.SetIndexNumber(i);
     	gResultCharButtons[i].controller.AttachClickEvent(gCurrentCCBView.onClickResultBtn);
     }
+    
+    // 判断是否显示广告
+    if ( RemoteConfig.ad == "1" ) {
+    	if ( (gAnswerRightNum % parseInt(RemoteConfig.adRate)) == 0 ) {
+    		if ( gAnswerRightNum > gCurShowAdNum ) {
+    			gCurShowAdNum = gAnswerRightNum;
+    			memeda.common.presentAd();
+    		}
+    	}
+    }
 };
 
 GuessScene.prototype.setupInputCharsAndResultChars = function (index)
@@ -893,6 +918,9 @@ GuessScene.prototype.updateInputCharsAndResultChars = function (showAni)
             }
             
             gCurrentCCBView.AdjuestDoorColor();
+            
+            // 答对数＋1
+            gAnswerRightNum = gAnswerRightNum + 1;
         }
         else if ( showAni != false )
         {
