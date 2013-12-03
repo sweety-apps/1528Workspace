@@ -8,9 +8,8 @@
 
 #import "RootViewController.h"
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS )
+#include "DMInterstitialAdController.h"
 #include "js_CommonFunction.h"
-#endif
 
 @implementation RootViewController
 static DMInterstitialAdController* _dmInterstitial = NULL;
@@ -29,51 +28,62 @@ static RootViewController* sRootViewController = NULL;
 
 + (void)initAd {
     bInitAd = true;
-    [_dmInterstitial initWithPublisherId:@"56OJzM8YuNPHElRuKG" placementId:@"16TLmePaApIe1NU-lBL4Mknk" rootViewController:self];
     
+    _dmInterstitial = [[DMInterstitialAdController alloc] initWithPublisherId:@"56OJzM8YuNPHElRuKG"
+                                                                  placementId:@"16TLmePaApIe1NU-lBL4Mknk"
+                                                           rootViewController:sRootViewController];
+    
+    _dmInterstitial.delegate = (NSObject <DMInterstitialAdControllerDelegate>*)sRootViewController;
     [_dmInterstitial loadAd];
 }
 
-+ (void)presentAd {
++ (bool)presentAd {
     if ( bInitAd ) {
-        [_dmInterstitial present];
+        if ( _dmInterstitial.isReady ) {
+            [_dmInterstitial present];
+            return true;
+        }
     }
+    return false;
 }
 
 
 // 当插屏⼲⼴广告被成功加载后,回调该⽅方法
 - (void)dmInterstitialSuccessToLoadAd:(DMInterstitialAdController *)dmInterstitial {
-    
+    NSLog(@"dmInterstitialSuccessToLoadAd");
 }
 
 // 当插屏⼲⼴广告加载失败后,回调该⽅方法
 - (void)dmInterstitialFailToLoadAd:(DMInterstitialAdController *)dmInterstitial withError:(NSError *)err {
-    
+    NSLog(@"dmInterstitialFailToLoadAd");
 }
 
 // 当插屏⼲⼴广告要被呈现出来前,回调该⽅方法
 - (void)dmInterstitialWillPresentScreen:(DMInterstitialAdController *)dmInterstitial {
-    
+    NSLog(@"dmInterstitialWillPresentScreen");
 }
 
 // 当插屏⼲⼴广告被关闭后,回调该⽅方法
 - (void)dmInterstitialDidDismissScreen:(DMInterstitialAdController *)dmInterstitial {
     [_dmInterstitial loadAd];
+    NSLog(@"dmInterstitialDidDismissScreen");
+    
+    CommonFunction::onAdClosed();
 }
 
 // 当将要呈现出 Modal View 时,回调该⽅方法。如打开内置浏览器。
 - (void)dmInterstitialWillPresentModalView:(DMInterstitialAdController *)dmInterstitial {
-    
+    NSLog(@"dmInterstitialWillPresentModalView");
 }
 
 // 当呈现的 Modal View 被关闭后,回调该⽅方法。如内置浏览器被关闭。
 - (void)dmInterstitialDidDismissModalView:(DMInterstitialAdController *)dmInterstitial {
-    
+    NSLog(@"dmInterstitialDidDismissModalView");
 }
 
 // 当因⽤用户的操作(如点击下载类⼲⼴广告,需要跳转到Store),需要离开当前应⽤用时,回调该⽅方法
 - (void)dmInterstitialApplicationWillEnterBackground:(DMInterstitialAdController *)dmInterstitial {
-    
+    NSLog(@"dmInterstitialApplicationWillEnterBackground");
 }
 
 /*

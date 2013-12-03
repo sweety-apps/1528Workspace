@@ -734,7 +734,20 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
     debugMsgOutput("Music " + gMusicURL);
     
-    if ( !gCurrentCCBView.showTaskTip ) {
+    // 判断是否显示广告
+    var bShowAd = false;
+    if ( RemoteConfig.ad == "1" ) {
+    	if ( (gAnswerRightNum % parseInt(RemoteConfig.adRate)) == 0 ) {
+    		if ( gAnswerRightNum > gCurShowAdNum ) {
+    			gCurShowAdNum = gAnswerRightNum;
+    			var suc = memeda.common.presentAd();
+                debugMsgOutput("suc " + suc);
+                bShowAd = suc;
+    		}
+    	}
+    }
+    
+    if ( !gCurrentCCBView.showTaskTip && !bShowAd ) {
     	gCurrentCCBView.CatEnter();
     }
     
@@ -814,17 +827,13 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     	gResultCharButtons[i].controller.SetIndexNumber(i);
     	gResultCharButtons[i].controller.AttachClickEvent(gCurrentCCBView.onClickResultBtn);
     }
-    
-    // 判断是否显示广告
-    if ( RemoteConfig.ad == "1" ) {
-    	if ( (gAnswerRightNum % parseInt(RemoteConfig.adRate)) == 0 ) {
-    		if ( gAnswerRightNum > gCurShowAdNum ) {
-    			gCurShowAdNum = gAnswerRightNum;
-    			memeda.common.presentAd();
-    		}
-    	}
-    }
 };
+
+function Ad_onClosed() {
+    gCurrentCCBView.CatEnter();
+
+    debugMsgOutput("onClosed");
+}
 
 GuessScene.prototype.setupInputCharsAndResultChars = function (index)
 {

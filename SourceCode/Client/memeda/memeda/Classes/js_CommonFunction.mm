@@ -234,6 +234,17 @@ JSBool CommonFunction::initAd(JSContext* cx, uint32_t argc, jsval* vp)
 
 JSBool CommonFunction::presentAd(JSContext* cx, uint32_t argc, jsval* vp)
 {
-    [RootViewController presentAd];
+    bool bSuc = [RootViewController presentAd];
+    
+    jsval jsret =  BOOLEAN_TO_JSVAL(bSuc);
+    JS_SET_RVAL(cx, vp, jsret);
     return JS_TRUE;
+}
+
+void CommonFunction::onAdClosed()
+{
+	ScriptingCore* sc = ScriptingCore::getInstance();
+    
+    jsval res;
+    JS_CallFunctionName(sc->getGlobalContext(), sc->getGlobalObject(), "Ad_onClosed", 0, NULL, &res);
 }

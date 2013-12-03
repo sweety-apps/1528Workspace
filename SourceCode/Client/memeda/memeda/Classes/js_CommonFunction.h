@@ -36,6 +36,8 @@ public:
     
     static JSBool initAd(JSContext* cx, uint32_t argc, jsval* vp);
     static JSBool presentAd(JSContext* cx, uint32_t argc, jsval* vp);
+    
+    static void onAdClosed();
 #endif
 };
 

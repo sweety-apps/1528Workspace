@@ -14,8 +14,14 @@
 		A60009C71807E62400CBDFE5 /* Stat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A60009C21807E62400CBDFE5 /* Stat.cpp */; };
 		A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */; };
 		A614B3D317DF141E0095CD40 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */; };
-		A639A672184C887600EE56A4 /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A639A670184C887600EE56A4 /* DomobAdSDKBundle.bundle */; };
-		A639A673184C887600EE56A4 /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A639A671184C887600EE56A4 /* libDomobAdSDK.a */; };
+		A61513A1184D87DD003C8F3A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61513A0184D87DD003C8F3A /* MediaPlayer.framework */; };
+		A61513A3184D87F5003C8F3A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61513A2184D87F5003C8F3A /* CoreText.framework */; };
+		A61513BB184D91C0003C8F3A /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A61513B9184D91C0003C8F3A /* DomobAdSDKBundle.bundle */; };
+		A61513BE184D937E003C8F3A /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A61513BA184D91C0003C8F3A /* libDomobAdSDK.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		A61513DB184DA3D4003C8F3A /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A61513DA184DA3D4003C8F3A /* RootViewController.mm */; };
+		A61513DD184DA464003C8F3A /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61513DC184DA464003C8F3A /* PassKit.framework */; };
+		A61513DF184DA506003C8F3A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61513DE184DA506003C8F3A /* EventKit.framework */; };
+		A61513E1184DA553003C8F3A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61513E0184DA553003C8F3A /* Social.framework */; };
 		A639A675184C88AC00EE56A4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A639A674184C88AC00EE56A4 /* CFNetwork.framework */; };
 		A639A677184C88B300EE56A4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A639A676184C88B300EE56A4 /* MobileCoreServices.framework */; };
 		A639A679184C88C400EE56A4 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A639A678184C88C400EE56A4 /* CoreMedia.framework */; };
@@ -55,7 +61,6 @@
 		F316CE5917B2059300821A66 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F316CE5817B2059300821A66 /* Default.png */; };
 		F316CE6917B2059300821A66 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = F316CE6817B2059300821A66 /* iTunesArtwork */; };
 		F316CE6E17B2059300821A66 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F316CE6D17B2059300821A66 /* AppController.mm */; };
-		F316CE7117B2059300821A66 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F316CE7017B2059300821A66 /* RootViewController.mm */; };
 		F316CE7317B2059300821A66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F316CE7217B2059300821A66 /* main.m */; };
 		F316CE7817B2059300821A66 /* CCAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316CE7717B2059300821A66 /* CCAction.cpp */; };
 		F316CE7B17B2059300821A66 /* CCActionCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F316CE7A17B2059300821A66 /* CCActionCamera.cpp */; };
@@ -377,7 +382,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F3395C4017F92A2F00EEF086 /* PBXContainerItemProxy */ = {
+		A61513C6184DA01A003C8F3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A69F05FE17F807D900B6B90A /* PluginDMOfferWall.xcodeproj */;
 			proxyType = 1;
@@ -406,14 +411,20 @@
 		A614B3CE17DF13ED0095CD40 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A614B3D017DF14080095CD40 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		A614B3D217DF141E0095CD40 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		A639A669184C887600EE56A4 /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
-		A639A66A184C887600EE56A4 /* DMFeedsAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFeedsAdView.h; sourceTree = "<group>"; };
-		A639A66B184C887600EE56A4 /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
-		A639A66C184C887600EE56A4 /* DMRTSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRTSplashAdController.h; sourceTree = "<group>"; };
-		A639A66D184C887600EE56A4 /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSplashAdController.h; sourceTree = "<group>"; };
-		A639A66E184C887600EE56A4 /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTools.h; sourceTree = "<group>"; };
-		A639A670184C887600EE56A4 /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
-		A639A671184C887600EE56A4 /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
+		A61513A0184D87DD003C8F3A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		A61513A2184D87F5003C8F3A /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		A61513B2184D91C0003C8F3A /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
+		A61513B3184D91C0003C8F3A /* DMFeedsAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFeedsAdView.h; sourceTree = "<group>"; };
+		A61513B4184D91C0003C8F3A /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
+		A61513B5184D91C0003C8F3A /* DMRTSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRTSplashAdController.h; sourceTree = "<group>"; };
+		A61513B6184D91C0003C8F3A /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSplashAdController.h; sourceTree = "<group>"; };
+		A61513B7184D91C0003C8F3A /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTools.h; sourceTree = "<group>"; };
+		A61513B9184D91C0003C8F3A /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
+		A61513BA184D91C0003C8F3A /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
+		A61513DA184DA3D4003C8F3A /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = "<group>"; };
+		A61513DC184DA464003C8F3A /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		A61513DE184DA506003C8F3A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		A61513E0184DA553003C8F3A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A639A674184C88AC00EE56A4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A639A676184C88B300EE56A4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A639A678184C88C400EE56A4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -484,7 +495,6 @@
 		F316CE6C17B2059300821A66 /* AppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = "<group>"; };
 		F316CE6D17B2059300821A66 /* AppController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = ios/AppController.mm; sourceTree = "<group>"; };
 		F316CE6F17B2059300821A66 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ios/RootViewController.h; sourceTree = "<group>"; };
-		F316CE7017B2059300821A66 /* RootViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = "<group>"; };
 		F316CE7217B2059300821A66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ios/main.m; sourceTree = "<group>"; };
 		F316CE7717B2059300821A66 /* CCAction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CCAction.cpp; path = libs/cocos2dx/actions/CCAction.cpp; sourceTree = "<group>"; };
 		F316CE7917B2059300821A66 /* CCAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAction.h; path = libs/cocos2dx/actions/CCAction.h; sourceTree = "<group>"; };
@@ -1269,20 +1279,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */,
-				A639A679184C88C400EE56A4 /* CoreMedia.framework in Frameworks */,
+				A61513E1184DA553003C8F3A /* Social.framework in Frameworks */,
+				A61513DF184DA506003C8F3A /* EventKit.framework in Frameworks */,
+				A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */,
+				A61513DD184DA464003C8F3A /* PassKit.framework in Frameworks */,
+				F3D8B2A018378E4400670A52 /* StoreKit.framework in Frameworks */,
+				A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */,
+				F316CE5117B2059300821A66 /* CoreGraphics.framework in Frameworks */,
+				A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */,
+				F316CE4D17B2059300821A66 /* UIKit.framework in Frameworks */,
+				F316CE4F17B2059300821A66 /* Foundation.framework in Frameworks */,
 				A6B3B1DA17EECE2A00CC7708 /* libz.dylib in Frameworks */,
+				A61513A3184D87F5003C8F3A /* CoreText.framework in Frameworks */,
+				F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */,
+				A61513A1184D87DD003C8F3A /* MediaPlayer.framework in Frameworks */,
+				A639A679184C88C400EE56A4 /* CoreMedia.framework in Frameworks */,
 				A639A677184C88B300EE56A4 /* MobileCoreServices.framework in Frameworks */,
 				A639A675184C88AC00EE56A4 /* CFNetwork.framework in Frameworks */,
-				A69F054517F7F05400B6B90A /* AdSupport.framework in Frameworks */,
-				F3D8B2A018378E4400670A52 /* StoreKit.framework in Frameworks */,
-				F316CE4D17B2059300821A66 /* UIKit.framework in Frameworks */,
-				F316CE5117B2059300821A66 /* CoreGraphics.framework in Frameworks */,
-				F316CE4F17B2059300821A66 /* Foundation.framework in Frameworks */,
-				A614B3CF17DF13ED0095CD40 /* SystemConfiguration.framework in Frameworks */,
-				A69F054917F7F07200B6B90A /* CoreLocation.framework in Frameworks */,
+				A61513BE184D937E003C8F3A /* libDomobAdSDK.a in Frameworks */,
 				F3ECD8E917F80A0D00A0CA29 /* libMobClickLibrary.a in Frameworks */,
-				A639A673184C887600EE56A4 /* libDomobAdSDK.a in Frameworks */,
 				F3ECD8E817F809B400A0CA29 /* libcurl.a in Frameworks */,
 				F3ECD8E717F8098200A0CA29 /* libwebsockets.a in Frameworks */,
 				F3ECD8E617F8094500A0CA29 /* libjs_static.a in Frameworks */,
@@ -1309,25 +1324,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A639A668184C887600EE56A4 /* DomobAdSDK */ = {
+		A61513B1184D91C0003C8F3A /* DomobAdSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A639A669184C887600EE56A4 /* DMAdView.h */,
-				A639A66A184C887600EE56A4 /* DMFeedsAdView.h */,
-				A639A66B184C887600EE56A4 /* DMInterstitialAdController.h */,
-				A639A66C184C887600EE56A4 /* DMRTSplashAdController.h */,
-				A639A66D184C887600EE56A4 /* DMSplashAdController.h */,
-				A639A66E184C887600EE56A4 /* DMTools.h */,
-				A639A66F184C887600EE56A4 /* DomobAdSDKBundle */,
-				A639A671184C887600EE56A4 /* libDomobAdSDK.a */,
+				A61513B2184D91C0003C8F3A /* DMAdView.h */,
+				A61513B3184D91C0003C8F3A /* DMFeedsAdView.h */,
+				A61513B4184D91C0003C8F3A /* DMInterstitialAdController.h */,
+				A61513B5184D91C0003C8F3A /* DMRTSplashAdController.h */,
+				A61513B6184D91C0003C8F3A /* DMSplashAdController.h */,
+				A61513B7184D91C0003C8F3A /* DMTools.h */,
+				A61513B8184D91C0003C8F3A /* DomobAdSDKBundle */,
+				A61513BA184D91C0003C8F3A /* libDomobAdSDK.a */,
 			);
 			path = DomobAdSDK;
 			sourceTree = "<group>";
 		};
-		A639A66F184C887600EE56A4 /* DomobAdSDKBundle */ = {
+		A61513B8184D91C0003C8F3A /* DomobAdSDKBundle */ = {
 			isa = PBXGroup;
 			children = (
-				A639A670184C887600EE56A4 /* DomobAdSDKBundle.bundle */,
+				A61513B9184D91C0003C8F3A /* DomobAdSDKBundle.bundle */,
 			);
 			path = DomobAdSDKBundle;
 			sourceTree = "<group>";
@@ -1484,6 +1499,11 @@
 		F316CE4117B2059300821A66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A61513E0184DA553003C8F3A /* Social.framework */,
+				A61513DE184DA506003C8F3A /* EventKit.framework */,
+				A61513DC184DA464003C8F3A /* PassKit.framework */,
+				A61513A2184D87F5003C8F3A /* CoreText.framework */,
+				A61513A0184D87DD003C8F3A /* MediaPlayer.framework */,
 				A639A678184C88C400EE56A4 /* CoreMedia.framework */,
 				A639A676184C88B300EE56A4 /* MobileCoreServices.framework */,
 				A639A674184C88AC00EE56A4 /* CFNetwork.framework */,
@@ -1539,10 +1559,10 @@
 		F316CE6B17B2059300821A66 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				A61513DA184DA3D4003C8F3A /* RootViewController.mm */,
 				F316CE6C17B2059300821A66 /* AppController.h */,
 				F316CE6D17B2059300821A66 /* AppController.mm */,
 				F316CE6F17B2059300821A66 /* RootViewController.h */,
-				F316CE7017B2059300821A66 /* RootViewController.mm */,
 				F316CE7217B2059300821A66 /* main.m */,
 			);
 			name = ios;
@@ -2936,7 +2956,7 @@
 		F3D0890D17EEC5950093A0B5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A639A668184C887600EE56A4 /* DomobAdSDK */,
+				A61513B1184D91C0003C8F3A /* DomobAdSDK */,
 				F3D0890E17EEC5950093A0B5 /* OpenSocial */,
 				F3D0895117EEC5950093A0B5 /* Payment */,
 			);
@@ -3160,7 +3180,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				F3395C4117F92A2F00EEF086 /* PBXTargetDependency */,
+				A61513C7184DA01A003C8F3A /* PBXTargetDependency */,
 			);
 			name = memeda;
 			productName = memeda;
@@ -3248,7 +3268,7 @@
 				F316D09F17B2059700821A66 /* jsb_cocos2d_constants.js in Resources */,
 				F316D0A117B2059700821A66 /* jsb_cocos2d_extension.js in Resources */,
 				F316D0A317B2059700821A66 /* jsb_cocosbuilder.js in Resources */,
-				A639A672184C887600EE56A4 /* DomobAdSDKBundle.bundle in Resources */,
+				A61513BB184D91C0003C8F3A /* DomobAdSDKBundle.bundle in Resources */,
 				F316D0A517B2059700821A66 /* jsb_debugger.js in Resources */,
 				F316D0A717B2059700821A66 /* jsb_opengl.js in Resources */,
 				F316D0A917B2059700821A66 /* jsb_opengl_constants.js in Resources */,
@@ -3274,7 +3294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F316CE6E17B2059300821A66 /* AppController.mm in Sources */,
-				F316CE7117B2059300821A66 /* RootViewController.mm in Sources */,
 				F316CE7317B2059300821A66 /* main.m in Sources */,
 				F316CE7817B2059300821A66 /* CCAction.cpp in Sources */,
 				F316CE7B17B2059300821A66 /* CCActionCamera.cpp in Sources */,
@@ -3410,6 +3429,7 @@
 				F316D04C17B2059600821A66 /* CCTileMapAtlas.cpp in Sources */,
 				F316D04F17B2059600821A66 /* CCTMXLayer.cpp in Sources */,
 				F316D05217B2059600821A66 /* CCTMXObjectGroup.cpp in Sources */,
+				A61513DB184DA3D4003C8F3A /* RootViewController.mm in Sources */,
 				F316D05517B2059600821A66 /* CCTMXTiledMap.cpp in Sources */,
 				A60009C61807E62400CBDFE5 /* js_OfferWallController.cpp in Sources */,
 				F316D05817B2059600821A66 /* CCTMXXMLParser.cpp in Sources */,
@@ -3579,10 +3599,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F3395C4117F92A2F00EEF086 /* PBXTargetDependency */ = {
+		A61513C7184DA01A003C8F3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PluginDMOfferWall;
-			targetProxy = F3395C4017F92A2F00EEF086 /* PBXContainerItemProxy */;
+			targetProxy = A61513C6184DA01A003C8F3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3602,7 +3622,7 @@
 		F316D2E917B2059B00821A66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3632,13 +3652,14 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Debug;
 		};
 		F316D2EA17B2059B00821A66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3667,6 +3688,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Release;
 		};

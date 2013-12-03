@@ -6,12 +6,13 @@
 //  Copyright __MyCompanyName__ 2013年. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+
+#import "RootViewController.h"
+
 #import "AppController.h"
 #import "cocos2d.h"
 #import "EAGLView.h"
 #import "AppDelegate.h"
-
-#import "RootViewController.h"
 
 #import "SocialShareAPI.h"
 #include "localStorage.h"

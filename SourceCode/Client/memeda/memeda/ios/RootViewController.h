@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#include "DMInterstitialAdController.h"
+
+@protocol DMInterstitialAdControllerDelegate;
 
 @interface RootViewController : UIViewController<DMInterstitialAdControllerDelegate> {
 }
 
 + (void)initAd;
-+ (void)presentAd;
++ (bool)presentAd;
 
 @end
