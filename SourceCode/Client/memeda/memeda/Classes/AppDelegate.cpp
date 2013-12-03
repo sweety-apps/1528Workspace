@@ -394,7 +394,9 @@ void AppDelegate::applicationDidEnterBackground()
 #endif /*CC_TARGET_PLATFORM*/
     
     CCDirector::sharedDirector()->stopAnimation();
-    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();//iOS不能静音
+#endif /*CC_TARGET_PLATFORM*/
     SimpleAudioEngine::sharedEngine()->pauseAllEffects();
 }
 
@@ -411,7 +413,9 @@ void AppDelegate::applicationWillEnterForeground()
     localStorageSetItem("enterforeground", "1");
     
     CCDirector::sharedDirector()->startAnimation();
-    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();//iOS不能静音
+#endif /*CC_TARGET_PLATFORM*/
     SimpleAudioEngine::sharedEngine()->resumeAllEffects();
     
     SimpleAudioEngine::sharedEngine()->setEffectsVolume(0.8);
