@@ -25,7 +25,13 @@ THE SOFTWARE.
 #include "SimpleAudioEngine.h"
 #include "SimpleAudioEngine_objc.h"
 #include "cocos2d.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 USING_NS_CC;
+
+static AVAudioPlayer* gAVAudioPlayer = nil;
+static float gbackgroundMusicVolume = 1;
 
 static void static_end()
 {
@@ -39,48 +45,91 @@ static void static_preloadBackgroundMusic(const char* pszFilePath)
 
 static void static_playBackgroundMusic(const char* pszFilePath, bool bLoop)
 {
-    [[SimpleAudioEngine sharedEngine] playBackgroundMusic: [NSString stringWithUTF8String: pszFilePath] loop: bLoop];
+    if ( gAVAudioPlayer != nil ) {
+        if ( [gAVAudioPlayer isPlaying] ) {
+            [gAVAudioPlayer stop];
+        }
+        [gAVAudioPlayer release];
+    }
+    
+    NSString* musicFilePath = [[NSString alloc]initWithCString:pszFilePath];
+    NSURL* musicURL = [[NSURL alloc]initFileURLWithPath:musicFilePath];
+    gAVAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:nil];
+    if ( bLoop ) {
+        gAVAudioPlayer.numberOfLoops = -1;
+    } else {
+        gAVAudioPlayer.numberOfLoops = 1;
+    }
+    
+    gAVAudioPlayer.volume = gbackgroundMusicVolume;
+    [gAVAudioPlayer play];
+    
+    [musicURL release];
+    [musicFilePath release];
+    
+    //[[SimpleAudioEngine sharedEngine] playBackgroundMusic: [NSString stringWithUTF8String: pszFilePath] loop: bLoop];
 }
 
 static void static_stopBackgroundMusic()
 {
-    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    if ( gAVAudioPlayer != nil ) {
+        [gAVAudioPlayer stop];
+    }
+    //[[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
 }
 
 static void static_pauseBackgroundMusic()
 {
-     [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+    if ( gAVAudioPlayer != nil ) {
+        [gAVAudioPlayer pause];
+    }
+    
+    // [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
 }
 
 static void static_resumeBackgroundMusic()
 {
-    [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
+    if ( gAVAudioPlayer != nil ) {
+        [gAVAudioPlayer play];
+    }
+   // [[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
 } 
 
 static void static_rewindBackgroundMusic()
 {
-    [[SimpleAudioEngine sharedEngine] rewindBackgroundMusic];
+    //[[SimpleAudioEngine sharedEngine] rewindBackgroundMusic];
 }
 
 static bool static_willPlayBackgroundMusic()
 {
-    return [[SimpleAudioEngine sharedEngine] willPlayBackgroundMusic];
+    return false;
+    //return [[SimpleAudioEngine sharedEngine] willPlayBackgroundMusic];
 }
 
 static bool static_isBackgroundMusicPlaying()
 {
-    return [[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying];
+    if ( gAVAudioPlayer != nil ) {
+        return [gAVAudioPlayer isPlaying];
+    }
+    return false;
+    //return [[SimpleAudioEngine sharedEngine] isBackgroundMusicPlaying];
 }
 
 static float static_getBackgroundMusicVolume()
 {
-    return [[SimpleAudioEngine sharedEngine] backgroundMusicVolume];
+    return gbackgroundMusicVolume;
+    //return [[SimpleAudioEngine sharedEngine] backgroundMusicVolume];
 }
 
 static void static_setBackgroundMusicVolume(float volume)
 {
     volume = MAX( MIN(volume, 1.0), 0 );
-    [SimpleAudioEngine sharedEngine].backgroundMusicVolume = volume;
+    gbackgroundMusicVolume = volume;
+    
+    if ( gAVAudioPlayer != nil ) {
+        gAVAudioPlayer.volume = gbackgroundMusicVolume;
+    }
+    //[SimpleAudioEngine sharedEngine].backgroundMusicVolume = volume;
 }
      
 static float static_getEffectsVolume()

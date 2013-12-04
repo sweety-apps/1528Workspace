@@ -547,7 +547,7 @@ static BOOL configured = FALSE;
 -(void) playBackgroundMusic:(NSString*) filePath loop:(BOOL) loop
 {
     [self.backgroundMusic load:filePath];
-
+    
 	if (loop) {
 		[self.backgroundMusic setNumberOfLoops:-1];
 	} else {

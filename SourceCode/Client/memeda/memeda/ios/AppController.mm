@@ -16,6 +16,9 @@
 
 #import "SocialShareAPI.h"
 #include "localStorage.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <audioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @implementation AppController
 

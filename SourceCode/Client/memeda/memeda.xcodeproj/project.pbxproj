@@ -1279,6 +1279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A61513A1184D87DD003C8F3A /* MediaPlayer.framework in Frameworks */,
 				F3C49739184E324A00F2366F /* libDomobAdSDK.a in Frameworks */,
 				A61513E1184DA553003C8F3A /* Social.framework in Frameworks */,
 				A61513DF184DA506003C8F3A /* EventKit.framework in Frameworks */,
@@ -1293,7 +1294,6 @@
 				A6B3B1DA17EECE2A00CC7708 /* libz.dylib in Frameworks */,
 				A61513A3184D87F5003C8F3A /* CoreText.framework in Frameworks */,
 				F316CE4317B2059300821A66 /* QuartzCore.framework in Frameworks */,
-				A61513A1184D87DD003C8F3A /* MediaPlayer.framework in Frameworks */,
 				A639A679184C88C400EE56A4 /* CoreMedia.framework in Frameworks */,
 				A639A677184C88B300EE56A4 /* MobileCoreServices.framework in Frameworks */,
 				A639A675184C88AC00EE56A4 /* CFNetwork.framework in Frameworks */,
@@ -3660,8 +3660,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BIN Li (B4BR4E2M87)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BIN Li (B4BR4E2M87)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -3698,8 +3698,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JINXIN LI (DJJ4XT349N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3835,8 +3835,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BIN Li (B4BR4E2M87)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BIN Li (B4BR4E2M87)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
