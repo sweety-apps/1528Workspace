@@ -3835,8 +3835,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BIN Li (B4BR4E2M87)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BIN Li (B4BR4E2M87)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3948,7 +3948,8 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "997398D9-C1CC-4A76-968F-BBEE7D1749FE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "997398D9-C1CC-4A76-968F-BBEE7D1749FE";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"memeda/libs/Chipmunk/include/chipmunk\" \"memeda/libs/javascript/spidermonkey-ios/include\"";
 				VALIDATE_PRODUCT = NO;
