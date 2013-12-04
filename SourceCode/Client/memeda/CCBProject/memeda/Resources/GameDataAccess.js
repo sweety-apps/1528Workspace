@@ -384,8 +384,6 @@ function Problem_Initialize() {
         var pos = obj.pos1;
         if ( rand < 0.3 ) {
         	pos = obj.pos2;
-        } else if ( rand < 0.4 ) {
-        	pos = obj.pos3;
         }
         
         if ( pos != null && pos != "" && pos != undefined ) {

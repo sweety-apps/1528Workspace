@@ -747,7 +747,7 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     	}
     }
     
-    if ( !gCurrentCCBView.showTaskTip && !bShowAd ) {
+    if ( !gCurrentCCBView.showTaskTip ) {
     	gCurrentCCBView.CatEnter();
     }
     
@@ -830,8 +830,6 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
 };
 
 function Ad_onClosed() {
-    gCurrentCCBView.CatEnter();
-
     debugMsgOutput("onClosed");
 }
 
