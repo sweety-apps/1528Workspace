@@ -58,7 +58,7 @@ static void static_playBackgroundMusic(const char* pszFilePath, bool bLoop)
     if ( bLoop ) {
         gAVAudioPlayer.numberOfLoops = -1;
     } else {
-        gAVAudioPlayer.numberOfLoops = 1;
+        gAVAudioPlayer.numberOfLoops = 0;
     }
     
     gAVAudioPlayer.volume = gbackgroundMusicVolume;
