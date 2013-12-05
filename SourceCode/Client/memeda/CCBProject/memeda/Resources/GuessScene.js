@@ -734,19 +734,6 @@ GuessScene.prototype.onReceivedTestData = function(testObj, guessScene)
     }
     debugMsgOutput("Music " + gMusicURL);
     
-    // 判断是否显示广告
-    var bShowAd = false;
-    if ( RemoteConfig.ad == "1" ) {
-    	if ( (gAnswerRightNum % parseInt(RemoteConfig.adRate)) == 0 ) {
-    		if ( gAnswerRightNum > gCurShowAdNum ) {
-    			gCurShowAdNum = gAnswerRightNum;
-    			var suc = memeda.common.presentAd();
-                debugMsgOutput("suc " + suc);
-                bShowAd = suc;
-    		}
-    	}
-    }
-    
     if ( !gCurrentCCBView.showTaskTip ) {
     	gCurrentCCBView.CatEnter();
     }

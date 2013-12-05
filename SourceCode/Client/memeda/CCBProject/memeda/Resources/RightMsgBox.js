@@ -18,6 +18,19 @@ RightMsgBox.prototype.ShowMsg = function(id, lab, answerRight, url, isFirst, onC
     this.searchkey = lab + " " + answerRight;
 	this.coinAward.setVisible(isFirst);
 	
+    // 判断是否显示广告
+    var bShowAd = false;
+    if ( RemoteConfig.ad == "1" ) {
+    	if ( (gAnswerRightNum % parseInt(RemoteConfig.adRate)) == 0 ) {
+    		if ( gAnswerRightNum > gCurShowAdNum ) {
+    			gCurShowAdNum = gAnswerRightNum;
+    			var suc = memeda.common.presentAd();
+                debugMsgOutput("suc " + suc);
+                bShowAd = suc;
+    		}
+    	}
+    }
+    
 		// 显示的链接长度不超过40个字符
 		url = "《" + lab + "-" + answerRight + "》";
 		if ( this.Url != null && this.Url != "" ) {
