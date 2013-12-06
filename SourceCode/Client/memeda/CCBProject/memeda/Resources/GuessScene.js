@@ -1319,6 +1319,12 @@ GuessScene.prototype.onClickedWeChatShare = function () {
 		return ;
 	}
 	
+    try {
+    	cc.AudioEngine.getInstance().setMusicVolume(0.0);
+    	cc.AudioEngine.getInstance().stopMusic();
+    }catch ( e ) {
+    }
+	
 	this.EnableAllBtn(false);
 	if ( this.weChatMsg == null ) {
 		this.weChatMsg = cc.BuilderReader.load("WeChatMsg");
@@ -1397,18 +1403,24 @@ GuessScene.prototype.checkExtraCoin = function () {
 	var showsharecoin = sys.localStorage.getItem("showsharecoin");
 	if ( showsharecoin == "1" ) {
 		sys.localStorage.setItem("showsharecoin", "2");	// 准备显示第一次分享奖励
-		gCurrentCCBView.EnableAllBtn(false);
-		
-		if ( this.weChatCoinMsgBox == null ) {
-			this.weChatCoinMsgBox = cc.BuilderReader.load("WeChatCoinMessageBox");
-    		this.ccbLayout.addChild(	this.weChatCoinMsgBox );
+		if ( sys.os == "android" || sys.os == "Android" ) {
+			CoinMgr_Change(188);
+			return true;	
 		}
 		
-		this.weChatCoinMsgBox.controller.show(function () {
-			gCurrentCCBView.EnableAllBtn(true);
-			cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
-			CoinMgr_Change(188);
-		});
+			gCurrentCCBView.EnableAllBtn(false);
+			
+			if ( this.weChatCoinMsgBox == null ) {
+				this.weChatCoinMsgBox = cc.BuilderReader.load("WeChatCoinMessageBox");
+    			this.ccbLayout.addChild(	this.weChatCoinMsgBox );
+			}
+		
+			this.weChatCoinMsgBox.controller.show(function () {
+				gCurrentCCBView.EnableAllBtn(true);
+				cc.AudioEngine.getInstance().playEffect("sounds/Click_Pay_Coins.mp3");
+				CoinMgr_Change(188);
+			});
+
 		return true;
 	}
 	return false;

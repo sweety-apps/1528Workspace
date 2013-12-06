@@ -39,6 +39,11 @@ public:
     
     static void onAdClosed();
 #endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID )
+    static JSBool initAd(JSContext* cx, uint32_t argc, jsval* vp);
+    static JSBool presentAd(JSContext* cx, uint32_t argc, jsval* vp);
+#endif
 };
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)

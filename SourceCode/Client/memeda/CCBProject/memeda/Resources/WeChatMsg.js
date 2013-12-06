@@ -9,6 +9,8 @@ WeChatMsg.prototype.onDidLoadFromCCB = function () {
     var screenWidth = screenSize.width > screenSize.height ? screenSize.height : screenSize.width;
     var screenHeight = screenSize.width > screenSize.height ? screenSize.width : screenSize.height;
 
+    this.rootNode.animationManager.setCompletedAnimationCallback(this, this.onAnimationComplete);
+    
     // 针对非iphone5屏幕做缩小适配
     if(screenHeight / screenWidth < 1136/640)
     {   
@@ -25,6 +27,8 @@ WeChatMsg.prototype.ShowMsg = function(id, endFun, sharedFun) {
 	this.endFun = endFun;
 	this.sharedFun = sharedFun;
 	this.errMsg = null;
+	this.clickShare = "";
+	this.showMsg = true;
 	
 	var share = sys.localStorage.getItem("firstshare");	
 	if ( share == null || share == "" ) {
@@ -70,49 +74,27 @@ WeChatMsg.prototype.onClickClose = function() {
 
 WeChatMsg.prototype.onShare = function() {
 	// 分享   
-    if ( !Global_isWeb() ) {
-    	var param = memeda.Stat.createParam();
-    	param.addKeyAndValue("aid", ""+this.aid);
-        param.addKeyAndValue("type", "wechat");
-            
-    	memeda.Stat.logEvent("clickWechat", param);
-    }
+	if ( sys.os == "android" || sys.os == "Android" ) {
+		this.clickShare = "onShare";
+		this.Hide();
+		return ;
+	}
 	
-    var url = Global_getShareUrl(this.aid);
-    debugMsgOutput(url);
-    
-    var This = this;
-    try
-    {
-		var shareCallback = new cc.WeChatShareCallBackClass();
-	    shareCallback.onWechatShareCallback = function (state, errMsg) {
-	    	if ( state == "Success" ) {
-	    		This.Hide();	
-	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
-	    		var share = sys.localStorage.getItem("firstshare");	
-	    		if ( share == null || share == "" ) {
-	    			// 第一次分享成功
-	    			sys.localStorage.setItem("firstshare", "1");	
-	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
-	    			This.sharedFun();
-	    		}
-	    	} else if ( state == "Fail" ) {
-	    		This.errMsg = errMsg;	
-	    		This.Hide();
-	    	}
-	    };
-	    
-	    var socialAPI = cc.SocialShareAPI.getInstance();
-	    socialAPI.setWeChatShareCallbackTarget(shareCallback);
-	    
-	    socialAPI.shareWeChatURL("我知道你懂的多～哎。。。","AppIcon40x40@2x.png","帮我听听这是什么？", url,"",false,false);
-    } catch (e) {
-    	debugMsgOutput("" + e);
-    }
+	this.share();
 };
 
 WeChatMsg.prototype.onShareFriend = function() {
 	// 分享到朋友圈 
+	if ( sys.os == "android" || sys.os == "Android" ) {
+		this.clickShare = "onShareFirend";
+		this.Hide();
+		return ;
+	}
+	
+	this.shareFirend();
+};
+
+WeChatMsg.prototype.shareFirend = function () {
     if ( !Global_isWeb() ) {
     	var param = memeda.Stat.createParam();
     	param.addKeyAndValue("aid", ""+this.aid);
@@ -130,7 +112,10 @@ WeChatMsg.prototype.onShareFriend = function() {
 		var shareCallback = new cc.WeChatShareCallBackClass();
 	    shareCallback.onWechatShareCallback = function (state, errMsg) {
 	    	if ( state == "Success" ) {
-	    		This.Hide();
+	    		if ( sys.os != "android" && sys.os != "Android" ) {
+	    			This.Hide();
+	    		}
+	    		
 	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
 	    		var share = sys.localStorage.getItem("firstshare");	
 	    		if ( share == null || share == "" ) {
@@ -141,7 +126,9 @@ WeChatMsg.prototype.onShareFriend = function() {
 	    		}
 	    	} else if ( state == "Fail" ) {
 	    		This.errMsg = errMsg;	
-	    		This.Hide();
+	    		if ( sys.os != "android" && sys.os != "Android" ) {
+	    			This.Hide();
+	    		}
 	    	}
 	    };
 	    
@@ -151,4 +138,67 @@ WeChatMsg.prototype.onShareFriend = function() {
 	    socialAPI.shareWeChatURL("我知道你懂的多～哎。。。","AppIcon40x40@2x.png","帮我听听这是什么？", url,"",false,true);
     } catch (e) {
     }
+}
+
+WeChatMsg.prototype.share = function () {
+  if ( !Global_isWeb() ) {
+    	var param = memeda.Stat.createParam();
+    	param.addKeyAndValue("aid", ""+this.aid);
+        param.addKeyAndValue("type", "wechat");
+            
+    	memeda.Stat.logEvent("clickWechat", param);
+    }
+	
+    var url = Global_getShareUrl(this.aid);
+    debugMsgOutput(url);
+    
+    var This = this;
+    try
+    {
+		var shareCallback = new cc.WeChatShareCallBackClass();
+	    shareCallback.onWechatShareCallback = function (state, errMsg) {
+	    	if ( state == "Success" ) {
+	    		if ( sys.os != "android" && sys.os != "Android" ) {
+	    			This.Hide();
+	    		}
+	    		
+	    		// 分享成功,如果是第一次分享就写配置文件，下次进入场景时提示
+	    		var share = sys.localStorage.getItem("firstshare");	
+	    		if ( share == null || share == "" ) {
+	    			// 第一次分享成功
+	    			sys.localStorage.setItem("firstshare", "1");	
+	    			sys.localStorage.setItem("showsharecoin", "1");	// 准备显示第一次分享奖励
+	    			This.sharedFun();
+	    		}
+	    	} else if ( state == "Fail" ) {
+	    		This.errMsg = errMsg;	
+	    		
+	    		if ( sys.os != "android" && sys.os != "Android" ) {
+	    			This.Hide();
+	    		}
+	    	}
+	    };
+	    
+	    var socialAPI = cc.SocialShareAPI.getInstance();
+	    socialAPI.setWeChatShareCallbackTarget(shareCallback);
+	    
+	    socialAPI.shareWeChatURL("我知道你懂的多～哎。。。","AppIcon40x40@2x.png","帮我听听这是什么？", url,"",false,false);
+    } catch (e) {
+    	debugMsgOutput("" + e);
+    }
+}
+	
+WeChatMsg.prototype.onAnimationComplete = function()
+{
+	if ( sys.os == "android" || sys.os == "Android" ) {
+    	if(this.rootNode.animationManager.getLastCompletedSequenceName() == "End Timeline" && this.showMsg )
+    	{
+    		this.showMsg = false;
+    		if ( this.clickShare == "onShareFirend" ) {
+    			this.shareFirend();
+    		} else if ( this.clickShare == "onShare" ) {
+    			this.share();
+    		}
+    	}
+	}
 };

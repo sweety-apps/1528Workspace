@@ -5,10 +5,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import net.youmi.android.spot.SpotDialogListener;
+import net.youmi.android.spot.SpotManager;
+
+import org.cocos2dx.lib.Cocos2dxLocalStorage;
+
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.media.Ringtone;
@@ -29,6 +36,28 @@ public class CommonFunction {
 		gContext.startActivity(it);
 	}
 	
+	public static void initAd()
+	{
+		SpotManager.getInstance(gContext).loadSpotAds();
+	}
+	
+	public static void presentAd()
+	{
+		SpotManager.getInstance(gContext).showSpotAds(gContext, new SpotDialogListener() {
+			@Override
+			public void onShowFailed() {
+				// TODO Auto-generated method stub
+				SpotManager.getInstance(gContext).loadSpotAds();
+			}
+
+			@Override
+			public void onShowSuccess() {
+				// TODO Auto-generated method stub
+				SpotManager.getInstance(gContext).loadSpotAds();
+			}
+		});
+	}
+	
 	public static void setContext(Context context)
 	{
 		gContext = context;
@@ -46,6 +75,29 @@ public class CommonFunction {
 	public static void removeSplashView()
 	{
 		qietingfengyun.RemoveSplashView();
+	}
+	
+	public static void initChannel()
+	{
+		PackageManager packageManager = gContext.getPackageManager();
+		ApplicationInfo applicationInfo;
+		String strChannel = "";
+		String strProtoVersion = "";
+		try {
+			applicationInfo = packageManager.getApplicationInfo(gContext.getPackageName(), 128);
+			if ( applicationInfo != null && applicationInfo.metaData != null ) {
+				Object value = applicationInfo.metaData.get("UMENG_CHANNEL");
+				strChannel = value.toString();
+				
+				value = applicationInfo.metaData.get("PROTO_VERSION");
+				strProtoVersion = value.toString();
+			}
+		} catch (Exception e) {
+			
+		}
+		
+		Cocos2dxLocalStorage.setItem("channel", strChannel);
+		Cocos2dxLocalStorage.setItem("protoVersion", strProtoVersion);
 	}
 	
 	public static Context gContext;

@@ -57,6 +57,8 @@ void CommonFunction::_js_register(JSContext *cx, JSObject *obj)
     
     static JSFunctionSpec funcs[] = {
         JS_FN("openURL", openURL, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("initAd", initAd, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("presentAd", presentAd, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setActualDefaultRingtoneUri", setActualDefaultRingtoneUri, 3, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
@@ -149,6 +151,36 @@ void CommonFunction_Notify_Splash_Fade()
     t.env->CallStaticVoidMethod(t.classID, t.methodID);
     
     CCLOG("RemoveSplashView");
+}
+
+JSBool CommonFunction::initAd(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    JniMethodInfo t;
+    if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "initAd", "()V"))
+    {
+        CCLOG("initAd Failed");
+    }
+
+    t.env->CallStaticVoidMethod(t.classID, t.methodID);
+
+    CCLOG("initAd");
+
+	return JS_TRUE;
+}
+
+JSBool CommonFunction::presentAd(JSContext* cx, uint32_t argc, jsval* vp)
+{
+    JniMethodInfo t;
+    if ( !JniHelper::getStaticMethodInfo(t, "com/studio1528/qietingfengyun/CommonFunction", "presentAd", "()V"))
+    {
+        CCLOG("presentAd Failed");
+    }
+
+    t.env->CallStaticVoidMethod(t.classID, t.methodID);
+
+    CCLOG("presentAd");
+
+	return JS_TRUE;
 }
 
 #endif /*CC_TARGET_PLATFORM*/
